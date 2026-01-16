@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/KNAPGEMAAKTNL/knapgemaakt.nl/compare/v1.0.2...v1.1.0) (2026-01-16)
+
+
+### Features
+
+* implement custom 404 error page ([#7](https://github.com/KNAPGEMAAKTNL/knapgemaakt.nl/issues/7)) ([#8](https://github.com/KNAPGEMAAKTNL/knapgemaakt.nl/issues/8)) ([aef4616](https://github.com/KNAPGEMAAKTNL/knapgemaakt.nl/commit/aef4616620ce807940e826743a7361d58a82e296))
+
 ## [1.0.2](https://github.com/KNAPGEMAAKTNL/knapgemaakt.nl/compare/v1.0.1...v1.0.2) (2026-01-15)
 
 
