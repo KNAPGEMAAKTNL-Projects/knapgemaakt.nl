@@ -19,6 +19,7 @@ jobs:
         with:
           release-type: simple
           token: ${{ secrets.GITHUB_TOKEN }}
+          skip-github-release: true
 
       - name: Auto-merge Release PR
         if: steps.release.outputs.pr
