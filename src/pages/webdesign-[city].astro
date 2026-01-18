@@ -111,6 +111,10 @@ const mapImage = hasCityImage
                     <img
                         src={mapImage}
                         alt={`Map of ${city}`}
+                        width={1024}
+                        height={768}
+                        loading="eager"
+                        decoding="async"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
 
