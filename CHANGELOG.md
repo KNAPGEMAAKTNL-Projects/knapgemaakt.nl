@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.1.0...v1.1.1) (2026-01-18)
+
+
+### Performance Improvements
+
+* optimize favicon SVG with SVGO ([#13](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/13)) ([19e5973](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/19e5973921b90932163286bc9d91484d1b0c493d)), closes [#5](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/5)
+
 ## [1.1.0](https://github.com/KNAPGEMAAKTNL/knapgemaakt.nl/compare/v1.0.2...v1.1.0) (2026-01-16)
 
 
