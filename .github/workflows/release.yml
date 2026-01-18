@@ -19,7 +19,7 @@ jobs:
         id: release
         with:
           release-type: simple
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.RELEASE_PAT }}
 
       - name: Auto-merge Release PR
         if: steps.release.outputs.pr
