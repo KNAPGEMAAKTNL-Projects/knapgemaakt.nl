@@ -107,16 +107,19 @@ const mapImage = hasCityImage
                     rowSpan="md:row-span-4"
                     className="relative group overflow-hidden border-l border-ink/10 md:border-l-0 min-h-[300px] md:min-h-0 bg-acid"
                 >
-                    <!-- Background Map (Raw) -->
-                    <img
-                        src={mapImage}
-                        alt={`Map of ${city}`}
-                        width={1024}
-                        height={768}
-                        loading="eager"
-                        decoding="async"
-                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
+                    <!-- Background Map (WebP + PNG fallback) -->
+                    <picture>
+                        <source srcset={mapImage.replace('.png', '.webp')} type="image/webp" />
+                        <img
+                            src={mapImage}
+                            alt={`Map of ${city}`}
+                            width={1024}
+                            height={768}
+                            loading="eager"
+                            decoding="async"
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                    </picture>
 
                     <!-- Subtle Dark Gradient for Contrast -->
                     <div

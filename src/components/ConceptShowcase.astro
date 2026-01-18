@@ -88,15 +88,18 @@ const projects: Project[] = [
                     {/* Image Container - takes full space */}
                     <div class="absolute inset-0 bg-ink pointer-events-none">
                         {project.image && (
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                width={1200}
-                                height={800}
-                                loading="lazy"
-                                decoding="async"
-                                class="w-full h-full object-cover object-center md:object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                            />
+                            <picture>
+                                <source srcset={project.image.replace('.png', '.webp')} type="image/webp" />
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    width={1200}
+                                    height={800}
+                                    loading="lazy"
+                                    decoding="async"
+                                    class="w-full h-full object-cover object-center md:object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                                />
+                            </picture>
                         )}
 
                         {/* Premium Gradient Overlay */}
