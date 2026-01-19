@@ -119,7 +119,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     // Trigger n8n webhook (fire-and-forget)
     const webhookUrl = (locals.runtime.env as Env).N8N_BOOKING_WEBHOOK;
+    console.log('[Bookings API] Webhook URL:', webhookUrl ? 'found' : 'NOT FOUND');
+
     if (webhookUrl) {
+      console.log('[Bookings API] Triggering webhook for booking:', bookingId);
       fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -134,10 +137,14 @@ export const POST: APIRoute = async ({ request, locals }) => {
           end_time: endTime.toISOString(),
           created_at: new Date().toISOString()
         })
-      }).catch(err => {
-        console.error('Failed to trigger n8n webhook:', err);
+      })
+      .then(() => console.log('[Bookings API] Webhook triggered successfully'))
+      .catch(err => {
+        console.error('[Bookings API] Failed to trigger n8n webhook:', err);
         // Don't fail the booking if webhook fails
       });
+    } else {
+      console.warn('[Bookings API] N8N_BOOKING_WEBHOOK environment variable not set - skipping webhook');
     }
 
     return new Response(JSON.stringify({
