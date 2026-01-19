@@ -23,8 +23,11 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
   useEffect(() => {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
-    const dateStr = tomorrow.toISOString().split('T')[0];
-    setSelectedDate(dateStr);
+    // Use formatDateString helper to avoid UTC conversion
+    const year = tomorrow.getFullYear();
+    const month = (tomorrow.getMonth() + 1).toString().padStart(2, '0');
+    const day = tomorrow.getDate().toString().padStart(2, '0');
+    setSelectedDate(`${year}-${month}-${day}`);
   }, []);
 
   // Fetch slots when date changes
@@ -89,7 +92,12 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
   };
 
   const formatDateString = (date: Date) => {
-    return date.toISOString().split('T')[0];
+    // Format date in local timezone to avoid UTC conversion issues
+    // When user clicks Jan 28, we want "2026-01-28", not "2026-01-27"
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
   };
 
   const handleDateClick = (date: Date) => {
