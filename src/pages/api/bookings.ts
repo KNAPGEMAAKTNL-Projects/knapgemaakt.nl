@@ -11,6 +11,7 @@ interface BookingRequest {
   user_phone: string;
   user_company?: string;
   user_industry?: string;
+  user_website?: string;
   start_time: string;
   end_time: string;
 }
@@ -103,9 +104,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     await db.prepare(`
       INSERT INTO bookings (
-        id, user_name, user_email, user_phone, user_company, user_industry,
+        id, user_name, user_email, user_phone, user_company, user_industry, user_website,
         start_time, end_time, status, created_at, updated_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'confirmed', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'confirmed', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
     `).bind(
       bookingId,
       body.user_name,
@@ -113,6 +114,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       body.user_phone,
       body.user_company || null,
       body.user_industry || null,
+      body.user_website || null,
       startTime.toISOString(),
       endTime.toISOString()
     ).run();
@@ -134,6 +136,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
             user_phone: body.user_phone,
             user_company: body.user_company,
             user_industry: body.user_industry,
+            user_website: body.user_website,
             start_time: startTime.toISOString(),
             end_time: endTime.toISOString(),
             created_at: new Date().toISOString()

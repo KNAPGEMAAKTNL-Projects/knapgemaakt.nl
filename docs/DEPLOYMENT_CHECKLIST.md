@@ -93,12 +93,12 @@
    - Summary: `Intro Call - {{ $json.user_name }}`
    - Description: User details (name, company, email, phone, industry)
 
-3. [ ] Email Node (to user)
+3. [ ] Email Node (to user) (Note Yannick: would this not be better to send through Resend?)
    - To: `{{ $json.user_email }}`
    - Subject: `Jouw afspraak is bevestigd! 🎉`
    - HTML Body: Custom branded template
 
-4. [ ] Email Node (to you)
+4. [ ] Email Node (to you) (Note Yannick: would this not be better to send through Resend?)
    - To: `yannick@knapgemaakt.nl`
    - Subject: `Nieuwe afspraak: {{ $json.user_name }}`
    - Body: Booking details
