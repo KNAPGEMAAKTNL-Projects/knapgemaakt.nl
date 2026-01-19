@@ -131,6 +131,7 @@ curl -X POST https://n8n.summitlab.dev/webhook-test/9adef783-f324-498e-b880-a4ae
 - [x] Run `/test` to deploy feature branch to preview environment
 - [x] Wait for Cloudflare Pages preview build to complete
 - [x] Preview URL: `https://test-24-add-in-house-calenda.knapgemaakt-nl.pages.dev`
+- [x] D1 database binding configured in Cloudflare Pages
 
 ### Configure Environment Variables
 
