@@ -65,11 +65,11 @@ export function HorizontalProjectScroll({ projects, className }: HorizontalProje
                         <p className="text-lg md:text-xl text-ink/60 font-medium max-w-sm">
                             Een selectie van ons beste werk.
                         </p>
-                        <p className="text-lg md:text-xl text-ink/40 font-medium mt-2">
+                        <p className="text-lg md:text-xl text-ink/60 font-medium mt-2">
                             Scroll om te ontdekken.
                         </p>
-                        <div className="mt-8 flex items-center gap-2 text-ink/40 font-mono text-sm uppercase tracking-widest">
-                            <span className="w-12 h-[1px] bg-ink/40"></span>
+                        <div className="mt-8 flex items-center gap-2 text-ink/60 font-mono text-sm uppercase tracking-widest">
+                            <span className="w-12 h-[1px] bg-ink/60"></span>
                             Scroll
                         </div>
                     </div>
