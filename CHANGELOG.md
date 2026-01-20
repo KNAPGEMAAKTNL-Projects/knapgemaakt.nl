@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.1.1...v1.2.0) (2026-01-20)
+
+
+### Features
+
+* implement in-house booking system ([#24](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/24)) ✨ ([782c51f](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/782c51f53de737895e3c08801596d00faf27254e))
+
+
+### Bug Fixes
+
+* adjust text wrapping on aanvragen page to break after first sentence ([#21](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/21)) ([bd9d2be](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/bd9d2bee554a21418ed01e8e24bab94b84fca391))
+
 ## [1.1.1](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.1.0...v1.1.1) (2026-01-18)
 
 
