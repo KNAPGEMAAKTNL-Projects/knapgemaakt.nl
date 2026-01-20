@@ -16,7 +16,7 @@ export function TextReveal({ text, className, delay = 0, as: Tag = "div" }: Prop
     const words = text.split(" ");
 
     const container = {
-        hidden: { opacity: 0 },
+        hidden: { opacity: 1 },
         visible: (i = 1) => ({
             opacity: 1,
             transition: { staggerChildren: 0.12, delayChildren: 0.04 * i + delay },
@@ -25,7 +25,7 @@ export function TextReveal({ text, className, delay = 0, as: Tag = "div" }: Prop
 
     const child = {
         hidden: {
-            opacity: 0,
+            opacity: 1,
             y: 20,
             transition: {
                 type: "spring",
