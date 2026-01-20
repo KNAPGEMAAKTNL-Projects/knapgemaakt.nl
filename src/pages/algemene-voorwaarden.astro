@@ -1,76 +1,351 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import BentoGrid from "../components/BentoGrid.astro";
-import BentoItem from "../components/BentoItem.astro";
 ---
 
 <Layout title="Algemene Voorwaarden | Knap Gemaakt">
     <main class="min-h-screen bg-canvas p-4 md:p-8">
-        <BentoGrid class="h-auto">
-            <BentoItem colSpan="md:col-span-12" className="p-8 md:p-12">
-                <div class="max-w-3xl mx-auto space-y-8">
-                    <h1
-                        class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8"
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <header class="mb-16 md:mb-32 pt-12 md:pt-24">
+                <h1
+                    class="text-[12vw] md:text-9xl font-black uppercase tracking-tighter mb-8 leading-[0.85] break-words"
+                >
+                    Algemene<br />Voorwaarden
+                </h1>
+                <div
+                    class="flex flex-col md:flex-row md:items-center gap-4 text-sm font-mono uppercase tracking-widest text-ink/60 border-t border-ink/10 pt-6"
+                >
+                    <span class="bg-acid px-2 py-1 text-black font-bold text-xs"
+                        >Versie 2.1</span
                     >
-                        Algemene Voorwaarden
-                    </h1>
+                    <span class="hidden md:inline">&mdash;</span>
+                    <span>Laatst bijgewerkt: 20 Januari 2026</span>
+                </div>
+            </header>
 
-                    <div class="prose prose-lg prose-invert">
-                        <section class="space-y-4">
-                            <h2
-                                class="text-2xl font-bold uppercase tracking-tight"
-                            >
-                                1. Diensten
-                            </h2>
-                            <p class="text-ink/70">
-                                Knap Gemaakt levert webdesign en
-                                onderhoudsdiensten. Wij streven naar de hoogste
-                                kwaliteit en snelheid in onze levering.
+            <!-- Legal Clauses -->
+            <div class="space-y-0 border-t border-ink/10">
+                <!-- 01. Identiteit -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >01.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Identiteit
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Summit Labs, handelend onder de naam <strong
+                                    class="text-ink">KNAP GEMAAKT.</strong
+                                >, gevestigd te Fran&ccedil;oise de Lanoistraat 9, 4116
+                                ET Buren.
                             </p>
-                        </section>
-
-                        <section class="space-y-4">
-                            <h2
-                                class="text-2xl font-bold uppercase tracking-tight"
+                            <ul
+                                class="list-none pl-0 space-y-2 font-mono text-base text-ink/60 mt-6"
                             >
-                                2. Betaling
-                            </h2>
-                            <p class="text-ink/70">
+                                <li>KvK: 73652377</li>
+                                <li>BTW: NL002383577B12</li>
+                                <li>E-mail: legal@knapgemaakt.nl</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 02. Toepasselijkheid -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >02.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Toepasselijkheid
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Deze voorwaarden zijn van toepassing op alle
+                                aanbiedingen en overeenkomsten met zakelijke
+                                klanten. Er worden geen diensten geleverd aan
+                                consumenten. Afwijkingen zijn alleen geldig als
+                                deze schriftelijk zijn bevestigd.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 03. Diensten -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >03.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Diensten
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                KNAP GEMAAKT. levert webdesign en ontwikkeling
+                                en biedt een optioneel beheerpakket. De opdracht
+                                start na schriftelijke bevestiging en zodra alle
+                                benodigde informatie is ontvangen.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 04. Uitvoering -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >04.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Uitvoering
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Er is geen SLA of gegarandeerde responstijd; wij
+                                doen ons best om snel te handelen. Oplevering
+                                vindt plaats zodra de website klaar is en ter
+                                goedkeuring wordt aangeboden. De opdrachtgever
+                                geeft feedback of akkoord; na akkoord wordt de
+                                website live gezet.
+                            </p>
+                            <p>
+                                De opdrachtgever is verantwoordelijk voor het
+                                aanleveren van juiste informatie en het bezit
+                                van de benodigde rechten op aangeleverde
+                                materialen.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 05. Betaling -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >05.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Betaling
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
                                 De eenmalige investering voor de website wordt
-                                vooraf of bij oplevering gefactureerd. Het
-                                beheerpakket wordt maandelijks gefactureerd via
-                                automatische incasso.
+                                vooraf gefactureerd en voldaan voordat wij de
+                                website opleveren. Betaling verloopt via iDEAL
+                                (Mollie) met een betaaltermijn van 14 dagen.
+                                Het beheerpakket start na livegang en alleen
+                                als de opdrachtgever dit afneemt; dit wordt
+                                maandelijks gefactureerd en ge&iuml;ncasseerd
+                                via SEPA (Mollie). Bij uitblijvende betaling
+                                mogen wij diensten direct pauzeren of
+                                stopzetten.
                             </p>
-                        </section>
+                        </div>
+                    </div>
+                </section>
 
-                        <section class="space-y-4">
-                            <h2
-                                class="text-2xl font-bold uppercase tracking-tight"
-                            >
-                                3. Looptijd & Opzegging
-                            </h2>
-                            <p class="text-ink/70">
-                                Het beheerpakket is maandelijks opzegbaar met
-                                een opzegtermijn van één maand.
+                <!-- 06. Opzegging -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >06.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Opzegging
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Het beheerpakket is maandelijks opzegbaar via
+                                e-mail aan <a
+                                    href="mailto:opzeggen@knapgemaakt.nl"
+                                    class="text-ink underline decoration-acid decoration-2 underline-offset-4 hover:bg-acid hover:decoration-transparent transition-colors"
+                                    >opzeggen@knapgemaakt.nl</a
+                                >. Opzegging kan op elk moment. Reeds geleverde
+                                maanden worden niet terugbetaald; de lopende
+                                maand kan op verzoek worden vergoed.
                             </p>
-                        </section>
+                        </div>
+                    </div>
+                </section>
 
-                        <section class="space-y-4">
+                <!-- 07. Garantie -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >07.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <div class="flex items-center gap-4">
                             <h2
-                                class="text-2xl font-bold uppercase tracking-tight"
+                                class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
                             >
-                                4. Aansprakelijkheid
+                                Garantie
                             </h2>
-                            <p class="text-ink/70">
-                                Knap Gemaakt is niet aansprakelijk voor
+                            <span
+                                class="bg-acid px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+                                >Tevredenheidsgarantie</span
+                            >
+                        </div>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Als de opdrachtgever aangeeft niet tevreden te
+                                zijn met de opgeleverde website, dan vergoeden
+                                wij de eenmalige investering en leveren wij de
+                                website niet op of halen deze offline. Dit geldt
+                                voor het eenmalige webdesigntraject.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 08. Eigendom -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >08.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Eigendom
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Na volledige betaling krijgt de opdrachtgever
+                                het eigendom van de website en het opgeleverde
+                                werk. Licenties van derden (zoals fonts of
+                                software) blijven van toepassing. De website
+                                wordt opgeleverd in een Cloudflare-account op
+                                naam van de opdrachtgever. Wij kunnen als
+                                beheerder worden toegevoegd; de opdrachtgever
+                                kan deze toegang op elk moment intrekken.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 09. Aansprakelijkheid -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >09.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Aansprakelijkheid
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                KNAP GEMAAKT. is niet aansprakelijk voor
                                 indirecte schade of gevolgschade. Onze
                                 aansprakelijkheid is beperkt tot het bedrag van
-                                de factuur.
+                                de laatst betaalde factuur voor de betreffende
+                                dienst.
                             </p>
-                        </section>
+                        </div>
                     </div>
-                </div>
-            </BentoItem>
-        </BentoGrid>
+                </section>
+
+                <!-- 10. Overmacht & Recht -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >10.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Overig
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                In geval van overmacht mogen verplichtingen
+                                worden opgeschort zolang de overmacht duurt.
+                            </p>
+                            <p class="mt-4">
+                                Op alle overeenkomsten is Nederlands recht van
+                                toepassing. Geschillen worden voorgelegd aan de
+                                bevoegde rechter van de Rechtbank Gelderland.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </main>
 </Layout>

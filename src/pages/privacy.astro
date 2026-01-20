@@ -1,78 +1,357 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import BentoGrid from "../components/BentoGrid.astro";
-import BentoItem from "../components/BentoItem.astro";
 ---
 
 <Layout title="Privacyverklaring | Knap Gemaakt">
     <main class="min-h-screen bg-canvas p-4 md:p-8">
-        <BentoGrid class="h-auto">
-            <BentoItem colSpan="md:col-span-12" className="p-8 md:p-12">
-                <div class="max-w-3xl mx-auto space-y-8">
-                    <h1
-                        class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8"
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <header class="mb-16 md:mb-32 pt-12 md:pt-24">
+                <h1
+                    class="text-[12vw] md:text-9xl font-black uppercase tracking-tighter mb-8 leading-[0.85] break-words"
+                >
+                    Privacy<br />Verklaring
+                </h1>
+                <div
+                    class="flex flex-col md:flex-row md:items-center gap-4 text-sm font-mono uppercase tracking-widest text-ink/60 border-t border-ink/10 pt-6"
+                >
+                    <span class="bg-acid px-2 py-1 text-black font-bold text-xs"
+                        >Versie 2.1</span
                     >
-                        Privacyverklaring
-                    </h1>
-
-                    <div class="prose prose-lg prose-invert">
-                        <section class="space-y-4">
-                            <h2
-                                class="text-2xl font-bold uppercase tracking-tight"
-                            >
-                                Gegevens die wij verwerken
-                            </h2>
-                            <p class="text-ink/70">
-                                Wij verwerken persoonsgegevens die je aan ons
-                                verstrekt via het contactformulier of bij het
-                                aangaan van een overeenkomst (naam, e-mail,
-                                telefoonnummer, bedrijfsgegevens).
-                            </p>
-                        </section>
-
-                        <section class="space-y-4">
-                            <h2
-                                class="text-2xl font-bold uppercase tracking-tight"
-                            >
-                                Doel van verwerking
-                            </h2>
-                            <p class="text-ink/70">
-                                Wij gebruiken deze gegevens uitsluitend om onze
-                                diensten te leveren, contact met je op te nemen,
-                                en te voldoen aan wettelijke verplichtingen.
-                            </p>
-                        </section>
-
-                        <section class="space-y-4">
-                            <h2
-                                class="text-2xl font-bold uppercase tracking-tight"
-                            >
-                                Bewaartermijn
-                            </h2>
-                            <p class="text-ink/70">
-                                Wij bewaren je gegevens niet langer dan strikt
-                                nodig is om de doelen te realiseren waarvoor je
-                                gegevens worden verzameld.
-                            </p>
-                        </section>
-
-                        <section class="space-y-4">
-                            <h2
-                                class="text-2xl font-bold uppercase tracking-tight"
-                            >
-                                Delen met derden
-                            </h2>
-                            <p class="text-ink/70">
-                                Knap Gemaakt verkoopt jouw gegevens niet aan
-                                derden en zal deze uitsluitend verstrekken
-                                indien dit nodig is voor de uitvoering van onze
-                                overeenkomst met jou of om te voldoen aan een
-                                wettelijke verplichting.
-                            </p>
-                        </section>
-                    </div>
+                    <span class="hidden md:inline">&mdash;</span>
+                    <span>Laatst bijgewerkt: 20 Januari 2026</span>
                 </div>
-            </BentoItem>
-        </BentoGrid>
+            </header>
+
+            <!-- Legal Clauses -->
+            <div class="space-y-0 border-t border-ink/10">
+                <!-- 01. Wie wij zijn -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >01.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Wie wij zijn
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Summit Labs, handelend onder de naam <strong
+                                    class="text-ink">KNAP GEMAAKT.</strong
+                                >, gevestigd te Fran&ccedil;oise de Lanoistraat 9, 4116
+                                ET Buren.
+                            </p>
+                            <ul
+                                class="list-none pl-0 space-y-2 font-mono text-base text-ink/60 mt-6"
+                            >
+                                <li>KvK: 73652377</li>
+                                <li>BTW: NL002383577B12</li>
+                                <li>E-mail: legal@knapgemaakt.nl</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 02. Gegevens -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >02.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Gegevens
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Wij verwerken zakelijke persoonsgegevens die je
+                                aan ons verstrekt of die ontstaan bij het
+                                gebruik van onze diensten.
+                            </p>
+                            <ul class="list-disc pl-5 space-y-2 mt-4">
+                                <li>Naam en bedrijfsgegevens</li>
+                                <li>E-mailadres en telefoonnummer</li>
+                                <li>Branche en website-adres (optioneel)</li>
+                                <li>Afspraak- en boekingsgegevens</li>
+                                <li>Communicatie en correspondentie</li>
+                                <li>Betaalgegevens (via Mollie)</li>
+                                <li>
+                                    Technische gegevens (zoals IP-adres en logs)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 03. Doeleinden -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >03.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Doeleinden
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>Wij verwerken gegevens uitsluitend voor:</p>
+                            <ul class="list-disc pl-5 space-y-2 mt-4">
+                                <li>Het uitvoeren van de overeenkomst</li>
+                                <li>Het plannen van afspraken en contact</li>
+                                <li>Facturatie en administratie</li>
+                                <li>Beveiliging en misbruikpreventie</li>
+                                <li>
+                                    Wettelijke verplichtingen (zoals de fiscus)
+                                </li>
+                            </ul>
+                            <p class="mt-6">
+                                De grondslagen zijn uitvoering van de
+                                overeenkomst, wettelijke verplichtingen en ons
+                                gerechtvaardigd belang (zoals bedrijfsvoering en
+                                beveiliging). Wij gebruiken jouw gegevens niet
+                                voor reclame, retargeting of profilering.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 04. Delen -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >04.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Derden
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Wij delen gegevens alleen met partijen die nodig
+                                zijn voor onze dienstverlening. Met verwerkers
+                                sluiten wij verwerkersovereenkomsten waar nodig.
+                            </p>
+                            <ul class="list-disc pl-5 space-y-2 mt-4">
+                                <li>Cloudflare (hosting en database D1)</li>
+                                <li>Mollie (betalingen via iDEAL en SEPA)</li>
+                                <li>
+                                    Resend (verzenden van afspraakbevestigingen)
+                                </li>
+                                <li>Google Calendar (agenda-afspraken)</li>
+                                <li>
+                                    n8n (zelf gehoste workflow-automatisering)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 05. Buiten EER -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >05.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Internationaal
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Sommige verwerkers kunnen gegevens buiten de
+                                Europese Economische Ruimte verwerken. In dat
+                                geval zorgen wij voor passende waarborgen, zoals
+                                standaardcontractbepalingen.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 06. Bewaartermijnen -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >06.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Termijnen
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Als er geen overeenkomst tot stand komt, bewaren
+                                wij aanvraag- en boekingsgegevens maximaal 6
+                                maanden. Voor klanten bewaren wij gegevens die
+                                nodig zijn voor de administratie en belasting 7
+                                jaar.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 07. Beveiliging -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >07.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Beveiliging
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Wij nemen passende technische en
+                                organisatorische maatregelen om gegevens te
+                                beveiligen tegen verlies, ongeoorloofde toegang
+                                of misbruik.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 08. Rechten -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >08.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Rechten
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Je hebt recht op inzage, correctie,
+                                verwijdering, beperking, overdraagbaarheid en
+                                bezwaar. Je kunt een verzoek indienen via <a
+                                    href="mailto:legal@knapgemaakt.nl"
+                                    class="text-ink underline decoration-acid decoration-2 underline-offset-4 hover:bg-acid hover:decoration-transparent transition-colors"
+                                    >legal@knapgemaakt.nl</a
+                                >.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 09. Opslag -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >09.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Opslag
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Wij gebruiken geen analytics of tracking
+                                cookies. Voor het formulier kunnen we lokale
+                                opslag (localStorage) gebruiken om je invoer te
+                                bewaren op je eigen apparaat. Je kunt dit zelf
+                                wissen in je browser.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 10. Klachten -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/40"
+                            >10.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Klachten
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Heb je een klacht over de verwerking van je
+                                gegevens, neem dan contact op via
+                                <a
+                                    href="mailto:legal@knapgemaakt.nl"
+                                    class="text-ink underline decoration-acid decoration-2 underline-offset-4 hover:bg-acid hover:decoration-transparent transition-colors"
+                                    >legal@knapgemaakt.nl</a
+                                >. Je kunt ook een klacht indienen bij de
+                                Autoriteit Persoonsgegevens.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </main>
 </Layout>
