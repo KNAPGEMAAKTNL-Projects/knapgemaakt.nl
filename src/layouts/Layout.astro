@@ -5,6 +5,10 @@ import "@fontsource/inter-tight/700.css";
 import "@fontsource/inter-tight/900.css";
 import "../styles/global.css";
 import { ViewTransitions } from "astro:transitions";
+import { SmoothScroll } from "../components/SmoothScroll";
+
+// Import critical font file for preloading (hero text uses 900 weight)
+import interTight900 from "@fontsource/inter-tight/files/inter-tight-latin-900-normal.woff2";
 
 interface Props {
   title: string;
@@ -23,6 +27,8 @@ const { title } = Astro.props;
     />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon_final.svg" />
+    <!-- Preload critical font for hero text (LCP optimization) -->
+    <link rel="preload" href={interTight900} as="font" type="font/woff2" crossorigin />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
@@ -31,21 +37,7 @@ const { title } = Astro.props;
     class="bg-canvas text-ink antialiased overflow-x-hidden selection:bg-acid selection:text-black"
   >
     <slot />
-
-    <script>
-      import Lenis from "lenis";
-
-      const lenis = new Lenis({
-        lerp: 0.1, // "Viscous" feel
-        smoothWheel: true,
-      });
-
-      function raf(time: number) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-
-      requestAnimationFrame(raf);
-    </script>
+    <!-- Defer smooth scroll initialization until browser is idle (FCP optimization) -->
+    <SmoothScroll client:idle />
   </body>
 </html>
