@@ -378,32 +378,43 @@ import { TextReveal } from "../components/TextReveal";
     }
 
     const STORAGE_KEY = "kg_aanvraag_form";
+    let pageInitialized = false;
+    let calendarMounted = false;
 
-    const form = document.getElementById("aanvraag-form") as HTMLFormElement;
-    const pageHeader = document.getElementById("page-header") as HTMLDivElement;
-    const submitBtn = document.getElementById(
-        "submit-btn",
-    ) as HTMLButtonElement;
-    const btnText = document.getElementById("btn-text") as HTMLSpanElement;
-    const btnArrow = document.getElementById("btn-arrow") as HTMLSpanElement;
-    const btnLoading = document.getElementById(
-        "btn-loading",
-    ) as HTMLSpanElement;
-    const successMessage = document.getElementById(
-        "success-message",
-    ) as HTMLDivElement;
-    const errorMessage = document.getElementById(
-        "error-message",
-    ) as HTMLDivElement;
-    const websiteUrlContainer = document.getElementById(
-        "website-url-container",
-    ) as HTMLDivElement;
-    const calPlaceholder = document.getElementById(
-        "cal-placeholder",
-    ) as HTMLDivElement;
-    const calendarContainer = document.getElementById(
-        "calendar-container",
-    ) as HTMLDivElement;
+    function initAanvragenPage() {
+        const form = document.getElementById("aanvraag-form") as HTMLFormElement;
+        if (!form) return; // Not on aanvragen page
+
+        // Prevent duplicate initialization on same page instance
+        if (pageInitialized && form.dataset.initialized === "true") return;
+        form.dataset.initialized = "true";
+        pageInitialized = true;
+        calendarMounted = false; // Reset for new page load
+
+        const pageHeader = document.getElementById("page-header") as HTMLDivElement;
+        const submitBtn = document.getElementById(
+            "submit-btn",
+        ) as HTMLButtonElement;
+        const btnText = document.getElementById("btn-text") as HTMLSpanElement;
+        const btnArrow = document.getElementById("btn-arrow") as HTMLSpanElement;
+        const btnLoading = document.getElementById(
+            "btn-loading",
+        ) as HTMLSpanElement;
+        const successMessage = document.getElementById(
+            "success-message",
+        ) as HTMLDivElement;
+        const errorMessage = document.getElementById(
+            "error-message",
+        ) as HTMLDivElement;
+        const websiteUrlContainer = document.getElementById(
+            "website-url-container",
+        ) as HTMLDivElement;
+        const calPlaceholder = document.getElementById(
+            "cal-placeholder",
+        ) as HTMLDivElement;
+        const calendarContainer = document.getElementById(
+            "calendar-container",
+        ) as HTMLDivElement;
 
     // Normalize URL - add https:// if missing
     function normalizeUrl(url: string): string | null {
@@ -495,9 +506,6 @@ import { TextReveal } from "../components/TextReveal";
 
     // Restore on page load
     restoreFormData();
-
-    // Track if calendar has been mounted
-    let calendarMounted = false;
 
     // Dynamically mount the React calendar component
     async function mountCalendar() {
@@ -658,4 +666,9 @@ import { TextReveal } from "../components/TextReveal";
             setLoading(false);
         }
     });
+    }
+
+    // Initialize on first load and after view transitions
+    initAanvragenPage();
+    document.addEventListener("astro:page-load", initAanvragenPage);
 </script>
