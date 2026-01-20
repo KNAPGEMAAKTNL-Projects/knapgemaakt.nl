@@ -19,16 +19,45 @@ interface HorizontalProjectScrollProps {
 
 export function HorizontalProjectScroll({ projects, className }: HorizontalProjectScrollProps) {
     const targetRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [scrollRange, setScrollRange] = React.useState(0);
+
     const { scrollYProgress } = useScroll({
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["2%", "-85%"]);
+    React.useEffect(() => {
+        const updateScrollRange = () => {
+            if (containerRef.current) {
+                const totalWidth = containerRef.current.scrollWidth;
+                const viewportWidth = window.innerWidth;
+                setScrollRange(totalWidth - viewportWidth);
+            }
+        };
+
+        // Initial measurement
+        updateScrollRange();
+
+        // Measurement after a short delay to ensure fonts/images behave (optional but helpful)
+        const timeoutId = setTimeout(updateScrollRange, 100);
+
+        window.addEventListener("resize", updateScrollRange);
+        return () => {
+            window.removeEventListener("resize", updateScrollRange);
+            clearTimeout(timeoutId);
+        };
+    }, [projects]);
+
+    const x = useTransform(scrollYProgress, [0, 1], ["0px", `-${scrollRange}px`]);
 
     return (
         <section ref={targetRef} className={cn("relative h-[300vh] bg-canvas", className)}>
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <motion.div style={{ x }} className="flex gap-12 md:gap-24 pl-4 md:pl-24">
+                <motion.div
+                    ref={containerRef}
+                    style={{ x }}
+                    className="flex gap-12 md:gap-24 pl-4 md:pl-24"
+                >
                     <div className="flex flex-col justify-center min-w-[30vw] md:min-w-[20vw] pr-8 md:pr-16">
                         <h2 className="text-4xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6">
                             Ons <span className="text-electric">Portfolio</span>
