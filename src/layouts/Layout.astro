@@ -1,10 +1,6 @@
 ---
-// Use latin-only subsets with font-display: optional to prevent CLS
-// Import only latin subset CSS files (smaller, covers Dutch language)
-import "@fontsource/inter-tight/latin-400.css";
-import "@fontsource/inter-tight/latin-500.css";
-import "@fontsource/inter-tight/latin-700.css";
-import "@fontsource/inter-tight/latin-900.css";
+// Font CSS is handled by custom @font-face declarations below with font-display: optional
+// This avoids duplicate declarations from @fontsource CSS imports
 import "../styles/global.css";
 import { ViewTransitions } from "astro:transitions";
 import { SmoothScroll } from "../components/SmoothScroll";
