@@ -6,7 +6,17 @@ import OfferSection from "../components/OfferSection.astro";
 import ConceptShowcase from "../components/ConceptShowcase.astro";
 import { TextReveal } from "../components/TextReveal";
 
+export const prerender = true;
+
 export function getStaticPaths() {
+    // Get available city images at build time
+    const cityImages = import.meta.glob("/public/cities/*.webp");
+    const availableCityImages = new Set(
+        Object.keys(cityImages).map((path) =>
+            path.replace("/public/cities/", "").replace(".webp", ""),
+        ),
+    );
+
     const cities = [
         "Culemborg",
         "Utrecht",
@@ -22,25 +32,16 @@ export function getStaticPaths() {
 
     return cities.map((city) => ({
         params: { city: city.toLowerCase() },
-        props: { city },
+        props: {
+            city,
+            hasCityImage: availableCityImages.has(city.toLowerCase()),
+        },
     }));
 }
 
-const { city } = Astro.props;
-
-// Check if specific city image exists
-import fs from "node:fs";
-import path from "node:path";
+const { city, hasCityImage } = Astro.props;
 
 const cityImageFilename = `${city.toLowerCase()}.webp`;
-const cityImagePath = path.join(
-    process.cwd(),
-    "public",
-    "cities",
-    cityImageFilename,
-);
-const hasCityImage = fs.existsSync(cityImagePath);
-
 const mapImage = hasCityImage
     ? `/cities/${cityImageFilename}`
     : "/city_map.webp";
