@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.3.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.2.0...v1.3.0) (2026-01-20)
+
+
+### Features
+
+* add portfolio section with horizontal scroll ([#36](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/36)) ✨ ([0aa65d4](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/0aa65d4964d867be44e688bc718eb3e1150c339f))
+* add Schildersbedrijf Visser concept project to portfolio ([#37](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/37)) ✨ ([8b8e13e](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/8b8e13e6ed082cd9529d911ce87b6c027ff6894d))
+
+
+### Bug Fixes
+
+* calendar not appearing when entering aanvragen from location pages ([#41](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/41)) ([3b97a0e](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/3b97a0e2c96e8e389cec354617cb31bb4d623fdd))
+* normalize datetime comparisons in booking queries ([#28](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/28)) ([1431fed](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/1431fedea059c7f088ba06874e38aa13b7db72ad))
+* resolve 500 error on city landing pages ([#34](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/34)) 🐛 ([f3580c3](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/f3580c3db498649c8f49836eb3485a06d348cb81)), closes [#33](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/33)
+* update Fitcity Culemborg label from 'live' to 'concept' ([#35](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/35)) ([f698e6a](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/f698e6afff57be14484f9bf2c7a135610eb51041))
+
 ## [1.2.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.1.1...v1.2.0) (2026-01-20)
 
 
