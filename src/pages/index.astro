@@ -62,18 +62,18 @@ import { TextReveal } from "../components/TextReveal";
 				>
 					<div class="flex flex-col items-center justify-center py-4">
 						<TextReveal
-							client:load
+							client:visible
 							text="Jouw Nieuwe Website."
 							className="text-4xl md:text-9xl font-bold uppercase tracking-tighter leading-[0.9] text-center"
 						/>
 						<TextReveal
-							client:load
+							client:visible
 							text="In 7 Dagen."
 							delay={0.2}
 							className="text-[10vw] md:text-9xl font-bold uppercase tracking-tighter leading-[0.9] text-center"
 						/>
 						<TextReveal
-							client:load
+							client:visible
 							text="€595."
 							delay={0.4}
 							className="text-6xl md:text-9xl font-bold uppercase tracking-tighter leading-[0.9] text-center text-electric"
@@ -87,7 +87,7 @@ import { TextReveal } from "../components/TextReveal";
 					rowSpan="md:row-span-6"
 					className="relative p-0 border-l border-ink/10 md:border-l-0 overflow-hidden"
 				>
-					<VisualCard client:load />
+					<VisualCard client:visible />
 				</BentoItem>
 			</BentoGrid>
 		</div>
