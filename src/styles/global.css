@@ -1,12 +1,23 @@
 @import "tailwindcss";
 
+/* Metric-adjusted fallback font to minimize CLS when Inter Tight loads
+   These values approximate Inter Tight's metrics using Arial as base */
+@font-face {
+  font-family: 'Inter Tight Fallback';
+  src: local('Arial');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 @theme {
   --color-canvas: #FFFFFF;
   --color-ink: #000000;
   --color-acid: #CCFF00;
   --color-electric: #7C3AED;
 
-  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-sans: "Inter Tight", "Inter Tight Fallback", system-ui, sans-serif;
   --font-display: "Helvetica Now Display", "Inter Tight", sans-serif;
 }
 
