@@ -8,7 +8,7 @@ import { VisualCard } from "../components/VisualCard";
 import OfferSection from "../components/OfferSection.astro";
 import HorizontalProjectScroll from "../components/HorizontalProjectScroll.astro";
 import Footer from "../components/Footer.astro";
-import { TextReveal } from "../components/TextReveal";
+import TextRevealCSS from "../components/TextRevealCSS.astro";
 ---
 
 <Layout title="KNAP GEMAAKT.">
@@ -63,22 +63,19 @@ import { TextReveal } from "../components/TextReveal";
 					className="flex items-center justify-center p-8 md:p-16 border-t border-ink/10 md:border-t-0"
 				>
 					<div class="flex flex-col items-center justify-center py-4">
-						<TextReveal
-							client:visible
+						<TextRevealCSS
 							text="Jouw Nieuwe Website."
-							className="text-4xl md:text-9xl font-bold uppercase tracking-tighter leading-[0.9] text-center"
+							class="text-4xl md:text-9xl font-bold uppercase tracking-tighter leading-[0.9] text-center"
 						/>
-						<TextReveal
-							client:visible
+						<TextRevealCSS
 							text="In 7 Dagen."
 							delay={0.2}
-							className="text-[10vw] md:text-9xl font-bold uppercase tracking-tighter leading-[0.9] text-center"
+							class="text-[10vw] md:text-9xl font-bold uppercase tracking-tighter leading-[0.9] text-center"
 						/>
-						<TextReveal
-							client:visible
+						<TextRevealCSS
 							text="€595."
 							delay={0.4}
-							className="text-6xl md:text-9xl font-bold uppercase tracking-tighter leading-[0.9] text-center text-electric"
+							class="text-6xl md:text-9xl font-bold uppercase tracking-tighter leading-[0.9] text-center text-electric"
 						/>
 					</div>
 				</BentoItem>

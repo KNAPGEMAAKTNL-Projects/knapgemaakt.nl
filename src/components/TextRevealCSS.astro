@@ -1,0 +1,49 @@
+---
+interface Props {
+  text: string;
+  class?: string;
+  delay?: number;
+  as?: 'h1' | 'h2' | 'h3' | 'div' | 'span';
+}
+
+const { text, class: className = '', delay = 0, as: Tag = 'div' } = Astro.props;
+const words = text.split(' ');
+const baseDelay = delay;
+const staggerDelay = 0.12; // seconds between each word
+---
+
+<Tag class:list={['inline-block', className]}>
+  {words.map((word, index) => (
+    <span
+      class="text-reveal-word"
+      style={`animation-delay: ${baseDelay + (index * staggerDelay)}s`}
+    >
+      {word}
+    </span>
+  ))}
+</Tag>
+
+<style>
+  @keyframes textReveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .text-reveal-word {
+    display: inline-block;
+    margin-right: 0.25em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: textReveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .text-reveal-word:last-child {
+    margin-right: 0;
+  }
+</style>
