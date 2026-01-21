@@ -1,10 +1,15 @@
 # knapgemaakt.nl
 
-A modern B2B booking system with integrated calendar functionality built with Astro, React, and Tailwind CSS.
+The marketing website for **Knap Gemaakt**, a Dutch web design agency delivering professional websites in 7 days for €595.
 
 ## Overview
 
-knapgemaakt.nl is a professional booking platform designed for service providers and their clients. The system features an in-house calendar booking interface with real-time scheduling capabilities.
+Knap Gemaakt ("Beautifully Made" in Dutch) is a web design agency targeting Dutch small businesses who need a professional online presence without the long timelines and high costs of traditional agencies. The website showcases:
+
+- **Value proposition**: Professional websites delivered in 7 days for a fixed price of €595
+- **Portfolio**: Horizontal-scrolling showcase of completed projects
+- **Service offerings**: Clear breakdown of what's included
+- **Request form**: Simple intake process for potential clients
 
 ## Tech Stack
 
@@ -20,10 +25,10 @@ knapgemaakt.nl is a professional booking platform designed for service providers
 
 ```
 /
-├── public/              # Static assets (images, robots.txt, etc.)
+├── public/              # Static assets (images, favicon, robots.txt)
 ├── src/
 │   ├── components/      # Reusable React and Astro components
-│   ├── layouts/         # Page layouts
+│   ├── layouts/         # Page layouts (includes SEO meta tags)
 │   ├── lib/             # Utility functions and helpers
 │   ├── pages/           # Route pages (auto-routed by Astro)
 │   └── styles/          # Global stylesheets
@@ -72,7 +77,7 @@ Preview your production build locally before deploying.
 
 ## Deployment
 
-This project is deployed via Cloudflare Pages. Pushes to the `main` branch automatically trigger production deployments.
+This project is deployed via Cloudflare Pages. Pushes to the `master` branch automatically trigger production deployments.
 
 ## License
 
