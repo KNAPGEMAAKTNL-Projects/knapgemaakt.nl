@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.4.0...v1.5.0) (2026-01-22)
+
+
+### Features
+
+* update aanvragen confirmation copy for self-booking flow ([#81](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/81)) ✨ ([ae10af4](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/ae10af429ad586370f647f1a07bcd32bc6b015f5))
+* website design overhaul ✨ ([#89](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/89)) ([0c8cccd](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/0c8cccd98e1dea3039b90289ebaeede0aa9f2bee)), closes [#88](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/88)
+
 ## [1.4.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.3.0...v1.4.0) (2026-01-21)
 
 
