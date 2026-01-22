@@ -81,8 +81,7 @@ const ogImageURL = new URL(image, Astro.site);
     `} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
-    <!-- Prevent same-page navigation and rapid double-clicks from crashing ViewTransitions -->
+    <!-- Navigation guard MUST be before ViewTransitions to intercept clicks first -->
     <script is:inline>
       // Only initialize once (ViewTransitions re-runs is:inline scripts)
       if (!window.__navGuardInit) {
@@ -117,6 +116,7 @@ const ogImageURL = new URL(image, Astro.site);
         }, { capture: true });
       }
     </script>
+    <ViewTransitions />
   </head>
   <body
     class="bg-canvas text-ink antialiased overflow-x-hidden selection:bg-acid selection:text-black"
