@@ -1,3 +1,6 @@
+import { getAllProjects } from "../data/projects";
+import { getAllCities } from "../data/cities";
+
 const site = import.meta.env.SITE ?? "https://knapgemaakt.nl";
 
 // Current date in ISO format for lastmod
@@ -19,34 +22,17 @@ const staticPages: PageEntry[] = [
     { path: "/sitemap", lastmod: today, changefreq: "weekly", priority: "0.5" },
 ];
 
-const projects = [
-    "schildersbedrijf-visser",
-    "fitcity-culemborg",
-    "byshakir",
-];
-
-const projectPages: PageEntry[] = projects.map((slug) => ({
-    path: `/project/${slug}`,
+// Dynamically generate project pages from data
+const projectPages: PageEntry[] = getAllProjects().map((project) => ({
+    path: `/project/${project.slug}`,
     lastmod: today,
     changefreq: "monthly" as const,
     priority: "0.7",
 }));
 
-const cities = [
-    "Culemborg",
-    "Utrecht",
-    "Houten",
-    "Nieuwegein",
-    "Geldermalsen",
-    "Tiel",
-    "Vianen",
-    "IJsselstein",
-    "Beesd",
-    "Buren",
-];
-
-const cityPages: PageEntry[] = cities.map((city) => ({
-    path: `/webdesign-${city.toLowerCase()}`,
+// Dynamically generate city pages from data
+const cityPages: PageEntry[] = getAllCities().map((city) => ({
+    path: `/webdesign-${city.slug}`,
     lastmod: today,
     changefreq: "weekly" as const,
     priority: "0.8",
