@@ -8,6 +8,9 @@ import ProcessSection from "../components/ProcessSection.astro";
 import Footer from "../components/Footer.astro";
 import TextRevealCSS from "../components/TextRevealCSS.astro";
 import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
+import { getAllCities } from "../data/cities";
+
+const cities = getAllCities();
 ---
 
 <Layout title="Webdesign Bureau Nederland | Website Laten Maken - €595 in 7 Dagen">
@@ -172,10 +175,48 @@ import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 			</div>
 		</section>
 
-		<!-- FAQ SECTION (SEO Content) -->
-		<section id="faq" class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
+		<!-- SERVICE AREA SECTION -->
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
 			<div class="max-w-6xl xl:max-w-7xl mx-auto">
 				<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-6">
+					[ Ons Werkgebied ]
+				</div>
+				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] mb-6 max-w-3xl">
+					Webdesign in Heel Nederland
+				</h2>
+				<p class="text-canvas/70 text-lg leading-relaxed max-w-2xl mb-12">
+					Vanuit Buren bedienen we ondernemers door heel Nederland. Of je nu in Utrecht zit
+					of in een klein dorp in de Betuwe — wij bouwen jouw website. Bekijk onze lokale pagina's
+					voor meer informatie over webdesign in jouw regio.
+				</p>
+
+				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+					{cities.map((city) => (
+						<a
+							href={`/webdesign-${city.slug}`}
+							class="group px-4 py-3 bg-canvas/5 border border-canvas/10 hover:bg-acid hover:border-acid transition-all duration-300"
+						>
+							<span class="block font-bold text-canvas group-hover:text-ink transition-colors">
+								{city.name}
+							</span>
+							<span class="block text-xs font-mono text-canvas/50 group-hover:text-ink/60 transition-colors">
+								{city.region}
+							</span>
+						</a>
+					))}
+				</div>
+
+				<p class="text-canvas/50 text-sm mt-8 font-mono">
+					Staat jouw regio er niet bij? Geen probleem — we werken voor ondernemers in heel Nederland.
+					<a href="/aanvragen" class="text-acid hover:underline">Neem contact op</a> en we helpen je verder.
+				</p>
+			</div>
+		</section>
+
+		<!-- FAQ SECTION (SEO Content) -->
+		<section id="faq" class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+			<div class="max-w-6xl xl:max-w-7xl mx-auto">
+				<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40 mb-6">
 					[ Veelgestelde Vragen ]
 				</div>
 				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] mb-12 md:mb-16">
@@ -185,8 +226,8 @@ import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 				<div class="grid md:grid-cols-2 gap-8 md:gap-12">
 					<div class="space-y-8">
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-acid">Hoe werkt het proces?</h3>
-							<p class="text-canvas/70 leading-relaxed">
+							<h3 class="text-lg font-bold text-electric">Hoe werkt het proces?</h3>
+							<p class="text-ink/70 leading-relaxed">
 								Na je aanvraag plannen we een kort telefoongesprek om je wensen te bespreken.
 								Daarna gaan wij aan de slag. Binnen 7 dagen ontvang je het eerste ontwerp.
 								Na jouw feedback maken we de laatste aanpassingen en gaat je website live.
@@ -194,8 +235,8 @@ import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 						</div>
 
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-acid">Wat als ik niet tevreden ben?</h3>
-							<p class="text-canvas/70 leading-relaxed">
+							<h3 class="text-lg font-bold text-electric">Wat als ik niet tevreden ben?</h3>
+							<p class="text-ink/70 leading-relaxed">
 								Wij hanteren een 100% tevredenheidsgarantie. Vind je het niks? Dan krijg
 								je je geld terug. Geen discussie, geen gedoe. We willen alleen tevreden
 								klanten.
@@ -203,8 +244,8 @@ import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 						</div>
 
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-acid">Moet ik zelf teksten aanleveren?</h3>
-							<p class="text-canvas/70 leading-relaxed">
+							<h3 class="text-lg font-bold text-electric">Moet ik zelf teksten aanleveren?</h3>
+							<p class="text-ink/70 leading-relaxed">
 								Nee, wij schrijven de teksten voor je. We onderzoeken jouw branche en
 								concurrenten, en leveren pakkende content die jouw klanten aanspreekt.
 								Wil je liever eigen teksten gebruiken of aanpassen? Geen probleem, jij
@@ -215,8 +256,8 @@ import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 
 					<div class="space-y-8">
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-acid">Is het beheerpakket verplicht?</h3>
-							<p class="text-canvas/70 leading-relaxed">
+							<h3 class="text-lg font-bold text-electric">Is het beheerpakket verplicht?</h3>
+							<p class="text-ink/70 leading-relaxed">
 								Nee, je website werkt prima zonder. Hosting is altijd inbegrepen. Met het
 								beheerpakket van €49/maand krijg je: onbeperkte kleine aanpassingen (nieuwe
 								content, foto's, blogposts), technische updates, uptime-monitoring en backups.
@@ -225,16 +266,16 @@ import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 						</div>
 
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-acid">Kan ik later uitbreiden?</h3>
-							<p class="text-canvas/70 leading-relaxed">
+							<h3 class="text-lg font-bold text-electric">Kan ik later uitbreiden?</h3>
+							<p class="text-ink/70 leading-relaxed">
 								Absoluut. Mocht je later extra pagina's, functies of een webshop willen,
 								dan bespreken we de mogelijkheden. We groeien graag mee met jouw bedrijf.
 							</p>
 						</div>
 
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-acid">Werken jullie door heel Nederland?</h3>
-							<p class="text-canvas/70 leading-relaxed">
+							<h3 class="text-lg font-bold text-electric">Werken jullie door heel Nederland?</h3>
+							<p class="text-ink/70 leading-relaxed">
 								Ja, wij werken voor ondernemers in heel Nederland. Vanuit Buren bedienen
 								we klanten in Utrecht, Gelderland, Noord-Brabant en daarbuiten. Alles gaat
 								digitaal, dus locatie maakt niet uit.
@@ -244,13 +285,13 @@ import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 				</div>
 
 				<!-- Final CTA -->
-				<div class="mt-16 pt-12 border-t border-canvas/10 text-center">
+				<div class="mt-16 pt-12 border-t border-ink/10 text-center">
 					<p class="text-xl md:text-2xl font-bold mb-6">
 						Klaar om te beginnen?
 					</p>
 					<a
 						href="/aanvragen"
-						class="bg-acid text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-canvas hover:text-ink transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+						class="bg-acid text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-ink hover:text-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
 					>
 						<span>Plan Je Gesprek</span>
 						<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>

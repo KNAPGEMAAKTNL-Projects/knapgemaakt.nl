@@ -8,6 +8,17 @@ export interface FAQItem {
 	answer: string;
 }
 
+export interface CityStats {
+	/** Number of registered businesses/entrepreneurs */
+	businesses?: string;
+	/** Key industry or economic sector */
+	mainIndustry?: string;
+	/** Interesting local economic fact */
+	economicFact?: string;
+	/** Year the city was founded or received city rights */
+	founded?: string;
+}
+
 export interface CityData {
 	name: string;
 	slug: string;
@@ -18,6 +29,10 @@ export interface CityData {
 	nearbyAreas: string[]; // Surrounding areas we also serve
 	landmarks?: string; // Optional: notable landmarks or areas
 	population?: string; // Optional: city size context
+	/** Unique statistics and facts about the city's economy */
+	stats?: CityStats;
+	/** Specific industries or business types common in this city */
+	targetIndustries?: string[];
 	/** FAQ items for this city's location page (SEO) */
 	faqs: FAQItem[];
 	/** Related case study slug if available */
@@ -38,11 +53,18 @@ export const cities: Record<string, CityData> = {
 			"Wij kennen Culemborg als geen ander – het is onze thuisbasis. We begrijpen de lokale markt, weten wat werkt voor ondernemers aan de Markt of in het Blauwe Huis-gebied, en spreken de taal van de Culemborgse ondernemer.",
 		nearbyAreas: ["Beusichem", "Everdingen", "Schalkwijk", "Leerdam"],
 		landmarks: "Binnenpoort, Markt, Barbarakerk",
+		stats: {
+			businesses: "2.800+ ondernemers",
+			mainIndustry: "Detailhandel & Horeca",
+			economicFact: "De binnenstad telt meer dan 150 winkels en horecazaken op loopafstand",
+			founded: "Stadsrechten sinds 1318"
+		},
+		targetIndustries: ["Horeca", "Retail", "Persoonlijke dienstverlening", "Gezondheid & Fitness"],
 		relatedProject: "fitcity-culemborg",
 		faqs: [
 			{
 				question: "Wat kost een website laten maken in Culemborg?",
-				answer: "Een professionele website kost €595 eenmalig. Dit is een vaste prijs zonder verborgen kosten. Hosting is inbegrepen, en je website is binnen 7 dagen online."
+				answer: "Een professionele website kost €595 eenmalig. Dit is een vaste prijs zonder verborgen kosten. Hosting is inbegrepen, en je website is binnen 7 dagen online. Voor ondernemers aan de Markt of in de binnenstad is dit een fractie van wat grotere bureaus uit Utrecht vragen."
 			},
 			{
 				question: "Hoe lang duurt het om een website te maken?",
@@ -50,11 +72,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Werken jullie alleen voor bedrijven in Culemborg?",
-				answer: "Nee, we werken voor ondernemers in heel Nederland. We kennen Rivierenland goed, maar locatie maakt niet uit — alles gaat digitaal."
+				answer: "Nee, we werken voor ondernemers in heel Nederland. Culemborg is onze thuisbasis, dus we kennen de lokale markt als geen ander. Van de Markt tot bedrijventerrein Pavijen — we begrijpen wat Culemborgse ondernemers nodig hebben."
 			},
 			{
-				question: "Is hosting inbegrepen bij de website?",
-				answer: "Ja, hosting is altijd inbegrepen. Je website draait op snelle, veilige servers zonder extra maandelijkse kosten. Optioneel kun je een beheerpakket (€49/maand) afnemen voor updates en aanpassingen."
+				question: "Hebben jullie ervaring met fitness- en sportbedrijven?",
+				answer: "Ja, we hebben onder andere de website van FitCity Culemborg gemaakt — een sportschool in het hart van de stad. We weten hoe je een fitnesswebsite bouwt die leden aantrekt en direct online inschrijvingen mogelijk maakt."
 			},
 			{
 				question: "Kan ik mijn website later uitbreiden?",
@@ -75,10 +97,17 @@ export const cities: Record<string, CityData> = {
 			"Utrecht kent vele gezichten: van de horeca langs de Oudegracht tot de creatieve bureaus op de Wharf, van ZZP'ers in Lombok tot retailers in Hoog Catharijne. Wij bouwen websites die passen bij jouw specifieke Utrechtse doelgroep.",
 		nearbyAreas: ["De Bilt", "Zeist", "Bunnik", "Maarssen"],
 		landmarks: "Domtoren, Oudegracht, Neude",
+		stats: {
+			businesses: "45.000+ ondernemers",
+			mainIndustry: "Creatieve sector & Tech",
+			economicFact: "Utrecht is de snelst groeiende startup-hub van Nederland na Amsterdam",
+			founded: "Stadsrechten sinds 1122"
+		},
+		targetIndustries: ["Startups", "Creatieve bureaus", "Horeca", "Consultancy", "Tech & SaaS"],
 		faqs: [
 			{
 				question: "Wat kost een website laten maken in Utrecht?",
-				answer: "Een professionele website kost €595 eenmalig. Vaste prijs, geen verborgen kosten. In Utrecht betaal je bij grote bureaus al snel €3.000-€5.000 voor hetzelfde resultaat."
+				answer: "Een professionele website kost €595 eenmalig. Vaste prijs, geen verborgen kosten. In Utrecht betaal je bij grote bureaus al snel €3.000-€5.000 voor hetzelfde resultaat. Wij leveren dezelfde kwaliteit voor een fractie van de prijs."
 			},
 			{
 				question: "Hoe snel kan mijn website online zijn?",
@@ -86,15 +115,15 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Werken jullie ook voor startups en ZZP'ers?",
-				answer: "Zeker. Veel van onze klanten zijn ZZP'ers en startups die een professionele uitstraling willen zonder enterprise-prijzen. Perfect voor de Utrechtse startup-scene."
+				answer: "Zeker. Van creatieve freelancers in Lombok tot tech-startups op het Utrecht Science Park — wij helpen ambitieuze ondernemers die een professionele uitstraling willen zonder enterprise-budgetten. Onze aanpak past perfect bij de Utrechtse startup-mentaliteit."
 			},
 			{
-				question: "Is hosting inbegrepen bij de website?",
-				answer: "Ja, hosting is altijd inbegrepen. Geen maandelijkse hostingkosten. Optioneel kun je een beheerpakket (€49/maand) afnemen voor updates en kleine aanpassingen."
+				question: "Kan ik met €595 concurreren met gevestigde Utrechtse bedrijven?",
+				answer: "Absoluut. Een dure website betekent niet automatisch een betere website. Wij bouwen met moderne technologie die sneller laadt en beter scoort in Google dan veel dure WordPress-sites. Jouw website zal er even professioneel uitzien als die van grote spelers."
 			},
 			{
-				question: "Hoe onderscheid ik me van de concurrentie in Utrecht?",
-				answer: "Met een snelle, moderne website die goed vindbaar is in Google. We bouwen geen trage WordPress-sites, maar razendsnelle websites die beter scoren dan je concurrenten."
+				question: "Hoe onderscheid ik me van de 45.000 andere ondernemers in Utrecht?",
+				answer: "Met een website die opvalt door snelheid, design en vindbaarheid. We optimaliseren je site voor lokale zoektermen, zodat Utrechters die zoeken naar jouw dienst jou vinden — niet je concurrent aan de Oudegracht."
 			}
 		],
 	},
@@ -111,6 +140,13 @@ export const cities: Record<string, CityData> = {
 			"Van het winkelcentrum Het Rond tot de bedrijventerreinen Doornkade en Loerik – Houten heeft een eigen dynamiek. Wij begrijpen dat Houtenaren waarde hechten aan kwaliteit en betrouwbaarheid boven de laagste prijs.",
 		nearbyAreas: ["Bunnik", "'t Goy", "Schalkwijk", "Nieuwegein"],
 		landmarks: "Het Rond, Castellum Hoge Woerd, Rondweg",
+		stats: {
+			businesses: "4.500+ ondernemers",
+			mainIndustry: "Zakelijke dienstverlening",
+			economicFact: "Houten groeide van 4.000 naar 50.000 inwoners in 40 jaar – uniek in Nederland",
+			founded: "Nieuwe stad sinds 1966"
+		},
+		targetIndustries: ["ZZP & Freelancers", "Coaches & Trainers", "Kinderopvang", "Bouw & Verbouw"],
 		faqs: [
 			{
 				question: "Wat kost een website laten maken in Houten?",
@@ -147,6 +183,13 @@ export const cities: Record<string, CityData> = {
 			"Nieuwegein is praktisch ingesteld. Ondernemers hier waarderen directheid en resultaat. Geen poespas, wel een website die doet wat 'ie moet doen: klanten aantrekken en converteren.",
 		nearbyAreas: ["IJsselstein", "Utrecht", "Houten", "Vianen"],
 		landmarks: "City Plaza, Fort Vreeswijk, Stadsplein",
+		stats: {
+			businesses: "6.200+ ondernemers",
+			mainIndustry: "MKB & Groothandel",
+			economicFact: "Nieuwegein heeft meer dan 35 hectare aan bedrijventerreinen met directe A2/A27 toegang",
+			founded: "Gemeente sinds 1971"
+		},
+		targetIndustries: ["Groothandel", "Logistiek", "Automotive", "Bouwbedrijven", "Installateurs"],
 		faqs: [
 			{
 				question: "Wat kost een website laten maken in Nieuwegein?",
@@ -183,6 +226,13 @@ export const cities: Record<string, CityData> = {
 			"De Betuwe kent een eigen mentaliteit: nuchter, betrouwbaar, en wars van opsmuk. Wij maken websites die bij deze cultuur passen – professioneel zonder pretentie, effectief zonder poespas.",
 		nearbyAreas: ["Beesd", "Meteren", "Buurmalsen", "Deil"],
 		landmarks: "Station Geldermalsen, Landgoed Doddendael",
+		stats: {
+			businesses: "2.400+ ondernemers",
+			mainIndustry: "Agribusiness & Transport",
+			economicFact: "Geldermalsen is een logistieke hub met IC-station en directe verbinding naar Randstad én Brabant",
+			founded: "Gemeente West Betuwe sinds 2019"
+		},
+		targetIndustries: ["Schilders & Klussenbedrijven", "Agrarisch", "Transport & Logistiek", "Ambachtelijke beroepen"],
 		relatedProject: "schildersbedrijf-visser",
 		faqs: [
 			{
@@ -220,27 +270,34 @@ export const cities: Record<string, CityData> = {
 			"Tiel is trots op haar identiteit als fruitstad en regiocentrum. Ondernemers hier zijn ambitieus maar met beide benen op de grond. Wij bouwen websites die deze balans weerspiegelen.",
 		nearbyAreas: ["Zoelen", "Drumpt", "Kapel-Avezaath", "Wamel"],
 		landmarks: "Fruitcorso, Flipje, Agnietenstraat",
+		stats: {
+			businesses: "3.800+ ondernemers",
+			mainIndustry: "Retail & Food",
+			economicFact: "Tiel trekt jaarlijks 100.000+ bezoekers naar de Fruitcorso – de grootste in Nederland",
+			founded: "Stadsrechten sinds 1200"
+		},
+		targetIndustries: ["Retail & Winkels", "Horeca & Catering", "Interieur & Design", "Schoonheidssalons"],
 		relatedProject: "byshakir",
 		faqs: [
 			{
 				question: "Wat kost een website laten maken in Tiel?",
-				answer: "Een professionele website kost €595 eenmalig. Vaste prijs, hosting inbegrepen, binnen 7 dagen online. Geen verrassingen, geen meerkosten."
+				answer: "Een professionele website kost €595 eenmalig. Vaste prijs, hosting inbegrepen, binnen 7 dagen online. Voor Tielse ondernemers in de Agnietenstraat of het centrum is dit een slimme investering die zichzelf terugverdient via nieuwe klanten."
 			},
 			{
 				question: "Hoe lang duurt het om een website te maken?",
-				answer: "7 dagen van start tot livegang. We werken efficiënt zodat jij snel online bent en klanten uit heel Rivierenland kunt bereiken."
+				answer: "7 dagen van start tot livegang. We werken efficiënt zodat jij snel online bent en klanten uit heel Rivierenland kunt bereiken — van Zoelen tot Wamel."
+			},
+			{
+				question: "Maken jullie ook websites voor luxe winkels en interieurzaken?",
+				answer: "Ja, we hebben onder andere de website van By Shakir gemaakt — een luxe interieurzaak in Tiel. We weten hoe je een premium uitstraling creëert die past bij high-end producten en de verwachte kwaliteit van je klanten."
+			},
+			{
+				question: "Kan ik tijdens de Fruitcorso extra bezoekers naar mijn website trekken?",
+				answer: "Absoluut. De Fruitcorso trekt jaarlijks 100.000+ bezoekers naar Tiel. Met een goede website en lokale SEO vinden deze bezoekers jouw zaak. We kunnen speciale landingspagina's maken voor evenementen."
 			},
 			{
 				question: "Bereik ik ook klanten buiten Tiel met mijn website?",
-				answer: "Absoluut. We optimaliseren je website voor de hele regio. Klanten uit Zoelen, Wadenoijen en de rest van de Betuwe vinden jou via Google."
-			},
-			{
-				question: "Is hosting inbegrepen bij de website?",
-				answer: "Ja, hosting is altijd inbegrepen. Geen maandelijkse hostingkosten. Optioneel kun je een beheerpakket (€49/maand) afnemen voor updates en aanpassingen."
-			},
-			{
-				question: "Hebben jullie ervaring met bedrijven in Tiel?",
-				answer: "Ja, we hebben onder andere een website gemaakt voor een luxe interieurzaak in Tiel. We kennen de lokale markt en weten wat werkt voor Tielse ondernemers."
+				answer: "Zeker. Als regiocentrum van het Rivierenland bedien je klanten uit Zoelen, Drumpt, Kapel-Avezaath en omliggende dorpen. We optimaliseren je website voor de hele regio, zodat je bereik groter is dan alleen de stad."
 			}
 		],
 	},
@@ -257,6 +314,13 @@ export const cities: Record<string, CityData> = {
 			"De Vianense binnenstad ademt historie, maar de ondernemers kijken vooruit. Wij bouwen moderne websites die de charme van de stad combineren met de professionaliteit die klanten verwachten.",
 		nearbyAreas: ["Lexmond", "Hagestein", "Nieuwegein", "Leerdam"],
 		landmarks: "Voorstraat, Lekpoort, Binnenhaven",
+		stats: {
+			businesses: "1.900+ ondernemers",
+			mainIndustry: "Handel & Logistiek",
+			economicFact: "Vianen was historisch een vrijplaats – ondernemers die elders niet welkom waren vestigden zich hier",
+			founded: "Stadsrechten sinds 1336"
+		},
+		targetIndustries: ["E-commerce & Handel", "Accountants & Administratie", "Makelaars", "Adviesbureaus"],
 		faqs: [
 			{
 				question: "Wat kost een website laten maken in Vianen?",
@@ -293,6 +357,13 @@ export const cities: Record<string, CityData> = {
 			"Van de weekmarkt op de Overtoom tot de speciaalzaken in de Benschopperstraat – IJsselstein heeft een eigen winkelcultuur. Wij begrijpen deze dynamiek en bouwen websites die lokale klanten aanspreken.",
 		nearbyAreas: ["Lopik", "Nieuwegein", "Montfoort", "Benschop"],
 		landmarks: "Gerbrandytoren, Overtoom, Walkade",
+		stats: {
+			businesses: "3.200+ ondernemers",
+			mainIndustry: "Detailhandel & Ambacht",
+			economicFact: "IJsselstein heeft de langste winkelstraat van de regio met meer dan 100 speciaalzaken",
+			founded: "Stadsrechten sinds 1310"
+		},
+		targetIndustries: ["Speciaalzaken & Winkels", "Kappers & Barbershops", "Ambachtslieden", "Fysiotherapie & Zorg"],
 		faqs: [
 			{
 				question: "Wat kost een website laten maken in IJsselstein?",
@@ -329,6 +400,13 @@ export const cities: Record<string, CityData> = {
 			"In Beesd kent iedereen elkaar. Wij bouwen websites die deze persoonlijke sfeer uitstralen – professioneel, maar toegankelijk. Geen grote-stadse uitstraling, wel een website die past bij de Betuwse nuchterheid.",
 		nearbyAreas: ["Rumpt", "Gellicum", "Rhenoy", "Geldermalsen"],
 		landmarks: "Hervormde Kerk, Dorpsstraat",
+		stats: {
+			businesses: "650+ ondernemers",
+			mainIndustry: "Hoveniers & Groenvoorziening",
+			economicFact: "Beesd ligt in het hart van de fruitteelt – meer dan 30% van de lokale bedrijvigheid is agrarisch",
+			founded: "Eerste vermelding 850 n.Chr."
+		},
+		targetIndustries: ["Hoveniers & Tuincentra", "Loonwerkers", "B&B's & Recreatie", "Timmerlieden & Aannemers"],
 		faqs: [
 			{
 				question: "Wat kost een website laten maken in Beesd?",
@@ -365,6 +443,13 @@ export const cities: Record<string, CityData> = {
 			"Buren heeft een bijzondere uitstraling die je website moet weerspiegelen. Wij begrijpen de balans tussen het historische karakter en de moderne wensen van ondernemers die hier actief zijn.",
 		nearbyAreas: ["Beusichem", "Maurik", "Zoelen", "Lienden"],
 		landmarks: "Museum Buren, Stadsmuur, Markt",
+		stats: {
+			businesses: "350+ ondernemers",
+			mainIndustry: "Toerisme & Horeca",
+			economicFact: "Buren was de geboorteplaats van Anna van Buren, stammoeder van het huis Oranje-Nassau",
+			founded: "Stadsrechten sinds 1395"
+		},
+		targetIndustries: ["Restaurants & Cafés", "Kunst & Antiek", "Bed & Breakfasts", "Ambachtelijke producten"],
 		faqs: [
 			{
 				question: "Wat kost een website laten maken in Buren?",

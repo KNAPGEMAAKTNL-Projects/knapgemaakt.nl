@@ -43,6 +43,45 @@ function getAreaLink(areaName: string): string | null {
             </h2>
         </div>
 
+        <!-- City Statistics Bar (unique per city) -->
+        {city.stats && (
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 p-6 bg-ink text-canvas">
+                {city.stats.businesses && (
+                    <div class="text-center md:text-left">
+                        <div class="text-2xl md:text-3xl font-black text-acid">{city.stats.businesses}</div>
+                        <div class="text-xs font-mono uppercase tracking-wider text-canvas/60">Actief in {city.name}</div>
+                    </div>
+                )}
+                {city.stats.mainIndustry && (
+                    <div class="text-center md:text-left">
+                        <div class="text-sm md:text-base font-bold text-canvas">{city.stats.mainIndustry}</div>
+                        <div class="text-xs font-mono uppercase tracking-wider text-canvas/60">Belangrijkste sector</div>
+                    </div>
+                )}
+                {city.stats.founded && (
+                    <div class="text-center md:text-left">
+                        <div class="text-sm md:text-base font-bold text-canvas">{city.stats.founded}</div>
+                        <div class="text-xs font-mono uppercase tracking-wider text-canvas/60">Historie</div>
+                    </div>
+                )}
+                {city.population && (
+                    <div class="text-center md:text-left">
+                        <div class="text-sm md:text-base font-bold text-canvas">{city.population}</div>
+                        <div class="text-xs font-mono uppercase tracking-wider text-canvas/60">Gemeente</div>
+                    </div>
+                )}
+            </div>
+        )}
+
+        <!-- Economic Fact Callout (unique per city) -->
+        {city.stats?.economicFact && (
+            <div class="mb-16 p-6 border-l-4 border-electric bg-electric/5">
+                <p class="text-lg md:text-xl text-ink/80 italic">
+                    "{city.stats.economicFact}"
+                </p>
+            </div>
+        )}
+
         <!-- Main Content Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
             <!-- Left Column: City Introduction -->
@@ -142,6 +181,25 @@ function getAreaLink(areaName: string): string | null {
                 }
             </div>
         </div>
+
+        <!-- Target Industries (unique per city) -->
+        {city.targetIndustries && city.targetIndustries.length > 0 && (
+            <div class="mb-16 p-8 bg-[#f5f5f5] border border-ink/5">
+                <h3 class="text-xl font-black uppercase tracking-tighter mb-2">
+                    Websites voor ondernemers in {city.name}
+                </h3>
+                <p class="text-ink/60 text-sm mb-6">
+                    Wij bouwen websites voor diverse sectoren in {city.region}. Onze ervaring met lokale bedrijven:
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    {city.targetIndustries.map((industry) => (
+                        <span class="px-4 py-2 bg-ink text-canvas text-sm font-medium">
+                            {industry}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        )}
 
         <!-- Why Local Matters - Full Width -->
         <div
