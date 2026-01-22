@@ -63,18 +63,8 @@ export function SmoothScroll() {
         // Use capture phase to run before ViewTransitions
         document.addEventListener('click', handleAnchorClick, { capture: true });
 
-        // Reset scroll position when ViewTransitions loads a new page
-        function handlePageLoad() {
-            // Only scroll to top if there's no hash in the URL
-            if (!window.location.hash) {
-                lenis.scrollTo(0, { immediate: true });
-            }
-        }
-        document.addEventListener('astro:page-load', handlePageLoad);
-
         return () => {
             document.removeEventListener('click', handleAnchorClick, { capture: true });
-            document.removeEventListener('astro:page-load', handlePageLoad);
             lenis.destroy();
         };
     }, []);

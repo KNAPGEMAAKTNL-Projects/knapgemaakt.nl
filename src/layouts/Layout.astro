@@ -90,5 +90,15 @@ const ogImageURL = new URL(image, Astro.site);
     <slot />
     <!-- Defer smooth scroll initialization until browser is idle (FCP optimization) -->
     <SmoothScroll client:idle />
+
+    <!-- Reset scroll position on ViewTransitions navigation (runs before Lenis initializes) -->
+    <script>
+      document.addEventListener('astro:after-swap', () => {
+        // Only scroll to top if navigating to a page without a hash
+        if (!window.location.hash) {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+      });
+    </script>
   </body>
 </html>
