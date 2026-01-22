@@ -86,7 +86,7 @@ const ogImageURL = new URL(image, Astro.site);
       // Only initialize once (ViewTransitions re-runs is:inline scripts)
       if (!window.__navGuardInit) {
         window.__navGuardInit = true;
-        window.__lastNavTime = 0;
+        window.__navLocked = false;
 
         document.addEventListener('click', function(e) {
           var link = e.target.closest('a[href]');
@@ -104,16 +104,29 @@ const ogImageURL = new URL(image, Astro.site);
             return;
           }
 
-          // Block rapid clicks with 500ms cooldown
-          var now = Date.now();
-          if (now - window.__lastNavTime < 500) {
+          // Block ALL clicks while navigation is in progress
+          if (window.__navLocked) {
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
             return;
           }
-          window.__lastNavTime = now;
+
+          // Lock immediately (synchronous, before any async navigation starts)
+          window.__navLocked = true;
         }, { capture: true });
+
+        // Unlock when page fully loads
+        document.addEventListener('astro:page-load', function() {
+          window.__navLocked = false;
+        });
+
+        // Also unlock after timeout in case navigation fails
+        document.addEventListener('astro:before-preparation', function() {
+          setTimeout(function() {
+            window.__navLocked = false;
+          }, 5000);
+        });
       }
     </script>
     <ViewTransitions />
