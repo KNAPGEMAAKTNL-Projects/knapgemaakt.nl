@@ -316,43 +316,6 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
                 </div>
             </form>
 
-            <!-- Success Message -->
-            <div id="success-message" class="hidden">
-                <div class="text-center py-16 space-y-6">
-                    <div
-                        class="w-20 h-20 mx-auto bg-acid flex items-center justify-center"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-10 w-10 text-black"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            stroke-width="3"
-                        >
-                            <path
-                                stroke-linecap="square"
-                                stroke-linejoin="miter"
-                                d="M5 13l4 4L19 7"></path>
-                        </svg>
-                    </div>
-                    <h2
-                        class="text-4xl md:text-6xl font-black uppercase tracking-tighter"
-                    >
-                        Aanvraag Ontvangen
-                    </h2>
-                    <p class="text-xl text-ink/60 max-w-lg mx-auto">
-                        Bedankt voor je aanvraag! Je gesprek is ingepland.
-                        Check je inbox voor de bevestiging.
-                    </p>
-                    <a
-                        href="/"
-                        class="inline-flex items-center justify-center mt-8 px-8 py-[18px] border-2 border-ink text-ink hover:bg-ink hover:text-canvas transition-colors duration-300 font-bold uppercase tracking-tight"
-                    >
-                        Terug naar home
-                    </a>
-                </div>
-            </div>
         </div>
     </main>
 </Layout>
@@ -378,7 +341,6 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
         pageInitialized = true;
         calendarMounted = false; // Reset for new page load
 
-        const pageHeader = document.getElementById("page-header") as HTMLDivElement;
         const submitBtn = document.getElementById(
             "submit-btn",
         ) as HTMLButtonElement;
@@ -387,9 +349,6 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
         const btnLoading = document.getElementById(
             "btn-loading",
         ) as HTMLSpanElement;
-        const successMessage = document.getElementById(
-            "success-message",
-        ) as HTMLDivElement;
         const errorMessage = document.getElementById(
             "error-message",
         ) as HTMLDivElement;
@@ -575,11 +534,8 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
     }
 
     function showSuccess() {
-        form.classList.add("hidden");
-        pageHeader.classList.add("hidden");
-        successMessage.classList.remove("hidden");
         clearFormData();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.location.href = "/aanvragen/bedankt";
     }
 
     function showError() {
