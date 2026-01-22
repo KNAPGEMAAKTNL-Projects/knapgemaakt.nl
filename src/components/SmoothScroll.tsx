@@ -63,8 +63,15 @@ export function SmoothScroll() {
         // Use capture phase to run before ViewTransitions
         document.addEventListener('click', handleAnchorClick, { capture: true });
 
+        // Stop any ongoing scroll animation before ViewTransitions swaps the page
+        function handleBeforeSwap() {
+            lenis.stop();
+        }
+        document.addEventListener('astro:before-swap', handleBeforeSwap);
+
         return () => {
             document.removeEventListener('click', handleAnchorClick, { capture: true });
+            document.removeEventListener('astro:before-swap', handleBeforeSwap);
             lenis.destroy();
         };
     }, []);
