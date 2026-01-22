@@ -81,55 +81,23 @@ const ogImageURL = new URL(image, Astro.site);
     `} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <!-- Navigation guard MUST be before ViewTransitions to intercept clicks first -->
+    <ViewTransitions />
+    <!-- Prevent same-page navigation on homepage (scroll to top instead) -->
     <script is:inline>
-      // Only initialize once (ViewTransitions re-runs is:inline scripts)
-      if (!window.__navGuardInit) {
-        window.__navGuardInit = true;
-        window.__navLocked = false;
-
+      if (!window.__homeScrollInit) {
+        window.__homeScrollInit = true;
         document.addEventListener('click', function(e) {
           var link = e.target.closest('a[href]');
           if (!link) return;
-
           var href = link.getAttribute('href');
-          var currentPath = window.location.pathname;
-
-          // Prevent same-page navigation - just scroll to top instead
-          if (href === '/' && currentPath === '/') {
+          if (href === '/' && window.location.pathname === '/') {
             e.preventDefault();
-            e.stopPropagation();
             e.stopImmediatePropagation();
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            return;
           }
-
-          // Block ALL clicks while navigation is in progress
-          if (window.__navLocked) {
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-            return;
-          }
-
-          // Lock immediately (synchronous, before any async navigation starts)
-          window.__navLocked = true;
         }, { capture: true });
-
-        // Unlock when page fully loads
-        document.addEventListener('astro:page-load', function() {
-          window.__navLocked = false;
-        });
-
-        // Also unlock after timeout in case navigation fails
-        document.addEventListener('astro:before-preparation', function() {
-          setTimeout(function() {
-            window.__navLocked = false;
-          }, 5000);
-        });
       }
     </script>
-    <ViewTransitions />
   </head>
   <body
     class="bg-canvas text-ink antialiased overflow-x-hidden selection:bg-acid selection:text-black"
