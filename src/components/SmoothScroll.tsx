@@ -8,12 +8,14 @@ export function SmoothScroll() {
             smoothWheel: true,
         });
 
+        let rafId: number;
+
         function raf(time: number) {
             lenis.raf(time);
-            requestAnimationFrame(raf);
+            rafId = requestAnimationFrame(raf);
         }
 
-        requestAnimationFrame(raf);
+        rafId = requestAnimationFrame(raf);
 
         // Handle anchor link clicks for smooth scrolling on same page
         // Use capture phase to intercept before Astro ViewTransitions
@@ -70,6 +72,7 @@ export function SmoothScroll() {
         document.addEventListener('astro:before-swap', handleBeforeSwap);
 
         return () => {
+            cancelAnimationFrame(rafId);
             document.removeEventListener('click', handleAnchorClick, { capture: true });
             document.removeEventListener('astro:before-swap', handleBeforeSwap);
             lenis.destroy();
