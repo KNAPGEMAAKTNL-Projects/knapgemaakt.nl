@@ -82,6 +82,34 @@ const ogImageURL = new URL(image, Astro.site);
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
+    <!-- Prevent rapid navigation (double-click) from crashing ViewTransitions -->
+    <script is:inline>
+      (function() {
+        let isNavigating = false;
+
+        // Block rapid clicks during navigation (capture phase runs before ViewTransitions)
+        document.addEventListener('click', function(e) {
+          const link = e.target.closest('a[href]');
+          if (!link) return;
+
+          if (isNavigating) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+          }
+        }, { capture: true });
+
+        // Set flag when navigation starts
+        document.addEventListener('astro:before-preparation', function() {
+          isNavigating = true;
+        });
+
+        // Clear flag when navigation completes
+        document.addEventListener('astro:page-load', function() {
+          isNavigating = false;
+        });
+      })();
+    </script>
   </head>
   <body
     class="bg-canvas text-ink antialiased overflow-x-hidden selection:bg-acid selection:text-black"
