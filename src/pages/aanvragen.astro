@@ -11,10 +11,18 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
         <div class="max-w-4xl mx-auto">
             <!-- Header -->
             <div class="mb-16" id="page-header">
-                <TextRevealCSS
-                    text="Start Je Aanvraag."
-                    class="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6"
-                />
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+                    <TextRevealCSS
+                        text="Start Je Aanvraag."
+                        class="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none"
+                    />
+                    <a
+                        href="/contact"
+                        class="text-sm font-mono text-ink/40 hover:text-electric transition-colors whitespace-nowrap self-start md:self-auto md:mt-4"
+                    >
+                        Liever direct contact? &rarr;
+                    </a>
+                </div>
                 <p
                     class="text-xl md:text-2xl text-ink/60 font-medium max-w-4xl leading-relaxed"
                 >
