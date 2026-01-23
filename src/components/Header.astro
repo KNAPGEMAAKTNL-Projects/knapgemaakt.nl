@@ -2,6 +2,7 @@
 /**
  * Header/Navigation Component
  * Sticky header with logo, navigation, and CTA
+ * Features animated hamburger menu with fullscreen mobile overlay
  */
 
 interface Props {
@@ -26,7 +27,7 @@ const isActive = (href: string) => {
 
 <header
     class:list={[
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-[60] transition-all duration-300",
         variant === "transparent" ? "bg-transparent" : "bg-canvas/95 backdrop-blur-sm border-b border-ink/10"
     ]}
     id="site-header"
@@ -36,7 +37,7 @@ const isActive = (href: string) => {
             <!-- Logo -->
             <a
                 href="/"
-                class="text-xl md:text-2xl font-black uppercase tracking-tighter hover:text-electric transition-colors"
+                class="header-logo text-xl md:text-2xl font-black uppercase tracking-tighter hover:text-electric transition-colors z-[60] relative"
                 aria-label="KNAP GEMAAKT. - Ga naar homepagina"
             >
                 KNAP GEMAAKT.
@@ -64,79 +65,276 @@ const isActive = (href: string) => {
                 </a>
             </nav>
 
-            <!-- Mobile Menu Button -->
+            <!-- Mobile Menu Button (Animated Hamburger) -->
             <button
                 type="button"
-                class="md:hidden flex items-center justify-center w-12 h-12 -mr-2 text-ink"
+                class="hamburger-btn md:hidden relative z-[60] flex items-center justify-center w-12 h-12 -mr-2"
                 id="menu-btn"
-                aria-label="Menu"
+                aria-label="Menu openen"
+                aria-expanded="false"
+                aria-controls="mobile-nav"
             >
-                <svg class="w-6 h-6" id="icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-                <svg class="w-6 h-6 hidden" id="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
+                <div class="hamburger-icon w-7 h-6 relative">
+                    <span class="hamburger-line absolute left-0 w-full h-[3px] bg-current rounded-full transition-all duration-500 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)]" style="top: 0"></span>
+                    <span class="hamburger-line absolute left-0 w-full h-[3px] bg-current rounded-full transition-all duration-500 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)]" style="top: 50%; transform: translateY(-50%)"></span>
+                    <span class="hamburger-line absolute left-0 w-full h-[3px] bg-current rounded-full transition-all duration-500 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)]" style="bottom: 0"></span>
+                </div>
             </button>
         </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <nav class="md:hidden hidden bg-canvas border-t border-ink/10 px-4 py-6 space-y-4" id="mobile-nav" aria-label="Mobiele navigatie">
-        {navLinks.map(link => (
-            <a
-                href={link.href}
-                class:list={[
-                    "nav-link block font-mono text-lg uppercase tracking-widest py-2 transition-colors",
-                    isActive(link.href) ? "text-electric" : "text-ink/60 hover:text-ink"
-                ]}
-            >
-                {link.label}
-            </a>
-        ))}
-        <a href="/aanvragen" class="nav-link block bg-acid text-ink px-5 py-4 font-bold uppercase tracking-tight text-center mt-6 hover:bg-ink hover:text-acid transition-colors duration-300">
-            Kennismaking
-        </a>
-    </nav>
 </header>
+
+<!-- Fullscreen Mobile Menu Overlay -->
+<nav
+    class="mobile-menu-overlay fixed inset-0 z-[55] flex flex-col md:hidden pointer-events-none"
+    id="mobile-nav"
+    aria-label="Mobiele navigatie"
+    aria-hidden="true"
+>
+    <!-- Animated background panels -->
+    <div class="menu-bg-panel menu-bg-panel-1 absolute inset-0 bg-ink origin-top"></div>
+    <div class="menu-bg-panel menu-bg-panel-2 absolute inset-0 bg-ink/95 origin-top"></div>
+
+    <!-- Decorative grid background -->
+    <div class="menu-grid absolute inset-0 bg-grid-dark opacity-0 pointer-events-none"></div>
+
+    <!-- Menu Content -->
+    <div class="menu-content relative flex-1 flex flex-col justify-center items-center px-8 pt-20 opacity-0">
+        <!-- Navigation Links -->
+        <div class="space-y-1 text-center w-full max-w-sm">
+            {navLinks.map((link, index) => (
+                <a
+                    href={link.href}
+                    class:list={[
+                        "mobile-nav-link group relative block font-black text-4xl sm:text-5xl uppercase tracking-tight py-3 overflow-hidden",
+                        isActive(link.href) ? "text-acid" : "text-canvas"
+                    ]}
+                    style={`--index: ${index}`}
+                >
+                    <span class="link-text relative z-10 inline-block transition-transform duration-300 group-hover:translate-x-2">
+                        {link.label}
+                    </span>
+                    <span class="link-line absolute left-0 bottom-2 w-0 h-[2px] bg-acid transition-all duration-500 group-hover:w-full"></span>
+                    <span class="link-glow absolute inset-0 bg-acid/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></span>
+                </a>
+            ))}
+        </div>
+
+        <!-- CTA Button -->
+        <a
+            href="/aanvragen"
+            class="mobile-nav-cta group relative mt-12 overflow-hidden"
+            style={`--index: ${navLinks.length}`}
+        >
+            <span class="relative z-10 block bg-acid text-ink px-8 py-4 font-black text-xl uppercase tracking-tight transition-all duration-300 group-hover:bg-canvas">
+                Kennismaking
+            </span>
+            <span class="absolute inset-0 bg-electric scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></span>
+        </a>
+
+        <!-- Decorative corner accents -->
+        <div class="corner-accent absolute top-24 left-6 w-8 h-8 border-l-2 border-t-2 border-acid/30"></div>
+        <div class="corner-accent absolute top-24 right-6 w-8 h-8 border-r-2 border-t-2 border-acid/30"></div>
+        <div class="corner-accent absolute bottom-24 left-6 w-8 h-8 border-l-2 border-b-2 border-acid/30"></div>
+        <div class="corner-accent absolute bottom-24 right-6 w-8 h-8 border-r-2 border-b-2 border-acid/30"></div>
+
+        <!-- Footer accent -->
+        <div class="menu-footer absolute bottom-8 left-1/2 -translate-x-1/2 text-acid/40 font-mono text-xs uppercase tracking-[0.3em]">
+            Knap Gemaakt.
+        </div>
+    </div>
+</nav>
 
 <!-- Spacer -->
 <div class="h-16 md:h-20" aria-hidden="true"></div>
 
+<style is:global>
+    /* ================================
+       MOBILE MENU ANIMATIONS
+       Futuristic fullscreen overlay
+       ================================ */
+
+    /* Background panels - staggered reveal */
+    .menu-bg-panel {
+        transform: scaleY(0);
+        transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    .menu-bg-panel-2 {
+        transition-delay: 0.1s;
+    }
+
+    .mobile-menu-overlay.is-open .menu-bg-panel {
+        transform: scaleY(1);
+    }
+
+    /* Grid fade in */
+    .mobile-menu-overlay.is-open .menu-grid {
+        opacity: 0.5;
+        transition: opacity 0.8s ease 0.4s;
+    }
+
+    /* Content fade in */
+    .menu-content {
+        transition: opacity 0.4s ease;
+    }
+
+    .mobile-menu-overlay.is-open .menu-content {
+        opacity: 1;
+        transition-delay: 0.4s;
+    }
+
+    /* Nav links - staggered slide in from left */
+    .mobile-nav-link {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition:
+            opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+            transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+            color 0.3s ease;
+        transition-delay: calc(0.5s + var(--index) * 0.08s);
+    }
+
+    .mobile-menu-overlay.is-open .mobile-nav-link {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* CTA button entrance */
+    .mobile-nav-cta {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+        transition:
+            opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+            transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        transition-delay: calc(0.5s + var(--index) * 0.08s + 0.1s);
+    }
+
+    .mobile-menu-overlay.is-open .mobile-nav-cta {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    /* Corner accents fade in */
+    .corner-accent {
+        opacity: 0;
+        transition: opacity 0.6s ease 0.8s;
+    }
+
+    .mobile-menu-overlay.is-open .corner-accent {
+        opacity: 1;
+    }
+
+    /* Footer fade in */
+    .menu-footer {
+        opacity: 0;
+        transition: opacity 0.5s ease 1s;
+    }
+
+    .mobile-menu-overlay.is-open .menu-footer {
+        opacity: 1;
+    }
+
+    /* Enable pointer events when open */
+    .mobile-menu-overlay.is-open {
+        pointer-events: auto;
+    }
+
+    /* ================================
+       HAMBURGER ICON ANIMATION
+       Morphs into X with bounce
+       ================================ */
+
+    .hamburger-btn.is-active .hamburger-line:nth-child(1) {
+        top: 50% !important;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .hamburger-btn.is-active .hamburger-line:nth-child(2) {
+        opacity: 0;
+        transform: translateY(-50%) scaleX(0);
+    }
+
+    .hamburger-btn.is-active .hamburger-line:nth-child(3) {
+        bottom: auto !important;
+        top: 50% !important;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    /* Color changes when menu open */
+    .hamburger-btn.is-active {
+        color: var(--color-canvas);
+    }
+
+    .hamburger-btn.is-active .hamburger-line {
+        background-color: var(--color-canvas);
+    }
+
+    /* Header becomes transparent when menu open */
+    body.menu-open #site-header {
+        background: transparent !important;
+        border-color: transparent !important;
+        backdrop-filter: none !important;
+    }
+
+    /* Logo color change when menu open */
+    body.menu-open .header-logo {
+        color: var(--color-canvas);
+    }
+
+    /* Prevent body scroll when menu open */
+    body.menu-open {
+        overflow: hidden;
+    }
+</style>
+
 <script>
     (function() {
-        // Query fresh each time to avoid stale references
         function getElements() {
             return {
                 btn: document.getElementById('menu-btn'),
                 nav: document.getElementById('mobile-nav'),
-                iconOpen: document.getElementById('icon-open'),
-                iconClose: document.getElementById('icon-close')
+                header: document.getElementById('site-header')
             };
         }
 
+        function openMenu() {
+            const { btn, nav } = getElements();
+            if (!nav || !btn) return;
+
+            nav.classList.add('is-open');
+            nav.setAttribute('aria-hidden', 'false');
+            btn.classList.add('is-active');
+            btn.setAttribute('aria-expanded', 'true');
+            btn.setAttribute('aria-label', 'Menu sluiten');
+            document.body.classList.add('menu-open');
+        }
+
         function closeMenu() {
-            const { nav, iconOpen, iconClose } = getElements();
-            if (nav) nav.classList.add('hidden');
-            if (iconOpen) iconOpen.classList.remove('hidden');
-            if (iconClose) iconClose.classList.add('hidden');
+            const { btn, nav } = getElements();
+            if (!nav || !btn) return;
+
+            nav.classList.remove('is-open');
+            nav.setAttribute('aria-hidden', 'true');
+            btn.classList.remove('is-active');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-label', 'Menu openen');
+            document.body.classList.remove('menu-open');
         }
 
         function toggleMenu() {
-            const { nav, iconOpen, iconClose } = getElements();
+            const { nav } = getElements();
             if (!nav) return;
 
-            const isHidden = nav.classList.contains('hidden');
-            if (isHidden) {
-                nav.classList.remove('hidden');
-                if (iconOpen) iconOpen.classList.add('hidden');
-                if (iconClose) iconClose.classList.remove('hidden');
-            } else {
+            const isOpen = nav.classList.contains('is-open');
+            if (isOpen) {
                 closeMenu();
+            } else {
+                openMenu();
             }
         }
 
-        // Use event delegation on document - bulletproof
+        // Event delegation
         document.addEventListener('click', function(e) {
             // Toggle button clicked
             if (e.target.closest('#menu-btn')) {
@@ -146,7 +344,26 @@ const isActive = (href: string) => {
             }
 
             // Nav link clicked - close menu
-            if (e.target.closest('#mobile-nav .nav-link')) {
+            if (e.target.closest('#mobile-nav a')) {
+                closeMenu();
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const { nav } = getElements();
+                if (nav && nav.classList.contains('is-open')) {
+                    closeMenu();
+                    const { btn } = getElements();
+                    if (btn) btn.focus();
+                }
+            }
+        });
+
+        // Close menu on resize to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
                 closeMenu();
             }
         });
