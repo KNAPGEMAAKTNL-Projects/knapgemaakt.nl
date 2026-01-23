@@ -86,7 +86,7 @@ const isActive = (href: string) => {
 
 <!-- Fullscreen Mobile Menu Overlay -->
 <nav
-    class="mobile-menu-overlay fixed inset-0 z-[55] flex flex-col md:hidden pointer-events-none"
+    class="mobile-menu-overlay fixed inset-0 z-[55] flex flex-col md:hidden pointer-events-none invisible"
     id="mobile-nav"
     aria-label="Mobiele navigatie"
     aria-hidden="true"
@@ -94,9 +94,6 @@ const isActive = (href: string) => {
     <!-- Animated background panels -->
     <div class="menu-bg-panel menu-bg-panel-1 absolute inset-0 bg-ink origin-top"></div>
     <div class="menu-bg-panel menu-bg-panel-2 absolute inset-0 bg-ink/95 origin-top"></div>
-
-    <!-- Decorative grid background -->
-    <div class="menu-grid absolute inset-0 bg-grid-dark opacity-0 pointer-events-none"></div>
 
     <!-- Menu Content -->
     <div class="menu-content relative flex-1 flex flex-col justify-center items-center px-8 pt-20 opacity-0">
@@ -168,12 +165,6 @@ const isActive = (href: string) => {
         transform: scaleY(1);
     }
 
-    /* Grid fade in */
-    .mobile-menu-overlay.is-open .menu-grid {
-        opacity: 0.5;
-        transition: opacity 0.8s ease 0.4s;
-    }
-
     /* Content fade in */
     .menu-content {
         transition: opacity 0.4s ease;
@@ -235,9 +226,10 @@ const isActive = (href: string) => {
         opacity: 1;
     }
 
-    /* Enable pointer events when open */
+    /* Enable pointer events and visibility when open */
     .mobile-menu-overlay.is-open {
         pointer-events: auto;
+        visibility: visible;
     }
 
     /* ================================
