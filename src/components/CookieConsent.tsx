@@ -242,15 +242,18 @@ export function CookieConsent() {
   }, []);
 
   const applyConsent = useCallback((cats: ConsentCategories) => {
-    // Update Google Consent Mode
+    // Update Google Consent Mode (Clarity auto-detects this)
     updateGoogleConsentMode(cats);
-
-    // Update Microsoft Clarity consent (v2 API)
-    updateClarityConsent(cats.analytics);
 
     // Enable blocked scripts based on consent
     if (cats.analytics) enableBlockedScripts('analytics');
     if (cats.marketing) enableBlockedScripts('marketing');
+
+    // Update Microsoft Clarity consent AFTER scripts load
+    // Small delay ensures Clarity script has initialized
+    setTimeout(() => {
+      updateClarityConsent(cats.analytics);
+    }, 500);
 
     // Delete cookies when consent is revoked
     if (!cats.analytics) deleteCookiesByCategory('analytics');
