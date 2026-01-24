@@ -60,7 +60,7 @@ import Footer from "../components/Footer.astro";
                             >
                                 <li>KvK: 73652377</li>
                                 <li>BTW: NL002383577B12</li>
-                                <li>E-mail: legal@knapgemaakt.nl</li>
+                                <li>E-mail: <a href="mailto:legal@knapgemaakt.nl" class="text-ink underline decoration-acid decoration-2 underline-offset-4 hover:bg-acid hover:decoration-transparent transition-colors">legal@knapgemaakt.nl</a></li>
                             </ul>
                         </div>
                     </div>
@@ -173,6 +173,12 @@ import Footer from "../components/Footer.astro";
                                     Resend (verzenden van afspraakbevestigingen)
                                 </li>
                                 <li>Google Calendar (agenda-afspraken)</li>
+                                <li>
+                                    Google Analytics (websitestatistieken, na toestemming)
+                                </li>
+                                <li>
+                                    Leadinfo (B2B-bezoekersidentificatie)
+                                </li>
                                 <li>
                                     n8n (zelf gehoste workflow-automatisering)
                                 </li>
@@ -297,8 +303,9 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </section>
 
-                <!-- 09. Opslag -->
+                <!-- 09. Cookies & Opslag -->
                 <section
+                    id="cookies"
                     class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
                 >
                     <div class="md:col-span-3">
@@ -310,17 +317,63 @@ import Footer from "../components/Footer.astro";
                         <h2
                             class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
                         >
-                            Opslag
+                            Cookies
                         </h2>
                         <div
                             class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
                         >
                             <p>
-                                Wij gebruiken geen analytics of tracking
-                                cookies. Voor het formulier kunnen we lokale
-                                opslag (localStorage) gebruiken om je invoer te
-                                bewaren op je eigen apparaat. Je kunt dit zelf
-                                wissen in je browser.
+                                Wij gebruiken cookies en vergelijkbare technologie&euml;n.
+                                Bij je eerste bezoek vragen wij via een cookiebanner om toestemming.
+                            </p>
+
+                            <p class="mt-4"><strong class="text-ink">Noodzakelijke cookies</strong> (altijd actief):</p>
+                            <p>Deze cookies zijn essentieel voor de werking van de website en kunnen niet worden uitgeschakeld.</p>
+                            <ul class="list-disc pl-5 space-y-1 mt-2">
+                                <li><code class="text-sm bg-ink/10 px-1 rounded">cookie_consent</code> &ndash; Onthoudt je cookiekeuze (1 jaar)</li>
+                                <li><code class="text-sm bg-ink/10 px-1 rounded">__cf_bm</code> &ndash; Cloudflare botbescherming (30 min)</li>
+                                <li>localStorage &ndash; Tijdelijk opslaan van formuliergegevens tijdens invullen (wordt gewist na verzenden)</li>
+                            </ul>
+
+                            <p class="mt-4"><strong class="text-ink">Analytische cookies</strong> (na toestemming):</p>
+                            <p>Helpen ons begrijpen hoe bezoekers de website gebruiken.</p>
+                            <ul class="list-disc pl-5 space-y-1 mt-2">
+                                <li><code class="text-sm bg-ink/10 px-1 rounded">_ga</code>, <code class="text-sm bg-ink/10 px-1 rounded">_ga_*</code> &ndash; Google Analytics (2 jaar)</li>
+                                <li><code class="text-sm bg-ink/10 px-1 rounded">_li_id</code>, <code class="text-sm bg-ink/10 px-1 rounded">_li_ses</code> &ndash; Leadinfo sessietracking (1 jaar / sessie)</li>
+                            </ul>
+
+                            <p class="mt-4"><strong class="text-ink">Marketingcookies</strong> (na toestemming):</p>
+                            <p>Worden gebruikt om advertenties relevanter te maken.</p>
+                            <ul class="list-disc pl-5 space-y-1 mt-2">
+                                <li><code class="text-sm bg-ink/10 px-1 rounded">_fbp</code> &ndash; Meta Pixel (3 maanden)</li>
+                            </ul>
+
+                            <p class="mt-4"><strong class="text-ink">B2B-identificatie (Leadinfo)</strong></p>
+                            <p>
+                                Wij gebruiken Leadinfo om zakelijke bezoekers te identificeren
+                                op basis van IP-adres. Dit verwerken wij op grond van ons
+                                gerechtvaardigd belang. Wij identificeren alleen bedrijven,
+                                geen individuele personen. Met toestemming worden aanvullende
+                                cookies geplaatst voor sessietracking. Je kunt bezwaar maken via:
+                                <a
+                                    href="https://www.leadinfo.com/en/opt-out"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-ink underline decoration-acid decoration-2 underline-offset-4 hover:bg-acid hover:decoration-transparent transition-colors"
+                                    >leadinfo.com/opt-out</a
+                                >.
+                            </p>
+
+                            <p class="mt-4"><strong class="text-ink">Cloudflare</strong></p>
+                            <p>
+                                Onze website wordt gehost via Cloudflare Pages. Cloudflare plaatst
+                                beveiligingscookies voor DDoS-bescherming en botdetectie. Deze cookies
+                                zijn strikt noodzakelijk en vereisen geen toestemming.
+                            </p>
+
+                            <p class="mt-4">
+                                Je kunt je cookievoorkeuren altijd wijzigen via de link
+                                &ldquo;Cookie-instellingen&rdquo; in de footer van onze website.
                             </p>
                         </div>
                     </div>

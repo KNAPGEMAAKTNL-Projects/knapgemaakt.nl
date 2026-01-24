@@ -5,6 +5,7 @@ import "../styles/global.css";
 import { ViewTransitions } from "astro:transitions";
 import { SmoothScroll } from "../components/SmoothScroll";
 import Header from "../components/Header.astro";
+import CookieConsent from "../components/CookieConsent";
 
 // Import font files for preloading - all critical weights
 import interTight400 from "@fontsource/inter-tight/files/inter-tight-latin-400-normal.woff2";
@@ -25,6 +26,13 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
+
+// =============================================================================
+// TRACKING IDs
+// =============================================================================
+const GA_MEASUREMENT_ID = 'G-BBR63CY7Q9';
+const META_PIXEL_ID = import.meta.env.PUBLIC_META_PIXEL_ID || '';
+const LEADINFO_ID = 'LI-6973D746ECCF2';
 ---
 
 <!doctype html>
@@ -33,6 +41,42 @@ const ogImageURL = new URL(image, Astro.site);
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
+
+    <!-- =========================================================================
+         GOOGLE CONSENT MODE v2 - MUST be first script (before any Google tags)
+         Sets all consent to denied by default for GDPR compliance
+         ========================================================================= -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Default: all denied for GDPR/AVG compliance
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+
+      // Privacy-preserving features
+      gtag("set", "ads_data_redaction", true);
+      gtag("set", "url_passthrough", true);
+    </script>
+
+    <!-- =========================================================================
+         LEADINFO - Loads immediately in cookieless mode (Legitimate Interest)
+         Upgrades to full tracking after analytics consent granted
+         ========================================================================= -->
+    <script is:inline define:vars={{ LEADINFO_ID }}>
+      (function(l,e,a,d,i,n,f,o){if(!l[i]){l.GlobalLeadinfoNamespace=l.GlobalLeadinfoNamespace||[];
+      l.GlobalLeadinfoNamespace.push(i);l[i]=function(){(l[i].q=l[i].q||[]).push(arguments)};l[i].t=l[i].t||n;
+      l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;o.src=d;f.parentNode.insertBefore(o,f);}
+      }(window,document,'script','https://cdn.leadinfo.net/ping.js','leadinfo',LEADINFO_ID));
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon_final.svg" />
     <!-- Preload all font weights - ensures they arrive within 100ms for font-display: optional -->
     <link rel="preload" href={interTight400} as="font" type="font/woff2" crossorigin />
@@ -98,6 +142,45 @@ const ogImageURL = new URL(image, Astro.site);
         }, { capture: true });
       }
     </script>
+
+    <!-- =========================================================================
+         TRACKING SCRIPTS - Blocked until consent granted
+         Uses type="text/plain" to prevent execution before consent
+         ========================================================================= -->
+
+    {/* Google Analytics 4 - Only loads after analytics consent */}
+    {GA_MEASUREMENT_ID && (
+      <>
+        <script
+          type="text/plain"
+          data-consent="analytics"
+          data-src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <script type="text/plain" data-consent="analytics" set:html={`
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}', {
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure'
+          });
+        `} />
+      </>
+    )}
+
+    {/* Meta Pixel - Only loads after marketing consent */}
+    {META_PIXEL_ID && (
+      <script type="text/plain" data-consent="marketing" set:html={`
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '${META_PIXEL_ID}');
+        fbq('track', 'PageView');
+      `} />
+    )}
   </head>
   <body
     class="bg-canvas text-ink antialiased overflow-x-hidden selection:bg-acid selection:text-black"
@@ -116,5 +199,8 @@ const ogImageURL = new URL(image, Astro.site);
         }
       });
     </script>
+
+    <!-- Cookie Consent Banner -->
+    <CookieConsent client:load />
   </body>
 </html>
