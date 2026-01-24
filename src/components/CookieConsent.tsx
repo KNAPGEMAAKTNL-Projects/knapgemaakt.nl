@@ -83,6 +83,21 @@ function updateGoogleConsentMode(categories: ConsentCategories): void {
   }
 }
 
+function updateClarityConsent(analyticsConsent: boolean): void {
+  if (typeof window === 'undefined' || typeof (window as any).clarity !== 'function') return;
+
+  if (analyticsConsent) {
+    // Grant consent - Clarity can set cookies and track across sessions
+    (window as any).clarity('consentv2', {
+      ad_Storage: 'granted',
+      analytics_Storage: 'granted',
+    });
+  } else {
+    // Revoke consent - Clarity clears its cookies
+    (window as any).clarity('consent', false);
+  }
+}
+
 
 function deleteCookiesByCategory(category: 'analytics' | 'marketing'): void {
   const cookiesToDelete: Record<string, string[]> = {
@@ -229,6 +244,9 @@ export function CookieConsent() {
   const applyConsent = useCallback((cats: ConsentCategories) => {
     // Update Google Consent Mode
     updateGoogleConsentMode(cats);
+
+    // Update Microsoft Clarity consent (v2 API)
+    updateClarityConsent(cats.analytics);
 
     // Enable blocked scripts based on consent
     if (cats.analytics) enableBlockedScripts('analytics');
