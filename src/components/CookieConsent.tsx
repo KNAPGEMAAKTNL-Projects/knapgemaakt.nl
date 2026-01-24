@@ -93,7 +93,7 @@ function updateLeadinfoConsent(analyticsConsent: boolean): void {
 
 function deleteCookiesByCategory(category: 'analytics' | 'marketing'): void {
   const cookiesToDelete: Record<string, string[]> = {
-    analytics: ['_ga', '_gid', '_li_id', '_li_ses'],
+    analytics: ['_ga', '_gid', '_li_id', '_li_ses', '_clck', '_clsk', 'CLID', 'ANONCHK', 'MR', 'MUID', 'SM'],
     marketing: ['_fbp', '_fbc'],
   };
 
@@ -351,7 +351,7 @@ export function CookieConsent() {
               <div className="flex items-center justify-between p-4 bg-canvas/5 rounded-lg hover:bg-canvas/10 transition-colors">
                 <div>
                   <h3 className="font-semibold">Analytisch</h3>
-                  <p className="text-sm text-canvas/60">Helpt ons de website te verbeteren (Google Analytics, Leadinfo)</p>
+                  <p className="text-sm text-canvas/60">Helpt ons de website te verbeteren (Google Analytics, Clarity, Leadinfo)</p>
                 </div>
                 <button
                   type="button"
