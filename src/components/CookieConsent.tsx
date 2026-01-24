@@ -91,6 +91,48 @@ function updateLeadinfoConsent(analyticsConsent: boolean): void {
   }
 }
 
+function deleteCookiesByCategory(category: 'analytics' | 'marketing'): void {
+  const cookiesToDelete: Record<string, string[]> = {
+    analytics: ['_ga', '_gid', '_li_id', '_li_ses'],
+    marketing: ['_fbp', '_fbc'],
+  };
+
+  const domain = window.location.hostname;
+  const cookies = cookiesToDelete[category];
+
+  cookies.forEach((name) => {
+    // Delete with various domain/path combinations to ensure removal
+    const paths = ['/', ''];
+    const domains = [domain, `.${domain}`, ''];
+
+    domains.forEach((d) => {
+      paths.forEach((p) => {
+        const domainPart = d ? `; domain=${d}` : '';
+        const pathPart = p ? `; path=${p}` : '';
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT${domainPart}${pathPart}`;
+      });
+    });
+  });
+
+  // Also delete GA4 measurement-specific cookies (_ga_XXXXXXXXX pattern)
+  if (category === 'analytics') {
+    document.cookie.split(';').forEach((cookie) => {
+      const name = cookie.split('=')[0].trim();
+      if (name.startsWith('_ga_')) {
+        const paths = ['/', ''];
+        const domains = [domain, `.${domain}`, ''];
+        domains.forEach((d) => {
+          paths.forEach((p) => {
+            const domainPart = d ? `; domain=${d}` : '';
+            const pathPart = p ? `; path=${p}` : '';
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT${domainPart}${pathPart}`;
+          });
+        });
+      }
+    });
+  }
+}
+
 function enableBlockedScripts(category: 'analytics' | 'marketing'): void {
   document.querySelectorAll(`script[type="text/plain"][data-consent="${category}"]`)
     .forEach((script) => {
@@ -201,6 +243,10 @@ export function CookieConsent() {
     // Enable blocked scripts based on consent
     if (cats.analytics) enableBlockedScripts('analytics');
     if (cats.marketing) enableBlockedScripts('marketing');
+
+    // Delete cookies when consent is revoked
+    if (!cats.analytics) deleteCookiesByCategory('analytics');
+    if (!cats.marketing) deleteCookiesByCategory('marketing');
   }, []);
 
   const handleAcceptAll = useCallback(() => {
