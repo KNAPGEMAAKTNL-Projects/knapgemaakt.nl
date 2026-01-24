@@ -83,17 +83,10 @@ function updateGoogleConsentMode(categories: ConsentCategories): void {
   }
 }
 
-function updateLeadinfoConsent(analyticsConsent: boolean): void {
-  // Leadinfo runs cookieless by default (Legitimate Interest)
-  // When analytics consent is granted, enable full cookie tracking
-  if (typeof window !== 'undefined' && typeof (window as any).leadinfo === 'function') {
-    (window as any).leadinfo('consent', analyticsConsent);
-  }
-}
 
 function deleteCookiesByCategory(category: 'analytics' | 'marketing'): void {
   const cookiesToDelete: Record<string, string[]> = {
-    analytics: ['_ga', '_gid', '_li_id', '_li_ses', '_clck', '_clsk', 'CLID', 'ANONCHK', 'MR', 'MUID', 'SM'],
+    analytics: ['_ga', '_gid', '_clck', '_clsk', 'CLID', 'ANONCHK', 'MR', 'MUID', 'SM'],
     marketing: ['_fbp', '_fbc'],
   };
 
@@ -237,9 +230,6 @@ export function CookieConsent() {
     // Update Google Consent Mode
     updateGoogleConsentMode(cats);
 
-    // Update Leadinfo consent (upgrades from cookieless to full tracking)
-    updateLeadinfoConsent(cats.analytics);
-
     // Enable blocked scripts based on consent
     if (cats.analytics) enableBlockedScripts('analytics');
     if (cats.marketing) enableBlockedScripts('marketing');
@@ -352,7 +342,7 @@ export function CookieConsent() {
               <div className="flex items-center justify-between p-4 bg-canvas/5 rounded-lg hover:bg-canvas/10 transition-colors">
                 <div>
                   <h3 className="font-semibold">Analytisch</h3>
-                  <p className="text-sm text-canvas/60">Helpt ons de website te verbeteren (Google Analytics, Clarity, Leadinfo)</p>
+                  <p className="text-sm text-canvas/60">Helpt ons de website te verbeteren (Google Analytics, Clarity)</p>
                 </div>
                 <button
                   type="button"

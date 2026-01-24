@@ -32,7 +32,6 @@ const ogImageURL = new URL(image, Astro.site);
 // =============================================================================
 const GA_MEASUREMENT_ID = 'G-BBR63CY7Q9';
 const META_PIXEL_ID = import.meta.env.PUBLIC_META_PIXEL_ID || '';
-const LEADINFO_ID = 'LI-6973D746ECCF2';
 const CLARITY_ID = 'v6kn03ub4s';
 ---
 
@@ -68,16 +67,6 @@ const CLARITY_ID = 'v6kn03ub4s';
       gtag("set", "url_passthrough", true);
     </script>
 
-    <!-- =========================================================================
-         LEADINFO - Loads immediately in cookieless mode (Legitimate Interest)
-         Upgrades to full tracking after analytics consent granted
-         ========================================================================= -->
-    <script is:inline define:vars={{ LEADINFO_ID }}>
-      (function(l,e,a,d,i,n,f,o){if(!l[i]){l.GlobalLeadinfoNamespace=l.GlobalLeadinfoNamespace||[];
-      l.GlobalLeadinfoNamespace.push(i);l[i]=function(){(l[i].q=l[i].q||[]).push(arguments)};l[i].t=l[i].t||n;
-      l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;o.src=d;f.parentNode.insertBefore(o,f);}
-      }(window,document,'script','https://cdn.leadinfo.net/ping.js','leadinfo',LEADINFO_ID));
-    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon_final.svg" />
     <!-- Preload all font weights - ensures they arrive within 100ms for font-display: optional -->
     <link rel="preload" href={interTight400} as="font" type="font/woff2" crossorigin />
