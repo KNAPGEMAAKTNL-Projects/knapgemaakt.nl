@@ -302,6 +302,7 @@ export function CookieConsent() {
     return (
       <div
         className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+        style={{ contain: 'layout style paint' }}
         role="dialog"
         aria-modal="true"
         aria-labelledby="cookie-title"
@@ -415,7 +416,7 @@ export function CookieConsent() {
             </div>
 
             <div className="mt-4 text-center">
-              <a href="/privacy#cookies" className="text-sm text-canvas/50 hover:text-acid transition-colors underline">
+              <a href="/privacy#cookies" className="text-sm text-canvas/50 underline hover:text-acid transition-colors">
                 Bekijk ons cookiebeleid
               </a>
             </div>
@@ -431,6 +432,7 @@ export function CookieConsent() {
   return (
     <div
       className="fixed bottom-0 left-0 right-0 z-[9999] bg-ink text-canvas shadow-2xl"
+      style={{ contain: 'layout style paint' }}
       role="dialog"
       aria-labelledby="cookie-title"
     >
@@ -442,7 +444,7 @@ export function CookieConsent() {
             </h2>
             <p className="text-canvas/70 text-sm">
               Om je de beste ervaring te bieden gebruiken wij cookies voor analyse en marketing.{' '}
-              <a href="/privacy#cookies" className="text-acid hover:underline">Meer info</a>
+              <a href="/privacy#cookies" className="text-acid underline hover:text-acid/80">Meer info</a>
             </p>
           </div>
 

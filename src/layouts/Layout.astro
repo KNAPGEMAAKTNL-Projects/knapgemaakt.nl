@@ -205,7 +205,7 @@ const CLARITY_ID = 'v6kn03ub4s';
       });
     </script>
 
-    <!-- Cookie Consent Banner -->
-    <CookieConsent client:load />
+    <!-- Cookie Consent Banner (client:idle defers hydration to improve LCP/FCP) -->
+    <CookieConsent client:idle />
   </body>
 </html>
