@@ -84,18 +84,38 @@ function updateGoogleConsentMode(categories: ConsentCategories): void {
 }
 
 function updateClarityConsent(analyticsConsent: boolean): void {
-  if (typeof window === 'undefined' || typeof (window as any).clarity !== 'function') return;
+  if (typeof window === 'undefined') return;
 
   if (analyticsConsent) {
     // Grant consent - Clarity can set cookies and track across sessions
-    (window as any).clarity('consentv2', {
-      ad_Storage: 'granted',
-      analytics_Storage: 'granted',
-    });
+    if (typeof (window as any).clarity === 'function') {
+      (window as any).clarity('consentv2', {
+        ad_Storage: 'granted',
+        analytics_Storage: 'granted',
+      });
+    }
   } else {
     // Revoke consent - Clarity clears its cookies
-    (window as any).clarity('consent', false);
+    if (typeof (window as any).clarity === 'function') {
+      (window as any).clarity('consent', false);
+    }
+    // Also clear Clarity sessionStorage entries for full GDPR compliance
+    clearClaritySessionStorage();
   }
+}
+
+function clearClaritySessionStorage(): void {
+  if (typeof window === 'undefined' || typeof sessionStorage === 'undefined') return;
+
+  // Clear all Clarity-related sessionStorage keys
+  const keysToRemove: string[] = [];
+  for (let i = 0; i < sessionStorage.length; i++) {
+    const key = sessionStorage.key(i);
+    if (key && (key.startsWith('_clt') || key.startsWith('clr') || key.toLowerCase().includes('clarity'))) {
+      keysToRemove.push(key);
+    }
+  }
+  keysToRemove.forEach(key => sessionStorage.removeItem(key));
 }
 
 
