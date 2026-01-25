@@ -6,7 +6,6 @@ import OfferSection from "../components/OfferSection.astro";
 import PortfolioSection from "../components/PortfolioSection.astro";
 import ProcessSection from "../components/ProcessSection.astro";
 import Footer from "../components/Footer.astro";
-import TextRevealCSS from "../components/TextRevealCSS.astro";
 import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 import { TypingRotator } from "../components/TypingRotator";
 import { getAllCities } from "../data/cities";
@@ -15,8 +14,8 @@ const cities = getAllCities();
 ---
 
 <Layout
-	title="Website Laten Maken €595 | 7 Dagen | KNAP GEMAAKT."
-	description="Professionele website voor €595 vast, binnen 7 dagen live. Geen gedoe, inclusief tevredenheidsgarantie. Vraag vandaag je gratis offerte aan."
+	title="Website Laten Maken | Maatwerk voor Ondernemers | KNAP GEMAAKT."
+	description="Maatwerk websites die scoren, overtuigen en tijd besparen. Voor groeiende ondernemers die een website willen die écht voor ze werkt. Vraag vandaag je gratis voorstel aan."
 >
 	<LocalBusinessSchema />
 	<main class="bg-canvas">
@@ -30,34 +29,31 @@ const cities = getAllCities();
 			<div class="hidden md:block absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-acid/5 rounded-full blur-[120px] pointer-events-none"></div>
 
 			<div class="max-w-6xl xl:max-w-7xl mx-auto w-full relative z-10">
-				<!-- H1 Headline -->
+				<!-- H1 Headline with typing effect -->
 				<h1 class="mb-6 md:mb-8">
-					<TextRevealCSS
-						text="Jouw Nieuwe Website."
-						class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-tighter leading-[0.9] block"
-					/>
+					<span class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-tighter leading-[0.9] block">
+						Een website die
+					</span>
 					<span class="block h-2 md:h-4"></span>
-					<TextRevealCSS
-						text="In 7 Dagen. €595."
-						delay={0.15}
-						class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-tighter leading-[0.9] block"
-					/>
+					<span class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-tighter leading-[0.9] block relative">
+						{/* Server-rendered placeholder for SEO & CLS prevention */}
+						<span id="typing-placeholder" class="inline-block">scoort.</span>
+						<span class="absolute left-0 top-0">
+							<TypingRotator
+								client:load
+								prefix=""
+								words={["scoort.", "tijd bespaart.", "overtuigt.", "voor je werkt."]}
+								typingSpeed={80}
+								deletingSpeed={40}
+								pauseDuration={2500}
+							/>
+						</span>
+					</span>
 				</h1>
 
-				<!-- Subheadline with typing animation -->
-				<p class="text-lg md:text-xl lg:text-2xl text-ink/70 max-w-2xl mb-10 md:mb-12 leading-relaxed relative">
-					{/* Server-rendered placeholder for SEO & CLS prevention - positioned to avoid layout shift */}
-					<span id="typing-placeholder" class="inline-block">Professionele websites voor ondernemers.</span>
-					<span class="absolute left-0 top-0">
-						<TypingRotator
-							client:load
-							prefix="Professionele websites voor "
-							words={["ondernemers", "schilders", "kappers", "bakkers", "horeca", "ZZP'ers", "aanpakkers"]}
-							typingSpeed={80}
-							deletingSpeed={40}
-							pauseDuration={2500}
-						/>
-					</span>
+				<!-- Subheadline - static -->
+				<p class="text-lg md:text-xl lg:text-2xl text-ink/70 max-w-2xl mb-10 md:mb-12 leading-relaxed">
+					Van bezoekers naar klanten, terwijl jij onderneemt.
 				</p>
 
 				<!-- CTA -->
@@ -73,19 +69,19 @@ const cities = getAllCities();
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-8 border-t border-ink/10">
 					<div class="flex items-center gap-2 text-sm md:text-base text-ink/70">
 						<span class="w-2 h-2 bg-acid rounded-full shrink-0"></span>
-						<span>Vaste prijs, geen verrassingen</span>
+						<span>Kant-en-klaar opgeleverd</span>
 					</div>
 					<div class="flex items-center gap-2 text-sm md:text-base text-ink/70">
 						<span class="w-2 h-2 bg-acid rounded-full shrink-0"></span>
-						<span>Hosting inbegrepen</span>
+						<span>Volgende week online</span>
 					</div>
 					<div class="flex items-center gap-2 text-sm md:text-base text-ink/70">
 						<span class="w-2 h-2 bg-acid rounded-full shrink-0"></span>
-						<span>SEO geoptimaliseerd</span>
+						<span>Geen uurtje-factuurtje</span>
 					</div>
 					<div class="flex items-center gap-2 text-sm md:text-base text-ink/70">
 						<span class="w-2 h-2 bg-acid rounded-full shrink-0"></span>
-						<span>Binnen 1 week online</span>
+						<span>Nooit gemiste leads</span>
 					</div>
 				</div>
 			</div>
