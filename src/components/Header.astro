@@ -13,10 +13,12 @@ const { variant = "default" } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/blog", label: "Blog" },
-    { href: "/#prijzen", label: "Prijzen" },
-    { href: "/#faq", label: "FAQ" },
+    { href: "/website-laten-maken", label: "Websites" },
+    { href: "/aanpak", label: "Aanpak" },
+    { href: "/portfolio", label: "Projecten" },
+    { href: "/blog", label: "Kennis" },
+    { href: "/over-mij", label: "Over Mij" },
+    { href: "/contact", label: "Contact" },
 ];
 
 const isActive = (href: string) => {
@@ -58,10 +60,10 @@ const isActive = (href: string) => {
                     </a>
                 ))}
                 <a
-                    href="/aanvragen"
-                    class="btn-bracket btn-bracket-ink bg-acid text-ink px-5 py-2.5 font-bold uppercase tracking-tight text-sm hover:bg-ink hover:text-acid transition-colors duration-300"
+                    href="/contact"
+                    class="border border-ink/30 text-ink px-5 py-2.5 font-bold uppercase tracking-tight text-sm hover:border-ink hover:bg-ink hover:text-canvas transition-all duration-300"
                 >
-                    Kennismaken
+                    Stuur Bericht
                 </a>
             </nav>
 
@@ -124,7 +126,7 @@ const isActive = (href: string) => {
             style={`--index: ${navLinks.length}`}
         >
             <span class="relative z-10 block bg-acid text-ink px-8 py-4 font-black text-xl uppercase tracking-tight transition-all duration-300 group-hover:bg-canvas">
-                Kennismaken
+                Stuur Bericht
             </span>
             <span class="absolute inset-0 bg-electric scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></span>
         </a>

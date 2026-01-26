@@ -1,0 +1,138 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import TextRevealCSS from "../components/TextRevealCSS.astro";
+---
+
+<Layout
+	title="Over Mij | Yanni | KNAP GEMAAKT."
+	description="Ik ben Yanni, de persoon achter KNAP GEMAAKT. Ik bouw websites voor ondernemers die geen zin hebben in gedoe. Leer me kennen."
+>
+	<main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 bg-grid-light relative overflow-hidden">
+		<div class="max-w-4xl mx-auto">
+			<!-- Header -->
+			<div class="mb-16">
+				<TextRevealCSS
+					text="Over Mij."
+					class="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6"
+				/>
+				<p class="text-xl md:text-2xl text-ink/60 font-medium max-w-2xl leading-relaxed">
+					De persoon achter KNAP GEMAAKT.
+				</p>
+			</div>
+
+			<!-- Main Content -->
+			<div class="grid md:grid-cols-3 gap-12 mb-16">
+				<!-- Photo placeholder -->
+				<div class="md:col-span-1">
+					<div class="aspect-square bg-ink/5 border-2 border-ink/10 flex items-center justify-center">
+						<span class="text-ink/20 font-mono text-xs uppercase tracking-widest">Foto</span>
+					</div>
+				</div>
+
+				<!-- Bio -->
+				<div class="md:col-span-2 space-y-6 text-lg text-ink/80 leading-relaxed">
+					<p>
+						Hoi, ik ben <strong class="text-ink">Yanni</strong>. Ik bouw websites voor ondernemers die geen zin hebben in gedoe.
+					</p>
+					<p>
+						Grote bureaus rekenen duizenden euro's en hebben maanden nodig. Goedkope alternatieven
+						leveren trage WordPress-sites die je binnen een jaar hoofdpijn bezorgen.
+						Ik zag een gat in de markt: premium kwaliteit, eerlijke prijs, snel geleverd.
+					</p>
+					<p>
+						Dat is KNAP GEMAAKT. Geen team van 50 man, geen kantoor in Amsterdam, geen
+						projectmanagers die berichten doorspelen. Gewoon ik, die jouw website bouwt.
+					</p>
+					<p>
+						Elke site die ik maak is uniek. Geen templates, geen themes. Ik schrijf de code zelf,
+						en vaak ook de teksten. Want laten we eerlijk zijn: jij bent goed in je vak,
+						niet in het staren naar een leeg Word-document.
+					</p>
+				</div>
+			</div>
+
+			<!-- Values / What I Believe -->
+			<div class="border-t-2 border-ink/10 pt-16 mb-16">
+				<h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-8">
+					Waar Ik In Geloof
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="space-y-2">
+						<h3 class="font-bold uppercase tracking-tight">Geen uurtje-factuurtje</h3>
+						<p class="text-ink/60">Vaste prijzen, geen verrassingen achteraf. Je weet precies wat je betaalt.</p>
+					</div>
+					<div class="space-y-2">
+						<h3 class="font-bold uppercase tracking-tight">Snelheid is respect</h3>
+						<p class="text-ink/60">Jouw tijd is kostbaar. Ik lever snel, zonder concessies aan kwaliteit.</p>
+					</div>
+					<div class="space-y-2">
+						<h3 class="font-bold uppercase tracking-tight">Techniek moet werken</h3>
+						<p class="text-ink/60">Geen trage sites, geen security issues, geen maandelijks onderhoud nodig.</p>
+					</div>
+					<div class="space-y-2">
+						<h3 class="font-bold uppercase tracking-tight">Eerlijk advies</h3>
+						<p class="text-ink/60">Als je geen website nodig hebt, zeg ik dat ook. Ik verkoop geen lucht.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Quick Facts -->
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+				<div class="p-6 bg-ink text-canvas text-center">
+					<div class="text-3xl font-black text-acid mb-1">50+</div>
+					<div class="text-xs font-mono uppercase tracking-widest text-canvas/60">Websites gebouwd</div>
+				</div>
+				<div class="p-6 bg-ink text-canvas text-center">
+					<div class="text-3xl font-black text-acid mb-1">7</div>
+					<div class="text-xs font-mono uppercase tracking-widest text-canvas/60">Dagen gemiddeld</div>
+				</div>
+				<div class="p-6 bg-ink text-canvas text-center">
+					<div class="text-3xl font-black text-acid mb-1">100%</div>
+					<div class="text-xs font-mono uppercase tracking-widest text-canvas/60">Tevreden klanten</div>
+				</div>
+				<div class="p-6 bg-ink text-canvas text-center">
+					<div class="text-3xl font-black text-acid mb-1">0</div>
+					<div class="text-xs font-mono uppercase tracking-widest text-canvas/60">WordPress sites</div>
+				</div>
+			</div>
+
+			<!-- Location -->
+			<div class="flex items-center gap-4 p-6 border-2 border-ink/10 mb-16">
+				<div class="w-12 h-12 bg-ink/10 flex items-center justify-center flex-shrink-0">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+						<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+						<circle cx="12" cy="10" r="3"/>
+					</svg>
+				</div>
+				<div>
+					<h3 class="font-bold uppercase tracking-tight">Gevestigd in Buren, Gelderland</h3>
+					<p class="text-ink/60 text-sm">Maar ik werk met klanten door heel Nederland. Alles gaat remote.</p>
+				</div>
+			</div>
+
+			<!-- CTA Section -->
+			<div class="p-8 md:p-12 bg-ink text-canvas relative overflow-hidden">
+				<div class="absolute inset-0 bg-grid-dark opacity-50"></div>
+				<div class="relative z-10 text-center">
+					<h2 class="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-4">
+						Zullen We Kennismaken?
+					</h2>
+					<p class="text-canvas/60 text-lg mb-8 max-w-xl mx-auto">
+						Vertel me over je project. 20 minuten, geen verkooppraatje.
+					</p>
+					<a
+						href="/aanvragen"
+						class="btn-bracket btn-bracket-acid inline-flex items-center justify-center gap-3 px-8 py-[18px] bg-acid text-ink font-bold uppercase tracking-tight hover:bg-acid/80 transition-colors duration-300 group"
+					>
+						Laten we kennismaken
+						<span class="text-xl leading-none transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</Layout>
