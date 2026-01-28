@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PortfolioSection from "../components/PortfolioSection.astro";
 import OfferLocalSEOSection from "../components/OfferLocalSEOSection.astro";
 import Footer from "../components/Footer.astro";
 import { getCityBySlug, getAllCities } from "../data/cities";
@@ -79,9 +78,6 @@ const breadcrumbs = [
 
                         <!-- Trust elements -->
                         <div class="flex flex-wrap items-center gap-4 text-sm text-ink/60">
-                            <span class="flex items-center gap-1">
-                                <span class="text-acid">★★★★★</span>
-                            </span>
                             <span>Vanaf €495</span>
                             <span>•</span>
                             <span>Klaar in 7 dagen</span>
@@ -129,9 +125,6 @@ const breadcrumbs = [
 
         <!-- Offer-focused Local SEO Content Section -->
         <OfferLocalSEOSection city={cityData} />
-
-        <!-- Portfolio -->
-        <PortfolioSection />
 
         <!-- Footer -->
         <Footer />

@@ -87,7 +87,7 @@ export const cities: Record<string, CityData> = {
 			economicFact: "De binnenstad telt meer dan 150 winkels en horecazaken op loopafstand",
 			founded: "Stadsrechten sinds 1318"
 		},
-		relatedProject: "fitcity-culemborg",
+		relatedProject: "maatwerk-website-voor-fitcity-culemborg",
 
 		// Offer-focused content
 		heroSubheadline: "Professionele websites voor ondernemers die niet willen wachten op dure Utrechtse bureaus.",
@@ -158,7 +158,7 @@ export const cities: Record<string, CityData> = {
 			economicFact: "Tiel trekt jaarlijks 100.000+ bezoekers naar de Fruitcorso",
 			founded: "Stadsrechten sinds 1200"
 		},
-		relatedProject: "byshakir",
+		relatedProject: "maatwerk-website-voor-by-shakir",
 
 		heroSubheadline: "Websites die passen bij de ambitie van Tiel als regiocentrum van de Betuwe.",
 

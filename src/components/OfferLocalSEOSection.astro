@@ -285,7 +285,7 @@ function getAreaLink(areaName: string): string | null {
                         </div>
                         <a href={`/project/${relatedProject.slug}`} class="relative aspect-video overflow-hidden bg-ink/5 block group">
                             <img
-                                src={relatedProject.image}
+                                src={relatedProject.overviewMockup || relatedProject.heroMockup || relatedProject.image}
                                 alt={`${relatedProject.title} website voorbeeld`}
                                 width={800}
                                 height={450}
@@ -333,27 +333,29 @@ function getAreaLink(areaName: string): string | null {
             </div>
         )}
 
-        <!-- ============================================ -->
-        <!-- SECTION 5: FAQ (80% unique - city-specific) -->
-        <!-- ============================================ -->
-        {city.faqs && city.faqs.length > 0 && (
-            <div class="pt-12 border-t border-ink/10">
-                <div class="font-mono text-xs uppercase tracking-widest text-ink/50 mb-4">
-                    [ Veelgestelde Vragen ]
-                </div>
-                <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8">
-                    Website Laten Maken in {city.name}
-                </h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    {city.faqs.map((faq) => (
-                        <div class="space-y-2">
-                            <h4 class="font-bold text-ink">{faq.question}</h4>
-                            <p class="text-ink/70 text-sm leading-relaxed">{faq.answer}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        )}
-
     </div>
 </section>
+
+<!-- ============================================ -->
+<!-- SECTION 5: FAQ (80% unique - city-specific) -->
+<!-- ============================================ -->
+{city.faqs && city.faqs.length > 0 && (
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
+        <div class="max-w-6xl xl:max-w-7xl mx-auto relative z-10">
+            <div class="font-mono text-xs uppercase tracking-widest text-acid mb-4">
+                [ Veelgestelde Vragen ]
+            </div>
+            <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8">
+                Website Laten Maken in {city.name}
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                {city.faqs.map((faq) => (
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-acid">{faq.question}</h4>
+                        <p class="text-canvas/70 text-sm leading-relaxed">{faq.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+)}
