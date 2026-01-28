@@ -1,0 +1,582 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import TextRevealCSS from "../components/TextRevealCSS.astro";
+import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
+import FAQSchema from "../components/seo/FAQSchema.astro";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://knapgemaakt.nl/" },
+	{ name: "Automations", url: "https://knapgemaakt.nl/automations" },
+];
+
+const faqs = [
+	{
+		question: "Wat kost een automation systeem?",
+		answer: "Dat hangt af van wat je nodig hebt. Een eenvoudige opzet met contactformulier-routing en e-mailbevestigingen kost minder dan een compleet systeem met booking, betalingen en lead nurturing. Na een kort gesprek stuur ik een offerte op maat, zodat je precies weet waar je aan toe bent.",
+	},
+	{
+		question: "Moet ik technisch onderlegd zijn?",
+		answer: "Helemaal niet. Ik bouw alles op zodat het zonder technische kennis werkt. Je hoeft geen code te schrijven of ingewikkelde tools te beheren. Als er iets aangepast moet worden, doe ik dat voor je.",
+	},
+	{
+		question: "Hoe lang duurt het voordat alles draait?",
+		answer: "Een eenvoudige opzet kan binnen een week live staan. Een uitgebreider systeem met meerdere automations duurt 2 tot 3 weken. Na het intakegesprek weet je precies wat de planning is.",
+	},
+	{
+		question: "Kan ik later uitbreiden?",
+		answer: "Altijd. Je kunt klein beginnen met bijvoorbeeld alleen een gemiste-oproep SMS, en later een afsprakenplanner, review-verzoeken of betalingen toevoegen. Het systeem groeit mee met je bedrijf.",
+	},
+	{
+		question: "Werkt het met de tools die ik al gebruik?",
+		answer: "Meestal wel. Ik bouw je automations met eigen code op een server, waardoor ik met vrijwel elke tool kan koppelen. Google Calendar, Mollie, WhatsApp, je boekhoudsoftware. Gebruik je iets specifieks? Dan kijken we samen of er een koppeling mogelijk is.",
+	},
+	{
+		question: "Wat als er iets kapotgaat?",
+		answer: "Bij het maandelijks beheer monitor ik je automations continu. Gaat er iets mis? Dan los ik het op, meestal voordat je het zelf merkt. Zonder beheer kun je me altijd bereiken voor support.",
+	},
+	{
+		question: "Kan ik het zelf beheren?",
+		answer: "Je automations draaien op een server die onderhouden moet worden. Dat hoort bij het maandelijks beheer. Jij hoeft daar niet naar om te kijken. Ik zorg dat alles blijft draaien, updates krijgt en gemonitord wordt.",
+	},
+	{
+		question: "Wat als ik wil stoppen met het maandelijks beheer?",
+		answer: "Kan altijd, geen opzegtermijn. Wel goed om te weten: je automations draaien op een server. Zonder beheer gaat die server uit en stoppen de automations. Je website en andere losse tools blijven gewoon werken. Wil je later weer starten? Dan zetten we alles opnieuw aan.",
+	},
+];
+
+const problems = [
+	{
+		title: "Gemiste Oproepen",
+		description: "Een klant belt, je bent bezig. Geen terugbelnotitie, geen opvolging. Kans gemist.",
+	},
+	{
+		title: "Handmatig Reviews Vragen",
+		description: "Je weet dat reviews belangrijk zijn. Maar na elke klus er apart om vragen? Dat schiet erbij in.",
+	},
+	{
+		title: "Afspraken Heen-en-weer Appen",
+		description: "Drie berichten om een datum te prikken. Dat kan slimmer.",
+	},
+	{
+		title: "No-Shows",
+		description: "Klant vergeet de afspraak. Jij staat voor niks klaar. Geen herinnering gestuurd.",
+	},
+	{
+		title: "Leads Die Koud Worden",
+		description: "Iemand vult je formulier in, maar je reageert pas twee dagen later. Te laat.",
+	},
+	{
+		title: "Administratie 's Avonds",
+		description: "Overdag werk je in je bedrijf. 's Avonds zit je facturen te sturen en afspraken te plannen.",
+	},
+];
+
+const beforeAfter = [
+	{
+		before: "Klant belt, je mist de oproep, geen reactie.",
+		after: "Klant krijgt direct een SMS: \"Sorry dat ik je miste, kan ik je terugbellen?\"",
+	},
+	{
+		before: "Na elke klus handmatig een review-linkje sturen (of vergeten).",
+		after: "Klant krijgt automatisch een vriendelijk review-verzoek op het juiste moment.",
+	},
+	{
+		before: "Drie WhatsApp-berichten om een afspraak te plannen.",
+		after: "Klant boekt zelf via jouw online agenda. Bevestiging en herinnering automatisch.",
+	},
+	{
+		before: "Lead vult formulier in, jij reageert als je eraan denkt.",
+		after: "Lead krijgt binnen 2 minuten een persoonlijk antwoord en opvolgberichten.",
+	},
+	{
+		before: "Klant vergeet de afspraak en komt niet opdagen.",
+		after: "Automatische herinnering per SMS, 24 uur en 1 uur van tevoren.",
+	},
+	{
+		before: "Factuur handmatig opstellen en versturen na elke klus.",
+		after: "Betaalverzoek gaat automatisch mee na afronding. iDEAL | Wero.",
+	},
+];
+
+const steps = [
+	{
+		number: 1,
+		title: "Intake Gesprek",
+		duration: "30 min",
+		description: "We bespreken waar je tijd aan verliest, wat je frustreert en wat je zou willen automatiseren. Geen verkooppraatje, gewoon een eerlijk gesprek over wat er mogelijk is.",
+		details: [
+			"Welke taken kosten je elke week tijd?",
+			"Hoe loopt je klantproces nu?",
+			"Welke tools gebruik je al?",
+			"Wat zou je als eerste willen automatiseren?",
+		],
+	},
+	{
+		number: 2,
+		title: "Plan & Offerte",
+		duration: "2 dagen",
+		description: "Je ontvangt een helder plan met precies wat je krijgt, wat het kost en hoe lang het duurt. Geen verrassingen achteraf.",
+		details: [
+			"Welke automations ik voorstel en waarom",
+			"Welke tools ik gebruik",
+			"De vaste prijs, zwart op wit",
+			"De planning van start tot live",
+		],
+	},
+	{
+		number: 3,
+		title: "Bouwen & Testen",
+		duration: "1-3 weken",
+		description: "Ik bouw je systeem, test alles grondig en laat het je zien op een testomgeving. Je kunt het zelf proberen voordat het live gaat.",
+		details: [
+			"Ik bouw en configureer alle automations",
+			"Elke flow wordt uitgebreid getest",
+			"Je krijgt een demo op een testomgeving",
+			"Feedback verwerken tot je tevreden bent",
+		],
+	},
+	{
+		number: 4,
+		title: "Live & Optimaliseren",
+		duration: "Doorlopend",
+		description: "We zetten alles live. De eerste maand monitor ik extra scherp mee, zodat we kunnen bijsturen waar nodig.",
+		details: [
+			"Go live op jouw systemen",
+			"Eerste maand intensieve monitoring",
+			"Bijsturen op basis van echte resultaten",
+			"Uitbreiden wanneer je wilt",
+		],
+	},
+];
+---
+
+<Layout
+	title="Automatisering Voor Je Bedrijf | Op Maat | KNAP GEMAAKT."
+	description="Slimme automations voor je bedrijf. Van gemiste-oproep SMS tot afsprakenplanner en review-verzoeken. Op maat gebouwd. Vraag een offerte aan."
+>
+	<LocalBusinessSchema />
+	<FAQSchema faqs={faqs} />
+	<BreadcrumbSchema items={breadcrumbs} />
+
+	<main class="bg-canvas">
+		<!-- SECTION 1: HERO (light) -->
+		<section class="min-h-[80vh] flex flex-col justify-center relative overflow-hidden px-6 md:px-12 lg:px-16 py-24 bg-grid-light">
+			<div class="hidden md:block absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(204,255,0,0.04),transparent_50%)] pointer-events-none"></div>
+			<div class="hidden md:block absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-acid/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+			<div class="max-w-6xl xl:max-w-7xl mx-auto w-full relative z-10">
+				<h1 class="mb-6 md:mb-8">
+					<TextRevealCSS
+						text="Je Kunt Niet Overal"
+						class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] block"
+					/>
+					<span class="block h-2 md:h-4"></span>
+					<TextRevealCSS
+						text="Tegelijk Zijn."
+						delay={0.15}
+						class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] block"
+					/>
+				</h1>
+
+				<p class="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight text-ink/80 mb-6 md:mb-8">
+					Maar Je Systeem Wel.
+				</p>
+
+				<p class="text-lg md:text-xl lg:text-2xl text-ink/70 max-w-2xl mb-6 md:mb-8 leading-relaxed">
+					Gemiste oproepen. Handmatig reviews vragen. 's Avonds nog administratie doen.
+					Herkenbaar? Wat als dat allemaal automatisch kan?
+				</p>
+				<p class="text-base md:text-lg text-ink/50 max-w-2xl mb-10 md:mb-12 leading-relaxed">
+					Ik bouw slimme automations die je klantproces overnemen. Van eerste contact
+					tot betaling en review. Op maat gebouwd, voor jouw bedrijf.
+				</p>
+
+				<a
+					href="#offerte"
+					class="w-full sm:w-auto bg-acid text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-ink hover:text-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group mb-12 md:mb-16"
+				>
+					Vraag een offerte aan
+					<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+				</a>
+
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-8 border-t border-ink/10">
+					<div class="flex items-center gap-2 text-sm md:text-base text-ink/70">
+						<span class="w-2 h-2 bg-acid rounded-full shrink-0"></span>
+						<span>Op maat gebouwd</span>
+					</div>
+					<div class="flex items-center gap-2 text-sm md:text-base text-ink/70">
+						<span class="w-2 h-2 bg-acid rounded-full shrink-0"></span>
+						<span>Geen technische kennis nodig</span>
+					</div>
+					<div class="flex items-center gap-2 text-sm md:text-base text-ink/70">
+						<span class="w-2 h-2 bg-acid rounded-full shrink-0"></span>
+						<span>Binnen 1-3 weken live</span>
+					</div>
+					<div class="flex items-center gap-2 text-sm md:text-base text-ink/70">
+						<span class="w-2 h-2 bg-acid rounded-full shrink-0"></span>
+						<span>Vaste prijs, geen verrassingen</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 2: PROBLEMS THEY RECOGNISE (dark) -->
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
+			<div class="max-w-6xl xl:max-w-7xl mx-auto">
+				<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-6">
+					[ Dit Herken Je Wel ]
+				</div>
+				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] mb-6 max-w-3xl">
+					De Dingen Die Elke Week Tijd Kosten.
+				</h2>
+				<p class="text-canvas/70 text-lg mb-12 md:mb-16 max-w-2xl leading-relaxed">
+					Je doet alles zelf. Logisch, je bent ondernemer. Maar sommige dingen kosten meer tijd dan ze zouden moeten.
+				</p>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{problems.map((problem) => (
+						<div class="p-6 border border-canvas/10 bg-canvas/5 hover:border-acid/30 transition-colors">
+							<h3 class="text-lg font-black uppercase tracking-tight mb-3">{problem.title}</h3>
+							<p class="text-canvas/60 leading-relaxed">{problem.description}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 3: WHAT'S POSSIBLE — before/after (light) -->
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+			<div class="max-w-6xl xl:max-w-7xl mx-auto">
+				<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40 mb-6">
+					[ Dit Kan Allemaal ]
+				</div>
+				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] mb-6 max-w-3xl">
+					Van Handmatig Naar Automatisch.
+				</h2>
+				<p class="text-ink/60 text-lg mb-12 md:mb-16 max-w-2xl leading-relaxed">
+					Dezelfde taken. Maar dan zonder dat jij eraan hoeft te denken.
+				</p>
+
+				<div class="grid md:grid-cols-2 gap-6">
+					{beforeAfter.map((item) => (
+						<div class="p-6 border-2 border-ink/10 hover:border-ink/20 transition-colors">
+							<div class="flex items-start gap-3 mb-4">
+								<span class="text-red-500 mt-0.5 shrink-0 font-bold">✕</span>
+								<div>
+									<span class="text-xs font-mono uppercase tracking-widest text-ink/40 block mb-1">Voor</span>
+									<p class="text-ink/60 leading-relaxed">{item.before}</p>
+								</div>
+							</div>
+							<div class="flex items-start gap-3">
+								<span class="text-emerald-600 mt-0.5 shrink-0 font-bold">✓</span>
+								<div>
+									<span class="text-xs font-mono uppercase tracking-widest text-ink/40 block mb-1">Nu</span>
+									<p class="text-ink/80 leading-relaxed font-medium">{item.after}</p>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 4: HOW IT WORKS (dark) -->
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
+			<div class="max-w-6xl xl:max-w-7xl mx-auto">
+				<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-6">
+					[ Hoe Het Werkt ]
+				</div>
+				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] mb-6 max-w-3xl">
+					Van Gesprek Tot Live Systeem.
+				</h2>
+				<p class="text-canvas/70 text-lg mb-12 md:mb-16 max-w-2xl leading-relaxed">
+					Geen eindeloze trajecten. Van eerste gesprek tot werkend systeem in een paar weken. Zo ziet het eruit.
+				</p>
+
+				<div class="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-12">
+					{steps.map((step) => (
+						<div class="relative border-l-2 border-acid/30 pl-8 md:pl-10">
+							<div class="absolute -left-[13px] top-0 w-6 h-6 bg-acid rounded-full flex items-center justify-center">
+								<span class="text-ink text-xs font-black">{step.number}</span>
+							</div>
+							<div class="flex items-start justify-between gap-4 mb-3">
+								<h3 class="text-xl font-black uppercase tracking-tight">{step.title}</h3>
+								<span class="font-mono text-xs text-canvas/40 uppercase tracking-widest shrink-0 mt-1">{step.duration}</span>
+							</div>
+							<p class="text-canvas/70 leading-relaxed mb-4">
+								{step.description}
+							</p>
+							<ul class="space-y-2 text-canvas/50 text-sm">
+								{step.details.map((detail) => (
+									<li class="flex items-start gap-2">
+										<span class="text-acid mt-0.5 shrink-0">—</span>
+										<span>{detail}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 6: OFFERTE FORM (light) -->
+		<section id="offerte" class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+			<div class="max-w-3xl mx-auto">
+				<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40 mb-6">
+					[ Offerte Aanvragen ]
+				</div>
+				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] mb-6">
+					Wat Zou Jij Willen Automatiseren?
+				</h2>
+				<p class="text-ink/60 text-lg mb-12 leading-relaxed">
+					Elk bedrijf is anders. Vertel me wat je nodig hebt, dan stuur ik je een voorstel op maat.
+				</p>
+
+				<form id="automation-form" class="space-y-8">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div class="space-y-2">
+							<label for="auto-naam" class="block font-mono text-xs uppercase tracking-widest text-ink/60">Naam</label>
+							<input
+								type="text"
+								id="auto-naam"
+								name="naam"
+								required
+								oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+								oninput="this.setCustomValidity('')"
+								class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-acid transition-colors rounded-none placeholder:text-ink/20"
+								placeholder="Je volledige naam"
+							/>
+						</div>
+						<div class="space-y-2">
+							<label for="auto-bedrijf" class="block font-mono text-xs uppercase tracking-widest text-ink/60">Bedrijfsnaam</label>
+							<input
+								type="text"
+								id="auto-bedrijf"
+								name="bedrijfsnaam"
+								class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-acid transition-colors rounded-none placeholder:text-ink/20"
+								placeholder="Je bedrijfsnaam"
+							/>
+						</div>
+						<div class="space-y-2">
+							<label for="auto-email" class="block font-mono text-xs uppercase tracking-widest text-ink/60">E-mailadres</label>
+							<input
+								type="email"
+								id="auto-email"
+								name="email"
+								required
+								oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+								oninput="this.setCustomValidity('')"
+								class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-acid transition-colors rounded-none placeholder:text-ink/20"
+								placeholder="je@email.nl"
+							/>
+						</div>
+						<div class="space-y-2">
+							<label for="auto-telefoon" class="block font-mono text-xs uppercase tracking-widest text-ink/60">Telefoonnummer</label>
+							<input
+								type="tel"
+								id="auto-telefoon"
+								name="telefoon"
+								class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-acid transition-colors rounded-none placeholder:text-ink/20"
+								placeholder="06 12345678"
+							/>
+						</div>
+					</div>
+
+					<div class="space-y-4">
+						<label class="block font-mono text-xs uppercase tracking-widest text-ink/60">Waar heb je interesse in?</label>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+							{[
+								"Gemiste-oproep SMS",
+								"Afsprakenplanner / booking",
+								"Automatische review-verzoeken",
+								"Lead opvolging",
+								"Afspraakherinneringen",
+								"Betalingen (iDEAL | Wero)",
+								"WhatsApp-notificaties",
+								"Iets anders",
+							].map((option) => (
+								<label class="flex items-center gap-3 cursor-pointer group p-3 border border-ink/10 hover:border-acid/30 transition-colors">
+									<input
+										type="checkbox"
+										name="interesse"
+										value={option}
+										class="w-4 h-4 shrink-0 accent-acid"
+									/>
+									<span class="text-ink/70 group-hover:text-ink transition-colors">{option}</span>
+								</label>
+							))}
+						</div>
+					</div>
+
+					<div class="space-y-2">
+						<label for="auto-bericht" class="block font-mono text-xs uppercase tracking-widest text-ink/60">Toelichting (optioneel)</label>
+						<textarea
+							id="auto-bericht"
+							name="bericht"
+							rows={4}
+							class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-acid transition-colors rounded-none placeholder:text-ink/20 resize-none"
+							placeholder="Vertel kort wat je zou willen automatiseren"
+						></textarea>
+					</div>
+
+					<!-- Privacy checkbox -->
+					<div class="flex items-start gap-3">
+						<input
+							type="checkbox"
+							id="auto-privacy"
+							name="privacy"
+							required
+							oninvalid="this.setCustomValidity('Je moet akkoord gaan met de privacyverklaring')"
+							oninput="this.setCustomValidity('')"
+							class="mt-1 w-4 h-4 shrink-0 accent-acid"
+						/>
+						<label for="auto-privacy" class="text-sm text-ink/60">
+							Ik ga akkoord met de <a href="/privacy" class="underline hover:text-ink transition-colors">privacyverklaring</a>
+						</label>
+					</div>
+
+					<div>
+						<button
+							type="submit"
+							id="auto-submit-btn"
+							class="w-full sm:w-auto bg-acid text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-ink hover:text-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+						>
+							<span id="auto-btn-text">Verstuur aanvraag</span>
+							<span id="auto-btn-arrow" class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+							<span id="auto-btn-loading" class="hidden">
+								<svg class="animate-spin h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+									<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+									<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+								</svg>
+							</span>
+						</button>
+						<p class="mt-4 text-xs font-mono text-ink/40">
+							Ik reageer binnen 24 uur. Geen verplichtingen.
+						</p>
+					</div>
+
+					<!-- Success message -->
+					<div id="auto-success" class="hidden p-6 border-2 border-acid bg-acid/10">
+						<p class="font-bold text-ink uppercase tracking-tight">Aanvraag verstuurd</p>
+						<p class="text-ink/70 mt-2">Ik neem zo snel mogelijk contact met je op.</p>
+					</div>
+
+					<!-- Error message -->
+					<div id="auto-error" class="hidden p-6 border-2 border-red-500 bg-red-500/10">
+						<p class="font-bold text-red-500 uppercase tracking-tight">Er ging iets mis</p>
+						<p class="text-ink/70 mt-2">Probeer het opnieuw of stuur een mail naar info@knapgemaakt.nl.</p>
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<!-- SECTION 7: FAQ (dark) -->
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
+			<div class="max-w-6xl xl:max-w-7xl mx-auto">
+				<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-6">
+					[ Veelgestelde Vragen ]
+				</div>
+				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] mb-12 md:mb-16">
+					Vragen?
+				</h2>
+
+				<div class="grid md:grid-cols-2 gap-8 md:gap-12">
+					<div class="space-y-8">
+						{faqs.slice(0, 4).map((faq) => (
+							<div class="space-y-3">
+								<h3 class="text-lg font-bold text-acid">{faq.question}</h3>
+								<p class="text-canvas/70 leading-relaxed">{faq.answer}</p>
+							</div>
+						))}
+					</div>
+					<div class="space-y-8">
+						{faqs.slice(4).map((faq) => (
+							<div class="space-y-3">
+								<h3 class="text-lg font-bold text-acid">{faq.question}</h3>
+								<p class="text-canvas/70 leading-relaxed">{faq.answer}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 8: FOOTER -->
+		<Footer
+			ctaHeadline="Klaar om tijd terug te winnen?"
+			ctaSubtext="Vertel me wat je zou willen automatiseren. Ik denk graag mee."
+		/>
+	</main>
+</Layout>
+
+<script>
+	function initAutomationForm() {
+		const form = document.getElementById("automation-form") as HTMLFormElement;
+		if (!form || form.dataset.initialized === "true") return;
+		form.dataset.initialized = "true";
+
+		const submitBtn = document.getElementById("auto-submit-btn") as HTMLButtonElement;
+		const btnText = document.getElementById("auto-btn-text") as HTMLSpanElement;
+		const btnArrow = document.getElementById("auto-btn-arrow") as HTMLSpanElement;
+		const btnLoading = document.getElementById("auto-btn-loading") as HTMLSpanElement;
+		const successMsg = document.getElementById("auto-success") as HTMLDivElement;
+		const errorMsg = document.getElementById("auto-error") as HTMLDivElement;
+
+		function setLoading(loading: boolean) {
+			submitBtn.disabled = loading;
+			btnText.classList.toggle("hidden", loading);
+			btnArrow.classList.toggle("hidden", loading);
+			btnLoading.classList.toggle("hidden", !loading);
+		}
+
+		form.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			errorMsg.classList.add("hidden");
+			successMsg.classList.add("hidden");
+
+			setLoading(true);
+
+			const formData = new FormData(form);
+			const interesse = formData.getAll("interesse") as string[];
+
+			try {
+				const response = await fetch("/api/submissions", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						type: "offerte",
+						specification: interesse.join(", "),
+						name: formData.get("naam"),
+						company: formData.get("bedrijfsnaam") || "",
+						email: formData.get("email"),
+						phone: formData.get("telefoon") || "",
+						message: (formData.get("bericht") as string) || "",
+					}),
+				});
+
+				if (!response.ok) {
+					const data = await response.json();
+					throw new Error(data.error || "Verzenden mislukt");
+				}
+
+				form.reset();
+				successMsg.classList.remove("hidden");
+				successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+			} catch (error) {
+				console.error("Form submission error:", error);
+				errorMsg.classList.remove("hidden");
+				errorMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+			} finally {
+				setLoading(false);
+			}
+		});
+	}
+
+	initAutomationForm();
+	document.addEventListener("astro:page-load", initAutomationForm);
+</script>

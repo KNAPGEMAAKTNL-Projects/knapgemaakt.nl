@@ -248,6 +248,48 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </div>
 
+                <!-- Specification -->
+                <div class="space-y-2">
+                    <label
+                        for="specification"
+                        class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                        >Waar wil je het over hebben?</label
+                    >
+                    <div class="relative">
+                        <select
+                            id="specification"
+                            name="specification"
+                            required
+                            oninvalid="this.setCustomValidity('Maak een keuze uit de lijst')"
+                            oninput="this.setCustomValidity('')"
+                            class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-electric transition-colors rounded-none appearance-none cursor-pointer"
+                        >
+                            <option value="" disabled selected>Maak een keuze...</option>
+                            <option value="Website laten maken">Website laten maken</option>
+                            <option value="Advies gesprek">Advies gesprek</option>
+                            <option value="Bestaande website verbeteren">Bestaande website verbeteren</option>
+                            <option value="Automatisering bespreken">Automatisering bespreken</option>
+                            <option value="Anders">Anders</option>
+                        </select>
+                        <div
+                            class="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-ink/40"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="square"
+                                stroke-linejoin="miter"
+                                ><path d="m6 9 6 6 6-6"></path></svg
+                            >
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Calendar Section -->
                 <div
                     class="space-y-6 -mx-4 px-4 py-8 bg-black text-white lg:bg-transparent lg:text-ink lg:p-0 lg:mx-0"
@@ -396,6 +438,7 @@ import Footer from "../components/Footer.astro";
             "telefoon",
             "email",
             "branche",
+            "specification",
             "website_url",
         ].forEach((name) => {
             const el = form.elements.namedItem(name) as
@@ -428,6 +471,7 @@ import Footer from "../components/Footer.astro";
                 "telefoon",
                 "email",
                 "branche",
+                "specification",
                 "website_url",
             ].forEach((name) => {
                 const el = form.elements.namedItem(name) as
@@ -503,11 +547,14 @@ import Footer from "../components/Footer.astro";
         const branche = (
             document.getElementById("branche") as HTMLSelectElement
         ).value;
+        const specification = (
+            document.getElementById("specification") as HTMLSelectElement
+        ).value;
         const hasWebsite = document.querySelector(
             'input[name="has_website"]:checked',
         );
 
-        if (naam && email && telefoon && branche && hasWebsite) {
+        if (naam && email && telefoon && branche && specification && hasWebsite) {
             calPlaceholder.classList.add("hidden");
             calendarContainer.classList.remove("hidden");
             // Mount the calendar when form is complete
@@ -519,11 +566,13 @@ import Footer from "../components/Footer.astro";
     }
 
     // Add listeners to check form completion
-    ["naam", "email", "telefoon", "branche"].forEach((id) => {
+    ["naam", "email", "telefoon", "branche", "specification"].forEach((id) => {
         document
             .getElementById(id)
             ?.addEventListener("input", checkFormComplete);
     });
+    document.getElementById("specification")
+        ?.addEventListener("change", checkFormComplete);
     document.querySelectorAll('input[name="has_website"]').forEach((el) => {
         el.addEventListener("change", checkFormComplete);
     });
@@ -580,26 +629,29 @@ import Footer from "../components/Footer.astro";
         const rawUrl = formData.get("website_url") as string;
         const websiteUrl = normalizeUrl(rawUrl);
 
-        // Build booking payload
-        const bookingPayload = {
-            user_name: formData.get("naam") as string,
-            user_email: formData.get("email") as string,
-            user_phone: formData.get("telefoon") as string,
-            user_company: formData.get("bedrijfsnaam") as string,
-            user_industry: formData.get("branche") as string,
-            user_website: websiteUrl,
+        // Build submission payload
+        const submissionPayload = {
+            type: "aanvraag" as const,
+            specification: formData.get("specification") as string,
+            name: formData.get("naam") as string,
+            email: formData.get("email") as string,
+            phone: formData.get("telefoon") as string,
+            company: formData.get("bedrijfsnaam") as string,
+            industry: formData.get("branche") as string,
+            has_website: formData.get("has_website") as string,
+            website_url: websiteUrl,
             start_time: window.selectedBookingSlot.start,
             end_time: window.selectedBookingSlot.end,
         };
 
         try {
-            // Create booking via API
-            const response = await fetch("/api/bookings", {
+            // Create submission via unified API
+            const response = await fetch("/api/submissions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(bookingPayload),
+                body: JSON.stringify(submissionPayload),
             });
 
             const data = await response.json();

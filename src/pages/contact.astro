@@ -337,15 +337,16 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 			try {
 				const formData = new FormData(form);
 				const data = {
+					type: 'contact',
+					specification: formData.get('subject'),
 					company: formData.get('company'),
 					name: formData.get('name'),
 					email: formData.get('email'),
 					phone: formData.get('phone'),
-					subject: formData.get('subject'),
 					message: formData.get('message')
 				};
 
-				const res = await fetch('/api/contact', {
+				const res = await fetch('/api/submissions', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(data)
