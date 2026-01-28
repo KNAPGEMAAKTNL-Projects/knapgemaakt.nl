@@ -2,7 +2,6 @@
 export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
-import OfferSection from "../components/OfferSection.astro";
 import PortfolioSection from "../components/PortfolioSection.astro";
 import ProcessSection from "../components/ProcessSection.astro";
 import Footer from "../components/Footer.astro";
@@ -102,18 +101,18 @@ const cities = getAllCities();
 					<div class="space-y-6 text-canvas/80 text-lg leading-relaxed">
 						<p>
 							Waarom zou een loodgieter uit Tiel een minder mooie website hebben dan een multinational?
-							Goede vraag. Dat zou niet moeten. Bij KNAP GEMAAKT. bouwen we premium websites
+							Goede vraag. Dat zou niet moeten. Bij KNAP GEMAAKT. bouw ik premium websites
 							waarmee lokale ondernemers kunnen concurreren met de grote jongens. Razendsnel,
 							professioneel, en zonder de prijs van een kleine auto.
 						</p>
 						<p>
 							Elk ontwerp is uniek en wordt vanaf nul gebouwd. Geen templates, geen themes
-							die je op duizend andere sites terugziet. Website nodig? €595, klaar in 7 dagen.
-							Webshop? €1795, klaar in 2 tot 3 weken. Inclusief design, teksten, hosting. De hele santenkraam.
+							die je op duizend andere sites terugziet. Website nodig? Vanaf €495, klaar in 7 dagen.
+							Slimmer systeem met automations? €995. Inclusief design, teksten, hosting. De hele santenkraam.
 						</p>
 						<p>
-							En ja, we schrijven ook je teksten. Want laten we eerlijk zijn: jij bent goed in je vak,
-							niet in het staren naar een leeg Word-document om 23:00. Wij regelen het. Jij onderneemt.
+							En ja, ik schrijf ook je teksten. Want laten we eerlijk zijn: jij bent goed in je vak,
+							niet in het staren naar een leeg Word-document om 23:00. Ik regel het. Jij onderneemt.
 						</p>
 					</div>
 				</div>
@@ -128,9 +127,42 @@ const cities = getAllCities();
 		<!-- PROCESS SECTION -->
 		<ProcessSection />
 
-		<!-- OFFER/PRICING SECTION -->
-		<section id="prijzen">
-			<OfferSection />
+		<!-- PRICING CTA -->
+		<section id="prijzen" class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+			<div class="max-w-6xl xl:max-w-7xl mx-auto">
+				<div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+					<div>
+						<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40 mb-6">
+							[ Onze Pakketten ]
+						</div>
+						<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] mb-6">
+							Vanaf €495.
+						</h2>
+						<p class="text-ink/70 text-lg leading-relaxed mb-8">
+							Een professionele website voor €495. Of een slim systeem dat afspraken boekt, reviews verzamelt en leads opvolgt voor €995. Vaste prijs, geen verrassingen.
+						</p>
+						<a
+							href="/website-laten-maken"
+							class="bg-acid text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-ink hover:text-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+						>
+							Bekijk pakketten
+							<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+						</a>
+					</div>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="p-6 border-2 border-ink/10 bg-canvas">
+							<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-3">Website</div>
+							<div class="text-3xl font-black mb-2">€495</div>
+							<p class="text-ink/60 text-sm">Professioneel online in 7 dagen</p>
+						</div>
+						<div class="p-6 border-2 border-acid bg-acid">
+							<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-3">Systeem</div>
+							<div class="text-3xl font-black mb-2">€995</div>
+							<p class="text-ink/70 text-sm">Je digitale medewerker</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<!-- WHY CHOOSE US SECTION (More SEO Content) -->
@@ -140,10 +172,10 @@ const cities = getAllCities();
 					[ Waarom KNAP GEMAAKT. ]
 				</div>
 				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] mb-6 max-w-3xl">
-					Waarom Ondernemers Voor Ons Kiezen.
+					Waarom Ondernemers Mij Kiezen.
 				</h2>
 				<p class="text-ink/60 text-lg mb-12 md:mb-16 max-w-2xl">
-					Simpel: wij bouwen sneller, rekenen minder, en leveren kwaliteit. Dat is het eigenlijk.
+					Simpel: ik bouw sneller, reken minder en lever kwaliteit. Dat is het eigenlijk.
 				</p>
 
 				<div class="grid md:grid-cols-3 gap-8 md:gap-12">
@@ -152,7 +184,7 @@ const cities = getAllCities();
 						<h3 class="text-xl font-black uppercase tracking-tight">Enterprise Kwaliteit</h3>
 						<p class="text-ink/70 leading-relaxed">
 							Dezelfde technologie die grote bedrijven gebruiken. Razendsnel, veilig, perfect vindbaar in Google.
-							Het verschil? Wij rekenen geen enterprise-prijzen. Jouw website presteert als die van de grote jongens,
+							Het verschil? Ik reken geen enterprise-prijzen. Jouw website presteert als die van de grote jongens,
 							zonder het prijskaartje.
 						</p>
 					</div>
@@ -161,9 +193,8 @@ const cities = getAllCities();
 						<div class="text-electric font-mono text-sm">[02]</div>
 						<h3 class="text-xl font-black uppercase tracking-tight">Geen Gedoe</h3>
 						<p class="text-ink/70 leading-relaxed">
-							Eén gesprek van 15 minuten. Wij doen de rest. Geen eindeloze vergaderingen, geen feedback-rondes
+							Eén gesprek van 15 minuten. Ik doe de rest. Geen eindeloze vergaderingen, geen feedback-rondes
 							die maanden duren, geen "kun je de teksten aanleveren?" Binnen 7 dagen staat je site live.
-							Webshop? 2 tot 3 weken.
 						</p>
 					</div>
 
@@ -171,9 +202,9 @@ const cities = getAllCities();
 						<div class="text-electric font-mono text-sm">[03]</div>
 						<h3 class="text-xl font-black uppercase tracking-tight">Eerlijke Prijzen</h3>
 						<p class="text-ink/70 leading-relaxed">
-							€595 voor een website. €1795 voor een webshop. Dat is het. Geen offerte die oploopt,
+							€495 voor een website. €995 voor een slim systeem. Dat is het. Geen offerte die oploopt,
 							geen verborgen kosten, geen "dit valt buiten scope." Je weet vooraf wat je betaalt.
-							Traditionele bureaus vragen €2.000 tot €5.000 voor hetzelfde. Wij niet.
+							Traditionele bureaus vragen €2.000 tot €5.000 voor hetzelfde. Ik niet.
 						</p>
 					</div>
 				</div>
@@ -190,8 +221,8 @@ const cities = getAllCities();
 					Webdesign in Heel Nederland
 				</h2>
 				<p class="text-canvas/70 text-lg leading-relaxed max-w-2xl mb-12">
-					Vanuit Buren bedienen we ondernemers door heel Nederland. Of je nu in Utrecht zit
-					of in een klein dorp in de Betuwe, wij bouwen jouw website. Bekijk onze lokale pagina's
+					Vanuit Buren bedien ik ondernemers door heel Nederland. Of je nu in Utrecht zit
+					of in een klein dorp in de Betuwe, ik bouw jouw website. Bekijk de lokale pagina's
 					voor meer informatie over webdesign in jouw regio.
 				</p>
 
@@ -212,8 +243,8 @@ const cities = getAllCities();
 				</div>
 
 				<p class="text-canvas/50 text-sm mt-8 font-mono">
-					Staat jouw regio er niet bij? Geen probleem, we werken voor ondernemers in heel Nederland.
-					<a href="/aanvragen" class="text-acid hover:underline">Neem contact op</a> en we helpen je verder.
+					Staat jouw regio er niet bij? Geen probleem, ik werk voor ondernemers in heel Nederland.
+					<a href="/aanvragen" class="text-acid hover:underline">Neem contact op</a> en ik help je verder.
 				</p>
 			</div>
 		</section>
@@ -234,25 +265,25 @@ const cities = getAllCities();
 							<h3 class="text-lg font-bold text-electric">Hoe werkt het proces?</h3>
 							<p class="text-ink/70 leading-relaxed">
 								Simpel. We bellen 15 minuten over je bedrijf en wat je wilt bereiken.
-								Daarna gaan wij aan de slag. Binnen 7 dagen krijg je het ontwerp te zien.
-								Feedback? We passen aan. Dan gaat je site live. Klaar.
+								Daarna ga ik aan de slag. Binnen 7 dagen krijg je het ontwerp te zien.
+								Feedback? Ik pas aan. Dan gaat je site live. Klaar.
 							</p>
 						</div>
 
 						<div class="space-y-3">
 							<h3 class="text-lg font-bold text-electric">Wat als ik niet tevreden ben?</h3>
 							<p class="text-ink/70 leading-relaxed">
-								Geld terug. Serieus. Wij hebben een 100% tevredenheidsgarantie.
+								Geld terug. Serieus. Ik heb een 100% tevredenheidsgarantie.
 								Vind je het niks? Dan krijg je je geld terug. Geen discussie, geen gedoe.
-								We willen alleen tevreden klanten. Ontevreden klanten zijn slecht voor ons humeur.
+								Ik wil alleen tevreden klanten.
 							</p>
 						</div>
 
 						<div class="space-y-3">
 							<h3 class="text-lg font-bold text-electric">Moet ik zelf teksten aanleveren?</h3>
 							<p class="text-ink/70 leading-relaxed">
-								Nee. Wij schrijven alles voor je. We duiken in je branche, bekijken je concurrenten,
-								en schrijven teksten die je klanten aanspreken. Jij hoeft alleen te checken of het klopt.
+								Nee. Ik schrijf alles voor je. Ik duik in je branche, bekijk je concurrenten
+								en schrijf teksten die je klanten aanspreken. Jij hoeft alleen te checken of het klopt.
 								Liever eigen teksten? Prima, jij beslist.
 							</p>
 						</div>
@@ -260,11 +291,10 @@ const cities = getAllCities();
 
 					<div class="space-y-8">
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-electric">Bouwen jullie ook webshops?</h3>
+							<h3 class="text-lg font-bold text-electric">Wat is het verschil tussen Website en Systeem?</h3>
 							<p class="text-ink/70 leading-relaxed">
-								Ja. €1795, klaar in 2 tot 3 weken. Complete webshop met productbeheer,
-								winkelwagen, iDEAL, creditcard, het hele pakket.
-								Heb je een simpele website nodig die later een webshop wordt? Kan ook. We denken met je mee.
+								Een Website (€495) is een professionele online aanwezigheid. Een Systeem (€995) doet meer:
+								afspraken boeken, reviews verzamelen, leads opvolgen. Start simpel en bouw later uit als je wilt.
 							</p>
 						</div>
 
@@ -272,16 +302,16 @@ const cities = getAllCities();
 							<h3 class="text-lg font-bold text-electric">Is het beheerpakket verplicht?</h3>
 							<p class="text-ink/70 leading-relaxed">
 								Nee. Je website werkt prima zonder. Hosting zit altijd inbegrepen.
-								Het beheerpakket (€49/maand) is voor als je niet wilt nadenken over je website:
-								wij doen updates, kleine aanpassingen, backups. Jij appt wat je wilt, wij regelen het.
+								Het beheerpakket (vanaf €28,30/maand) is voor als je niet wilt nadenken over je website:
+								ik doe updates, kleine aanpassingen, monitoring. Jij appt wat je wilt, ik regel het.
 							</p>
 						</div>
 
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-electric">Werken jullie door heel Nederland?</h3>
+							<h3 class="text-lg font-bold text-electric">Werk je door heel Nederland?</h3>
 							<p class="text-ink/70 leading-relaxed">
 								Ja. Amsterdam, Maastricht, Groningen, maakt niet uit. Alles gaat digitaal.
-								We bellen, mailen, appen. Je hoeft nergens naartoe. Scheelt jou tijd, scheelt ons koffie.
+								Bellen, mailen, appen. Je hoeft nergens naartoe. Scheelt jou tijd, scheelt mij koffie.
 							</p>
 						</div>
 					</div>
