@@ -103,43 +103,23 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
   useEffect(() => {
     if (!monthData || selectedDate) return; // Only run once when monthData first loads
 
-    const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     const today = new Date();
 
-    // Search up to 14 days ahead for the first available day (starting from TODAY)
+    // Search up to 14 days ahead for the first available day with actual slots
     for (let i = 0; i < 14; i++) {
       const checkDate = new Date(today);
       checkDate.setDate(today.getDate() + i);
 
-      const dayName = dayNames[checkDate.getDay()];
-      const dayConfig = monthData.config.businessHours[dayName];
-
-      if (dayConfig?.enabled) {
-        // For today, also check if there's still time for a slot
-        if (i === 0) {
-          const now = new Date();
-          const minBookingTime = new Date(now.getTime() + monthData.config.minAdvanceBooking * 60000);
-
-          // Parse end time to check if there's still time today
-          const [endHour, endMin] = dayConfig.end.split(':').map(Number);
-          const dayEnd = new Date(checkDate);
-          dayEnd.setHours(endHour, endMin, 0, 0);
-
-          // Skip today if we're past the business hours end time (accounting for min advance booking)
-          if (minBookingTime >= dayEnd) {
-            continue;
-          }
-        }
-
+      // Use isDateDisabled to check for actual slot availability
+      // (handles bookings, blocked times, min advance booking, etc.)
+      if (!isDateDisabled(checkDate)) {
         setSelectedDate(formatDateString(checkDate));
         return;
       }
     }
 
-    // Fallback: if no available day found in 14 days, just select tomorrow
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    setSelectedDate(formatDateString(tomorrow));
+    // Fallback: if no available day found in 14 days, don't auto-select
+    // (let user see the calendar and navigate to find availability)
   }, [monthData, selectedDate]);
 
   // Fetch month data when month changes
