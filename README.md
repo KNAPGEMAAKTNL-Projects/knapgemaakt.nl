@@ -1,10 +1,10 @@
 # knapgemaakt.nl
 
-The marketing website for **Knap Gemaakt**, a Dutch web design agency delivering professional websites in 7 days for €595.
+The marketing website for **KNAP GEMAAKT.**, a Dutch web design agency delivering professional websites in 7 days for €595.
 
 ## Overview
 
-Knap Gemaakt ("Beautifully Made" in Dutch) is a web design agency targeting Dutch small businesses who need a professional online presence without the long timelines and high costs of traditional agencies. The website showcases:
+KNAP GEMAAKT. ("Beautifully Made" in Dutch) is a web design agency targeting Dutch small businesses who need a professional online presence without the long timelines and high costs of traditional agencies. The website showcases:
 
 - **Value proposition**: Professional websites delivered in 7 days for a fixed price of €595
 - **Portfolio**: Horizontal-scrolling showcase of completed projects
@@ -28,6 +28,9 @@ Knap Gemaakt ("Beautifully Made" in Dutch) is a web design agency targeting Dutc
 ├── public/              # Static assets (images, favicon, robots.txt)
 ├── src/
 │   ├── components/      # Reusable React and Astro components
+│   ├── config/          # Site configuration (availability calendar)
+│   ├── content/         # Astro content collections (blog posts)
+│   ├── data/            # Static data (blog metadata, cities, projects)
 │   ├── layouts/         # Page layouts (includes SEO meta tags)
 │   ├── lib/             # Utility functions and helpers
 │   ├── pages/           # Route pages (auto-routed by Astro)
@@ -44,6 +47,23 @@ Astro automatically creates routes from files in `src/pages/`. Learn more about 
 
 - Node.js 18+ installed
 - npm or your preferred package manager
+
+### Environment Setup
+
+Copy the example environment file and configure your values:
+
+```bash
+cp .env.example .env
+```
+
+Required for full functionality:
+- `RESEND_API_KEY` - For contact form email delivery
+
+Optional analytics (GDPR-compliant, blocked until consent):
+- `PUBLIC_GA_MEASUREMENT_ID` - Google Analytics 4
+- `PUBLIC_META_PIXEL_ID` - Meta (Facebook) Pixel
+- `PUBLIC_CLARITY_ID` - Microsoft Clarity
+- `PUBLIC_LEADINFO_ID` - Leadinfo B2B tracking
 
 ### Installation
 
