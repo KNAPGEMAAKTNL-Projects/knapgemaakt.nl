@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.7.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.6.0...v1.7.0) (2026-01-28)
+
+
+### Features
+
+* **404:** redesign with friendly dry humor ✨ ([#168](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/168)) ([e70320f](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/e70320f577249ac71927ad5669700288cc6d499c)), closes [#162](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/162)
+* **audit:** accept simple URLs without https:// prefix ✨ ([#172](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/172)) ([f6e8b3d](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/f6e8b3d4a9bea10d07e776f6b1344b1a76f53c70)), closes [#171](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/171)
+* **automations:** rebuild aanpak as automation-focused page with unified submissions ✨ ([#154](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/154)) ([ca33749](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/ca337497fb692910fa9251c9cc9142891abb7cd6)), closes [#153](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/153)
+* **blog:** add Wero pillar article with SEO optimizations ✨ ([#169](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/169)) ([e3ea482](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/e3ea482afd38d0e6b44be039433482f1364464d7)), closes [#164](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/164)
+* **contact:** redesign contact page with form and profile photo ✨ ([#144](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/144)) ([2f2239d](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/2f2239d968f98942562dee73e66af9d2267d03eb)), closes [#145](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/145)
+* **copy:** standardize all CTAs to solo entrepreneur positioning ✨ ([#141](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/141)) ([6293038](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/6293038ed452a8c439c79e2187dca97e8268892d)), closes [#139](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/139)
+* **copy:** update hero subheadline and CTAs for solo positioning ✨ ([#140](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/140)) ([86f9cfb](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/86f9cfb515d709a89c775e9e3fee4615a6603473)), closes [#138](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/138)
+* **footer:** unified CTA section and remove bracket hover effect ✨ ([#149](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/149)) ([eec27c1](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/eec27c14ec5490e575438b8cdd5a3d720376df15))
+* **hero:** redesign headline and feature bullets ✨ ([#130](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/130)) ([907d034](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/907d0349b198a17119445951b7bb6b218877dc3b))
+* **homepage:** redesign with friendly solo entrepreneur tone ✨ ([#159](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/159)) ([cb556b3](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/cb556b378435f7870535bb6273864497280a3a46)), closes [#137](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/137)
+* **locations:** restructure pages offer-first, add 7 cities, optimize images ✨ ([#161](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/161)) ([fd52358](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/fd523586cdba5b773024a47a1de44c657e556686))
+* **nav:** restructure navigation for solo entrepreneur positioning ✨ ([#143](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/143)) ([0f6fd0a](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/0f6fd0a7cc57b1bd7e7afd6db3584e97a468bef2)), closes [#142](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/142)
+* **over-mij:** overhaul with vision, mission and systems philosophy ✨ ([#147](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/147)) ([7f4ad8c](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/7f4ad8cc10c3d5573841f7391d5a3d2fa418fef7))
+* **portfolio:** redesign with grid layout and case study structure ✨ ([#157](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/157)) ([864ed72](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/864ed722b51ee814bf6c35b77719a18ec6e49fb4))
+* **services:** rebuild website-laten-maken as detailed service page ✨ ([#151](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/151)) ([53c795b](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/53c795b6b3e4226f3538f941e62fb3ce2bbabf6a))
+* **typography:** replace em dashes with natural punctuation ✨ ([#170](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/170)) ([f5d85f4](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/f5d85f476bc6ac6a5a4cd7a996c418185744f888))
+* **ui:** redesign buttons, offer tiers, and hero section ✨ ([#133](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/133)) ([af2b1eb](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/af2b1ebc13c0242ec2e113872b59ca804addfee3))
+* **widget:** add floating contact widget with chat card overlay ✨ ([#155](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/155)) ([790e529](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/790e5291c4fc27f8c23909e049e7528315e672fd))
+
+
+### Bug Fixes
+
+* **a11y:** increase text contrast for WCAG AA compliance 🐛 ([#166](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/166)) ([aeeba8c](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/aeeba8cfd63468c24d315edf1e4834e76008a86c)), closes [#165](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/165)
+* **a11y:** increase text contrast in pricing cards 🐛 ([#136](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/136)) ([4eb3e53](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/4eb3e5379504a2bbbf9c81108069ce54bc87ccac)), closes [#134](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/134)
+* **calendar:** auto-select first day with actual available slots ([#160](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/160)) ([8a8e74b](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/8a8e74b4c24cf321a485f3342844804c17d15a28))
+* **forms:** fix contact form View Transitions and add email error logging 🐛 ([#175](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/175)) ([cf366bb](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/cf366bb4770c250752e8e6514cffac9e08bb4b86)), closes [#174](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/174)
+
 ## [1.6.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.5.0...v1.6.0) (2026-01-24)
 
 
