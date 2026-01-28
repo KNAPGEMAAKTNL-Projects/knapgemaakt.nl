@@ -75,7 +75,7 @@ Ze onderscheiden zich met een Ladies Only zone, kickboks lessen en persoonlijke 
 In de fitnessbranche domineren grote ketens met dure marketingbudgetten de zoekresultaten. Een lokale sportschool moet slim omgaan met SEO: focussen op lokale zoekopdrachten, transparante prijzen tonen, en zich onderscheiden op persoonlijke service en community. De website moet bezoekers binnen seconden overtuigen: betaalbaar, betrouwbaar, dichtbij.`,
 		solution: `We creëerden een frisse, energieke website met oranje accenten die de toegankelijkheid benadrukt. Het strakke, no-nonsense ontwerp past bij de filosofie van de sportschool. Prijzen staan prominent op de homepage (vanaf €19,95/maand + €17 inschrijfgeld), openingstijden zijn direct zichtbaar, en de "Word Lid" knop is altijd binnen handbereik.
 
-Het ontwerp is mobile-first — 70% van potentiële leden zoekt vanaf hun telefoon. Click-to-call knoppen maken het makkelijk om direct te bellen. De USP's (Ladies Only, kickboks, gratis begeleiding) krijgen visueel de aandacht die ze verdienen. Geen eindeloos scrollen: bezoekers krijgen direct de informatie die ze zoeken.`,
+Het ontwerp is mobile-first: 70% van potentiële leden zoekt vanaf hun telefoon. Click-to-call knoppen maken het makkelijk om direct te bellen. De USP's (Ladies Only, kickboks, gratis begeleiding) krijgen visueel de aandacht die ze verdienen. Geen eindeloos scrollen: bezoekers krijgen direct de informatie die ze zoeken.`,
 		features: [
 			"Prominente prijsweergave vanaf €19,95/maand",
 			"Ladies Only zone highlight voor vrouwelijke doelgroep",
@@ -107,7 +107,7 @@ Het ontwerp is mobile-first — 70% van potentiële leden zoekt vanaf hun telefo
 			"Lokale SEO voor 'sportschool Culemborg' top 3",
 			"Transparante prijsweergave verhoogt conversie",
 		],
-		industryContext: "De fitnessbranche is competitief. Potentiële leden vergelijken sportscholen online voordat ze langskomen. Een professionele website met transparante prijzen en een simpel aanmeldproces verlaagt de drempel om lid te worden. Lokale SEO is essentieel: 76% van lokale zoekopdrachten leidt binnen 24 uur tot contact. Budget-sportscholen moeten vooral communiceren op prijs, toegankelijkheid en resultaat — niet op luxe.",
+		industryContext: "De fitnessbranche is competitief. Potentiële leden vergelijken sportscholen online voordat ze langskomen. Een professionele website met transparante prijzen en een simpel aanmeldproces verlaagt de drempel om lid te worden. Lokale SEO is essentieel: 76% van lokale zoekopdrachten leidt binnen 24 uur tot contact. Budget-sportscholen moeten vooral communiceren op prijs, toegankelijkheid en resultaat, niet op luxe.",
 	},
 	{
 		slug: "maatwerk-website-voor-by-shakir",
@@ -121,12 +121,12 @@ Het ontwerp is mobile-first — 70% van potentiële leden zoekt vanaf hun telefo
 		overviewMockup: "/assets/projects/mockups/byshakir.webp",
 		link: "https://byshakir.knapgemaakt.nl",
 		shortDescription: "Geen meubelwinkel. Een designautoriteit.",
-		fullDescription: `By Shakir | Metropolitan Luxury is geen meubelwinkel — het is een design autoriteit. Opgericht vanuit de missie om de Nederlandse markt iets anders te bieden dan standaard meubels. "Ik zag een gat in de markt. Overal meubelzaken die producten verkopen, maar niemand die visies verkocht," aldus oprichter Shakir.
+		fullDescription: `By Shakir | Metropolitan Luxury is geen meubelwinkel, het is een design autoriteit. Opgericht vanuit de missie om de Nederlandse markt iets anders te bieden dan standaard meubels. "Ik zag een gat in de markt. Overal meubelzaken die producten verkopen, maar niemand die visies verkocht," aldus oprichter Shakir.
 
-Met meer dan 15 jaar ervaring creëert By Shakir complete interieurconcepten die brutalistisch architectonische elegantie combineren met de warmte van high-end hospitality. Van fotorealistische 3D-visualisatie tot volledige turnkey projectmanagement. Hun klanten zijn niet op zoek naar een bank — ze zoeken een ervaring, een verhaal, een ruimte die emotioneel resoneert.`,
+Met meer dan 15 jaar ervaring creëert By Shakir complete interieurconcepten die brutalistisch architectonische elegantie combineren met de warmte van high-end hospitality. Van fotorealistische 3D-visualisatie tot volledige turnkey projectmanagement. Hun klanten zijn niet op zoek naar een bank. Ze zoeken een ervaring, een verhaal, een ruimte die emotioneel resoneert.`,
 		challenge: `By Shakir wilde zich nadrukkelijk onderscheiden van de massa meubelretailers. De challenge: een website die "design authority" communiceert, niet "meubelwinkel". De internationale klantenkring (Nederland, België, Marokko) vraagt om een online presentatie die het niveau van hun fysieke showroom in Tiel evenaart.
 
-In het premium interieur segment is de website vaak het eerste contactmoment. Klanten die investeren in maatwerk interieurs verwachten geen standaard WordPress template. De uitdaging was een digitale ervaring te creëren die de merkpositie "Metropolitan Luxury" onderstreept, waarbij elk detail — van typografie tot animaties — de premiumpositionering communiceert.`,
+In het premium interieur segment is de website vaak het eerste contactmoment. Klanten die investeren in maatwerk interieurs verwachten geen standaard WordPress template. De uitdaging was een digitale ervaring te creëren die de merkpositie "Metropolitan Luxury" onderstreept, waarbij elk detail (van typografie tot animaties) de premiumpositionering communiceert.`,
 		solution: `We ontwierpen een website met een donker, luxueus kleurenpalet (zwart, bruin, goud) dat past bij hun "brutalistisch met warmte" filosofie. Grote, cinematografische beelden van hun projecten staan centraal. De headline "Refining Living Spaces" zet direct de toon.
 
 Belangrijkste ontwerpbeslissingen:
