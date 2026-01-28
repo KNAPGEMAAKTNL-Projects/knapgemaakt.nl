@@ -22,10 +22,10 @@ import Footer from "../components/Footer.astro";
                     class="flex flex-col md:flex-row md:items-center gap-4 text-sm font-mono uppercase tracking-widest text-ink/60 border-t border-ink/10 pt-6"
                 >
                     <span class="bg-acid px-2 py-1 text-black font-bold text-xs"
-                        >Versie 2.3</span
+                        >Versie 2.4</span
                     >
                     <span class="hidden md:inline">&mdash;</span>
-                    <span>Laatst bijgewerkt: 24 Januari 2026</span>
+                    <span>Laatst bijgewerkt: 28 Januari 2026</span>
                 </div>
             </header>
 
@@ -104,13 +104,75 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </section>
 
-                <!-- 03. Doeleinden -->
+                <!-- 03. Formulieren -->
                 <section
+                    id="formulieren"
                     class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
                 >
                     <div class="md:col-span-3">
                         <span class="text-xl md:text-2xl font-mono text-ink/60"
                             >03.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Formulieren
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Op onze website verzamelen wij gegevens via drie formulieren.
+                                Hieronder staat precies welke gegevens per formulier worden gevraagd.
+                            </p>
+
+                            <p class="mt-6"><strong class="text-ink">Aanvraagformulier</strong> (<a href="/aanvragen" class="text-ink underline decoration-acid decoration-2 underline-offset-4 hover:bg-acid hover:decoration-transparent transition-colors">/aanvragen</a>)</p>
+                            <p><em class="text-ink/60 not-italic">Doel: om je aanvraag te verwerken en een kennismakingsgesprek in te plannen.</em></p>
+                            <ul class="list-disc pl-5 space-y-1 mt-2">
+                                <li>Naam en bedrijfsnaam</li>
+                                <li>E-mailadres en telefoonnummer</li>
+                                <li>Branche</li>
+                                <li>Huidige website-adres (optioneel)</li>
+                                <li>Beschrijving van je wensen</li>
+                                <li>Gewenste afspraakdatum en -tijd</li>
+                            </ul>
+
+                            <p class="mt-6"><strong class="text-ink">Contactformulier</strong> (<a href="/contact" class="text-ink underline decoration-acid decoration-2 underline-offset-4 hover:bg-acid hover:decoration-transparent transition-colors">/contact</a>)</p>
+                            <p><em class="text-ink/60 not-italic">Doel: om je vraag te beantwoorden.</em></p>
+                            <ul class="list-disc pl-5 space-y-1 mt-2">
+                                <li>Naam en bedrijfsnaam</li>
+                                <li>E-mailadres en telefoonnummer</li>
+                                <li>Onderwerp</li>
+                                <li>Je bericht</li>
+                            </ul>
+
+                            <p class="mt-6"><strong class="text-ink">Website-check</strong> (homepage)</p>
+                            <p><em class="text-ink/60 not-italic">Doel: om een gratis website-analyse toe te sturen en je aan te melden voor onze e-maillijst met tips.</em></p>
+                            <ul class="list-disc pl-5 space-y-1 mt-2">
+                                <li>Naam</li>
+                                <li>E-mailadres</li>
+                                <li>Website-adres</li>
+                            </ul>
+                            <p class="text-ink/60 text-base mt-2">
+                                Je kunt je op elk moment uitschrijven via de link onderaan elke e-mail.
+                            </p>
+
+                            <p class="mt-6 text-ink/60 text-base">
+                                Bij het aanvraagformulier worden je gegevens tijdelijk opgeslagen in je browser (localStorage) zodat je het formulier later kunt afmaken. Deze gegevens worden automatisch gewist zodra je het formulier verzendt.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 04. Doeleinden -->
+                <section
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/60"
+                            >04.</span
                         >
                     </div>
                     <div class="md:col-span-8 md:col-start-5 space-y-6">
@@ -143,13 +205,13 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </section>
 
-                <!-- 04. Delen -->
+                <!-- 05. Delen -->
                 <section
                     class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
                 >
                     <div class="md:col-span-3">
                         <span class="text-xl md:text-2xl font-mono text-ink/60"
-                            >04.</span
+                            >05.</span
                         >
                     </div>
                     <div class="md:col-span-8 md:col-start-5 space-y-6">
@@ -187,13 +249,13 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </section>
 
-                <!-- 05. Buiten EER -->
+                <!-- 06. Buiten EER -->
                 <section
                     class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
                 >
                     <div class="md:col-span-3">
                         <span class="text-xl md:text-2xl font-mono text-ink/60"
-                            >05.</span
+                            >06.</span
                         >
                     </div>
                     <div class="md:col-span-8 md:col-start-5 space-y-6">
@@ -215,13 +277,13 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </section>
 
-                <!-- 06. Bewaartermijnen -->
+                <!-- 07. Bewaartermijnen -->
                 <section
                     class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
                 >
                     <div class="md:col-span-3">
                         <span class="text-xl md:text-2xl font-mono text-ink/60"
-                            >06.</span
+                            >07.</span
                         >
                     </div>
                     <div class="md:col-span-8 md:col-start-5 space-y-6">
@@ -244,13 +306,13 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </section>
 
-                <!-- 07. Beveiliging -->
+                <!-- 08. Beveiliging -->
                 <section
                     class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
                 >
                     <div class="md:col-span-3">
                         <span class="text-xl md:text-2xl font-mono text-ink/60"
-                            >07.</span
+                            >08.</span
                         >
                     </div>
                     <div class="md:col-span-8 md:col-start-5 space-y-6">
@@ -272,13 +334,13 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </section>
 
-                <!-- 08. Rechten -->
+                <!-- 09. Rechten -->
                 <section
                     class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
                 >
                     <div class="md:col-span-3">
                         <span class="text-xl md:text-2xl font-mono text-ink/60"
-                            >08.</span
+                            >09.</span
                         >
                     </div>
                     <div class="md:col-span-8 md:col-start-5 space-y-6">
@@ -303,14 +365,14 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </section>
 
-                <!-- 09. Cookies & Opslag -->
+                <!-- 10. Cookies & Opslag -->
                 <section
                     id="cookies"
                     class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
                 >
                     <div class="md:col-span-3">
                         <span class="text-xl md:text-2xl font-mono text-ink/60"
-                            >09.</span
+                            >10.</span
                         >
                     </div>
                     <div class="md:col-span-8 md:col-start-5 space-y-6">
@@ -363,13 +425,13 @@ import Footer from "../components/Footer.astro";
                     </div>
                 </section>
 
-                <!-- 10. Klachten -->
+                <!-- 11. Klachten -->
                 <section
                     class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
                 >
                     <div class="md:col-span-3">
                         <span class="text-xl md:text-2xl font-mono text-ink/60"
-                            >10.</span
+                            >11.</span
                         >
                     </div>
                     <div class="md:col-span-8 md:col-start-5 space-y-6">
