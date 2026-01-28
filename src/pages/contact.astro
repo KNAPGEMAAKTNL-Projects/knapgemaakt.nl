@@ -7,11 +7,11 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 ---
 
 <Layout
-	title="Contact | Neem Contact Op | KNAP GEMAAKT."
-	description="Heb je een vraag? Neem contact op via e-mail. We reageren meestal binnen 24 uur. Of plan direct een gratis strategie-gesprek."
+	title="Contact | Stuur Me Een Bericht | KNAP GEMAAKT."
+	description="Heb je een vraag? Stuur me een bericht via het contactformulier, e-mail of WhatsApp. Ik reageer meestal binnen 24 uur."
 >
 	<main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 bg-grid-light relative overflow-hidden">
-		<div class="max-w-4xl mx-auto">
+		<div class="max-w-5xl mx-auto">
 			<!-- Header -->
 			<div class="mb-16">
 				<TextRevealCSS
@@ -19,60 +19,279 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 					class="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6"
 				/>
 				<p class="text-xl md:text-2xl text-ink/60 font-medium max-w-2xl leading-relaxed">
-					Heb je een vraag voordat je een afspraak inplant?<br />
-					Stuur ons een bericht.
+					Heb je een vraag of wil je even sparren?<br />
+					Stuur me een bericht.
 				</p>
 			</div>
 
-			<!-- Contact Options -->
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-				<!-- Email Card -->
-				<a
-					href="mailto:info@knapgemaakt.nl"
-					class="group p-8 border-2 border-ink/10 hover:border-ink transition-colors duration-300"
-				>
-					<div class="flex items-start gap-4">
-						<div class="w-12 h-12 bg-acid flex items-center justify-center flex-shrink-0">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+			<!-- Form + Booking CTA -->
+			<div class="grid md:grid-cols-5 gap-12 mb-24">
+				<!-- Contact Form (3 cols) -->
+				<div class="md:col-span-3">
+					<h2 class="text-2xl font-black uppercase tracking-tighter mb-8">
+						Stuur Een Bericht
+					</h2>
+
+					<form id="contact-form" class="space-y-8">
+						<!-- Company -->
+						<div class="space-y-2">
+							<label for="company" class="block font-mono text-xs uppercase tracking-widest opacity-60">
+								Bedrijfsnaam
+							</label>
+							<input
+								type="text"
+								id="company"
+								name="company"
+								required
+								oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+								oninput="this.setCustomValidity('')"
+								class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-electric transition-colors rounded-none placeholder:text-ink/20"
+								placeholder="Je bedrijfsnaam"
+							/>
+						</div>
+
+						<!-- Name + Email row -->
+						<div class="grid md:grid-cols-2 gap-8">
+							<div class="space-y-2">
+								<label for="name" class="block font-mono text-xs uppercase tracking-widest opacity-60">
+									Naam
+								</label>
+								<input
+									type="text"
+									id="name"
+									name="name"
+									required
+									oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+									oninput="this.setCustomValidity('')"
+									class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-electric transition-colors rounded-none placeholder:text-ink/20"
+									placeholder="Je naam"
+								/>
+							</div>
+							<div class="space-y-2">
+								<label for="email" class="block font-mono text-xs uppercase tracking-widest opacity-60">
+									E-mailadres
+								</label>
+								<input
+									type="email"
+									id="email"
+									name="email"
+									required
+									oninvalid="this.setCustomValidity('Dit veld is verplicht (of e-mail is ongeldig)')"
+									oninput="this.setCustomValidity('')"
+									class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-electric transition-colors rounded-none placeholder:text-ink/20"
+									placeholder="je@email.nl"
+								/>
+							</div>
+						</div>
+
+						<!-- Phone + Subject row -->
+						<div class="grid md:grid-cols-2 gap-8">
+							<div class="space-y-2">
+								<label for="phone" class="block font-mono text-xs uppercase tracking-widest opacity-60">
+									Telefoonnummer
+								</label>
+								<input
+									type="tel"
+									id="phone"
+									name="phone"
+									required
+									oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+									oninput="this.setCustomValidity('')"
+									class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-electric transition-colors rounded-none placeholder:text-ink/20"
+									placeholder="06 12345678"
+								/>
+							</div>
+							<div class="space-y-2">
+								<label for="subject" class="block font-mono text-xs uppercase tracking-widest opacity-60">
+									Onderwerp
+								</label>
+								<div class="relative">
+									<select
+										id="subject"
+										name="subject"
+										required
+										oninvalid="this.setCustomValidity('Maak een keuze uit de lijst')"
+										oninput="this.setCustomValidity('')"
+										class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-electric transition-colors rounded-none appearance-none cursor-pointer"
+									>
+										<option value="" disabled selected>Maak een keuze...</option>
+										<option value="Website">Website</option>
+										<option value="Advies">Ik wil graag advies</option>
+										<option value="Vraag">Algemene vraag</option>
+										<option value="Anders">Anders</option>
+									</select>
+									<div class="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-ink/40">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="m6 9 6 6 6-6"></path></svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Message -->
+						<div class="space-y-2">
+							<label for="message" class="block font-mono text-xs uppercase tracking-widest opacity-60">
+								Bericht
+							</label>
+							<textarea
+								id="message"
+								name="message"
+								required
+								rows="5"
+								oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+								oninput="this.setCustomValidity('')"
+								class="w-full bg-canvas border-b-2 border-ink/20 py-3 text-lg font-medium focus:outline-none focus:border-electric transition-colors rounded-none placeholder:text-ink/20 resize-vertical"
+								placeholder="Vertel me over je project of stel je vraag..."
+							></textarea>
+						</div>
+
+						<!-- Privacy checkbox -->
+						<div class="flex items-start gap-3">
+							<input
+								type="checkbox"
+								id="privacy"
+								name="privacy"
+								required
+								oninvalid="this.setCustomValidity('Je moet akkoord gaan met de privacyverklaring')"
+								oninput="this.setCustomValidity('')"
+								class="mt-1 w-4 h-4 shrink-0 accent-electric"
+							/>
+							<label for="privacy" class="text-sm text-ink/60">
+								Ik ga akkoord met de <a href="/privacy" class="underline hover:text-ink transition-colors">privacyverklaring</a>
+							</label>
+						</div>
+
+						<!-- Submit -->
+						<button
+							type="submit"
+							id="submit-btn"
+							class="btn-bracket btn-bracket-ink bg-acid text-ink px-8 py-4 font-bold uppercase tracking-tight hover:bg-ink hover:text-acid transition-colors duration-300 inline-flex items-center gap-3 group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+						>
+							<span id="btn-text">Verstuur bericht</span>
+							<span id="btn-arrow" class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+							<span id="btn-loading" class="hidden">
+								<svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+									<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+									<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+								</svg>
+							</span>
+						</button>
+
+						<!-- Success/Error messages -->
+						<div id="form-success" class="hidden p-4 bg-acid/10 border-2 border-acid text-ink">
+							<p class="font-bold">Bericht verzonden!</p>
+							<p class="text-sm text-ink/70">Ik neem zo snel mogelijk contact met je op.</p>
+						</div>
+						<div id="form-error" class="hidden p-4 bg-red-50 border-2 border-red-300 text-red-800">
+							<p class="font-bold">Er ging iets mis</p>
+							<p class="text-sm" id="error-text">Probeer het opnieuw of stuur een e-mail naar info@knapgemaakt.nl</p>
+						</div>
+					</form>
+				</div>
+
+				<!-- Booking CTA Sidebar (2 cols) -->
+				<div class="md:col-span-2">
+					<div class="md:sticky md:top-28 space-y-8">
+						<!-- Book a call card -->
+						<div class="p-8 bg-ink text-canvas relative overflow-hidden">
+							<div class="absolute inset-0 bg-grid-dark opacity-50"></div>
+							<div class="relative z-10">
+								<h2 class="text-2xl font-black uppercase tracking-tighter mb-4">
+									Liever Zelf Een Afspraak Inplannen?
+								</h2>
+								<p class="text-canvas/60 mb-6">
+									Kies een moment dat jou uitkomt. 20 minuten, vrijblijvend.
+								</p>
+								<a
+									href="/aanvragen"
+									class="btn-bracket btn-bracket-acid inline-flex items-center justify-center gap-3 px-6 py-3 bg-acid text-ink font-bold uppercase tracking-tight text-sm hover:bg-acid/80 transition-colors duration-300 group w-full"
+								>
+									Plan een gesprek in
+									<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+								</a>
+							</div>
+						</div>
+
+						<!-- Kennismaken card -->
+						<div class="p-6 border-2 border-ink/10">
+							<div class="flex items-center gap-4 mb-4">
+								<img
+									src="/assets/yannick.jpeg"
+									alt="Yannick Veldhuisen"
+									class="w-14 h-14 rounded-full object-cover object-top shrink-0"
+									loading="lazy"
+								/>
+								<div>
+									<h3 class="font-bold tracking-tight">Yannick</h3>
+									<a
+										href="https://www.linkedin.com/in/yannick-veldhuisen-303047243/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="text-xs font-mono text-ink/40 hover:text-electric transition-colors uppercase tracking-widest"
+									>
+										LinkedIn &rarr;
+									</a>
+								</div>
+							</div>
+							<p class="text-sm text-ink/60">
+								Leuk dat je contact opneemt! Ik reageer persoonlijk op elk bericht, meestal binnen 24 uur.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Contact Info Section -->
+			<div class="border-t-2 border-ink/10 pt-16 mb-16">
+				<h2 class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40 mb-8">Direct contact</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<!-- Email -->
+					<a
+						href="mailto:info@knapgemaakt.nl"
+						class="group flex items-center gap-4 p-6 border-2 border-ink/10 hover:border-ink transition-colors"
+					>
+						<div class="w-12 h-12 bg-acid flex items-center justify-center shrink-0">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
 								<rect width="20" height="16" x="2" y="4" rx="2"/>
 								<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
 							</svg>
 						</div>
-						<div class="flex-1">
-							<h2 class="text-xl font-bold uppercase tracking-tight mb-2 group-hover:text-electric transition-colors">
-								E-mail
-							</h2>
-							<p class="text-ink/60 font-mono text-sm mb-4">
-								info@knapgemaakt.nl
-							</p>
-							<p class="text-ink/40 text-sm">
-								We reageren meestal binnen 24 uur
-							</p>
+						<div>
+							<p class="font-bold uppercase tracking-tight group-hover:text-electric transition-colors">E-mail</p>
+							<p class="text-ink/60 font-mono text-sm">info@knapgemaakt.nl</p>
 						</div>
-						<span class="text-ink/20 group-hover:text-ink group-hover:translate-x-1 transition-all duration-300 text-xl">
-							&rarr;
-						</span>
-					</div>
-				</a>
+					</a>
 
-				<!-- Location Card -->
-				<div class="p-8 border-2 border-ink/10 bg-ink/[0.02]">
-					<div class="flex items-start gap-4">
-						<div class="w-12 h-12 bg-ink/10 flex items-center justify-center flex-shrink-0">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+					<!-- WhatsApp -->
+					<a
+						href="https://wa.me/31623571852"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group flex items-center gap-4 p-6 border-2 border-ink/10 hover:border-ink transition-colors"
+					>
+						<div class="w-12 h-12 bg-acid flex items-center justify-center shrink-0">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+							</svg>
+						</div>
+						<div>
+							<p class="font-bold uppercase tracking-tight group-hover:text-electric transition-colors">WhatsApp</p>
+							<p class="text-ink/60 font-mono text-sm">06 2357 1852</p>
+						</div>
+					</a>
+
+					<!-- Address -->
+					<div class="flex items-center gap-4 p-6 border-2 border-ink/10 bg-ink/[0.02]">
+						<div class="w-12 h-12 bg-ink/10 flex items-center justify-center shrink-0">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
 								<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
 								<circle cx="12" cy="10" r="3"/>
 							</svg>
 						</div>
 						<div>
-							<h2 class="text-xl font-bold uppercase tracking-tight mb-2">
-								Locatie
-							</h2>
-							<p class="text-ink/60 font-mono text-sm mb-4">
-								Buren, Gelderland
-							</p>
-							<p class="text-ink/40 text-sm">
-								Remote-first — we werken vanuit heel Nederland
+							<p class="font-bold uppercase tracking-tight">Adres</p>
+							<p class="text-ink/60 text-sm">
+								Françoise de Lanoistraat 9<br />
+								4116 BH Buren
 							</p>
 						</div>
 					</div>
@@ -80,33 +299,75 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 			</div>
 
 			<!-- Business Info -->
-			<div class="border-t border-ink/10 pt-8 mb-16">
-				<div class="flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-ink/40 uppercase tracking-widest">
-					<span>KvK: 73652377</span>
-					<span>BTW: NL002383577B12</span>
-				</div>
-			</div>
-
-			<!-- CTA Section -->
-			<div class="p-8 md:p-12 bg-ink text-canvas relative overflow-hidden">
-				<div class="absolute inset-0 bg-grid-dark opacity-50"></div>
-				<div class="relative z-10 text-center">
-					<h2 class="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-4">
-						Klaar om te starten?
-					</h2>
-					<p class="text-canvas/60 text-lg mb-8 max-w-xl mx-auto">
-						Laten we even sparren over hoe ik jouw website binnen 7 dagen kan bouwen.
-					</p>
-					<a
-						href="/aanvragen"
-						class="btn-bracket btn-bracket-acid inline-flex items-center justify-center gap-3 px-8 py-[18px] bg-acid text-ink font-bold uppercase tracking-tight hover:bg-acid/80 transition-colors duration-300 group"
-					>
-						Laten we kennismaken
-						<span class="text-xl leading-none transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-					</a>
-				</div>
+			<div class="flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-ink/40 uppercase tracking-widest">
+				<span>KvK: 73652377</span>
+				<span>BTW: NL002383577B12</span>
 			</div>
 		</div>
 	</main>
 	<Footer />
 </Layout>
+
+<script>
+	(function() {
+		const form = document.getElementById('contact-form') as HTMLFormElement;
+		if (!form) return;
+
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
+			const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+			const btnText = document.getElementById('btn-text');
+			const btnArrow = document.getElementById('btn-arrow');
+			const btnLoading = document.getElementById('btn-loading');
+			const successMsg = document.getElementById('form-success');
+			const errorMsg = document.getElementById('form-error');
+			const errorText = document.getElementById('error-text');
+
+			// Reset messages
+			successMsg?.classList.add('hidden');
+			errorMsg?.classList.add('hidden');
+
+			// Loading state
+			btn.disabled = true;
+			btnText?.classList.add('hidden');
+			btnArrow?.classList.add('hidden');
+			btnLoading?.classList.remove('hidden');
+
+			try {
+				const formData = new FormData(form);
+				const data = {
+					company: formData.get('company'),
+					name: formData.get('name'),
+					email: formData.get('email'),
+					phone: formData.get('phone'),
+					subject: formData.get('subject'),
+					message: formData.get('message')
+				};
+
+				const res = await fetch('/api/contact', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(data)
+				});
+
+				if (res.ok) {
+					successMsg?.classList.remove('hidden');
+					form.reset();
+				} else {
+					const err = await res.json();
+					if (errorText) errorText.textContent = err.error || 'Probeer het opnieuw of stuur een e-mail naar info@knapgemaakt.nl';
+					errorMsg?.classList.remove('hidden');
+				}
+			} catch {
+				if (errorText) errorText.textContent = 'Geen verbinding. Probeer het opnieuw of stuur een e-mail naar info@knapgemaakt.nl';
+				errorMsg?.classList.remove('hidden');
+			} finally {
+				btn.disabled = false;
+				btnText?.classList.remove('hidden');
+				btnArrow?.classList.remove('hidden');
+				btnLoading?.classList.add('hidden');
+			}
+		});
+	})();
+</script>
