@@ -1,0 +1,359 @@
+---
+import type { CityData } from "../data/cities";
+import { getAllCities } from "../data/cities";
+import { getProjectBySlug } from "../data/projects";
+
+interface Props {
+	city: CityData;
+}
+
+const { city } = Astro.props;
+
+// Get related project if available
+const relatedProject = city.relatedProject ? getProjectBySlug(city.relatedProject) : null;
+
+// Get all city slugs to check which nearby areas have pages
+const allCities = getAllCities();
+const citySlugs = new Set(allCities.map(c => c.slug));
+
+// Helper to convert area name to slug and check if page exists
+function getAreaLink(areaName: string): string | null {
+	const slug = areaName.toLowerCase()
+		.replace(/['']/g, '')  // Remove apostrophes ('t Goy -> t goy)
+		.replace(/\s+/g, '-')   // Replace spaces with hyphens
+		.replace(/[^a-z0-9-]/g, ''); // Remove special chars
+	return citySlugs.has(slug) ? `/webdesign-${slug}` : null;
+}
+---
+
+<section class="bg-canvas py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-grid-light relative overflow-hidden">
+    <div class="max-w-6xl xl:max-w-7xl mx-auto relative z-10">
+
+        <!-- ============================================ -->
+        <!-- SECTION 1: PROBLEM-SOLUTION GRID (100% unique) -->
+        <!-- ============================================ -->
+        <div class="mb-16 md:mb-20">
+            <div class="font-mono text-sm text-electric uppercase tracking-widest mb-4">
+                [ Website Laten Maken in {city.name} ]
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-12">
+                Geen Webbureau Nodig.<br />
+                <span class="text-electric">Wel Een Website.</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                <!-- The Problem -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-black uppercase tracking-tight flex items-center gap-3">
+                        <span class="text-electric font-mono text-lg">[01]</span>
+                        Het Probleem
+                    </h3>
+                    <p class="text-lg text-ink/80 leading-relaxed">
+                        {city.problemStatement}
+                    </p>
+                </div>
+
+                <!-- The Solution -->
+                <div class="bg-ink text-canvas p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-electric/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10 space-y-4">
+                        <h3 class="text-xl font-black uppercase tracking-tight flex items-center gap-3">
+                            <span class="text-acid font-mono text-lg">[02]</span>
+                            De Oplossing
+                        </h3>
+                        <p class="text-lg text-canvas/80 leading-relaxed">
+                            {city.solutionStatement}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 2: THE OFFER (80% shared) -->
+        <!-- ============================================ -->
+        <div class="mb-16 md:mb-20 py-12 md:py-16 bg-ink text-canvas -mx-6 md:-mx-12 lg:-mx-16 px-6 md:px-12 lg:px-16 bg-grid-dark relative overflow-hidden">
+            <div class="max-w-6xl xl:max-w-7xl mx-auto">
+                <div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-6">
+                    [ Wat Je Krijgt ]
+                </div>
+                <h3 class="text-2xl md:text-4xl font-black uppercase tracking-tight leading-[0.95] mb-4 max-w-3xl">
+                    Website Laten Maken Vanaf €495.
+                </h3>
+                <p class="text-canvas/70 text-lg mb-10 max-w-2xl leading-relaxed">
+                    Klaar in 7 dagen. Inclusief design, teksten en hosting. Geen verrassingen achteraf.
+                </p>
+
+                <!-- 6-Feature Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10">
+                    <div class="space-y-3">
+                        <div class="text-acid font-mono text-sm">[01]</div>
+                        <h4 class="text-lg font-black uppercase tracking-tight">Uniek Design</h4>
+                        <p class="text-canvas/70 text-sm leading-relaxed">
+                            Geen templates. Elk ontwerp wordt vanaf nul gebouwd voor jouw bedrijf in {city.name}.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="text-acid font-mono text-sm">[02]</div>
+                        <h4 class="text-lg font-black uppercase tracking-tight">Teksten Inbegrepen</h4>
+                        <p class="text-canvas/70 text-sm leading-relaxed">
+                            Ik duik in je branche en schrijf teksten die klanten aanspreken. Of je levert eigen teksten aan.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="text-acid font-mono text-sm">[03]</div>
+                        <h4 class="text-lg font-black uppercase tracking-tight">Razendsnel</h4>
+                        <p class="text-canvas/70 text-sm leading-relaxed">
+                            Je site laadt in minder dan een seconde. Bezoekers blijven, concurrenten verliezen.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="text-acid font-mono text-sm">[04]</div>
+                        <h4 class="text-lg font-black uppercase tracking-tight">Vindbaar in Google</h4>
+                        <p class="text-canvas/70 text-sm leading-relaxed">
+                            SEO-basis staat vanaf dag één. Klanten in {city.name} en omgeving vinden je.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="text-acid font-mono text-sm">[05]</div>
+                        <h4 class="text-lg font-black uppercase tracking-tight">Mobiel Eerst</h4>
+                        <p class="text-canvas/70 text-sm leading-relaxed">
+                            Meer dan de helft van je bezoekers komt via telefoon. Daar begint het ontwerp.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="text-acid font-mono text-sm">[06]</div>
+                        <h4 class="text-lg font-black uppercase tracking-tight">Hosting Inbegrepen</h4>
+                        <p class="text-canvas/70 text-sm leading-relaxed">
+                            Je website draait op Cloudflare. Wereldwijd snel, altijd online. Gratis.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Price Comparison Callout -->
+                <div class="p-6 border-l-4 border-acid bg-acid/10">
+                    <p class="text-canvas/90 font-medium">
+                        {city.priceComparison} Wij leveren dezelfde kwaliteit voor €495.
+                    </p>
+                </div>
+
+                <!-- Process Timeline -->
+                <div class="mt-10 pt-10 border-t border-canvas/10">
+                    <div class="text-xs font-mono uppercase tracking-[0.2em] text-canvas/50 mb-6">
+                        [ Van Gesprek Tot Online ]
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 md:gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-black text-acid mb-2">1</div>
+                            <div class="text-sm font-bold uppercase tracking-tight mb-1">Gesprek</div>
+                            <p class="text-canvas/50 text-xs">15 minuten kennismaken</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-black text-acid mb-2">7</div>
+                            <div class="text-sm font-bold uppercase tracking-tight mb-1">Dagen</div>
+                            <p class="text-canvas/50 text-xs">Wij bouwen jouw website</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-black text-acid mb-2">∞</div>
+                            <div class="text-sm font-bold uppercase tracking-tight mb-1">Online</div>
+                            <p class="text-canvas/50 text-xs">Je website is live</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 3: LOCAL PROOF (100% unique) -->
+        <!-- ============================================ -->
+        <div class="mb-16 md:mb-20">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Local Knowledge -->
+                <div>
+                    <div class="font-mono text-xs uppercase tracking-widest text-ink/50 mb-4">
+                        [ Lokale Kennis ]
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-6">
+                        Waarom Een Lokale Partner in {city.region}?
+                    </h3>
+                    <p class="text-lg text-ink/80 leading-relaxed mb-6">
+                        {city.localProof}
+                    </p>
+
+                    {city.coffeeLocation && (
+                        <a
+                            href="/aanvragen"
+                            class="inline-flex items-center gap-3 text-electric font-mono text-sm uppercase tracking-wider hover:text-ink transition-colors group"
+                        >
+                            <span>{city.coffeeLocation}</span>
+                            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </a>
+                    )}
+                </div>
+
+                <!-- Stats & Nearby Areas -->
+                <div class="space-y-8">
+                    <!-- City Statistics -->
+                    {city.stats && (
+                        <div class="grid grid-cols-2 gap-4 p-6 bg-[#f5f5f5] border border-ink/5">
+                            {city.stats.businesses && (
+                                <div>
+                                    <div class="text-xl md:text-2xl font-black text-electric">{city.stats.businesses}</div>
+                                    <div class="text-xs font-mono uppercase tracking-wider text-ink/50">Actief in {city.name}</div>
+                                </div>
+                            )}
+                            {city.population && (
+                                <div>
+                                    <div class="text-sm md:text-base font-bold text-ink">{city.population}</div>
+                                    <div class="text-xs font-mono uppercase tracking-wider text-ink/50">Gemeente</div>
+                                </div>
+                            )}
+                            {city.stats.mainIndustry && (
+                                <div>
+                                    <div class="text-sm md:text-base font-bold text-ink">{city.stats.mainIndustry}</div>
+                                    <div class="text-xs font-mono uppercase tracking-wider text-ink/50">Belangrijkste sector</div>
+                                </div>
+                            )}
+                            {city.stats.founded && (
+                                <div>
+                                    <div class="text-sm md:text-base font-bold text-ink">{city.stats.founded}</div>
+                                    <div class="text-xs font-mono uppercase tracking-wider text-ink/50">Historie</div>
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    <!-- Nearby Areas -->
+                    <div>
+                        <h4 class="font-mono text-xs uppercase tracking-widest text-ink/50 mb-4">
+                            Ook actief in de omgeving
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            {city.nearbyAreas.map((area) => {
+                                const link = getAreaLink(area);
+                                return link ? (
+                                    <a href={link} class="px-4 py-2 bg-[#e8e8e8] text-ink/80 font-medium text-sm hover:bg-electric hover:text-ink transition-colors">
+                                        {area}
+                                    </a>
+                                ) : (
+                                    <span class="px-4 py-2 bg-[#e8e8e8] text-ink/80 font-medium text-sm">
+                                        {area}
+                                    </span>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    <!-- Landmarks -->
+                    {city.landmarks && (
+                        <div>
+                            <h4 class="font-mono text-xs uppercase tracking-widest text-ink/50 mb-3">
+                                Bekende plekken in {city.name}
+                            </h4>
+                            <p class="text-ink/60 text-sm">{city.landmarks}</p>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            <!-- Related Project -->
+            {relatedProject && (
+                <div class="mt-12 pt-12 border-t border-ink/10">
+                    <div class="font-mono text-xs uppercase tracking-widest text-ink/50 mb-4">
+                        [ Ons Werk in {city.region} ]
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h4 class="text-2xl font-black uppercase tracking-tight mb-3">
+                                {relatedProject.title}
+                            </h4>
+                            <p class="text-ink/70 leading-relaxed mb-4">
+                                {relatedProject.shortDescription}
+                            </p>
+                            <a
+                                href={`/project/${relatedProject.slug}`}
+                                class="text-electric font-mono text-sm uppercase tracking-wider hover:text-ink transition-colors inline-flex items-center gap-2 group"
+                            >
+                                <span>Bekijk Case Study</span>
+                                <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                            </a>
+                        </div>
+                        <a href={`/project/${relatedProject.slug}`} class="relative aspect-video overflow-hidden bg-ink/5 block group">
+                            <img
+                                src={relatedProject.image}
+                                alt={`${relatedProject.title} website voorbeeld`}
+                                width={800}
+                                height={450}
+                                loading="lazy"
+                                decoding="async"
+                                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/60 transition-colors duration-300 flex items-center justify-center">
+                                <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-acid text-ink px-6 py-3 font-bold uppercase tracking-tight text-sm">
+                                    Bekijk Project
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            )}
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 4: TARGET INDUSTRIES (100% unique) -->
+        <!-- ============================================ -->
+        {city.industryDetails && city.industryDetails.length > 0 && (
+            <div class="mb-16 md:mb-20">
+                <div class="font-mono text-xs uppercase tracking-widest text-ink/50 mb-4">
+                    [ Voor Ondernemers in {city.name} ]
+                </div>
+                <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8">
+                    Websites Voor Elke Branche
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    {city.industryDetails.map((industry, index) => (
+                        <div class="p-6 border border-ink/10 bg-[#fafafa]">
+                            <div class="flex items-start gap-4">
+                                <div class="text-electric font-mono text-sm font-bold shrink-0">
+                                    [{String(index + 1).padStart(2, '0')}]
+                                </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-tight mb-2">{industry.name}</h4>
+                                    <p class="text-ink/70 text-sm leading-relaxed">{industry.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )}
+
+        <!-- ============================================ -->
+        <!-- SECTION 5: FAQ (80% unique - city-specific) -->
+        <!-- ============================================ -->
+        {city.faqs && city.faqs.length > 0 && (
+            <div class="pt-12 border-t border-ink/10">
+                <div class="font-mono text-xs uppercase tracking-widest text-ink/50 mb-4">
+                    [ Veelgestelde Vragen ]
+                </div>
+                <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8">
+                    Website Laten Maken in {city.name}
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    {city.faqs.map((faq) => (
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-ink">{faq.question}</h4>
+                            <p class="text-ink/70 text-sm leading-relaxed">{faq.answer}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )}
+
+    </div>
+</section>
