@@ -6,6 +6,7 @@ import { ViewTransitions } from "astro:transitions";
 import { SmoothScroll } from "../components/SmoothScroll";
 import Header from "../components/Header.astro";
 import CookieConsent from "../components/CookieConsent";
+import ContactWidget from "../components/ContactWidget";
 
 // Import font files for preloading - all critical weights
 import interTight400 from "@fontsource/inter-tight/files/inter-tight-latin-400-normal.woff2";
@@ -193,6 +194,9 @@ const CLARITY_ID = 'v6kn03ub4s';
         }
       });
     </script>
+
+    <!-- Contact Widget (client:idle defers hydration to improve LCP/FCP) -->
+    <ContactWidget client:idle />
 
     <!-- Cookie Consent Banner (client:idle defers hydration to improve LCP/FCP) -->
     <CookieConsent client:idle />
