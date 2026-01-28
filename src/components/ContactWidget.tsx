@@ -91,7 +91,7 @@ export function ContactWidget() {
         {/* Header */}
         <div className="flex items-center gap-4 p-5 pb-4">
           <img
-            src="/assets/yannick.jpeg"
+            src="/assets/yannick.webp"
             alt="Yannick Veldhuisen"
             className="w-12 h-12 rounded-full object-cover object-top shrink-0 ring-2 ring-acid/30"
           />

@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PortfolioSection from "../components/PortfolioSection.astro";
-import LocalSEOSection from "../components/LocalSEOSection.astro";
+import OfferLocalSEOSection from "../components/OfferLocalSEOSection.astro";
 import Footer from "../components/Footer.astro";
 import { getCityBySlug, getAllCities } from "../data/cities";
 import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
@@ -39,16 +38,16 @@ const mapImage = hasCityImage
     ? `/cities/${cityImageFilename}`
     : "/city_map.webp";
 
-// SEO-optimized meta description using city data
-const metaDescription = `Professionele webdesign in ${city}. Wij bouwen snelle, moderne websites voor ondernemers in ${cityData.region}. Klaar in 7 dagen voor €595. Vraag nu aan!`;
+// SEO-optimized meta description - offer-focused with local anchor
+const metaDescription = `Website laten maken in ${city}? Vanaf €495, klaar in 7 dagen. ✓ Uniek design ✓ Teksten inbegrepen ✓ Razendsnel. Lokale partner in ${cityData.region}.`;
 
-// SEO-optimized title (no brand name - it's the domain)
-const pageTitle = `Webdesign ${city} | Website Laten Maken in ${cityData.region} - €595`;
+// SEO-optimized title - keyword-first for "website laten maken [city]"
+const pageTitle = `Website Laten Maken ${city} | €495 | KNAP GEMAAKT.`;
 
 // Breadcrumb data for this page
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
-	{ name: `Webdesign ${city}`, url: `https://knapgemaakt.nl/webdesign-${cityData.slug}` }
+	{ name: `Website Laten Maken ${city}`, url: `https://knapgemaakt.nl/webdesign-${cityData.slug}` }
 ];
 ---
 
@@ -60,27 +59,35 @@ const breadcrumbs = [
 	<BreadcrumbSchema items={breadcrumbs} />
 	{cityData.faqs && <FAQSchema faqs={cityData.faqs} />}
 	<main>
-        <!-- Hero Section -->
+        <!-- Hero Section - Offer-focused with local anchor -->
         <section class="flex items-start bg-canvas bg-grid-light relative overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
             <div class="max-w-6xl xl:max-w-7xl mx-auto px-6 md:px-12 lg:px-16 w-full">
                 <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <!-- Text Content -->
                     <div class="space-y-6">
                         <div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40">
-                            [ KNAP GEMAAKT. {cityData.region} ]
+                            [ Lokale Partner in {cityData.region} ]
                         </div>
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9]">
-                            Webdesign in<br />
-                            <span class="text-electric">{city}.</span>
+                            Website Laten<br />
+                            Maken in <span class="text-electric">{city}.</span>
                         </h1>
                         <p class="text-lg md:text-xl text-ink/70">
-                            Je onderneming verdient beter dan een matige website.
+                            {cityData.heroSubheadline}
                         </p>
+
+                        <!-- Trust elements -->
+                        <div class="flex flex-wrap items-center gap-4 text-sm text-ink/60">
+                            <span>Vanaf €495</span>
+                            <span>•</span>
+                            <span>Klaar in 7 dagen</span>
+                        </div>
+
                         <a
                             href="/aanvragen"
                             class="w-full sm:w-auto bg-acid text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-ink hover:text-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
                         >
-                            Laten we kennismaken
+                            Gratis Kennismakingsgesprek
                             <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                         </a>
                     </div>
@@ -90,7 +97,7 @@ const breadcrumbs = [
                         <div class="aspect-square md:aspect-[4/3] relative overflow-hidden group">
                             <img
                                 src={mapImage}
-                                alt={`Kaart van ${city} - KNAP GEMAAKT. webdesign actief in ${cityData.region}`}
+                                alt={`Website laten maken in ${city} - KNAP GEMAAKT. actief in ${cityData.region}`}
                                 width={1024}
                                 height={768}
                                 loading="eager"
@@ -101,7 +108,7 @@ const breadcrumbs = [
                             <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-center">
                                 <div class="font-mono uppercase tracking-[0.2em] text-acid text-xs mb-1">
-                                    Actief in
+                                    Lokale Partner
                                 </div>
                                 <div class="font-black uppercase tracking-tight text-canvas" style="font-size: clamp(1.25rem, 5vw, 2.5rem);">
                                     {city}
@@ -116,11 +123,8 @@ const breadcrumbs = [
             </div>
         </section>
 
-        <!-- Local SEO Content Section -->
-        <LocalSEOSection city={cityData} />
-
-        <!-- Portfolio -->
-        <PortfolioSection />
+        <!-- Offer-focused Local SEO Content Section -->
+        <OfferLocalSEOSection city={cityData} />
 
         <!-- Footer -->
         <Footer />

@@ -54,7 +54,7 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
-		slug: "fitcity-culemborg",
+		slug: "maatwerk-website-voor-fitcity-culemborg",
 		title: "Fitcity Culemborg",
 		category: "Concept",
 		industry: "Sportschool",
@@ -63,17 +63,17 @@ export const projects: Project[] = [
 		mobileImage: "/assets/projects/fitcity-mobile.webp",
 		desktopMockup: "/assets/projects/fitcity-browser-window-mockup.webp",
 		mobileMockup: "/assets/projects/fitcity-mobile-mockup.webp",
-		heroMockup: "/assets/projects/mockups/fitcityculemborg.png",
-		overviewMockup: "/assets/projects/mockups/fitcityculemborg.png",
+		heroMockup: "/assets/projects/mockups/fitcityculemborg.webp",
+		overviewMockup: "/assets/projects/mockups/fitcityculemborg.webp",
 		link: "https://fitcityculemborg.knapgemaakt.nl",
-		shortDescription: "De meest betaalbare sportschool van Culemborg met industrial vibe.",
-		fullDescription: `Fitcity Culemborg positioneert zich als "de meest betaalbare sportschool van Culemborg" met de missie om iedereen toegang te geven tot fitness. Met maandprijzen vanaf €19,95 en een industrial vibe sfeer bieden ze kwalitatieve apparatuur (Nautilus, Technogym, SportsArt) zonder franje.
+		shortDescription: "De meest betaalbare sportschool van Culemborg.",
+		fullDescription: `Fitcity Culemborg positioneert zich als "de meest betaalbare sportschool van Culemborg" met de missie om iedereen toegang te geven tot fitness. Met maandprijzen vanaf €19,95 bieden ze kwalitatieve apparatuur (Nautilus, Technogym, SportsArt) zonder franje.
 
 Ze onderscheiden zich met een Ladies Only zone, kickboks lessen en persoonlijke begeleiding zonder extra kosten. Open 7 dagen per week met ruime openingstijden (ma-vr 08:30-22:00). Voor sportscholen is online vindbaarheid cruciaal: mensen zoeken "sportschool Culemborg" of "goedkoop sporten Rivierenland" en besluiten binnen seconden waar ze lid worden.`,
 		challenge: `Fitcity Culemborg richt zich bewust op betaalbaarheid en toegankelijkheid, niet op luxe faciliteiten of Instagram-waardige interieurs. De uitdaging was om een website te maken die deze no-nonsense aanpak ("geen poespas, wel resultaat") communiceert terwijl het toch professioneel en uitnodigend oogt.
 
 In de fitnessbranche domineren grote ketens met dure marketingbudgetten de zoekresultaten. Een lokale sportschool moet slim omgaan met SEO: focussen op lokale zoekopdrachten, transparante prijzen tonen, en zich onderscheiden op persoonlijke service en community. De website moet bezoekers binnen seconden overtuigen: betaalbaar, betrouwbaar, dichtbij.`,
-		solution: `We creëerden een frisse, energieke website met oranje accenten die de toegankelijkheid benadrukt. De "industrial vibe" komt terug in het strakke, no-nonsense ontwerp. Prijzen staan prominent op de homepage (vanaf €19,95/maand + €17 inschrijfgeld), openingstijden zijn direct zichtbaar, en de "Word Lid" knop is altijd binnen handbereik.
+		solution: `We creëerden een frisse, energieke website met oranje accenten die de toegankelijkheid benadrukt. Het strakke, no-nonsense ontwerp past bij de filosofie van de sportschool. Prijzen staan prominent op de homepage (vanaf €19,95/maand + €17 inschrijfgeld), openingstijden zijn direct zichtbaar, en de "Word Lid" knop is altijd binnen handbereik.
 
 Het ontwerp is mobile-first — 70% van potentiële leden zoekt vanaf hun telefoon. Click-to-call knoppen maken het makkelijk om direct te bellen. De USP's (Ladies Only, kickboks, gratis begeleiding) krijgen visueel de aandacht die ze verdienen. Geen eindeloos scrollen: bezoekers krijgen direct de informatie die ze zoeken.`,
 		features: [
@@ -84,7 +84,6 @@ Het ontwerp is mobile-first — 70% van potentiële leden zoekt vanaf hun telefo
 			"Online aanmeldformulier en proefles aanvraag",
 			"Mobile-first ontwerp met click-to-call",
 			"Lokale SEO voor 'sportschool Culemborg'",
-			"Industrial vibe design passend bij merkidentiteit",
 		],
 		results: [
 			"Duidelijke conversie-focus met transparante prijzen",
@@ -111,15 +110,15 @@ Het ontwerp is mobile-first — 70% van potentiële leden zoekt vanaf hun telefo
 		industryContext: "De fitnessbranche is competitief. Potentiële leden vergelijken sportscholen online voordat ze langskomen. Een professionele website met transparante prijzen en een simpel aanmeldproces verlaagt de drempel om lid te worden. Lokale SEO is essentieel: 76% van lokale zoekopdrachten leidt binnen 24 uur tot contact. Budget-sportscholen moeten vooral communiceren op prijs, toegankelijkheid en resultaat — niet op luxe.",
 	},
 	{
-		slug: "byshakir",
+		slug: "maatwerk-website-voor-by-shakir",
 		title: "By Shakir",
 		category: "Concept",
 		industry: "Luxe Interieur",
 		location: "Tiel",
 		image: "/assets/projects/byshakir.webp",
 		mobileImage: "/assets/projects/byshakir-mobile.webp",
-		heroMockup: "/assets/projects/mockups/byshakir.png",
-		overviewMockup: "/assets/projects/mockups/byshakir.png",
+		heroMockup: "/assets/projects/mockups/byshakir.webp",
+		overviewMockup: "/assets/projects/mockups/byshakir.webp",
 		link: "https://byshakir.knapgemaakt.nl",
 		shortDescription: "Geen meubelwinkel. Een designautoriteit.",
 		fullDescription: `By Shakir | Metropolitan Luxury is geen meubelwinkel — het is een design autoriteit. Opgericht vanuit de missie om de Nederlandse markt iets anders te bieden dan standaard meubels. "Ik zag een gat in de markt. Overal meubelzaken die producten verkopen, maar niemand die visies verkocht," aldus oprichter Shakir.
@@ -127,7 +126,7 @@ Het ontwerp is mobile-first — 70% van potentiële leden zoekt vanaf hun telefo
 Met meer dan 15 jaar ervaring creëert By Shakir complete interieurconcepten die brutalistisch architectonische elegantie combineren met de warmte van high-end hospitality. Van fotorealistische 3D-visualisatie tot volledige turnkey projectmanagement. Hun klanten zijn niet op zoek naar een bank — ze zoeken een ervaring, een verhaal, een ruimte die emotioneel resoneert.`,
 		challenge: `By Shakir wilde zich nadrukkelijk onderscheiden van de massa meubelretailers. De challenge: een website die "design authority" communiceert, niet "meubelwinkel". De internationale klantenkring (Nederland, België, Marokko) vraagt om een online presentatie die het niveau van hun fysieke showroom in Tiel evenaart.
 
-In het premium interieur segment is de website vaak het eerste contactmoment. Klanten die investeren in maatwerk interieurs (€50.000+) verwachten geen standaard WordPress template. De uitdaging was een digitale ervaring te creëren die de merkpositie "Metropolitan Luxury" onderstreept, waarbij elk detail — van typografie tot animaties — de premiumpositionering communiceert.`,
+In het premium interieur segment is de website vaak het eerste contactmoment. Klanten die investeren in maatwerk interieurs verwachten geen standaard WordPress template. De uitdaging was een digitale ervaring te creëren die de merkpositie "Metropolitan Luxury" onderstreept, waarbij elk detail — van typografie tot animaties — de premiumpositionering communiceert.`,
 		solution: `We ontwierpen een website met een donker, luxueus kleurenpalet (zwart, bruin, goud) dat past bij hun "brutalistisch met warmte" filosofie. Grote, cinematografische beelden van hun projecten staan centraal. De headline "Refining Living Spaces" zet direct de toon.
 
 Belangrijkste ontwerpbeslissingen:
@@ -146,7 +145,7 @@ Elke pagina ademt ruimte en exclusiviteit. Geen drukke layouts, geen kortingspop
 			"Portfolio met international luxury projecten",
 			"Brutalistisch-warm design systeem (zwart/bruin/goud)",
 			"Turnkey proces uitleg van concept tot oplevering",
-			"Showroom locaties Tiel (NL) + Tanger (Marokko)",
+			"Showroom locatie in Tiel",
 			"Design philosophy: 'Not products, but visions'",
 			"Premium contact flow voor adviesgesprekken",
 			"Geoptimaliseerde laadtijd ondanks grote afbeeldingen",
@@ -178,7 +177,7 @@ Elke pagina ademt ruimte en exclusiviteit. Geen drukke layouts, geen kortingspop
 			"Cinematografische portfolio presentatie",
 			"SEO voor 'luxury interior designer Netherlands'",
 		],
-		industryContext: "In de luxe interieurbranche bepaalt de website de geloofwaardigheid. Klanten die €50.000+ investeren in interieurontwerp verwachten een online ervaring die het prijssegment rechtvaardigt. Een goedkope website wekt twijfel over de kwaliteit. Premium design bureaus moeten zich online positioneren als autoriteiten, niet als retailers. Storytelling, visuele excellentie en subtiele luxe zijn essentieel.",
+		industryContext: "In de luxe interieurbranche bepaalt de website de geloofwaardigheid. Klanten die investeren in interieurontwerp verwachten een online ervaring die het prijssegment rechtvaardigt. Een goedkope website wekt twijfel over de kwaliteit. Premium design bureaus moeten zich online positioneren als autoriteiten, niet als retailers. Storytelling, visuele excellentie en subtiele luxe zijn essentieel.",
 	},
 ];
 
