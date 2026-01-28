@@ -7,8 +7,8 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 ---
 
 <Layout
-	title="Over Mij | Yanni | KNAP GEMAAKT."
-	description="Ik ben Yanni, de persoon achter KNAP GEMAAKT. Ik bouw websites voor ondernemers die geen zin hebben in gedoe. Leer me kennen."
+	title="Over Mij | Waarom KNAP GEMAAKT. Bestaat"
+	description="Waarom KNAP GEMAAKT. bestaat: slimme systemen horen niet alleen bij grote bedrijven. Ik maak automatisering bereikbaar voor elke ondernemer."
 >
 	<main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 bg-grid-light relative overflow-hidden">
 		<div class="max-w-4xl mx-auto">
@@ -19,84 +19,183 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 					class="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6"
 				/>
 				<p class="text-xl md:text-2xl text-ink/60 font-medium max-w-2xl leading-relaxed">
-					De persoon achter KNAP GEMAAKT.
+					Niet zozeer wie ik ben. Meer waarom ik dit doe.
 				</p>
 			</div>
 
-			<!-- Main Content -->
-			<div class="grid md:grid-cols-3 gap-12 mb-16">
-				<!-- Photo placeholder -->
+			<!-- Why Section: Photo + Story -->
+			<div class="grid md:grid-cols-3 gap-12 mb-24">
 				<div class="md:col-span-1">
-					<div class="aspect-square bg-ink/5 border-2 border-ink/10 flex items-center justify-center">
-						<span class="text-ink/20 font-mono text-xs uppercase tracking-widest">Foto</span>
-					</div>
+					<img
+						src="/assets/yannick.jpeg"
+						alt="Yannick"
+						class="w-full aspect-square object-cover object-top"
+						loading="eager"
+					/>
 				</div>
 
-				<!-- Bio -->
 				<div class="md:col-span-2 space-y-6 text-lg text-ink/80 leading-relaxed">
+					<h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter text-ink">
+						Waarom Ik Dit Doe
+					</h2>
 					<p>
-						Hoi, ik ben <strong class="text-ink">Yanni</strong>. Ik bouw websites voor ondernemers die geen zin hebben in gedoe.
+						Ik zie het elke dag. Ondernemers die 's avonds nog handmatig
+						afspraakbevestigingen sturen. Die klanten achterna bellen voor een
+						review. Die hun hele administratie bijhouden in een Excel-bestand,
+						terwijl grote bedrijven dit soort dingen allang hebben geautomatiseerd.
 					</p>
 					<p>
-						Grote bureaus rekenen duizenden euro's en hebben maanden nodig. Goedkope alternatieven
-						leveren trage WordPress-sites die je binnen een jaar hoofdpijn bezorgen.
-						Ik zag een gat in de markt: premium kwaliteit, eerlijke prijs, snel geleverd.
+						Het verschil tussen een klein bedrijf en een groot bedrijf?
+						Niet talent. Niet inzet. Het is toegang tot slimme systemen.
+						En dat vind ik oneerlijk.
 					</p>
 					<p>
-						Dat is KNAP GEMAAKT. Geen team van 50 man, geen kantoor in Amsterdam, geen
-						projectmanagers die berichten doorspelen. Gewoon ik, die jouw website bouwt.
-					</p>
-					<p>
-						Elke site die ik maak is uniek. Geen templates, geen themes. Ik schrijf de code zelf,
-						en vaak ook de teksten. Want laten we eerlijk zijn: jij bent goed in je vak,
-						niet in het staren naar een leeg Word-document.
+						Daarom bestaat KNAP GEMAAKT. Niet om de zoveelste website te
+						bouwen, maar om ondernemers de tools te geven die normaal alleen
+						weggelegd zijn voor bedrijven met grote budgetten en IT-afdelingen.
 					</p>
 				</div>
 			</div>
 
-			<!-- Values / What I Believe -->
-			<div class="border-t-2 border-ink/10 pt-16 mb-16">
-				<h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-8">
+			<!-- What I Believe -->
+			<div class="border-t-2 border-ink/10 pt-16 mb-24">
+				<h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-4">
 					Waar Ik In Geloof
 				</h2>
-				<div class="grid md:grid-cols-2 gap-8">
-					<div class="space-y-2">
-						<h3 class="font-bold uppercase tracking-tight">Geen uurtje-factuurtje</h3>
-						<p class="text-ink/60">Vaste prijzen, geen verrassingen achteraf. Je weet precies wat je betaalt.</p>
+				<p class="text-ink/60 text-lg mb-12 max-w-2xl">
+					Een paar overtuigingen die alles wat ik bouw vormgeven.
+				</p>
+
+				<div class="space-y-12">
+					<div class="grid md:grid-cols-[120px_1fr] gap-6">
+						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest">
+							01
+						</div>
+						<div class="space-y-3">
+							<h3 class="text-xl font-bold uppercase tracking-tight">
+								Klein hoeft niet basic te zijn
+							</h3>
+							<p class="text-ink/70 leading-relaxed">
+								Een loodgieter in Buren verdient dezelfde slimme technologie als
+								een keten met 200 vestigingen. Automatisch reviews verzamelen,
+								afspraken laten boeken, leads opvolgen. Geen luxe. Gewoon hoe het
+								hoort te werken.
+							</p>
+						</div>
 					</div>
-					<div class="space-y-2">
-						<h3 class="font-bold uppercase tracking-tight">Snelheid is respect</h3>
-						<p class="text-ink/60">Jouw tijd is kostbaar. Ik lever snel, zonder concessies aan kwaliteit.</p>
+
+					<div class="grid md:grid-cols-[120px_1fr] gap-6">
+						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest">
+							02
+						</div>
+						<div class="space-y-3">
+							<h3 class="text-xl font-bold uppercase tracking-tight">
+								Je website moet voor je werken
+							</h3>
+							<p class="text-ink/70 leading-relaxed">
+								Een website die er alleen maar mooi uitziet? Gemiste kans.
+								Ik bouw websites die actief meewerken aan je bedrijf. Leads
+								opvangen, afspraken inplannen, klanten opvolgen. Zodat jij
+								je kunt focussen op waar je goed in bent.
+							</p>
+						</div>
 					</div>
-					<div class="space-y-2">
-						<h3 class="font-bold uppercase tracking-tight">Techniek moet werken</h3>
-						<p class="text-ink/60">Geen trage sites, geen security issues, geen maandelijks onderhoud nodig.</p>
+
+					<div class="grid md:grid-cols-[120px_1fr] gap-6">
+						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest">
+							03
+						</div>
+						<div class="space-y-3">
+							<h3 class="text-xl font-bold uppercase tracking-tight">
+								Het gaat om de verbinding
+							</h3>
+							<p class="text-ink/70 leading-relaxed">
+								De meeste ondernemers hebben losse tools. Een boeking-app
+								hier, Google Reviews daar, een maillijst ergens anders.
+								Niks praat met elkaar. Dat is waar ik inspring. Ik koppel
+								alles aan elkaar tot één systeem dat gewoon werkt. Niks
+								valt tussen wal en schip.
+							</p>
+						</div>
 					</div>
-					<div class="space-y-2">
-						<h3 class="font-bold uppercase tracking-tight">Eerlijk advies</h3>
-						<p class="text-ink/60">Als je geen website nodig hebt, zeg ik dat ook. Ik verkoop geen lucht.</p>
+
+					<div class="grid md:grid-cols-[120px_1fr] gap-6">
+						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest">
+							04
+						</div>
+						<div class="space-y-3">
+							<h3 class="text-xl font-bold uppercase tracking-tight">
+								Onafhankelijkheid is alles
+							</h3>
+							<p class="text-ink/70 leading-relaxed">
+								Je zou nooit afhankelijk moeten zijn van een bureau voor elke
+								kleine aanpassing. Of vastzitten aan een platform dat je niet
+								begrijpt. Wat ik bouw is van jou. Transparant, begrijpelijk,
+								zonder verborgen kosten of kleine lettertjes.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- Quick Facts -->
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-				<div class="p-6 bg-ink text-canvas text-center">
-					<div class="text-3xl font-black text-acid mb-1">50+</div>
-					<div class="text-xs font-mono uppercase tracking-widest text-canvas/60">Websites gebouwd</div>
+			<!-- How I Work: The Glue -->
+			<div class="border-t-2 border-ink/10 pt-16 mb-24">
+				<h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-4">
+					Hoe Ik Werk
+				</h2>
+				<p class="text-ink/60 text-lg mb-12 max-w-2xl">
+					Ik bouw geen losse websites. Ik bouw systemen.
+				</p>
+
+				<div class="p-8 md:p-12 border-2 border-ink/10 relative">
+					<div class="grid md:grid-cols-3 gap-8 text-center">
+						<div class="space-y-3">
+							<div class="w-12 h-12 bg-acid mx-auto flex items-center justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+									<rect width="18" height="18" x="3" y="3" rx="2"/>
+									<path d="M7 7h10M7 12h10M7 17h10"/>
+								</svg>
+							</div>
+							<h3 class="font-bold uppercase tracking-tight text-sm">Je Website</h3>
+							<p class="text-ink/60 text-sm">Snel, professioneel, gebouwd om te presteren.</p>
+						</div>
+
+						<div class="space-y-3">
+							<div class="w-12 h-12 bg-acid mx-auto flex items-center justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+									<path d="M12 5v14M5 12h14"/>
+								</svg>
+							</div>
+							<h3 class="font-bold uppercase tracking-tight text-sm">De Verbinding</h3>
+							<p class="text-ink/60 text-sm">Gekoppeld aan je tools, alles praat met elkaar.</p>
+						</div>
+
+						<div class="space-y-3">
+							<div class="w-12 h-12 bg-acid mx-auto flex items-center justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+									<path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+									<path d="m9 12 2 2 4-4"/>
+								</svg>
+							</div>
+							<h3 class="font-bold uppercase tracking-tight text-sm">Het Resultaat</h3>
+							<p class="text-ink/60 text-sm">Automatisering die tijd bespaart en klanten oplevert.</p>
+						</div>
+					</div>
+
+					<!-- Connecting lines (desktop) -->
+					<div class="hidden md:block absolute top-1/2 left-[calc(33.33%+16px)] right-[calc(33.33%+16px)] h-px bg-ink/10 -translate-y-4"></div>
 				</div>
-				<div class="p-6 bg-ink text-canvas text-center">
-					<div class="text-3xl font-black text-acid mb-1">7</div>
-					<div class="text-xs font-mono uppercase tracking-widest text-canvas/60">Dagen gemiddeld</div>
-				</div>
-				<div class="p-6 bg-ink text-canvas text-center">
-					<div class="text-3xl font-black text-acid mb-1">100%</div>
-					<div class="text-xs font-mono uppercase tracking-widest text-canvas/60">Tevreden klanten</div>
-				</div>
-				<div class="p-6 bg-ink text-canvas text-center">
-					<div class="text-3xl font-black text-acid mb-1">0</div>
-					<div class="text-xs font-mono uppercase tracking-widest text-canvas/60">WordPress sites</div>
-				</div>
+			</div>
+
+			<!-- Future Hint -->
+			<div class="mb-24 p-8 md:p-10 bg-ink/[0.03] border-l-4 border-acid">
+				<p class="text-sm font-mono uppercase tracking-widest text-ink/40 mb-3">Waar ik mee bezig ben</p>
+				<p class="text-lg text-ink/80 leading-relaxed max-w-2xl">
+					Ik werk aan een dashboard waar je zelf je teksten kunt aanpassen,
+					kunt zien hoeveel bezoekers je hebt gehad en wat daaruit is
+					gekomen. Niet inloggen op drie verschillende tools. Alles op
+					één plek.
+				</p>
 			</div>
 
 			<!-- Location -->
@@ -110,26 +209,6 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 				<div>
 					<h3 class="font-bold uppercase tracking-tight">Gevestigd in Buren, Gelderland</h3>
 					<p class="text-ink/60 text-sm">Maar ik werk met klanten door heel Nederland. Alles gaat remote.</p>
-				</div>
-			</div>
-
-			<!-- CTA Section -->
-			<div class="p-8 md:p-12 bg-ink text-canvas relative overflow-hidden">
-				<div class="absolute inset-0 bg-grid-dark opacity-50"></div>
-				<div class="relative z-10 text-center">
-					<h2 class="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-4">
-						Zullen We Kennismaken?
-					</h2>
-					<p class="text-canvas/60 text-lg mb-8 max-w-xl mx-auto">
-						Vertel me over je project. 20 minuten, geen verkooppraatje.
-					</p>
-					<a
-						href="/aanvragen"
-						class="btn-bracket btn-bracket-acid inline-flex items-center justify-center gap-3 px-8 py-[18px] bg-acid text-ink font-bold uppercase tracking-tight hover:bg-acid/80 transition-colors duration-300 group"
-					>
-						Laten we kennismaken
-						<span class="text-xl leading-none transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-					</a>
 				</div>
 			</div>
 		</div>
