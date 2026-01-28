@@ -308,9 +308,9 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 </Layout>
 
 <script>
-	(function() {
+	function initContactForm() {
 		const form = document.getElementById('contact-form') as HTMLFormElement;
-		if (!form) return;
+		if (!form || form.dataset.listenerAttached) return;
 
 		form.addEventListener('submit', async (e) => {
 			e.preventDefault();
@@ -369,5 +369,13 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 				btnLoading?.classList.add('hidden');
 			}
 		});
-	})();
+
+		form.dataset.listenerAttached = 'true';
+	}
+
+	// Initialize on first load
+	initContactForm();
+
+	// Re-initialize after View Transitions
+	document.addEventListener('astro:page-load', initContactForm);
 </script>

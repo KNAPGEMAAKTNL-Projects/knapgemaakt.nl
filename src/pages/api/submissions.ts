@@ -177,7 +177,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
             subject = 'Nieuwe website-audit aanvraag';
           }
 
-          await fetch('https://api.resend.com/emails', {
+          const emailResponse = await fetch('https://api.resend.com/emails', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -191,6 +191,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
               html: emailHtml
             })
           });
+
+          if (!emailResponse.ok) {
+            const errorData = await emailResponse.json().catch(() => ({}));
+            console.error('[Submissions API] Resend API error:', emailResponse.status, errorData);
+          }
         } catch (err) {
           console.error('[Submissions API] Failed to send email:', err);
         }
