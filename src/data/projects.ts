@@ -115,13 +115,13 @@ Het ontwerp is mobile-first — 70% van potentiële leden zoekt vanaf hun telefo
 		title: "By Shakir",
 		category: "Concept",
 		industry: "Luxe Interieur",
-		location: "Tiel & Tanger",
+		location: "Tiel",
 		image: "/assets/projects/byshakir.webp",
 		mobileImage: "/assets/projects/byshakir-mobile.webp",
 		heroMockup: "/assets/projects/mockups/byshakir.png",
 		overviewMockup: "/assets/projects/mockups/byshakir.png",
 		link: "https://byshakir.knapgemaakt.nl",
-		shortDescription: "Not a furniture store. A design authority.",
+		shortDescription: "Geen meubelwinkel. Een designautoriteit.",
 		fullDescription: `By Shakir | Metropolitan Luxury is geen meubelwinkel — het is een design autoriteit. Opgericht vanuit de missie om de Nederlandse markt iets anders te bieden dan standaard meubels. "Ik zag een gat in de markt. Overal meubelzaken die producten verkopen, maar niemand die visies verkocht," aldus oprichter Shakir.
 
 Met meer dan 15 jaar ervaring creëert By Shakir complete interieurconcepten die brutalistisch architectonische elegantie combineren met de warmte van high-end hospitality. Van fotorealistische 3D-visualisatie tot volledige turnkey projectmanagement. Hun klanten zijn niet op zoek naar een bank — ze zoeken een ervaring, een verhaal, een ruimte die emotioneel resoneert.`,
@@ -131,10 +131,14 @@ In het premium interieur segment is de website vaak het eerste contactmoment. Kl
 		solution: `We ontwierpen een website met een donker, luxueus kleurenpalet (zwart, bruin, goud) dat past bij hun "brutalistisch met warmte" filosofie. Grote, cinematografische beelden van hun projecten staan centraal. De headline "Refining Living Spaces" zet direct de toon.
 
 Belangrijkste ontwerpbeslissingen:
-- **Storytelling over producten**: De site communiceert visie en proces, niet alleen eindproducten
-- **Fotorealistische 3D-visualisatie**: Laat zien hoe klanten hun ruimte zien vóórdat er gebouwd wordt
-- **Internationale autoriteit**: Showrooms in Tiel én Tanger (binnenkort) communiceren schaal
-- **Subtiele luxe**: Geen opzichtige call-to-actions — premium klanten hoeven niet "overtuigd" te worden
+
+Storytelling over producten: De site communiceert visie en proces, niet alleen eindproducten.
+
+Fotorealistische 3D-visualisatie: Laat zien hoe klanten hun ruimte zien vóórdat er gebouwd wordt.
+
+Internationale autoriteit: Showroom in Tiel communiceert professionaliteit.
+
+Subtiele luxe: Geen opzichtige call-to-actions. Premium klanten hoeven niet "overtuigd" te worden.
 
 Elke pagina ademt ruimte en exclusiviteit. Geen drukke layouts, geen kortingspopups. De navigatie is intuïtief, de content vertelt verhalen. Het resultaat is een website die net zo premium aanvoelt als de 'International Hotel Vibe' interieurs die zij creëren.`,
 		features: [
@@ -154,7 +158,7 @@ Elke pagina ademt ruimte en exclusiviteit. Geen drukke layouts, geen kortingspop
 			"Visueel storytelling verhoogt emotionele connectie",
 		],
 		testimonial: {
-			quote: "De meeste zaken verkopen meubels. Wij verkopen visies. Die marktpositie moest terugkomen in onze online presentatie — en dat is perfect gelukt.",
+			quote: "De meeste zaken verkopen meubels. Wij verkopen visies. Die marktpositie moest terugkomen in onze online presentatie, en dat is perfect gelukt.",
 			author: "Shakir",
 			role: "Oprichter & Creative Director",
 		},
