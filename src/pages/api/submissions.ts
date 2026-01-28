@@ -7,7 +7,7 @@ interface Env {
   N8N_BOOKING_WEBHOOK?: string;
 }
 
-type SubmissionType = 'contact' | 'offerte' | 'aanvraag';
+type SubmissionType = 'contact' | 'offerte' | 'aanvraag' | 'audit';
 
 interface SubmissionRequest {
   type: SubmissionType;
@@ -48,7 +48,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
 
     // Validate type
-    const validTypes: SubmissionType[] = ['contact', 'offerte', 'aanvraag'];
+    const validTypes: SubmissionType[] = ['contact', 'offerte', 'aanvraag', 'audit'];
     if (!validTypes.includes(body.type)) {
       return new Response(JSON.stringify({ error: 'Ongeldig formuliertype' }), {
         status: 400, headers: JSON_HEADERS
@@ -72,6 +72,12 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     if (body.type === 'aanvraag' && (!body.start_time || !body.end_time)) {
       return new Response(JSON.stringify({ error: 'Selecteer een tijdstip voor je gesprek' }), {
+        status: 400, headers: JSON_HEADERS
+      });
+    }
+
+    if (body.type === 'audit' && !body.website_url) {
+      return new Response(JSON.stringify({ error: 'Vul je website URL in' }), {
         status: 400, headers: JSON_HEADERS
       });
     }
@@ -152,18 +158,24 @@ export const POST: APIRoute = async ({ request, locals }) => {
       bookingId
     ).run();
 
-    // Send email notification via Resend (for contact and offerte)
-    if (body.type === 'contact' || body.type === 'offerte') {
+    // Send email notification via Resend (for contact, offerte, and audit)
+    if (body.type === 'contact' || body.type === 'offerte' || body.type === 'audit') {
       const apiKey = env.RESEND_API_KEY;
       if (apiKey) {
         try {
-          const emailHtml = body.type === 'contact'
-            ? buildContactEmail(body)
-            : buildOfferteEmail(body);
+          let emailHtml: string;
+          let subject: string;
 
-          const subject = body.type === 'contact'
-            ? `Contactformulier: ${body.specification}`
-            : 'Offerte aanvraag: automations';
+          if (body.type === 'contact') {
+            emailHtml = buildContactEmail(body);
+            subject = `Contactformulier: ${body.specification}`;
+          } else if (body.type === 'offerte') {
+            emailHtml = buildOfferteEmail(body);
+            subject = 'Offerte aanvraag: automations';
+          } else {
+            emailHtml = buildAuditEmail(body);
+            subject = 'Nieuwe website-audit aanvraag';
+          }
 
           await fetch('https://api.resend.com/emails', {
             method: 'POST',
@@ -232,6 +244,20 @@ function buildOfferteEmail(body: SubmissionRequest): string {
       <h3 style="margin-top:24px;">Toelichting</h3>
       <p style="white-space:pre-wrap;background:#f9f9f9;padding:16px;border-left:3px solid #ccff00;">${body.message}</p>
     ` : ''}
+  `;
+}
+
+function buildAuditEmail(body: SubmissionRequest): string {
+  return `
+    <h2>Nieuwe website-audit aanvraag</h2>
+    <table style="border-collapse:collapse;width:100%;max-width:600px;">
+      ${emailRow('Naam', body.name)}
+      ${emailRow('E-mail', `<a href="mailto:${body.email}">${body.email}</a>`)}
+      ${emailRow('Website', body.website_url ? `<a href="${body.website_url}">${body.website_url}</a>` : '-')}
+    </table>
+    <p style="margin-top:24px;color:#666;">
+      Deze persoon wil een gratis website-audit ontvangen. Bekijk de website en stuur binnen 2 werkdagen een persoonlijke video-analyse.
+    </p>
   `;
 }
 

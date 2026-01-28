@@ -2,14 +2,12 @@
 export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
-import PortfolioSection from "../components/PortfolioSection.astro";
-import ProcessSection from "../components/ProcessSection.astro";
 import Footer from "../components/Footer.astro";
 import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 import { TypingRotator } from "../components/TypingRotator";
-import { getAllCities } from "../data/cities";
+import { getAllProjects } from "../data/projects";
 
-const cities = getAllCities();
+const projects = getAllProjects();
 ---
 
 <Layout
@@ -86,240 +84,320 @@ const cities = getAllCities();
 			</div>
 		</section>
 
-		<!-- INTRO / ABOUT SECTION (SEO Content) -->
+		<!-- INTRO / ABOUT SECTION -->
 		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
 			<div class="max-w-6xl xl:max-w-7xl mx-auto">
-				<div class="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
-					<div>
-						<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-6">
-							[ Over KNAP GEMAAKT. ]
-						</div>
-						<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-6">
-							Grote Jongens Kwaliteit. Normale Prijs.
-						</h2>
+				<div class="grid md:grid-cols-[2fr_3fr] gap-12 md:gap-16 items-center">
+					<!-- Profile Photo -->
+					<div class="order-2 md:order-1">
+						<img
+							src="/assets/yannick.jpeg"
+							alt="Yannick"
+							class="w-full max-w-xs md:max-w-none aspect-[4/5] object-cover object-top mx-auto"
+							loading="lazy"
+						/>
 					</div>
-					<div class="space-y-6 text-canvas/80 text-lg leading-relaxed">
-						<p>
-							Waarom zou een loodgieter uit Tiel een minder mooie website hebben dan een multinational?
-							Goede vraag. Dat zou niet moeten. Bij KNAP GEMAAKT. bouw ik premium websites
-							waarmee lokale ondernemers kunnen concurreren met de grote jongens. Razendsnel,
-							professioneel, en zonder de prijs van een kleine auto.
-						</p>
-						<p>
-							Elk ontwerp is uniek en wordt vanaf nul gebouwd. Geen templates, geen themes
-							die je op duizend andere sites terugziet. Website nodig? Vanaf €495, klaar in 7 dagen.
-							Slimmer systeem met automations? €995. Inclusief design, teksten, hosting. De hele santenkraam.
-						</p>
-						<p>
-							En ja, ik schrijf ook je teksten. Want laten we eerlijk zijn: jij bent goed in je vak,
-							niet in het staren naar een leeg Word-document om 23:00. Ik regel het. Jij onderneemt.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- PORTFOLIO SECTION -->
-		<section id="portfolio">
-			<PortfolioSection />
-		</section>
-
-		<!-- PROCESS SECTION -->
-		<ProcessSection />
-
-		<!-- PRICING CTA -->
-		<section id="prijzen" class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
-			<div class="max-w-6xl xl:max-w-7xl mx-auto">
-				<div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-					<div>
-						<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40 mb-6">
-							[ Onze Pakketten ]
+					<!-- Text -->
+					<div class="order-1 md:order-2">
+						<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-4">
+							[ Even Voorstellen ]
 						</div>
-						<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-6">
-							Vanaf €495.
+						<h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight leading-[0.95] mb-6">
+							Ik Ben Yannick.
 						</h2>
-						<p class="text-ink/70 text-lg leading-relaxed mb-8">
-							Een professionele website voor €495. Of een slim systeem dat afspraken boekt, reviews verzamelt en leads opvolgt voor €995. Vaste prijs, geen verrassingen.
-						</p>
-						<a
-							href="/website-laten-maken"
-							class="bg-acid text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-ink hover:text-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
-						>
-							Bekijk pakketten
+						<div class="space-y-4 text-canvas/80 text-lg leading-relaxed">
+							<p>
+								Vanuit Buren help ik ondernemers met websites die écht iets opleveren. Niet alleen mooi, maar ook slim: leads opvangen, afspraken boeken, klanten opvolgen.
+							</p>
+							<p>
+								Ik geloof dat een kleine ondernemer dezelfde tools verdient als een groot bedrijf. Daarom bouw ik websites die voor je werken, ook als jij er niet bent. Geen gedoe met plugins, updates of technische problemen. Gewoon een site die doet wat hij moet doen.
+							</p>
+						</div>
+						<a href="/over-mij" class="inline-flex items-center gap-2 text-acid font-mono text-sm uppercase tracking-wider hover:text-canvas transition-colors group mt-6">
+							<span>Meer over mij</span>
 							<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 						</a>
 					</div>
-					<div class="grid grid-cols-2 gap-4">
-						<div class="p-6 border-2 border-ink/10 bg-canvas">
-							<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-3">Website</div>
-							<div class="text-3xl font-black mb-2">€495</div>
-							<p class="text-ink/60 text-sm">Professioneel online in 7 dagen</p>
-						</div>
-						<div class="p-6 border-2 border-acid bg-acid">
-							<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-3">Systeem</div>
-							<div class="text-3xl font-black mb-2">€995</div>
-							<p class="text-ink/70 text-sm">Je digitale medewerker</p>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- WHY CHOOSE US SECTION (More SEO Content) -->
-		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+		<!-- SERVICES SECTION -->
+		<section id="diensten" class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
 			<div class="max-w-6xl xl:max-w-7xl mx-auto">
 				<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40 mb-6">
-					[ Waarom KNAP GEMAAKT. ]
+					[ Wat Ik Voor Je Kan Doen ]
 				</div>
-				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-6 max-w-3xl">
-					Waarom Ondernemers Mij Kiezen.
+				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-12 md:mb-16 max-w-3xl">
+					Websites Die Werken. Systemen Die Tijd Besparen.
 				</h2>
-				<p class="text-ink/60 text-lg mb-12 md:mb-16 max-w-2xl">
-					Simpel: ik bouw sneller, reken minder en lever kwaliteit. Dat is het eigenlijk.
-				</p>
 
-				<div class="grid md:grid-cols-3 gap-8 md:gap-12">
-					<div class="space-y-4">
-						<div class="text-electric font-mono text-sm">[01]</div>
-						<h3 class="text-xl font-black uppercase tracking-tight">Enterprise Kwaliteit</h3>
-						<p class="text-ink/70 leading-relaxed">
-							Dezelfde technologie die grote bedrijven gebruiken. Razendsnel, veilig, perfect vindbaar in Google.
-							Het verschil? Ik reken geen enterprise-prijzen. Jouw website presteert als die van de grote jongens,
-							zonder het prijskaartje.
-						</p>
-					</div>
+				<div class="grid md:grid-cols-2 gap-8 md:gap-12">
+					<!-- Website -->
+					<a href="/website-laten-maken" class="group block">
+						<div class="bg-ink p-8 md:p-10 group-hover:bg-ink/90 transition-colors">
+							<div class="flex items-center justify-between mb-8">
+								<span class="text-acid font-mono text-sm uppercase tracking-wider">Websites</span>
+								<span class="text-canvas/40 group-hover:text-acid transition-colors">&rarr;</span>
+							</div>
+							<h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-canvas mb-4">
+								Website Laten Maken
+							</h3>
+							<p class="text-canvas/70 leading-relaxed mb-6">
+								Een professionele website die klanten aantrekt en vertrouwen wekt. Van €495 voor een maatwerk site tot €995 met slimme automations erbij.
+							</p>
+							<div class="flex items-center gap-4 text-canvas/50 text-sm">
+								<span>Vanaf €495</span>
+								<span class="text-canvas/30">•</span>
+								<span>Klaar in 7 dagen</span>
+							</div>
+						</div>
+					</a>
 
-					<div class="space-y-4">
-						<div class="text-electric font-mono text-sm">[02]</div>
-						<h3 class="text-xl font-black uppercase tracking-tight">Geen Gedoe</h3>
-						<p class="text-ink/70 leading-relaxed">
-							Eén gesprek van 15 minuten. Ik doe de rest. Geen eindeloze vergaderingen, geen feedback-rondes
-							die maanden duren, geen "kun je de teksten aanleveren?" Binnen 7 dagen staat je site live.
-						</p>
-					</div>
-
-					<div class="space-y-4">
-						<div class="text-electric font-mono text-sm">[03]</div>
-						<h3 class="text-xl font-black uppercase tracking-tight">Eerlijke Prijzen</h3>
-						<p class="text-ink/70 leading-relaxed">
-							€495 voor een website. €995 voor een slim systeem. Dat is het. Geen offerte die oploopt,
-							geen verborgen kosten, geen "dit valt buiten scope." Je weet vooraf wat je betaalt.
-							Traditionele bureaus vragen €2.000 tot €5.000 voor hetzelfde. Ik niet.
-						</p>
-					</div>
+					<!-- Automations -->
+					<a href="/automations" class="group block">
+						<div class="bg-ink p-8 md:p-10 group-hover:bg-ink/90 transition-colors">
+							<div class="flex items-center justify-between mb-8">
+								<span class="text-acid font-mono text-sm uppercase tracking-wider">Automations</span>
+								<span class="text-canvas/40 group-hover:text-acid transition-colors">&rarr;</span>
+							</div>
+							<h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-canvas mb-4">
+								Al Een Website?
+							</h3>
+							<p class="text-canvas/70 leading-relaxed mb-6">
+								Voeg slimme systemen toe aan je bestaande site. Automatisch afspraken boeken, reviews verzamelen, leads opvolgen. Zonder nieuwe website.
+							</p>
+							<div class="flex items-center gap-4 text-canvas/50 text-sm">
+								<span>Op maat</span>
+								<span class="text-canvas/30">•</span>
+								<span>Koppelt met je huidige site</span>
+							</div>
+						</div>
+					</a>
 				</div>
 			</div>
 		</section>
 
-		<!-- SERVICE AREA SECTION -->
+		<!-- PORTFOLIO PREVIEW -->
 		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
 			<div class="max-w-6xl xl:max-w-7xl mx-auto">
-				<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-6">
-					[ Ons Werkgebied ]
-				</div>
-				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-6 max-w-3xl">
-					Webdesign in Heel Nederland
-				</h2>
-				<p class="text-canvas/70 text-lg leading-relaxed max-w-2xl mb-12">
-					Vanuit Buren bedien ik ondernemers door heel Nederland. Of je nu in Utrecht zit
-					of in een klein dorp in de Betuwe, ik bouw jouw website. Bekijk de lokale pagina's
-					voor meer informatie over webdesign in jouw regio.
-				</p>
+				<div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+					<!-- Stacked Images -->
+					<div class="relative">
+						<div class="relative z-10">
+							<img
+								src={projects[0]?.overviewMockup || projects[0]?.image}
+								alt={projects[0]?.title}
+								class="w-full aspect-[16/10] object-cover shadow-2xl"
+								loading="lazy"
+							/>
+						</div>
+						<div class="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 w-2/3 z-20">
+							<img
+								src={projects[1]?.overviewMockup || projects[1]?.image}
+								alt={projects[1]?.title}
+								class="w-full aspect-[16/10] object-cover shadow-2xl border-4 border-ink"
+								loading="lazy"
+							/>
+						</div>
+					</div>
 
-				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-					{cities.map((city) => (
+					<!-- Text -->
+					<div class="md:pl-8">
+						<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-4">
+							[ Recent Werk ]
+						</div>
+						<h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight leading-[0.95] mb-6">
+							Bekijk Mijn Projecten
+						</h2>
+						<p class="text-canvas/70 text-lg leading-relaxed mb-8">
+							Van sportscholen tot luxe interieurzaken. Elk project is maatwerk, gebouwd om resultaat te leveren.
+						</p>
 						<a
-							href={`/webdesign-${city.slug}`}
-							class="group px-4 py-3 bg-ink border border-canvas/10 hover:bg-acid hover:border-acid transition-all duration-300"
+							href="/portfolio"
+							class="inline-flex items-center gap-3 text-acid font-mono text-sm uppercase tracking-wider hover:text-canvas transition-colors group"
 						>
-							<span class="block font-bold text-canvas group-hover:text-ink transition-colors">
-								{city.name}
-							</span>
-							<span class="block text-xs font-mono text-canvas/50 group-hover:text-ink/60 transition-colors">
-								{city.region}
-							</span>
+							<span>Bekijk alle projecten</span>
+							<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 						</a>
-					))}
+					</div>
 				</div>
-
-				<p class="text-canvas/50 text-sm mt-8 font-mono">
-					Staat jouw regio er niet bij? Geen probleem, ik werk voor ondernemers in heel Nederland.
-					<a href="/aanvragen" class="text-acid hover:underline">Neem contact op</a> en ik help je verder.
-				</p>
 			</div>
 		</section>
 
-		<!-- FAQ SECTION (SEO Content) -->
-		<section id="faq" class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+		<!-- LEAD MAGNET: FREE WEBSITE AUDIT -->
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas border-y-2 border-ink/10 relative overflow-hidden">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40 mb-4">
+						[ Gratis Website Check ]
+					</div>
+					<h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight leading-[0.95] mb-4">
+						Benieuwd Hoe Je Website Scoort?
+					</h2>
+					<p class="text-ink/60 text-lg max-w-2xl mx-auto">
+						Ik bekijk je website en geef eerlijke feedback over snelheid, vindbaarheid en verbeterpunten. Binnen 24 uur in je inbox.
+					</p>
+				</div>
+
+				<form id="audit-form" class="max-w-xl mx-auto">
+					<div class="flex flex-col sm:flex-row gap-3 mb-3">
+						<input
+							type="text"
+							id="audit-name"
+							name="name"
+							required
+							class="flex-1 px-4 py-4 bg-canvas border-2 border-ink/10 text-ink placeholder-ink/40 focus:border-ink focus:outline-none transition-colors"
+							placeholder="Je naam"
+						/>
+						<input
+							type="email"
+							id="audit-email"
+							name="email"
+							required
+							class="flex-1 px-4 py-4 bg-canvas border-2 border-ink/10 text-ink placeholder-ink/40 focus:border-ink focus:outline-none transition-colors"
+							placeholder="E-mailadres"
+						/>
+					</div>
+					<div class="flex flex-col sm:flex-row gap-3">
+						<input
+							type="url"
+							id="audit-website"
+							name="website"
+							required
+							class="flex-1 px-4 py-4 bg-canvas border-2 border-ink/10 text-ink placeholder-ink/40 focus:border-ink focus:outline-none transition-colors"
+							placeholder="https://jouwwebsite.nl"
+						/>
+						<button
+							type="submit"
+							class="bg-ink text-canvas px-8 py-4 font-bold uppercase tracking-tight hover:bg-acid hover:text-ink transition-colors duration-300 whitespace-nowrap cursor-pointer"
+						>
+							Check mijn website
+						</button>
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<!-- FAQ SECTION -->
+		<section id="faq" class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
 			<div class="max-w-6xl xl:max-w-7xl mx-auto">
-				<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/40 mb-6">
+				<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-6">
 					[ Veelgestelde Vragen ]
 				</div>
 				<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-12 md:mb-16">
-					Nog Vragen?
+					Vragen Die Ik Vaak Krijg
 				</h2>
 
 				<div class="grid md:grid-cols-2 gap-8 md:gap-12">
 					<div class="space-y-8">
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-electric">Hoe werkt het proces?</h3>
-							<p class="text-ink/70 leading-relaxed">
-								Simpel. We bellen 15 minuten over je bedrijf en wat je wilt bereiken.
-								Daarna ga ik aan de slag. Binnen 7 dagen krijg je het ontwerp te zien.
-								Feedback? Ik pas aan. Dan gaat je site live. Klaar.
+							<h3 class="text-lg font-bold text-acid">Hoe werkt het proces?</h3>
+							<p class="text-canvas/70 leading-relaxed">
+								We beginnen met een kort gesprek over je bedrijf en wat je wilt bereiken. Daarna ga ik aan de slag. Binnen 7 dagen heb je het eerste ontwerp. Je geeft feedback, ik pas aan, en dan gaat je site live.
 							</p>
 						</div>
 
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-electric">Wat als ik niet tevreden ben?</h3>
-							<p class="text-ink/70 leading-relaxed">
-								Geld terug. Serieus. Ik heb een 100% tevredenheidsgarantie.
-								Vind je het niks? Dan krijg je je geld terug. Geen discussie, geen gedoe.
-								Ik wil alleen tevreden klanten.
+							<h3 class="text-lg font-bold text-acid">Wat als ik niet tevreden ben?</h3>
+							<p class="text-canvas/70 leading-relaxed">
+								Dan krijg je je geld terug. Ik heb een 100% tevredenheidsgarantie. Mijn doel is dat je blij bent met het resultaat, niet dat je ergens aan vastzit.
 							</p>
 						</div>
 
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-electric">Moet ik zelf teksten aanleveren?</h3>
-							<p class="text-ink/70 leading-relaxed">
-								Nee. Ik schrijf alles voor je. Ik duik in je branche, bekijk je concurrenten
-								en schrijf teksten die je klanten aanspreken. Jij hoeft alleen te checken of het klopt.
-								Liever eigen teksten? Prima, jij beslist.
+							<h3 class="text-lg font-bold text-acid">Moet ik zelf teksten aanleveren?</h3>
+							<p class="text-canvas/70 leading-relaxed">
+								Dat hoeft niet. Ik schrijf de teksten voor je, gebaseerd op een gesprek over je bedrijf en doelgroep. Jij checkt of het klopt. Heb je liever eigen teksten? Ook goed, jij beslist.
 							</p>
 						</div>
 					</div>
 
 					<div class="space-y-8">
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-electric">Wat is het verschil tussen Website en Systeem?</h3>
-							<p class="text-ink/70 leading-relaxed">
-								Een Website (€495) is een professionele online aanwezigheid. Een Systeem (€995) doet meer:
-								afspraken boeken, reviews verzamelen, leads opvolgen. Start simpel en bouw later uit als je wilt.
+							<h3 class="text-lg font-bold text-acid">Wat is het verschil tussen een website en automations?</h3>
+							<p class="text-canvas/70 leading-relaxed">
+								Een website is je online visitekaartje. Automations zijn slimme systemen die taken uit handen nemen: afspraken inplannen, reviews verzamelen, leads opvolgen. Je kunt starten met een website en later uitbreiden.
 							</p>
 						</div>
 
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-electric">Is het beheerpakket verplicht?</h3>
-							<p class="text-ink/70 leading-relaxed">
-								Nee. Je website werkt prima zonder. Hosting zit altijd inbegrepen.
-								Het beheerpakket (vanaf €28,30/maand) is voor als je niet wilt nadenken over je website:
-								ik doe updates, kleine aanpassingen, monitoring. Jij appt wat je wilt, ik regel het.
+							<h3 class="text-lg font-bold text-acid">Hoelang duurt het voordat mijn website live staat?</h3>
+							<p class="text-canvas/70 leading-relaxed">
+								Gemiddeld 7 werkdagen vanaf ons eerste gesprek. Soms sneller als alles duidelijk is, soms iets langer als er veel feedback-rondes nodig zijn.
 							</p>
 						</div>
 
 						<div class="space-y-3">
-							<h3 class="text-lg font-bold text-electric">Werk je door heel Nederland?</h3>
-							<p class="text-ink/70 leading-relaxed">
-								Ja. Amsterdam, Maastricht, Groningen, maakt niet uit. Alles gaat digitaal.
-								Bellen, mailen, appen. Je hoeft nergens naartoe. Scheelt jou tijd, scheelt mij koffie.
+							<h3 class="text-lg font-bold text-acid">Kan ik mijn website later zelf aanpassen?</h3>
+							<p class="text-canvas/70 leading-relaxed">
+								Ja, als je dat wilt. Ik bouw websites die je zelf kunt beheren, maar de meeste klanten vinden het fijn om aanpassingen aan mij door te geven. Kleine wijzigingen regel ik vaak dezelfde dag.
 							</p>
 						</div>
 					</div>
 				</div>
-
-				</div>
+			</div>
 		</section>
 
 		<Footer />
 	</main>
 </Layout>
+
+<script>
+	// Audit form submission handler
+	function attachAuditFormHandler() {
+		const form = document.getElementById('audit-form');
+		if (!form || form.dataset.listenerAttached) return;
+
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
+			const formData = new FormData(form as HTMLFormElement);
+			const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+			const originalText = submitBtn.textContent;
+
+			// Show loading state
+			submitBtn.disabled = true;
+			submitBtn.textContent = 'Versturen...';
+
+			try {
+				const response = await fetch('/api/submissions', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						type: 'audit',
+						specification: 'Gratis website-audit',
+						name: formData.get('name'),
+						email: formData.get('email'),
+						website_url: formData.get('website'),
+					}),
+				});
+
+				if (response.ok) {
+					// Show success message
+					form.innerHTML = `
+						<div class="text-center py-8">
+							<div class="text-acid text-4xl mb-4">✓</div>
+							<h3 class="text-xl font-bold text-ink mb-2">Aanvraag ontvangen!</h3>
+							<p class="text-ink/70">Ik stuur je binnen 24 uur een persoonlijke video-analyse.</p>
+						</div>
+					`;
+				} else {
+					throw new Error('Submission failed');
+				}
+			} catch (error) {
+				submitBtn.disabled = false;
+				submitBtn.textContent = originalText;
+				alert('Er ging iets mis. Probeer het opnieuw of stuur een mail naar info@knapgemaakt.nl');
+			}
+		});
+
+		form.dataset.listenerAttached = 'true';
+	}
+
+	// Attach on initial load
+	attachAuditFormHandler();
+
+	// Re-attach after View Transitions
+	document.addEventListener('astro:after-swap', attachAuditFormHandler);
+</script>
