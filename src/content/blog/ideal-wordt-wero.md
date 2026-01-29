@@ -79,6 +79,8 @@ iDEAL was altijd vrij goedkoop: vaak zo'n €0,29 per transactie, ongeacht het b
 
 Wat dit concreet betekent voor jouw situatie hangt af van je gemiddelde orderwaarde. Voor kleine bestellingen kan het percentage-model zelfs voordeliger uitpakken. Voor grote bestellingen (€500+) kan het duurder worden. Het is de moeite waard om dit in de gaten te houden zodra de definitieve tarieven bekend zijn.
 
+Wil je precies weten hoe dit uitpakt voor verschillende orderwaarden? Ik heb [een uitgebreid artikel over de Wero-kosten](/blog/wero-kosten-transactiekosten) geschreven met rekenvoorbeelden.
+
 ## Wat moet je doen?
 
 Voor de meeste webshophouders is de overgang vrij eenvoudig.
@@ -96,6 +98,8 @@ Staat het iDEAL-logo ergens hardcoded op je site? In je footer, op een informati
 ### Custom integratie?
 
 Als je een volledig custom checkout hebt gebouwd met directe API-koppelingen, is er meer werk aan de winkel. Je moet het logo handmatig bijwerken en later Wero als aparte betaalmethode inschakelen. Neem contact op met je payment provider voor de specifieke stappen.
+
+Wil je precies weten wat je moet regelen voor de deadline van 31 maart? Ik heb een [praktische checklist met 5 concrete stappen](/blog/wero-webshops-checklist-maart) gemaakt.
 
 ## Later dit jaar en daarna
 
