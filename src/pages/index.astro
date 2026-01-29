@@ -268,16 +268,10 @@ const projects = getAllProjects();
 							class="flex-1 px-4 py-4 bg-canvas border-2 border-ink/10 text-ink placeholder-ink/40 focus:border-ink focus:outline-none transition-colors"
 							placeholder="jouwwebsite.nl"
 						/>
-						<button
-							type="submit"
-							class="bg-ink text-canvas px-8 py-4 font-bold uppercase tracking-tight hover:bg-acid hover:text-ink transition-colors duration-300 whitespace-nowrap cursor-pointer"
-						>
-							Check mijn website
-						</button>
 					</div>
 
 					<!-- Privacy checkbox -->
-					<div class="flex items-start gap-3">
+					<div class="flex items-start gap-3 mb-3">
 						<input
 							type="checkbox"
 							id="audit-privacy"
@@ -291,6 +285,13 @@ const projects = getAllProjects();
 							Ik ga akkoord met de <a href="/privacy" class="underline hover:text-ink transition-colors">privacyverklaring</a>
 						</label>
 					</div>
+
+					<button
+						type="submit"
+						class="w-full sm:w-auto bg-ink text-canvas px-8 py-4 font-bold uppercase tracking-tight hover:bg-acid hover:text-ink transition-colors duration-300 whitespace-nowrap cursor-pointer"
+					>
+						Check mijn website
+					</button>
 				</form>
 			</div>
 		</section>
