@@ -21,6 +21,21 @@ export const blogPosts: BlogPostMeta[] = [
 		title: "iDEAL wordt Wero: Wat betekent dit voor jouw webshop?",
 		publishDate: "2026-01-29",
 	},
+	{
+		slug: "wero-webshops-checklist-maart",
+		title: "Wero voor webshops: 5 dingen die je voor 31 maart moet regelen",
+		publishDate: "2026-01-30",
+	},
+	{
+		slug: "wero-kosten-transactiekosten",
+		title: "Wat kost Wero? Transactiekosten voor ondernemers uitgelegd",
+		publishDate: "2026-01-31",
+	},
+	{
+		slug: "wero-mollie-integratie",
+		title: "Wero en Mollie: Hoe werkt de integratie?",
+		publishDate: "2026-02-01",
+	},
 ];
 
 export function getAllBlogPosts(): BlogPostMeta[] {
