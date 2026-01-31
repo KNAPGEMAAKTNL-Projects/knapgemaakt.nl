@@ -36,6 +36,11 @@ export const blogPosts: BlogPostMeta[] = [
 		title: "Wero en Mollie: Hoe werkt de integratie?",
 		publishDate: "2026-02-01",
 	},
+	{
+		slug: "website-laten-maken-kosten",
+		title: "Wat kost een website laten maken in 2026? Complete prijsgids",
+		publishDate: "2026-01-31",
+	},
 ];
 
 export function getAllBlogPosts(): BlogPostMeta[] {
