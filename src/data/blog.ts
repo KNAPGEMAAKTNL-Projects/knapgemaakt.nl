@@ -41,6 +41,16 @@ export const blogPosts: BlogPostMeta[] = [
 		title: "Wat kost een website laten maken in 2026? Complete prijsgids",
 		publishDate: "2026-01-31",
 	},
+	{
+		slug: "meer-verkopen-duitsers-wero",
+		title: "Meer verkopen aan Duitsers met Wero",
+		publishDate: "2026-02-02",
+	},
+	{
+		slug: "website-500-of-5000-verschil",
+		title: "Website laten maken: €500 of €5000? Het verschil uitgelegd",
+		publishDate: "2026-02-03",
+	},
 ];
 
 export function getAllBlogPosts(): BlogPostMeta[] {

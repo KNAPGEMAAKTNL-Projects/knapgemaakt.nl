@@ -80,7 +80,7 @@ In [mijn artikel over de Wero-kosten](/blog/wero-kosten-transactiekosten) ga ik 
 
 De overstap naar Wero brengt ook nieuwe features mee die Mollie waarschijnlijk gaat ondersteunen.
 
-**Internationale betalingen.** Met Wero kunnen Duitse, Belgische, Franse en Luxemburgse klanten betalen via hun eigen bankapp. Mollie ondersteunt dit straks automatisch. Je hoeft geen aparte integraties voor Giropay of Bancontact te onderhouden.
+**Internationale betalingen.** Met Wero kunnen Duitse, Belgische, Franse en Luxemburgse klanten betalen via hun eigen bankapp. Mollie ondersteunt dit straks automatisch. Je hoeft geen aparte integraties voor Giropay of Bancontact te onderhouden. In [mijn artikel over verkopen aan Duitsers](/blog/meer-verkopen-duitsers-wero) leg ik uit hoe je hier nu al op kunt voorbereiden.
 
 **Request-to-Pay.** Voor dienstverleners interessant: je stuurt een betaalverzoek dat direct in de bankapp van je klant verschijnt. Mollie zal dit waarschijnlijk integreren in hun API.
 

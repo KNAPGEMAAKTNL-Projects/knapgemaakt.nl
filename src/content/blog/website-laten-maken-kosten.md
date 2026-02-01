@@ -20,7 +20,7 @@ Maar die cijfers zeggen weinig zonder context. Laten we kijken wat die prijsvers
 
 ## Waarom websiteprijzen zo enorm verschillen
 
-Stel je koopt een auto. Een Dacia en een Mercedes brengen je allebei van A naar B. Toch zit er een flink prijsverschil tussen. Bij websites werkt het vergelijkbaar.
+Stel je koopt een auto. Een Dacia en een Mercedes brengen je allebei van A naar B. Toch zit er een flink prijsverschil tussen. Bij websites werkt het vergelijkbaar. In [mijn artikel over het verschil tussen een €500 en €5.000 website](/blog/website-500-of-5000-verschil) ga ik hier uitgebreid op in.
 
 De prijs hangt af van drie factoren:
 

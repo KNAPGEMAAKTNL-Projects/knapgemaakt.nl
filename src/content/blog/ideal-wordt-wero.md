@@ -47,7 +47,7 @@ Er zijn een paar veranderingen die de moeite waard zijn om te weten.
 
 Met iDEAL kon je alleen Nederlandse klanten bedienen. Wero werkt straks in heel Europa. Een Duitse bezoeker op je webshop kan dan betalen met zijn eigen Duitse bankapp, net zo makkelijk als een Nederlandse klant.
 
-Voor webshops die ook klanten over de grens hebben (of willen hebben), opent dit mogelijkheden zonder dat je aparte integraties nodig hebt voor Giropay of Bancontact.
+Voor webshops die ook klanten over de grens hebben (of willen hebben), opent dit mogelijkheden zonder dat je aparte integraties nodig hebt voor Giropay of Bancontact. In [mijn artikel over verkopen aan Duitse klanten](/blog/meer-verkopen-duitsers-wero) ga ik dieper in op deze kans.
 
 ### Chargebacks
 

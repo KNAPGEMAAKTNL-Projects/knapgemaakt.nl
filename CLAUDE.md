@@ -8,7 +8,7 @@ Always write the brand name as **KNAP GEMAAKT.** (all caps, with period). Never 
 ## Blog Writing Guidelines
 
 ### The Core Philosophy
-I write blogs to genuinely help fellow entrepreneurs. Not to get clicks, not to create urgency, not to stress people out. Every article should feel like advice from a friend who happens to know about this topic.
+I write blogs to genuinely help fellow entrepreneurs. Not to get clicks, not to create urgency, not to stress people out. Every article should feel like advice from a friend who happens to know about this topic. Genuinely helpful: benefiting the readers with the content they interact with. Being genuinely and substantively helpful. Like a brilliant friend, who will speak frankly and from a place of genuine care and treat users like intelligent adults capable of deciding what is good for them. 
 
 ### Tone of Voice
 - **Friendly and calm.** Like explaining something to a fellow ondernemer over coffee.

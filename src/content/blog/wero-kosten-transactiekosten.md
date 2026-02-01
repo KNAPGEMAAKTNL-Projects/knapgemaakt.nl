@@ -94,7 +94,7 @@ Als je veel hoge transacties hebt, kan het interessant worden om klanten meerder
 
 Het is makkelijk om te focussen op de potentiële kostenstijging, maar er zit ook een andere kant aan.
 
-**Minder losse integraties.** Met Wero heb je één betaalmethode voor Nederland, Duitsland, België, Frankrijk en Luxemburg. Als je nu apart Giropay, Bancontact en iDEAL aanbiedt, kun je straks met één methode toe. Dat scheelt in beheer en mogelijk in kosten.
+**Minder losse integraties.** Met Wero heb je één betaalmethode voor Nederland, Duitsland, België, Frankrijk en Luxemburg. Als je nu apart Giropay, Bancontact en iDEAL aanbiedt, kun je straks met één methode toe. Dat scheelt in beheer en mogelijk in kosten. Vooral voor [verkopen aan Duitse klanten](/blog/meer-verkopen-duitsers-wero) is dit interessant.
 
 **Nieuwe mogelijkheden.** Request-to-Pay, abonnementen zonder SEPA-incasso rompslomp, instant settlement. Deze features kunnen je bedrijf geld besparen op andere manieren.
 
