@@ -25,15 +25,17 @@ export const GET: APIRoute = async ({ request, locals }) => {
     const monthStart = new Date(year, month - 1, 1, 0, 0, 0, 0);
     const monthEnd = new Date(year, month, 0, 23, 59, 59, 999);
 
-    // Fetch all bookings for the month
+    // Fetch all bookings that overlap with this month
+    // Use overlap detection: event overlaps month if (start < monthEnd AND end > monthStart)
     const bookings = await db.prepare(
-      'SELECT start_time, end_time FROM bookings WHERE status = ? AND datetime(start_time) >= datetime(?) AND datetime(start_time) <= datetime(?)'
-    ).bind('confirmed', monthStart.toISOString(), monthEnd.toISOString()).all();
+      'SELECT start_time, end_time FROM bookings WHERE status = ? AND datetime(start_time) <= datetime(?) AND datetime(end_time) >= datetime(?)'
+    ).bind('confirmed', monthEnd.toISOString(), monthStart.toISOString()).all();
 
-    // Fetch all blocked times for the month
+    // Fetch all blocked times that overlap with this month
+    // Use overlap detection: blocked time overlaps month if (start < monthEnd AND end > monthStart)
     const blockedTimes = await db.prepare(
-      'SELECT start_time, end_time FROM blocked_times WHERE datetime(start_time) >= datetime(?) AND datetime(start_time) <= datetime(?)'
-    ).bind(monthStart.toISOString(), monthEnd.toISOString()).all();
+      'SELECT start_time, end_time FROM blocked_times WHERE datetime(start_time) <= datetime(?) AND datetime(end_time) >= datetime(?)'
+    ).bind(monthEnd.toISOString(), monthStart.toISOString()).all();
 
     return new Response(JSON.stringify({
       year,

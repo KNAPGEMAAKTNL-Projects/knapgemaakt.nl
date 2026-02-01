@@ -437,14 +437,22 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
   const year = currentMonth.getFullYear();
 
   return (
-    <div className="w-full max-w-7xl mx-auto bg-black border-y lg:border border-white/10 shadow-none lg:shadow-2xl flex flex-col lg:flex-row overflow-hidden h-auto lg:h-[535px] animate-in fade-in zoom-in-95 duration-500 rounded-none text-white font-sans">
+    <div className="w-full bg-black border-y lg:border border-white/10 shadow-none lg:shadow-2xl flex flex-col lg:flex-row overflow-hidden h-auto lg:h-[535px] animate-in fade-in zoom-in-95 duration-500 rounded-none text-white font-sans">
 
       {/* Sidebar - Profile & Details */}
-      <div className="w-full lg:w-[200px] p-4 md:p-5 border-b lg:border-b-0 lg:border-r border-white/10 bg-[#111111] flex flex-col gap-8 relative">
+      <div className="w-full lg:w-[240px] shrink-0 p-4 md:p-5 border-b lg:border-b-0 lg:border-r border-white/10 bg-[#111111] flex flex-col gap-8 relative">
         <div className="space-y-6">
 
-          <div className="space-y-2">
+          <div className="space-y-4">
             <h3 className="text-2xl font-black text-white uppercase tracking-tight leading-none">Intro Call<span className="text-[var(--color-acid)]">.</span></h3>
+            <div className="flex items-center gap-3">
+              <img
+                src="/assets/yannick.webp"
+                alt="Yannick Veldhuisen"
+                className="w-10 h-10 rounded-full object-cover object-top shrink-0 ring-2 ring-[var(--color-acid)]/30"
+              />
+              <span className="text-sm font-medium text-zinc-300">Yannick Veldhuisen</span>
+            </div>
           </div>
 
           <div className="flex flex-col gap-4 text-zinc-400 font-medium text-sm">
@@ -471,7 +479,7 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
       </div>
 
       {/* Calendar Section */}
-      <div className="w-full lg:w-[500px] p-4 md:p-5 flex flex-col bg-black relative border-r border-white/10">
+      <div className="w-full lg:flex-1 lg:min-w-[340px] p-4 md:p-5 flex flex-col bg-black relative border-r border-white/10">
         <div className="flex items-center justify-between mb-2">
           <h4 className="text-xl text-white tracking-tight flex gap-2">
             <span className="font-black">{monthName}</span>
@@ -537,7 +545,7 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
       </div>
 
       {/* Time Slots Section */}
-      <div className={`w-full flex-1 p-4 pb-0 md:p-5 md:pb-0 border-l border-white/10 bg-[#0a0a0a] transition-all duration-300 flex flex-col overflow-hidden ${selectedDate ? 'opacity-100 translate-x-0' : 'opacity-30 pointer-events-none'}`}>
+      <div className={`w-full lg:w-[160px] shrink-0 p-4 pb-0 md:p-5 md:pb-0 border-l border-white/10 bg-[#0a0a0a] transition-all duration-300 flex flex-col overflow-hidden ${selectedDate ? 'opacity-100 translate-x-0' : 'opacity-30 pointer-events-none'}`}>
         {!selectedDate ? (
           <div className="h-full flex flex-col items-center justify-center text-zinc-600 space-y-4">
             <div className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center">
