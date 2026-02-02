@@ -17,20 +17,20 @@ function generateSitemap(): string {
 
     const staticPages: PageEntry[] = [
         { path: "/", lastmod: today, changefreq: "weekly", priority: "1.0" },
-        { path: "/website-laten-maken", lastmod: today, changefreq: "weekly", priority: "0.9" },
-        { path: "/aanvragen", lastmod: today, changefreq: "monthly", priority: "0.9" },
-        { path: "/automations", lastmod: today, changefreq: "monthly", priority: "0.8" },
-        { path: "/portfolio", lastmod: today, changefreq: "weekly", priority: "0.8" },
-        { path: "/blog", lastmod: today, changefreq: "weekly", priority: "0.8" },
-        { path: "/contact", lastmod: today, changefreq: "monthly", priority: "0.7" },
-        { path: "/over-mij", lastmod: today, changefreq: "monthly", priority: "0.6" },
-        { path: "/algemene-voorwaarden", lastmod: "2026-01-20", changefreq: "yearly", priority: "0.3" },
-        { path: "/privacy", lastmod: "2026-01-20", changefreq: "yearly", priority: "0.3" },
+        { path: "/website-laten-maken/", lastmod: today, changefreq: "weekly", priority: "0.9" },
+        { path: "/aanvragen/", lastmod: today, changefreq: "monthly", priority: "0.9" },
+        { path: "/automations/", lastmod: today, changefreq: "monthly", priority: "0.8" },
+        { path: "/portfolio/", lastmod: today, changefreq: "weekly", priority: "0.8" },
+        { path: "/blog/", lastmod: today, changefreq: "weekly", priority: "0.8" },
+        { path: "/contact/", lastmod: today, changefreq: "monthly", priority: "0.7" },
+        { path: "/over-mij/", lastmod: today, changefreq: "monthly", priority: "0.6" },
+        { path: "/algemene-voorwaarden/", lastmod: "2026-01-20", changefreq: "yearly", priority: "0.3" },
+        { path: "/privacy/", lastmod: "2026-01-20", changefreq: "yearly", priority: "0.3" },
     ];
 
     // Dynamically generate project pages from data
     const projectPages: PageEntry[] = getAllProjects().map((project) => ({
-        path: `/project/${project.slug}`,
+        path: `/project/${project.slug}/`,
         lastmod: today,
         changefreq: "monthly" as const,
         priority: "0.7",
@@ -38,7 +38,7 @@ function generateSitemap(): string {
 
     // Dynamically generate city pages from data
     const cityPages: PageEntry[] = getAllCities().map((city) => ({
-        path: `/webdesign-${city.slug}`,
+        path: `/webdesign-${city.slug}/`,
         lastmod: today,
         changefreq: "weekly" as const,
         priority: "0.8",
@@ -46,7 +46,7 @@ function generateSitemap(): string {
 
     // Dynamically generate blog post pages from data
     const blogPages: PageEntry[] = getAllBlogPosts().map((post) => ({
-        path: `/blog/${post.slug}`,
+        path: `/blog/${post.slug}/`,
         lastmod: post.publishDate,
         changefreq: "monthly" as const,
         priority: "0.7",
