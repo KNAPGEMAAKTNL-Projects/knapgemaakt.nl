@@ -22,10 +22,10 @@ import Footer from "../components/Footer.astro";
                     class="flex flex-col md:flex-row md:items-center gap-4 text-sm font-mono uppercase tracking-widest text-ink/60 border-t border-ink/10 pt-6"
                 >
                     <span class="bg-acid px-2 py-1 text-black font-bold text-xs"
-                        >Versie 2.4</span
+                        >Versie 2.5</span
                     >
                     <span class="hidden md:inline">&mdash;</span>
-                    <span>Laatst bijgewerkt: 28 Januari 2026</span>
+                    <span>Laatst bijgewerkt: 2 Februari 2026</span>
                 </div>
             </header>
 
@@ -242,7 +242,7 @@ import Footer from "../components/Footer.astro";
                                     Microsoft Clarity (heatmaps, sessie-opnames &amp; formulier-analyse, na toestemming)
                                 </li>
                                 <li>
-                                    n8n (zelf gehoste workflow-automatisering)
+                                    KNAP Automation Platform (zelf gehoste automatiseringsserver, zie sectie 12)
                                 </li>
                             </ul>
                         </div>
@@ -452,6 +452,67 @@ import Footer from "../components/Footer.astro";
                                     >legal@knapgemaakt.nl</a
                                 >. Je kunt ook een klacht indienen bij de
                                 Autoriteit Persoonsgegevens.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 12. Automatiseringsplatform -->
+                <section
+                    id="automatisering"
+                    class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 md:py-20 border-b border-ink/10"
+                >
+                    <div class="md:col-span-3">
+                        <span class="text-xl md:text-2xl font-mono text-ink/60"
+                            >12.</span
+                        >
+                    </div>
+                    <div class="md:col-span-8 md:col-start-5 space-y-6">
+                        <h2
+                            class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
+                        >
+                            Automatisering
+                        </h2>
+                        <div
+                            class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
+                        >
+                            <p>
+                                Voor klanten die gebruikmaken van onze automatiseringsdiensten (zoals agenda-synchronisatie) draait een zelf gehost automatiseringsplatform. Dit platform verwerkt gegevens op eigen infrastructuur binnen Nederland.
+                            </p>
+
+                            <p class="mt-6"><strong class="text-ink">Infrastructuur</strong></p>
+                            <p>
+                                Het platform draait op een privéserver in Nederland, beveiligd via Cloudflare Tunnel. Er zijn geen directe poorten naar het internet geopend. Alle verbindingen verlopen via HTTPS.
+                            </p>
+
+                            <p class="mt-6"><strong class="text-ink">Google Calendar koppeling</strong></p>
+                            <p>
+                                Wanneer je KNAP GEMAAKT. autoriseert om toegang te krijgen tot je Google Agenda, verzamelen wij:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-1 mt-2">
+                                <li>Agenda-afspraken (titel, beschrijving, tijden, locatie)</li>
+                                <li>Je e-mailadres (voor identificatie)</li>
+                            </ul>
+                            <p class="mt-4">
+                                Deze gegevens worden gebruikt om beschikbaarheid op je website te tonen. Afspraken worden omgezet naar &ldquo;geblokkeerde tijden&rdquo; &mdash; de inhoud van afspraken wordt niet publiekelijk getoond.
+                            </p>
+
+                            <p class="mt-6"><strong class="text-ink">Beveiliging</strong></p>
+                            <ul class="list-disc pl-5 space-y-1 mt-2">
+                                <li>OAuth-tokens worden versleuteld opgeslagen (AES-256-GCM)</li>
+                                <li>Versleutelingssleutels worden apart van de database bewaard</li>
+                                <li>Toegang tot het platform vereist authenticatie via Cloudflare Access</li>
+                                <li>Tokens worden automatisch ververst en nooit in platte tekst opgeslagen</li>
+                            </ul>
+
+                            <p class="mt-6"><strong class="text-ink">Bewaartermijn</strong></p>
+                            <p>
+                                Alleen afspraken van de komende 14 dagen worden gesynchroniseerd. Oudere gegevens worden automatisch verwijderd.
+                            </p>
+
+                            <p class="mt-6"><strong class="text-ink">Intrekken toegang</strong></p>
+                            <p>
+                                Je kunt op elk moment de toegang intrekken via je Google Account (Beveiligingsinstellingen &rarr; Apps van derden). Je kunt ook een verzoek tot volledige verwijdering van je gegevens indienen via <a href="mailto:legal@knapgemaakt.nl" class="text-ink underline decoration-acid decoration-2 underline-offset-4 hover:bg-acid hover:decoration-transparent transition-colors">legal@knapgemaakt.nl</a>.
                             </p>
                         </div>
                     </div>
