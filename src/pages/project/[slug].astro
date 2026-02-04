@@ -38,7 +38,7 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 				<div class="flex items-center gap-2 text-ink/60 font-mono text-xs uppercase tracking-wider mb-8">
 					<a href="/" class="hover:text-electric transition-colors">Home</a>
 					<span>/</span>
-					<a href="/portfolio" class="hover:text-electric transition-colors">Projecten</a>
+					<a href="/portfolio/" class="hover:text-electric transition-colors">Projecten</a>
 					<span>/</span>
 					<span class="text-ink">{project.title}</span>
 				</div>
@@ -92,7 +92,7 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 						<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 					</a>
 					<a
-						href="/aanvragen"
+						href="/aanvragen/"
 						class="w-full sm:w-auto border-2 border-ink text-ink px-8 py-[18px] font-bold uppercase tracking-tight hover:bg-ink hover:text-canvas transition-colors duration-300 text-center"
 					>
 						Start Jouw Project
@@ -249,7 +249,7 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 						</h2>
 					</div>
 					<a
-						href="/portfolio"
+						href="/portfolio/"
 						class="hidden md:inline-flex items-center gap-2 text-ink font-mono text-sm uppercase tracking-wider hover:text-electric transition-colors group"
 					>
 						<span>Alle projecten</span>
@@ -263,7 +263,7 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 						.slice(0, 2)
 						.map((relatedProject) => (
 							<a
-								href={`/project/${relatedProject.slug}`}
+								href={`/project/${relatedProject.slug}/`}
 								class="group block"
 							>
 								<!-- Project Image -->
@@ -296,7 +296,7 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 
 				<!-- Mobile link -->
 				<a
-					href="/portfolio"
+					href="/portfolio/"
 					class="md:hidden mt-8 inline-flex items-center gap-2 text-ink font-mono text-sm uppercase tracking-wider hover:text-electric transition-colors group"
 				>
 					<span>Alle projecten</span>

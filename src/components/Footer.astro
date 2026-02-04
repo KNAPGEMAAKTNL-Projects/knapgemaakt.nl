@@ -42,14 +42,14 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 			</p>
 			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 				<a
-					href="/aanvragen"
+					href="/aanvragen/"
 					class="bg-acid text-ink px-8 py-[18px] font-bold uppercase tracking-tight hover:bg-canvas hover:text-ink transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
 				>
 					Plan een gesprek in
 					<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 				</a>
 				<a
-					href="/contact"
+					href="/contact/"
 					class="bg-canvas text-ink px-8 py-[18px] font-bold uppercase tracking-tight hover:bg-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
 				>
 					Neem contact op
@@ -77,7 +77,7 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 							<div class="flex flex-col gap-1.5">
 								{cityGroups[region].map((city) => (
 									<a
-										href={`/webdesign-${city.slug}`}
+										href={`/webdesign-${city.slug}/`}
 										class="text-sm text-canvas/60 hover:text-acid transition-colors"
 									>
 										{city.name}
@@ -102,10 +102,10 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 		<div class="pt-8 border-t border-canvas/10">
 			<!-- Legal Links -->
 			<div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 font-mono text-xs text-canvas/50 uppercase tracking-widest mb-6">
-				<a href="/contact" class="hover:text-acid transition-colors">Contact</a>
-				<a href="/algemene-voorwaarden" class="hover:text-acid transition-colors">Voorwaarden</a>
-				<a href="/privacy" class="hover:text-acid transition-colors">Privacy</a>
-				<a href="/sitemap" class="hover:text-acid transition-colors">Sitemap</a>
+				<a href="/contact/" class="hover:text-acid transition-colors">Contact</a>
+				<a href="/algemene-voorwaarden/" class="hover:text-acid transition-colors">Voorwaarden</a>
+				<a href="/privacy/" class="hover:text-acid transition-colors">Privacy</a>
+				<a href="/sitemap/" class="hover:text-acid transition-colors">Sitemap</a>
 				<button
 					type="button"
 					id="cookie-settings-trigger"

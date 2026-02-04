@@ -64,14 +64,14 @@ const breadcrumbs = [
 				<div class="max-w-3xl mx-auto">
 					<div class="flex flex-wrap justify-center gap-2">
 						<a
-							href="/blog"
+							href="/blog/"
 							class="px-4 py-2 text-sm font-medium bg-ink text-canvas rounded-full hover:bg-ink/80 transition-colors"
 						>
 							Alles
 						</a>
 						{allTags.map((tag) => (
 							<a
-								href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
+								href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, "-")}/`}
 								class="px-4 py-2 text-sm font-medium bg-ink/5 text-ink/70 rounded-full hover:bg-ink/10 transition-colors"
 							>
 								{tag}
@@ -86,7 +86,7 @@ const breadcrumbs = [
 		{featuredPost && (
 			<section class="px-6 md:px-12 lg:px-16 bg-canvas pb-8 md:pb-12">
 				<div class="max-w-3xl mx-auto">
-					<a href={`/blog/${featuredPost.slug}`} class="group block">
+					<a href={`/blog/${featuredPost.slug}/`} class="group block">
 						<article class="bg-ink text-canvas rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
 							<!-- Featured image -->
 							<div class="aspect-[2/1] bg-ink overflow-hidden">
