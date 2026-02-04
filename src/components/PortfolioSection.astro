@@ -24,7 +24,7 @@ const featured = getShowcaseProject();
 		{featured && (
 			<div class="space-y-12">
 				<!-- Showcase Mockup - Full Width -->
-				<a href={`/project/${featured.slug}`} class="block group">
+				<a href={`/project/${featured.slug}/`} class="block group">
 					<img
 						src={featured.showcaseMockup || featured.image}
 						alt={`${featured.title} website voorbeeld - desktop en mobiele weergave`}
@@ -72,7 +72,7 @@ const featured = getShowcaseProject();
 							<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 						</a>
 						<a
-							href={`/project/${featured.slug}`}
+							href={`/project/${featured.slug}/`}
 							class="w-full sm:w-auto border-2 border-canvas text-canvas px-8 py-[18px] font-bold uppercase tracking-tight hover:bg-canvas hover:text-ink transition-colors duration-300 text-center"
 						>
 							Case Study
@@ -83,7 +83,7 @@ const featured = getShowcaseProject();
 				<!-- View All Link -->
 				<div class="pt-8 border-t border-canvas/10">
 					<a
-						href="/portfolio"
+						href="/portfolio/"
 						class="text-acid font-mono text-sm uppercase tracking-wider hover:text-canvas transition-colors inline-flex items-center gap-2 group"
 					>
 						<span>Bekijk alle projecten</span>

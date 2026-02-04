@@ -55,7 +55,7 @@ const breadcrumbs = [
 		<section class="pt-32 pb-12 md:pb-16 px-6 md:px-12 lg:px-16 bg-canvas">
 			<div class="max-w-3xl mx-auto text-center">
 				<a
-					href="/blog"
+					href="/blog/"
 					class="inline-flex items-center gap-2 text-ink/40 hover:text-ink text-sm mb-6 transition-colors"
 				>
 					<span>&larr;</span>
@@ -75,14 +75,14 @@ const breadcrumbs = [
 			<div class="max-w-3xl mx-auto">
 				<div class="flex flex-wrap justify-center gap-2">
 					<a
-						href="/blog"
+						href="/blog/"
 						class="px-4 py-2 text-sm font-medium bg-ink/5 text-ink/70 rounded-full hover:bg-ink/10 transition-colors"
 					>
 						Alles
 					</a>
 					{allTags.map((t) => (
 						<a
-							href={`/blog/tag/${t.toLowerCase().replace(/\s+/g, "-")}`}
+							href={`/blog/tag/${t.toLowerCase().replace(/\s+/g, "-")}/`}
 							class:list={[
 								"px-4 py-2 text-sm font-medium rounded-full transition-colors",
 								t === tag

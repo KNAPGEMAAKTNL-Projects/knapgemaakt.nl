@@ -41,12 +41,12 @@ const blogPosts = getAllBlogPosts();
                             </a>
                         </li>
                         <li>
-                            <a href="/portfolio" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/portfolio/" class="text-ink/70 hover:text-electric transition-colors font-medium">
                                 Portfolio
                             </a>
                         </li>
                         <li>
-                            <a href="/blog" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/blog/" class="text-ink/70 hover:text-electric transition-colors font-medium">
                                 Blog
                             </a>
                         </li>
@@ -61,7 +61,7 @@ const blogPosts = getAllBlogPosts();
                             </a>
                         </li>
                         <li>
-                            <a href="/aanvragen" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/aanvragen/" class="text-ink/70 hover:text-electric transition-colors font-medium">
                                 Aanvragen
                             </a>
                         </li>
@@ -77,7 +77,7 @@ const blogPosts = getAllBlogPosts();
                     <ul class="space-y-3">
                         {projects.map((project) => (
                             <li>
-                                <a href={`/project/${project.slug}`} class="text-ink/70 hover:text-electric transition-colors font-medium">
+                                <a href={`/project/${project.slug}/`} class="text-ink/70 hover:text-electric transition-colors font-medium">
                                     {project.title}
                                 </a>
                             </li>
@@ -94,7 +94,7 @@ const blogPosts = getAllBlogPosts();
                     <ul class="space-y-3">
                         {blogPosts.map((post) => (
                             <li>
-                                <a href={`/blog/${post.slug}`} class="text-ink/70 hover:text-electric transition-colors font-medium">
+                                <a href={`/blog/${post.slug}/`} class="text-ink/70 hover:text-electric transition-colors font-medium">
                                     {post.title}
                                 </a>
                             </li>
@@ -111,7 +111,7 @@ const blogPosts = getAllBlogPosts();
                     <ul class="space-y-3">
                         {cities.map((city) => (
                             <li>
-                                <a href={`/webdesign-${city.slug}`} class="text-ink/70 hover:text-electric transition-colors font-medium">
+                                <a href={`/webdesign-${city.slug}/`} class="text-ink/70 hover:text-electric transition-colors font-medium">
                                     Webdesign {city.name}
                                 </a>
                             </li>
@@ -127,17 +127,17 @@ const blogPosts = getAllBlogPosts();
                     </h2>
                     <ul class="space-y-3">
                         <li>
-                            <a href="/algemene-voorwaarden" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/algemene-voorwaarden/" class="text-ink/70 hover:text-electric transition-colors font-medium">
                                 Algemene Voorwaarden
                             </a>
                         </li>
                         <li>
-                            <a href="/privacy" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/privacy/" class="text-ink/70 hover:text-electric transition-colors font-medium">
                                 Privacyverklaring
                             </a>
                         </li>
                         <li>
-                            <a href="/sitemap" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/sitemap/" class="text-ink/70 hover:text-electric transition-colors font-medium">
                                 Sitemap
                             </a>
                         </li>
