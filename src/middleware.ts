@@ -1,14 +1,44 @@
 import { defineMiddleware } from "astro:middleware";
 
 /**
- * Legacy URL Handler Middleware
+ * URL Handler Middleware
  *
- * Returns 410 Gone for URLs from the previous website that used this domain.
- * This tells Google to permanently remove these URLs from its index,
- * rather than 404 which means "try again later".
- *
- * The domain previously hosted a Dutch crafts/artisan marketplace.
+ * Handles three types of legacy URLs:
+ * 1. Returns 410 Gone for URLs from the previous website (Dutch crafts marketplace)
+ * 2. Returns 410 Gone for removed blog posts and tags from strategy changes
+ * 3. 301 redirects for renamed project slugs (preserves SEO equity)
  */
+
+// Project slug redirects (old slug -> new slug)
+const PROJECT_REDIRECTS: Record<string, string> = {
+  "/project/fitcity-culemborg": "/project/maatwerk-website-voor-fitcity-culemborg/",
+  "/project/byshakir": "/project/maatwerk-website-voor-by-shakir/",
+};
+
+// Removed blog posts that should return 410 Gone
+const REMOVED_BLOG_POSTS = [
+  "/blog/webdesign-utrecht",
+  "/blog/webshop-laten-maken",
+  "/blog/maatwerkwebsite-laten-maken",
+  "/blog/zelf-website-maken-of-laten-maken",
+  "/blog/wordpress-vs-moderne-alternatieven",
+  "/blog/website-voor-zzp",
+];
+
+// Removed tag pages that should return 410 Gone
+const REMOVED_TAG_PAGES = [
+  "/blog/tag/tips",
+  "/blog/tag/utrecht",
+  "/blog/tag/wordpress",
+  "/blog/tag/gids",
+  "/blog/tag/maatwerk",
+  "/blog/tag/vergelijking",
+];
+
+// Removed projects that should return 410 Gone
+const REMOVED_PROJECTS = [
+  "/project/schildersbedrijf-visser",
+];
 
 // Patterns from the old website that should return 410 Gone
 const LEGACY_PATTERNS = [
@@ -64,11 +94,29 @@ const LEGACY_PATTERNS = [
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const pathname = context.url.pathname;
+  // Normalize pathname (remove trailing slash for comparison, except root)
+  const normalizedPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
 
-  // Check if the URL matches any legacy pattern
+  // Check for project redirects (301 - preserves SEO equity)
+  if (PROJECT_REDIRECTS[normalizedPath]) {
+    return new Response(null, {
+      status: 301,
+      headers: {
+        Location: PROJECT_REDIRECTS[normalizedPath],
+      },
+    });
+  }
+
+  // Check if the URL is a removed blog post, tag page, or project
+  const isRemovedContent =
+    REMOVED_BLOG_POSTS.some(url => normalizedPath === url) ||
+    REMOVED_TAG_PAGES.some(url => normalizedPath === url) ||
+    REMOVED_PROJECTS.some(url => normalizedPath === url);
+
+  // Check if the URL matches any legacy pattern from old website
   const isLegacyUrl = LEGACY_PATTERNS.some(pattern => pattern.test(pathname));
 
-  if (isLegacyUrl) {
+  if (isRemovedContent || isLegacyUrl) {
     // Return 410 Gone - tells search engines this content is permanently removed
     return new Response(
       `<!DOCTYPE html>
