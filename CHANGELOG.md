@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.8.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.7.0...v1.8.0) (2026-02-04)
+
+
+### Features
+
+* **blog:** add international payments image to Wero Mollie article ✨ ([c5813dc](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/c5813dc34c595ea14125c4379cd85834bcb78246))
+* **blog:** add website costs pillar article ✨ ([#190](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/190)) ([134a6cb](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/134a6cb2fd0e3ecc63511c46d75cff399ed9a980))
+* **blog:** add Wero cluster article 1.4 - Mollie integration ✨ ([568623d](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/568623d00abc81dda767d2ff0dad00b7bb1f5a45))
+* **blog:** add Wero cluster articles 1.2 and 1.3 ✨ ([1186dc3](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/1186dc3a7ab9f509b1f9f25e952716e113bbe200))
+* **blog:** add Wero German sales & website pricing articles ✨ ([3e2aac2](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/3e2aac23c37060dd8e3ed0b1a030860f559655bf))
+* **forms:** add privacy consent checkbox to audit form ✨ ([#179](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/179)) ([14b9230](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/14b9230a4c914c25f435e8227dce5850b3bb15f7)), closes [#177](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/177)
+
+
+### Bug Fixes
+
+* correct availability filtering and calendar layout 🐛 ([#193](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/193)) ([d096bf3](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/d096bf3e85b07566ab41901a4ae774fa1ae63093)), closes [#192](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/192)
+* **forms:** move privacy checkbox before submit button 🐛 ([#183](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/183)) ([640828a](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/640828abc1e097cf13606bce9693a9231d11d825))
+* **seo:** add trailing slashes to all internal links 🐛 ([#198](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/198)) ([626e3aa](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/626e3aac5cee9420711f0605b734c21ea25d263f))
+* **seo:** align trailing slash config with Cloudflare behavior 🐛 ([#195](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/195)) ([fba359a](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/fba359aa00e54df6e9132685881a8451b3fe1904))
+* **seo:** handle removed blog posts, tags, and project slugs 🐛 ([fd2f27e](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/fd2f27eb9878a883c19858ec5f3d870ed625bdce))
+* **seo:** return 410 Gone for legacy domain URLs 🐛 ([#199](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/199)) ([e45a77a](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/e45a77a7ba000df4edb507f8c84575c4c5d581b1))
+* **sitemap:** add 3 missing blog posts 🐛 ([#188](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/188)) ([1faf1ad](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/1faf1ad014d277c547f1ea7ad1c4a878f8b7ff68))
+* **sitemap:** add website-laten-maken-kosten blog post 🐛 ([#191](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/191)) ([91adca6](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/91adca658fd588aaebccf5aef1b26d2f11fbfa1c))
+
 ## [1.7.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.6.0...v1.7.0) (2026-01-28)
 
 
