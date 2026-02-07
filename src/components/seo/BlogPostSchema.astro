@@ -29,7 +29,7 @@ const {
 	image,
 } = Astro.props;
 
-const url = `https://knapgemaakt.nl/blog/${slug}`;
+const url = `https://knapgemaakt.nl/blog/${slug}/`;
 const logoUrl = "https://knapgemaakt.nl/favicon_final.svg";
 const imageUrl = image ? `https://knapgemaakt.nl${image}` : logoUrl;
 
@@ -72,7 +72,7 @@ const schema = {
 	inLanguage: "nl-NL",
 	isPartOf: {
 		"@type": "Blog",
-		"@id": "https://knapgemaakt.nl/blog",
+		"@id": "https://knapgemaakt.nl/blog/",
 		name: "KNAP GEMAAKT. Blog",
 		description: "Tips, gidsen en inzichten over webdesign voor ondernemers",
 	},
