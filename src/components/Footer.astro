@@ -1,6 +1,7 @@
 ---
 import TextRevealCSS from "./TextRevealCSS.astro";
 import { getAllCities } from "../data/cities";
+import { getAllBlogPosts } from "../data/blog";
 
 interface Props {
 	hideCTA?: boolean;
@@ -15,6 +16,7 @@ const {
 } = Astro.props;
 
 const cities = getAllCities();
+const blogPosts = getAllBlogPosts();
 
 // Group cities by region for organized display
 const cityGroups = cities.reduce((groups, city) => {
@@ -86,6 +88,28 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 							</div>
 						</div>
 					)
+				))}
+			</div>
+		</div>
+
+		<!-- Blog Articles -->
+		<div class="mb-12 md:mb-16 text-center">
+			<div class="font-mono text-xs uppercase tracking-widest text-canvas/40 mb-6">
+				Artikelen
+			</div>
+			<div class="flex flex-wrap justify-center items-center gap-y-2 font-mono text-xs text-canvas/50 uppercase tracking-widest">
+				{blogPosts.map((post, i) => (
+					<>
+						<a
+							href={`/blog/${post.slug}/`}
+							class="hover:text-acid transition-colors"
+						>
+							{post.shortTitle}
+						</a>
+						{i < blogPosts.length - 1 && (
+							<span class="mx-3 text-canvas/20">&middot;</span>
+						)}
+					</>
 				))}
 			</div>
 		</div>
