@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.1](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.8.0...v1.8.1) (2026-02-08)
+
+
+### Bug Fixes
+
+* **security:** ensure email obfuscation on all pages 🐛 ([#204](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/204)) ([2184109](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/2184109ca60644f5f831df5c921a3ac52c6b53b1)), closes [#203](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/203)
+* **seo:** add trailing slashes to schema/breadcrumb URLs and blog links to footer 🐛 ([#200](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/200)) ([6432052](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/6432052374a5a484c94cf5500e9af299b4ffef15))
+
 ## [1.8.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.7.0...v1.8.0) (2026-02-04)
 
 
