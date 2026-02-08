@@ -292,6 +292,10 @@ const projects = getAllProjects();
 					>
 						Check mijn website
 					</button>
+					<div id="audit-error" class="hidden mt-4 p-4 bg-red-50 border-2 border-red-300 text-red-800">
+						<p class="font-bold text-sm">Er ging iets mis</p>
+						<p class="text-sm">Probeer het opnieuw of stuur een mail naar <a href="mailto:info@knapgemaakt.nl" class="underline hover:text-red-900 transition-colors">info@knapgemaakt.nl</a>.</p>
+					</div>
 				</form>
 			</div>
 		</section>
@@ -419,7 +423,8 @@ const projects = getAllProjects();
 			} catch (error) {
 				submitBtn.disabled = false;
 				submitBtn.textContent = originalText;
-				alert('Er ging iets mis. Probeer het opnieuw of stuur een mail naar info@knapgemaakt.nl');
+				const auditError = document.getElementById('audit-error');
+				if (auditError) auditError.classList.remove('hidden');
 			}
 		});
 

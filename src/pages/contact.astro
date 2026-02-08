@@ -182,7 +182,7 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 						</div>
 						<div id="form-error" class="hidden p-4 bg-red-50 border-2 border-red-300 text-red-800">
 							<p class="font-bold">Er ging iets mis</p>
-							<p class="text-sm" id="error-text">Probeer het opnieuw of stuur een e-mail naar info@knapgemaakt.nl</p>
+							<p class="text-sm" id="error-text">Probeer het opnieuw of stuur een e-mail naar <a href="mailto:info@knapgemaakt.nl" class="underline hover:text-red-900 transition-colors">info@knapgemaakt.nl</a></p>
 						</div>
 					</form>
 				</div>
@@ -356,11 +356,11 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 					form.reset();
 				} else {
 					const err = await res.json();
-					if (errorText) errorText.textContent = err.error || 'Probeer het opnieuw of stuur een e-mail naar info@knapgemaakt.nl';
+					if (errorText) errorText.innerHTML = err.error || 'Probeer het opnieuw of stuur een e-mail naar <a href="mailto:info@knapgemaakt.nl" class="underline hover:text-red-900 transition-colors">info@knapgemaakt.nl</a>';
 					errorMsg?.classList.remove('hidden');
 				}
 			} catch {
-				if (errorText) errorText.textContent = 'Geen verbinding. Probeer het opnieuw of stuur een e-mail naar info@knapgemaakt.nl';
+				if (errorText) errorText.innerHTML = 'Geen verbinding. Probeer het opnieuw of stuur een e-mail naar <a href="mailto:info@knapgemaakt.nl" class="underline hover:text-red-900 transition-colors">info@knapgemaakt.nl</a>';
 				errorMsg?.classList.remove('hidden');
 			} finally {
 				btn.disabled = false;
