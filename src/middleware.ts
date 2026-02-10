@@ -15,12 +15,16 @@ const PROJECT_REDIRECTS: Record<string, string> = {
   "/project/byshakir": "/project/maatwerk-website-voor-by-shakir/",
 };
 
+// Blog post redirects (old slug -> new slug, consolidating content)
+const BLOG_REDIRECTS: Record<string, string> = {
+  "/blog/webdesign-utrecht": "/blog/website-laten-maken-kosten/",
+  "/blog/webshop-laten-maken": "/blog/website-laten-maken-kosten/",
+  "/blog/maatwerkwebsite-laten-maken": "/blog/website-laten-maken-kosten/",
+  "/blog/zelf-website-maken-of-laten-maken": "/blog/website-laten-maken-kosten/",
+};
+
 // Removed blog posts that should return 410 Gone
 const REMOVED_BLOG_POSTS = [
-  "/blog/webdesign-utrecht",
-  "/blog/webshop-laten-maken",
-  "/blog/maatwerkwebsite-laten-maken",
-  "/blog/zelf-website-maken-of-laten-maken",
   "/blog/wordpress-vs-moderne-alternatieven",
   "/blog/website-voor-zzp",
 ];
@@ -64,6 +68,10 @@ const LEGACY_PATTERNS = [
   /^\/kandelaars-klokken\/?$/,
   /^\/delicatessen\/?$/,
   /^\/shops\/?$/,
+  /^\/kralen-en-vilt\/?$/,
+  /^\/vazen\/?$/,
+  /^\/verslingerd\/?$/,
+  /^\/webdesign-utrecht\/?$/,
 
   // Old tag pages
   /^\/tag\//,
@@ -83,6 +91,8 @@ const LEGACY_PATTERNS = [
   /^\/geopend-kerstshop/,
   /^\/onze-najaar-shop/,
   /^\/familiefeest\/?$/,
+  /^\/website-laten-maken\/?$/,
+  /^\/agenda-kunstmarkten-2020\/?$/,
 
   // Apple app association files (not applicable)
   /^\/apple-app-site-association$/,
@@ -90,6 +100,14 @@ const LEGACY_PATTERNS = [
 
   // Cloudflare email protection (old site artifact)
   /^\/cdn-cgi\/l\/email-protection$/,
+
+  // Old asset directories and files
+  /^\/assets\/projects\//,
+  /^\/cities\//,
+  /^\/favicon\.ico$/,
+
+  // Old API endpoints
+  /^\/api\//,
 ];
 
 export const onRequest = defineMiddleware(async (context, next) => {
@@ -97,12 +115,37 @@ export const onRequest = defineMiddleware(async (context, next) => {
   // Normalize pathname (remove trailing slash for comparison, except root)
   const normalizedPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
 
+  // Check for blog redirects (301 - consolidating content to current posts)
+  if (BLOG_REDIRECTS[normalizedPath]) {
+    return new Response(null, {
+      status: 301,
+      headers: {
+        Location: BLOG_REDIRECTS[normalizedPath],
+      },
+    });
+  }
+
   // Check for project redirects (301 - preserves SEO equity)
   if (PROJECT_REDIRECTS[normalizedPath]) {
     return new Response(null, {
       status: 301,
       headers: {
         Location: PROJECT_REDIRECTS[normalizedPath],
+      },
+    });
+  }
+
+  // Handle trailing slash redirects for webdesign-[city] pages
+  // Redirect /webdesign-city to /webdesign-city/ (with trailing slash)
+  const webdesignMatch = normalizedPath.match(/^\/webdesign-/);
+  if (webdesignMatch && pathname !== normalizedPath) {
+    // Request has trailing slash, but page should work with it, so continue
+  } else if (webdesignMatch && pathname === normalizedPath) {
+    // Request doesn't have trailing slash, redirect to version with trailing slash
+    return new Response(null, {
+      status: 301,
+      headers: {
+        Location: normalizedPath + "/",
       },
     });
   }
