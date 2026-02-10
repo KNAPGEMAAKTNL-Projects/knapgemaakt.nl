@@ -105,9 +105,6 @@ const LEGACY_PATTERNS = [
   /^\/assets\/projects\//,
   /^\/cities\//,
   /^\/favicon\.ico$/,
-
-  // Old API endpoints
-  /^\/api\//,
 ];
 
 export const onRequest = defineMiddleware(async (context, next) => {
