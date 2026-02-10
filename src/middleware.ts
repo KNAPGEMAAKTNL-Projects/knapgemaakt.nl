@@ -64,6 +64,9 @@ const LEGACY_PATTERNS = [
   /^\/kandelaars-klokken\/?$/,
   /^\/delicatessen\/?$/,
   /^\/shops\/?$/,
+  /^\/kralen-en-vilt\/?$/,
+  /^\/vazen\/?$/,
+  /^\/verslingerd\/?$/,
 
   // Old tag pages
   /^\/tag\//,
@@ -83,6 +86,8 @@ const LEGACY_PATTERNS = [
   /^\/geopend-kerstshop/,
   /^\/onze-najaar-shop/,
   /^\/familiefeest\/?$/,
+  /^\/website-laten-maken\/?$/,
+  /^\/agenda-kunstmarkten-2020\/?$/,
 
   // Apple app association files (not applicable)
   /^\/apple-app-site-association$/,
@@ -90,6 +95,14 @@ const LEGACY_PATTERNS = [
 
   // Cloudflare email protection (old site artifact)
   /^\/cdn-cgi\/l\/email-protection$/,
+
+  // Old asset directories and files
+  /^\/assets\/projects\//,
+  /^\/cities\//,
+  /^\/favicon\.ico$/,
+
+  // Old API endpoints
+  /^\/api\//,
 ];
 
 export const onRequest = defineMiddleware(async (context, next) => {
