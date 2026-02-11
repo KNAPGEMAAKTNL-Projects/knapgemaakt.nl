@@ -1,0 +1,23 @@
+# Cloudflare Pages Redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# These redirects run at the Cloudflare edge BEFORE static file serving,
+# which is necessary because prerendered pages bypass the Astro middleware.
+# The _routes.json excludes /project/* and /blog/* from the Worker,
+# so middleware redirects never fire for these paths.
+
+# Project slug redirects (old -> new)
+/project/fitcity-culemborg /project/maatwerk-website-voor-fitcity-culemborg/ 301
+/project/fitcity-culemborg/ /project/maatwerk-website-voor-fitcity-culemborg/ 301
+/project/byshakir /project/maatwerk-website-voor-by-shakir/ 301
+/project/byshakir/ /project/maatwerk-website-voor-by-shakir/ 301
+
+# Blog post redirects (consolidated content)
+/blog/webdesign-utrecht /blog/website-laten-maken-kosten/ 301
+/blog/webdesign-utrecht/ /blog/website-laten-maken-kosten/ 301
+/blog/webshop-laten-maken /blog/website-laten-maken-kosten/ 301
+/blog/webshop-laten-maken/ /blog/website-laten-maken-kosten/ 301
+/blog/maatwerkwebsite-laten-maken /blog/website-laten-maken-kosten/ 301
+/blog/maatwerkwebsite-laten-maken/ /blog/website-laten-maken-kosten/ 301
+/blog/zelf-website-maken-of-laten-maken /blog/website-laten-maken-kosten/ 301
+/blog/zelf-website-maken-of-laten-maken/ /blog/website-laten-maken-kosten/ 301
