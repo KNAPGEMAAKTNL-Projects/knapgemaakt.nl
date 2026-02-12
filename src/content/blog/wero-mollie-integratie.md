@@ -112,7 +112,7 @@ Laten we het praktisch maken. Hier is een checklist specifiek voor Mollie-gebrui
 
 ## Waarom Mollie een goede keuze is voor de overgang
 
-Ik wil even eerlijk zijn: ik ben geen Mollie-ambassadeur en dit is geen gesponsorde content. Maar ik gebruik Mollie voor al onze klantprojecten bij KNAP GEMAAKT., en er zijn goede redenen voor.
+Ik ben geen Mollie-ambassadeur en dit is niet gesponsord. Maar we gebruiken Mollie voor al onze klantprojecten, en daar zijn sterke redenen voor.
 
 **Ze zijn Principal Member van EPI.** Dat is het hoogste lidmaatschapsniveau. Mollie zit aan tafel waar de beslissingen worden genomen.
 

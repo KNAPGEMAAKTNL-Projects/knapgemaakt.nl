@@ -15,6 +15,7 @@ I write blogs to genuinely help fellow entrepreneurs. Not to get clicks, not to 
 - **Helpful, not pushy.** Share knowledge because it's useful, not to sell.
 - **Honest about uncertainty.** If something isn't clear yet (like future pricing), say so.
 - **Reassuring where possible.** If something isn't a big deal, say that too.
+- **Direct, not cautious.** Avoid hedging language like "voorzichtig", "let op", "zorg dat". Use: "dit is belangrijk", "dit verandert", "hier let je op" instead.
 
 ### What to Avoid
 
@@ -35,6 +36,13 @@ I write blogs to genuinely help fellow entrepreneurs. Not to get clicks, not to 
 - ❌ Fear-inducing language
 - ❌ Manufactured drama
 - ✅ Clear, helpful explanations
+
+#### No defensive framing or hand-holding
+- ❌ "Ik wil even eerlijk zijn..."
+- ❌ "Laat me duidelijk zijn..."
+- ❌ "Om eerlijk te zeggen..."
+- ❌ "Voorzichtig moet zijn"
+- ✅ Just state facts. No apologies, no defensive positioning.
 
 #### No pushy CTAs
 - ❌ "Neem vandaag nog contact op!"
@@ -68,6 +76,39 @@ When explaining something that could worry people, lead with reassurance:
 Keep them informative, not clickbaity:
 - ❌ "Ontdek wat je MOET doen voor de grootste betaalverandering sinds 2005!"
 - ✅ "iDEAL gaat over naar Wero. In dit artikel leg ik uit wat er verandert, wat hetzelfde blijft, en wat je als webshophouder moet weten."
+
+### ⚠️ CRITICAL: URL Trailing Slashes
+**Astro config has `trailingSlash: "always"`** — ALL internal links MUST end with a trailing slash.
+
+**Wrong:**
+- `/blog/wero-mollie-integratie`
+- `/contact`
+- `/portfolio`
+
+**Correct:**
+- `/blog/wero-mollie-integratie/`
+- `/contact/`
+- `/portfolio/`
+
+This applies to ALL internal links in blog posts, frontmatter, and content. **Check every link before publishing.**
+
+### ⚠️ CRITICAL: No Em-Dashes in Dutch Content
+Never use em-dashes (—) or en-dashes (–). This is one of the clearest AI fingerprints in Dutch text.
+
+**Wrong:** `wat je moet doen—en waar je voorzichtig moet zijn`
+**Correct:** `wat je moet doen, en waar je voorzichtig moet zijn`
+
+Replace dashes with: periods, commas, or colons.
+
+### ⚠️ CRITICAL: Meta Description Character Limit
+Blog meta descriptions must be **140-155 characters maximum**.
+
+**Check before publishing:**
+```
+description: "Your text here" | wc -c
+```
+
+If over 155, the blog won't display properly in listings and search results.
 
 ---
 
