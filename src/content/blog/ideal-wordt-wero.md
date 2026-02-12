@@ -41,13 +41,13 @@ De gebruikservaring voor je klanten blijft grotendeels gelijk. Ze kiezen een bet
 
 ## Wat verandert er wel?
 
-Er zijn een paar veranderingen die de moeite waard zijn om te weten.
+Er zijn een paar veranderingen die de moeite waard zijn om te weten. [Ik heb alle 7 verschillen in detail uitgelegd](/blog/wero-vs-ideal-verschillen/) voor wie meer context wil.
 
 ### Internationale klanten
 
 Met iDEAL kon je alleen Nederlandse klanten bedienen. Wero werkt straks in heel Europa. Een Duitse bezoeker op je webshop kan dan betalen met zijn eigen Duitse bankapp, net zo makkelijk als een Nederlandse klant.
 
-Voor webshops die ook klanten over de grens hebben (of willen hebben), opent dit mogelijkheden zonder dat je aparte integraties nodig hebt voor Giropay of Bancontact. In [mijn artikel over verkopen aan Duitse klanten](/blog/meer-verkopen-duitsers-wero) ga ik dieper in op deze kans.
+Voor webshops die ook klanten over de grens hebben (of willen hebben), opent dit mogelijkheden zonder dat je aparte integraties nodig hebt voor Giropay of Bancontact. In [mijn artikel over verkopen aan Duitse klanten](/blog/meer-verkopen-duitsers-wero/) ga ik dieper in op deze kans.
 
 ### Chargebacks
 
@@ -65,7 +65,7 @@ Eind 2026 of begin 2027 krijgt Wero ondersteuning voor subscriptions. Je klant k
 
 ### Request-to-Pay
 
-Als je diensten verkoopt in plaats van producten, is dit interessant. Met Request-to-Pay stuur je een betaalverzoek rechtstreeks naar de bankapp van je klant. De factuurgegevens zitten in het verzoek, waardoor je boekhouding (Moneybird, Exact) automatisch kan worden bijgewerkt. Je kunt zelfs automatische herinneringen instellen.
+Als je diensten verkoopt in plaats van producten, is dit interessant. Met Request-to-Pay stuur je een betaalverzoek rechtstreeks naar de bankapp van je klant. De factuurgegevens zitten in het verzoek, waardoor je boekhouding (Moneybird, Exact) automatisch kan worden bijgewerkt. Je kunt zelfs automatische herinneringen instellen. [Voor ZZP'ers is dit echt nuttig](/blog/wero-request-to-pay-zzp/) omdat het sneller betaald en minder herinneringen betekent.
 
 ## Hoe zit het met de kosten?
 
@@ -79,7 +79,7 @@ iDEAL was altijd vrij goedkoop: vaak zo'n €0,29 per transactie, ongeacht het b
 
 Wat dit concreet betekent voor jouw situatie hangt af van je gemiddelde orderwaarde. Voor kleine bestellingen kan het percentage-model zelfs voordeliger uitpakken. Voor grote bestellingen (€500+) kan het duurder worden. Het is de moeite waard om dit in de gaten te houden zodra de definitieve tarieven bekend zijn.
 
-Wil je precies weten hoe dit uitpakt voor verschillende orderwaarden? Ik heb [een uitgebreid artikel over de Wero-kosten](/blog/wero-kosten-transactiekosten) geschreven met rekenvoorbeelden.
+Wil je precies weten hoe dit uitpakt voor verschillende orderwaarden? Ik heb [een uitgebreid artikel over de Wero-kosten](/blog/wero-kosten-transactiekosten/) geschreven met rekenvoorbeelden.
 
 ## Wat moet je doen?
 
@@ -89,7 +89,7 @@ Voor de meeste webshophouders is de overgang vrij eenvoudig.
 
 Goed nieuws: zij regelen het meeste voor je. Als je hun hosted checkout gebruikt (waar je klant naar hun betaalpagina wordt doorgestuurd), wordt het logo automatisch aangepast. Je hoeft waarschijnlijk weinig te doen.
 
-Mollie is in januari 2026 Principal Member geworden van EPI en belooft een soepele overgang. Stripe en Adyen bieden vergelijkbare ondersteuning.
+Mollie is in januari 2026 Principal Member geworden van EPI en belooft een soepele overgang. [Lees mijn gedetailleerde gids over Mollie en Wero](/blog/wero-mollie-integratie/) als je meer wilt weten. Stripe en Adyen bieden vergelijkbare ondersteuning.
 
 ### Check wel even je eigen site
 
@@ -99,7 +99,7 @@ Staat het iDEAL-logo ergens hardcoded op je site? In je footer, op een informati
 
 Als je een volledig custom checkout hebt gebouwd met directe API-koppelingen, is er meer werk aan de winkel. Je moet het logo handmatig bijwerken en later Wero als aparte betaalmethode inschakelen. Neem contact op met je payment provider voor de specifieke stappen.
 
-Wil je precies weten wat je moet regelen voor de deadline van 31 maart? Ik heb een [praktische checklist met 5 concrete stappen](/blog/wero-webshops-checklist-maart) gemaakt.
+Wil je precies weten wat je moet regelen voor de deadline van 31 maart? Ik heb een [praktische checklist met 5 concrete stappen](/blog/wero-webshops-checklist-maart/) gemaakt.
 
 ## Later dit jaar en daarna
 
