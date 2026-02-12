@@ -91,7 +91,6 @@ const LEGACY_PATTERNS = [
   /^\/geopend-kerstshop/,
   /^\/onze-najaar-shop/,
   /^\/familiefeest\/?$/,
-  /^\/website-laten-maken\/?$/,
   /^\/agenda-kunstmarkten-2020\/?$/,
 
   // Apple app association files (not applicable)
