@@ -30,10 +30,8 @@ const REMOVED_BLOG_POSTS: string[] = [];
 const REMOVED_TAG_PAGES = [
   "/blog/tag/tips",
   "/blog/tag/utrecht",
-  "/blog/tag/wordpress",
   "/blog/tag/gids",
   "/blog/tag/maatwerk",
-  "/blog/tag/vergelijking",
 ];
 
 // Removed projects that should return 410 Gone
