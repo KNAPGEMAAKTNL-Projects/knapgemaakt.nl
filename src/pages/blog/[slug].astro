@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import BlogPostSchema from "../../components/seo/BlogPostSchema.astro";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
+import BlogCardImage from "../../components/blog/BlogCardImage.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export const prerender = true;
@@ -22,7 +23,7 @@ interface Props {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
-// Get other posts for "More articles" section (exclude current post, max 3)
+// Get other posts for "Verder lezen?" section (exclude current post, max 3)
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 const otherPosts = allPosts
 	.filter((p) => p.slug !== post.slug)
@@ -194,37 +195,24 @@ const breadcrumbs = [
 				</div>
 			</section>
 
-			<!-- More Articles -->
+			<!-- Verder lezen? -->
 			{otherPosts.length > 0 && (
 				<section class="px-6 md:px-12 lg:px-16 py-12 md:py-16">
-					<div class="max-w-2xl mx-auto">
-						<h2 class="text-2xl font-bold mb-8">Meer artikelen</h2>
-						<div class="space-y-6">
-							{otherPosts.map((otherPost) => {
-								const otherReadingTime = otherPost.data.readingTime || Math.ceil(otherPost.body.split(/\s+/).length / 200);
-								const otherDate = otherPost.data.publishDate.toLocaleDateString("nl-NL", {
-									year: "numeric",
-									month: "short",
-									day: "numeric",
-								});
-								return (
-									<a href={`/blog/${otherPost.slug}/`} class="group block py-4 border-b border-ink/10 hover:border-ink/20 transition-colors">
-										<h3 class="text-lg font-semibold text-ink leading-tight mb-2 group-hover:text-ink/70 transition-colors">
-											{otherPost.data.title}
-										</h3>
-										<p class="text-ink/60 text-sm leading-relaxed mb-2 line-clamp-2">
-											{otherPost.data.description}
-										</p>
-										<div class="flex items-center gap-2 text-xs text-ink/40">
-											<time datetime={otherPost.data.publishDate.toISOString()}>
-												{otherDate}
-											</time>
-											<span>&middot;</span>
-											<span>{otherReadingTime} min</span>
-										</div>
-									</a>
-								);
-							})}
+					<div class="max-w-3xl mx-auto">
+						<h2 class="text-2xl font-bold mb-8">Verder lezen?</h2>
+						<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+							{otherPosts.map((otherPost) => (
+								<BlogCardImage
+									title={otherPost.data.title}
+									description={otherPost.data.description}
+									publishDate={otherPost.data.publishDate}
+									slug={otherPost.slug}
+									image={otherPost.data.image}
+									imageAlt={otherPost.data.imageAlt}
+									tags={otherPost.data.tags}
+									readingTime={otherPost.data.readingTime}
+								/>
+							))}
 						</div>
 					</div>
 				</section>
