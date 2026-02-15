@@ -1,0 +1,76 @@
+---
+/**
+ * BlogCardImage Component
+ * Blog card with thumbnail image for the grid section.
+ * Used between the featured hero and the compact text list.
+ */
+
+interface Props {
+	title: string;
+	description: string;
+	publishDate: Date;
+	slug: string;
+	image: string;
+	imageAlt?: string;
+	tags?: string[];
+	readingTime?: number;
+}
+
+const { title, description, publishDate, slug, image, imageAlt, tags = [], readingTime } = Astro.props;
+
+const formattedDate = publishDate.toLocaleDateString("nl-NL", {
+	year: "numeric",
+	month: "short",
+	day: "numeric",
+});
+
+const estimatedReadingTime = readingTime || 5;
+---
+
+<article class="group">
+	<a href={`/blog/${slug}/`} class="block rounded-2xl overflow-hidden border border-ink/8 hover:border-ink/15 hover:shadow-lg transition-all duration-300">
+		<!-- Thumbnail -->
+		<div class="aspect-[3/2] overflow-hidden bg-ink/5">
+			<img
+				src={image}
+				alt={imageAlt || title}
+				class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+				loading="lazy"
+				decoding="async"
+			/>
+		</div>
+
+		<!-- Content -->
+		<div class="p-5">
+			<!-- Tags -->
+			{tags.length > 0 && (
+				<div class="flex flex-wrap gap-1.5 mb-3">
+					{tags.slice(0, 2).map((tag) => (
+						<span class="px-2.5 py-0.5 bg-ink/5 text-ink/60 text-xs font-medium rounded-full">
+							{tag}
+						</span>
+					))}
+				</div>
+			)}
+
+			<!-- Title -->
+			<h2 class="text-lg font-bold text-ink leading-snug mb-2 group-hover:text-ink/70 transition-colors line-clamp-2">
+				{title}
+			</h2>
+
+			<!-- Description -->
+			<p class="text-ink/55 text-sm leading-relaxed mb-3 line-clamp-2">
+				{description}
+			</p>
+
+			<!-- Meta -->
+			<div class="flex items-center gap-2 text-xs text-ink/40">
+				<time datetime={publishDate.toISOString()}>
+					{formattedDate}
+				</time>
+				<span>&middot;</span>
+				<span>{estimatedReadingTime} min</span>
+			</div>
+		</div>
+	</a>
+</article>
