@@ -1,6 +1,6 @@
 ---
 title: "Wat kost een website laten maken in 2026? Complete prijsgids"
-description: "Een eerlijk overzicht van websiteprijzen in Nederland. Van €500 tot €5.000+: ontdek wat je krijgt voor je budget en waar die prijsverschillen vandaan komen."
+description: "Websiteprijzen in Nederland variëren van €500 tot €5.000+. Wat je krijgt per budget, waar prijsverschillen vandaan komen, en wat er bij komt kijken."
 publishDate: 2026-01-31
 author: "Yannick Veldhuisen"
 tags: ["Website kosten", "Website laten maken", "Prijzen", "Maatwerk website", "ZZP", "MKB"]
@@ -8,31 +8,29 @@ image: "/assets/blog/website-laten-maken-kosten.webp"
 imageAlt: "Overzicht van websitekosten voor ondernemers in Nederland"
 ---
 
-"Wat kost een website laten maken?" Het is een van de meest gestelde vragen die ik krijg. En eerlijk? Het antwoord is niet zo simpel als je zou hopen.
+"Wat kost een website laten maken?" Goede vraag. Minder goed antwoord: het hangt ervan af.
 
-Zoek je online, dan zie je prijzen variëren van €200 tot €20.000. Dat helpt niet echt. Daarom in dit artikel een eerlijk overzicht: wat betaal je werkelijk voor een website in 2026, wat krijg je daarvoor, en hoe bepaal je wat bij jouw situatie past.
+Online zie je prijzen van €200 tot €20.000. Dat maakt het er niet overzichtelijker op. In dit artikel loop ik door wat je werkelijk betaalt voor een website in 2026, wat je daarvoor krijgt, en hoe je bepaalt wat bij jouw situatie past.
 
 ## De korte versie
 
-Voor wie weinig tijd heeft: de meeste ZZP'ers en kleine MKB-bedrijven betalen tussen de **€500 en €2.500** voor een professionele website. Daarboven zit je in maatwerk-plus-trajecten met uitgebreide functionaliteit.
+De meeste ZZP'ers en kleine MKB-bedrijven betalen tussen de **€500 en €2.500** voor een professionele website. Daarboven zit je in trajecten met uitgebreidere functionaliteit.
 
-Maar die cijfers zeggen weinig zonder context. Laten we kijken wat die prijsverschillen verklaart.
+Maar die cijfers zeggen weinig zonder context. Laten we kijken waar die prijsverschillen vandaan komen.
 
-## Waarom websiteprijzen zo enorm verschillen
+## Waarom websiteprijzen zo uiteenlopen
 
-Stel je koopt een auto. Een Dacia en een Mercedes brengen je allebei van A naar B. Toch zit er een flink prijsverschil tussen. Bij websites werkt het vergelijkbaar. In [mijn artikel over het verschil tussen een €500 en €5.000 website](/blog/website-500-of-5000-verschil) ga ik hier uitgebreid op in.
+Stel je koopt een auto. Een Dacia en een Mercedes brengen je allebei van A naar B, maar je krijgt er een heel ander gevoel bij. Bij websites werkt het vergelijkbaar. In [mijn artikel over het verschil tussen een €500 en €5.000 website](/blog/website-500-of-5000-verschil/) ga ik daar uitgebreid op in.
 
-De prijs hangt af van drie factoren:
+De prijs hangt af van drie dingen:
 
 1. **Wie bouwt het?** Een freelancer, een klein bureau, of een groot agency?
 2. **Wat wordt er gebouwd?** Een simpele one-pager of een webshop met 500 producten?
 3. **Hoe wordt het gebouwd?** Een template met aanpassingen of volledig op maat?
 
-Laten we elk van deze factoren doorlopen.
-
 ## Prijscategorieën: wat krijg je voor je geld?
 
-### €0 tot €500: doe-het-zelf of budgetoplossingen
+### €0 tot €500: zelf bouwen
 
 In dit segment bouw je zelf met tools als Wix, Squarespace of WordPress.com. De maandelijkse kosten liggen tussen €10 en €40, plus je eigen tijd.
 
@@ -40,11 +38,10 @@ In dit segment bouw je zelf met tools als Wix, Squarespace of WordPress.com. De 
 - Basistemplates die je zelf aanpast
 - Standaard hosting inbegrepen
 - Beperkte aanpasmogelijkheden
-- Je leert onderweg (of je raakt gefrustreerd)
 
-**Geschikt voor:** Starters die willen experimenteren, hobbyprojecten, of ondernemers die graag zelf aan de knoppen zitten.
+**Geschikt voor:** Starters die willen experimenteren, hobbyprojecten, of ondernemers die graag zelf aan de knoppen zitten. Je investeert vooral in je eigen tijd: reken op 20 tot 40 uur voor een goed resultaat. Sommige mensen vinden dat leuk. Anderen kijken na uur twee al verlangend naar hun eigenlijke werk.
 
-**Let op:** De "gratis" versies tonen vaak advertenties van het platform en geven je geen eigen domeinnaam. Dat oogt niet professioneel naar klanten toe.
+De gratis versies tonen vaak advertenties van het platform en geven je geen eigen domeinnaam. Een .wixsite.com-adres is niet ideaal als je professioneel over wilt komen.
 
 ### €500 tot €1.500: professionele basiswebsites
 
@@ -52,14 +49,14 @@ Dit is waar de meeste ZZP'ers en kleine ondernemers terechtkomen. Je krijgt een 
 
 **Wat je krijgt:**
 - Professioneel ontwerp op basis van je huisstijl
-- 5 tot 10 pagina's (denk aan: home, over, diensten, contact)
+- 5 tot 10 pagina's (home, over, diensten, contact)
 - Responsive design (werkt op telefoon en tablet)
 - Basisoptimalisatie voor zoekmachines
 - Contactformulier en Google Maps-integratie
 
 **Geschikt voor:** Dienstverleners, coaches, consultants, kleine winkels, startende ondernemers.
 
-Bij KNAP GEMAAKT. bouw ik volledig op maat gemaakte websites vanaf €495, opgeleverd binnen 7 dagen. Geen templates, geen WordPress, geen maandelijkse platformkosten. Elke site wordt specifiek voor jouw bedrijf gebouwd met moderne technologie die razendsnel laadt en geen onderhoud nodig heeft.
+Bij KNAP GEMAAKT. bouw ik websites vanaf €495, opgeleverd binnen 7 dagen. Geen templates, geen WordPress, geen maandelijkse platformkosten. Elke site wordt specifiek voor jouw bedrijf gebouwd.
 
 ### €1.500 tot €5.000: uitgebreide websites en webshops
 
@@ -68,14 +65,14 @@ Hier krijg je meer maatwerk, complexere functionaliteit en vaak een langer traje
 **Wat je krijgt:**
 - Volledig custom ontwerp
 - 10 tot 25+ pagina's
-- Geavanceerde integraties (boekingssystemen, CRM-koppelingen)
+- Integraties met boekingssystemen of CRM
 - Webshopfunctionaliteit voor kleinere catalogi
 - Uitgebreidere SEO-optimalisatie
 - Meer revisierondes
 
 **Geschikt voor:** Gevestigde MKB-bedrijven, restaurants met online reserveringen, salons met boekingssystemen, bedrijven met specifieke wensen.
 
-### €5.000 tot €15.000+: enterprise en complexe maatwerk
+### €5.000 tot €15.000+: complexe maatwerk
 
 In dit segment zitten grotere webshops, platforms en bedrijven met complexe eisen.
 
@@ -87,11 +84,11 @@ In dit segment zitten grotere webshops, platforms en bedrijven met complexe eise
 - Strategisch advies en uitgebreide ondersteuning
 - Vaak een doorlooptijd van maanden
 
-**Geschikt voor:** Grotere MKB-bedrijven, webshops met grote catalogi, bedrijven met complexe processen.
+**Geschikt voor:** Grotere MKB-bedrijven, webshops met grote catalogi, bedrijven met complexe processen. En een budget dat daarbij past, uiteraard.
 
-## De verborgen kosten waar niemand over praat
+## Doorlopende kosten
 
-De initiële bouwprijs is één ding. Maar een website heeft ook doorlopende kosten. Vraag hier altijd naar voordat je tekent.
+De bouwprijs is één ding. Een website heeft ook kosten die doorlopen. Handig om van tevoren te weten.
 
 ### Hosting: €5 tot €50 per maand
 
@@ -101,153 +98,91 @@ Je website moet ergens draaien. Goedkope hosting van €5 per maand werkt prima 
 
 Je .nl-adres kost ongeveer €10 per jaar. Populaire .com-domeinen zijn duurder.
 
-### SSL-certificaat: vaak gratis, soms €50 tot €150 per jaar
+### SSL-certificaat: vaak gratis
 
-Dat groene slotje in de browser. Veel hostingpartijen bieden dit gratis aan via Let's Encrypt. Sommige partijen rekenen er nog voor.
+Dat slotje in je browserbalk. De meeste hostingpartijen bieden dit gratis aan. Sommige rekenen er nog €50 tot €150 per jaar voor, maar dat wordt steeds zeldzamer.
 
-### Onderhoud en updates: €0 tot €100+ per maand
+### Onderhoud: €0 tot €100+ per maand
 
-Websites hebben onderhoud nodig. Updates, beveiligingspatches, kleine aanpassingen. Je kunt dit zelf doen of uitbesteden.
-
-Bij statische websites (zoals wij bouwen met Astro) is het onderhoud minimaal. Bij WordPress-sites met veel plugins is regelmatig onderhoud echt nodig.
+Updates, beveiligingspatches, kleine aanpassingen. Je kunt dit zelf doen of uitbesteden. Bij statische websites (zoals ik bouw met Astro) is het onderhoud minimaal. Bij WordPress-sites met veel plugins is er meer bij te houden.
 
 ### E-mailadressen: €0 tot €6 per gebruiker per maand
 
-Wil je e-mail@jouwbedrijf.nl? Dat kost vaak extra, tenzij het bij je hostingpakket zit.
+Wil je info@jouwbedrijf.nl? Dat kost vaak extra, tenzij het bij je hostingpakket zit.
 
-## Template vs. maatwerk: wat is het verschil?
+## Template vs. maatwerk
 
-![Vergelijking tussen een template website en een maatwerk website](/assets/blog/template-of-maatwerk-website.webp)
-
-Dit is een vraag die ik vaak krijg. En eerlijk gezegd? De traditionele tweedeling klopt niet meer helemaal.
-
-### Het oude verhaal
-
-Jarenlang was de keuze simpel:
-- **Template**: Goedkoop (€200-€500), snel, maar je site lijkt op duizend anderen
+Jarenlang was de keuze redelijk overzichtelijk:
+- **Template**: Goedkoop (€200 tot €500), snel, maar je site lijkt op veel anderen
 - **Maatwerk**: Uniek en professioneel, maar €2.000+ en weken doorlooptijd
 
-Veel ondernemers kozen noodgedwongen voor templates. Niet omdat ze dat wilden, maar omdat maatwerk simpelweg te duur was.
+Moderne technologie heeft dat veranderd. Met tools als Astro en Tailwind kan ik een op maat gemaakte website bouwen in dezelfde tijd die een bureau vroeger kwijt was aan template-aanpassingen. Dat maakt maatwerk bereikbaar voor budgetten waar je voorheen alleen met een template uit de voeten kon.
 
-### Wat er veranderd is
+## Wat de prijs omhoog of omlaag duwt
 
-Moderne technologie heeft die tweedeling doorbroken. Met tools als Astro en Tailwind kan ik een volledig op maat gemaakte website bouwen in dezelfde tijd die een bureau vroeger kwijt was aan template-aanpassingen.
+Een paar dingen die bepalen of je aan de onder- of bovenkant van je budget uitkomt:
 
-Het resultaat: **maatwerkkwaliteit voor een templateprijs**.
+### Prijs omhoog
 
-Geen compromis meer tussen budget en kwaliteit. Geen generieke template waar je logo op wordt geplakt. Gewoon een site die specifiek voor jouw bedrijf is gebouwd, met jouw huisstijl, jouw structuur, en jouw verhaal.
-
-### Waarom dit belangrijk is
-
-Een template herken je. Misschien niet bewust, maar je bezoeker voelt het. Die subtiele "dit heb ik al eens gezien"-ervaring. Bij een maatwerksite is alles afgestemd op jouw bedrijf. Dat straalt professionaliteit uit.
-
-## Wat bepaalt of je goedkoop of duur uit bent?
-
-Na honderden gesprekken met ondernemers zie ik patronen. Dit bepaalt of je aan de onder- of bovenkant van je budget uitkomt:
-
-### Factoren die de prijs opdrijven
-
-- **Onduidelijke wensen.** Hoe vager je briefing, hoe meer revisies nodig zijn.
+- **Onduidelijke wensen.** Hoe vager de briefing, hoe meer revisies er nodig zijn.
 - **Veel pagina's.** Elke extra pagina kost tijd om te ontwerpen en vullen.
 - **Complexe integraties.** Koppelingen met externe systemen kosten maatwerk.
-- **Haast.** Spoedtarieven bestaan, en ze zijn niet goedkoop.
-- **Veel revisierondes.** "Kun je het toch nog even anders proberen?" kost tijd.
+- **Haast.** Spoedtarieven bestaan. Ze zijn niet goedkoop.
+- **Veel revisierondes.** "Kun je het toch nog even anders proberen?" is een zin die geld kost.
 
-### Factoren die de prijs drukken
+### Prijs omlaag
 
 - **Heldere briefing.** Je weet wat je wilt, hebt voorbeelden verzameld, en je teksten zijn klaar.
-- **Vertrouwen in de bouwer.** Je geeft ruimte voor vakmanschap in plaats van pixel-perfect voorschrijven.
-- **Realistische verwachtingen.** Je begrijpt dat een website van €500 anders is dan eentje van €5.000.
-- **Content aanleveren.** Je teksten en foto's zijn klaar voordat de bouw begint.
+- **Vertrouwen.** Je geeft ruimte voor vakmanschap in plaats van elk pixel voor te schrijven.
+- **Content aanleveren.** Je teksten en foto's zijn klaar voordat de bouw begint. Scheelt een hoop heen en weer.
 
-## Meer dan alleen online zijn: wat kan een website voor je doen?
+## Meer dan een visitekaartje
 
-Veel ondernemers zien een website als een digitaal visitekaartje. "Ik moet online vindbaar zijn." Klopt, maar dat is pas het begin.
+Een website kan meer dan er mooi uitzien. Met de juiste opzet neemt het je werk uit handen:
 
-Een slimme website kan actief werk uit handen nemen:
+- Klanten boeken zelf afspraken via je online agenda
+- Na elke afspraak gaat er automatisch een reviewverzoek uit
+- Contactformulieren worden direct beantwoord
+- Betalingen lopen mee via iDEAL | Wero
 
-- **Klanten boeken zelf afspraken.** Geen heen-en-weer geapp meer over beschikbaarheid. Klanten kiezen een moment in je online agenda, krijgen automatisch een bevestiging en herinnering.
-- **Gemiste oproepen worden opgevangen.** Bel je niet op? De klant krijgt automatisch een SMS: "Sorry dat ik je miste, kan ik je terugbellen?"
-- **Reviews verzamelen gaat vanzelf.** Na elke afspraak krijgt je klant een vriendelijk verzoek om een review achter te laten. Zonder dat jij eraan hoeft te denken.
-- **Leads worden direct opgevolgd.** Iemand vult je contactformulier in? Binnen twee minuten krijgt diegene een persoonlijk antwoord, terwijl jij gewoon doorwerkt.
-- **Betalingen lopen automatisch.** Na een afspraak of dienst gaat er direct een betaalverzoek mee via iDEAL | Wero.
+Dat soort [automations](/automations/) vraagt een iets hogere investering (bij KNAP GEMAAKT. vanaf €995 voor website + systeem), maar het bespaart je uren per week aan administratie. Tijd die je liever aan je klanten besteedt. Of aan koffie.
 
-Dit soort [automations](/automations) vraagt een iets hogere investering (bij KNAP GEMAAKT. vanaf €995 voor website + systeem), maar de tijdsbesparing is enorm. Geen administratie meer 's avonds. Geen no-shows omdat klanten de afspraak vergeten. Geen leads die koud worden omdat je te laat reageerde.
-
-## De ROI-vraag: wanneer verdient je website zichzelf terug?
-
-Een website is een investering, geen kostenpost. Tenminste, als je het goed aanpakt.
-
-**Voorbeeld 1: Alleen een website**
-Je investeert €495 in een professionele website. Die levert je twee nieuwe klanten per maand op, elk goed voor €150 omzet. Terugverdiend binnen twee maanden.
-
-**Voorbeeld 2: Website + automations**
-Je investeert €995 in een website met afsprakenplanner en automatische herinneringen. Je no-shows dalen van 3 per maand naar 0. Bij €75 per gemiste afspraak bespaar je €225 per maand. Plus: je bespaart 5 uur per week aan heen-en-weer appen over afspraken.
-
-De vraag is niet alleen "wat kost het?" maar ook "wat kost het me om het níet te doen?"
-
-Een paar vragen om jezelf te stellen:
-
-- Hoeveel klanten vind je nu via je website?
-- Hoeveel tijd verlies je aan administratieve taken die geautomatiseerd kunnen?
-- Hoeveel no-shows of gemiste leads heb je per maand?
-- Wat is een nieuwe klant gemiddeld waard?
-
-## Zo kies je de juiste partij voor jouw budget
-
-Met al die opties, hoe kies je? Een paar praktische tips:
+## Zo kies je de juiste partij
 
 ### 1. Vraag naar voorbeelden in jouw branche
 
 Een portfolio zegt meer dan beloftes. Vraag specifiek naar projecten die lijken op wat jij nodig hebt.
 
-### 2. Let op wat er allemaal inbegrepen is
+### 2. Vergelijk wat er inbegrepen is
 
-De ene offerte van €800 bevat hosting, onderhoud en drie revisierondes. De andere bevat alleen het ontwerp. Vergelijk appels met appels.
+De ene offerte van €800 bevat hosting, onderhoud en drie revisierondes. De andere bevat alleen het ontwerp. Appels en peren.
 
 ### 3. Vraag naar de doorlopende kosten
 
-Wat betaal je na de lancering? Sommige partijen bouwen goedkoop maar verdienen op maandelijkse abonnementen. Dat hoeft niet verkeerd te zijn, maar je moet het weten.
+Wat betaal je na de lancering? Sommige partijen bouwen goedkoop maar verdienen op maandelijkse abonnementen. Dat hoeft niet verkeerd te zijn, maar fijn om te weten.
 
-### 4. Check de technologie
+### 4. Kijk naar de technologie
 
-Vraag waarmee gebouwd wordt. WordPress? Webflow? Wix? Op maat? Elke keuze heeft voor- en nadelen. Belangrijker: kun je later overstappen als je wilt, of zit je vast?
+Vraag waarmee gebouwd wordt. WordPress? Webflow? Wix? Op maat? Elke keuze heeft voor- en nadelen. En misschien nog wel handiger om te vragen: kun je later overstappen als je wilt, of zit je vast?
 
 ### 5. Vertrouw je onderbuik
 
-Je gaat samenwerken met deze persoon of dit bureau. Voelt de communicatie prettig? Worden je vragen serieus genomen? Dat telt.
+Je gaat samenwerken met deze persoon of dit bureau. Voelt de communicatie prettig? Worden je vragen serieus genomen? Dat telt mee.
 
-## Wat je moet weten over goedkope websites
+## Goedkoop vs. voordelig
 
-"Waarom zou ik €995 betalen als ik ook voor €199 een website kan krijgen?"
+"Waarom zou ik meer betalen als ik ook voor €199 een website kan krijgen?"
 
-Eerlijke vraag. Hier is het eerlijke antwoord: goedkoop en goed gaan soms samen, maar niet altijd.
+Goede vraag. Bij lagere prijzen krijg je vaak standaardtemplates, beperkte ondersteuning, en soms verborgen kosten voor zaken die je later toch nodig hebt. Dat hoeft geen probleem te zijn als het past bij wat je zoekt. Een Dacia is ook gewoon een prima auto.
 
-Bij extreem lage prijzen krijg je vaak:
-
-- Standaardtemplates zonder echte aanpassing
-- Beperkte of geen ondersteuning na oplevering
-- Verborgen kosten voor zaken die je later toch nodig hebt
-- Matige prestaties (trage laadtijden, slechte mobiele weergave)
-- Ontbrekende basis-SEO
-
-Dat hoeft niet erg te zijn als je weet wat je koopt. Maar verwacht geen premium resultaat voor een budgetprijs.
-
-## Samenvatting: de realistische prijsverwachting
+## Samenvatting
 
 | Wat je nodig hebt | Marktgemiddelde | Bij KNAP GEMAAKT. |
 |---|---|---|
 | Professionele maatwerk website | €1.500 tot €3.000 | **€495** (7 dagen) |
-| Website + booking & automations | €3.000 tot €5.000 | **€995** (2-3 weken) |
+| Website + booking & automations | €3.000 tot €5.000 | **€995** (2 tot 3 weken) |
 | Uitgebreide webshop | €2.500 tot €6.000 | Op aanvraag |
 
-De marktgemiddelden zijn wat je bij de meeste bureaus betaalt. Het verschil? Moderne technologie en een gestroomlijnd proces maken het mogelijk om dezelfde kwaliteit te leveren zonder de overhead van een traditioneel bureau.
+---
 
-## Volgende stap
-
-Een website laten maken hoeft niet ingewikkeld te zijn. Bij KNAP GEMAAKT. bouw ik volledig op maat gemaakte websites voor ZZP'ers en MKB in de regio Utrecht en Rivierenland. Geen templates, vaste prijzen, snelle oplevering.
-
-- **[Website laten maken](/website-laten-maken)**: Vanaf €495, klaar in 7 dagen
-- **[Website + automations](/automations)**: Vanaf €995, inclusief booking, reviews en meer
-
-Wil je weten wat bij jouw situatie past? [Plan een vrijblijvend gesprek](/contact) en ik denk graag met je mee. Geen verkooppraatje, gewoon een eerlijk advies.
+Wil je weten wat bij jouw situatie past? [Plan gerust een gesprek](/aanvragen/) en ik denk met je mee.

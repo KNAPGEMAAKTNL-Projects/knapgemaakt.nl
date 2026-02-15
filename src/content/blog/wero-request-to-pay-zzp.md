@@ -1,6 +1,6 @@
 ---
 title: "Request-to-Pay met Wero: Sneller betaald worden als ZZP'er"
-description: "Met Wero's Request-to-Pay stuur je betaalverzoeken direct naar de bankapp van je klant. Sneller betaald, minder herinneringen nodig."
+description: "Met Wero's Request-to-Pay stuur je betaalverzoeken direct naar de bankapp van je klant. Hoe het werkt, wanneer het komt, en wat je ermee kunt."
 publishDate: 2026-02-13
 author: "Yannick Veldhuisen"
 tags: ["Wero", "ZZP", "Betalingen", "Request-to-Pay", "Facturatie"]
@@ -8,145 +8,87 @@ image: "/assets/blog/wero-request-to-pay-zzp.webp"
 imageAlt: "ZZP'er ontvangt betaling via Request-to-Pay in Wero"
 ---
 
-Je kent het probleem. Je stuurt een factuur, en de klant ziet het niet. Of het belandt in spam. Of ze vergeten simpelweg te betalen. En dan moet jij eraan herinneren.
+Als ZZP'er stuur je een factuur en dan wacht je. Soms een dag, soms een week, soms langer. De meeste klanten betalen gewoon, maar het is niet altijd het snelste proces.
 
-Met iDEAL kon je hiervan niet echt profiteren als ZZP'er. iDEAL werkt vooral voor webshops met automatische checkouts.
-
-Maar Wero introduceert Request-to-Pay. En dat verandert het spelletje voor dienstverleners.
+Wero introduceert iets nieuws: Request-to-Pay. Een betaalverzoek dat rechtstreeks in de bankapp van je klant verschijnt. Handig voor dienstverleners die niet met een webshop-checkout werken.
 
 ## Wat is Request-to-Pay?
 
-Request-to-Pay is vrij simpel: je stuurt een betaalverzoek rechtstreeks naar de bankapp van je klant.
+Request-to-Pay is vrij simpel: je stuurt een betaalverzoek naar de bankapp van je klant. Niet via e-mail, niet via een betaalpagina, maar direct in de app waar je klant toch al zijn bankzaken regelt.
 
-De klant ziet de betaalmogelijkheid niet op een website of betaalpagina. Het verschijnt direct in zijn bankapp. Met alle factuurgegevens erin: bedrag, omschrijving, je rekeningnummer, alles.
-
-De klant klikt "accepteren", bevestigt met zijn pincode of vingerafdruk, klaar. Het geld gaat rechtstreeks naar je rekening.
-
-## Waarom is dit beter dan een normale factuur?
-
-Als ZZP'er werk je waarschijnlijk nu zo: je stuurt een factuur via e-mail of een factuurplatform. De klant moet dan handmatig overmaken.
-
-Wat kan misgaan:
-- E-mail belandt in spam
-- Klant vergeet het
-- Klant voert je rekeningnummer verkeerd in
-- Je moet herinneren, en dat voelt onprettig
-
-Met Request-to-Pay stuur je een direct verzoek naar de bankapp. De klant kan het niet missen. Het staat daar, in de app waar hij toch al zit.
-
-Bovendien: je gegevens staan al in het verzoek. De klant kan niet per ongeluk geld naar het verkeerde rekeningnummer sturen.
+De klant ziet het verzoek met alle gegevens erbij: bedrag, omschrijving, je rekeningnummer. Hij klikt "accepteren", bevestigt met zijn pincode of vingerafdruk, klaar. Het geld gaat rechtstreeks naar je rekening.
 
 ## Hoe werkt het in de praktijk?
 
-Stel je bent copywriter en je hebt zojuist een klus afgerond voor een bedrijf.
+Stel je bent copywriter en je hebt net een klus afgerond.
 
-Nu stuur je normaal een factuur. Met Request-to-Pay stuur je in plaats daarvan een betaalverzoek via je bank (of je boekhoudsoftware, meer daarover later).
+Nu stuur je normaal een factuur via e-mail of via je boekhoudprogramma. Met Request-to-Pay stuur je in plaats daarvan een betaalverzoek via je bank of je boekhoudsoftware.
 
-Dit verschijnt in de bankapp van je klant. Hij ziet:
+Dit verschijnt in de bankapp van je klant:
 - Je naam
 - Het bedrag (€1.200)
 - De omschrijving (Copywriting Q1 2026)
 - Een knop "Accepteren"
 
-Hij klikt, bevestigt, klaar. Het geld staat hetzelfde moment op je rekening.
+Klant klikt, bevestigt, klaar. Geen handmatig overboeking, geen rekeningnummer overtypen.
 
-Geen gedoe, geen e-mail die weggegooid wordt, geen herinnering nodig.
+## Wat maakt het handig?
 
-## De voordelen voor ZZP'ers
+### Minder wachten
 
-### Minder wachten op betaling
+Het klassieke facturatieproces: je stuurt een factuur op maandag. Klant ziet het dinsdag. Overweegt het woensdag. Denkt er donderdag nog eens aan. Betaalt vrijdag. Met een beetje pech pas de maandag erna.
 
-Zonder Request-to-Pay: je stuurt factuur op maandag. Klant ziet het dinsdag. Overweegt het woensdag. Betaalt vrijdag. De datum waarop jij het geld daadwerkelijk ontvangt? Dat hangt af van zijn bank.
+Met Request-to-Pay staat het verzoek direct in de bankapp. De stap van "factuur ontvangen" naar "betaling gedaan" wordt een stuk korter.
 
-Met Request-to-Pay: je stuurt verzoek, klant ziet het meteen en kan direct betalen.
+### Minder herinneringen sturen
 
-Dit scheelt dagen.
-
-### Minder herinneringen versturen
-
-Je kent het. Twee weken voorbij. Geen betaling. Je e-mailt "Heb je mijn factuur ontvangen?" En je voelt je schuldig.
-
-Met Request-to-Pay staat het verzoek in de app. De klant ziet het iedere dag als hij inlogt.
-
-Veel minder ongemakkelijk voor jou, en minder storend voor de klant.
+Niemand stuurt graag een herinnering. Met Request-to-Pay staat het verzoek in de bankapp, waar je klant het ziet wanneer hij inlogt. Dat maakt het voor allebei iets makkelijker.
 
 ### Betere administratie
 
-Dit is het underrated voordeel.
-
-Stel je werkt met Moneybird of Wave voor je boekhouding. Je stuurt een factuur, klant betaalt handmatig, en jij moet later handmatig in je boekhoudingsoftware aangeven dat deze factuur betaald is.
-
-Met Request-to-Pay kan je boekhoudsoftware automatisch zien dat de betaling is binnengekomen. Geen handmatig geklik meer.
-
-Dit scheelt tijd, en je hebt minder kans op fouten.
+Als je met Moneybird of een ander boekhoudprogramma werkt, kan je boekhoudsoftware automatisch zien dat de betaling is binnengekomen. Geen handmatig koppelen van banktransacties aan facturen. Scheelt je dat kwartiertje per week dat je nu in je bankafschriften zit te puzzelen.
 
 ### Internationale klanten
 
-Dit is nieuw. Request-to-Pay werkt binnenkort ook voor Duitse, Belgische en Franse klanten.
+Request-to-Pay werkt straks ook voor Duitse, Belgische en Franse klanten. Werk je als ontwerper of consultant voor klanten over de grens? Zij betalen via hun eigen bankapp, net als een Nederlandse klant. Geen aparte internationale transfers.
 
-Werkt je als ontwerper voor klanten over de grens? Nu kunnen zij betalen alsof het een Nederlandse betaling is. Geen aparte internationale transfers, geen extra kosten.
+## Wanneer is het beschikbaar?
 
-## Wanneer is Request-to-Pay beschikbaar?
+Request-to-Pay voor Wero komt waarschijnlijk eind 2026 of begin 2027. Je kunt het dus nog niet gebruiken. Maar het is fijn om te weten dat het eraan komt.
 
-Request-to-Pay voor Wero komt waarschijnlijk eind 2026 of begin 2027.
-
-Je kunt het dus nog niet gebruiken. Maar het is goed om op je radar te hebben, want zodra het beschikbaar is, verandert de betaaldynamica voor ZZP'ers best wel.
-
-## Hoe stuur je Request-to-Pay?
-
-Dit hangt af van hoe je factureert.
+## Hoe ga je het straks gebruiken?
 
 ### Via je boekhoudsoftware
 
-Als je Moneybird, Wave of een ander platform gebruikt, krijgen zij waarschijnlijk een update met Request-to-Pay-functionaliteit.
-
-Dan is het supersimpel: je maakt je factuur aan zoals altijd, en in plaats van "Verstuur als PDF via e-mail" kies je "Stuur Request-to-Pay."
-
-Done.
+Als je Moneybird, Wave of een ander platform gebruikt, krijgen zij waarschijnlijk een update met Request-to-Pay. Dan maak je je factuur aan zoals altijd, en kies je "Stuur Request-to-Pay" in plaats van "Verstuur als PDF."
 
 ### Via je bank
 
-Sommige banken zullen Request-to-Pay direct ondersteunen. Je logt in je bankapp, gaat naar "Betalingsverzoeken" en stuurt een verzoek naar de klant.
-
-Dit is iets geavanceerder dan via een factuurplatform, maar niet moeilijk.
+Sommige banken gaan Request-to-Pay direct ondersteunen. Je logt in je bankapp, gaat naar betalingsverzoeken, en stuurt een verzoek naar je klant.
 
 ### Via een payment provider
 
-Bedrijven als Mollie en Stripe zullen Request-to-Pay waarschijnlijk ook ondersteunen. Dan kun je het integreren in je eigen website of app.
+Mollie en Stripe zullen Request-to-Pay waarschijnlijk ook ondersteunen. Handig als je het wilt integreren in je eigen website.
 
-## Request-to-Pay vs. Automatische incasso
+## Request-to-Pay vs. SEPA-incasso
 
-Je denkt nu misschien: "Ik gebruik al SEPA-incasso, waarom zou ik overstappen?"
+SEPA-incasso is nuttig voor terugkerende betalingen zoals maandelijkse abonnementen. Maar voor eenmalige facturen is het omslachtig: papieren handtekeningen, 5 werkdagen wachttijd, en meer formulieren dan je zou verwachten voor iets dat "automatisch" heet.
 
-SEPA-incasso is nuttig voor terugkerende betalingen (maandelijkse abonnementen). Maar voor eenmalige facturen is het omslachtig (papieren handtekeningen, 5 werkdagen wachttijd).
+Request-to-Pay is beter geschikt voor eenmalige facturen:
+- Het is direct
+- De klant geeft actief toestemming
+- Geen papierwerk
 
-Request-to-Pay is beter voor eenmalige facturen van dienstverleners, omdat:
-- Het instant is
-- De klant meer controle heeft (hij geeft actief toestemming)
-- Geen papierwerk nodig
-
-SEPA-incasso blijft nuttig voor abonnementen. Request-to-Pay is gewoon beter voor individuele facturen.
+SEPA-incasso blijft nuttig voor abonnementen. Request-to-Pay vult het aan voor losse facturen.
 
 ## Wat je nu kunt doen
 
 Eigenlijk niets specifieks. Request-to-Pay is nog niet live.
 
-Maar wel: houd je boekhoudsoftware in de gaten. Mollie en je bank zullen aankondigen wanneer het beschikbaar is.
-
-En als het beschikbaar komt, wees een van de eersten om het uit te proberen. Je klanten zullen het waarderen.
-
-## Dit verandert meer dan je denkt
-
-Voor ZZP'ers voelt dit misschien als een klein feature. Maar eigenlijk geeft het je superkrachten.
-
-Je bent niet meer afhankelijk van klanten die je e-mails lezen. Je bent niet meer afhankelijk van hun snelheid om over te maken. Je gestuurt een verzoek, ze zien het direct, ze kunnen meteen betalen.
-
-Dit scheelt je niet alleen tijd. Het scheelt je ook stress.
-
-En dat is waarschijnlijk het echte voordeel van Request-to-Pay.
+Houd de updates van je boekhoudsoftware en je bank in de gaten. Zodra het beschikbaar is, is het waarschijnlijk een kwestie van inschakelen.
 
 ---
 
-Wil je meer weten over hoe Wero werkt voor ZZP'ers? Lees [hoe de overgang van iDEAL naar Wero werkt](/blog/ideal-wordt-wero/), of bekijk [wat Wero gaat kosten](/blog/wero-kosten-transactiekosten/).
+Meer over Wero? Lees [hoe de overgang van iDEAL naar Wero werkt](/blog/ideal-wordt-wero/), bekijk [de 7 verschillen tussen iDEAL en Wero](/blog/wero-vs-ideal-verschillen/), of lees [wat Wero gaat kosten](/blog/wero-kosten-transactiekosten/).
 
-Bij KNAP GEMAAKT. helpen we ZZP'ers met websites die automatisch klanten trekken en administratie vereenvoudigen. Wil je een website die je tijd bespaard? [Laten we even sparren](/contact/) over wat voor jou mogelijk is.
+Heb je vragen? [Plan gerust een gesprek](/aanvragen/) en ik denk met je mee.
