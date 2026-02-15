@@ -59,6 +59,18 @@ export const blogPosts: BlogPostMeta[] = [
 		shortTitle: "€500 vs €5000",
 		publishDate: "2026-02-03",
 	},
+	{
+		slug: "wero-vs-ideal-verschillen",
+		title: "Wero vs iDEAL: De 7 belangrijkste verschillen",
+		shortTitle: "Wero vs iDEAL",
+		publishDate: "2026-02-12",
+	},
+	{
+		slug: "wero-request-to-pay-zzp",
+		title: "Request-to-Pay met Wero: Sneller betaald worden als ZZP'er",
+		shortTitle: "Wero Request-to-Pay",
+		publishDate: "2026-02-13",
+	},
 ];
 
 export function getAllBlogPosts(): BlogPostMeta[] {
