@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import availabilityConfig from '../../config/availability.json';
+import availabilityConfig from '../../../config/availability.json';
 
 interface Env {
   knapgemaakt_bookings: D1Database;

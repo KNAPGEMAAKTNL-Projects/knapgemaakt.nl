@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { createBooking } from '../../lib/create-booking';
+import { createBooking } from '../../../lib/create-booking';
 
 interface Env {
   knapgemaakt_bookings: D1Database;
