@@ -498,7 +498,7 @@ export const cities: Record<string, CityData> = {
 	utrecht: {
 		name: "Utrecht",
 		slug: "utrecht",
-		region: "Utrecht",
+		region: "Regio Utrecht",
 		population: "360.000 inwoners",
 		nearbyAreas: ["De Bilt", "Zeist", "Bunnik", "Maarssen"],
 		landmarks: "Domtoren, Oudegracht, Neude",
