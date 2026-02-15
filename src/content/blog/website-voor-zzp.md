@@ -8,152 +8,116 @@ image: "/assets/blog/website-voor-zzp.webp"
 imageAlt: "ZZP'er werkt aan zijn professionele website op laptop"
 ---
 
-Je bent ZZP'er. Je hebt klanten, je doet goed werk, en je vraagt je af: heb ik eigenlijk een website nodig?
+Je bent ZZP'er. Je hebt klanten, je doet goed werk, en ergens op je to-do lijst staat al een tijdje: "iets doen met website." Waarschijnlijk ergens tussen "boekhouding bijwerken" en "eindelijk die ene factuur sturen."
 
-Misschien heb je nu een LinkedIn-profiel en dat werkt prima. Of je krijgt al je klanten via mond-tot-mondreclame. Waarom zou je dan geld uitgeven aan een website?
+Dit artikel helpt je uitzoeken of een website voor jou zin heeft, wat het kost, en hoe je het aanpakt als je besluit om ervoor te gaan.
 
-Dat is een terechte vraag. En het antwoord is genuanceerder dan "ja, iedereen moet een website hebben." Soms heb je er meer aan dan je denkt. Soms is het nog niet nodig. In dit artikel help ik je dat uitzoeken.
+## Heb je een website nodig?
 
-## Wanneer een website wél zin heeft
+Hangt ervan af. Niet het meest spannende antwoord, maar wel het eerlijkste.
 
-Een website is geen doel op zich. Het is een middel. De vraag is: welk probleem lost het voor jou op?
+Een website is een middel, geen doel. De vraag is: wat zou het voor jou oplossen?
 
-**Je wilt vindbaar zijn voor nieuwe klanten.** Als mensen zoeken op "fotograaf Utrecht" of "boekhouder Rivierenland" en jij hebt geen website, besta je niet voor Google. LinkedIn-profielen verschijnen soms in zoekresultaten, maar een eigen website geeft je veel meer controle over wat mensen zien.
+**Je wilt dat nieuwe klanten je kunnen vinden.** Als iemand zoekt op "fotograaf Utrecht" of "boekhouder Rivierenland" en jij hebt geen website, dan kom je simpelweg niet in beeld. Een LinkedIn-profiel helpt, maar een eigen website geeft je meer ruimte om te laten zien wat je doet.
 
-**Je wilt professioneel overkomen.** Een potentiële klant googelt je naam. Wat vindt die? Een LinkedIn-pagina die eruitziet als die van duizend anderen? Of een eigen website die laat zien wie je bent en wat je doet? Eerste indrukken tellen.
+**Je wilt een plek die van jou is.** LinkedIn kan morgen zijn algoritme veranderen. Instagram kan je bereik halveren. Met een eigen website ben je van niemand afhankelijk.
 
-**Je wilt niet afhankelijk zijn van één platform.** LinkedIn kan morgen zijn algoritme veranderen. Instagram kan je bereik halveren. Een website is van jou. Niemand kan je bereik inperken of je profiel verbergen.
+**Je wilt het jezelf makkelijker maken.** Een contactformulier, een afsprakenplanner, een overzicht van je diensten. Scheelt een hoop "stuur maar even een mailtje"-gesprekken.
 
-**Je bent klaar met "stuur maar een mailtje."** Met een website kun je een contactformulier, afsprakenplanner of zelfs een offerteaanvraag aanbieden. Dat bespaart je heen-en-weergemail en maakt het makkelijker voor klanten om contact op te nemen.
+En als je net begint en al je klanten via je netwerk binnenkomen? Dan is een website nog geen prioriteit. Focus op je werk, bouw een portfolio op, en kom er later op terug.
 
-## Wanneer je nog geen website nodig hebt
+## Wat kost het?
 
-Als je net begint en je eerste klanten via je netwerk binnenkomen, is een website geen prioriteit. Focus op je werk, bouw een portfolio op, en investeer in een website als je merkt dat je klanten misloopt.
+De prijzen lopen uiteen. Best wel uiteen, eigenlijk.
 
-Ook als je in een branche werkt waar alles via persoonlijke relaties gaat (bepaalde B2B-dienstverlening, interim-management), kan een website minder urgent zijn. Niet onbelangrijk, maar niet je eerste investering.
+**Zelf bouwen met Wix of Squarespace:** €10 tot €30 per maand. Je kiest een template, past kleuren en teksten aan, en je bent online. De investering zit vooral in je tijd: reken op 20 tot 40 uur voor een goed resultaat.
 
-## Wat kost een website voor ZZP'ers?
+**WordPress laten bouwen:** €500 tot €3.000, afhankelijk van wat je nodig hebt. Daar komen maandelijkse kosten bij voor hosting (€5 tot €30) en onderhoud.
 
-De prijzen lopen uiteen. Erg uiteen.
+**Maatwerk website bij KNAP GEMAAKT.:** vanaf €495, eenmalig. Inclusief design, teksten en hosting. [In mijn prijsgids](/blog/website-laten-maken-kosten/) leg ik uit waar die prijsverschillen vandaan komen.
 
-Een Wix- of Squarespace-website bouw je zelf voor €10 tot €30 per maand. Dat klinkt goedkoop, maar je betaalt met je tijd. En de website ziet er vaak uit als een template, omdat het een template is.
-
-Een WordPress-website laten bouwen kost €500 tot €3.000, afhankelijk van de complexiteit. Daar komen maandelijkse kosten bij voor hosting (€5 tot €30) en onderhoud.
-
-Een maatwerk website begint bij KNAP GEMAAKT. vanaf €495 (eenmalig). Inclusief design, teksten en hosting. [In mijn prijsgids](/blog/website-laten-maken-kosten/) leg ik precies uit waar die prijsverschillen vandaan komen.
-
-Het verschil tussen €500 en €5.000 zit vooral in hoe uniek het design is, of de teksten worden geschreven, en hoeveel functionaliteit je nodig hebt. [Dit artikel over prijsverschillen](/blog/website-500-of-5000-verschil/) legt dat in detail uit.
+Het verschil tussen €500 en €5.000 zit in hoe uniek het design is, of de teksten worden geschreven, en hoeveel functionaliteit erbij komt. [Dit artikel](/blog/website-500-of-5000-verschil/) legt dat in detail uit.
 
 ## Zelf maken of laten maken?
 
-Dit is de grote vraag. En het hangt af van twee dingen: je tijd en je vaardigheden.
+Twee vragen die helpen:
 
-### Zelf maken
+**Heb je er tijd voor?** Zelf een website bouwen kost al snel een paar volle werkdagen. Dat is tijd die je niet aan je klanten besteedt. Als je dat prima vindt, ga ervoor. Als de gedachte alleen al vermoeiend is, dan weet je het antwoord eigenlijk al.
 
-Platforms als Wix en Squarespace maken het makkelijk om een website in elkaar te klikken. Je kiest een template, past de kleuren aan, vult je teksten in, klaar.
+**Vind je het leuk?** Sommige mensen vinden het gewoon leuk om met hun website te puzzelen. Kleurtjes kiezen, teksten schrijven, schuiven met blokken. Als jij dat bent, dan is zelf bouwen prima. Het hoeft niet perfect te zijn.
 
-De voordelen: het is goedkoop en je hebt volledige controle.
+Bij KNAP GEMAAKT. is een website klaar in 7 dagen. Je levert je logo en wat foto's aan, en ik regel de rest. Maar zelf bouwen is net zo'n valide keuze. [Meer over de verschillende opties](/blog/wordpress-vs-moderne-alternatieven/) lees je hier.
 
-De nadelen: reken op 20 tot 40 uur voor iets fatsoenlijks, je bent gebonden aan het platform, en het resultaat ziet er vaak generiek uit. [Lees meer over de nadelen van platforms](/blog/wordpress-vs-moderne-alternatieven/) als je hier twijfelt.
+## Wat zet je erop?
 
-En dan is er nog SEO. Een mooi uitziende website die niet vindbaar is in Google, is een dure hobby. De technische kant van vindbaarheid (laadsnelheid, structuur, meta-tags) is lastig om zelf goed te doen als je er geen ervaring mee hebt.
+Dit is waar het vaak ingewikkeld voelt, maar dat hoeft het niet te zijn. Vijf dingen, meer heb je niet nodig:
 
-### Laten maken
+### 1. Wat je doet, in gewone taal
 
-Een professional bouwt je website sneller, met betere techniek en een uniek design. De investering is hoger, maar je bespaart tientallen uren die je in je bedrijf kunt steken.
+"Ik ben copywriter en schrijf webteksten voor kleine bedrijven." Dat is duidelijk. "Ik lever contentoplossingen voor het MKB." Dat is een raadsel.
 
-Bij KNAP GEMAAKT. is een website klaar in 7 dagen. Inclusief teksten, design en hosting. Je levert je logo en wat foto's aan, en ik regel de rest. Geen gedoe met plugins, updates of hosting-accounts.
-
-De eerlijke waarheid: als je van knutselen houdt en tijd over hebt, kun je prima zelf een website bouwen. Maar als je liever bezig bent met je vak, is uitbesteden de slimmere investering.
-
-## Wat moet er op je ZZP-website staan?
-
-Houd het simpel. Een goede ZZP-website heeft vijf dingen:
-
-### 1. Wie je bent en wat je doet
-
-Klinkt vanzelfsprekend, maar veel websites zijn hier vaag over. "Ik help bedrijven groeien met innovatieve oplossingen." Wat doe je dan precies?
-
-Wees concreet. "Ik ben copywriter en schrijf webteksten voor kleine bedrijven" is tien keer beter dan "Ik lever contentoplossingen voor het MKB."
+Schrijf het op zoals je het aan iemand op een verjaardag zou uitleggen.
 
 ### 2. Je werk
 
-Laat zien wat je gedaan hebt. Voor een fotograaf is dat een portfolio. Voor een consultant zijn het cases of referenties. Voor een loodgieter zijn het foto's van projecten en reviews van klanten.
-
-Mensen willen bewijs zien. Niet alleen woorden over hoe goed je bent, maar resultaten.
+Laat zien wat je gedaan hebt. Voor een fotograaf is dat een portfolio. Voor een consultant zijn het cases. Voor een loodgieter zijn het foto's van projecten en reviews. Het maakt niet uit hoe je het noemt, als mensen maar kunnen zien wat je in huis hebt.
 
 ### 3. Hoe mensen je kunnen bereiken
 
-Een contactformulier, je telefoonnummer, je e-mailadres. Maak het makkelijk. Hoe meer stappen iemand moet zetten om contact op te nemen, hoe meer mensen afhaken.
+Een contactformulier, je telefoonnummer, je e-mailadres. Houd het simpel. Als je veel belt met klanten, zet je nummer lekker groot neer zodat mensen er op mobiel direct op kunnen tikken.
 
-Als je veel telefonisch contact hebt, zet je nummer groot en klikbaar neer. Mobiele bezoekers kunnen dan direct bellen.
+### 4. Wat het kost
 
-### 4. Wat het kost (als dat kan)
+Niet altijd mogelijk, maar als het kan: doe het. "Vanaf €75 per uur" of "Projecten vanaf €500" geeft mensen een idee. Het helpt ook om gesprekken te voorkomen die nergens toe leiden omdat het budget niet matcht.
 
-Niet elke ZZP'er kan prijzen op de website zetten. Maar als het kan, doe het. "Vanaf €75 per uur" of "Projecten vanaf €500" geeft mensen een idee. Het filtert ook de mensen die je budget niet hebben, wat je tijd bespaart.
+### 5. Iets over jezelf
 
-### 5. Iets persoonlijks
+Een foto, een kort verhaaltje over waarom je doet wat je doet. Als ZZP'er bén jij je bedrijf. Mensen willen weten met wie ze te maken krijgen. Je hoeft geen roman te schrijven, een paar zinnen zijn al genoeg.
 
-Een foto van jezelf, een kort verhaal over waarom je doet wat je doet. Mensen werken met mensen, niet met bedrijven. Zeker als ZZP'er is jouw persoonlijkheid je grootste onderscheidend vermogen.
+## One-pager of meerdere pagina's?
 
-## De technische basis
+Als ZZP'er heb je vaak niet genoeg te vertellen voor tien pagina's. En dat is prima.
 
-Je hoeft hier niet alles over te weten, maar een paar dingen zijn belangrijk.
+Een one-pager is precies wat het klinkt: één pagina, van boven naar beneden. Wie je bent, wat je doet, je werk, contact. Compact en overzichtelijk.
 
-**Mobiel-vriendelijk.** Meer dan de helft van je bezoekers komt via telefoon. Als je website op mobiel niet goed werkt, verlies je de helft van je potentiële klanten.
-
-**Snel.** Een website die langer dan 3 seconden laadt, verliest bezoekers. Google straft trage websites af in de zoekresultaten. Dit is een van de redenen waarom ik geen WordPress gebruik, maar statische websites bouw die in minder dan een seconde laden.
-
-**SSL (het groene slotje).** Dit is tegenwoordig standaard, maar check het even. Zonder SSL markeert Google je website als "Niet veilig." Dat schrikt bezoekers af.
-
-**Vindbaar in Google.** De technische SEO-basis: goede paginatitels, meta-omschrijvingen, snelle laadtijden, een sitemap. Dit is iets waar een professional je veel tijd mee bespaart.
-
-## One-pager of volledige website?
-
-Als ZZP'er heb je vaak niet genoeg content voor tien pagina's. En dat is prima.
-
-Een one-pager is een website op één pagina. Je scrolt van boven naar beneden en ziet alles: wie je bent, wat je doet, je werk, contact. Het is compact, overzichtelijk en goedkoop.
-
-Een volledige website met meerdere pagina's is beter als je:
+Meerdere pagina's zijn handig als je:
 - Veel verschillende diensten aanbiedt
-- Een blog wilt voor vindbaarheid
-- Uitgebreide cases of portfolio's hebt
-- In meerdere steden wilt scoren in Google
+- Een blog wilt bijhouden
+- Uitgebreide portfolio's of cases hebt
+- In meerdere steden vindbaar wilt zijn in Google
 
-Voor de meeste startende ZZP'ers is een one-pager een prima startpunt. Je kunt later altijd uitbreiden.
+Voor de meeste startende ZZP'ers is een one-pager een fijn startpunt. Later uitbreiden kan altijd.
 
-## Veelgemaakte fouten
+## Een paar technische dingen
 
-**Te veel tekst.** Niemand leest drie alinea's over je visie. Houd het kort en concreet.
+Je hoeft hier geen expert in te worden, maar een paar dingen zijn handig om te weten:
 
-**Geen call-to-action.** Je bezoeker denkt "interessant" en klikt weg. Zorg dat er op elke pagina een duidelijke volgende stap is: bel me, mail me, plan een gesprek.
+**Mobiel.** Meer dan de helft van je bezoekers komt via telefoon. Een website die op mobiel goed werkt is eigenlijk gewoon de standaard.
 
-**Verouderde informatie.** Een website met "Prijzen 2023" of een blogpost van twee jaar geleden straalt niet uit dat je actief en professioneel bezig bent.
+**Snelheid.** Hoe sneller je website laadt, hoe fijner de ervaring voor je bezoeker. En Google geeft snellere websites een streepje voor in zoekresultaten. De websites die ik bouw laden in minder dan een seconde, dat is een van de redenen dat ik voor statische websites kies.
 
-**Te veel focussen op jezelf.** Je website gaat niet over jou, maar over wat jij voor je klant kunt betekenen. Draai de boodschap om: niet "Ik heb 10 jaar ervaring" maar "Na 10 jaar weet ik precies hoe ik jouw probleem oplos."
+**SSL.** Dat is het slotje in je browserbalk. De meeste hosting-partijen regelen dit automatisch. Als je een website laat bouwen, is het standaard inbegrepen.
 
-## Wat levert een website op?
+**Vindbaarheid.** De technische kant van Google: paginatitels, omschrijvingen die in zoekresultaten verschijnen, en een sitemap (een soort inhoudsopgave van je website die Google helpt om al je pagina's te vinden). Als je een website laat bouwen, wordt dit voor je geregeld.
 
-Dit is lastig in harde cijfers uit te drukken, want het hangt af van je branche en je marketinginspanningen. Maar een paar dingen zijn vrij universeel:
+## Wat levert het op?
 
-**Meer vertrouwen.** Klanten die je googelen en een professionele website vinden, nemen je serieuzer. Dat klinkt oppervlakkig, maar het is een realiteit.
+Hangt af van je branche en hoeveel je doet met je website. Maar een paar dingen hoor ik vaak terug:
 
-**Meer aanvragen.** Een website die 24/7 online staat, vangt klanten op die 's avonds op de bank zitten te googelen. Jij slaapt, je website werkt.
+**Minder uitleggen.** Een goede website beantwoordt de meest gestelde vragen al voordat iemand belt. Scheelt in kennismakingsgesprekken.
 
-**Minder uitleggen.** Een goede website beantwoordt de meest gestelde vragen al voordat iemand belt. Dat bespaart je tijd in kennismakingsgesprekken.
+**Aanvragen op rare tijden.** Je website staat 24/7 aan. Klanten die 's avonds op de bank zitten te googelen, kunnen gewoon contact opnemen. Jij merkt het pas de volgende ochtend. Lekker.
 
-**Betere klanten.** Serieuze klanten willen je website zien voordat ze contact opnemen. Door duidelijk te zijn over wat je doet (en wat het kost), trek je klanten aan die bij je passen.
+**Klanten die beter passen.** Door duidelijk te zijn over wat je doet en wat het kost, trek je vanzelf mensen aan die bij je passen. Bespaart allebei tijd.
 
-## Aan de slag
+## Beginnen
 
 Als je besluit dat een website zinvol is, hoeft het niet ingewikkeld te zijn.
 
-Begin met nadenken over wat je wilt bereiken. Meer klanten via Google? Professioneler overkomen? Een centrale plek voor je portfolio?
+Bedenk wat je wilt bereiken. Meer klanten via Google? Professioneler overkomen? Een centrale plek voor je portfolio?
 
-Verzamel je materiaal: logo, foto's van je werk, een lijst van je diensten. Heb je nog niet alles? Geen probleem. Begin met wat er is.
-
-En kies dan: zelf bouwen of laten maken. Beide zijn prima, zolang het resultaat je helpt bij wat je wilt bereiken.
+Verzamel je materiaal: logo, foto's van je werk, een lijst van je diensten. Heb je nog niet alles? Begin met wat er is. Het hoeft niet in één keer perfect. Eigenlijk is het beter als het dat niet is, want dan kun je het later aanpassen op basis van wat je leert.
 
 ---
 
-Heb je vragen over je website als ZZP'er? Bij KNAP GEMAAKT. bouw ik websites voor ZZP'ers en kleine ondernemers, klaar in 7 dagen. [Plan gerust een gesprek](/aanvragen/) als je wilt sparren over wat voor jou werkt.
+Wil je sparren over wat voor jouw situatie werkt? [Plan gerust een gesprek](/aanvragen/) en ik denk met je mee.

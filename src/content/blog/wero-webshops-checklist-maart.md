@@ -1,6 +1,6 @@
 ---
-title: "Wero voor webshops: 5 dingen die je voor 31 maart moet regelen"
-description: "Op 31 maart 2026 moeten alle webshops het nieuwe iDEAL | Wero logo tonen. In dit artikel vind je een praktische checklist met de 5 dingen die je moet regelen."
+title: "Wero voor webshops: 5 dingen die je voor 31 maart kunt regelen"
+description: "Op 31 maart 2026 tonen webshops het nieuwe iDEAL | Wero logo. Een praktische checklist met 5 stappen om de overgang soepel te laten verlopen."
 publishDate: 2026-01-30
 author: "Yannick Veldhuisen"
 tags: ["Wero", "iDEAL", "Webshop", "Betalingen"]
@@ -8,106 +8,86 @@ image: "/assets/blog/wero-webshop-checklist.webp"
 imageAlt: "Webshophouders bekijken de Wero checklist voor de overgang van iDEAL"
 ---
 
-Op 31 maart 2026 moeten alle Nederlandse webshops het gecombineerde "iDEAL | Wero" logo tonen in hun checkout. In [mijn vorige artikel over de iDEAL naar Wero overgang](/blog/ideal-wordt-wero) legde ik uit wat er verandert en wat hetzelfde blijft. In dit artikel focus ik op wat je concreet moet doen.
+Op 31 maart 2026 tonen Nederlandse webshops het gecombineerde "iDEAL | Wero" logo in hun checkout. In [mijn vorige artikel over de iDEAL naar Wero overgang](/blog/ideal-wordt-wero/) legde ik uit wat er verandert en wat hetzelfde blijft. Dit artikel gaat over de praktische kant: wat kun je doen om er klaar voor te zijn?
 
-Het goede nieuws: voor de meeste webshophouders is dit geen groot project. Je payment provider regelt het meeste automatisch. Maar er zijn een paar dingen die je zelf moet checken.
+Voor de meeste webshops is dit geen groot project. Je payment provider regelt het meeste automatisch. Er zijn een paar dingen die je zelf kunt nakijken.
 
-Hier is je checklist.
+## 1. Kijk of je payment provider het logo automatisch bijwerkt
 
-## 1. Check of je payment provider het logo automatisch bijwerkt
+Als je Mollie, Stripe, Adyen of een andere grote payment provider gebruikt met hun hosted checkout (waar je klant naar hún betaalpagina wordt doorgestuurd), dan wordt het logo waarschijnlijk automatisch aangepast. In dat geval hoef je aan je checkout zelf niks te doen.
 
-Dit is de eerste en belangrijkste stap, want het bepaalt hoeveel werk je zelf hebt.
+**Hoe je dat checkt:**
 
-Als je Mollie, Stripe, Adyen of een andere grote payment provider gebruikt met hun hosted checkout (waar je klant naar hún betaalpagina wordt doorgestuurd), dan wordt het logo waarschijnlijk automatisch aangepast. Je hoeft dan niets te doen aan je checkout zelf.
+Log in bij je payment provider en zoek naar informatie over de Wero-migratie. Bij Mollie vind je dit in hun documentatie, bij Stripe in hun support artikelen.
 
-**Zo check je dit:**
+Twijfel je? Stuur ze een berichtje. "Wordt het iDEAL logo automatisch bijgewerkt naar het iDEAL | Wero logo in mijn checkout?" Dat is genoeg.
 
-Log in bij je payment provider en zoek naar informatie over de Wero-migratie. Bij Mollie vind je dit in hun documentatie, bij Stripe in hun support artikelen. De meeste providers hebben specifieke pagina's hierover gepubliceerd.
+## 2. Kijk waar het iDEAL-logo nog meer staat
 
-Twijfel je? Stuur ze een berichtje. Een simpele vraag als "Wordt het iDEAL logo automatisch bijgewerkt naar het iDEAL | Wero logo in mijn checkout?" is genoeg.
+Je checkout wordt misschien automatisch bijgewerkt, maar het iDEAL-logo staat vaak ook op andere plekken:
 
-## 2. Zoek hardcoded iDEAL-logo's op je eigen site
-
-Hier gaat het vaak mis. Je checkout wordt misschien automatisch bijgewerkt, maar het iDEAL-logo staat vaak ook op andere plekken. Denk aan:
-
-- **Je footer** (waar veel webshops betaalmethodes tonen)
+- **Je footer** (waar betaalmethodes worden getoond)
 - **Een "hoe betalen" of "verzending & betaling" pagina**
 - **E-mail templates** (orderbevestigingen, verzendbevestigingen)
 - **PDF facturen**
 - **Je FAQ pagina**
 
-Loop je website even door en noteer waar je het iDEAL-logo tegenkomt. Die afbeeldingen moet je vervangen door de nieuwe co-branded versie.
+Even je website doorlopen en noteren waar je het logo tegenkomt. Die afbeeldingen kun je dan vervangen door de nieuwe co-branded versie.
 
 **Waar vind je het nieuwe logo?**
 
-Het "iDEAL | Wero" logo is beschikbaar via je payment provider. Mollie, Stripe en Adyen bieden allemaal asset packs aan met de nieuwe logo's in verschillende formaten (SVG, PNG). Check hun documentatie of vraag het op bij hun support.
+Het "iDEAL | Wero" logo is beschikbaar via je payment provider. Mollie, Stripe en Adyen bieden allemaal asset packs aan met de nieuwe logo's in verschillende formaten (SVG, PNG).
 
 ## 3. Update je plugins en integraties
 
-Als je WordPress met WooCommerce gebruikt, of Shopify, Lightspeed of een ander platform: check of je plugins up-to-date zijn.
+Als je WordPress met WooCommerce gebruikt, of Shopify, Lightspeed of een ander platform: kijk even of je plugins up-to-date zijn. Oudere versies laden mogelijk nog de oude logo-assets. Een update naar de nieuwste versie lost dit vaak op.
 
-Oudere versies van payment plugins laden mogelijk nog de oude logo-assets. Een simpele update naar de nieuwste versie lost dit vaak op.
+**WooCommerce:**
 
-**Voor WooCommerce gebruikers:**
+De Mollie for WooCommerce plugin (versie 7.x en hoger) ondersteunt de nieuwe logo's. Je kunt je plugin versie vinden in WordPress onder Plugins > Geïnstalleerde plugins.
 
-De Mollie for WooCommerce plugin (versie 7.x en hoger) ondersteunt de nieuwe logo's. Check even je plugin versie in WordPress onder Plugins > Geïnstalleerde plugins. Is je versie ouder? Update dan eerst naar de nieuwste versie.
+**Shopify:**
 
-**Voor Shopify gebruikers:**
+Betaalopties worden beheerd via je Shopify dashboard onder Instellingen > Betalingen. Als je Mollie of een andere payment app gebruikt, kijk dan of die app recent is bijgewerkt.
 
-Betaalopties worden beheerd via je Shopify dashboard onder Instellingen > Betalingen. Als je Mollie of een andere payment app gebruikt, check dan of die app recent is bijgewerkt.
+## 4. Maak een overzichtje voor jezelf
 
-## 4. Noteer wat je wél en niet automatisch krijgt
+Klinkt misschien overbodig, maar het is handig om even op een rij te zetten wat automatisch gaat en wat je zelf aanpast. Scheelt je het gevoel dat je iets vergeet.
 
-Dit klinkt misschien overbodig, maar het is handig om even voor jezelf op papier te zetten wat er automatisch gebeurt en wat je zelf moet doen.
-
-Een simpel lijstje:
-
-| Onderdeel | Automatisch? | Zelf doen? |
-|-----------|--------------|------------|
+| Onderdeel | Automatisch? | Zelf aanpassen? |
+|-----------|--------------|-----------------|
 | Checkout betaalpagina | Waarschijnlijk ja | Controleren |
 | Footer logo's | Nee | Ja |
 | E-mail templates | Nee | Ja |
 | Informatiepagina's | Nee | Ja |
 | Plugin versies | Nee | Update checken |
 
-Als je met meerdere mensen aan je webshop werkt, deel dit lijstje dan. Zo weet iedereen wat er moet gebeuren.
+Als je met meerdere mensen aan je webshop werkt, is zo'n lijstje ook handig om te delen.
 
-## 5. Begin met voorbereiden op chargebacks
+## 5. Administratie op orde
 
-Dit is geen directe actie voor 31 maart, maar wel iets om nu al in je achterhoofd te houden.
+Met Wero kunnen klanten betalingen betwisten, tot 120 dagen na de transactie. Bij iDEAL was een betaling definitief zodra deze was gedaan. In [mijn artikel over de Wero-overgang](/blog/ideal-wordt-wero/) leg ik uit hoe dit disputemechanisme werkt.
 
-Met Wero kunnen klanten betalingen betwisten, tot 120 dagen na de transactie. Dit is nieuw. Bij iDEAL was een betaling definitief zodra deze was gedaan. In [mijn artikel over de Wero-overgang](/blog/ideal-wordt-wero) leg ik uit hoe dit disputemechanisme precies werkt.
+In de praktijk komt het erop neer dat je bij een betwisting kunt laten zien dat je geleverd hebt. Dat doe je met:
 
-Dit betekent niet dat je nu opeens met fraude te maken krijgt. Maar het betekent wel dat goede administratie belangrijker wordt. Als een klant een betaling betwist, moet je kunnen aantonen dat je geleverd hebt.
+- Een verzendbevestiging met track & trace
+- Opgeslagen ordergegevens
+- Up-to-date algemene voorwaarden
 
-**Praktisch betekent dit:**
-
-- Verstuur altijd een verzendbevestiging met track & trace
-- Bewaar ordergegevens goed (niet alleen in je webshop, maar ook in een backup)
-- Zorg dat je algemene voorwaarden up-to-date zijn
-
-De meeste webshophouders doen dit al. Maar als je het nog niet deed, is dit een goed moment om het op te pakken.
-
-## Wanneer moet je dit geregeld hebben?
-
-De officiële deadline voor het co-branded logo is 31 maart 2026. Dat geeft je twee maanden vanaf nu.
-
-Mijn advies: plan er een uurtje voor in de komende weken. Loop de checklist door, noteer wat je moet aanpassen, en voer de wijzigingen door. Voor de meeste webshops is dit in een uurtje of twee geregeld.
-
-En als je er niet uitkomt of je hebt een custom integratie: neem dan contact op met je payment provider of je webdeveloper. Zij kunnen je precies vertellen wat er in jouw situatie nodig is.
+Als je dit al bijhoudt (en de kans is groot dat je dat doet), zit je goed. Anders is dit een mooi moment om het in te richten.
 
 ## De korte versie
 
-1. **Check je payment provider** - regelen zij de checkout automatisch?
-2. **Zoek hardcoded logo's** - footer, e-mails, informatiepagina's
-3. **Update je plugins** - nieuwste versies laden de juiste assets
-4. **Maak een lijstje** - wat automatisch, wat zelf?
-5. **Bereid je voor op chargebacks** - goede administratie wordt belangrijker
+1. **Payment provider** — regelen zij de checkout automatisch?
+2. **Logo's op je site** — footer, e-mails, informatiepagina's
+3. **Plugins** — nieuwste versies laden de juiste assets
+4. **Overzichtje** — wat automatisch, wat zelf?
+5. **Administratie** — track & trace en ordergegevens bewaren
 
-Dat is het. Geen rocket science, gewoon even doorlopen.
+Een uurtje werk, misschien twee. En dan kun je het van je to-do lijst strepen. Altijd fijn.
 
 ---
 
-Wil je meer weten over wat Wero precies inhoudt en wat er verder verandert? Lees dan [mijn uitgebreide artikel over de iDEAL naar Wero overgang](/blog/ideal-wordt-wero).
+Wil je meer weten over wat Wero precies inhoudt? Lees dan [mijn uitgebreide artikel over de iDEAL naar Wero overgang](/blog/ideal-wordt-wero/).
 
-Bij KNAP GEMAAKT. bouwen we webshops die automatisch mee-updaten met de nieuwste betaalmethodes via Mollie. Heb je vragen over de Wero-overgang voor jouw webshop? [Plan gerust een gesprek](/contact).
+Bij KNAP GEMAAKT. bouw ik webshops die automatisch mee-updaten met de nieuwste betaalmethodes via Mollie. [Plan gerust een gesprek](/aanvragen/) als je ergens over wilt sparren.

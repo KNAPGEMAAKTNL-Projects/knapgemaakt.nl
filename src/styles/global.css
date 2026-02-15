@@ -178,11 +178,18 @@
 }
 
 /* Lists */
-.blog-content ul,
+.blog-content ul {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
 .blog-content ol {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;
+  list-style-type: decimal;
 }
 
 .blog-content li {
@@ -359,11 +366,18 @@
 }
 
 /* Lists */
-.blog-content-light ul,
+.blog-content-light ul {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
 .blog-content-light ol {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;
+  list-style-type: decimal;
 }
 
 .blog-content-light li {
