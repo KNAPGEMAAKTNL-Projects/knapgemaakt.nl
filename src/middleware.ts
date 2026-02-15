@@ -71,7 +71,6 @@ const LEGACY_PATTERNS = [
   /^\/kralen-en-vilt\/?$/,
   /^\/vazen\/?$/,
   /^\/verslingerd\/?$/,
-  /^\/webdesign-utrecht\/?$/,
 
   // Old tag pages
   /^\/tag\//,

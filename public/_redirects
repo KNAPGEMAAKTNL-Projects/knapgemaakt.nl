@@ -22,20 +22,12 @@
 /blog/zelf-website-maken-of-laten-maken /blog/website-laten-maken-kosten/ 301
 /blog/zelf-website-maken-of-laten-maken/ /blog/website-laten-maken-kosten/ 301
 
-# Removed blog tag pages (410 Gone)
-/blog/tag/tips 410
-/blog/tag/tips/ 410
-/blog/tag/utrecht 410
-/blog/tag/utrecht/ 410
-/blog/tag/wordpress 410
-/blog/tag/wordpress/ 410
-/blog/tag/gids 410
-/blog/tag/gids/ 410
-/blog/tag/maatwerk 410
-/blog/tag/maatwerk/ 410
-/blog/tag/vergelijking 410
-/blog/tag/vergelijking/ 410
+# Removed blog posts (redirect to closest existing content)
+/blog/website-voor-zzp /blog/website-laten-maken-kosten/ 301
+/blog/website-voor-zzp/ /blog/website-laten-maken-kosten/ 301
+/blog/wordpress-vs-moderne-alternatieven /blog/website-500-of-5000-verschil/ 301
+/blog/wordpress-vs-moderne-alternatieven/ /blog/website-500-of-5000-verschil/ 301
 
-# Removed projects (410 Gone)
-/project/schildersbedrijf-visser 410
-/project/schildersbedrijf-visser/ 410
+# Removed projects (redirect to portfolio)
+/project/schildersbedrijf-visser /portfolio/ 301
+/project/schildersbedrijf-visser/ /portfolio/ 301
