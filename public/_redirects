@@ -22,12 +22,6 @@
 /blog/zelf-website-maken-of-laten-maken /blog/website-laten-maken-kosten/ 301
 /blog/zelf-website-maken-of-laten-maken/ /blog/website-laten-maken-kosten/ 301
 
-# Removed blog posts (redirect to closest existing content)
-/blog/website-voor-zzp /blog/website-laten-maken-kosten/ 301
-/blog/website-voor-zzp/ /blog/website-laten-maken-kosten/ 301
-/blog/wordpress-vs-moderne-alternatieven /blog/website-500-of-5000-verschil/ 301
-/blog/wordpress-vs-moderne-alternatieven/ /blog/website-500-of-5000-verschil/ 301
-
 # Removed projects (redirect to portfolio)
 /project/schildersbedrijf-visser /portfolio/ 301
 /project/schildersbedrijf-visser/ /portfolio/ 301

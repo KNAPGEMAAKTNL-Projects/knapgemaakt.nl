@@ -24,19 +24,14 @@ const BLOG_REDIRECTS: Record<string, string> = {
 };
 
 // Removed blog posts that should return 410 Gone
-const REMOVED_BLOG_POSTS = [
-  "/blog/wordpress-vs-moderne-alternatieven",
-  "/blog/website-voor-zzp",
-];
+const REMOVED_BLOG_POSTS: string[] = [];
 
 // Removed tag pages that should return 410 Gone
 const REMOVED_TAG_PAGES = [
   "/blog/tag/tips",
   "/blog/tag/utrecht",
-  "/blog/tag/wordpress",
   "/blog/tag/gids",
   "/blog/tag/maatwerk",
-  "/blog/tag/vergelijking",
 ];
 
 // Removed projects that should return 410 Gone
