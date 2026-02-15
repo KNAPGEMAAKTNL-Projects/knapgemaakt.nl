@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.9.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.8.0...v1.9.0) (2026-02-15)
+
+
+### Features
+
+* add website-voor-zzp and wordpress-vs-moderne-alternatieven blog posts ([#220](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/220)) ([463d729](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/463d729260005f1323b77391fd04cd6ec26c106f))
+* add Wero blog posts 1.6 and 1.7 ([#215](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/215)) ([8779749](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/8779749c5acf14dbdfa19bddc62c29a8bd2f21c5))
+* enhance blog overview with image grid layout ([#221](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/221)) ([6f4a683](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/6f4a683ad75c061d950337f2fc798b699ad16213))
+* rewrite blog posts to match new voice guidelines ([#222](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/222)) ([a07b5c4](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/a07b5c4acc2af9ca59005c639be4937a52eefa4c))
+
+
+### Bug Fixes
+
+* add 301 redirects for removed blog posts and handle webdesign city trailing slashes ([#205](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/205)) ([db960cf](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/db960cfd9a8f98f897566d99060365e8ec9382f7))
+* add 301 redirects for removed blog posts and projects ([#216](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/216)) ([e797e8e](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/e797e8ec70c9c3cb075cdcf563e5a099cb5c5eb3))
+* add 410 Gone responses for removed tag pages and projects ([a79144f](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/a79144f8ac916bfaf2e46d5a27d6b8533fba1235))
+* add Cloudflare _redirects for prerendered page redirects ([#209](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/209)) ([2812f25](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/2812f2525602437fbe63c3372da42d90bbb456b0))
+* correct API route import paths after directory restructure ([#218](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/218)) ([7f1710a](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/7f1710a84a0889e588d9ad6f9f2901cd36586877))
+* remove /website-laten-maken/ from legacy URL patterns ([#211](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/211)) ([c95931f](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/c95931fc1bf7feeee14bbc440d26240ffbf67fc9))
+* remove overly broad /api/ 410 pattern that blocks current API endpoints ([#207](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/207)) ([268d0e8](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/268d0e866c687934858c2eae23c41fac7150f52a))
+* restructure API routes to support trailingSlash: always ([1d56bbd](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/1d56bbd174714b1bec16b2167d918930d2aa0346))
+* **security:** ensure email obfuscation on all pages 🐛 ([#204](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/204)) ([2184109](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/2184109ca60644f5f831df5c921a3ac52c6b53b1)), closes [#203](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/203)
+* **seo:** add trailing slashes to schema/breadcrumb URLs and blog links to footer 🐛 ([#200](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/200)) ([6432052](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/6432052374a5a484c94cf5500e9af299b4ffef15))
+* show Utrecht in footer by aligning region name ([55572a6](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/55572a676726df8be4647934c72abc138b763329))
+
 ## [1.8.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.7.0...v1.8.0) (2026-02-04)
 
 
