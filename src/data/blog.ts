@@ -71,6 +71,18 @@ export const blogPosts: BlogPostMeta[] = [
 		shortTitle: "Wero Request-to-Pay",
 		publishDate: "2026-02-13",
 	},
+	{
+		slug: "website-voor-zzp",
+		title: "Website voor ZZP'ers: Alles wat je moet weten",
+		shortTitle: "Website voor ZZP'ers",
+		publishDate: "2026-02-13",
+	},
+	{
+		slug: "wordpress-vs-moderne-alternatieven",
+		title: "WordPress vs moderne alternatieven: wat is beter voor jouw website?",
+		shortTitle: "WordPress vs alternatieven",
+		publishDate: "2026-02-14",
+	},
 ];
 
 export function getAllBlogPosts(): BlogPostMeta[] {
