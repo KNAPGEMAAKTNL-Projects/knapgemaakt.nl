@@ -32,7 +32,7 @@ Nu het deel dat minder vaak wordt verteld.
 
 WordPress is software die draait op een server. Die software moet bijgehouden worden. WordPress zelf brengt regelmatig updates uit, je theme krijgt updates, en je plugins krijgen updates. Als je die niet installeert, loop je beveiligingsrisico's.
 
-En soms gaat een update mis. Een plugin-update die je website platlegt om 8 uur 's ochtends, dat wil je niet meemaken. Het gebeurt vaker dan je denkt.
+En soms gaat een update mis. Een plugin-update die je website platlegt om 8 uur 's ochtends, bijvoorbeeld. Dat is vervelend, en het komt regelmatig voor.
 
 ### Beveiliging
 

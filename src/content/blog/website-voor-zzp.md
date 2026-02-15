@@ -54,7 +54,7 @@ Platforms als Wix en Squarespace maken het makkelijk om een website in elkaar te
 
 De voordelen: het is goedkoop en je hebt volledige controle.
 
-De nadelen: het kost meer tijd dan je denkt (reken op 20 tot 40 uur voor iets fatsoenlijks), je bent gebonden aan het platform, en het resultaat ziet er vaak generiek uit. [Lees meer over de nadelen van platforms](/blog/wordpress-vs-moderne-alternatieven/) als je hier twijfelt.
+De nadelen: reken op 20 tot 40 uur voor iets fatsoenlijks, je bent gebonden aan het platform, en het resultaat ziet er vaak generiek uit. [Lees meer over de nadelen van platforms](/blog/wordpress-vs-moderne-alternatieven/) als je hier twijfelt.
 
 En dan is er nog SEO. Een mooi uitziende website die niet vindbaar is in Google, is een dure hobby. De technische kant van vindbaarheid (laadsnelheid, structuur, meta-tags) is lastig om zelf goed te doen als je er geen ervaring mee hebt.
 
