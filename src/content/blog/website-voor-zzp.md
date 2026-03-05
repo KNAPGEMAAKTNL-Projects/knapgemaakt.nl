@@ -120,4 +120,4 @@ Verzamel je materiaal: logo, foto's van je werk, een lijst van je diensten. Heb 
 
 ---
 
-Wil je sparren over wat voor jouw situatie werkt? [Plan gerust een gesprek](/aanvragen/) en ik denk met je mee.
+Wil je sparren over wat voor jouw situatie werkt? [Plan gerust een gesprek](/contact/) en ik denk met je mee.

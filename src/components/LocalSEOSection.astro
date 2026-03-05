@@ -26,7 +26,7 @@ function getAreaLink(areaName: string): string | null {
 }
 ---
 
-<section class="bg-canvas py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-grid-light relative overflow-hidden">
+<section class="bg-canvas py-16 md:py-24 px-6 md:px-12 lg:px-16 relative overflow-hidden">
     <div class="max-w-6xl xl:max-w-7xl mx-auto relative z-10">
         <!-- Section Header -->
         <div class="mb-16">
@@ -36,7 +36,7 @@ function getAreaLink(areaName: string): string | null {
                 [ Webdesign in {city.region} ]
             </div>
             <h2
-                class="text-4xl md:text-6xl font-black uppercase tracking-tight leading-none mb-6"
+                class="text-4xl md:text-6xl font-bold uppercase tracking-tight leading-none mb-6"
             >
                 Waarom Kiezen Voor Een
                 <span class="text-electric">Lokale</span> Partner?
@@ -48,7 +48,7 @@ function getAreaLink(areaName: string): string | null {
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 p-6 bg-ink text-canvas">
                 {city.stats.businesses && (
                     <div class="text-center md:text-left">
-                        <div class="text-2xl md:text-3xl font-black text-acid">{city.stats.businesses}</div>
+                        <div class="text-2xl md:text-3xl font-bold text-acid">{city.stats.businesses}</div>
                         <div class="text-xs font-mono uppercase tracking-wider text-canvas/60">Actief in {city.name}</div>
                     </div>
                 )}
@@ -88,7 +88,7 @@ function getAreaLink(areaName: string): string | null {
             <div class="space-y-8">
                 <div>
                     <h3
-                        class="text-2xl font-black uppercase tracking-tight mb-4 flex items-center gap-3"
+                        class="text-2xl font-bold uppercase tracking-tight mb-4 flex items-center gap-3"
                     >
                         <span class="text-electric font-mono text-lg">[01]</span
                         >
@@ -109,7 +109,7 @@ function getAreaLink(areaName: string): string | null {
 
                 <div>
                     <h3
-                        class="text-2xl font-black uppercase tracking-tight mb-4 flex items-center gap-3"
+                        class="text-2xl font-bold uppercase tracking-tight mb-4 flex items-center gap-3"
                     >
                         <span class="text-electric font-mono text-lg">[02]</span
                         >
@@ -132,7 +132,7 @@ function getAreaLink(areaName: string): string | null {
                     </div>
                     <div class="relative z-10">
                         <h3
-                            class="text-2xl font-black uppercase tracking-tight mb-4 flex items-center gap-3"
+                            class="text-2xl font-bold uppercase tracking-tight mb-4 flex items-center gap-3"
                         >
                             <span class="text-acid font-mono text-lg">[03]</span
                             >
@@ -185,7 +185,7 @@ function getAreaLink(areaName: string): string | null {
         <!-- Target Industries (unique per city) -->
         {city.targetIndustries && city.targetIndustries.length > 0 && (
             <div class="mb-16 p-8 bg-[#f5f5f5] border border-ink/5">
-                <h3 class="text-xl font-black uppercase tracking-tight mb-2">
+                <h3 class="text-xl font-bold uppercase tracking-tight mb-2">
                     Websites voor ondernemers in {city.name}
                 </h3>
                 <p class="text-ink/60 text-sm mb-6">
@@ -207,7 +207,7 @@ function getAreaLink(areaName: string): string | null {
         >
             <div>
                 <div
-                    class="text-4xl font-black text-electric mb-3 font-mono tracking-tight"
+                    class="text-4xl font-bold text-electric mb-3 font-mono tracking-tight"
                 >
                     01.
                 </div>
@@ -221,7 +221,7 @@ function getAreaLink(areaName: string): string | null {
             </div>
             <div>
                 <div
-                    class="text-4xl font-black text-electric mb-3 font-mono tracking-tight"
+                    class="text-4xl font-bold text-electric mb-3 font-mono tracking-tight"
                 >
                     02.
                 </div>
@@ -236,7 +236,7 @@ function getAreaLink(areaName: string): string | null {
             </div>
             <div>
                 <div
-                    class="text-4xl font-black text-electric mb-3 font-mono tracking-tight"
+                    class="text-4xl font-bold text-electric mb-3 font-mono tracking-tight"
                 >
                     03.
                 </div>
@@ -259,7 +259,7 @@ function getAreaLink(areaName: string): string | null {
 				</div>
 				<div class="grid md:grid-cols-2 gap-8 items-center">
 					<div>
-						<h3 class="text-2xl font-black uppercase tracking-tight mb-3">
+						<h3 class="text-2xl font-bold uppercase tracking-tight mb-3">
 							{relatedProject.title}
 						</h3>
 						<p class="text-ink/70 leading-relaxed mb-4">
@@ -299,7 +299,7 @@ function getAreaLink(areaName: string): string | null {
 				<div class="font-mono text-xs uppercase tracking-widest text-ink/50 mb-4">
 					[ Veelgestelde Vragen ]
 				</div>
-				<h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8">
+				<h3 class="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-8">
 					Webdesign in {city.name}
 				</h3>
 				<div class="grid md:grid-cols-2 gap-6">

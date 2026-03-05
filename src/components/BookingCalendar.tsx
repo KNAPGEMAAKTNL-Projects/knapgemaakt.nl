@@ -444,7 +444,7 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
         <div className="space-y-6">
 
           <div className="space-y-4">
-            <h3 className="text-2xl font-black text-white uppercase tracking-tight leading-none">Intro Call<span className="text-[var(--color-acid)]">.</span></h3>
+            <h3 className="text-2xl font-bold text-white uppercase tracking-tight leading-none">Intro Call<span className="text-[var(--color-acid)]">.</span></h3>
             <div className="flex items-center gap-3">
               <img
                 src="/assets/yannick.webp"
@@ -482,7 +482,7 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
       <div className="w-full lg:flex-1 lg:min-w-[340px] p-4 md:p-5 flex flex-col bg-black relative border-r border-white/10">
         <div className="flex items-center justify-between mb-2">
           <h4 className="text-xl text-white tracking-tight flex gap-2">
-            <span className="font-black">{monthName}</span>
+            <span className="font-bold">{monthName}</span>
             <span className="font-medium text-white/50">{year}</span>
           </h4>
           <div className="flex gap-2">
@@ -559,7 +559,7 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
           <div className="flex-1 min-h-0 flex flex-col animate-in fade-in slide-in-from-right-4 duration-300">
             <div className="mb-2 pb-2 border-b border-white/5">
               <h4 className="text-xl text-white tracking-tight flex gap-2">
-                <span className="font-black">
+                <span className="font-bold">
                   {new Date(selectedDate).toLocaleDateString('nl-NL', { weekday: 'short' }).toLowerCase()}
                 </span>
                 <span className="font-medium text-white/80">

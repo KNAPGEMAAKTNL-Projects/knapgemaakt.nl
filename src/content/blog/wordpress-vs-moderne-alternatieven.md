@@ -161,4 +161,4 @@ Is dat voor iedereen de juiste aanpak? Nee. Als je dagelijks content publiceert 
 
 ---
 
-Benieuwd wat voor jouw situatie het beste past? [Plan gerust een gesprek](/aanvragen/) en ik denk met je mee.
+Benieuwd wat voor jouw situatie het beste past? [Plan gerust een gesprek](/contact/) en ik denk met je mee.

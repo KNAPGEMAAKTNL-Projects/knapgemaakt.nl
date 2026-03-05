@@ -102,7 +102,7 @@ const isActive = (href: string) => {
                 <a
                     href={link.href}
                     class:list={[
-                        "mobile-nav-link group relative block font-black text-4xl sm:text-5xl uppercase tracking-tight py-3 overflow-hidden",
+                        "mobile-nav-link group relative block font-bold text-4xl sm:text-5xl uppercase tracking-tight py-3 overflow-hidden",
                         isActive(link.href) ? "text-electric" : "text-ink"
                     ]}
                     style={`--index: ${index}`}

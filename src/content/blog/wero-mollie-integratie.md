@@ -117,4 +117,4 @@ De 31 maart gaat over het logo. De technische overstap komt later, en ook dan do
 
 Meer over de Wero-overgang? Lees [wat iDEAL naar Wero betekent voor je webshop](/blog/ideal-wordt-wero/), bekijk [de checklist met 5 dingen die je voor 31 maart kunt regelen](/blog/wero-webshops-checklist-maart/), of lees [wat Wero gaat kosten](/blog/wero-kosten-transactiekosten/).
 
-Heb je vragen over de Wero-overgang? [Plan gerust een gesprek](/aanvragen/) en ik denk met je mee.
+Heb je vragen over de Wero-overgang? [Plan gerust een gesprek](/contact/) en ik denk met je mee.
