@@ -363,7 +363,7 @@ export function CookieConsent() {
             </div>
 
             <p className="text-canvas/70 text-sm mb-6">
-              Wij gebruiken cookies om je ervaring te verbeteren. Je kunt per categorie aangeven welke cookies je accepteert.
+              Deze website gebruikt cookies. Je kunt per categorie aangeven welke je accepteert.
             </p>
 
             {/* Category Toggles */}
@@ -447,7 +447,7 @@ export function CookieConsent() {
             </div>
 
             <div className="mt-4 text-center">
-              <a href="/privacy#cookies" className="text-sm text-canvas/50 underline hover:text-accent transition-colors">
+              <a href="/privacy/#cookies" className="text-sm text-canvas/50 underline hover:text-accent transition-colors">
                 Bekijk ons cookiebeleid
               </a>
             </div>
@@ -471,11 +471,11 @@ export function CookieConsent() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
           <div className="flex-1">
             <h2 id="cookie-title" className="font-bold text-lg mb-1">
-              Wij gebruiken cookies
+              Cookies
             </h2>
             <p className="text-canvas/70 text-sm">
-              Om je de beste ervaring te bieden gebruiken wij cookies voor analyse en marketing.{' '}
-              <a href="/privacy#cookies" className="text-accent underline hover:text-accent/80">Meer info</a>
+              Deze site gebruikt cookies voor analyse en marketing.{' '}
+              <a href="/privacy/#cookies" className="text-accent underline hover:text-accent/80">Meer info</a>
             </p>
           </div>
 
