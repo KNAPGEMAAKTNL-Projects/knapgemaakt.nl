@@ -12,7 +12,7 @@ import FadeIn from "../components/FadeIn.astro";
   <main>
     <!-- Hero -->
     <section class="min-h-[80vh] flex flex-col justify-center px-6 md:px-12 lg:px-16 py-24 relative overflow-hidden">
-      <div class="hero-orb hidden md:block w-[400px] h-[400px] bg-acid/[0.04] top-1/4 -right-1/4"></div>
+      <div class="hero-orb hidden md:block w-[400px] h-[400px] bg-accent/[0.04] top-1/4 -right-1/4"></div>
 
       <div class="max-w-4xl mx-auto w-full relative z-10">
         <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Voor hoveniers</span>
@@ -45,7 +45,7 @@ import FadeIn from "../components/FadeIn.astro";
         <div class="space-y-6">
           <FadeIn delay={100}>
             <div class="glass-card p-6 md:p-8">
-              <div class="w-2 h-2 rounded-full bg-acid mb-4"></div>
+              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
               <h3 class="text-lg font-bold mb-2">Nieuwe klanten komen alleen via mond-tot-mond</h3>
               <p class="text-ink-secondary leading-relaxed">Dat werkt, maar je laat dagelijks klanten liggen die in Google zoeken naar een hovenier in de buurt.</p>
             </div>
@@ -53,7 +53,7 @@ import FadeIn from "../components/FadeIn.astro";
 
           <FadeIn delay={200}>
             <div class="glass-card p-6 md:p-8">
-              <div class="w-2 h-2 rounded-full bg-acid mb-4"></div>
+              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
               <h3 class="text-lg font-bold mb-2">Je hebt geen website of een verouderde</h3>
               <p class="text-ink-secondary leading-relaxed">Potentiële klanten zoeken je op online. Zonder website of met een verouderde site verlies je hun vertrouwen nog voordat je kunt laten zien wat je kunt.</p>
             </div>
@@ -61,7 +61,7 @@ import FadeIn from "../components/FadeIn.astro";
 
           <FadeIn delay={300}>
             <div class="glass-card p-6 md:p-8">
-              <div class="w-2 h-2 rounded-full bg-acid mb-4"></div>
+              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
               <h3 class="text-lg font-bold mb-2">Je hebt geen tijd voor online marketing</h3>
               <p class="text-ink-secondary leading-relaxed">Je bent druk met je vak. Een website moet gewoon werken, zonder dat je er omkijken naar hebt.</p>
             </div>
@@ -86,7 +86,7 @@ import FadeIn from "../components/FadeIn.astro";
           {["Modern, professioneel design", "Foto's van je projecten in beeld", "Vindbaar in Google (SEO)", "Contactformulier voor offertes", "Werkt perfect op telefoon", "Hosting en onderhoud geregeld"].map((feature, i) => (
             <FadeIn delay={i * 80}>
               <div class="flex items-center gap-3 py-3">
-                <div class="w-2 h-2 rounded-full bg-acid shrink-0"></div>
+                <div class="w-2 h-2 rounded-full bg-accent shrink-0"></div>
                 <span class="text-ink font-medium">{feature}</span>
               </div>
             </FadeIn>
@@ -112,7 +112,7 @@ import FadeIn from "../components/FadeIn.astro";
           ].map((item, i) => (
             <FadeIn delay={i * 150}>
               <div class="text-center md:text-left">
-                <span class="text-4xl font-bold text-acid/30 mb-2 block">{item.step}</span>
+                <span class="text-4xl font-bold text-accent/30 mb-2 block">{item.step}</span>
                 <h3 class="text-xl font-bold mb-2">{item.title}</h3>
                 <p class="text-ink-secondary leading-relaxed">{item.desc}</p>
               </div>

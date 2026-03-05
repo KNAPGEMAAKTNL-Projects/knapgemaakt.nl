@@ -14,7 +14,7 @@ const { steps } = Astro.props;
 <div class="timeline-container relative">
   <!-- Vertical line -->
   <div class="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-warm" aria-hidden="true">
-    <div class="timeline-progress absolute top-0 left-0 w-full bg-acid" style="height: 0%"></div>
+    <div class="timeline-progress absolute top-0 left-0 w-full bg-accent" style="height: 0%"></div>
   </div>
 
   <!-- Steps -->
@@ -50,7 +50,7 @@ const { steps } = Astro.props;
             const step = entry.target as HTMLElement;
             const dot = step.querySelector(".timeline-dot");
             if (dot) {
-              dot.classList.add("border-acid", "bg-acid");
+              dot.classList.add("border-accent", "bg-accent");
               dot.classList.remove("border-warm", "bg-canvas");
             }
           }

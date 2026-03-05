@@ -17,7 +17,7 @@
   --color-canvas-alt: #F5F3EF;
   --color-ink: #1A1A1A;
   --color-ink-secondary: #4A4A4A;
-  --color-acid: #CCFF00;
+  --color-accent: #D97706;
   --color-electric: #7C3AED;
   --color-warm: #E8E4DE;
 
@@ -119,8 +119,8 @@
 
 .glass-card:hover {
   background: rgba(255, 255, 255, 0.8);
-  border-color: var(--color-acid);
-  box-shadow: 0 0 20px rgba(204, 255, 0, 0.08);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.08);
 }
 
 /* Gradient orb for hero */
@@ -180,7 +180,7 @@
   margin-top: 3.5rem;
   margin-bottom: 1.5rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(204, 255, 0, 0.3);
+  border-top: 1px solid rgba(217, 119, 6, 0.3);
 }
 
 @media (min-width: 768px) {
@@ -194,7 +194,7 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.025em;
-  color: var(--color-acid);
+  color: var(--color-accent);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -212,13 +212,13 @@
 
 /* Strong/Bold text - make it pop */
 .blog-content strong {
-  color: var(--color-acid);
+  color: var(--color-accent);
   font-weight: 700;
 }
 
 /* Links */
 .blog-content a {
-  color: var(--color-acid);
+  color: var(--color-accent);
   text-decoration: none;
   font-weight: 600;
 }
@@ -248,12 +248,12 @@
 }
 
 .blog-content li::marker {
-  color: var(--color-acid);
+  color: var(--color-accent);
 }
 
 /* Blockquotes */
 .blog-content blockquote {
-  border-left: 4px solid var(--color-acid);
+  border-left: 4px solid var(--color-accent);
   background: rgba(255, 255, 255, 0.05);
   padding: 1rem 1.5rem;
   margin: 2rem 0;
@@ -268,7 +268,7 @@
 /* Horizontal rules */
 .blog-content hr {
   border: none;
-  border-top: 1px solid rgba(204, 255, 0, 0.2);
+  border-top: 1px solid rgba(217, 119, 6, 0.2);
   margin: 3rem 0;
 }
 
@@ -299,7 +299,7 @@
   letter-spacing: 0.05em;
   padding: 0.75rem 1rem;
   text-align: left;
-  border-bottom: 2px solid var(--color-acid);
+  border-bottom: 2px solid var(--color-accent);
 }
 
 .blog-content td {
@@ -319,7 +319,7 @@
 
 /* Code */
 .blog-content code {
-  color: var(--color-acid);
+  color: var(--color-accent);
   background: rgba(255, 255, 255, 0.1);
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
@@ -404,7 +404,7 @@
 .blog-content-light a {
   color: var(--color-ink);
   text-decoration: underline;
-  text-decoration-color: var(--color-acid);
+  text-decoration-color: var(--color-accent);
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
   font-weight: 500;
@@ -445,8 +445,8 @@
 
 /* Blockquotes */
 .blog-content-light blockquote {
-  border-left: 3px solid var(--color-acid);
-  background: rgba(204, 255, 0, 0.08);
+  border-left: 3px solid var(--color-accent);
+  background: rgba(217, 119, 6, 0.08);
   padding: 1rem 1.5rem;
   margin: 2rem 0;
   font-style: italic;

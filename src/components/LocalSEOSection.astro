@@ -48,7 +48,7 @@ function getAreaLink(areaName: string): string | null {
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 p-6 bg-ink text-canvas">
                 {city.stats.businesses && (
                     <div class="text-center md:text-left">
-                        <div class="text-2xl md:text-3xl font-bold text-acid">{city.stats.businesses}</div>
+                        <div class="text-2xl md:text-3xl font-bold text-accent">{city.stats.businesses}</div>
                         <div class="text-xs font-mono uppercase tracking-wider text-canvas/60">Actief in {city.name}</div>
                     </div>
                 )}
@@ -134,7 +134,7 @@ function getAreaLink(areaName: string): string | null {
                         <h3
                             class="text-2xl font-bold uppercase tracking-tight mb-4 flex items-center gap-3"
                         >
-                            <span class="text-acid font-mono text-lg">[03]</span
+                            <span class="text-accent font-mono text-lg">[03]</span
                             >
                             Ons Lokale Voordeel
                         </h3>
@@ -284,7 +284,7 @@ function getAreaLink(areaName: string): string | null {
 							class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
 						/>
 						<div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/60 transition-colors duration-300 flex items-center justify-center">
-							<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-acid text-ink px-6 py-3 font-bold uppercase tracking-tight text-sm">
+							<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-accent text-ink px-6 py-3 font-bold uppercase tracking-tight text-sm">
 								Bekijk Project
 							</span>
 						</div>

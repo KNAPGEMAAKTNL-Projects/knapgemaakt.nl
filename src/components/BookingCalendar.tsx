@@ -444,12 +444,12 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
         <div className="space-y-6">
 
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white uppercase tracking-tight leading-none">Intro Call<span className="text-[var(--color-acid)]">.</span></h3>
+            <h3 className="text-2xl font-bold text-white uppercase tracking-tight leading-none">Intro Call<span className="text-[var(--color-accent)]">.</span></h3>
             <div className="flex items-center gap-3">
               <img
                 src="/assets/yannick.webp"
                 alt="Yannick Veldhuisen"
-                className="w-10 h-10 rounded-full object-cover object-top shrink-0 ring-2 ring-[var(--color-acid)]/30"
+                className="w-10 h-10 rounded-full object-cover object-top shrink-0 ring-2 ring-[var(--color-accent)]/30"
               />
               <span className="text-sm font-medium text-zinc-300">Yannick Veldhuisen</span>
             </div>
@@ -457,11 +457,11 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
 
           <div className="flex flex-col gap-4 text-zinc-400 font-medium text-sm">
             <div className="flex items-center gap-3">
-              <Clock size={16} className="text-[var(--color-acid)]" />
+              <Clock size={16} className="text-[var(--color-accent)]" />
               <span className="text-white">15 min</span>
             </div>
             <div className="flex items-center gap-3">
-              <Globe size={16} className="text-[var(--color-acid)]" />
+              <Globe size={16} className="text-[var(--color-accent)]" />
               <span className="text-white">Europe/Amsterdam</span>
             </div>
           </div>
@@ -531,10 +531,10 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
                 disabled={isDisabled}
                 className={`
                             aspect-square w-full flex items-center justify-center text-sm transition-all relative border border-transparent
-                            ${isSelected ? 'bg-[var(--color-acid)] text-black font-bold border-[var(--color-acid)]' : ''}
-                            ${!isSelected && isFutureWeekday ? 'bg-[#1a1a1a] text-zinc-300 font-bold hover:border-[var(--color-acid)]/50 hover:bg-[#222]' : ''}
+                            ${isSelected ? 'bg-[var(--color-accent)] text-black font-bold border-[var(--color-accent)]' : ''}
+                            ${!isSelected && isFutureWeekday ? 'bg-[#1a1a1a] text-zinc-300 font-bold hover:border-[var(--color-accent)]/50 hover:bg-[#222]' : ''}
                             ${!isSelected && !isFutureWeekday ? 'text-zinc-400 font-normal cursor-default hover:bg-transparent' : ''}
-                            ${isToday && !isSelected ? 'text-[var(--color-acid)] font-bold relative after:content-[""] after:absolute after:bottom-1.5 after:w-1 after:h-1 after:bg-[var(--color-acid)] after:rounded-full' : ''}
+                            ${isToday && !isSelected ? 'text-[var(--color-accent)] font-bold relative after:content-[""] after:absolute after:bottom-1.5 after:w-1 after:h-1 after:bg-[var(--color-accent)] after:rounded-full' : ''}
                         `}
               >
                 {date.getDate()}
@@ -575,7 +575,7 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
             >
               {loading && (
                 <div className="flex flex-col items-center justify-center py-10 gap-4 text-zinc-500">
-                  <div className="w-5 h-5 border-2 border-zinc-800 border-t-[var(--color-acid)] rounded-full animate-spin"></div>
+                  <div className="w-5 h-5 border-2 border-zinc-800 border-t-[var(--color-accent)] rounded-full animate-spin"></div>
                   <span className="text-xs font-mono uppercase tracking-widest">Beschikbaarheid laden...</span>
                 </div>
               )}
@@ -602,8 +602,8 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
                     className={`
                                     w-full px-4 py-2 border text-sm font-bold transition-all flex items-center justify-center gap-3 group relative
                                     ${isSelected
-                        ? 'bg-[var(--color-acid)] border-[var(--color-acid)] text-black'
-                        : 'bg-[#1a1a1a] border-white/5 text-zinc-300 hover:border-[var(--color-acid)]/50 hover:bg-[#222]'}
+                        ? 'bg-[var(--color-accent)] border-[var(--color-accent)] text-black'
+                        : 'bg-[#1a1a1a] border-white/5 text-zinc-300 hover:border-[var(--color-accent)]/50 hover:bg-[#222]'}
                                 `}
                   >
                     <span>{slot.display}</span>
