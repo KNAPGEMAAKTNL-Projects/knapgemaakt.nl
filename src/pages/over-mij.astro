@@ -4,38 +4,42 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import TextRevealCSS from "../components/TextRevealCSS.astro";
+import FadeIn from "../components/FadeIn.astro";
 ---
 
 <Layout
 	title="Over Mij | Waarom KNAP GEMAAKT. Bestaat"
 	description="Waarom KNAP GEMAAKT. bestaat: slimme systemen horen niet alleen bij grote bedrijven. Ik maak automatisering bereikbaar voor elke ondernemer."
 >
-	<main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 bg-grid-light relative overflow-hidden">
+	<main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 relative overflow-hidden">
 		<div class="max-w-4xl mx-auto">
 			<!-- Header -->
+			<FadeIn>
 			<div class="mb-16">
 				<TextRevealCSS
 					text="Over Mij."
-					class="text-5xl md:text-8xl font-black uppercase tracking-tight leading-none mb-6"
+					class="text-5xl md:text-8xl font-bold tracking-tight leading-snug mb-6"
 				/>
-				<p class="text-xl md:text-2xl text-ink/60 font-medium max-w-2xl leading-relaxed">
+				<p class="text-xl md:text-2xl text-ink-secondary font-medium max-w-2xl leading-relaxed">
 					Niet zozeer wie ik ben. Meer waarom ik dit doe.
 				</p>
 			</div>
+			</FadeIn>
 
 			<!-- Why Section: Photo + Story -->
+			<FadeIn delay={100}>
 			<div class="grid md:grid-cols-3 gap-12 mb-24">
 				<div class="md:col-span-1">
 					<img
 						src="/assets/yannick.webp"
 						alt="Yannick"
-						class="w-full aspect-square object-cover object-top"
+						class="w-full aspect-square object-cover object-top rounded-2xl"
 						loading="eager"
 					/>
 				</div>
 
 				<div class="md:col-span-2 space-y-6 text-lg text-ink/80 leading-relaxed">
-					<h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-ink">
+					<h2 class="text-2xl md:text-3xl font-bold tracking-tight leading-snug text-ink">
 						Waarom Ik Dit Doe
 					</h2>
 					<p>
@@ -57,26 +61,28 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 					</p>
 				</div>
 			</div>
+			</FadeIn>
 
 			<!-- What I Believe -->
-			<div class="border-t-2 border-ink/10 pt-16 mb-24">
-				<h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
+			<FadeIn delay={150}>
+			<div class="border-t-2 border-warm pt-16 mb-24">
+				<h2 class="text-2xl md:text-3xl font-bold tracking-tight leading-snug mb-4">
 					Waar Ik In Geloof
 				</h2>
-				<p class="text-ink/60 text-lg mb-12 max-w-2xl">
+				<p class="text-ink-secondary text-lg mb-12 max-w-2xl">
 					Een paar overtuigingen die alles wat ik bouw vormgeven.
 				</p>
 
 				<div class="space-y-12">
 					<div class="grid md:grid-cols-[120px_1fr] gap-6">
-						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest">
+						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest rounded-lg">
 							01
 						</div>
 						<div class="space-y-3">
-							<h3 class="text-xl font-bold uppercase tracking-tight">
+							<h3 class="text-xl font-bold tracking-tight">
 								Klein hoeft niet basic te zijn
 							</h3>
-							<p class="text-ink/70 leading-relaxed">
+							<p class="text-ink-secondary leading-relaxed">
 								Een loodgieter in Buren verdient dezelfde slimme technologie als
 								een keten met 200 vestigingen. Automatisch reviews verzamelen,
 								afspraken laten boeken, leads opvolgen. Geen luxe. Gewoon hoe het
@@ -86,14 +92,14 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 					</div>
 
 					<div class="grid md:grid-cols-[120px_1fr] gap-6">
-						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest">
+						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest rounded-lg">
 							02
 						</div>
 						<div class="space-y-3">
-							<h3 class="text-xl font-bold uppercase tracking-tight">
+							<h3 class="text-xl font-bold tracking-tight">
 								Je website moet voor je werken
 							</h3>
-							<p class="text-ink/70 leading-relaxed">
+							<p class="text-ink-secondary leading-relaxed">
 								Een website die er alleen maar mooi uitziet? Gemiste kans.
 								Ik bouw websites die actief meewerken aan je bedrijf. Leads
 								opvangen, afspraken inplannen, klanten opvolgen. Zodat jij
@@ -103,14 +109,14 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 					</div>
 
 					<div class="grid md:grid-cols-[120px_1fr] gap-6">
-						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest">
+						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest rounded-lg">
 							03
 						</div>
 						<div class="space-y-3">
-							<h3 class="text-xl font-bold uppercase tracking-tight">
+							<h3 class="text-xl font-bold tracking-tight">
 								Het gaat om de verbinding
 							</h3>
-							<p class="text-ink/70 leading-relaxed">
+							<p class="text-ink-secondary leading-relaxed">
 								De meeste ondernemers hebben losse tools. Een boeking-app
 								hier, Google Reviews daar, een maillijst ergens anders.
 								Niks praat met elkaar. Dat is waar ik inspring. Ik koppel
@@ -121,14 +127,14 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 					</div>
 
 					<div class="grid md:grid-cols-[120px_1fr] gap-6">
-						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest">
+						<div class="font-mono text-sm text-acid bg-ink px-4 py-3 text-center self-start uppercase tracking-widest rounded-lg">
 							04
 						</div>
 						<div class="space-y-3">
-							<h3 class="text-xl font-bold uppercase tracking-tight">
+							<h3 class="text-xl font-bold tracking-tight">
 								Onafhankelijkheid is alles
 							</h3>
-							<p class="text-ink/70 leading-relaxed">
+							<p class="text-ink-secondary leading-relaxed">
 								Je zou nooit afhankelijk moeten zijn van een bureau voor elke
 								kleine aanpassing. Of vastzitten aan een platform dat je niet
 								begrijpt. Wat ik bouw is van jou. Transparant, begrijpelijk,
@@ -138,59 +144,63 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 					</div>
 				</div>
 			</div>
+			</FadeIn>
 
 			<!-- How I Work: The Glue -->
-			<div class="border-t-2 border-ink/10 pt-16 mb-24">
-				<h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
+			<FadeIn delay={200}>
+			<div class="border-t-2 border-warm pt-16 mb-24">
+				<h2 class="text-2xl md:text-3xl font-bold tracking-tight leading-snug mb-4">
 					Hoe Ik Werk
 				</h2>
-				<p class="text-ink/60 text-lg mb-12 max-w-2xl">
+				<p class="text-ink-secondary text-lg mb-12 max-w-2xl">
 					Ik bouw geen losse websites. Ik bouw systemen.
 				</p>
 
-				<div class="p-8 md:p-12 border-2 border-ink/10 relative">
+				<div class="p-8 md:p-12 border-2 border-warm rounded-xl relative">
 					<div class="grid md:grid-cols-3 gap-8 text-center">
 						<div class="space-y-3">
-							<div class="w-12 h-12 bg-acid mx-auto flex items-center justify-center">
+							<div class="w-12 h-12 bg-acid mx-auto flex items-center justify-center rounded-lg">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
 									<rect width="18" height="18" x="3" y="3" rx="2"/>
 									<path d="M7 7h10M7 12h10M7 17h10"/>
 								</svg>
 							</div>
-							<h3 class="font-bold uppercase tracking-tight text-sm">Je Website</h3>
-							<p class="text-ink/60 text-sm">Snel, professioneel, gebouwd om te presteren.</p>
+							<h3 class="font-bold tracking-tight text-sm">Je Website</h3>
+							<p class="text-ink-secondary text-sm">Snel, professioneel, gebouwd om te presteren.</p>
 						</div>
 
 						<div class="space-y-3">
-							<div class="w-12 h-12 bg-acid mx-auto flex items-center justify-center">
+							<div class="w-12 h-12 bg-acid mx-auto flex items-center justify-center rounded-lg">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
 									<path d="M12 5v14M5 12h14"/>
 								</svg>
 							</div>
-							<h3 class="font-bold uppercase tracking-tight text-sm">De Verbinding</h3>
-							<p class="text-ink/60 text-sm">Gekoppeld aan je tools, alles praat met elkaar.</p>
+							<h3 class="font-bold tracking-tight text-sm">De Verbinding</h3>
+							<p class="text-ink-secondary text-sm">Gekoppeld aan je tools, alles praat met elkaar.</p>
 						</div>
 
 						<div class="space-y-3">
-							<div class="w-12 h-12 bg-acid mx-auto flex items-center justify-center">
+							<div class="w-12 h-12 bg-acid mx-auto flex items-center justify-center rounded-lg">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
 									<path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
 									<path d="m9 12 2 2 4-4"/>
 								</svg>
 							</div>
-							<h3 class="font-bold uppercase tracking-tight text-sm">Het Resultaat</h3>
-							<p class="text-ink/60 text-sm">Automatisering die tijd bespaart en klanten oplevert.</p>
+							<h3 class="font-bold tracking-tight text-sm">Het Resultaat</h3>
+							<p class="text-ink-secondary text-sm">Automatisering die tijd bespaart en klanten oplevert.</p>
 						</div>
 					</div>
 
 					<!-- Connecting lines (desktop) -->
-					<div class="hidden md:block absolute top-1/2 left-[calc(33.33%+16px)] right-[calc(33.33%+16px)] h-px bg-ink/10 -translate-y-4"></div>
+					<div class="hidden md:block absolute top-1/2 left-[calc(33.33%+16px)] right-[calc(33.33%+16px)] h-px bg-warm -translate-y-4"></div>
 				</div>
 			</div>
+			</FadeIn>
 
 			<!-- Future Hint -->
-			<div class="mb-24 p-8 md:p-10 bg-ink/[0.03] border-l-4 border-acid">
-				<p class="text-sm font-mono uppercase tracking-widest text-ink/60 mb-3">Waar ik mee bezig ben</p>
+			<FadeIn delay={250}>
+			<div class="mb-24 p-8 md:p-10 bg-canvas-alt rounded-xl border-l-4 border-acid">
+				<p class="text-sm font-mono uppercase tracking-widest text-ink-secondary mb-3">Waar ik mee bezig ben</p>
 				<p class="text-lg text-ink/80 leading-relaxed max-w-2xl">
 					Ik werk aan een dashboard waar je zelf je teksten kunt aanpassen,
 					kunt zien hoeveel bezoekers je hebt gehad en wat daaruit is
@@ -198,20 +208,23 @@ import TextRevealCSS from "../components/TextRevealCSS.astro";
 					één plek.
 				</p>
 			</div>
+			</FadeIn>
 
 			<!-- Location -->
-			<div class="flex items-center gap-4 p-6 border-2 border-ink/10 mb-16">
-				<div class="w-12 h-12 bg-ink/10 flex items-center justify-center flex-shrink-0">
+			<FadeIn delay={300}>
+			<div class="flex items-center gap-4 p-6 border-2 border-warm rounded-xl mb-16">
+				<div class="w-12 h-12 bg-canvas-alt flex items-center justify-center flex-shrink-0 rounded-lg">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
 						<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
 						<circle cx="12" cy="10" r="3"/>
 					</svg>
 				</div>
 				<div>
-					<h3 class="font-bold uppercase tracking-tight">Gevestigd in Buren, Gelderland</h3>
-					<p class="text-ink/60 text-sm">Maar ik werk met klanten door heel Nederland. Alles gaat remote.</p>
+					<h3 class="font-bold tracking-tight">Gevestigd in Buren, Gelderland</h3>
+					<p class="text-ink-secondary text-sm">Maar ik werk met klanten door heel Nederland. Alles gaat remote.</p>
 				</div>
 			</div>
+			</FadeIn>
 		</div>
 	</main>
 	<Footer />

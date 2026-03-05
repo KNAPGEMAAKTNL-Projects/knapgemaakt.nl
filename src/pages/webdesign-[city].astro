@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import OfferLocalSEOSection from "../components/OfferLocalSEOSection.astro";
 import Footer from "../components/Footer.astro";
+import FadeIn from "../components/FadeIn.astro";
 import { getCityBySlug, getAllCities } from "../data/cities";
 import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
@@ -60,32 +61,32 @@ const breadcrumbs = [
 	{cityData.faqs && <FAQSchema faqs={cityData.faqs} />}
 	<main>
         <!-- Hero Section - Offer-focused with local anchor -->
-        <section class="flex items-start bg-canvas bg-grid-light relative overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
+        <section class="flex items-start bg-canvas relative overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
             <div class="max-w-6xl xl:max-w-7xl mx-auto px-6 md:px-12 lg:px-16 w-full">
                 <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <!-- Text Content -->
                     <div class="space-y-6">
-                        <div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60">
+                        <div class="text-xs font-mono uppercase tracking-[0.2em] text-ink-secondary">
                             [ Lokale Partner in {cityData.region} ]
                         </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9]">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-snug">
                             Website Laten<br />
                             Maken in <span class="text-electric">{city}.</span>
                         </h1>
-                        <p class="text-lg md:text-xl text-ink/70">
+                        <p class="text-lg md:text-xl text-ink-secondary">
                             {cityData.heroSubheadline}
                         </p>
 
                         <!-- Trust elements -->
-                        <div class="flex flex-wrap items-center gap-4 text-sm text-ink/60">
+                        <div class="flex flex-wrap items-center gap-4 text-sm text-ink-secondary">
                             <span>Vanaf €495</span>
                             <span>•</span>
                             <span>Klaar in 7 dagen</span>
                         </div>
 
                         <a
-                            href="/aanvragen/"
-                            class="w-full sm:w-auto bg-acid text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-ink hover:text-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+                            href="/contact/"
+                            class="w-full sm:w-auto bg-ink text-canvas rounded-lg px-8 py-5 font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
                         >
                             Gratis Kennismakingsgesprek
                             <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
@@ -94,7 +95,7 @@ const breadcrumbs = [
 
                     <!-- Map Image -->
                     <div class="relative">
-                        <div class="aspect-square md:aspect-[4/3] relative overflow-hidden group">
+                        <div class="aspect-square md:aspect-[4/3] relative overflow-hidden group rounded-xl">
                             <img
                                 src={mapImage}
                                 alt={`Website laten maken in ${city} - KNAP GEMAAKT. actief in ${cityData.region}`}
