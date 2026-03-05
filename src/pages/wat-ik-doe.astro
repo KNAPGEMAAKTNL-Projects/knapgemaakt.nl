@@ -1,0 +1,174 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import FadeIn from "../components/FadeIn.astro";
+---
+
+<Layout
+  title="Wat Ik Doe | Websites, Webshops & Online Tools | KNAP GEMAAKT."
+  description="Professionele websites, webshops op Shopify en slimme online tools voor lokale ondernemers. Bekijk wat KNAP GEMAAKT. voor jouw bedrijf kan doen."
+>
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
+          Wat ik voor je kan doen
+        </h1>
+        <p class="text-lg md:text-xl text-ink-secondary max-w-2xl leading-relaxed">
+          Van een professionele website tot een complete webshop of slimme online tools.
+          Alles wat je nodig hebt om online te groeien.
+        </p>
+      </div>
+    </section>
+
+    <!-- Service 1: Websites -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-ink flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Websites op maat</h2>
+              <p class="text-ink-secondary leading-relaxed mb-6">Een professionele website die past bij jouw bedrijf en doelgroep. Modern design, snelle laadtijd en geoptimaliseerd voor Google.</p>
+              <a href="/contact/" class="bg-ink text-canvas px-6 py-3 rounded-lg font-bold text-sm hover:bg-ink/80 transition-colors duration-300 inline-flex items-center gap-2 group">
+                Vraag een gesprek aan
+                <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </a>
+            </div>
+            <div>
+              <ul class="space-y-3">
+                {["Responsive design", "SEO-geoptimaliseerd", "Tekst en content inbegrepen", "Hosting inbegrepen", "Eigen domein", "Binnen enkele weken live"].map((feature) => (
+                  <li class="flex items-center gap-3 text-ink-secondary">
+                    <div class="w-2 h-2 rounded-full bg-acid shrink-0"></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- Service 2: Webshops -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-ink flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Webshops</h2>
+              <p class="text-ink-secondary leading-relaxed mb-6">Een complete webshop op Shopify. Professioneel ontwerp, makkelijk te beheren en klaar om te verkopen.</p>
+              <a href="/contact/" class="bg-ink text-canvas px-6 py-3 rounded-lg font-bold text-sm hover:bg-ink/80 transition-colors duration-300 inline-flex items-center gap-2 group">
+                Vraag een gesprek aan
+                <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </a>
+            </div>
+            <div>
+              <ul class="space-y-3">
+                {["Shopify platform", "Productbeheer", "Betalingen (iDEAL, creditcard)", "Voorraadbeheer", "Op maat ontworpen thema", "Klaar voor groei"].map((feature) => (
+                  <li class="flex items-center gap-3 text-ink-secondary">
+                    <div class="w-2 h-2 rounded-full bg-acid shrink-0"></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- Service 3: Online zichtbaarheid -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-ink flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Online zichtbaarheid</h2>
+              <p class="text-ink-secondary leading-relaxed mb-6">Gevonden worden door de juiste klanten. SEO, Google Mijn Bedrijf en lokale vindbaarheid.</p>
+              <a href="/contact/" class="bg-ink text-canvas px-6 py-3 rounded-lg font-bold text-sm hover:bg-ink/80 transition-colors duration-300 inline-flex items-center gap-2 group">
+                Vraag een gesprek aan
+                <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </a>
+            </div>
+            <div>
+              <ul class="space-y-3">
+                {["Zoekmachine optimalisatie", "Google Mijn Bedrijf", "Lokale vindbaarheid", "Technische SEO", "Snelle laadtijden", "Meetbare resultaten"].map((feature) => (
+                  <li class="flex items-center gap-3 text-ink-secondary">
+                    <div class="w-2 h-2 rounded-full bg-acid shrink-0"></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- Service 4: Online tools -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-ink flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Online tools</h2>
+              <p class="text-ink-secondary leading-relaxed mb-6">Slimme tools die je bedrijf tijd besparen. Dashboards, automatiseringen en koppelingen op maat.</p>
+              <a href="/contact/" class="bg-ink text-canvas px-6 py-3 rounded-lg font-bold text-sm hover:bg-ink/80 transition-colors duration-300 inline-flex items-center gap-2 group">
+                Vraag een gesprek aan
+                <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </a>
+            </div>
+            <div>
+              <ul class="space-y-3">
+                {["Dashboards op maat", "Data-integraties", "Procesautomatisering", "Rapportages", "API-koppelingen", "Op aanvraag"].map((feature) => (
+                  <li class="flex items-center gap-3 text-ink-secondary">
+                    <div class="w-2 h-2 rounded-full bg-acid shrink-0"></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-3xl mx-auto text-center">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Benieuwd wat ik voor jou kan betekenen?
+          </h2>
+          <p class="text-ink-secondary text-lg leading-relaxed mb-8">
+            Vertel me over je bedrijf en ik denk vrijblijvend met je mee.
+            Geen verplichtingen, geen verkooppraatjes.
+          </p>
+          <a
+            href="/contact/"
+            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+          >
+            Neem contact op
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </FadeIn>
+      </div>
+    </section>
+  </main>
+  <Footer hideCTA={true} />
+</Layout>
