@@ -1,5 +1,4 @@
 ---
-import TextRevealCSS from "./TextRevealCSS.astro";
 import { getAllCities } from "../data/cities";
 import { getAllBlogPosts } from "../data/blog";
 
@@ -33,10 +32,9 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 ---
 
 {!hideCTA && (
-	<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
-		<div class="absolute inset-0 bg-grid-dark opacity-50"></div>
+	<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas relative overflow-hidden">
 		<div class="max-w-6xl xl:max-w-7xl mx-auto text-center relative z-10">
-			<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-6">
+			<h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-[0.95] mb-6">
 				{ctaHeadline}
 			</h2>
 			<p class="text-canvas/60 text-lg mb-10 max-w-xl mx-auto">
@@ -45,16 +43,9 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 				<a
 					href="/aanvragen/"
-					class="bg-acid text-ink px-8 py-[18px] font-bold uppercase tracking-tight hover:bg-canvas hover:text-ink transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+					class="bg-canvas text-ink px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-canvas/90 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
 				>
 					Plan een gesprek in
-					<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-				</a>
-				<a
-					href="/contact/"
-					class="bg-canvas text-ink px-8 py-[18px] font-bold uppercase tracking-tight hover:bg-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
-				>
-					Neem contact op
 					<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 				</a>
 			</div>
@@ -62,7 +53,7 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 	</section>
 )}
 
-<footer class="bg-ink text-canvas py-12 md:py-16 px-6 md:px-12 lg:px-16 bg-grid-dark relative overflow-hidden">
+<footer class="bg-ink text-canvas py-12 md:py-16 px-6 md:px-12 lg:px-16 relative overflow-hidden">
 	<div class="max-w-6xl xl:max-w-7xl mx-auto relative z-10">
 		<!-- Service Areas - Grouped by Region -->
 		<div class="mb-12 md:mb-16">
@@ -73,14 +64,14 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 				{regionOrder.map((region) => (
 					cityGroups[region] && (
 						<div>
-							<div class="font-mono text-xs uppercase tracking-widest text-acid/80 mb-3">
+							<div class="font-mono text-xs uppercase tracking-widest text-canvas/60 mb-3">
 								{region}
 							</div>
 							<div class="flex flex-col gap-1.5">
 								{cityGroups[region].map((city) => (
 									<a
 										href={`/webdesign-${city.slug}/`}
-										class="text-sm text-canvas/60 hover:text-acid transition-colors"
+										class="text-sm text-canvas/60 hover:text-canvas transition-colors"
 									>
 										{city.name}
 									</a>
@@ -102,7 +93,7 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 					<>
 						<a
 							href={`/blog/${post.slug}/`}
-							class="hover:text-acid transition-colors"
+							class="hover:text-canvas/80 transition-colors"
 						>
 							{post.shortTitle}
 						</a>
@@ -116,24 +107,25 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 
 		<!-- Big Logo -->
 		<div class="pointer-events-none mb-12 md:mb-16">
-			<TextRevealCSS
-				text="KNAP GEMAAKT."
-				class="text-[12vw] md:text-[10vw] font-black leading-[0.8] tracking-tight select-none block"
-			/>
+			<span
+				class="text-[12vw] md:text-[10vw] font-bold leading-[0.8] tracking-tight select-none block text-accent"
+			>
+				KNAP GEMAAKT.
+			</span>
 		</div>
 
 		<!-- Bottom Bar -->
 		<div class="pt-8 border-t border-canvas/10">
 			<!-- Legal Links -->
 			<div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 font-mono text-xs text-canvas/50 uppercase tracking-widest mb-6">
-				<a href="/contact/" class="hover:text-acid transition-colors">Contact</a>
-				<a href="/algemene-voorwaarden/" class="hover:text-acid transition-colors">Voorwaarden</a>
-				<a href="/privacy/" class="hover:text-acid transition-colors">Privacy</a>
-				<a href="/sitemap/" class="hover:text-acid transition-colors">Sitemap</a>
+				<a href="/contact/" class="hover:text-canvas/80 transition-colors">Contact</a>
+				<a href="/algemene-voorwaarden/" class="hover:text-canvas/80 transition-colors">Voorwaarden</a>
+				<a href="/privacy/" class="hover:text-canvas/80 transition-colors">Privacy</a>
+				<a href="/sitemap/" class="hover:text-canvas/80 transition-colors">Sitemap</a>
 				<button
 					type="button"
 					id="cookie-settings-trigger"
-					class="hover:text-acid transition-colors flex items-center gap-1.5 cursor-pointer"
+					class="hover:text-canvas/80 transition-colors flex items-center gap-1.5 cursor-pointer"
 					aria-label="Open cookie-instellingen"
 				>
 					<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
@@ -149,8 +141,8 @@ const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderla
 					<span>KvK: 73652377</span>
 					<span>BTW: NL002383577B12</span>
 					<span>Buren, Nederland</span>
-					<a href="mailto:info@knapgemaakt.nl" class="hover:text-acid transition-colors">info@knapgemaakt.nl</a>
-					<a href="https://www.linkedin.com/in/yannick-veldhuisen-303047243/" target="_blank" rel="noopener noreferrer" class="hover:text-acid transition-colors">LinkedIn</a>
+					<a href="mailto:info@knapgemaakt.nl" class="hover:text-canvas/80 transition-colors">info@knapgemaakt.nl</a>
+					<a href="https://www.linkedin.com/in/yannick-veldhuisen-303047243/" target="_blank" rel="noopener noreferrer" class="hover:text-canvas/80 transition-colors">LinkedIn</a>
 				</div>
 				<div class="text-center md:text-right font-mono text-xs text-canvas/40">
 					© 2026 KNAP GEMAAKT.

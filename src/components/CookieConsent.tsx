@@ -363,7 +363,7 @@ export function CookieConsent() {
             </div>
 
             <p className="text-canvas/70 text-sm mb-6">
-              Wij gebruiken cookies om je ervaring te verbeteren. Je kunt per categorie aangeven welke cookies je accepteert.
+              Deze website gebruikt cookies. Je kunt per categorie aangeven welke je accepteert.
             </p>
 
             {/* Category Toggles */}
@@ -374,7 +374,7 @@ export function CookieConsent() {
                   <h3 className="font-semibold">Noodzakelijk</h3>
                   <p className="text-sm text-canvas/60">Essentieel voor de werking van de website</p>
                 </div>
-                <div className="px-3 py-1 bg-acid/20 text-acid text-xs font-mono rounded whitespace-nowrap shrink-0">
+                <div className="px-3 py-1 bg-accent/20 text-accent text-xs font-mono rounded whitespace-nowrap shrink-0">
                   Altijd aan
                 </div>
               </div>
@@ -392,7 +392,7 @@ export function CookieConsent() {
                   onClick={() => handleToggleCategory('analytics')}
                   className={`
                     relative shrink-0 w-12 h-7 rounded-full transition-colors cursor-pointer
-                    ${categories.analytics ? 'bg-acid' : 'bg-canvas/20'}
+                    ${categories.analytics ? 'bg-accent' : 'bg-canvas/20'}
                   `}
                 >
                   <span
@@ -417,7 +417,7 @@ export function CookieConsent() {
                   onClick={() => handleToggleCategory('marketing')}
                   className={`
                     relative shrink-0 w-12 h-7 rounded-full transition-colors cursor-pointer
-                    ${categories.marketing ? 'bg-acid' : 'bg-canvas/20'}
+                    ${categories.marketing ? 'bg-accent' : 'bg-canvas/20'}
                   `}
                 >
                   <span
@@ -447,7 +447,7 @@ export function CookieConsent() {
             </div>
 
             <div className="mt-4 text-center">
-              <a href="/privacy#cookies" className="text-sm text-canvas/50 underline hover:text-acid transition-colors">
+              <a href="/privacy/#cookies" className="text-sm text-canvas/50 underline hover:text-accent transition-colors">
                 Bekijk ons cookiebeleid
               </a>
             </div>
@@ -471,11 +471,11 @@ export function CookieConsent() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
           <div className="flex-1">
             <h2 id="cookie-title" className="font-bold text-lg mb-1">
-              Wij gebruiken cookies
+              Cookies
             </h2>
             <p className="text-canvas/70 text-sm">
-              Om je de beste ervaring te bieden gebruiken wij cookies voor analyse en marketing.{' '}
-              <a href="/privacy#cookies" className="text-acid underline hover:text-acid/80">Meer info</a>
+              Deze site gebruikt cookies voor analyse en marketing.{' '}
+              <a href="/privacy/#cookies" className="text-accent underline hover:text-accent/80">Meer info</a>
             </p>
           </div>
 

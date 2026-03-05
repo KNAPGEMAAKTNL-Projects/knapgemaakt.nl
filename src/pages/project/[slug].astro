@@ -20,7 +20,7 @@ const metaDescription = `Maatwerk website voor ${project.title} - ${project.shor
 
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
-	{ name: "Projecten", url: "https://knapgemaakt.nl/portfolio/" },
+	{ name: "Wat ik doe", url: "https://knapgemaakt.nl/wat-ik-doe/" },
 	{ name: `Maatwerk website voor ${project.title}`, url: `https://knapgemaakt.nl/project/${project.slug}/` },
 ];
 
@@ -32,13 +32,13 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 	<BreadcrumbSchema items={breadcrumbs} />
 	<main class="bg-canvas">
 		<!-- Hero Section -->
-		<section class="pt-32 pb-16 md:pb-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+		<section class="pt-32 pb-16 md:pb-24 px-6 md:px-12 lg:px-16 bg-canvas relative overflow-hidden">
 			<div class="max-w-6xl xl:max-w-7xl mx-auto relative z-10">
 				<!-- Breadcrumb -->
 				<div class="flex items-center gap-2 text-ink/60 font-mono text-xs uppercase tracking-wider mb-8">
-					<a href="/" class="hover:text-electric transition-colors">Home</a>
+					<a href="/" class="hover:text-accent transition-colors">Home</a>
 					<span>/</span>
-					<a href="/portfolio/" class="hover:text-electric transition-colors">Projecten</a>
+					<a href="/wat-ik-doe/" class="hover:text-accent transition-colors">Wat ik doe</a>
 					<span>/</span>
 					<span class="text-ink">{project.title}</span>
 				</div>
@@ -47,7 +47,7 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 				<div class="mb-8 md:mb-12">
 					<!-- Category Badge -->
 					<div class="mb-4">
-						<span class="inline-block px-3 py-1 bg-acid text-ink font-mono text-xs font-bold uppercase tracking-wider">
+						<span class="inline-block px-3 py-1 bg-accent text-ink font-mono text-xs font-bold uppercase tracking-wider">
 							{project.category}
 						</span>
 						<span class="ml-3 text-ink/50 font-mono text-xs uppercase tracking-wider">
@@ -56,8 +56,8 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 					</div>
 
 					<!-- Title -->
-					<h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-tight leading-[0.9] mb-6">
-						Maatwerk <span class="text-electric">website</span> voor {project.title}
+					<h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tight leading-[0.9] mb-6">
+						Maatwerk <span class="text-accent">website</span> voor {project.title}
 					</h1>
 
 					<!-- Short Description -->
@@ -86,13 +86,13 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 						href={project.link}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="w-full sm:w-auto bg-acid text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-ink hover:text-acid transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+						class="w-full sm:w-auto bg-accent text-ink px-8 py-5 font-bold uppercase tracking-tight hover:bg-ink hover:text-accent transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
 					>
 						<span>Bekijk Live Website</span>
 						<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 					</a>
 					<a
-						href="/aanvragen/"
+						href="/contact/"
 						class="w-full sm:w-auto border-2 border-ink text-ink px-8 py-[18px] font-bold uppercase tracking-tight hover:bg-ink hover:text-canvas transition-colors duration-300 text-center"
 					>
 						Start Jouw Project
@@ -102,12 +102,12 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 		</section>
 
 		<!-- Project Context -->
-		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas relative overflow-hidden">
 			<div class="max-w-4xl mx-auto relative z-10">
-				<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-4">
+				<div class="text-xs font-mono uppercase tracking-[0.2em] text-accent mb-4">
 					[ Context ]
 				</div>
-				<h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight mb-8">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight mb-8">
 					Het Verhaal Achter Dit Project
 				</h2>
 				<div class="text-lg text-canvas/80 leading-relaxed whitespace-pre-line space-y-4">
@@ -117,7 +117,7 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 		</section>
 
 		<!-- Challenge & Solution -->
-		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas relative overflow-hidden">
 			<div class="max-w-6xl xl:max-w-7xl mx-auto relative z-10">
 				<div class="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
 					<!-- Challenge -->
@@ -125,7 +125,7 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 						<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-4">
 							[ Uitdaging ]
 						</div>
-						<h2 class="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight mb-6">
+						<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-tight mb-6">
 							De Uitdaging
 						</h2>
 						<p class="text-lg text-ink/70 leading-relaxed whitespace-pre-line">
@@ -138,7 +138,7 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 						<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-4">
 							[ Oplossing ]
 						</div>
-						<h2 class="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight mb-6">
+						<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-tight mb-6">
 							Mijn Aanpak
 						</h2>
 						<p class="text-lg text-ink/70 leading-relaxed whitespace-pre-line">
@@ -150,21 +150,21 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 		</section>
 
 		<!-- Features & Technical Highlights -->
-		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas relative overflow-hidden">
 			<div class="max-w-6xl xl:max-w-7xl mx-auto relative z-10">
 				<div class="grid md:grid-cols-2 gap-12 md:gap-16">
 					<!-- Features -->
 					<div>
-						<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-4">
+						<div class="text-xs font-mono uppercase tracking-[0.2em] text-accent mb-4">
 							[ Wat Het Doet ]
 						</div>
-						<h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8">
+						<h3 class="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-8">
 							Functionaliteit
 						</h3>
 						<ul class="space-y-4">
 							{project.features.map((feature) => (
 								<li class="flex items-start gap-3 text-canvas/80 text-lg">
-									<span class="text-acid mt-1.5 text-xl">✓</span>
+									<span class="text-accent mt-1.5 text-xl">✓</span>
 									<span>{feature}</span>
 								</li>
 							))}
@@ -174,16 +174,16 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 					<!-- Technical Highlights -->
 					{project.technicalHighlights && project.technicalHighlights.length > 0 && (
 						<div>
-							<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-4">
+							<div class="text-xs font-mono uppercase tracking-[0.2em] text-accent mb-4">
 								[ Onder De Motorkap ]
 							</div>
-							<h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8">
+							<h3 class="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-8">
 								Performance
 							</h3>
 							<ul class="space-y-4">
 								{project.technicalHighlights.map((highlight) => (
 									<li class="flex items-start gap-3 text-canvas/80 text-lg">
-										<span class="text-acid mt-1.5 text-xl">→</span>
+										<span class="text-accent mt-1.5 text-xl">→</span>
 										<span>{highlight}</span>
 									</li>
 								))}
@@ -196,18 +196,18 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 
 		<!-- Results (conditional) -->
 		{project.results && project.results.length > 0 && (
-			<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+			<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas relative overflow-hidden">
 				<div class="max-w-4xl mx-auto relative z-10">
 					<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-4">
 						[ Resultaat ]
 					</div>
-					<h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight mb-8">
+					<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight mb-8">
 						Wat Het Opleverde
 					</h2>
 					<ul class="space-y-4">
 						{project.results.map((result) => (
 							<li class="flex items-start gap-4 text-lg text-ink/70">
-								<span class="text-electric font-bold text-2xl">→</span>
+								<span class="text-accent font-bold text-2xl">→</span>
 								<span class="leading-relaxed">{result}</span>
 							</li>
 						))}
@@ -218,15 +218,15 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 
 		<!-- Testimonial (conditional) -->
 		{project.testimonial && (
-			<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas bg-grid-dark relative overflow-hidden">
+			<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-ink text-canvas relative overflow-hidden">
 				<div class="max-w-4xl mx-auto relative z-10 text-center">
-					<div class="text-xs font-mono uppercase tracking-[0.2em] text-acid mb-8">
+					<div class="text-xs font-mono uppercase tracking-[0.2em] text-accent mb-8">
 						[ De Klant Aan Het Woord ]
 					</div>
 					<blockquote class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-8 text-canvas">
 						"{project.testimonial.quote}"
 					</blockquote>
-					<div class="text-acid font-mono text-sm uppercase tracking-wider">
+					<div class="text-accent font-mono text-sm uppercase tracking-wider">
 						{project.testimonial.author}
 					</div>
 					<div class="text-canvas/60 font-mono text-xs uppercase tracking-wider mt-2">
@@ -237,20 +237,20 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 		)}
 
 		<!-- More Projects -->
-		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas bg-grid-light relative overflow-hidden">
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas relative overflow-hidden">
 			<div class="max-w-6xl xl:max-w-7xl mx-auto relative z-10">
 				<div class="flex items-center justify-between mb-12">
 					<div>
 						<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-4">
 							[ Mijn Werk ]
 						</div>
-						<h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight">
+						<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight">
 							Meer Projecten
 						</h2>
 					</div>
 					<a
-						href="/portfolio/"
-						class="hidden md:inline-flex items-center gap-2 text-ink font-mono text-sm uppercase tracking-wider hover:text-electric transition-colors group"
+						href="/wat-ik-doe/"
+						class="hidden md:inline-flex items-center gap-2 text-ink font-mono text-sm uppercase tracking-wider hover:text-accent transition-colors group"
 					>
 						<span>Alle projecten</span>
 						<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
@@ -279,14 +279,14 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 									/>
 									<!-- Hover Overlay -->
 									<div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/60 transition-colors duration-300 flex items-center justify-center">
-										<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-acid text-ink px-6 py-3 font-bold uppercase tracking-tight text-sm">
+										<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-accent text-ink px-6 py-3 font-bold uppercase tracking-tight text-sm">
 											Bekijk Project
 										</span>
 									</div>
 								</div>
 
 								<!-- Title -->
-								<h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-ink leading-tight group-hover:text-electric transition-colors duration-300">
+								<h3 class="text-2xl md:text-3xl font-bold uppercase tracking-tight text-ink leading-tight group-hover:text-accent transition-colors duration-300">
 									{relatedProject.title}
 								</h3>
 							</a>
@@ -296,8 +296,8 @@ const pageTitle = `Maatwerk website voor ${project.title} | ${project.industry}`
 
 				<!-- Mobile link -->
 				<a
-					href="/portfolio/"
-					class="md:hidden mt-8 inline-flex items-center gap-2 text-ink font-mono text-sm uppercase tracking-wider hover:text-electric transition-colors group"
+					href="/wat-ik-doe/"
+					class="md:hidden mt-8 inline-flex items-center gap-2 text-ink font-mono text-sm uppercase tracking-wider hover:text-accent transition-colors group"
 				>
 					<span>Alle projecten</span>
 					<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>

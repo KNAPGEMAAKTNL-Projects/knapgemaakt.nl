@@ -1,0 +1,158 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import FadeIn from "../components/FadeIn.astro";
+---
+
+<Layout
+  title="Professionele Website voor Hoveniers | KNAP GEMAAKT."
+  description="Een goede website voor jouw hoveniersbedrijf. Laat je werk zien, word gevonden in Google. Ik regel het voor je."
+>
+  <main>
+    <!-- Hero -->
+    <section class="min-h-[80vh] flex flex-col justify-center px-6 md:px-12 lg:px-16 py-24 relative overflow-hidden">
+      <div class="hero-orb hidden md:block w-[400px] h-[400px] bg-accent/[0.04] top-1/4 -right-1/4"></div>
+
+      <div class="max-w-4xl mx-auto w-full relative z-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Voor hoveniers</span>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
+          Een website voor jouw hoveniersbedrijf
+        </h1>
+        <p class="text-lg md:text-xl text-ink-secondary max-w-2xl leading-relaxed mb-10">
+          Je doet mooi werk. Laat dat online ook zien. Ik bouw een website waar je blij mee bent, zonder dat jij er omkijken naar hebt.
+        </p>
+        <a
+          href="/contact/"
+          class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+        >
+          Neem contact op
+          <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Pain points -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-4xl mx-auto">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12">
+            Dit hoor ik vaak van hoveniers
+          </h2>
+        </FadeIn>
+
+        <div class="space-y-6">
+          <FadeIn delay={100}>
+            <div class="glass-card p-6 md:p-8">
+              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
+              <h3 class="text-lg font-bold mb-2">"Al mijn klanten komen via mond-tot-mond"</h3>
+              <p class="text-ink-secondary leading-relaxed">Dat is mooi, maar er zijn ook mensen die googelen op 'hovenier in de buurt'. Die vinden nu je concurrent.</p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <div class="glass-card p-6 md:p-8">
+              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
+              <h3 class="text-lg font-bold mb-2">"Mijn website is van 2016 ofzo"</h3>
+              <p class="text-ink-secondary leading-relaxed">Mensen zoeken je op voordat ze bellen. Als je website er niet uitziet, bellen ze iemand anders.</p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={300}>
+            <div class="glass-card p-6 md:p-8">
+              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
+              <h3 class="text-lg font-bold mb-2">"Ik heb daar echt geen tijd voor"</h3>
+              <p class="text-ink-secondary leading-relaxed">Snap ik. Daarom regel ik het. Jij hoeft alleen wat foto's te sturen en even te vertellen wat je doet.</p>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">
+      <div class="max-w-4xl mx-auto">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Wat ik voor je maak
+          </h2>
+          <p class="text-ink-secondary text-lg leading-relaxed mb-10 max-w-2xl">
+            Een website waar je werk goed op uitkomt. Dit zit er allemaal bij in:
+          </p>
+        </FadeIn>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {["Mooi, modern ontwerp", "Je mooiste projecten in beeld", "Vindbaar in Google", "Contactformulier voor offertes", "Werkt goed op telefoon", "Hosting en onderhoud geregeld"].map((feature, i) => (
+            <FadeIn delay={i * 80}>
+              <div class="flex items-center gap-3 py-3">
+                <div class="w-2 h-2 rounded-full bg-accent shrink-0"></div>
+                <span class="text-ink font-medium">{feature}</span>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple process -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-4xl mx-auto">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12">
+            Hoe het werkt
+          </h2>
+        </FadeIn>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { step: "1", title: "We praten", desc: "Je vertelt wat je doet, ik vertel wat ik kan maken." },
+            { step: "2", title: "Ik bouw", desc: "Ik ontwerp en bouw je website. Jij geeft feedback." },
+            { step: "3", title: "Je bent online", desc: "Je website staat live. Klanten kunnen je vinden." },
+          ].map((item, i) => (
+            <FadeIn delay={i * 150}>
+              <div class="text-center md:text-left">
+                <span class="text-4xl font-bold text-accent/30 mb-2 block">{item.step}</span>
+                <h3 class="text-xl font-bold mb-2">{item.title}</h3>
+                <p class="text-ink-secondary leading-relaxed">{item.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Benieuwd wat ik voor je kan maken?
+          </h2>
+          <p class="text-ink-secondary text-lg leading-relaxed mb-8">
+            Stuur me een bericht of plan een gesprek in. Ik vertel je wat de mogelijkheden zijn.
+          </p>
+          <a
+            href="/contact/"
+            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+          >
+            Neem contact op
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+          <p class="text-sm text-ink-secondary/60 mt-4">Geen verplichtingen, gewoon een gesprek</p>
+        </FadeIn>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal footer -->
+  <footer class="py-8 px-6 border-t border-warm">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center gap-4 text-sm text-ink-secondary">
+      <span class="font-bold text-ink">KNAP GEMAAKT.</span>
+      <div class="flex gap-6">
+        <a href="/" class="hover:text-ink transition-colors">Hoofdsite</a>
+        <a href="/privacy/" class="hover:text-ink transition-colors">Privacy</a>
+      </div>
+      <span>&copy; 2026 KNAP GEMAAKT.</span>
+    </div>
+  </footer>
+</Layout>

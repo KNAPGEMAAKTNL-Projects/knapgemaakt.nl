@@ -90,4 +90,4 @@ Een uurtje werk, misschien twee. En dan kun je het van je to-do lijst strepen. A
 
 Wil je meer weten over wat Wero precies inhoudt? Lees dan [mijn uitgebreide artikel over de iDEAL naar Wero overgang](/blog/ideal-wordt-wero/).
 
-Bij KNAP GEMAAKT. bouw ik webshops die automatisch mee-updaten met de nieuwste betaalmethodes via Mollie. [Plan gerust een gesprek](/aanvragen/) als je ergens over wilt sparren.
+Bij KNAP GEMAAKT. bouw ik webshops die automatisch mee-updaten met de nieuwste betaalmethodes via Mollie. [Plan gerust een gesprek](/contact/) als je ergens over wilt sparren.
