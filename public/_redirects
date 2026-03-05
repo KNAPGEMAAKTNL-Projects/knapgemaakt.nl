@@ -25,3 +25,13 @@
 # Removed projects (redirect to portfolio)
 /project/schildersbedrijf-visser /portfolio/ 301
 /project/schildersbedrijf-visser/ /portfolio/ 301
+
+# Redesign redirects (old pages -> new pages)
+/website-laten-maken /wat-ik-doe/ 301
+/website-laten-maken/ /wat-ik-doe/ 301
+/automations /wat-ik-doe/ 301
+/automations/ /wat-ik-doe/ 301
+/aanvragen /contact/ 301
+/aanvragen/ /contact/ 301
+/portfolio /wat-ik-doe/ 301
+/portfolio/ /wat-ik-doe/ 301
