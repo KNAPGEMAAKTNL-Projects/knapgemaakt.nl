@@ -17,10 +17,8 @@ function generateSitemap(): string {
 
     const staticPages: PageEntry[] = [
         { path: "/", lastmod: today, changefreq: "weekly", priority: "1.0" },
-        { path: "/website-laten-maken/", lastmod: today, changefreq: "weekly", priority: "0.9" },
-        { path: "/aanvragen/", lastmod: today, changefreq: "monthly", priority: "0.9" },
-        { path: "/automations/", lastmod: today, changefreq: "monthly", priority: "0.8" },
-        { path: "/portfolio/", lastmod: today, changefreq: "weekly", priority: "0.8" },
+        { path: "/wat-ik-doe/", lastmod: today, changefreq: "weekly", priority: "0.9" },
+        { path: "/website-voor-hoveniers/", lastmod: today, changefreq: "monthly", priority: "0.8" },
         { path: "/blog/", lastmod: today, changefreq: "weekly", priority: "0.8" },
         { path: "/contact/", lastmod: today, changefreq: "monthly", priority: "0.7" },
         { path: "/over-mij/", lastmod: today, changefreq: "monthly", priority: "0.6" },
