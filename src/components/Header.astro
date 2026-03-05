@@ -36,7 +36,7 @@ const isActive = (href: string) => {
             <!-- Logo -->
             <a
                 href="/"
-                class="header-logo text-xl md:text-2xl font-bold uppercase tracking-tight hover:text-electric transition-colors z-[60] relative"
+                class="header-logo text-xl md:text-2xl font-bold uppercase tracking-tight hover:text-accent transition-colors z-[60] relative"
                 aria-label="KNAP GEMAAKT. - Ga naar homepagina"
             >
                 KNAP GEMAAKT.
@@ -103,7 +103,7 @@ const isActive = (href: string) => {
                     href={link.href}
                     class:list={[
                         "mobile-nav-link group relative block font-bold text-4xl sm:text-5xl uppercase tracking-tight py-3 overflow-hidden",
-                        isActive(link.href) ? "text-electric" : "text-ink"
+                        isActive(link.href) ? "text-accent" : "text-ink"
                     ]}
                     style={`--index: ${index}`}
                 >
@@ -122,7 +122,7 @@ const isActive = (href: string) => {
             class="mobile-nav-cta group relative mt-12 overflow-hidden"
             style={`--index: ${navLinks.length}`}
         >
-            <span class="relative z-10 block bg-ink text-canvas px-8 py-4 rounded-lg font-bold text-xl tracking-tight transition-all duration-300 group-hover:bg-electric">
+            <span class="relative z-10 block bg-ink text-canvas px-8 py-4 rounded-lg font-bold text-xl tracking-tight transition-all duration-300 group-hover:bg-accent">
                 Contact
             </span>
         </a>

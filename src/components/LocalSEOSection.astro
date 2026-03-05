@@ -31,7 +31,7 @@ function getAreaLink(areaName: string): string | null {
         <!-- Section Header -->
         <div class="mb-16">
             <div
-                class="font-mono text-sm text-electric uppercase tracking-widest mb-4"
+                class="font-mono text-sm text-accent uppercase tracking-widest mb-4"
             >
                 [ Webdesign in {city.region} ]
             </div>
@@ -39,7 +39,7 @@ function getAreaLink(areaName: string): string | null {
                 class="text-4xl md:text-6xl font-bold uppercase tracking-tight leading-none mb-6"
             >
                 Waarom Kiezen Voor Een
-                <span class="text-electric">Lokale</span> Partner?
+                <span class="text-accent">Lokale</span> Partner?
             </h2>
         </div>
 
@@ -75,7 +75,7 @@ function getAreaLink(areaName: string): string | null {
 
         <!-- Economic Fact Callout (unique per city) -->
         {city.stats?.economicFact && (
-            <div class="mb-16 p-6 border-l-4 border-electric bg-electric/5">
+            <div class="mb-16 p-6 border-l-4 border-accent bg-accent/5">
                 <p class="text-lg md:text-xl text-ink/80 italic">
                     "{city.stats.economicFact}"
                 </p>
@@ -90,7 +90,7 @@ function getAreaLink(areaName: string): string | null {
                     <h3
                         class="text-2xl font-bold uppercase tracking-tight mb-4 flex items-center gap-3"
                     >
-                        <span class="text-electric font-mono text-lg">[01]</span
+                        <span class="text-accent font-mono text-lg">[01]</span
                         >
                         Over {city.name}
                     </h3>
@@ -111,7 +111,7 @@ function getAreaLink(areaName: string): string | null {
                     <h3
                         class="text-2xl font-bold uppercase tracking-tight mb-4 flex items-center gap-3"
                     >
-                        <span class="text-electric font-mono text-lg">[02]</span
+                        <span class="text-accent font-mono text-lg">[02]</span
                         >
                         Online Zichtbaarheid
                     </h3>
@@ -127,7 +127,7 @@ function getAreaLink(areaName: string): string | null {
                     class="bg-ink text-canvas p-8 md:p-10 relative overflow-hidden"
                 >
                     <div
-                        class="absolute top-0 right-0 w-32 h-32 bg-electric/10 rounded-full blur-3xl"
+                        class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl"
                     >
                     </div>
                     <div class="relative z-10">
@@ -156,7 +156,7 @@ function getAreaLink(areaName: string): string | null {
                             city.nearbyAreas.map((area) => {
                                 const link = getAreaLink(area);
                                 return link ? (
-                                    <a href={link} class="px-4 py-2 bg-[#e8e8e8] text-ink/80 font-medium text-sm hover:bg-electric hover:text-ink transition-colors">
+                                    <a href={link} class="px-4 py-2 bg-[#e8e8e8] text-ink/80 font-medium text-sm hover:bg-accent hover:text-ink transition-colors">
                                         {area}
                                     </a>
                                 ) : (
@@ -207,7 +207,7 @@ function getAreaLink(areaName: string): string | null {
         >
             <div>
                 <div
-                    class="text-4xl font-bold text-electric mb-3 font-mono tracking-tight"
+                    class="text-4xl font-bold text-accent mb-3 font-mono tracking-tight"
                 >
                     01.
                 </div>
@@ -221,7 +221,7 @@ function getAreaLink(areaName: string): string | null {
             </div>
             <div>
                 <div
-                    class="text-4xl font-bold text-electric mb-3 font-mono tracking-tight"
+                    class="text-4xl font-bold text-accent mb-3 font-mono tracking-tight"
                 >
                     02.
                 </div>
@@ -236,7 +236,7 @@ function getAreaLink(areaName: string): string | null {
             </div>
             <div>
                 <div
-                    class="text-4xl font-bold text-electric mb-3 font-mono tracking-tight"
+                    class="text-4xl font-bold text-accent mb-3 font-mono tracking-tight"
                 >
                     03.
                 </div>
@@ -267,7 +267,7 @@ function getAreaLink(areaName: string): string | null {
 						</p>
 						<a
 							href={`/project/${relatedProject.slug}/`}
-							class="text-electric font-mono text-sm uppercase tracking-wider hover:text-ink transition-colors inline-flex items-center gap-2 group"
+							class="text-accent font-mono text-sm uppercase tracking-wider hover:text-ink transition-colors inline-flex items-center gap-2 group"
 						>
 							<span>Bekijk Case Study</span>
 							<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>

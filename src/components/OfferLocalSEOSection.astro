@@ -33,19 +33,19 @@ function getAreaLink(areaName: string): string | null {
         <!-- SECTION 1: PROBLEM-SOLUTION GRID (100% unique) -->
         <!-- ============================================ -->
         <div class="mb-16 md:mb-20">
-            <div class="font-mono text-sm text-electric uppercase tracking-widest mb-4">
+            <div class="font-mono text-sm text-accent uppercase tracking-widest mb-4">
                 [ Website Laten Maken in {city.name} ]
             </div>
             <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-snug mb-12">
                 Geen Webbureau Nodig.<br />
-                <span class="text-electric">Wel Een Website.</span>
+                <span class="text-accent">Wel Een Website.</span>
             </h2>
 
             <div class="grid md:grid-cols-2 gap-8 md:gap-12">
                 <!-- The Problem -->
                 <div class="space-y-4">
                     <h3 class="text-xl font-bold tracking-tight flex items-center gap-3">
-                        <span class="text-electric font-mono text-lg">[01]</span>
+                        <span class="text-accent font-mono text-lg">[01]</span>
                         Het Probleem
                     </h3>
                     <p class="text-lg text-ink/80 leading-relaxed">
@@ -55,7 +55,7 @@ function getAreaLink(areaName: string): string | null {
 
                 <!-- The Solution -->
                 <div class="bg-ink text-canvas p-8 relative overflow-hidden rounded-xl">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-electric/10 rounded-full blur-3xl"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl"></div>
                     <div class="relative z-10 space-y-4">
                         <h3 class="text-xl font-bold tracking-tight flex items-center gap-3">
                             <span class="text-accent font-mono text-lg">[02]</span>
@@ -188,7 +188,7 @@ function getAreaLink(areaName: string): string | null {
                     {city.coffeeLocation && (
                         <a
                             href="/contact/"
-                            class="inline-flex items-center gap-3 text-electric font-mono text-sm uppercase tracking-wider hover:text-ink transition-colors group"
+                            class="inline-flex items-center gap-3 text-accent font-mono text-sm uppercase tracking-wider hover:text-ink transition-colors group"
                         >
                             <span>{city.coffeeLocation}</span>
                             <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
@@ -203,7 +203,7 @@ function getAreaLink(areaName: string): string | null {
                         <div class="grid grid-cols-2 gap-4 p-6 bg-canvas-alt border border-warm rounded-xl">
                             {city.stats.businesses && (
                                 <div>
-                                    <div class="text-xl md:text-2xl font-bold text-electric">{city.stats.businesses}</div>
+                                    <div class="text-xl md:text-2xl font-bold text-accent">{city.stats.businesses}</div>
                                     <div class="text-xs font-mono uppercase tracking-wider text-ink/50">Actief in {city.name}</div>
                                 </div>
                             )}
@@ -237,7 +237,7 @@ function getAreaLink(areaName: string): string | null {
                             {city.nearbyAreas.map((area) => {
                                 const link = getAreaLink(area);
                                 return link ? (
-                                    <a href={link} class="px-4 py-2 bg-canvas-alt text-ink/80 font-medium text-sm rounded-lg hover:bg-electric hover:text-ink transition-colors">
+                                    <a href={link} class="px-4 py-2 bg-canvas-alt text-ink/80 font-medium text-sm rounded-lg hover:bg-accent hover:text-ink transition-colors">
                                         {area}
                                     </a>
                                 ) : (
@@ -277,7 +277,7 @@ function getAreaLink(areaName: string): string | null {
                             </p>
                             <a
                                 href={`/project/${relatedProject.slug}/`}
-                                class="text-electric font-mono text-sm uppercase tracking-wider hover:text-ink transition-colors inline-flex items-center gap-2 group"
+                                class="text-accent font-mono text-sm uppercase tracking-wider hover:text-ink transition-colors inline-flex items-center gap-2 group"
                             >
                                 <span>Bekijk Case Study</span>
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
@@ -319,7 +319,7 @@ function getAreaLink(areaName: string): string | null {
                     {city.industryDetails.map((industry, index) => (
                         <div class="p-6 border border-warm bg-canvas-alt rounded-xl">
                             <div class="flex items-start gap-4">
-                                <div class="text-electric font-mono text-sm font-bold shrink-0">
+                                <div class="text-accent font-mono text-sm font-bold shrink-0">
                                     [{String(index + 1).padStart(2, '0')}]
                                 </div>
                                 <div>
