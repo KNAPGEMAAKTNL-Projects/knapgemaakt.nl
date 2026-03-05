@@ -13,13 +13,16 @@
 }
 
 @theme {
-  --color-canvas: #FFFFFF;
-  --color-ink: #000000;
+  --color-canvas: #FAFAF8;
+  --color-canvas-alt: #F5F3EF;
+  --color-ink: #1A1A1A;
+  --color-ink-secondary: #4A4A4A;
   --color-acid: #CCFF00;
   --color-electric: #7C3AED;
+  --color-warm: #E8E4DE;
 
   --font-sans: "Inter Tight", "Inter Tight Fallback", system-ui, sans-serif;
-  --font-display: "Helvetica Now Display", "Inter Tight", sans-serif;
+  --font-display: "Inter Tight", system-ui, sans-serif;
 }
 
 @layer base {
@@ -39,8 +42,10 @@
     background-color: var(--color-canvas);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    font-size: 1.125rem;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
   }
 }
 
@@ -74,6 +79,64 @@
   }
 }
 
+/* Fade-up entrance animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Glassmorphism card hover effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-warm);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: var(--color-acid);
+  box-shadow: 0 0 20px rgba(204, 255, 0, 0.08);
+}
+
+/* Gradient orb for hero */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-orb {
+    animation: drift 20s ease-in-out infinite;
+  }
+}
+
 /* Animated underline for nav links */
 .nav-link-hover::after {
   content: '';
@@ -95,19 +158,6 @@
 /* Keep underline visible for active nav link */
 .nav-link-hover[aria-current="page"]::after {
   transform: scaleX(1);
-}
-
-/* Reusable grid backgrounds */
-.bg-grid-light {
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(0,0,0,0.03) 80px, rgba(0,0,0,0.03) 81px),
-    repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(0,0,0,0.03) 80px, rgba(0,0,0,0.03) 81px);
-}
-
-.bg-grid-dark {
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(204,255,0,0.06) 80px, rgba(204,255,0,0.06) 81px),
-    repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(204,255,0,0.06) 80px, rgba(204,255,0,0.06) 81px);
 }
 
 /* ========================================
