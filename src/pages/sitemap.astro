@@ -11,14 +11,14 @@ const blogPosts = getAllBlogPosts();
 ---
 
 <Layout title="Sitemap | KNAP GEMAAKT.">
-    <main class="min-h-screen bg-canvas pt-32 pb-24 px-6 md:px-12 lg:px-16 bg-grid-light relative overflow-hidden">
+    <main class="min-h-screen bg-canvas pt-32 pb-24 px-6 md:px-12 lg:px-16 relative overflow-hidden">
         <div class="max-w-6xl xl:max-w-7xl mx-auto relative z-10">
             <!-- Header -->
             <div class="mb-16">
                 <div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-4">
                     [ Navigatie ]
                 </div>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-[0.9] mb-6">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[0.9] mb-6">
                     Sitemap
                 </h1>
                 <p class="text-xl md:text-2xl text-ink/60 max-w-2xl">
@@ -31,37 +31,42 @@ const blogPosts = getAllBlogPosts();
                 <!-- Main Pages -->
                 <section class="space-y-6">
                     <h2 class="text-lg font-bold uppercase tracking-tight flex items-center gap-3">
-                        <span class="text-electric font-mono text-sm">[01]</span>
+                        <span class="text-accent font-mono text-sm">[01]</span>
                         Hoofdpagina's
                     </h2>
                     <ul class="space-y-3">
                         <li>
-                            <a href="/" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/" class="text-ink/70 hover:text-accent transition-colors font-medium">
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a href="/portfolio/" class="text-ink/70 hover:text-electric transition-colors font-medium">
-                                Portfolio
+                            <a href="/wat-ik-doe/" class="text-ink/70 hover:text-accent transition-colors font-medium">
+                                Wat ik doe
                             </a>
                         </li>
                         <li>
-                            <a href="/blog/" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/website-voor-hoveniers/" class="text-ink/70 hover:text-accent transition-colors font-medium">
+                                Website voor hoveniers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/blog/" class="text-ink/70 hover:text-accent transition-colors font-medium">
                                 Blog
                             </a>
                         </li>
                         <li>
-                            <a href="/#prijzen" class="text-ink/70 hover:text-electric transition-colors font-medium">
-                                Prijzen
+                            <a href="/over-mij/" class="text-ink/70 hover:text-accent transition-colors font-medium">
+                                Over mij
                             </a>
                         </li>
                         <li>
-                            <a href="/#faq" class="text-ink/70 hover:text-electric transition-colors font-medium">
-                                FAQ
+                            <a href="/contact/" class="text-ink/70 hover:text-accent transition-colors font-medium">
+                                Contact
                             </a>
                         </li>
                         <li>
-                            <a href="/aanvragen/" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/aanvragen/" class="text-ink/70 hover:text-accent transition-colors font-medium">
                                 Aanvragen
                             </a>
                         </li>
@@ -71,13 +76,13 @@ const blogPosts = getAllBlogPosts();
                 <!-- Projects -->
                 <section class="space-y-6">
                     <h2 class="text-lg font-bold uppercase tracking-tight flex items-center gap-3">
-                        <span class="text-electric font-mono text-sm">[02]</span>
+                        <span class="text-accent font-mono text-sm">[02]</span>
                         Projecten
                     </h2>
                     <ul class="space-y-3">
                         {projects.map((project) => (
                             <li>
-                                <a href={`/project/${project.slug}/`} class="text-ink/70 hover:text-electric transition-colors font-medium">
+                                <a href={`/project/${project.slug}/`} class="text-ink/70 hover:text-accent transition-colors font-medium">
                                     {project.title}
                                 </a>
                             </li>
@@ -88,13 +93,13 @@ const blogPosts = getAllBlogPosts();
                 <!-- Blog Posts -->
                 <section class="space-y-6">
                     <h2 class="text-lg font-bold uppercase tracking-tight flex items-center gap-3">
-                        <span class="text-electric font-mono text-sm">[03]</span>
+                        <span class="text-accent font-mono text-sm">[03]</span>
                         Artikelen
                     </h2>
                     <ul class="space-y-3">
                         {blogPosts.map((post) => (
                             <li>
-                                <a href={`/blog/${post.slug}/`} class="text-ink/70 hover:text-electric transition-colors font-medium">
+                                <a href={`/blog/${post.slug}/`} class="text-ink/70 hover:text-accent transition-colors font-medium">
                                     {post.title}
                                 </a>
                             </li>
@@ -105,13 +110,13 @@ const blogPosts = getAllBlogPosts();
                 <!-- City Pages -->
                 <section class="space-y-6">
                     <h2 class="text-lg font-bold uppercase tracking-tight flex items-center gap-3">
-                        <span class="text-electric font-mono text-sm">[04]</span>
+                        <span class="text-accent font-mono text-sm">[04]</span>
                         Regio's
                     </h2>
                     <ul class="space-y-3">
                         {cities.map((city) => (
                             <li>
-                                <a href={`/webdesign-${city.slug}/`} class="text-ink/70 hover:text-electric transition-colors font-medium">
+                                <a href={`/webdesign-${city.slug}/`} class="text-ink/70 hover:text-accent transition-colors font-medium">
                                     Webdesign {city.name}
                                 </a>
                             </li>
@@ -122,22 +127,22 @@ const blogPosts = getAllBlogPosts();
                 <!-- Legal -->
                 <section class="space-y-6">
                     <h2 class="text-lg font-bold uppercase tracking-tight flex items-center gap-3">
-                        <span class="text-electric font-mono text-sm">[05]</span>
+                        <span class="text-accent font-mono text-sm">[05]</span>
                         Juridisch
                     </h2>
                     <ul class="space-y-3">
                         <li>
-                            <a href="/algemene-voorwaarden/" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/algemene-voorwaarden/" class="text-ink/70 hover:text-accent transition-colors font-medium">
                                 Algemene Voorwaarden
                             </a>
                         </li>
                         <li>
-                            <a href="/privacy/" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/privacy/" class="text-ink/70 hover:text-accent transition-colors font-medium">
                                 Privacyverklaring
                             </a>
                         </li>
                         <li>
-                            <a href="/sitemap/" class="text-ink/70 hover:text-electric transition-colors font-medium">
+                            <a href="/sitemap/" class="text-ink/70 hover:text-accent transition-colors font-medium">
                                 Sitemap
                             </a>
                         </li>

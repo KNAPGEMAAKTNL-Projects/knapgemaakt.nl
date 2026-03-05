@@ -110,4 +110,4 @@ Wero maakt verkopen aan Duitse klanten makkelijker. Eén integratie, geen extra 
 
 Meer over de Wero-overgang? Lees [wat iDEAL naar Wero betekent voor je webshop](/blog/ideal-wordt-wero/), bekijk [de checklist met 5 dingen die je voor 31 maart kunt regelen](/blog/wero-webshops-checklist-maart/), of lees [hoe Mollie de integratie regelt](/blog/wero-mollie-integratie/).
 
-Heb je vragen over uitbreiden naar Duitsland? [Plan gerust een gesprek](/aanvragen/) en ik denk met je mee.
+Heb je vragen over uitbreiden naar Duitsland? [Plan gerust een gesprek](/contact/) en ik denk met je mee.

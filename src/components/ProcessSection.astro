@@ -18,12 +18,12 @@ const steps = [
 	{
 		number: "03",
 		title: "Bouw",
-		description: "Wij gaan aan de slag, jij hoeft niks te doen"
+		description: "Ik ga aan de slag, jij hoeft niks te doen"
 	},
 	{
 		number: "04",
 		title: "Feedback",
-		description: "Je bekijkt het resultaat, wij verwerken je input"
+		description: "Je bekijkt het resultaat, ik verwerk je feedback"
 	},
 	{
 		number: "05",
@@ -40,7 +40,7 @@ const steps = [
 			<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink/60 mb-4">
 				[ Ons Proces ]
 			</div>
-			<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight leading-[0.9]">
+			<h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-[0.9]">
 				In 5 Stappen Live
 			</h2>
 		</div>
@@ -51,10 +51,10 @@ const steps = [
 			<div class="hidden md:block absolute top-8 left-0 right-0 h-px bg-ink/20"></div>
 
 			<!-- Progress line (desktop) -->
-			<div class="hidden md:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-acid via-electric to-acid opacity-50"></div>
+			<div class="hidden md:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-accent/0 via-accent to-accent/0 opacity-50"></div>
 
 			<!-- Vertical timeline line (mobile) -->
-			<div class="md:hidden absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-acid via-electric to-acid opacity-30 -translate-x-1/2"></div>
+			<div class="md:hidden absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent/0 via-accent to-accent/0 opacity-30 -translate-x-1/2"></div>
 
 			<!-- Steps - Desktop: horizontal, Mobile: zigzag -->
 			<div class="hidden md:grid md:grid-cols-5 gap-4">
@@ -65,7 +65,7 @@ const steps = [
 							{step.number}
 						</div>
 						<!-- Content -->
-						<h3 class="text-lg font-black uppercase tracking-tight mb-2">
+						<h3 class="text-lg font-bold uppercase tracking-tight mb-2">
 							{step.title}
 						</h3>
 						<p class="text-sm text-ink/60 leading-relaxed max-w-[180px]">
@@ -83,7 +83,7 @@ const steps = [
 						<div class={`relative flex items-center gap-4 ${isEven ? 'flex-row-reverse' : ''}`}>
 							<!-- Content side -->
 							<div class={`flex-1 ${isEven ? 'text-left' : 'text-right'}`}>
-								<h3 class="text-lg font-black uppercase tracking-tight mb-1">
+								<h3 class="text-lg font-bold uppercase tracking-tight mb-1">
 									{step.title}
 								</h3>
 								<p class="text-sm text-ink/60 leading-relaxed">

@@ -99,4 +99,4 @@ En Request-to-Pay is voor dienstverleners en ZZP'ers eigenlijk gewoon een cadeau
 
 ---
 
-Heb je vragen over hoe dit voor jouw situatie werkt? [Plan gerust een gesprek](/aanvragen/) en ik denk met je mee.
+Heb je vragen over hoe dit voor jouw situatie werkt? [Plan gerust een gesprek](/contact/) en ik denk met je mee.
