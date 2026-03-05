@@ -1,0 +1,696 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+	title="Laten We Kennismaken | KNAP GEMAAKT."
+	description="Plan een vrijblijvend gesprek. Vertel me over je bedrijf en ik denk vrijblijvend met je mee. KNAP GEMAAKT."
+>
+    <main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="mb-16" id="page-header">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug">
+                        Laten we kennismaken
+                    </h1>
+                    <a
+                        href="/contact/"
+                        class="text-sm font-mono text-ink-secondary hover:text-accent transition-colors whitespace-nowrap self-start md:self-auto md:mt-4"
+                    >
+                        Liever direct contact? &rarr;
+                    </a>
+                </div>
+                <p
+                    class="text-xl md:text-2xl text-ink-secondary font-medium max-w-4xl leading-relaxed"
+                >
+                    Vul het formulier in en plan direct een vrijblijvend
+                    gesprek.<br />
+                    Geen verplichtingen, wel direct actie.
+                </p>
+            </div>
+
+            <!-- Form -->
+            <form class="space-y-12 bg-canvas border border-warm rounded-xl p-8 md:p-10 relative z-10" id="aanvraag-form">
+                <!-- Personal Details -->
+                <div class="space-y-6">
+                    <h2
+                        class="text-2xl font-bold tracking-tight leading-snug flex items-center gap-3 border-b border-warm pb-4"
+                    >
+                        <span class="text-accent font-mono text-lg">[01]</span
+                        >
+                        Je Gegevens
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label
+                                for="naam"
+                                class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                                >Naam</label
+                            >
+                            <input
+                                type="text"
+                                id="naam"
+                                name="naam"
+                                required
+                                oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+                                oninput="this.setCustomValidity('')"
+                                class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors placeholder:text-ink/20"
+                                placeholder="Je volledige naam"
+                            />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label
+                                for="bedrijfsnaam"
+                                class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                                >Bedrijfsnaam</label
+                            >
+                            <input
+                                type="text"
+                                id="bedrijfsnaam"
+                                name="bedrijfsnaam"
+                                required
+                                oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+                                oninput="this.setCustomValidity('')"
+                                class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors placeholder:text-ink/20"
+                                placeholder="Je bedrijfsnaam"
+                            />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label
+                                for="telefoon"
+                                class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                                >Telefoonnummer</label
+                            >
+                            <input
+                                type="tel"
+                                id="telefoon"
+                                name="telefoon"
+                                required
+                                oninvalid="this.setCustomValidity('Dit veld is verplicht')"
+                                oninput="this.setCustomValidity('')"
+                                class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors placeholder:text-ink/20"
+                                placeholder="06 12345678"
+                            />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label
+                                for="email"
+                                class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                                >E-mailadres</label
+                            >
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                oninvalid="this.setCustomValidity('Dit veld is verplicht (of e-mail is ongeldig)')"
+                                oninput="this.setCustomValidity('')"
+                                class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors placeholder:text-ink/20"
+                                placeholder="je@email.nl"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Details -->
+                <div class="space-y-8">
+                    <h2
+                        class="text-2xl font-bold tracking-tight leading-snug flex items-center gap-3 border-b border-warm pb-4"
+                    >
+                        <span class="text-accent font-mono text-lg">[02]</span
+                        >
+                        Over Je Bedrijf
+                    </h2>
+
+                    <div class="space-y-2">
+                        <label
+                            for="branche"
+                            class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                            >Wat voor bedrijf heb je?</label
+                        >
+                        <div class="relative">
+                            <select
+                                id="branche"
+                                name="branche"
+                                required
+                                oninvalid="this.setCustomValidity('Maak een keuze uit de lijst')"
+                                oninput="this.setCustomValidity('')"
+                                class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
+                            >
+                                <option value="" disabled selected
+                                    >Maak een keuze...</option
+                                >
+                                <option value="Horeca">Horeca</option>
+                                <option value="Bouw">Bouw</option>
+                                <option value="Retail">Retail</option>
+                                <option value="Dienstverlening"
+                                    >Dienstverlening</option
+                                >
+                                <option value="Anders">Anders</option>
+                            </select>
+                            <div
+                                class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink-secondary"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="square"
+                                    stroke-linejoin="miter"
+                                    ><path d="m6 9 6 6 6-6"></path></svg
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <label
+                            class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                            >Heb je al een website?</label
+                        >
+                        <div class="flex gap-8">
+                            <label
+                                class="flex items-center gap-3 cursor-pointer group"
+                            >
+                                <input
+                                    type="radio"
+                                    name="has_website"
+                                    value="ja"
+                                    required
+                                    oninvalid="this.setCustomValidity('Maak een keuze')"
+                                    oninput="this.setCustomValidity('')"
+                                    class="peer sr-only"
+                                    onchange="document.getElementById('website-url-container').classList.remove('hidden'); this.setCustomValidity('')"
+                                />
+                                <div
+                                    class="w-6 h-6 border-2 border-warm peer-checked:border-accent peer-checked:bg-accent transition-colors relative rounded"
+                                >
+                                </div>
+                                <span
+                                    class="text-lg font-medium group-hover:text-accent transition-colors"
+                                    >Ja</span
+                                >
+                            </label>
+
+                            <label
+                                class="flex items-center gap-3 cursor-pointer group"
+                            >
+                                <input
+                                    type="radio"
+                                    name="has_website"
+                                    value="nee"
+                                    required
+                                    oninvalid="this.setCustomValidity('Maak een keuze')"
+                                    oninput="this.setCustomValidity('')"
+                                    class="peer sr-only"
+                                    onchange="document.getElementById('website-url-container').classList.add('hidden'); this.setCustomValidity('')"
+                                />
+                                <div
+                                    class="w-6 h-6 border-2 border-warm peer-checked:border-accent peer-checked:bg-accent transition-colors relative rounded"
+                                >
+                                </div>
+                                <span
+                                    class="text-lg font-medium group-hover:text-accent transition-colors"
+                                    >Nee</span
+                                >
+                            </label>
+                        </div>
+                    </div>
+
+                    <div
+                        id="website-url-container"
+                        class="hidden space-y-2 animate-in fade-in slide-in-from-top-2 duration-300"
+                    >
+                        <label
+                            for="website_url"
+                            class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                            >Wat is je website-adres?</label
+                        >
+                        <input
+                            type="text"
+                            id="website_url"
+                            name="website_url"
+                            class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors placeholder:text-ink/20"
+                            placeholder="www.jouwwebsite.nl"
+                        />
+                    </div>
+                </div>
+
+                <!-- Specification -->
+                <div class="space-y-2">
+                    <label
+                        for="specification"
+                        class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                        >Waar wil je het over hebben?</label
+                    >
+                    <div class="relative">
+                        <select
+                            id="specification"
+                            name="specification"
+                            required
+                            oninvalid="this.setCustomValidity('Maak een keuze uit de lijst')"
+                            oninput="this.setCustomValidity('')"
+                            class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
+                        >
+                            <option value="" disabled selected>Maak een keuze...</option>
+                            <option value="Website laten maken">Website laten maken</option>
+                            <option value="Advies gesprek">Advies gesprek</option>
+                            <option value="Bestaande website verbeteren">Bestaande website verbeteren</option>
+                            <option value="Automatisering bespreken">Automatisering bespreken</option>
+                            <option value="Anders">Anders</option>
+                        </select>
+                        <div
+                            class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink-secondary"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="square"
+                                stroke-linejoin="miter"
+                                ><path d="m6 9 6 6 6-6"></path></svg
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar Section -->
+                <div
+                    class="space-y-6 -mx-8 px-8 py-8 bg-ink text-canvas rounded-xl md:-mx-10 md:px-10 lg:bg-transparent lg:text-ink lg:py-0 lg:rounded-none"
+                >
+                    <h2
+                        class="text-2xl font-bold tracking-tight leading-snug flex items-center gap-3 border-b border-canvas/10 lg:border-warm pb-4"
+                    >
+                        <span class="text-accent font-mono text-lg">[03]</span
+                        >
+                        Kies Je Moment
+                    </h2>
+
+                    <!-- Placeholder (shown until form complete) -->
+                    <div
+                        id="cal-placeholder"
+                        class="py-12 border border-dashed border-canvas/20 text-center lg:border-warm"
+                    >
+                        <p class="text-canvas/40 font-medium lg:text-ink-secondary">
+                            Vul eerst je gegevens in om een moment te kiezen
+                        </p>
+                    </div>
+
+                    <!-- Calendar component (hidden until form complete) -->
+                    <div
+                        id="calendar-container"
+                        class="hidden -mx-8 w-[calc(100%+4rem)] md:-mx-10 md:w-[calc(100%+5rem)]"
+                    >
+                    </div>
+                </div>
+
+                <!-- Privacy checkbox -->
+                <div class="flex items-start gap-3 pt-4">
+                    <input
+                        type="checkbox"
+                        id="aanvraag-privacy"
+                        name="privacy"
+                        required
+                        oninvalid="this.setCustomValidity('Je moet akkoord gaan met de privacyverklaring')"
+                        oninput="this.setCustomValidity('')"
+                        class="mt-1 w-4 h-4 shrink-0 accent-accent"
+                    />
+                    <label for="aanvraag-privacy" class="text-sm text-ink-secondary">
+                        Ik ga akkoord met de <a href="/privacy/" class="underline hover:text-ink transition-colors">privacyverklaring</a>
+                    </label>
+                </div>
+
+                <!-- Submit -->
+                <div class="pt-8">
+                    <button
+                        type="submit"
+                        id="submit-btn"
+                        class="w-full md:w-auto px-8 py-5 bg-ink text-canvas font-bold tracking-tight rounded-lg hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <span id="btn-text">Afspraak inplannen</span>
+                        <span id="btn-arrow" class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        <span id="btn-loading" class="hidden">
+                            <svg
+                                class="animate-spin h-6 w-6"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <circle
+                                    class="opacity-25"
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                    stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path
+                                    class="opacity-75"
+                                    fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                ></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <p class="mt-4 text-xs font-mono text-ink-secondary">
+                        * Je ontvangt direct een bevestiging per e-mail. We bellen je op het gekozen tijdstip.
+                    </p>
+                </div>
+
+                <!-- Error Message -->
+                <div
+                    id="error-message"
+                    class="hidden p-6 border-2 border-red-500 bg-red-500/10 rounded-lg"
+                >
+                    <p class="font-bold text-red-500 tracking-tight">
+                        Er ging iets mis
+                    </p>
+                    <p class="text-ink-secondary mt-2">
+                        Probeer het opnieuw of neem direct contact met ons op.
+                    </p>
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <Footer hideCTA />
+</Layout>
+
+<script>
+    declare global {
+        interface Window {
+            selectedBookingSlot?: { start: string; end: string } | null;
+        }
+    }
+
+    const STORAGE_KEY = "kg_aanvraag_form";
+    let pageInitialized = false;
+    let calendarMounted = false;
+
+    function initAanvragenPage() {
+        const form = document.getElementById("aanvraag-form") as HTMLFormElement;
+        if (!form) return; // Not on aanvragen page
+
+        // Prevent duplicate initialization on same page instance
+        if (pageInitialized && form.dataset.initialized === "true") return;
+        form.dataset.initialized = "true";
+        pageInitialized = true;
+        calendarMounted = false; // Reset for new page load
+
+        const submitBtn = document.getElementById(
+            "submit-btn",
+        ) as HTMLButtonElement;
+        const btnText = document.getElementById("btn-text") as HTMLSpanElement;
+        const btnArrow = document.getElementById("btn-arrow") as HTMLSpanElement;
+        const btnLoading = document.getElementById(
+            "btn-loading",
+        ) as HTMLSpanElement;
+        const errorMessage = document.getElementById(
+            "error-message",
+        ) as HTMLDivElement;
+        const websiteUrlContainer = document.getElementById(
+            "website-url-container",
+        ) as HTMLDivElement;
+        const calPlaceholder = document.getElementById(
+            "cal-placeholder",
+        ) as HTMLDivElement;
+        const calendarContainer = document.getElementById(
+            "calendar-container",
+        ) as HTMLDivElement;
+
+    // Normalize URL - add https:// if missing
+    function normalizeUrl(url: string): string | null {
+        if (!url || !url.trim()) return null;
+        url = url.trim();
+        if (!/^https?:\/\//i.test(url)) {
+            url = "https://" + url;
+        }
+        return url;
+    }
+
+    // Save form data to localStorage
+    function saveFormData() {
+        const formData: Record<string, any> = {};
+
+        // Text inputs and select
+        [
+            "naam",
+            "bedrijfsnaam",
+            "telefoon",
+            "email",
+            "branche",
+            "specification",
+            "website_url",
+        ].forEach((name) => {
+            const el = form.elements.namedItem(name) as
+                | HTMLInputElement
+                | HTMLSelectElement;
+            if (el) formData[name] = el.value;
+        });
+
+        // Radio buttons
+        const hasWebsite = form.querySelector(
+            'input[name="has_website"]:checked',
+        ) as HTMLInputElement;
+        if (hasWebsite) formData["has_website"] = hasWebsite.value;
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+    }
+
+    // Restore form data from localStorage
+    function restoreFormData() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (!saved) return;
+
+        try {
+            const formData = JSON.parse(saved);
+
+            // Text inputs and select
+            [
+                "naam",
+                "bedrijfsnaam",
+                "telefoon",
+                "email",
+                "branche",
+                "specification",
+                "website_url",
+            ].forEach((name) => {
+                const el = form.elements.namedItem(name) as
+                    | HTMLInputElement
+                    | HTMLSelectElement;
+                if (el && formData[name]) el.value = formData[name];
+            });
+
+            // Radio buttons
+            if (formData["has_website"]) {
+                const radio = form.querySelector(
+                    `input[name="has_website"][value="${formData["has_website"]}"]`,
+                ) as HTMLInputElement;
+                if (radio) {
+                    radio.checked = true;
+                    // Show/hide website URL container
+                    if (formData["has_website"] === "ja") {
+                        websiteUrlContainer.classList.remove("hidden");
+                    }
+                }
+            }
+        } catch (e) {
+            console.error("Error restoring form data:", e);
+        }
+    }
+
+    // Clear saved form data
+    function clearFormData() {
+        localStorage.removeItem(STORAGE_KEY);
+    }
+
+    // Listen to form changes and save
+    form.addEventListener("input", saveFormData);
+    form.addEventListener("change", saveFormData);
+
+    // Restore on page load
+    restoreFormData();
+
+    // Dynamically mount the React calendar component
+    async function mountCalendar() {
+        if (calendarMounted) return;
+
+        const container = document.getElementById("calendar-container");
+        if (!container) return;
+
+        try {
+            // Dynamically import React, ReactDOM, and the calendar component
+            const [React, ReactDOM, BookingCalendarModule] = await Promise.all([
+                import("react"),
+                import("react-dom/client"),
+                import("../components/BookingCalendar"),
+            ]);
+
+            const BookingCalendar = BookingCalendarModule.default;
+            const root = ReactDOM.createRoot(container);
+            root.render(React.createElement(BookingCalendar));
+
+            calendarMounted = true;
+        } catch (error) {
+            console.error("Failed to mount calendar:", error);
+        }
+    }
+
+    // Check if form is complete to show calendar
+    function checkFormComplete() {
+        const naam = (document.getElementById("naam") as HTMLInputElement)
+            .value;
+        const email = (document.getElementById("email") as HTMLInputElement)
+            .value;
+        const telefoon = (
+            document.getElementById("telefoon") as HTMLInputElement
+        ).value;
+        const branche = (
+            document.getElementById("branche") as HTMLSelectElement
+        ).value;
+        const specification = (
+            document.getElementById("specification") as HTMLSelectElement
+        ).value;
+        const hasWebsite = document.querySelector(
+            'input[name="has_website"]:checked',
+        );
+
+        if (naam && email && telefoon && branche && specification && hasWebsite) {
+            calPlaceholder.classList.add("hidden");
+            calendarContainer.classList.remove("hidden");
+            // Mount the calendar when form is complete
+            mountCalendar();
+        } else {
+            calPlaceholder.classList.remove("hidden");
+            calendarContainer.classList.add("hidden");
+        }
+    }
+
+    // Add listeners to check form completion
+    ["naam", "email", "telefoon", "branche", "specification"].forEach((id) => {
+        document
+            .getElementById(id)
+            ?.addEventListener("input", checkFormComplete);
+    });
+    document.getElementById("specification")
+        ?.addEventListener("change", checkFormComplete);
+    document.querySelectorAll('input[name="has_website"]').forEach((el) => {
+        el.addEventListener("change", checkFormComplete);
+    });
+
+    // Auto-scroll to submit button when a time slot is selected
+    window.addEventListener("slotSelected", () => {
+        // Small delay to allow the UI to update visually
+        setTimeout(() => {
+            submitBtn.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 300);
+    });
+
+    // Check on page load (for restored form data)
+    checkFormComplete();
+
+    function setLoading(loading: boolean) {
+        submitBtn.disabled = loading;
+        btnText.classList.toggle("hidden", loading);
+        btnArrow.classList.toggle("hidden", loading);
+        btnLoading.classList.toggle("hidden", !loading);
+    }
+
+    function showSuccess() {
+        clearFormData();
+        window.location.href = "/aanvragen/bedankt/";
+    }
+
+    function showError() {
+        errorMessage.classList.remove("hidden");
+        errorMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function hideError() {
+        errorMessage.classList.add("hidden");
+    }
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        hideError();
+
+        // Check if time slot is selected
+        if (!window.selectedBookingSlot) {
+            errorMessage.textContent =
+                "Selecteer eerst een tijdstip voor je gesprek.";
+            showError();
+            return;
+        }
+
+        setLoading(true);
+
+        const formData = new FormData(form);
+
+        // Get and normalize website URL
+        const rawUrl = formData.get("website_url") as string;
+        const websiteUrl = normalizeUrl(rawUrl);
+
+        // Build submission payload
+        const submissionPayload = {
+            type: "aanvraag" as const,
+            specification: formData.get("specification") as string,
+            name: formData.get("naam") as string,
+            email: formData.get("email") as string,
+            phone: formData.get("telefoon") as string,
+            company: formData.get("bedrijfsnaam") as string,
+            industry: formData.get("branche") as string,
+            has_website: formData.get("has_website") as string,
+            website_url: websiteUrl,
+            start_time: window.selectedBookingSlot.start,
+            end_time: window.selectedBookingSlot.end,
+        };
+
+        try {
+            // Create submission via unified API
+            const response = await fetch("/api/submissions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(submissionPayload),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(
+                    data.error || `HTTP error! status: ${response.status}`,
+                );
+            }
+
+            showSuccess();
+        } catch (error) {
+            console.error("Booking submission error:", error);
+            errorMessage.textContent =
+                error instanceof Error
+                    ? error.message
+                    : "Er ging iets mis bij het boeken. Probeer het opnieuw.";
+            showError();
+        } finally {
+            setLoading(false);
+        }
+    });
+    }
+
+    // Initialize on first load and after view transitions
+    initAanvragenPage();
+    document.addEventListener("astro:page-load", initAanvragenPage);
+</script>
