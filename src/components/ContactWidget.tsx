@@ -96,7 +96,7 @@ export function ContactWidget() {
             className="w-12 h-12 rounded-full object-cover object-top shrink-0 ring-2 ring-acid/30"
           />
           <div>
-            <h2 className="text-lg font-black uppercase tracking-tight text-canvas leading-tight">
+            <h2 className="text-lg font-bold uppercase tracking-tight text-canvas leading-tight">
               Waar kan ik je mee helpen?
             </h2>
           </div>
@@ -115,7 +115,7 @@ export function ContactWidget() {
         <div className="px-4 pb-3 space-y-2">
           {/* Plan een kennismaking */}
           <a
-            href="/aanvragen"
+            href="/contact/"
             className="group flex items-center gap-3 p-3 border border-canvas/10 hover:border-acid hover:bg-acid/5 transition-all duration-200"
           >
             <span className="w-9 h-9 bg-acid flex items-center justify-center shrink-0">
@@ -131,7 +131,7 @@ export function ContactWidget() {
 
           {/* Een vraag stellen */}
           <a
-            href="/contact"
+            href="/contact/"
             className="group flex items-center gap-3 p-3 border border-canvas/10 hover:border-acid hover:bg-acid/5 transition-all duration-200"
           >
             <span className="w-9 h-9 bg-electric flex items-center justify-center shrink-0">
@@ -167,7 +167,7 @@ export function ContactWidget() {
         {/* Contact page link */}
         <div className="border-t border-canvas/10 mx-4">
           <a
-            href="/contact"
+            href="/contact/"
             className="group flex items-center gap-2 py-3 text-sm font-bold uppercase tracking-tight text-canvas/50 hover:text-acid transition-colors"
           >
             Contactgegevens
