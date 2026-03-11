@@ -263,11 +263,11 @@ import Footer from "../components/Footer.astro";
                             class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
                         >
                             <option value="" disabled selected>Maak een keuze...</option>
-                            <option value="Website laten maken">Website laten maken</option>
-                            <option value="Advies gesprek">Advies gesprek</option>
-                            <option value="Bestaande website verbeteren">Bestaande website verbeteren</option>
-                            <option value="Automatisering bespreken">Automatisering bespreken</option>
-                            <option value="Anders">Anders</option>
+                            <option value="Websites op maat">Websites op maat</option>
+                            <option value="Webshop">Webshop</option>
+                            <option value="Online zichtbaarheid">Online zichtbaarheid</option>
+                            <option value="Online tools">Online tools</option>
+                            <option value="Iets anders">Iets anders</option>
                         </select>
                         <div
                             class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink-secondary"
@@ -523,6 +523,24 @@ import Footer from "../components/Footer.astro";
 
     // Restore on page load
     restoreFormData();
+
+    // Auto-select specification from query parameter (e.g. ?onderwerp=webshop)
+    const params = new URLSearchParams(window.location.search);
+    const onderwerp = params.get("onderwerp");
+    if (onderwerp) {
+        const specSelect = document.getElementById("specification") as HTMLSelectElement;
+        const optionMap: Record<string, string> = {
+            "websites-op-maat": "Websites op maat",
+            "webshop": "Webshop",
+            "online-zichtbaarheid": "Online zichtbaarheid",
+            "online-tools": "Online tools",
+        };
+        const value = optionMap[onderwerp];
+        if (value && specSelect) {
+            specSelect.value = value;
+            specSelect.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+    }
 
     // Dynamically mount the React calendar component
     async function mountCalendar() {

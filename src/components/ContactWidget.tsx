@@ -9,7 +9,8 @@ export function ContactWidget() {
   // Show the floating button after a delay (after cookie banner has appeared)
   useEffect(() => {
     const checkPage = () => {
-      setIsContactPage(window.location.pathname === '/contact' || window.location.pathname === '/contact/');
+      const path = window.location.pathname;
+      setIsContactPage(path === '/contact' || path === '/contact/' || path === '/aanvragen' || path === '/aanvragen/');
     };
 
     const show = () => {
@@ -115,7 +116,7 @@ export function ContactWidget() {
         <div className="px-4 pb-3 space-y-2">
           {/* Plan een kennismaking */}
           <a
-            href="/contact/"
+            href="/aanvragen/"
             className="group flex items-center gap-3 p-3 border border-canvas/10 rounded-lg hover:border-accent hover:bg-accent/5 transition-all duration-200"
           >
             <span className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shrink-0">
