@@ -22,7 +22,7 @@ interface Props {
 const {
   title,
   description = "Professionele websites en webshops voor lokale ondernemers. Persoonlijk, modern en resultaatgericht. KNAP GEMAAKT. uit Buren.",
-  image = "/favicon_final.svg"
+  image = "/favicon-192.png"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -68,7 +68,9 @@ const CLARITY_ID = 'v6kn03ub4s';
       gtag("set", "url_passthrough", true);
     </script>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon_final.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <!-- Preload all font weights - ensures they arrive within 100ms for font-display: optional -->
     <link rel="preload" href={interTight400} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={interTight700} as="font" type="font/woff2" crossorigin />
