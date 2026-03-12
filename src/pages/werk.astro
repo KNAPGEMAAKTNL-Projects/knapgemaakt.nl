@@ -1,0 +1,149 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import FadeIn from "../components/FadeIn.astro";
+import { DraggableScroll } from "../components/DraggableScroll";
+import { getAllProjects } from "../data/projects";
+
+const liveProjects = getAllProjects();
+
+const demoSites = [
+  {
+    name: "Demo Hovenier",
+    description: "Voorbeeldsite voor een hoveniersbedrijf.",
+    url: "https://demo-hovenier.knapgemaakt.nl",
+    image: "/assets/projects/demo-hovenier.webp",
+  },
+  {
+    name: "Demo Elektricien",
+    description: "Voorbeeldsite voor een elektricien.",
+    url: "https://demo-elektricien.knapgemaakt.nl",
+    image: "/assets/projects/demo-elektricien.webp",
+  },
+];
+---
+
+<Layout
+  title="Werk | Portfolio & Demo Sites | KNAP GEMAAKT."
+  description="Bekijk recent opgeleverd werk: websites op maat voor echte klanten en demosites. Portfolio van KNAP GEMAAKT."
+>
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
+          Recent opgeleverd
+        </h1>
+        <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed">
+          Van sportscholen tot schoonmaakbedrijven. Elk project is anders, want elk bedrijf is anders. Scroll door het werk of bekijk de demosites.
+        </p>
+      </div>
+    </section>
+
+    <!-- Live Projects (full-bleed scroll) -->
+    <section class="pb-20 md:pb-28">
+      <div class="max-w-5xl mx-auto px-6 md:px-12 lg:px-16 mb-10">
+        <FadeIn>
+          <h2 class="text-sm font-bold uppercase tracking-widest text-ink/40 mb-1">Klantprojecten</h2>
+        </FadeIn>
+      </div>
+
+      <FadeIn delay={100}>
+        <DraggableScroll client:visible className="pb-4 pl-6 md:pl-12 lg:pl-[max(1rem,calc((100vw-64rem)/2+1rem))]">
+          {liveProjects.map(project => (
+            <a
+              href={`/project/${project.slug}/`}
+              class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group block"
+            >
+              <div class="aspect-[16/10] bg-gradient-to-br from-canvas-alt to-canvas overflow-hidden">
+                {project.overviewMockup ? (
+                  <img
+                    src={project.overviewMockup}
+                    alt={`Screenshot van ${project.title}`}
+                    width="1200"
+                    height="750"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center">
+                    <span class="text-ink/30 text-sm">Screenshot volgt</span>
+                  </div>
+                )}
+              </div>
+              <div class="p-6">
+                <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-accent text-white px-2.5 py-1 rounded-full mb-3">LIVE</span>
+                <h3 class="font-bold text-xl mb-1 group-hover:text-accent transition-colors">{project.title}</h3>
+                <p class="text-ink/70 text-sm leading-relaxed">{project.shortDescription}</p>
+              </div>
+            </a>
+          ))}
+
+          {/* Demo sites */}
+          {demoSites.map(demo => (
+            <a
+              href={demo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group block"
+            >
+              <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
+                <img
+                  src={demo.image}
+                  alt={`${demo.name} website screenshot`}
+                  width="2304"
+                  height="1536"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="p-6">
+                <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2.5 py-1 rounded-full mb-3">DEMO</span>
+                <h3 class="font-bold text-xl mb-1 group-hover:text-accent transition-colors">
+                  {demo.name}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline-block ml-1 opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                </h3>
+                <p class="text-ink/70 text-sm leading-relaxed">{demo.description}</p>
+              </div>
+            </a>
+          ))}
+
+          <a
+            href="/aanvragen/"
+            class="flex-shrink-0 w-[220px] md:w-[280px] mr-6 rounded-2xl border border-warm bg-canvas-alt flex flex-col items-center justify-center hover:border-accent transition-colors duration-300 group"
+          >
+            <span class="text-ink group-hover:text-accent transition-colors font-bold mb-1">Jouw project?</span>
+            <span class="text-ink/50 text-sm">Plan een gesprek &rarr;</span>
+          </a>
+        </DraggableScroll>
+      </FadeIn>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-3xl mx-auto text-center">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Zullen we iets moois maken?
+          </h2>
+          <p class="text-ink/70 text-lg leading-relaxed mb-8">
+            Vertel over je bedrijf. Dan kijken we samen wat er mogelijk is.
+          </p>
+          <a
+            href="/aanvragen/"
+            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+          >
+            Plan een gesprek in
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </FadeIn>
+      </div>
+    </section>
+  </main>
+  <Footer hideCTA={true} />
+</Layout>

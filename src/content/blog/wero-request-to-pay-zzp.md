@@ -3,7 +3,7 @@ title: "Request-to-Pay met Wero: Sneller betaald worden als ZZP'er"
 description: "Met Wero's Request-to-Pay stuur je betaalverzoeken direct naar de bankapp van je klant. Hoe het werkt, wanneer het komt, en wat je ermee kunt."
 publishDate: 2026-02-13
 author: "Yannick Veldhuisen"
-tags: ["Wero", "ZZP", "Betalingen", "Request-to-Pay", "Facturatie"]
+tags: ["Betalingen", "Ondernemen"]
 image: "/assets/blog/wero-request-to-pay-zzp.webp"
 imageAlt: "ZZP'er ontvangt betaling via Request-to-Pay in Wero"
 ---

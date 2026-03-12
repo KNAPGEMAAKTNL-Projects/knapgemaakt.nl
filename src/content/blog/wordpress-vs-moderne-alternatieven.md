@@ -3,7 +3,7 @@ title: "WordPress vs moderne alternatieven: wat is beter voor jouw website?"
 description: "WordPress is populair, maar is het nog de beste keuze? Een vergelijking met Wix, Squarespace en statische websites voor kleine ondernemers."
 publishDate: 2026-02-14
 author: "Yannick Veldhuisen"
-tags: ["WordPress", "Website laten maken", "Vergelijking", "Maatwerk website", "Techniek"]
+tags: ["WordPress", "Websites"]
 image: "/assets/blog/wordpress-vs-moderne-alternatieven.webp"
 imageAlt: "Vergelijking van WordPress met moderne website-alternatieven"
 ---

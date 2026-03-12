@@ -1,0 +1,234 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import FadeIn from "../../components/FadeIn.astro";
+---
+
+<Layout
+  title="Slimmer Werken | Automatisering voor Ondernemers | KNAP GEMAAKT."
+  description="Bespaar tijd op herhalende taken. Automatische offertebevestigingen, factuurherinneringen en weekoverzichten. KNAP GEMAAKT. uit Buren regelt het."
+>
+  <main>
+    <!-- Hero: Recognition -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
+          Slimmer werken
+        </h1>
+        <p class="text-lg md:text-xl text-ink-secondary max-w-2xl leading-relaxed">
+          Je bent druk. Tussen de klussen door beantwoord je offerteaanvragen, stuur je facturen, en probeer je overzicht te houden over alles wat loopt. Dat kost tijd die je liever aan je vak besteedt.
+        </p>
+      </div>
+    </section>
+
+    <!-- Concrete examples -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+            Stel je voor
+          </h2>
+          <p class="text-ink-secondary leading-relaxed mb-10 max-w-2xl">
+            Dit zijn dingen die ik voor ondernemers heb ingericht. Geen toekomstmuziek, gewoon hoe het werkt.
+          </p>
+        </FadeIn>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <FadeIn>
+            <div class="bg-canvas rounded-xl p-6 md:p-8 border border-warm h-full">
+              <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5H18c2.2 0 4 1.8 4 4v8Z"/><polyline points="15 9 18 9 18 11"/><path d="M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2v0"/><line x1="6" x2="7" y1="10" y2="10"/></svg>
+              </div>
+              <h3 class="font-bold text-lg mb-3">Contactformulier ingevuld</h3>
+              <p class="text-ink-secondary text-sm leading-relaxed">
+                Een klant vult je contactformulier in. Jij krijgt direct een melding op je telefoon, de klant staat netjes in je overzicht, en diegene ontvangt automatisch een bevestigingsmail. Jij hoeft niks te doen.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div class="bg-canvas rounded-xl p-6 md:p-8 border border-warm h-full">
+              <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <h3 class="font-bold text-lg mb-3">Offerte geaccepteerd</h3>
+              <p class="text-ink-secondary text-sm leading-relaxed">
+                Je klant gaat akkoord met je offerte. Automatisch wordt er een factuur klaargezet en een afspraak ingepland. Geen losse mailtjes of vergeten follow-ups.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <div class="bg-canvas rounded-xl p-6 md:p-8 border border-warm h-full">
+              <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              </div>
+              <h3 class="font-bold text-lg mb-3">Elke maandagochtend</h3>
+              <p class="text-ink-secondary text-sm leading-relaxed">
+                Je opent je mail en daar staat het: een overzicht van je openstaande offertes, lopende projecten en facturen die nog betaald moeten worden. Automatisch samengesteld.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+
+    <!-- The offer -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+                Hoe het werkt
+              </h2>
+              <p class="text-ink-secondary leading-relaxed mb-6">
+                Ik kijk mee met hoe je dagelijks werkt. Waar stuur je steeds dezelfde mail? Waar vergeet je soms een stap? Waar kost iets je tien minuten terwijl het ook automatisch kan? Dat zijn de plekken waar ik begin.
+              </p>
+              <p class="text-ink-secondary leading-relaxed mb-6">
+                De oplossingen die ik bouw, werken samen met de tools die je al gebruikt. Je e-mail, je agenda, je boekhoudsoftware. Er komt geen nieuw systeem bij dat je moet leren. Het enige dat verandert is dat je minder tijd kwijt bent aan dingen die je toch al niet leuk vindt.
+              </p>
+              <p class="text-ink-secondary leading-relaxed">
+                Het gaat niet om mensen vervangen. Het gaat om die herhalende klusjes wegwerken zodat jij je kunt richten op waar je goed in bent.
+              </p>
+            </div>
+            <div>
+              <div class="bg-canvas-alt rounded-xl p-6 md:p-8 border border-warm">
+                <h3 class="font-bold text-lg mb-4">Hoe ik het aanpak</h3>
+                <ul class="space-y-4">
+                  {[
+                    "We bellen of spreken af, en je laat me zien hoe een gemiddelde werkdag eruitziet.",
+                    "Ik zoek de stappen die zich herhalen en schrijf uit wat er automatisch kan.",
+                    "We beginnen klein: een automatisering die meteen tijd bespaart.",
+                    "Werkt het? Dan bouwen we verder. Stap voor stap."
+                  ].map((step, i) => (
+                    <li class="flex items-start gap-3 text-ink-secondary">
+                      <span class="w-6 h-6 rounded-full bg-ink text-canvas text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                        {i + 1}
+                      </span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- Before/after scenarios -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+            Voor en na
+          </h2>
+          <p class="text-ink-secondary leading-relaxed mb-10 max-w-2xl">
+            Herken je dit? Zo ziet het eruit als je het slim aanpakt.
+          </p>
+        </FadeIn>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <FadeIn>
+            <div class="bg-canvas rounded-xl p-6 md:p-8 border border-warm h-full">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60">Offerteaanvraag</span>
+              </div>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <span class="text-ink-secondary/40 text-sm font-bold shrink-0 mt-0.5">Nu:</span>
+                  <p class="text-ink-secondary text-sm">Mailtje binnengekomen, zit ergens in je inbox. Moet je vanavond maar even beantwoorden. Vergeet je soms.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-accent text-sm font-bold shrink-0 mt-0.5">Straks:</span>
+                  <p class="text-ink-secondary text-sm">Klant krijgt direct een nette bevestiging. Jij krijgt een melding op je telefoon. En de aanvraag staat al in je overzicht.</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div class="bg-canvas rounded-xl p-6 md:p-8 border border-warm h-full">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60">Reviews verzamelen</span>
+              </div>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <span class="text-ink-secondary/40 text-sm font-bold shrink-0 mt-0.5">Nu:</span>
+                  <p class="text-ink-secondary text-sm">Project afgerond, klant is blij. Maar je vergeet om een review te vragen. Of je vindt het ongemakkelijk.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-accent text-sm font-bold shrink-0 mt-0.5">Straks:</span>
+                  <p class="text-ink-secondary text-sm">Een paar dagen na afronding krijgt je klant automatisch een vriendelijk mailtje met de vraag of ze een review willen achterlaten.</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <div class="bg-canvas rounded-xl p-6 md:p-8 border border-warm h-full">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60">Openstaande facturen</span>
+              </div>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <span class="text-ink-secondary/40 text-sm font-bold shrink-0 mt-0.5">Nu:</span>
+                  <p class="text-ink-secondary text-sm">Je moet inloggen in je boekhoudsoftware om te checken welke facturen nog niet betaald zijn. Doe je als je eraan denkt.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-accent text-sm font-bold shrink-0 mt-0.5">Straks:</span>
+                  <p class="text-ink-secondary text-sm">Elke week krijg je een overzicht in je mail. Wie heeft betaald, wie niet, en hoeveel er nog openstaat. Zonder in te loggen.</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={300}>
+            <div class="bg-canvas rounded-xl p-6 md:p-8 border border-warm h-full">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60">Afspraakherinneringen</span>
+              </div>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <span class="text-ink-secondary/40 text-sm font-bold shrink-0 mt-0.5">Nu:</span>
+                  <p class="text-ink-secondary text-sm">Je belt of appt klanten handmatig om afspraken te bevestigen. Kost je elke keer een paar minuten.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-accent text-sm font-bold shrink-0 mt-0.5">Straks:</span>
+                  <p class="text-ink-secondary text-sm">Klanten krijgen automatisch een herinnering een dag van tevoren. Met de datum, het tijdstip en wat er is afgesproken.</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Benieuwd wat er mogelijk is?
+          </h2>
+          <p class="text-ink-secondary text-lg leading-relaxed mb-8">
+            Ieder bedrijf werkt anders. Laat me meekijken naar jouw werkdag, dan zoek ik uit waar je tijd kunt besparen. Gewoon even bellen, kijken of het past.
+          </p>
+          <a
+            href="/aanvragen/?onderwerp=slimmer-werken"
+            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+          >
+            Plan een gesprek in
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </FadeIn>
+      </div>
+    </section>
+  </main>
+  <Footer
+    hideCTA={true}
+  />
+</Layout>

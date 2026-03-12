@@ -3,7 +3,7 @@ title: "iDEAL wordt Wero: Wat betekent dit voor jouw webshop?"
 description: "iDEAL gaat over naar Wero. Wat er verandert, wat hetzelfde blijft, en wat je als webshophouder moet weten over deze overgang."
 publishDate: 2026-01-29
 author: "Yannick Veldhuisen"
-tags: ["Wero", "iDEAL", "Webshop", "Betalingen"]
+tags: ["Betalingen", "Webshops"]
 image: "/assets/blog/overgang-van-ideal-naar-wero.webp"
 imageAlt: "De overgang van iDEAL naar Wero uitgelegd"
 ---

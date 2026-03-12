@@ -3,7 +3,7 @@ title: "Meer verkopen aan Duitsers met Wero"
 description: "Wero maakt het makkelijker om aan Duitse klanten te verkopen. Hoe dat werkt, wat je kunt voorbereiden, en wanneer het zover is."
 publishDate: 2026-02-02
 author: "Yannick Veldhuisen"
-tags: ["Wero", "iDEAL", "Webshop", "Betalingen", "Duitsland", "Export"]
+tags: ["Betalingen", "Webshops"]
 image: "/assets/blog/meer-verkopen-duitsers-wero.webp"
 imageAlt: "Meer verkopen aan Duitse klanten met Wero betalingen"
 ---

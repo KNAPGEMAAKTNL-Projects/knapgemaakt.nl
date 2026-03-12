@@ -1,0 +1,137 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import FadeIn from "../components/FadeIn.astro";
+---
+
+<Layout
+	title="Over KNAP GEMAAKT. | Yannick Veldhuisen | Buren, Gelderland"
+	description="Websites, hosting en ICT voor ondernemers. Persoonlijk contact, eerlijke prijzen. KNAP GEMAAKT. vanuit Buren, werkend door heel Nederland."
+>
+	<main class="bg-canvas">
+		<!-- Hero -->
+		<section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
+			<div class="max-w-5xl mx-auto">
+				<FadeIn>
+					<span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Over</span>
+					<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
+						Hoi, ik ben Yannick.
+					</h1>
+					<p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed">
+						De persoon achter KNAP GEMAAKT. Websites, hosting en ICT voor ondernemers die hun digitale zaken gewoon goed geregeld willen hebben.
+					</p>
+				</FadeIn>
+			</div>
+		</section>
+
+		<!-- Photo + Intro -->
+		<section class="px-6 md:px-12 lg:px-16 pb-16 md:pb-24">
+			<div class="max-w-5xl mx-auto">
+				<FadeIn delay={100}>
+					<div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+						<div class="rounded-2xl overflow-hidden">
+							<img
+								src="/assets/yannick.webp"
+								alt="Yannick Veldhuisen, oprichter van KNAP GEMAAKT."
+								width="800"
+								height="1000"
+								class="w-full aspect-[4/5] object-cover object-top"
+								loading="eager"
+								fetchpriority="high"
+								decoding="async"
+							/>
+						</div>
+
+						<div class="flex flex-col justify-center space-y-6 text-lg text-ink/80 leading-relaxed">
+							<p>
+								Gevestigd in Buren, een klein plaatsje in Gelderland. Geen team van twintig man, geen kantoor met een receptie. Gewoon persoonlijk contact en werk waar je blij mee bent.
+							</p>
+							<p>
+								Hoe dit begon? Een beetje per ongeluk, eerlijk gezegd. Altijd al aan het knutselen met websites, tot iemand vroeg of er ook eentje voor hen gemaakt kon worden. Dat ging goed, dus kwam de volgende. En de volgende.
+							</p>
+							<p>
+								Wat steeds weer opviel: veel ondernemers in de regio hadden geen website, of eentje waar ze zich een beetje voor schaamden. Niet omdat het ze niet interesseerde, maar omdat de opties tegenvallen. Een bureau vraagt duizenden euro's. Zelf bouwen met WordPress kost avonden die je niet hebt. En die neef die 'iets met computers doet'... tja.
+							</p>
+
+							<!-- Location inline -->
+							<div class="flex items-center gap-3 pt-2">
+								<div class="w-10 h-10 bg-canvas-alt flex items-center justify-center flex-shrink-0 rounded-lg">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+										<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+										<circle cx="12" cy="10" r="3"/>
+									</svg>
+								</div>
+								<div>
+									<span class="font-bold text-sm">Buren, Gelderland</span>
+									<span class="text-ink/50 text-sm ml-1">· Werkzaam door heel Nederland</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</FadeIn>
+			</div>
+		</section>
+
+		<!-- What KNAP GEMAAKT. does -->
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+			<div class="max-w-5xl mx-auto">
+				<FadeIn>
+					<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+						Wat KNAP GEMAAKT. doet
+					</h2>
+					<div class="grid md:grid-cols-2 gap-10 md:gap-16">
+						<div class="space-y-6 text-ink/70 leading-relaxed">
+							<p>
+								Websites bouwen voor ondernemers die hun werk serieus nemen maar geen zin hebben in bureau-gedoe. Persoonlijk contact, eerlijke prijzen, en een resultaat waar je gewoon blij mee bent.
+							</p>
+							<p>
+								Daarnaast: hosting, e-mail, WordPress versnellen en slimmer werken. De digitale basis onder je bedrijf, allemaal onder één dak. Eén aanspreekpunt voor alles.
+							</p>
+						</div>
+						<div>
+							<ul class="space-y-4">
+								{[
+									"Websites op maat, gebouwd in code",
+									"Shopify webshops",
+									"Website hosting & e-mail",
+									"WordPress versnellen",
+									"Automatisering & koppelingen",
+									"Persoonlijk contact, altijd"
+								].map((item) => (
+									<li class="flex items-start gap-3 text-ink/70">
+										<div class="w-2 h-2 rounded-full bg-accent shrink-0 mt-2.5"></div>
+										{item}
+									</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				</FadeIn>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">
+			<div class="max-w-3xl mx-auto text-center">
+				<FadeIn>
+					<h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+						Benieuwd of er iets mogelijk is?
+					</h2>
+					<p class="text-ink/70 text-lg leading-relaxed mb-8">
+						Vertel over je bedrijf. We kijken samen naar de mogelijkheden. Vrijblijvend, gewoon een goed gesprek.
+					</p>
+					<a
+						href="/aanvragen/"
+						class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+					>
+						Plan een gesprek in
+						<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+					</a>
+				</FadeIn>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

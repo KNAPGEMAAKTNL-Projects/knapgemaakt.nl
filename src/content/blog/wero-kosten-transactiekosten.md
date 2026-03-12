@@ -3,7 +3,7 @@ title: "Wat kost Wero? Transactiekosten voor ondernemers uitgelegd"
 description: "Wero vervangt iDEAL, maar wat betekent dit voor je transactiekosten? Wat we weten over het nieuwe prijsmodel, de prijsgarantie, en wat nog onduidelijk is."
 publishDate: 2026-01-31
 author: "Yannick Veldhuisen"
-tags: ["Wero", "iDEAL", "Kosten", "Webshop", "Betalingen"]
+tags: ["Betalingen", "Webshops"]
 image: "/assets/blog/wero-kosten.webp"
 imageAlt: "Ondernemer berekent de transactiekosten van Wero voor zijn webshop"
 ---

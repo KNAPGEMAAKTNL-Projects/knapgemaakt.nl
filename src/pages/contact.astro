@@ -9,7 +9,7 @@ import FadeIn from "../components/FadeIn.astro";
 
 <Layout
 	title="Contact | Stuur Me Een Bericht | KNAP GEMAAKT."
-	description="Vraag, idee of gewoon even sparren? Stuur me een bericht. Ik reageer meestal binnen een dag."
+	description="Vraag, idee of gewoon even sparren? Stuur een bericht. Reactie meestal binnen een dag."
 >
 	<main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 relative overflow-hidden">
 		<div class="max-w-5xl mx-auto">
@@ -20,11 +20,11 @@ import FadeIn from "../components/FadeIn.astro";
 					text="Contact."
 					class="text-5xl md:text-8xl font-bold tracking-tight leading-snug mb-6"
 				/>
-				<p class="text-xl md:text-2xl text-ink-secondary font-medium max-w-2xl leading-relaxed">
-					Vraag, idee, of gewoon benieuwd wat ik voor je kan doen?<br />
-					Stuur me een bericht.
+				<p class="text-xl md:text-2xl text-ink/70 font-medium max-w-2xl leading-relaxed">
+					Vraag, idee, of gewoon benieuwd wat er mogelijk is?<br />
+					Stuur een bericht.
 				</p>
-				<p class="text-sm text-ink-secondary mt-3">Ik zit in Buren, maar werk door heel Nederland.</p>
+				<p class="text-sm text-ink/50 mt-3">Gevestigd in Buren, werkend door heel Nederland.</p>
 			</div>
 			</FadeIn>
 
@@ -119,12 +119,14 @@ import FadeIn from "../components/FadeIn.astro";
 										class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
 									>
 										<option value="" disabled selected>Maak een keuze...</option>
-										<option value="Website">Website</option>
-										<option value="Advies">Ik wil graag advies</option>
-										<option value="Vraag">Algemene vraag</option>
+										<option value="Nieuwe website">Nieuwe website</option>
+										<option value="Webshop">Webshop</option>
+										<option value="Hosting & e-mail">Hosting & e-mail</option>
+										<option value="WordPress versnellen">WordPress versnellen</option>
+										<option value="Algemene vraag">Algemene vraag</option>
 										<option value="Anders">Anders</option>
 									</select>
-									<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink-secondary">
+									<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink/50">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="m6 9 6 6 6-6"></path></svg>
 									</div>
 								</div>
@@ -159,8 +161,8 @@ import FadeIn from "../components/FadeIn.astro";
 								oninput="this.setCustomValidity('')"
 								class="mt-1 w-4 h-4 shrink-0 accent-accent"
 							/>
-							<label for="privacy" class="text-sm text-ink-secondary">
-								Ik ga akkoord met de <a href="/privacy/" class="underline hover:text-ink transition-colors">privacyverklaring</a>
+							<label for="privacy" class="text-sm text-ink/50">
+								Akkoord met de <a href="/privacy/" class="underline hover:text-ink transition-colors">privacyverklaring</a>
 							</label>
 						</div>
 
@@ -183,7 +185,7 @@ import FadeIn from "../components/FadeIn.astro";
 						<!-- Success/Error messages -->
 						<div id="form-success" class="hidden p-4 bg-accent/10 border-2 border-accent text-ink rounded-lg">
 							<p class="font-bold">Bericht verzonden!</p>
-							<p class="text-sm text-ink-secondary">Ik neem zo snel mogelijk contact met je op.</p>
+							<p class="text-sm text-ink/50">Je hoort zo snel mogelijk terug.</p>
 						</div>
 						<div id="form-error" class="hidden p-4 bg-red-50 border-2 border-red-300 text-red-800 rounded-lg">
 							<p class="font-bold">Er ging iets mis</p>
@@ -220,8 +222,11 @@ import FadeIn from "../components/FadeIn.astro";
 								<img
 									src="/assets/yannick.webp"
 									alt="Yannick Veldhuisen"
+									width="56"
+									height="56"
 									class="w-14 h-14 rounded-full object-cover object-top shrink-0"
 									loading="lazy"
+									decoding="async"
 								/>
 								<div>
 									<h3 class="font-bold tracking-tight">Yannick</h3>
@@ -229,14 +234,14 @@ import FadeIn from "../components/FadeIn.astro";
 										href="https://www.linkedin.com/in/yannick-veldhuisen-303047243/"
 										target="_blank"
 										rel="noopener noreferrer"
-										class="text-xs font-mono text-ink-secondary hover:text-accent transition-colors uppercase tracking-widest"
+										class="text-xs font-mono text-ink/50 hover:text-accent transition-colors uppercase tracking-widest"
 									>
 										LinkedIn &rarr;
 									</a>
 								</div>
 							</div>
-							<p class="text-sm text-ink-secondary">
-								Ik reageer persoonlijk op elk bericht, meestal binnen een dag.
+							<p class="text-sm text-ink/50">
+								Persoonlijke reactie op elk bericht, meestal binnen een dag.
 							</p>
 						</div>
 					</div>
@@ -247,7 +252,7 @@ import FadeIn from "../components/FadeIn.astro";
 			<!-- Contact Info Section -->
 			<FadeIn delay={200}>
 			<div class="border-t-2 border-warm pt-16 mb-16">
-				<h2 class="text-xs font-mono uppercase tracking-[0.2em] text-ink-secondary mb-8">Direct contact</h2>
+				<h2 class="text-xs font-mono uppercase tracking-[0.2em] text-ink/50 mb-8">Direct contact</h2>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 					<!-- Email -->
 					<a
@@ -262,7 +267,7 @@ import FadeIn from "../components/FadeIn.astro";
 						</div>
 						<div>
 							<p class="font-bold tracking-tight group-hover:text-accent transition-colors">E-mail</p>
-							<p class="text-ink-secondary font-mono text-sm">info@knapgemaakt.nl</p>
+							<p class="text-ink/50 font-mono text-sm">info@knapgemaakt.nl</p>
 						</div>
 					</a>
 
@@ -276,7 +281,7 @@ import FadeIn from "../components/FadeIn.astro";
 						</div>
 						<div>
 							<p class="font-bold tracking-tight">Adres</p>
-							<p class="text-ink-secondary text-sm">
+							<p class="text-ink/50 text-sm">
 								Françoise de Lanoistraat 9<br />
 								4116 ET Buren
 							</p>
@@ -287,7 +292,7 @@ import FadeIn from "../components/FadeIn.astro";
 			</FadeIn>
 
 			<!-- Business Info -->
-			<div class="flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-ink-secondary uppercase tracking-widest">
+			<div class="flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-ink/50 uppercase tracking-widest">
 				<span>KvK: 73652377</span>
 				<span>BTW: NL002383577B12</span>
 			</div>
