@@ -3,7 +3,7 @@ title: "Wero vs iDEAL: De 7 belangrijkste verschillen"
 description: "Wat verandert er van iDEAL naar Wero? Beide betaalsystemen naast elkaar: wat hetzelfde blijft, wat er verandert, en wat erbij komt."
 publishDate: 2026-02-12
 author: "Yannick Veldhuisen"
-tags: ["Wero", "iDEAL", "Betalingen", "Webshop", "Vergelijking"]
+tags: ["Betalingen", "Webshops"]
 image: "/assets/blog/wero-vs-ideal-verschillen.webp"
 imageAlt: "Visuele vergelijking van de 7 belangrijkste verschillen tussen iDEAL en Wero betalingssystemen"
 ---

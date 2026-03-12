@@ -4,249 +4,298 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import FadeIn from "../components/FadeIn.astro";
-import AnimatedTimeline from "../components/AnimatedTimeline.astro";
 import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
+import { TypingRotator } from "../components/TypingRotator";
+import { DraggableScroll } from "../components/DraggableScroll";
+import { DotMesh } from "../components/DotMesh";
+import { getAllProjects } from "../data/projects";
 
-const processSteps = [
-  {
-    title: "We praten",
-    description: "Een kort gesprek over je bedrijf en wat je nodig hebt. Geen verplichtingen.",
-  },
-  {
-    title: "Ik maak een voorstel",
-    description: "Je krijgt een duidelijk voorstel. Wat ik ga maken, hoe lang het duurt, wat het kost.",
-  },
-  {
-    title: "Ik bouw",
-    description: "Ik ga aan de slag. Tussendoor laat ik zien hoe het ervoor staat.",
-  },
-  {
-    title: "Je bent online",
-    description: "Je website gaat live. Klaar om gevonden te worden.",
-  },
-];
+const projects = getAllProjects();
 ---
 
 <Layout
-  title="Professionele Websites voor Ondernemers | KNAP GEMAAKT."
-  description="Ik bouw websites en webshops voor lokale ondernemers. Persoonlijk contact, eerlijke prijzen. KNAP GEMAAKT. uit Buren."
+  title="Websites, Hosting & ICT voor Ondernemers | KNAP GEMAAKT."
+  description="Websites, webshops, hosting en e-mail voor lokale ondernemers. Persoonlijk contact, eerlijke prijzen. KNAP GEMAAKT. uit Buren, Gelderland."
 >
   <LocalBusinessSchema />
   <main>
-    <!-- HERO -->
-    <section class="min-h-[85vh] flex flex-col justify-center relative overflow-hidden px-6 md:px-12 lg:px-16 py-24">
-      <!-- Gradient orbs -->
-      <div class="hero-orb hidden md:block w-[500px] h-[500px] bg-accent/[0.06] top-1/4 -right-1/4"></div>
-      <div class="hero-orb hidden md:block w-[400px] h-[400px] bg-accent/[0.04] bottom-1/4 -left-1/4" style="animation-delay: -10s"></div>
+    <!-- HERO (sticky: next section slides up over it on scroll) -->
+    <section class="hero-sticky min-h-screen flex flex-col justify-center relative px-6 md:px-12 lg:px-16 py-24 sticky top-0 z-0 overflow-clip">
+      <DotMesh client:load />
 
-      <div class="max-w-5xl mx-auto w-full relative z-10 grid md:grid-cols-5 gap-12 md:gap-16 items-center">
-        <div class="md:col-span-3">
-          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-snug mb-6 md:mb-8">
-            Jouw bedrijf verdient een website die <span class="text-accent">werkt</span>.
-          </h1>
+      <div class="max-w-5xl mx-auto w-full relative z-10">
+        <h1 class="mb-6 md:mb-8">
+          <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-snug block">
+            Je digitale zaken
+          </span>
+          <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-snug block relative mt-2">
+            {/* Server-rendered placeholder for SEO (hidden immediately, typing animates in) */}
+            <span id="typing-placeholder" class="text-accent invisible">knap geregeld.</span>
+            <span class="absolute left-0 top-0 text-accent">
+              <TypingRotator
+                client:load
+                prefix=""
+                words={["knap geregeld.", "professioneel online.", "op één plek.", "goed gehost.", "veilig gemaild."]}
+                typingSpeed={80}
+                deletingSpeed={40}
+                pauseDuration={2500}
+              />
+            </span>
+          </span>
+        </h1>
 
-          <p class="text-lg md:text-xl text-ink-secondary max-w-2xl mb-10 md:mb-12 leading-relaxed">
-            Ik bouw websites en webshops voor ondernemers die online goed voor de dag willen komen. Gewoon goed werk, zonder gedoe.
-          </p>
+        <p class="text-lg md:text-xl text-ink/70 max-w-2xl mb-10 md:mb-12 leading-relaxed">
+          Websites, hosting en e-mail voor ondernemers in de regio. Eén aanspreekpunt, alles geregeld.
+        </p>
 
-          <a
-            href="/contact/"
-            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
-          >
-            Neem contact op
-            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-          </a>
-        </div>
+        <a
+          href="/aanvragen/"
+          class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+        >
+          Plan een gesprek in
+          <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+        </a>
+      </div>
+    </section>
 
-        <div class="hidden md:block md:col-span-2">
-          <div class="relative">
-            <div class="absolute -inset-4 bg-accent/10 rounded-3xl blur-2xl"></div>
-            <img
-              src="/assets/yannick.webp"
-              alt="Yannick Veldhuisen, oprichter van KNAP GEMAAKT."
-              class="relative rounded-2xl w-full aspect-[3/4] object-cover object-top"
-              loading="eager"
-            />
-          </div>
+    <!-- SERVICE CARDS (slides up over hero) -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt relative z-10 rounded-t-3xl shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.08)]">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Diensten</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12 md:mb-16">
+            Alles voor je online aanwezigheid
+          </h2>
+        </FadeIn>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <FadeIn delay={100}>
+            <a href="/webdesign/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
+              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Webdesign</h3>
+              <p class="text-ink/70 leading-relaxed mb-4">Maatwerk websites, helemaal op code gebouwd. Snel, mobiel, en precies zoals jij het wilt.</p>
+              <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
+                Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </span>
+            </a>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <a href="/webshops/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
+              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Webshops</h3>
+              <p class="text-ink/70 leading-relaxed mb-4">Shopify webshops met een eigen ontwerp. Betalingen, voorraad en verzending in één plek.</p>
+              <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
+                Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </span>
+            </a>
+          </FadeIn>
+
+          <FadeIn delay={300}>
+            <a href="/ict-diensten/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
+              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">ICT Diensten</h3>
+              <p class="text-ink/70 leading-relaxed mb-4">Hosting, e-mail en automatisering. De digitale basis onder je bedrijf, volledig beheerd.</p>
+              <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
+                Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </span>
+            </a>
+          </FadeIn>
+
+          <FadeIn delay={400}>
+            <a href="/ict-diensten/wordpress-sneller/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
+              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">WordPress Versnellen</h3>
+              <p class="text-ink/70 leading-relaxed mb-4">Al een WordPress site? Wordt sneller via een wereldwijd netwerk. Niets verandert aan je beheer.</p>
+              <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
+                Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </span>
+            </a>
+          </FadeIn>
         </div>
       </div>
     </section>
 
-    <!-- PROBLEM RECOGNITION -->
-    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+    <!-- WERK SHOWCASE (full-bleed right) -->
+    <section class="py-20 md:py-28 bg-canvas relative z-10 overflow-hidden">
+      <DotMesh client:visible />
+      <div class="max-w-5xl mx-auto px-6 md:px-12 lg:px-16 mb-12 md:mb-16 relative z-10">
+        <FadeIn>
+          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Werk</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+            Recent opgeleverd
+          </h2>
+        </FadeIn>
+      </div>
+
+      <FadeIn delay={200}>
+        <DraggableScroll client:visible className="pb-4 pl-6 md:pl-12 lg:pl-[max(1rem,calc((100vw-64rem)/2+1rem))]">
+          {/* Live projects from data */}
+          {projects.map(project => (
+            <a
+              href={`/project/${project.slug}/`}
+              class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block"
+            >
+              <div class="aspect-[16/10] bg-gradient-to-br from-canvas-alt to-canvas flex items-center justify-center overflow-hidden">
+                {project.overviewMockup ? (
+                  <img
+                    src={project.overviewMockup}
+                    alt={project.title}
+                    width="1200"
+                    height="750"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
+                ) : (
+                  <span class="text-ink/50/40 text-sm">Preview</span>
+                )}
+              </div>
+              <div class="p-5">
+                <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-accent text-white px-2 py-0.5 rounded-full mb-2">LIVE</span>
+                <h3 class="font-bold text-lg mb-1">{project.title}</h3>
+                <p class="text-sm text-ink/50">{project.industry} · {project.location}</p>
+              </div>
+            </a>
+          ))}
+
+          {/* Demo sites */}
+          <a
+            href="https://demo-hovenier.knapgemaakt.nl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block"
+          >
+            <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
+              <img
+                src="/assets/projects/demo-hovenier.webp"
+                alt="Demo website voor hoveniersbedrijf"
+                width="2304"
+                height="1536"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="p-5">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
+              <h3 class="font-bold text-lg mb-1">Hovenier Demo</h3>
+              <p class="text-sm text-ink/50">Demo website voor hoveniers</p>
+            </div>
+          </a>
+
+          <a
+            href="https://demo-elektricien.knapgemaakt.nl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block"
+          >
+            <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
+              <img
+                src="/assets/projects/demo-elektricien.webp"
+                alt="Demo website voor elektricien"
+                width="2304"
+                height="1536"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="p-5">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
+              <h3 class="font-bold text-lg mb-1">Elektricien Demo</h3>
+              <p class="text-sm text-ink/50">Demo website voor elektriciens</p>
+            </div>
+          </a>
+
+          {/* View all link */}
+          <a
+            href="/werk/"
+            class="flex-shrink-0 w-[200px] md:w-[250px] mr-6 rounded-2xl border border-warm bg-canvas-alt flex flex-col items-center justify-center hover:border-accent transition-colors duration-300 group"
+          >
+            <span class="text-ink/50 group-hover:text-ink transition-colors font-bold mb-1">Bekijk alles</span>
+            <span class="text-accent text-sm">Naar portfolio &rarr;</span>
+          </a>
+        </DraggableScroll>
+      </FadeIn>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt relative z-10">
       <div class="max-w-5xl mx-auto">
         <FadeIn>
-          <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Dit hoor ik vaak</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Wat klanten zeggen</span>
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12 md:mb-16">
-            Klinkt dit bekend?
+            Ervaringen
           </h2>
         </FadeIn>
 
         <div class="grid md:grid-cols-2 gap-6">
           <FadeIn delay={100}>
-            <div class="glass-card p-6 md:p-8 cursor-default">
-              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
-              <h3 class="text-lg font-bold mb-2">"Mijn website is een beetje... meh"</h3>
-              <p class="text-ink-secondary leading-relaxed">Je doet goed werk, maar je website laat dat niet zien. Dat is zonde.</p>
+            <div class="glass-card p-6 md:p-8">
+              <div class="flex gap-1 text-accent mb-4">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <p class="text-ink/80 leading-relaxed italic mb-4">
+                "Yannick denkt mee en levert snel. Precies wat je nodig hebt als ondernemer."
+              </p>
+              <p class="text-sm font-bold">Klantreview binnenkort</p>
             </div>
           </FadeIn>
 
           <FadeIn delay={200}>
-            <div class="glass-card p-6 md:p-8 cursor-default">
-              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
-              <h3 class="text-lg font-bold mb-2">"Mensen vinden me niet online"</h3>
-              <p class="text-ink-secondary leading-relaxed">Je concurrent staat bovenaan in Google. Jij niet. Terwijl je minstens zo goed bent.</p>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={300}>
-            <div class="glass-card p-6 md:p-8 cursor-default">
-              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
-              <h3 class="text-lg font-bold mb-2">"Ik betaal veel maar het levert niks op"</h3>
-              <p class="text-ink-secondary leading-relaxed">Maandelijkse kosten voor iets waar je eigenlijk niet blij mee bent. Herkenbaar.</p>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={400}>
-            <div class="glass-card p-6 md:p-8 cursor-default">
-              <div class="w-2 h-2 rounded-full bg-accent mb-4"></div>
-              <h3 class="text-lg font-bold mb-2">"Ik heb er eigenlijk geen tijd voor"</h3>
-              <p class="text-ink-secondary leading-relaxed">Je bent druk met je vak. Zelf een website bouwen kost avonden die je niet hebt.</p>
+            <div class="glass-card p-6 md:p-8">
+              <div class="flex gap-1 text-accent mb-4">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <p class="text-ink/80 leading-relaxed italic mb-4">
+                "Eindelijk iemand die het gewoon regelt. Geen ingewikkeld verhaal, gewoon een goede website."
+              </p>
+              <p class="text-sm font-bold">Klantreview binnenkort</p>
             </div>
           </FadeIn>
         </div>
       </div>
     </section>
 
-    <!-- CAPABILITY GRID -->
-    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">
-      <div class="max-w-5xl mx-auto">
+    <!-- BOTTOM CTA -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-ink text-canvas relative z-10 overflow-hidden">
+      <DotMesh client:visible dotColor="20, 184, 166" maxOpacity={0.4} />
+      <div class="max-w-5xl mx-auto text-center relative z-10">
         <FadeIn>
-          <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Wat ik doe</span>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12 md:mb-16">
-            Hier kan ik je mee helpen
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+            Benieuwd wat er mogelijk is?
           </h2>
+          <p class="text-canvas/60 text-lg mb-10 max-w-xl mx-auto">
+            Vertel over je bedrijf en we kijken samen naar de mogelijkheden.
+          </p>
+          <a
+            href="/aanvragen/"
+            class="bg-accent text-white px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-accent/90 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+          >
+            Plan een gesprek in
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
         </FadeIn>
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Large card: Websites -->
-          <FadeIn delay={100} class="md:row-span-2">
-            <div class="glass-card p-8 md:p-10 h-full flex flex-col cursor-default">
-              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-              </div>
-              <h3 class="text-xl font-bold mb-3">Websites</h3>
-              <p class="text-ink-secondary leading-relaxed mb-6">
-                Een website die bij je past en waar je trots op bent. Ik regel alles: ontwerp, teksten, hosting. Jij hoeft alleen feedback te geven.
-              </p>
-              <div class="mt-auto pt-4 border-t border-warm">
-                <span class="text-sm text-ink-secondary">Design, tekst, hosting en SEO inbegrepen</span>
-              </div>
-            </div>
-          </FadeIn>
-
-          <!-- Webshops -->
-          <FadeIn delay={200}>
-            <div class="glass-card p-8 cursor-default">
-              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </div>
-              <h3 class="text-xl font-bold mb-2">Webshops</h3>
-              <p class="text-ink-secondary leading-relaxed">
-                Een Shopify webshop die er goed uitziet en die je zelf makkelijk kunt beheren.
-              </p>
-            </div>
-          </FadeIn>
-
-          <!-- Online zichtbaarheid -->
-          <FadeIn delay={300}>
-            <div class="glass-card p-8 cursor-default">
-              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              </div>
-              <h3 class="text-xl font-bold mb-2">Gevonden worden</h3>
-              <p class="text-ink-secondary leading-relaxed">
-                Elke website die ik bouw is geoptimaliseerd voor Google. Zodat klanten jou vinden, niet je concurrent.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-
-        <FadeIn delay={400}>
-          <div class="mt-10 text-center">
-            <a
-              href="/wat-ik-doe/"
-              class="text-ink font-bold inline-flex items-center gap-2 hover:text-accent transition-colors group"
-            >
-              Bekijk alles wat ik doe
-              <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-            </a>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
-      <div class="max-w-5xl mx-auto">
-        <FadeIn>
-          <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Zo werkt het</span>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12 md:mb-16">
-            Van eerste gesprek tot live website
-          </h2>
-        </FadeIn>
-
-        <FadeIn delay={200}>
-          <AnimatedTimeline steps={processSteps} />
-        </FadeIn>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <FadeIn>
-            <div class="relative">
-              <img
-                src="/assets/yannick.webp"
-                alt="Yannick Veldhuisen, oprichter van KNAP GEMAAKT."
-                class="rounded-2xl w-full max-w-md"
-                loading="lazy"
-              />
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={200}>
-            <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Wie ik ben</span>
-              <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-                Hoi, ik ben Yannick
-              </h2>
-              <p class="text-ink-secondary leading-relaxed mb-4">
-                Ik bouw websites vanuit Buren voor ondernemers in de regio en daarbuiten. Geen team, geen kantoor. Gewoon persoonlijk contact en eerlijk advies.
-              </p>
-              <p class="text-ink-secondary leading-relaxed mb-6">
-                Als er iets is, bel je me gewoon. Zo simpel is het.
-              </p>
-
-              <div class="flex flex-wrap gap-4 mb-6">
-                <span class="text-xs font-medium bg-canvas-alt px-3 py-1.5 rounded-full text-ink-secondary">KVK: 73652377</span>
-                <span class="text-xs font-medium bg-canvas-alt px-3 py-1.5 rounded-full text-ink-secondary">Buren, Rivierenland</span>
-              </div>
-
-              <a
-                href="/over-mij/"
-                class="text-ink font-bold inline-flex items-center gap-2 hover:text-accent transition-colors group"
-              >
-                Meer over mij
-                <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-              </a>
-            </div>
-          </FadeIn>
-        </div>
       </div>
     </section>
   </main>
-  <Footer />
+  <Footer hideCTA={true} />
 </Layout>

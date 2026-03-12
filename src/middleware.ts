@@ -23,6 +23,12 @@ const BLOG_REDIRECTS: Record<string, string> = {
   "/blog/zelf-website-maken-of-laten-maken": "/blog/website-laten-maken-kosten/",
 };
 
+// Page redirects (website restructure)
+const PAGE_REDIRECTS: Record<string, string> = {
+  "/wat-ik-doe": "/ict-diensten/",
+  "/over-mij": "/over/",
+};
+
 // Removed blog posts that should return 410 Gone
 const REMOVED_BLOG_POSTS: string[] = [];
 
@@ -104,6 +110,16 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const pathname = context.url.pathname;
   // Normalize pathname (remove trailing slash for comparison, except root)
   const normalizedPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
+
+  // Check for page redirects (301 - website restructure)
+  if (PAGE_REDIRECTS[normalizedPath]) {
+    return new Response(null, {
+      status: 301,
+      headers: {
+        Location: PAGE_REDIRECTS[normalizedPath],
+      },
+    });
+  }
 
   // Check for blog redirects (301 - consolidating content to current posts)
   if (BLOG_REDIRECTS[normalizedPath]) {

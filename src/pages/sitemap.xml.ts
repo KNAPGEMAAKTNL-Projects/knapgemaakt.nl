@@ -17,12 +17,19 @@ function generateSitemap(): string {
 
     const staticPages: PageEntry[] = [
         { path: "/", lastmod: today, changefreq: "weekly", priority: "1.0" },
-        { path: "/wat-ik-doe/", lastmod: today, changefreq: "weekly", priority: "0.9" },
+        { path: "/ict-diensten/", lastmod: today, changefreq: "weekly", priority: "0.9" },
+        { path: "/ict-diensten/email-hosting/", lastmod: today, changefreq: "monthly", priority: "0.8" },
+        { path: "/ict-diensten/website-hosting/", lastmod: today, changefreq: "monthly", priority: "0.8" },
+        { path: "/ict-diensten/wordpress-sneller/", lastmod: today, changefreq: "monthly", priority: "0.8" },
+        { path: "/ict-diensten/slimmer-werken/", lastmod: today, changefreq: "monthly", priority: "0.8" },
+        { path: "/webdesign/", lastmod: today, changefreq: "weekly", priority: "0.9" },
+        { path: "/webshops/", lastmod: today, changefreq: "weekly", priority: "0.9" },
+        { path: "/werk/", lastmod: today, changefreq: "weekly", priority: "0.8" },
         { path: "/website-voor-hoveniers/", lastmod: today, changefreq: "monthly", priority: "0.8" },
         { path: "/blog/", lastmod: today, changefreq: "weekly", priority: "0.8" },
         { path: "/contact/", lastmod: today, changefreq: "monthly", priority: "0.7" },
         { path: "/aanvragen/", lastmod: today, changefreq: "monthly", priority: "0.7" },
-        { path: "/over-mij/", lastmod: today, changefreq: "monthly", priority: "0.6" },
+        { path: "/over/", lastmod: today, changefreq: "monthly", priority: "0.6" },
         { path: "/algemene-voorwaarden/", lastmod: "2026-01-20", changefreq: "yearly", priority: "0.3" },
         { path: "/privacy/", lastmod: "2026-01-20", changefreq: "yearly", priority: "0.3" },
     ];

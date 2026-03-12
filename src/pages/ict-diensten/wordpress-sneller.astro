@@ -1,0 +1,204 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import FadeIn from "../../components/FadeIn.astro";
+---
+
+<Layout
+  title="WordPress Versnellen | Cloudflare APO | KNAP GEMAAKT."
+  description="WordPress website langzaam? Ik zet Cloudflare APO ervoor: een wereldwijd netwerk dat je pagina's razendsnel laadt. Vanaf 10 euro per maand, alles geregeld."
+>
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
+          Je WordPress site sneller maken
+        </h1>
+        <p class="text-lg md:text-xl text-ink-secondary max-w-2xl leading-relaxed">
+          Je site is traag. Bezoekers haken af, Google zet je lager. Maar je hele site opnieuw bouwen voelt als te veel. Dat hoeft ook niet.
+        </p>
+      </div>
+    </section>
+
+    <!-- Problem Recognition -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="max-w-3xl">
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+              Een trage website kost je klanten
+            </h2>
+            <p class="text-ink-secondary leading-relaxed mb-4">
+              Je kent het zelf ook. Je opent een website op je telefoon, het duurt drie seconden, en je drukt alweer op terug. Dat doen je bezoekers ook. Onderzoek laat keer op keer zien: hoe langzamer je site laadt, hoe meer mensen afhaken.
+            </p>
+            <p class="text-ink-secondary leading-relaxed mb-4">
+              En Google let er ook op. Een trage website wordt minder vaak getoond in zoekresultaten. Je concurrent met een snellere site staat hoger, ook al is jouw inhoud beter.
+            </p>
+            <p class="text-ink-secondary leading-relaxed">
+              Het vervelende is: je weet dat het beter moet. Maar je WordPress site werkt verder prima. Je kent het beheer, je plugins draaien, je content staat erin. Alles overhoop halen voor snelheid? Dat voelt als met een kanon op een mug schieten.
+            </p>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- What Cloudflare APO does -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+                Wat ik ervoor zet: een snel wereldwijd netwerk
+              </h2>
+              <p class="text-ink-secondary leading-relaxed mb-4">
+                Ik plaats Cloudflare voor je WordPress site. Dat is een netwerk met servers over de hele wereld. Je pagina's worden opgeslagen op de server die het dichtst bij je bezoeker staat.
+              </p>
+              <p class="text-ink-secondary leading-relaxed mb-4">
+                Iemand uit Amsterdam? Die laadt je site vanaf een server in Amsterdam. Iemand uit Rotterdam? Server in Rotterdam. Zo hoeft je eigen hosting niet alles alleen te doen.
+              </p>
+              <p class="text-ink-secondary leading-relaxed">
+                Het resultaat: je pagina's laden in een fractie van de tijd. Niet omdat je site anders is gebouwd, maar omdat hij slimmer wordt aangeboden.
+              </p>
+            </div>
+            <div class="bg-canvas-alt rounded-2xl p-8">
+              <h3 class="font-bold text-lg mb-4">In het kort</h3>
+              <ul class="space-y-3">
+                {[
+                  "Je pagina's worden wereldwijd gecached",
+                  "Bezoekers laden je site vanaf de dichtstbijzijnde server",
+                  "Je eigen hosting wordt ontlast",
+                  "Snellere laadtijden, betere Google-score",
+                  "Werkt met elke WordPress-hosting",
+                ].map((item) => (
+                  <li class="flex items-center gap-3 text-ink-secondary">
+                    <div class="w-2 h-2 rounded-full bg-accent shrink-0"></div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- What stays the same -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="max-w-3xl">
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+              Wat er niet verandert: alles
+            </h2>
+            <p class="text-ink-secondary leading-relaxed mb-4">
+              Je WordPress-beheer blijft precies hetzelfde. Je logt in zoals je gewend bent, bewerkt pagina's, plaatst berichten, installeert plugins. Niets verandert aan hoe jij je site beheert.
+            </p>
+            <p class="text-ink-secondary leading-relaxed mb-4">
+              Je thema blijft hetzelfde. Je plugins blijven draaien. Je hosting blijft waar die is. Ik verplaats niets en bouw niets om.
+            </p>
+            <p class="text-ink-secondary leading-relaxed">
+              Het enige dat je merkt is dat je site sneller laadt. Voor de rest is het alsof er niets is veranderd.
+            </p>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-6 mt-10">
+            <div class="bg-canvas rounded-xl p-6">
+              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="M3 9h6"/></svg>
+              </div>
+              <h3 class="font-bold mb-2">WordPress-beheer</h3>
+              <p class="text-sm text-ink-secondary">Je dashboard, je manier van werken. Blijft allemaal hetzelfde.</p>
+            </div>
+            <div class="bg-canvas rounded-xl p-6">
+              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
+              </div>
+              <h3 class="font-bold mb-2">Thema en plugins</h3>
+              <p class="text-sm text-ink-secondary">Alles wat je nu hebt draaien, blijft gewoon draaien.</p>
+            </div>
+            <div class="bg-canvas rounded-xl p-6">
+              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3 class="font-bold mb-2">Bestaande hosting</h3>
+              <p class="text-sm text-ink-secondary">Je site blijft waar die staat. Ik zet er alleen een snel netwerk voor.</p>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+                Wat het kost
+              </h2>
+              <p class="text-ink-secondary leading-relaxed mb-4">
+                De WordPress speed boost kost 10 tot 15 euro per maand. Dat is alles. Geen installatiekosten, geen verrassingen.
+              </p>
+              <p class="text-ink-secondary leading-relaxed mb-4">
+                In die prijs zit de Cloudflare-dienst zelf, de installatie, en het monitoren of alles goed blijft werken. Ik hou het in de gaten, jij merkt er alleen de snelheid van.
+              </p>
+              <p class="text-ink-secondary leading-relaxed">
+                Wil je eerst weten of het voor jouw site zin heeft? Dat bekijk ik gratis. Niet elke site heeft hetzelfde probleem, dus ik kijk eerst of dit de juiste oplossing is voordat je ergens aan vastzit.
+              </p>
+            </div>
+            <div class="bg-canvas-alt rounded-2xl p-8">
+              <div class="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+                &euro;10-15<span class="text-lg font-normal text-ink-secondary">/maand</span>
+              </div>
+              <p class="text-ink-secondary text-sm mb-6">Alles inbegrepen, maandelijks opzegbaar.</p>
+              <ul class="space-y-3">
+                {[
+                  "Cloudflare netwerk voor je site",
+                  "Installatie en configuratie",
+                  "Doorlopend monitoren",
+                  "Geen lange contracten",
+                  "Gratis voorafgaande check",
+                ].map((item) => (
+                  <li class="flex items-center gap-3 text-ink-secondary text-sm">
+                    <div class="w-2 h-2 rounded-full bg-accent shrink-0"></div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-3xl mx-auto text-center">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Al een WordPress site?
+          </h2>
+          <p class="text-ink-secondary text-lg leading-relaxed mb-8">
+            Laten we kijken of ik hem sneller kan maken. Ik bekijk je site, vertel je eerlijk of het zin heeft, en als het past regel ik de rest.
+          </p>
+          <a
+            href="/aanvragen/?onderwerp=wordpress-sneller"
+            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+          >
+            Vraag een check aan
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </FadeIn>
+      </div>
+    </section>
+  </main>
+  <Footer
+    hideCTA={true}
+    ctaHeadline="WordPress te traag?"
+    ctaSubtext="Laten we kijken wat ik eraan kan doen."
+  />
+</Layout>

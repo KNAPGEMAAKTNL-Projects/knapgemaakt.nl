@@ -3,7 +3,7 @@ title: "Website laten maken: €500 of €5000? Het verschil uitgelegd"
 description: "Waarom vraagt de ene partij €500 en de andere €5000 voor een website? Waar dat prijsverschil vandaan komt en hoe je bepaalt wat bij je past."
 publishDate: 2026-02-03
 author: "Yannick Veldhuisen"
-tags: ["Website kosten", "Website laten maken", "Prijzen", "Maatwerk website", "ZZP", "MKB"]
+tags: ["Websites", "Ondernemen"]
 image: "/assets/blog/website-500-of-5000-verschil.webp"
 imageAlt: "Het verschil tussen een website van €500 en €5000 uitgelegd"
 ---

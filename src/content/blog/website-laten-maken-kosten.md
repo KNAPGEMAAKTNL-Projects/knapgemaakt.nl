@@ -3,7 +3,7 @@ title: "Wat kost een website laten maken in 2026? Complete prijsgids"
 description: "Websiteprijzen in Nederland variëren van €500 tot €5.000+. Wat je krijgt per budget, waar prijsverschillen vandaan komen, en wat er bij komt kijken."
 publishDate: 2026-01-31
 author: "Yannick Veldhuisen"
-tags: ["Website kosten", "Website laten maken", "Prijzen", "Maatwerk website", "ZZP", "MKB"]
+tags: ["Websites", "Ondernemen"]
 image: "/assets/blog/website-laten-maken-kosten.webp"
 imageAlt: "Overzicht van websitekosten voor ondernemers in Nederland"
 ---
@@ -145,7 +145,7 @@ Een website kan meer dan er mooi uitzien. Met de juiste opzet neemt het je werk 
 - Contactformulieren worden direct beantwoord
 - Betalingen lopen mee via iDEAL | Wero
 
-Dat soort [automations](/wat-ik-doe/) vraagt een iets hogere investering (bij KNAP GEMAAKT. vanaf €995 voor website + systeem), maar het bespaart je uren per week aan administratie. Tijd die je liever aan je klanten besteedt. Of aan koffie.
+Dat soort [automations](/ict-diensten/slimmer-werken/) vraagt een iets hogere investering (bij KNAP GEMAAKT. vanaf €995 voor website + systeem), maar het bespaart je uren per week aan administratie. Tijd die je liever aan je klanten besteedt. Of aan koffie.
 
 ## Zo kies je de juiste partij
 

@@ -3,7 +3,7 @@ title: "Wero voor webshops: 5 dingen die je voor 31 maart kunt regelen"
 description: "Op 31 maart 2026 tonen webshops het nieuwe iDEAL | Wero logo. Een praktische checklist met 5 stappen om de overgang soepel te laten verlopen."
 publishDate: 2026-01-30
 author: "Yannick Veldhuisen"
-tags: ["Wero", "iDEAL", "Webshop", "Betalingen"]
+tags: ["Betalingen", "Webshops"]
 image: "/assets/blog/wero-webshop-checklist.webp"
 imageAlt: "Webshophouders bekijken de Wero checklist voor de overgang van iDEAL"
 ---

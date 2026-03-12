@@ -1,0 +1,197 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import FadeIn from "../components/FadeIn.astro";
+---
+
+<Layout
+  title="Webdesign | Websites op maat gebouwd | KNAP GEMAAKT."
+  description="Websites gebouwd vanaf nul. Geen templates, geen trage plugins. Snel, overzichtelijk en precies passend bij jouw bedrijf. KNAP GEMAAKT. uit Buren."
+>
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
+          Een website die echt van jou is
+        </h1>
+        <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed mb-4">
+          Gebouwd vanaf nul. Geen WordPress-template waar je logo op wordt geplakt, geen pagina vol plugins die alles traag maken, geen beheersysteem waar je een cursus voor nodig hebt.
+        </p>
+        <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed">
+          Wat je wel krijgt: een snelle, overzichtelijke website die er goed uitziet op telefoon en laptop. Gebouwd voor jouw bedrijf, niet voor duizend anderen.
+        </p>
+      </div>
+    </section>
+
+    <!-- What makes it different -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+            Waarom custom code in plaats van een template?
+          </h2>
+          <div class="grid md:grid-cols-2 gap-10 md:gap-16">
+            <div>
+              <p class="text-ink/70 leading-relaxed mb-6">
+                De meeste websites voor kleine bedrijven draaien op WordPress met een kant-en-klaar thema. Kan prima werken, maar je herkent ze meteen. Dezelfde indeling, dezelfde sliders, dezelfde trage laadtijd.
+              </p>
+              <p class="text-ink/70 leading-relaxed">
+                Bij KNAP GEMAAKT. is elke website custom code. Niks erin wat je niet nodig hebt. Geen overbodige plugins, geen trage laadtijden, geen onnodig ingewikkeld beheersysteem. Alleen wat jouw bedrijf nodig heeft, en dat goed.
+              </p>
+            </div>
+            <div>
+              <ul class="space-y-4">
+                {[
+                  "Elk ontwerp is uniek, gebouwd voor jouw bedrijf",
+                  "Razendsnel, ook op een telefoon met 4G",
+                  "Werkt perfect op mobiel, tablet en desktop",
+                  "Geen plugins die updates nodig hebben",
+                  "Vindbaar in Google dankzij schone code",
+                  "Teksten worden voor je geschreven",
+                  "Hosting en domeinnaam erbij geregeld"
+                ].map((feature) => (
+                  <li class="flex items-start gap-3 text-ink/70">
+                    <div class="w-2 h-2 rounded-full bg-accent shrink-0 mt-2.5"></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- Demo sites showcase -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+            Zo ziet dat eruit
+          </h2>
+          <p class="text-ink/70 leading-relaxed mb-10 max-w-2xl">
+            Twee demosites om een idee te krijgen van de stijl, snelheid en kwaliteit. Klik erop en kijk rond.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-8">
+            <!-- Demo Hovenier -->
+            <a
+              href="https://demo-hovenier.knapgemaakt.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group block rounded-2xl overflow-hidden border border-warm hover:border-accent transition-colors duration-300"
+            >
+              <div class="aspect-[16/10] overflow-hidden bg-canvas-alt relative">
+                <div class="absolute top-4 left-4 z-10 bg-ink text-canvas text-xs font-bold px-3 py-1 rounded-full tracking-wide uppercase">
+                  Demo
+                </div>
+                <img
+                  src="/assets/projects/demo-hovenier.webp"
+                  alt="Demo website voor hoveniersbedrijf"
+                  width="2304"
+                  height="1536"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="p-5 bg-canvas">
+                <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">Demo: Hovenier website</h3>
+                <p class="text-ink/70 text-sm leading-relaxed">
+                  Een volledige website voor een hoveniersbedrijf. Portfolio, diensten en contactformulier.
+                </p>
+              </div>
+            </a>
+
+            <!-- Demo Elektricien -->
+            <a
+              href="https://demo-elektricien.knapgemaakt.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group block rounded-2xl overflow-hidden border border-warm hover:border-accent transition-colors duration-300"
+            >
+              <div class="aspect-[16/10] overflow-hidden bg-canvas-alt relative">
+                <div class="absolute top-4 left-4 z-10 bg-ink text-canvas text-xs font-bold px-3 py-1 rounded-full tracking-wide uppercase">
+                  Demo
+                </div>
+                <img
+                  src="/assets/projects/demo-elektricien.webp"
+                  alt="Demo website voor elektricien"
+                  width="2304"
+                  height="1536"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="p-5 bg-canvas">
+                <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">Demo: Elektricien website</h3>
+                <p class="text-ink/70 text-sm leading-relaxed">
+                  Een website voor een elektricien. Helder, professioneel en gebouwd om vertrouwen te wekken.
+                </p>
+              </div>
+            </a>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+            Hoe werkt het?
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+            <div>
+              <div class="w-10 h-10 rounded-full bg-ink text-canvas flex items-center justify-center font-bold text-sm mb-4">1</div>
+              <h3 class="font-bold text-lg mb-2">We praten</h3>
+              <p class="text-ink/70 leading-relaxed">
+                Een gesprek over je bedrijf, je klanten en wat je wilt uitstralen. Wat doe je precies, en wat moet de website voor je doen?
+              </p>
+            </div>
+            <div>
+              <div class="w-10 h-10 rounded-full bg-ink text-canvas flex items-center justify-center font-bold text-sm mb-4">2</div>
+              <h3 class="font-bold text-lg mb-2">Het wordt gebouwd</h3>
+              <p class="text-ink/70 leading-relaxed">
+                Op basis van dat gesprek ontstaat het ontwerp en de teksten. Je ziet tussendoor hoe het eruitziet en geeft feedback. Aanpassen tot het goed is.
+              </p>
+            </div>
+            <div>
+              <div class="w-10 h-10 rounded-full bg-ink text-canvas flex items-center justify-center font-bold text-sm mb-4">3</div>
+              <h3 class="font-bold text-lg mb-2">Je bent online</h3>
+              <p class="text-ink/70 leading-relaxed">
+                Alles staat? Dan gaat de website live. Hosting, domeinnaam en e-mail worden erbij geregeld. Jij hoeft nergens naar om te kijken.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Benieuwd wat er mogelijk is?
+          </h2>
+          <p class="text-ink/70 text-lg leading-relaxed mb-8">
+            Vertel over je bedrijf en we kijken samen naar de mogelijkheden. Vrijblijvend, gewoon een goed gesprek.
+          </p>
+          <a
+            href="/aanvragen/?onderwerp=webdesign"
+            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+          >
+            Plan een gesprek in
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </FadeIn>
+      </div>
+    </section>
+  </main>
+  <Footer hideCTA={true} />
+</Layout>

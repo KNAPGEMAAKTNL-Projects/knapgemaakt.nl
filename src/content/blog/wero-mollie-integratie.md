@@ -3,7 +3,7 @@ title: "Wero en Mollie: Hoe werkt de integratie?"
 description: "Gebruik je Mollie als payment provider? De overgang van iDEAL naar Wero gaat grotendeels automatisch. Wat Mollie regelt en wat je zelf aanpast."
 publishDate: 2026-02-01
 author: "Yannick Veldhuisen"
-tags: ["Wero", "iDEAL", "Mollie", "Webshop", "Betalingen", "Integratie"]
+tags: ["Betalingen", "Webshops"]
 image: "/assets/blog/wero-mollie-integratie.webp"
 imageAlt: "Wero en Mollie integratie voor webshops uitgelegd"
 ---

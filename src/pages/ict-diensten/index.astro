@@ -1,0 +1,157 @@
+---
+export const prerender = true;
+
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import FadeIn from "../../components/FadeIn.astro";
+
+const services = [
+  {
+    name: "Website Hosting",
+    description: "Snelle, veilige hosting voor je website. Techniek, updates en beveiliging? Geregeld. Jij hoeft nergens naar om te kijken.",
+    href: "/ict-diensten/website-hosting/",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>`,
+  },
+  {
+    name: "E-mail Hosting",
+    description: "Professionele e-mail met je eigen domeinnaam. Betrouwbaar, overzichtelijk en goed beveiligd. Werkt gewoon.",
+    href: "/ict-diensten/email-hosting/",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
+  },
+  {
+    name: "WordPress Versnellen",
+    description: "Trage WordPress-site? Weer snel maken via een wereldwijd netwerk. Betere scores, snellere laadtijden. Niets verandert aan je beheer.",
+    href: "/ict-diensten/wordpress-sneller/",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-2 2.5h3L12 7"/><path d="M10 14v-3"/><path d="M14 14v-3"/><path d="M11 19c-1.7 0-3-1.3-3-3v-2h8v2c0 1.7-1.3 3-3 3Z"/><path d="M12 22v-3"/></svg>`,
+  },
+  {
+    name: "Slimmer Werken",
+    description: "Tijd besparen door slimme koppelingen en automatisering. Een frisse blik op je werkproces, en dan beter maken.",
+    href: "/ict-diensten/slimmer-werken/",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg>`,
+  },
+];
+---
+
+<Layout
+  title="ICT Diensten voor Ondernemers | Hosting, E-mail & Meer | KNAP GEMAAKT."
+  description="Website hosting, e-mail hosting, WordPress optimalisatie en slimmer werken. ICT diensten voor lokale ondernemers, persoonlijk geregeld door KNAP GEMAAKT."
+>
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
+          De digitale kant van je bedrijf, geregeld
+        </h1>
+        <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed">
+          Hosting, e-mail, snellere websites, slimmere werkprocessen. Alles wat je nodig hebt om digitaal soepel te draaien, onder één dak. Persoonlijk contact, geen ticketsysteem.
+        </p>
+      </div>
+    </section>
+
+    <!-- Service Cards Grid -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <div class="grid sm:grid-cols-2 gap-6 md:gap-8">
+            {services.map((service) => (
+              <a
+                href={service.href}
+                class="group block bg-white border border-[#E8E4DE] rounded-xl p-8 hover:border-accent hover:shadow-lg transition-all duration-300 cursor-pointer"
+              >
+                <div class="w-12 h-12 rounded-xl bg-ink flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
+                  <Fragment set:html={service.icon} />
+                </div>
+                <h2 class="text-xl md:text-2xl font-bold tracking-tight mb-3">
+                  {service.name}
+                </h2>
+                <p class="text-ink/70 leading-relaxed mb-4">
+                  {service.description}
+                </p>
+                <span class="inline-flex items-center gap-2 text-sm font-bold text-ink group-hover:text-accent transition-colors duration-300">
+                  Meer informatie
+                  <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- Daarnaast: Webdesign & Webshops -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+            Daarnaast
+          </h2>
+          <p class="text-ink/70 leading-relaxed max-w-2xl mb-10">
+            Naast ICT diensten ook websites op maat en Shopify webshops. Alles om online goed voor de dag te komen.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-6 md:gap-8">
+            <a
+              href="/webdesign/"
+              class="group block bg-white border border-[#E8E4DE] rounded-xl p-8 hover:border-accent hover:shadow-lg transition-all duration-300 cursor-pointer"
+            >
+              <div class="w-12 h-12 rounded-xl bg-ink flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold tracking-tight mb-3">
+                Webdesign
+              </h3>
+              <p class="text-ink/70 leading-relaxed mb-4">
+                Websites op maat die bij je bedrijf passen. Ontwerp, teksten en bouw. Jij geeft feedback, de rest wordt geregeld.
+              </p>
+              <span class="inline-flex items-center gap-2 text-sm font-bold text-ink group-hover:text-accent transition-colors duration-300">
+                Bekijk webdesign
+                <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </span>
+            </a>
+            <a
+              href="/webshops/"
+              class="group block bg-white border border-[#E8E4DE] rounded-xl p-8 hover:border-accent hover:shadow-lg transition-all duration-300 cursor-pointer"
+            >
+              <div class="w-12 h-12 rounded-xl bg-ink flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold tracking-tight mb-3">
+                Webshops
+              </h3>
+              <p class="text-ink/70 leading-relaxed mb-4">
+                Shopify webshops die er goed uitzien en makkelijk zelf bij te houden zijn. Producten, bestellingen, alles op een plek.
+              </p>
+              <span class="inline-flex items-center gap-2 text-sm font-bold text-ink group-hover:text-accent transition-colors duration-300">
+                Bekijk webshops
+                <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </span>
+            </a>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-3xl mx-auto text-center">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Ergens mee geholpen?
+          </h2>
+          <p class="text-ink/70 text-lg leading-relaxed mb-8">
+            Vertel wat je nodig hebt. We denken mee en komen met een voorstel. Vrijblijvend.
+          </p>
+          <a
+            href="/aanvragen/"
+            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+          >
+            Plan een gesprek in
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </FadeIn>
+      </div>
+    </section>
+  </main>
+  <Footer hideCTA={true} />
+</Layout>

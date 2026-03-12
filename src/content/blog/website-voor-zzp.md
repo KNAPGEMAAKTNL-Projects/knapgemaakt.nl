@@ -3,7 +3,7 @@ title: "Website voor ZZP'ers: Alles wat je moet weten"
 description: "Heb je als ZZP'er een website nodig? Wat kost het, wat levert het op, en waar begin je? Van one-pager tot volledige website."
 publishDate: 2026-02-13
 author: "Yannick Veldhuisen"
-tags: ["ZZP", "Website laten maken", "Freelancer", "Kosten", "Ondernemen"]
+tags: ["Websites", "Ondernemen"]
 image: "/assets/blog/website-voor-zzp.webp"
 imageAlt: "ZZP'er werkt aan zijn professionele website op laptop"
 ---

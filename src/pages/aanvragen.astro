@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 
 <Layout
 	title="Laten We Kennismaken | KNAP GEMAAKT."
-	description="Plan een gesprek. Vertel me over je bedrijf en ik denk met je mee. KNAP GEMAAKT."
+	description="Plan een vrijblijvend gesprek. Vertel over je bedrijf en we kijken samen wat er mogelijk is. KNAP GEMAAKT."
 >
     <main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 relative overflow-hidden">
         <div class="max-w-4xl mx-auto">
@@ -17,17 +17,17 @@ import Footer from "../components/Footer.astro";
                     </h1>
                     <a
                         href="/contact/"
-                        class="text-sm font-mono text-ink-secondary hover:text-accent transition-colors whitespace-nowrap self-start md:self-auto md:mt-4"
+                        class="text-sm font-mono text-ink/50 hover:text-accent transition-colors whitespace-nowrap self-start md:self-auto md:mt-4"
                     >
                         Liever direct contact? &rarr;
                     </a>
                 </div>
                 <p
-                    class="text-xl md:text-2xl text-ink-secondary font-medium max-w-4xl leading-relaxed"
+                    class="text-xl md:text-2xl text-ink/70 font-medium max-w-4xl leading-relaxed"
                 >
                     Vul het formulier in en plan direct een vrijblijvend
                     gesprek.<br />
-                    Ik neem zo snel mogelijk contact met je op.
+                    Je ontvangt zo snel mogelijk een bevestiging.
                 </p>
             </div>
 
@@ -143,19 +143,18 @@ import Footer from "../components/Footer.astro";
                                 oninput="this.setCustomValidity('')"
                                 class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
                             >
-                                <option value="" disabled selected
-                                    >Maak een keuze...</option
-                                >
-                                <option value="Horeca">Horeca</option>
-                                <option value="Bouw">Bouw</option>
-                                <option value="Retail">Retail</option>
-                                <option value="Dienstverlening"
-                                    >Dienstverlening</option
-                                >
+                                <option value="" disabled selected>Maak een keuze...</option>
+                                <option value="Horeca & food">Horeca & food</option>
+                                <option value="Retail & mode">Retail & mode</option>
+                                <option value="E-commerce">E-commerce</option>
+                                <option value="Bouw & techniek">Bouw & techniek</option>
+                                <option value="Sport & gezondheid">Sport & gezondheid</option>
+                                <option value="Huis, tuin & onderhoud">Huis, tuin & onderhoud</option>
+                                <option value="Zakelijke dienstverlening">Zakelijke dienstverlening</option>
                                 <option value="Anders">Anders</option>
                             </select>
                             <div
-                                class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink-secondary"
+                                class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink/50"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -263,14 +262,14 @@ import Footer from "../components/Footer.astro";
                             class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
                         >
                             <option value="" disabled selected>Maak een keuze...</option>
-                            <option value="Websites op maat">Websites op maat</option>
+                            <option value="Nieuwe website">Nieuwe website</option>
                             <option value="Webshop">Webshop</option>
-                            <option value="Online zichtbaarheid">Online zichtbaarheid</option>
-                            <option value="Online tools">Online tools</option>
+                            <option value="Hosting & e-mail">Hosting & e-mail</option>
+                            <option value="WordPress versnellen">WordPress versnellen</option>
                             <option value="Iets anders">Iets anders</option>
                         </select>
                         <div
-                            class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink-secondary"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink/50"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -305,7 +304,7 @@ import Footer from "../components/Footer.astro";
                         id="cal-placeholder"
                         class="py-12 border border-dashed border-canvas/20 text-center lg:border-warm"
                     >
-                        <p class="text-canvas/40 font-medium lg:text-ink-secondary">
+                        <p class="text-canvas/40 font-medium lg:text-ink/50">
                             Vul eerst je gegevens in om een moment te kiezen
                         </p>
                     </div>
@@ -329,7 +328,7 @@ import Footer from "../components/Footer.astro";
                         oninput="this.setCustomValidity('')"
                         class="mt-1 w-4 h-4 shrink-0 accent-accent"
                     />
-                    <label for="aanvraag-privacy" class="text-sm text-ink-secondary">
+                    <label for="aanvraag-privacy" class="text-sm text-ink/50">
                         Ik ga akkoord met de <a href="/privacy/" class="underline hover:text-ink transition-colors">privacyverklaring</a>
                     </label>
                 </div>
@@ -365,7 +364,7 @@ import Footer from "../components/Footer.astro";
                             </svg>
                         </span>
                     </button>
-                    <p class="mt-4 text-xs font-mono text-ink-secondary">
+                    <p class="mt-4 text-xs font-mono text-ink/50">
                         * Je ontvangt direct een bevestiging per e-mail. We bellen je op het gekozen tijdstip.
                     </p>
                 </div>
@@ -378,7 +377,7 @@ import Footer from "../components/Footer.astro";
                     <p class="font-bold text-red-500 tracking-tight">
                         Er ging iets mis
                     </p>
-                    <p class="text-ink-secondary mt-2">
+                    <p class="text-ink/50 mt-2">
                         Probeer het opnieuw of neem direct contact met ons op.
                     </p>
                 </div>
@@ -530,10 +529,16 @@ import Footer from "../components/Footer.astro";
     if (onderwerp) {
         const specSelect = document.getElementById("specification") as HTMLSelectElement;
         const optionMap: Record<string, string> = {
-            "websites-op-maat": "Websites op maat",
+            "nieuwe-website": "Nieuwe website",
+            "webdesign": "Nieuwe website",
+            "websites-op-maat": "Nieuwe website",
             "webshop": "Webshop",
-            "online-zichtbaarheid": "Online zichtbaarheid",
-            "online-tools": "Online tools",
+            "hosting-email": "Hosting & e-mail",
+            "website-hosting": "Hosting & e-mail",
+            "email-hosting": "Hosting & e-mail",
+            "wordpress-versnellen": "WordPress versnellen",
+            "wordpress-sneller": "WordPress versnellen",
+            "slimmer-werken": "Iets anders",
         };
         const value = optionMap[onderwerp];
         if (value && specSelect) {
