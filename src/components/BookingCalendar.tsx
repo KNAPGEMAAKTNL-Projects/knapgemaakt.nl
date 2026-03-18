@@ -420,10 +420,16 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
 
   const goToPreviousMonth = () => {
     const prevMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1);
+    setSelectedDate('');
+    setSelectedSlot(null);
+    (window as any).selectedBookingSlot = null;
     setCurrentMonth(prevMonth);
   };
 
   const goToNextMonth = () => {
+    setSelectedDate('');
+    setSelectedSlot(null);
+    (window as any).selectedBookingSlot = null;
     setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1));
   };
 
@@ -437,14 +443,14 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
   const year = currentMonth.getFullYear();
 
   return (
-    <div className="w-full bg-black border-y lg:border border-white/10 shadow-none lg:shadow-2xl flex flex-col lg:flex-row overflow-hidden h-auto lg:h-[535px] animate-in fade-in zoom-in-95 duration-500 rounded-none text-white font-sans">
+    <div className="w-full bg-black border-y lg:border border-white/10 shadow-none lg:shadow-2xl flex flex-col lg:flex-row overflow-hidden h-auto lg:h-[535px] animate-in fade-in zoom-in-95 duration-500 lg:rounded-2xl text-white font-sans">
 
       {/* Sidebar - Profile & Details */}
       <div className="w-full lg:w-[240px] shrink-0 p-4 md:p-5 border-b lg:border-b-0 lg:border-r border-white/10 bg-[#111111] flex flex-col gap-8 relative">
         <div className="space-y-6">
 
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white uppercase tracking-tight leading-none">Intro Call<span className="text-[var(--color-accent)]">.</span></h3>
+            <h3 className="text-2xl font-bold text-white uppercase tracking-tight leading-none">Kennismaking<span className="text-[var(--color-accent)]">.</span></h3>
             <div className="flex items-center gap-3">
               <img
                 src="/assets/yannick.webp"
@@ -455,7 +461,7 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 text-zinc-400 font-medium text-sm">
+          <div className="flex flex-col gap-4 text-zinc-300 font-medium text-sm">
             <div className="flex items-center gap-3">
               <Clock size={16} className="text-[var(--color-accent)]" />
               <span className="text-white">15 min</span>
@@ -466,14 +472,14 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
             </div>
           </div>
 
-          <p className="text-zinc-400 text-sm leading-relaxed mt-4 border-t border-white/5 pt-6">
+          <p className="text-zinc-300 text-sm leading-relaxed mt-4 border-t border-white/5 pt-6">
             Een kort gesprek om kennis te maken en je ideeën te bespreken. Je krijgt <strong className="text-white">direct een eerlijk advies</strong> over je online mogelijkheden, ongeacht of we gaan samenwerken.
           </p>
         </div>
 
         <div className="mt-auto pt-6">
           <p className="text-[10px] text-zinc-600 uppercase tracking-widest font-mono">
-            Made by <span className="text-white">KNAP GEMAAKT.</span>
+            Gemaakt door <span className="text-white">KNAP GEMAAKT.</span>
           </p>
         </div>
       </div>
@@ -490,7 +496,7 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
               type="button"
               onClick={goToPreviousMonth}
               disabled={isPreviousNbMonthDisabled(currentMonth)}
-              className={`p-2 transition-colors border border-transparent 
+              className={`p-2 transition-colors border border-transparent rounded-lg
                 ${isPreviousNbMonthDisabled(currentMonth)
                   ? 'text-zinc-500 cursor-not-allowed'
                   : 'text-white hover:bg-white/5 hover:border-white/10'}`}
@@ -498,7 +504,7 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
             >
               <ChevronLeft size={20} />
             </button>
-            <button type="button" onClick={goToNextMonth} className="p-2 hover:bg-white/5 transition-colors text-white border border-transparent hover:border-white/10" aria-label="Volgende maand">
+            <button type="button" onClick={goToNextMonth} className="p-2 hover:bg-white/5 transition-colors text-white border border-transparent hover:border-white/10 rounded-lg" aria-label="Volgende maand">
               <ChevronRight size={20} />
             </button>
           </div>
@@ -530,10 +536,10 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
                 onClick={() => handleDateClick(date)}
                 disabled={isDisabled}
                 className={`
-                            aspect-square w-full flex items-center justify-center text-sm transition-all relative border border-transparent
+                            aspect-square w-full flex items-center justify-center text-sm transition-all relative border border-transparent rounded-lg
                             ${isSelected ? 'bg-[var(--color-accent)] text-black font-bold border-[var(--color-accent)]' : ''}
-                            ${!isSelected && isFutureWeekday ? 'bg-[#1a1a1a] text-zinc-300 font-bold hover:border-[var(--color-accent)]/50 hover:bg-[#222]' : ''}
-                            ${!isSelected && !isFutureWeekday ? 'text-zinc-400 font-normal cursor-default hover:bg-transparent' : ''}
+                            ${!isSelected && isFutureWeekday ? 'bg-[#1a1a1a] text-zinc-200 font-bold hover:border-[var(--color-accent)]/50 hover:bg-[#222]' : ''}
+                            ${!isSelected && !isFutureWeekday ? 'text-zinc-500 font-normal cursor-default hover:bg-transparent' : ''}
                             ${isToday && !isSelected ? 'text-[var(--color-accent)] font-bold relative after:content-[""] after:absolute after:bottom-1.5 after:w-1 after:h-1 after:bg-[var(--color-accent)] after:rounded-full' : ''}
                         `}
               >
@@ -600,10 +606,10 @@ export default function BookingCalendar({ onSlotSelect, selectedSlot: selectedSl
                     key={index}
                     onClick={() => handleSlotClick(slot)}
                     className={`
-                                    w-full px-4 py-2 border text-sm font-bold transition-all flex items-center justify-center gap-3 group relative
+                                    w-full px-4 py-2 border text-sm font-bold transition-all flex items-center justify-center gap-3 group relative rounded-lg
                                     ${isSelected
                         ? 'bg-[var(--color-accent)] border-[var(--color-accent)] text-black'
-                        : 'bg-[#1a1a1a] border-white/5 text-zinc-300 hover:border-[var(--color-accent)]/50 hover:bg-[#222]'}
+                        : 'bg-[#1a1a1a] border-white/5 text-zinc-200 hover:border-[var(--color-accent)]/50 hover:bg-[#222]'}
                                 `}
                   >
                     <span>{slot.display}</span>

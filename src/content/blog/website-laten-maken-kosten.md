@@ -145,7 +145,7 @@ Een website kan meer dan er mooi uitzien. Met de juiste opzet neemt het je werk 
 - Contactformulieren worden direct beantwoord
 - Betalingen lopen mee via iDEAL | Wero
 
-Dat soort [automations](/ict-diensten/slimmer-werken/) vraagt een iets hogere investering (bij KNAP GEMAAKT. vanaf €995 voor website + systeem), maar het bespaart je uren per week aan administratie. Tijd die je liever aan je klanten besteedt. Of aan koffie.
+Dat soort [automations](/ict-diensten/automatisering/) vraagt een iets hogere investering (bij KNAP GEMAAKT. vanaf €995 voor website + systeem), maar het bespaart je uren per week aan administratie. Tijd die je liever aan je klanten besteedt. Of aan koffie.
 
 ## Zo kies je de juiste partij
 

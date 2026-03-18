@@ -17,7 +17,7 @@ import Footer from "../components/Footer.astro";
                     </h1>
                     <a
                         href="/contact/"
-                        class="text-sm font-mono text-ink/50 hover:text-accent transition-colors whitespace-nowrap self-start md:self-auto md:mt-4"
+                        class="text-sm font-bold text-ink/70 hover:text-accent transition-colors whitespace-nowrap self-start md:self-auto md:mt-4 border border-warm rounded-lg px-4 py-2 hover:border-accent"
                     >
                         Liever direct contact? &rarr;
                     </a>
@@ -266,6 +266,7 @@ import Footer from "../components/Footer.astro";
                             <option value="Webshop">Webshop</option>
                             <option value="Hosting & e-mail">Hosting & e-mail</option>
                             <option value="WordPress versnellen">WordPress versnellen</option>
+                            <option value="Automatisering">Automatisering</option>
                             <option value="Iets anders">Iets anders</option>
                         </select>
                         <div
@@ -296,7 +297,7 @@ import Footer from "../components/Footer.astro";
                     >
                         <span class="text-accent font-mono text-lg">[03]</span
                         >
-                        Kies Je Moment
+                        Plan een gesprek
                     </h2>
 
                     <!-- Placeholder (shown until form complete) -->
@@ -329,7 +330,7 @@ import Footer from "../components/Footer.astro";
                         class="mt-1 w-4 h-4 shrink-0 accent-accent"
                     />
                     <label for="aanvraag-privacy" class="text-sm text-ink/50">
-                        Ik ga akkoord met de <a href="/privacy/" class="underline hover:text-ink transition-colors">privacyverklaring</a>
+                        Ik ga akkoord met de <a href="/privacy/" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink transition-colors">privacyverklaring</a>
                     </label>
                 </div>
 
@@ -537,8 +538,9 @@ import Footer from "../components/Footer.astro";
             "website-hosting": "Hosting & e-mail",
             "email-hosting": "Hosting & e-mail",
             "wordpress-versnellen": "WordPress versnellen",
-            "wordpress-sneller": "WordPress versnellen",
-            "slimmer-werken": "Iets anders",
+            "wordpress-versnellen": "WordPress versnellen",
+            "slimmer-werken": "Automatisering",
+            "automatisering": "Automatisering",
         };
         const value = optionMap[onderwerp];
         if (value && specSelect) {

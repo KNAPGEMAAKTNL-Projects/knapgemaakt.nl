@@ -45,7 +45,7 @@ const projects = getAllProjects();
         </h1>
 
         <p class="text-lg md:text-xl text-ink/70 max-w-2xl mb-10 md:mb-12 leading-relaxed">
-          Websites, hosting en e-mail voor ondernemers in de regio. Eén aanspreekpunt, alles geregeld.
+          Websites, hosting en e-mail voor ondernemers in de regio.<br class="hidden md:block" />Eén aanspreekpunt, alles geregeld.
         </p>
 
         <a
@@ -75,7 +75,7 @@ const projects = getAllProjects();
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
               </div>
               <h3 class="text-xl font-bold mb-2">Webdesign</h3>
-              <p class="text-ink/70 leading-relaxed mb-4">Maatwerk websites, helemaal op code gebouwd. Snel, mobiel, en precies zoals jij het wilt.</p>
+              <p class="text-ink/70 leading-relaxed mb-4">Geen templates, geen WordPress. Snelle websites, geoptimaliseerd voor mobiel, gebouwd voor jouw bedrijf.</p>
               <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
                 Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
               </span>
@@ -109,12 +109,12 @@ const projects = getAllProjects();
           </FadeIn>
 
           <FadeIn delay={400}>
-            <a href="/ict-diensten/wordpress-sneller/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
+            <a href="/ict-diensten/wordpress-versnellen/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
               <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-5">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
               </div>
               <h3 class="text-xl font-bold mb-2">WordPress Versnellen</h3>
-              <p class="text-ink/70 leading-relaxed mb-4">Al een WordPress site? Wordt sneller via een wereldwijd netwerk. Niets verandert aan je beheer.</p>
+              <p class="text-ink/70 leading-relaxed mb-4">Al een WordPress site? Ik maak hem sneller. Je blijft gewoon alles zelf beheren.</p>
               <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
                 Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
               </span>
@@ -131,7 +131,7 @@ const projects = getAllProjects();
         <FadeIn>
           <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Werk</span>
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
-            Recent opgeleverd
+            Recente projecten
           </h2>
         </FadeIn>
       </div>
@@ -161,7 +161,11 @@ const projects = getAllProjects();
                 )}
               </div>
               <div class="p-5">
-                <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-accent text-white px-2 py-0.5 rounded-full mb-2">LIVE</span>
+                {project.category === "Live" ? (
+                  <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-accent text-white px-2 py-0.5 rounded-full mb-2">LIVE</span>
+                ) : (
+                  <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">IN ONTWIKKELING</span>
+                )}
                 <h3 class="font-bold text-lg mb-1">{project.title}</h3>
                 <p class="text-sm text-ink/50">{project.industry} · {project.location}</p>
               </div>
@@ -229,8 +233,8 @@ const projects = getAllProjects();
       </FadeIn>
     </section>
 
-    <!-- SOCIAL PROOF -->
-    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt relative z-10">
+    <!-- SOCIAL PROOF (hidden until real reviews are available) -->
+    <!-- <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt relative z-10">
       <div class="max-w-5xl mx-auto">
         <FadeIn>
           <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Wat klanten zeggen</span>
@@ -238,42 +242,8 @@ const projects = getAllProjects();
             Ervaringen
           </h2>
         </FadeIn>
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <FadeIn delay={100}>
-            <div class="glass-card p-6 md:p-8">
-              <div class="flex gap-1 text-accent mb-4">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              </div>
-              <p class="text-ink/80 leading-relaxed italic mb-4">
-                "Yannick denkt mee en levert snel. Precies wat je nodig hebt als ondernemer."
-              </p>
-              <p class="text-sm font-bold">Klantreview binnenkort</p>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={200}>
-            <div class="glass-card p-6 md:p-8">
-              <div class="flex gap-1 text-accent mb-4">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              </div>
-              <p class="text-ink/80 leading-relaxed italic mb-4">
-                "Eindelijk iemand die het gewoon regelt. Geen ingewikkeld verhaal, gewoon een goede website."
-              </p>
-              <p class="text-sm font-bold">Klantreview binnenkort</p>
-            </div>
-          </FadeIn>
-        </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- BOTTOM CTA -->
     <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-ink text-canvas relative z-10 overflow-hidden">
