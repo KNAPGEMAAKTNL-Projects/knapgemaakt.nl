@@ -4,24 +4,27 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import FadeIn from "../components/FadeIn.astro";
+import { getAllProjects } from "../data/projects";
+
+const projects = getAllProjects();
 ---
 
 <Layout
   title="Webdesign | Websites op maat gebouwd | KNAP GEMAAKT."
-  description="Websites gebouwd vanaf nul. Geen templates, geen trage plugins. Snel, overzichtelijk en precies passend bij jouw bedrijf. KNAP GEMAAKT. uit Buren."
+  description="Websites vanaf de grond opgebouwd. Geen templates, geen trage plugins. Snel, overzichtelijk en precies passend bij jouw bedrijf. KNAP GEMAAKT. uit Buren."
 >
   <main>
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
       <div class="max-w-5xl mx-auto">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
-          Een website die echt van jou is
+          Een website die past bij je bedrijf
         </h1>
         <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed mb-4">
-          Gebouwd vanaf nul. Geen WordPress-template waar je logo op wordt geplakt, geen pagina vol plugins die alles traag maken, geen beheersysteem waar je een cursus voor nodig hebt.
+          Vanaf de grond opgebouwd. Geen WordPress-template waar je logo op wordt geplakt, geen pagina vol plugins die alles traag maken, geen beheersysteem waar je een cursus voor nodig hebt.
         </p>
         <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed">
-          Wat je wel krijgt: een snelle, overzichtelijke website die er goed uitziet op telefoon en laptop. Gebouwd voor jouw bedrijf, niet voor duizend anderen.
+          Een snelle, overzichtelijke website die er goed uitziet op elk scherm. Gebouwd voor jouw bedrijf, niet voor duizend anderen.
         </p>
       </div>
     </section>
@@ -31,26 +34,26 @@ import FadeIn from "../components/FadeIn.astro";
       <div class="max-w-5xl mx-auto">
         <FadeIn>
           <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
-            Waarom custom code in plaats van een template?
+            Waarom geen template?
           </h2>
           <div class="grid md:grid-cols-2 gap-10 md:gap-16">
             <div>
               <p class="text-ink/70 leading-relaxed mb-6">
-                De meeste websites voor kleine bedrijven draaien op WordPress met een kant-en-klaar thema. Kan prima werken, maar je herkent ze meteen. Dezelfde indeling, dezelfde sliders, dezelfde trage laadtijd.
+                De meeste websites voor kleine bedrijven draaien op WordPress met een kant-en-klaar thema. Dat werkt, maar het is traag. Tientallen plugins die bij elke pagina meeladen, updates die dingen stuk maken, en laadtijden waar je bezoekers niet op zitten te wachten.
               </p>
               <p class="text-ink/70 leading-relaxed">
-                Bij KNAP GEMAAKT. is elke website custom code. Niks erin wat je niet nodig hebt. Geen overbodige plugins, geen trage laadtijden, geen onnodig ingewikkeld beheersysteem. Alleen wat jouw bedrijf nodig heeft, en dat goed.
+                Ik bouw elke website op maat. Geen overbodige plugins, geen trage laadtijden, geen ingewikkeld beheersysteem. Wat je bedrijf nodig heeft, en niks meer.
               </p>
             </div>
             <div>
               <ul class="space-y-4">
                 {[
                   "Elk ontwerp is uniek, gebouwd voor jouw bedrijf",
-                  "Razendsnel, ook op een telefoon met 4G",
+                  "Razendsnel, ook op een langzame verbinding",
                   "Werkt perfect op mobiel, tablet en desktop",
                   "Geen plugins die updates nodig hebben",
-                  "Vindbaar in Google dankzij schone code",
-                  "Teksten worden voor je geschreven",
+                  "Gebouwd om goed te scoren in Google",
+                  "Teksten kan ik voor je schrijven",
                   "Hosting en domeinnaam erbij geregeld"
                 ].map((feature) => (
                   <li class="flex items-start gap-3 text-ink/70">
@@ -65,17 +68,46 @@ import FadeIn from "../components/FadeIn.astro";
       </div>
     </section>
 
-    <!-- Demo sites showcase -->
+    <!-- Projects showcase -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
       <div class="max-w-5xl mx-auto">
         <FadeIn>
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
-            Zo ziet dat eruit
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-10">
+            Voorbeelden
           </h2>
-          <p class="text-ink/70 leading-relaxed mb-10 max-w-2xl">
-            Twee demosites om een idee te krijgen van de stijl, snelheid en kwaliteit. Klik erop en kijk rond.
-          </p>
           <div class="grid sm:grid-cols-2 gap-8">
+            {projects.map(project => (
+              <a
+                href={`/project/${project.slug}/`}
+                class="group block rounded-2xl overflow-hidden border border-warm hover:border-accent transition-colors duration-300"
+              >
+                <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
+                  {project.overviewMockup ? (
+                    <img
+                      src={project.overviewMockup}
+                      alt={project.title}
+                      width="1200"
+                      height="750"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <span class="text-ink/40 text-sm flex items-center justify-center h-full">Preview</span>
+                  )}
+                </div>
+                <div class="p-5 bg-canvas">
+                  {project.category === "Live" ? (
+                    <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-accent text-white px-2 py-0.5 rounded-full mb-2">LIVE</span>
+                  ) : (
+                    <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">IN ONTWIKKELING</span>
+                  )}
+                  <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">{project.title}</h3>
+                  <p class="text-ink/70 text-sm">{project.industry} · {project.location}</p>
+                </div>
+              </a>
+            ))}
+
             <!-- Demo Hovenier -->
             <a
               href="https://demo-hovenier.knapgemaakt.nl"
@@ -83,10 +115,7 @@ import FadeIn from "../components/FadeIn.astro";
               rel="noopener noreferrer"
               class="group block rounded-2xl overflow-hidden border border-warm hover:border-accent transition-colors duration-300"
             >
-              <div class="aspect-[16/10] overflow-hidden bg-canvas-alt relative">
-                <div class="absolute top-4 left-4 z-10 bg-ink text-canvas text-xs font-bold px-3 py-1 rounded-full tracking-wide uppercase">
-                  Demo
-                </div>
+              <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
                 <img
                   src="/assets/projects/demo-hovenier.webp"
                   alt="Demo website voor hoveniersbedrijf"
@@ -98,10 +127,9 @@ import FadeIn from "../components/FadeIn.astro";
                 />
               </div>
               <div class="p-5 bg-canvas">
-                <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">Demo: Hovenier website</h3>
-                <p class="text-ink/70 text-sm leading-relaxed">
-                  Een volledige website voor een hoveniersbedrijf. Portfolio, diensten en contactformulier.
-                </p>
+                <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
+                <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">Hovenier Demo</h3>
+                <p class="text-ink/70 text-sm">Demo website voor hoveniers</p>
               </div>
             </a>
 
@@ -112,10 +140,7 @@ import FadeIn from "../components/FadeIn.astro";
               rel="noopener noreferrer"
               class="group block rounded-2xl overflow-hidden border border-warm hover:border-accent transition-colors duration-300"
             >
-              <div class="aspect-[16/10] overflow-hidden bg-canvas-alt relative">
-                <div class="absolute top-4 left-4 z-10 bg-ink text-canvas text-xs font-bold px-3 py-1 rounded-full tracking-wide uppercase">
-                  Demo
-                </div>
+              <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
                 <img
                   src="/assets/projects/demo-elektricien.webp"
                   alt="Demo website voor elektricien"
@@ -127,10 +152,9 @@ import FadeIn from "../components/FadeIn.astro";
                 />
               </div>
               <div class="p-5 bg-canvas">
-                <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">Demo: Elektricien website</h3>
-                <p class="text-ink/70 text-sm leading-relaxed">
-                  Een website voor een elektricien. Helder, professioneel en gebouwd om vertrouwen te wekken.
-                </p>
+                <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
+                <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">Elektricien Demo</h3>
+                <p class="text-ink/70 text-sm">Demo website voor elektriciens</p>
               </div>
             </a>
           </div>
@@ -143,28 +167,28 @@ import FadeIn from "../components/FadeIn.astro";
       <div class="max-w-5xl mx-auto">
         <FadeIn>
           <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
-            Hoe werkt het?
+            Mijn werkwijze
           </h2>
           <div class="grid md:grid-cols-3 gap-8 md:gap-12">
             <div>
               <div class="w-10 h-10 rounded-full bg-ink text-canvas flex items-center justify-center font-bold text-sm mb-4">1</div>
-              <h3 class="font-bold text-lg mb-2">We praten</h3>
+              <h3 class="font-bold text-lg mb-2">Kennismaken</h3>
               <p class="text-ink/70 leading-relaxed">
-                Een gesprek over je bedrijf, je klanten en wat je wilt uitstralen. Wat doe je precies, en wat moet de website voor je doen?
+                We beginnen met een gesprek over je bedrijf, je klanten en wat je wilt uitstralen. Op basis daarvan maak ik een voorstel met een duidelijk plan en prijs.
               </p>
             </div>
             <div>
               <div class="w-10 h-10 rounded-full bg-ink text-canvas flex items-center justify-center font-bold text-sm mb-4">2</div>
-              <h3 class="font-bold text-lg mb-2">Het wordt gebouwd</h3>
+              <h3 class="font-bold text-lg mb-2">Ontwerp en bouw</h3>
               <p class="text-ink/70 leading-relaxed">
-                Op basis van dat gesprek ontstaat het ontwerp en de teksten. Je ziet tussendoor hoe het eruitziet en geeft feedback. Aanpassen tot het goed is.
+                Ik ga aan de slag met het ontwerp en de teksten. Tussendoor laat ik je zien hoe het ervoor staat en verwerk ik je feedback. Zo groeit de website samen met jouw idee.
               </p>
             </div>
             <div>
               <div class="w-10 h-10 rounded-full bg-ink text-canvas flex items-center justify-center font-bold text-sm mb-4">3</div>
-              <h3 class="font-bold text-lg mb-2">Je bent online</h3>
+              <h3 class="font-bold text-lg mb-2">Online</h3>
               <p class="text-ink/70 leading-relaxed">
-                Alles staat? Dan gaat de website live. Hosting, domeinnaam en e-mail worden erbij geregeld. Jij hoeft nergens naar om te kijken.
+                Als alles goed staat, gaat de website live. Hosting, domeinnaam en eventueel e-mail regel ik erbij. Vanaf dat moment is je bedrijf professioneel online.
               </p>
             </div>
           </div>
@@ -177,10 +201,10 @@ import FadeIn from "../components/FadeIn.astro";
       <div class="max-w-3xl mx-auto text-center">
         <FadeIn>
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Benieuwd wat er mogelijk is?
+            Website op je to-do lijst?
           </h2>
           <p class="text-ink/70 text-lg leading-relaxed mb-8">
-            Vertel over je bedrijf en we kijken samen naar de mogelijkheden. Vrijblijvend, gewoon een goed gesprek.
+            Vertel me over je bedrijf. Ik denk mee over wat je nodig hebt en kom met een voorstel.
           </p>
           <a
             href="/aanvragen/?onderwerp=webdesign"
