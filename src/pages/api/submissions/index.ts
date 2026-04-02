@@ -1,11 +1,19 @@
 import type { APIRoute } from 'astro';
 import { createBooking } from '../../../lib/create-booking';
+import {
+  buildContactNotification,
+  buildContactConfirmation,
+  buildAuditNotification,
+  buildTelegramMessage,
+} from '../../../lib/email-templates';
 
 interface Env {
   knapgemaakt_bookings: D1Database;
   RESEND_API_KEY?: string;
   N8N_BOOKING_WEBHOOK?: string;
   TURNSTILE_SECRET_KEY?: string;
+  TELEGRAM_BOT_TOKEN?: string;
+  TELEGRAM_CHAT_ID?: string;
 }
 
 type SubmissionType = 'contact' | 'offerte' | 'aanvraag' | 'audit';
@@ -35,6 +43,45 @@ function normalizeUrl(url: string): string | null {
     url = 'https://' + url;
   }
   return url;
+}
+
+async function sendEmail(apiKey: string, to: string, subject: string, html: string, replyTo?: string) {
+  const payload: Record<string, unknown> = {
+    from: 'KNAP GEMAAKT. <contact@knapgemaakt.nl>',
+    to: [to],
+    subject,
+    html,
+  };
+  if (replyTo) payload.reply_to = replyTo;
+
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('[Email] Resend error:', res.status, err);
+  }
+}
+
+async function sendTelegram(botToken: string, chatId: string, text: string) {
+  const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text,
+      parse_mode: 'MarkdownV2',
+      disable_web_page_preview: true,
+    }),
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('[Telegram] Error:', res.status, err);
+  }
 }
 
 export const POST: APIRoute = async ({ request, locals }) => {
@@ -109,6 +156,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const db = env.knapgemaakt_bookings;
 
     let bookingId: string | null = null;
+    let bookingStartTime: string | undefined;
 
     // For aanvraag: create booking first (so we have the booking_id)
     if (body.type === 'aanvraag' && body.start_time && body.end_time) {
@@ -130,6 +178,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       }
 
       bookingId = bookingResult.booking_id;
+      bookingStartTime = bookingResult.start_time;
 
       // Trigger n8n webhook for aanvraag
       const webhookUrl = env.N8N_BOOKING_WEBHOOK;
@@ -181,50 +230,56 @@ export const POST: APIRoute = async ({ request, locals }) => {
       bookingId
     ).run();
 
-    // Send email notification via Resend (for contact, offerte, and audit)
-    if (body.type === 'contact' || body.type === 'offerte' || body.type === 'audit') {
-      const apiKey = env.RESEND_API_KEY;
+    // ── Send notifications (fire-and-forget, don't block response) ──
+
+    const apiKey = env.RESEND_API_KEY;
+    const notifications: Promise<void>[] = [];
+
+    if (body.type === 'contact') {
       if (apiKey) {
-        try {
-          let emailHtml: string;
-          let subject: string;
-
-          if (body.type === 'contact') {
-            emailHtml = buildContactEmail(body);
-            subject = `Contactformulier: ${body.specification}`;
-          } else if (body.type === 'offerte') {
-            emailHtml = buildOfferteEmail(body);
-            subject = 'Offerte aanvraag: automations';
-          } else {
-            emailHtml = buildAuditEmail(body);
-            subject = 'Nieuwe website-audit aanvraag';
-          }
-
-          const emailResponse = await fetch('https://api.resend.com/emails', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${apiKey}`
-            },
-            body: JSON.stringify({
-              from: 'KNAP GEMAAKT. <contact@knapgemaakt.nl>',
-              to: ['info@knapgemaakt.nl'],
-              reply_to: body.email,
-              subject,
-              html: emailHtml
-            })
-          });
-
-          if (!emailResponse.ok) {
-            const errorData = await emailResponse.json().catch(() => ({}));
-            console.error('[Submissions API] Resend API error:', emailResponse.status, errorData);
-          }
-        } catch (err) {
-          console.error('[Submissions API] Failed to send email:', err);
-        }
-      } else {
-        console.error('[Submissions API] RESEND_API_KEY not configured');
+        // Notification to Yannick
+        notifications.push(
+          sendEmail(apiKey, 'info@knapgemaakt.nl', `Contactformulier: ${body.specification}`, buildContactNotification(body), body.email)
+        );
+        // Confirmation to customer
+        notifications.push(
+          sendEmail(apiKey, body.email, 'Je bericht is ontvangen — KNAP GEMAAKT.', buildContactConfirmation(body))
+        );
       }
+    } else if (body.type === 'aanvraag') {
+      // Aanvraag emails (notification + confirmation with ICS calendar)
+      // are handled by the n8n BOOKINGS POST workflow — don't duplicate here
+    } else if (body.type === 'offerte') {
+      if (apiKey) {
+        // Reuse contact notification format for offerte
+        notifications.push(
+          sendEmail(apiKey, 'info@knapgemaakt.nl', 'Offerte aanvraag: automations', buildContactNotification(body), body.email)
+        );
+        notifications.push(
+          sendEmail(apiKey, body.email, 'Je aanvraag is ontvangen — KNAP GEMAAKT.', buildContactConfirmation(body))
+        );
+      }
+    } else if (body.type === 'audit') {
+      if (apiKey) {
+        notifications.push(
+          sendEmail(apiKey, 'info@knapgemaakt.nl', 'Nieuwe website-audit aanvraag', buildAuditNotification(body), body.email)
+        );
+      }
+    }
+
+    // Telegram notification for all submission types
+    const telegramToken = env.TELEGRAM_BOT_TOKEN;
+    const telegramChatId = env.TELEGRAM_CHAT_ID;
+    if (telegramToken && telegramChatId) {
+      const telegramType = (body.type === 'offerte' ? 'contact' : body.type) as 'contact' | 'aanvraag' | 'audit';
+      notifications.push(
+        sendTelegram(telegramToken, telegramChatId, buildTelegramMessage(telegramType, body))
+      );
+    }
+
+    // Wait for all notifications but don't fail the response
+    if (notifications.length > 0) {
+      await Promise.allSettled(notifications);
     }
 
     return new Response(JSON.stringify({
@@ -242,58 +297,3 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
   }
 };
-
-function buildContactEmail(body: SubmissionRequest): string {
-  return `
-    <h2>Nieuw bericht via contactformulier</h2>
-    <table style="border-collapse:collapse;width:100%;max-width:600px;">
-      ${emailRow('Bedrijf', body.company || '-')}
-      ${emailRow('Naam', body.name)}
-      ${emailRow('E-mail', `<a href="mailto:${body.email}">${body.email}</a>`)}
-      ${emailRow('Telefoon', body.phone || '-')}
-      ${emailRow('Onderwerp', body.specification)}
-    </table>
-    <h3 style="margin-top:24px;">Bericht</h3>
-    <p style="white-space:pre-wrap;background:#f9f9f9;padding:16px;border-left:3px solid #ccff00;">${body.message}</p>
-  `;
-}
-
-function buildOfferteEmail(body: SubmissionRequest): string {
-  return `
-    <h2>Nieuwe offerte aanvraag: automations</h2>
-    <table style="border-collapse:collapse;width:100%;max-width:600px;">
-      ${emailRow('Naam', body.name)}
-      ${emailRow('Bedrijf', body.company || '-')}
-      ${emailRow('E-mail', `<a href="mailto:${body.email}">${body.email}</a>`)}
-      ${emailRow('Telefoon', body.phone || '-')}
-      ${emailRow('Interesse in', body.specification || '-')}
-    </table>
-    ${body.message ? `
-      <h3 style="margin-top:24px;">Toelichting</h3>
-      <p style="white-space:pre-wrap;background:#f9f9f9;padding:16px;border-left:3px solid #ccff00;">${body.message}</p>
-    ` : ''}
-  `;
-}
-
-function buildAuditEmail(body: SubmissionRequest): string {
-  return `
-    <h2>Nieuwe website-audit aanvraag</h2>
-    <table style="border-collapse:collapse;width:100%;max-width:600px;">
-      ${emailRow('Naam', body.name)}
-      ${emailRow('E-mail', `<a href="mailto:${body.email}">${body.email}</a>`)}
-      ${emailRow('Website', body.website_url ? `<a href="${body.website_url}">${body.website_url}</a>` : '-')}
-    </table>
-    <p style="margin-top:24px;color:#666;">
-      Deze persoon wil een gratis website-audit ontvangen. Bekijk de website en stuur binnen 2 werkdagen een persoonlijke video-analyse.
-    </p>
-  `;
-}
-
-function emailRow(label: string, value: string): string {
-  return `
-    <tr>
-      <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">${label}</td>
-      <td style="padding:8px 12px;border-bottom:1px solid #eee;">${value}</td>
-    </tr>
-  `;
-}
