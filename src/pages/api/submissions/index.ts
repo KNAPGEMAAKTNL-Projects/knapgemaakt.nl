@@ -243,10 +243,12 @@ export const POST: APIRoute = async ({ request, locals }) => {
         const icsAttachment = aanvraagData.start_time ? [{
           filename: 'invite.ics',
           content: btoa(buildICSContent(aanvraagData, false)),
+          content_type: 'text/calendar',
         }] : undefined;
         const icsAttachmentInternal = aanvraagData.start_time ? [{
           filename: 'invite.ics',
           content: btoa(buildICSContent(aanvraagData, true)),
+          content_type: 'text/calendar',
         }] : undefined;
         // Notification to Yannick
         const dateStr = aanvraagData.start_time
