@@ -36,12 +36,19 @@ interface AuditData {
 function emailLayout(content: string): string {
   return `<!DOCTYPE html>
 <html lang="nl">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only"></head>
-<body style="margin:0;padding:0;background-color:#F5F3EF;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1A1A1A;line-height:1.6;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#F5F3EF;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
+<style>:root{color-scheme:light only;}body{background-color:#F5F3EF !important;color:#1A1A1A !important;}[data-ogsc] body,[data-ogsb] body{background-color:#F5F3EF !important;color:#1A1A1A !important;}</style>
+</head>
+<body style="margin:0;padding:0;background-color:#F5F3EF !important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1A1A1A !important;line-height:1.6;">
+  <div style="background-color:#F5F3EF !important;width:100%;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#F5F3EF !important;">
     <tr>
       <td align="center" style="padding:40px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background-color:#FAFAF8;border:1px solid #E8E4DE;border-radius:16px;overflow:hidden;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background-color:#FAFAF8 !important;border:1px solid #E8E4DE;border-radius:16px;overflow:hidden;">
           <!-- Header -->
           <tr>
             <td style="padding:24px 32px;border-bottom:1px solid #E8E4DE;">
@@ -50,13 +57,13 @@ function emailLayout(content: string): string {
           </tr>
           <!-- Content -->
           <tr>
-            <td style="padding:32px;">
+            <td style="padding:32px;background-color:#FAFAF8 !important;">
               ${content}
             </td>
           </tr>
           <!-- Footer -->
           <tr>
-            <td style="padding:20px 32px;border-top:1px solid #E8E4DE;background-color:#F5F3EF;">
+            <td style="padding:20px 32px;border-top:1px solid #E8E4DE;background-color:#F5F3EF !important;">
               <p style="margin:0;font-size:12px;color:#4A4A4A;">
                 KNAP GEMAAKT. &middot; Buren, Gelderland<br>
                 <a href="https://knapgemaakt.nl" style="color:#14B8A6;text-decoration:none;">knapgemaakt.nl</a> &middot;
@@ -68,6 +75,7 @@ function emailLayout(content: string): string {
       </td>
     </tr>
   </table>
+  </div>
 </body>
 </html>`;
 }
