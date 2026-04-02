@@ -3,6 +3,8 @@ import { createBooking } from '../../../lib/create-booking';
 import {
   buildContactNotification,
   buildContactConfirmation,
+  buildAanvraagNotification,
+  buildAanvraagConfirmation,
   buildAuditNotification,
 } from '../../../lib/email-templates';
 
@@ -227,8 +229,17 @@ export const POST: APIRoute = async ({ request, locals }) => {
         );
       }
     } else if (body.type === 'aanvraag') {
-      // Aanvraag emails (notification + confirmation with ICS calendar)
-      // are handled by the n8n BOOKINGS POST workflow — don't duplicate here
+      if (apiKey) {
+        const aanvraagData = { ...body, booking_id: bookingId || undefined, start_time: bookingStartTime || body.start_time };
+        // Notification to Yannick
+        notifications.push(
+          sendEmail(apiKey, 'info@knapgemaakt.nl', `Kennismaking ingepland: ${body.name}`, buildAanvraagNotification(aanvraagData), body.email)
+        );
+        // Confirmation to customer
+        notifications.push(
+          sendEmail(apiKey, body.email, 'Je gesprek is bevestigd — KNAP GEMAAKT.', buildAanvraagConfirmation(aanvraagData))
+        );
+      }
     } else if (body.type === 'offerte') {
       if (apiKey) {
         // Reuse contact notification format for offerte
