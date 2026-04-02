@@ -194,13 +194,15 @@ const CLARITY_ID = 'v6kn03ub4s';
     <!-- Defer smooth scroll initialization until browser is idle (FCP optimization) -->
     <SmoothScroll client:idle />
 
-    <!-- Reset scroll position + re-render Turnstile on ViewTransitions navigation -->
+    <!-- Reset scroll position on ViewTransitions navigation -->
     <script>
       document.addEventListener('astro:after-swap', () => {
         if (!window.location.hash) {
           window.scrollTo({ top: 0, behavior: 'instant' });
         }
-        // Re-render Turnstile widgets after View Transition page swap
+      });
+      // Render Turnstile widgets on every page load (initial + View Transitions)
+      document.addEventListener('astro:page-load', () => {
         if (window.turnstile) {
           document.querySelectorAll('.cf-turnstile').forEach((el) => {
             el.innerHTML = '';
@@ -209,20 +211,6 @@ const CLARITY_ID = 'v6kn03ub4s';
               theme: el.getAttribute('data-theme') || 'auto',
               size: el.getAttribute('data-size') || 'normal',
             });
-          });
-        }
-      });
-      // Also render on initial page load (explicit mode doesn't auto-render)
-      document.addEventListener('astro:page-load', () => {
-        if (window.turnstile) {
-          document.querySelectorAll('.cf-turnstile').forEach((el) => {
-            if (!el.querySelector('iframe')) {
-              window.turnstile.render(el, {
-                sitekey: el.getAttribute('data-sitekey'),
-                theme: el.getAttribute('data-theme') || 'auto',
-                size: el.getAttribute('data-size') || 'normal',
-              });
-            }
           });
         }
       });
