@@ -113,7 +113,7 @@ const standaloneLinks = [
                         href="/over/"
                         class:list={[
                             "nav-link-hover text-sm font-medium tracking-wide transition-colors relative flex items-center gap-1 py-2",
-                            (isActive("/over/") || isActive("/blog/") || isActive("/contact/")) ? "text-ink" : "text-ink-secondary hover:text-ink"
+                            overLinks.some(l => isActive(l.href)) ? "text-ink" : "text-ink-secondary hover:text-ink"
                         ]}
                         aria-haspopup="true"
                     >
@@ -124,24 +124,17 @@ const standaloneLinks = [
                     </a>
                     <div class="dropdown-menu absolute top-full right-0 pt-2 opacity-0 invisible transition-all duration-200 pointer-events-none">
                         <div class="bg-canvas border border-warm rounded-xl shadow-lg py-2 min-w-[180px]">
-                            <a
-                                href="/blog/"
-                                class:list={[
-                                    "block px-4 py-2.5 text-sm transition-colors",
-                                    isActive("/blog/") ? "text-accent font-medium" : "text-ink-secondary hover:text-ink hover:bg-canvas-alt"
-                                ]}
-                            >
-                                Blog
-                            </a>
-                            <a
-                                href="/contact/"
-                                class:list={[
-                                    "block px-4 py-2.5 text-sm transition-colors",
-                                    isActive("/contact/") ? "text-accent font-medium" : "text-ink-secondary hover:text-ink hover:bg-canvas-alt"
-                                ]}
-                            >
-                                Contact
-                            </a>
+                            {overLinks.filter(link => link.href !== "/over/").map(link => (
+                                <a
+                                    href={link.href}
+                                    class:list={[
+                                        "block px-4 py-2.5 text-sm transition-colors",
+                                        isActive(link.href) ? "text-accent font-medium" : "text-ink-secondary hover:text-ink hover:bg-canvas-alt"
+                                    ]}
+                                >
+                                    {link.label}
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -235,7 +228,7 @@ const standaloneLinks = [
                     type="button"
                     class:list={[
                         "mobile-dropdown-toggle group relative w-full font-bold text-3xl sm:text-4xl uppercase tracking-tight py-3 flex items-center justify-center gap-2",
-                        (isActive("/over/") || isActive("/blog/") || isActive("/contact/")) ? "text-accent" : "text-ink"
+                        overLinks.some(l => isActive(l.href)) ? "text-accent" : "text-ink"
                     ]}
                     data-mobile-dropdown="over"
                 >
