@@ -6,6 +6,7 @@ import {
   buildAanvraagNotification,
   buildAanvraagConfirmation,
   buildAuditNotification,
+  buildICSContent,
 } from '../../../lib/email-templates';
 
 interface Env {
@@ -44,7 +45,12 @@ function normalizeUrl(url: string): string | null {
   return url;
 }
 
-async function sendEmail(apiKey: string, to: string, subject: string, html: string, replyTo?: string) {
+interface EmailAttachment {
+  filename: string;
+  content: string; // base64
+}
+
+async function sendEmail(apiKey: string, to: string, subject: string, html: string, replyTo?: string, attachments?: EmailAttachment[]) {
   const payload: Record<string, unknown> = {
     from: 'KNAP GEMAAKT. <contact@knapgemaakt.nl>',
     to: [to],
@@ -52,6 +58,7 @@ async function sendEmail(apiKey: string, to: string, subject: string, html: stri
     html,
   };
   if (replyTo) payload.reply_to = replyTo;
+  if (attachments?.length) payload.attachments = attachments;
 
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -231,13 +238,26 @@ export const POST: APIRoute = async ({ request, locals }) => {
     } else if (body.type === 'aanvraag') {
       if (apiKey) {
         const aanvraagData = { ...body, booking_id: bookingId || undefined, start_time: bookingStartTime || body.start_time };
+        // Build ICS calendar attachments
+        const icsAttachment = aanvraagData.start_time ? [{
+          filename: 'invite.ics',
+          content: btoa(buildICSContent(aanvraagData, false)),
+        }] : undefined;
+        const icsAttachmentInternal = aanvraagData.start_time ? [{
+          filename: 'invite.ics',
+          content: btoa(buildICSContent(aanvraagData, true)),
+        }] : undefined;
         // Notification to Yannick
+        const dateStr = aanvraagData.start_time
+          ? new Date(aanvraagData.start_time).toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Amsterdam' })
+          : '';
         notifications.push(
-          sendEmail(apiKey, 'info@knapgemaakt.nl', `Kennismaking ingepland: ${body.name}`, buildAanvraagNotification(aanvraagData), body.email)
+          sendEmail(apiKey, 'info@knapgemaakt.nl', `${aanvraagData.specification || 'Kennismaking'} - ${body.name}`, buildAanvraagNotification(aanvraagData), body.email, icsAttachmentInternal)
         );
         // Confirmation to customer
+        const subjectDate = dateStr ? dateStr.charAt(0).toUpperCase() + dateStr.slice(1) : '';
         notifications.push(
-          sendEmail(apiKey, body.email, 'Je gesprek is bevestigd — KNAP GEMAAKT.', buildAanvraagConfirmation(aanvraagData))
+          sendEmail(apiKey, body.email, `Je afspraak staat! ${subjectDate}`, buildAanvraagConfirmation(aanvraagData), undefined, icsAttachment)
         );
       }
     } else if (body.type === 'offerte') {
