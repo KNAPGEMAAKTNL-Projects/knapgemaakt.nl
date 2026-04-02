@@ -4,6 +4,13 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import FadeIn from "../components/FadeIn.astro";
+import FAQSection from "../components/FAQSection.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://knapgemaakt.nl/" },
+	{ name: "Webshops", url: "https://knapgemaakt.nl/webshops/" }
+];
 ---
 
 <Layout
@@ -14,6 +21,9 @@ import FadeIn from "../components/FadeIn.astro";
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
       <div class="max-w-5xl mx-auto">
+        <div class="mb-6">
+          <Breadcrumb items={breadcrumbs} />
+        </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
           Een professionele webshop<br />voor jouw merk
         </h1>
@@ -181,6 +191,31 @@ import FadeIn from "../components/FadeIn.astro";
         </FadeIn>
       </div>
     </section>
+
+    <FadeIn>
+    <FAQSection faqs={[
+	{
+		question: "Wat kost een webshop laten maken?",
+		answer: "Een Shopify webshop op maat begint vanaf EUR 2.500. De exacte prijs hangt af van het aantal producten, gewenste functionaliteit en koppelingen. Je krijgt altijd een vaste prijs vooraf."
+	},
+	{
+		question: "Waarom Shopify en niet WooCommerce?",
+		answer: "Shopify is gebouwd voor verkopen. Betalingen, voorraad, verzending en belastingen werken out of the box. Bij WooCommerce moet je dat allemaal zelf regelen met plugins. Shopify kost iets meer per maand, maar bespaart je een hoop gedoe."
+	},
+	{
+		question: "Kan ik zelf producten toevoegen?",
+		answer: "Ja, dat is juist het idee. Shopify heeft een duidelijk dashboard waar je zelf producten, foto's en prijzen beheert. Ik leer je hoe het werkt bij de oplevering."
+	},
+	{
+		question: "Hoe lang duurt het bouwen van een webshop?",
+		answer: "Reken op 3 tot 6 weken, afhankelijk van het aantal producten en de complexiteit. Een basis webshop met 20-30 producten kan in 3 weken klaar zijn."
+	},
+	{
+		question: "Hoe zit het met betaalmethoden?",
+		answer: "Shopify werkt standaard met iDEAL, creditcard, Bancontact en Apple Pay via Shopify Payments. Wil je Klarna, Riverty of andere opties? Dan koppelen we Mollie als payment provider."
+	}
+]} />
+    </FadeIn>
 
     <!-- CTA -->
     <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">

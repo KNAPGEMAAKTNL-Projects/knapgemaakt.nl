@@ -4,9 +4,16 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import FadeIn from "../components/FadeIn.astro";
+import FAQSection from "../components/FAQSection.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import { getAllProjects } from "../data/projects";
 
 const projects = getAllProjects();
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://knapgemaakt.nl/" },
+	{ name: "Webdesign", url: "https://knapgemaakt.nl/webdesign/" }
+];
 ---
 
 <Layout
@@ -17,6 +24,9 @@ const projects = getAllProjects();
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
       <div class="max-w-5xl mx-auto">
+        <div class="mb-6">
+          <Breadcrumb items={breadcrumbs} />
+        </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
           Een website die past bij je bedrijf
         </h1>
@@ -195,6 +205,32 @@ const projects = getAllProjects();
         </FadeIn>
       </div>
     </section>
+
+    <!-- FAQ -->
+    <FadeIn>
+    <FAQSection faqs={[
+    	{
+    		question: "Wat kost een website laten maken?",
+    		answer: "Dat hangt af van wat je nodig hebt. Een eenvoudige bedrijfssite begint vanaf EUR 1.500. Een uitgebreidere site met meerdere pagina's, formulieren en koppelingen zit al snel tussen EUR 2.500 en EUR 5.000. Ik geef altijd een vaste prijs vooraf, dus geen verrassingen achteraf."
+    	},
+    	{
+    		question: "Hoe lang duurt het om een website te bouwen?",
+    		answer: "De meeste websites zijn binnen 2 tot 4 weken klaar. Dat hangt af van de omvang en hoe snel je teksten en foto's aanlevert. Een eenvoudige site kan soms al in een week staan."
+    	},
+    	{
+    		question: "Waarom geen WordPress?",
+    		answer: "WordPress is prima voor blogs, maar voor een snelle bedrijfssite zijn er betere opties. Ik bouw met Astro: dat laadt sneller, heeft geen plugins nodig en is veiliger. Het resultaat scoort beter in Google en kost minder onderhoud."
+    	},
+    	{
+    		question: "Kan ik zelf teksten aanpassen?",
+    		answer: "Kleine aanpassingen regel ik voor je, meestal binnen 24 uur. Grotere wijzigingen plannen we samen in. Je hoeft zelf niets technisch te doen."
+    	},
+    	{
+    		question: "Wat heb je van mij nodig om te beginnen?",
+    		answer: "Eigenlijk vooral een goed gesprek. Ik wil begrijpen wat je bedrijf doet en wie je klanten zijn. Verder zijn logo, foto's en een idee van welke pagina's je wilt handig, maar niet verplicht om te starten."
+    	}
+    ]} />
+    </FadeIn>
 
     <!-- CTA -->
     <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">

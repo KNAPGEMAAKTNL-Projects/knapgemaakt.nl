@@ -334,6 +334,9 @@ import Footer from "../components/Footer.astro";
                     </label>
                 </div>
 
+                <!-- Turnstile (invisible CAPTCHA) -->
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAACzkKUPSoLBK6a1f" data-theme="light" data-size="flexible"></div>
+
                 <!-- Submit -->
                 <div class="pt-8">
                     <button
@@ -669,6 +672,7 @@ import Footer from "../components/Footer.astro";
         const websiteUrl = normalizeUrl(rawUrl);
 
         // Build submission payload
+        const turnstileInput = document.querySelector<HTMLInputElement>('[name="cf-turnstile-response"]');
         const submissionPayload = {
             type: "aanvraag" as const,
             specification: formData.get("specification") as string,
@@ -681,6 +685,7 @@ import Footer from "../components/Footer.astro";
             website_url: websiteUrl,
             start_time: window.selectedBookingSlot.start,
             end_time: window.selectedBookingSlot.end,
+            'cf-turnstile-response': turnstileInput?.value || '',
         };
 
         try {

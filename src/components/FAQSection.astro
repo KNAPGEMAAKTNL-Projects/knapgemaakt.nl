@@ -1,0 +1,56 @@
+---
+/**
+ * FAQSection — Visual FAQ accordion + JSON-LD schema
+ *
+ * Uses native <details>/<summary> for zero-JS accordion behavior.
+ * Automatically includes FAQSchema for structured data.
+ */
+
+import FAQSchema from "./seo/FAQSchema.astro";
+
+interface FAQItem {
+	question: string;
+	answer: string;
+}
+
+interface Props {
+	faqs: FAQItem[];
+	heading?: string;
+}
+
+const { faqs, heading = "Veelgestelde vragen" } = Astro.props;
+---
+
+<FAQSchema faqs={faqs} />
+
+<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
+	<div class="max-w-3xl mx-auto">
+		<h2 class="text-xs font-mono uppercase tracking-[0.2em] text-ink/50 mb-10">[ {heading} ]</h2>
+		<div class="space-y-4">
+			{faqs.map((faq) => (
+				<details class="group border-2 border-warm rounded-xl overflow-hidden transition-colors hover:border-accent/30 open:border-accent/50">
+					<summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-bold tracking-tight text-ink select-none">
+						<span>{faq.question}</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="square"
+							class="shrink-0 transition-transform duration-300 group-open:rotate-45"
+						>
+							<line x1="12" y1="5" x2="12" y2="19" />
+							<line x1="5" y1="12" x2="19" y2="12" />
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-ink/70 leading-relaxed">
+						{faq.answer}
+					</div>
+				</details>
+			))}
+		</div>
+	</div>
+</section>

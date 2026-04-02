@@ -4,6 +4,14 @@ export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import FadeIn from "../../components/FadeIn.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://knapgemaakt.nl/" },
+	{ name: "ICT Diensten", url: "https://knapgemaakt.nl/ict-diensten/" },
+	{ name: "Automatisering", url: "https://knapgemaakt.nl/ict-diensten/automatisering/" }
+];
 ---
 
 <Layout
@@ -14,6 +22,9 @@ import FadeIn from "../../components/FadeIn.astro";
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
       <div class="max-w-5xl mx-auto">
+        <div class="mb-6">
+          <Breadcrumb items={breadcrumbs} />
+        </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
           Automatisering & AI
         </h1>
@@ -242,6 +253,27 @@ import FadeIn from "../../components/FadeIn.astro";
         </div>
       </div>
     </section>
+
+    <FadeIn>
+    <FAQSection faqs={[
+      {
+        question: "Wat voor taken kun je automatiseren?",
+        answer: "Alles wat je steeds opnieuw handmatig doet: facturen versturen, afspraken bevestigen, leads opvolgen, data overzetten tussen systemen. Als je het kunt uitleggen, kan het waarschijnlijk geautomatiseerd worden."
+      },
+      {
+        question: "Welke tools gebruik je daarvoor?",
+        answer: "Vooral n8n en Cloudflare Workers. Dat zijn betrouwbare platforms die goed samenwerken met de tools die je al gebruikt, zoals je boekhoudsoftware, e-mail of CRM."
+      },
+      {
+        question: "Wat kost automatisering?",
+        answer: "Dat verschilt per project. Een simpele e-mailautomatisering kan al in een paar uur staan. Complexere workflows met meerdere systemen kosten meer tijd. Ik geef altijd vooraf een inschatting."
+      },
+      {
+        question: "Kan ik het zelf aanpassen achteraf?",
+        answer: "Dat hangt af van de complexiteit. Eenvoudige workflows leer ik je beheren. Bij technischere oplossingen regel ik aanpassingen voor je. Je zit nooit vast aan iets dat je niet begrijpt."
+      }
+    ]} />
+    </FadeIn>
 
     <!-- CTA -->
     <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">

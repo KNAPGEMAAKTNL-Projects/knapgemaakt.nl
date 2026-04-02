@@ -5,6 +5,7 @@ interface Env {
   knapgemaakt_bookings: D1Database;
   RESEND_API_KEY?: string;
   N8N_BOOKING_WEBHOOK?: string;
+  TURNSTILE_SECRET_KEY?: string;
 }
 
 type SubmissionType = 'contact' | 'offerte' | 'aanvraag' | 'audit';
@@ -38,7 +39,30 @@ function normalizeUrl(url: string): string | null {
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    const body: SubmissionRequest = await request.json();
+    const body: SubmissionRequest & { 'cf-turnstile-response'?: string } = await request.json();
+
+    // Verify Turnstile token (spam protection)
+    const env = locals.runtime.env as Env;
+    const turnstileSecret = env.TURNSTILE_SECRET_KEY;
+    if (turnstileSecret) {
+      const turnstileToken = body['cf-turnstile-response'];
+      if (!turnstileToken) {
+        return new Response(JSON.stringify({ error: 'Beveiligingsverificatie mislukt. Vernieuw de pagina en probeer opnieuw.' }), {
+          status: 400, headers: JSON_HEADERS
+        });
+      }
+      const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ secret: turnstileSecret, response: turnstileToken })
+      });
+      const verifyData = await verifyRes.json() as { success: boolean };
+      if (!verifyData.success) {
+        return new Response(JSON.stringify({ error: 'Beveiligingsverificatie mislukt. Probeer het opnieuw.' }), {
+          status: 403, headers: JSON_HEADERS
+        });
+      }
+    }
 
     // Validate shared required fields
     if (!body.type || !body.name || !body.email) {
@@ -82,7 +106,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
       });
     }
 
-    const env = locals.runtime.env as Env;
     const db = env.knapgemaakt_bookings;
 
     let bookingId: string | null = null;

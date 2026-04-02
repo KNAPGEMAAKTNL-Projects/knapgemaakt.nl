@@ -4,6 +4,14 @@ export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import FadeIn from "../../components/FadeIn.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://knapgemaakt.nl/" },
+	{ name: "ICT Diensten", url: "https://knapgemaakt.nl/ict-diensten/" },
+	{ name: "E-mail Hosting", url: "https://knapgemaakt.nl/ict-diensten/email-hosting/" }
+];
 ---
 
 <Layout
@@ -14,6 +22,9 @@ import FadeIn from "../../components/FadeIn.astro";
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
       <div class="max-w-5xl mx-auto">
+        <div class="mb-6">
+          <Breadcrumb items={breadcrumbs} />
+        </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
           Zakelijke e-mail op je eigen domein
         </h1>
@@ -440,6 +451,27 @@ import FadeIn from "../../components/FadeIn.astro";
         </FadeIn>
       </div>
     </section>
+
+    <FadeIn>
+    <FAQSection faqs={[
+      {
+        question: "Wat kost zakelijke e-mail?",
+        answer: "Vanaf EUR 5 per maand voor het hele bedrijf, niet per persoon. Dat is inclusief je eigen domeinnaam, spam- en virusfilter, en ondersteuning. Geen licentiekosten per mailbox zoals bij Microsoft 365."
+      },
+      {
+        question: "Kan ik overstappen van mijn huidige provider?",
+        answer: "Ja, ik regel de volledige migratie. Je bestaande e-mails, contacten en agenda-items worden overgezet. Het enige wat je merkt is dat het daarna beter werkt."
+      },
+      {
+        question: "Werkt het met mijn telefoon en laptop?",
+        answer: "Ja, via IMAP of Exchange ActiveSync. Werkt op iPhone, Android, Outlook, Apple Mail en Thunderbird. Je stelt het één keer in en het synchroniseert overal."
+      },
+      {
+        question: "Hoeveel opslagruimte krijg ik?",
+        answer: "Het basispakket bevat 25 GB per mailbox. Dat is genoeg voor de meeste ondernemers. Heb je meer nodig? Dan schalen we op zonder dat je van pakket hoeft te wisselen."
+      }
+    ]} />
+    </FadeIn>
 
     <!-- CTA -->
     <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
