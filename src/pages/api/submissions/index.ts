@@ -4,7 +4,6 @@ import {
   buildContactNotification,
   buildContactConfirmation,
   buildAuditNotification,
-  buildTelegramMessage,
 } from '../../../lib/email-templates';
 
 interface Env {
@@ -12,8 +11,6 @@ interface Env {
   RESEND_API_KEY?: string;
   N8N_BOOKING_WEBHOOK?: string;
   TURNSTILE_SECRET_KEY?: string;
-  TELEGRAM_BOT_TOKEN?: string;
-  TELEGRAM_CHAT_ID?: string;
 }
 
 type SubmissionType = 'contact' | 'offerte' | 'aanvraag' | 'audit';
@@ -66,23 +63,6 @@ async function sendEmail(apiKey: string, to: string, subject: string, html: stri
   }
 }
 
-async function sendTelegram(botToken: string, chatId: string, text: string) {
-  const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text,
-      parse_mode: 'MarkdownV2',
-      disable_web_page_preview: true,
-    }),
-  });
-
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    console.error('[Telegram] Error:', res.status, err);
-  }
-}
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
@@ -265,16 +245,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
           sendEmail(apiKey, 'info@knapgemaakt.nl', 'Nieuwe website-audit aanvraag', buildAuditNotification(body), body.email)
         );
       }
-    }
-
-    // Telegram notification for all submission types
-    const telegramToken = env.TELEGRAM_BOT_TOKEN;
-    const telegramChatId = env.TELEGRAM_CHAT_ID;
-    if (telegramToken && telegramChatId) {
-      const telegramType = (body.type === 'offerte' ? 'contact' : body.type) as 'contact' | 'aanvraag' | 'audit';
-      notifications.push(
-        sendTelegram(telegramToken, telegramChatId, buildTelegramMessage(telegramType, body))
-      );
     }
 
     // Wait for all notifications but don't fail the response
