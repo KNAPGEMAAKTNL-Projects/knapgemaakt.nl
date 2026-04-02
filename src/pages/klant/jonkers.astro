@@ -1,0 +1,1246 @@
+---
+export const prerender = true;
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, noimageindex, nosnippet">
+  <meta name="bingbot" content="noindex, nofollow">
+  <title>Jonkers Groep: Plan voor Online Zichtbaarheid — KNAP GEMAAKT.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --canvas: #FAFAF8;
+      --ink: #1A1A1A;
+      --ink-secondary: #4A4A4A;
+      --accent: #14B8A6;
+      --accent-light: #14b8a615;
+      --warm: #E8E4DE;
+      --warm-light: #F3F1ED;
+      --font-body: 1.125rem;
+      --line-height: 1.7;
+      --font-family: 'Inter Tight', system-ui, sans-serif;
+    }
+
+    html {
+      font-size: 100%;
+    }
+
+    body {
+      font-family: var(--font-family);
+      font-size: var(--font-body);
+      line-height: var(--line-height);
+      color: var(--ink);
+      background-color: var(--canvas);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .document {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    /* ===== TITLE PAGE / HEADER ===== */
+    .title-page {
+      padding: 4rem 0 3rem;
+      margin-bottom: 3rem;
+      border-bottom: 3px solid var(--accent);
+      position: relative;
+    }
+
+    .title-page::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .brand {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .title-page h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .title-page h1 strong {
+      font-weight: 700;
+    }
+
+    .title-page .subtitle {
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--ink-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.25rem 1.25rem;
+      font-size: 0.9375rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    .meta dt {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .meta dd {
+      margin: 0;
+    }
+
+    /* ===== INTRO ===== */
+    .intro {
+      margin-top: 1.5rem;
+      color: var(--ink-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ===== NAVIGATION GRID ===== */
+    .nav-grid {
+      margin-top: 2.5rem;
+    }
+
+    .nav-grid-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .nav-card {
+      background: #fff;
+      border: 1px solid var(--warm);
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .nav-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(20, 184, 166, 0.10);
+    }
+
+    .nav-card-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-bottom: 0.15rem;
+    }
+
+    .nav-card-title {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .nav-card-desc {
+      font-size: 0.8125rem;
+      color: var(--ink-secondary);
+      line-height: 1.45;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding-top: 4rem;
+      margin-top: 2rem;
+      border-top: 2px solid var(--warm);
+    }
+
+    section:first-of-type {
+      padding-top: 0;
+      margin-top: 0;
+      border-top: none;
+    }
+
+    /* ===== HEADINGS ===== */
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    h3 {
+      font-size: 1.1875rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 2.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== PARAGRAPHS & INLINE ===== */
+    p {
+      margin-bottom: 1rem;
+      color: var(--ink-secondary);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    code {
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.875em;
+      background: var(--warm-light);
+      border: 1px solid var(--warm);
+      padding: 0.1em 0.4em;
+      border-radius: 4px;
+      color: var(--ink);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid var(--warm);
+      margin: 3rem 0;
+    }
+
+    /* ===== LISTS ===== */
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      color: var(--ink-secondary);
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+      padding-left: 0.25rem;
+    }
+
+    li strong {
+      color: var(--ink);
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+
+    /* ===== TABLES ===== */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--warm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+
+    thead th {
+      background: var(--warm-light);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid var(--accent);
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 0.625rem 1rem;
+      border-bottom: 1px solid var(--warm);
+      color: var(--ink-secondary);
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: #fafaf6;
+    }
+
+    /* ===== BLOCKQUOTES ===== */
+    blockquote {
+      border-left: 4px solid var(--accent);
+      margin: 1.25rem 0;
+      padding: 1rem 1.25rem;
+      background: var(--accent-light);
+      border-radius: 0 6px 6px 0;
+      color: var(--ink-secondary);
+      font-size: 0.9625rem;
+    }
+
+    blockquote p {
+      margin-bottom: 0.75rem;
+    }
+
+    blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    blockquote strong {
+      color: var(--ink);
+    }
+
+    /* Nested blockquotes (for template blocks) */
+    blockquote blockquote {
+      border-left-color: var(--warm);
+      background: rgba(255,255,255,0.5);
+      margin: 0.75rem 0;
+    }
+
+    /* ===== SECTION DIVIDERS ===== */
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    /* ===== AUTOMATION MARKER ===== */
+    .auto-marker {
+      display: inline;
+    }
+
+    /* ===== INLINE IMAGE ===== */
+    .inline-image {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--warm);
+      margin: 1.5rem 0;
+      display: block;
+    }
+
+    /* ===== FOOTER ===== */
+    .document-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--warm);
+      text-align: center;
+      color: var(--ink-secondary);
+      font-size: 0.8125rem;
+      letter-spacing: 0.1em;
+    }
+
+    .document-footer .brand-footer {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.875rem;
+      letter-spacing: 0.15em;
+    }
+
+    /* ===== VERSION FOOTNOTE ===== */
+    .version-footnote {
+      margin-top: 3rem;
+      font-size: 0.875rem;
+      font-style: italic;
+      color: var(--ink-secondary);
+    }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 3rem;
+      height: 3rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+      z-index: 100;
+    }
+
+    .back-to-top:hover {
+      background: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      @page {
+        size: A4;
+        margin: 2cm 2.5cm 3cm 2.5cm;
+
+        @bottom-center {
+          content: "KNAP GEMAAKT.";
+          font-family: 'Inter Tight', system-ui, sans-serif;
+          font-size: 8pt;
+          color: #14B8A6;
+          letter-spacing: 0.15em;
+          font-weight: 600;
+        }
+      }
+
+      body {
+        background: white;
+        font-size: 10pt;
+        line-height: 1.6;
+      }
+
+      .document {
+        max-width: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .back-to-top {
+        display: none;
+      }
+
+      .title-page {
+        padding: 2rem 0 2rem;
+        page-break-after: always;
+      }
+
+      section {
+        page-break-before: always;
+        padding-top: 1rem;
+        margin-top: 0;
+        border-top: none;
+      }
+
+      section:first-of-type {
+        page-break-before: avoid;
+      }
+
+      h2 {
+        page-break-after: avoid;
+      }
+
+      h3 {
+        page-break-after: avoid;
+      }
+
+      table, blockquote, ul, ol {
+        page-break-inside: avoid;
+      }
+
+      .table-wrapper {
+        border: 1px solid #ccc;
+      }
+
+      thead th {
+        background: #f0ede8 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      tbody tr:hover {
+        background: none;
+      }
+
+      blockquote {
+        background: #f8f8f6 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .nav-card {
+        border: 1px solid #ccc;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .inline-image {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a {
+        color: var(--ink);
+        border-bottom: none;
+      }
+
+      .document-footer {
+        display: none;
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .document {
+        padding: 2rem 1.25rem 3rem;
+      }
+
+      .title-page h1 {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      table {
+        font-size: 0.8125rem;
+      }
+
+      thead th, tbody td {
+        padding: 0.5rem 0.625rem;
+      }
+
+      .nav-grid-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 800px) {
+      .nav-grid-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="document">
+
+  <!-- TITLE PAGE -->
+  <div id="top"></div>
+  <header class="title-page">
+    <div class="brand">KNAP GEMAAKT.</div>
+    <h1>Jonkers Groep (<strong>Hoveniersbedrijf</strong> | Schroeffunderingen | Infra)</h1>
+    <p class="subtitle">Plan voor Online Zichtbaarheid</p>
+    <dl class="meta">
+      <dt>Datum</dt>
+      <dd>28 maart 2026</dd>
+      <dt>Door</dt>
+      <dd>KNAP GEMAAKT.</dd>
+      <dt>Voor</dt>
+      <dd>Jonkers Groep, Rossum (gemeente Maasdriel)</dd>
+      <dt>Focus</dt>
+      <dd>Hoveniersbedrijf Jonkers</dd>
+    </dl>
+    <p class="intro">Dit plan richt zich op de digitale basis: vindbaarheid in Google, reviews, en een correcte online aanwezigheid. Het meeste uit dit plan kan binnen enkele weken opgezet worden. Hoe snel Google veranderingen oppakt, verschilt per situatie. Sommige aanpassingen (zoals categorie en foto's) zijn binnen dagen zichtbaar, terwijl het opbouwen van reviews en organische zoekposities maanden kost.</p>
+    <p class="intro">KNAP GEMAAKT. kan helpen met de website, technische SEO, en het opzetten van automatiseringen. Dit plan legt de strategie uit; de uitvoering pakken we samen op.</p>
+
+    <!-- NAVIGATION GRID -->
+    <div class="nav-grid">
+      <div class="nav-grid-inner">
+        <a href="#google-bedrijfsprofiel" class="nav-card">
+          <span class="nav-card-icon">&#x1F50D;</span>
+          <span class="nav-card-title">Google Bedrijfsprofiel</span>
+          <span class="nav-card-desc">Categorie, services, foto's en wekelijks posten</span>
+        </a>
+        <a href="#google-reviews" class="nav-card">
+          <span class="nav-card-icon">&#x2B50;</span>
+          <span class="nav-card-title">Google Reviews</span>
+          <span class="nav-card-desc">Reviewstrategie en automatische opvolging</span>
+        </a>
+        <a href="#kennisbank" class="nav-card">
+          <span class="nav-card-icon">&#x1F310;</span>
+          <span class="nav-card-title">Website</span>
+          <span class="nav-card-desc">Blogcontent, stadspagina's en positionering</span>
+        </a>
+        <a href="#schroeffunderingen" class="nav-card">
+          <span class="nav-card-icon">&#x1F529;</span>
+          <span class="nav-card-title">Schroeffunderingen</span>
+          <span class="nav-card-desc">Aparte contentstrategie en positionering</span>
+        </a>
+        <a href="#automatiseringsmogelijkheden" class="nav-card">
+          <span class="nav-card-icon">&#x1F916;</span>
+          <span class="nav-card-title">Automatisering</span>
+          <span class="nav-card-desc">Reviews, posts en rapportages automatiseren</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: GOOGLE BEDRIJFSPROFIEL -->
+  <section>
+    <h2 id="google-bedrijfsprofiel">1. Google Bedrijfsprofiel</h2>
+
+    <h3>1.1 Primaire categorie aanpassen</h3>
+    <p>De huidige primaire categorie is "Landschapsarchitect." Voor de vindbaarheid in Google is het aan te raden om deze te wijzigen naar <strong>"Hovenier"</strong>. De reden: consumenten zoeken naar "hovenier Zaltbommel" of "hovenier in de buurt," niet naar "landschapsarchitect."</p>
+    <img src="/klant/jonkers-google-trends.png" alt="Google Trends: hovenier vs landschapsarchitect" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--warm); margin: 1.5rem 0;">
+    <p>Google koppelt het bedrijfsprofiel aan zoekopdrachten op basis van de primaire categorie. Met "Hovenier" als categorie verschijnt het profiel bij de juiste zoekopdrachten.</p>
+    <p><strong>Hoe:</strong> Profiel bewerken &gt; Bedrijfscategorie &gt; Primaire categorie wijzigen naar "Hovenier"</p>
+
+    <h3>1.2 Secundaire categorie&euml;n toevoegen</h3>
+    <p>Het is aan te raden om elke secundaire categorie te koppelen aan een bijpassende servicepagina op de website. Optimaal totaal: 5 tot 6 categorie&euml;n.</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Categorie</th><th>Dekt af</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Landschapsontwerper</td><td>Tuinontwerp zoekopdrachten</td></tr>
+          <tr><td>Gazononderhoudsbedrijf</td><td>Tuinonderhoud zoekopdrachten</td></tr>
+          <tr><td>Bestratingsaannemer</td><td>Bestrating/sierbestrating zoekopdrachten</td></tr>
+          <tr><td>Boomverzorgingsbedrijf</td><td>Snoeiwerk/boomverzorging zoekopdrachten</td></tr>
+          <tr><td>Aannemer</td><td>Schroeffunderingen/grondwerk zoekopdrachten</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>1.3 Services toevoegen (Edit Service Details)</h3>
+    <p>Via "Profiel bewerken" &gt; "Services" of "Servicegegevens bewerken." Voeg per service een beschrijving toe van 50 tot 100 woorden. Sterling Sky heeft bevestigd dat GBP Services de zichtbaarheid verhogen voor gerelateerde zoekopdrachten, ook als er geen passende GBP categorie bestaat.</p>
+    <p><strong>Kerndiensten (opnemen in GBP):</strong></p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Omschrijving toevoegen</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tuinaanleg</td><td>Particuliere tuinen, kindvriendelijke tuinen, complete tuinprojecten</td></tr>
+          <tr><td>Tuinonderhoud</td><td>Onderhoudsbeurten, onderhoudscontracten, vakantieservice</td></tr>
+          <tr><td>Bestrating en terrassen</td><td>Sierbestrating, terrasaanleg</td></tr>
+          <tr><td>Tuinontwerp en beplantingsplan</td><td>Tuinplannen, tuinstijlen, beplantingsadvies</td></tr>
+          <tr><td>Boomverzorging en snoeien</td><td>Snoeiwerk, boomonderhoud</td></tr>
+          <tr><td>Vijvers en waterpartijen</td><td>Vijveraanleg, poelen, waterpartijen</td></tr>
+          <tr><td>Krinner schroeffunderingen</td><td>Gecertificeerde installatie, funderingen voor tuinhuizen, overkappingen, zonnepanelen</td></tr>
+          <tr><td>Grondwerk</td><td>Grondverzet, terreinvoorbereiding</td></tr>
+          <tr><td>Daktuinen en groene gevels</td><td>Daktuinen, verticale tuinen, groene gevels</td></tr>
+          <tr><td>Bedrijfstuinen en groenvoorziening</td><td>Zakelijke tuinen, parkontwerp, horeca, kinderdagverblijven</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Overige diensten (niet opnemen als hoofddienst in GBP):</strong></p>
+    <p>Diensten zoals buitenbioscoop, zwembad, wellness, waterbouwkundige werken, beveiliging, en interieurbeplanting zijn zeker mogelijkheden die Jonkers kan bieden. Maar Google beloont focus: hoe meer diensten er in het profiel staan, hoe minder sterk het profiel scoort op de kerndiensten. Het is aan te raden om deze diensten op de website te vermelden (bijvoorbeeld onder "Overige mogelijkheden"), maar in het Google Bedrijfsprofiel alleen de kerndiensten te tonen. Zo weet Google precies waarvoor Jonkers gevonden moet worden.</p>
+
+    <h3>1.4 Servicegebied instellen</h3>
+    <p>Maximaal 20 gebieden. Sterling Sky en Whitespark hebben bevestigd dat de servicegebied-instelling <strong>geen invloed heeft op de ranking</strong>. De ranking is gebaseerd op het geverifieerde adres. Voeg de gebieden toe zodat klanten kunnen zien dat je hun regio bedient.</p>
+    <p>Toe te voegen: Rossum, Zaltbommel, Kerkdriel, Maasdriel, Ammerzoden, Hedel, Zuilichem, Waardenburg, Geldermalsen, Buren, Tiel, Culemborg, Gorinchem, Hurwenen, Brakel, Gameren</p>
+
+    <h3>1.5 Servicegericht bedrijf (SAB) instellen</h3>
+    <p>Als klanten niet naar het bedrijfsadres komen, is het aan te raden het profiel in te stellen als service-area business (SAB). Het adres wordt dan verborgen voor het publiek, maar Google gebruikt het intern voor afstandsberekeningen. Dit is de standaard instelling voor bedrijven die op locatie van de klant werken.</p>
+    <p><strong>Hoe:</strong> Profiel bewerken &gt; Bedrijfslocatie &gt; "Dit adres aan klanten tonen" uitschakelen</p>
+    <p><strong>Uitzondering:</strong> Als klanten soms langskomen voor overleg, kan een "hybride" instelling (adres tonen + servicegebieden) rankingvoordeel opleveren.</p>
+
+    <h3>1.6 Verwachtingen per afstand</h3>
+    <p>Afstand is de op een na sterkste rankingfactor. Bij zoekopdrachten als "hovenier Tiel" berekent Google de afstand vanaf het geografische centrum van Tiel (centroid bias), niet vanaf de locatie van de zoeker.</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Plaats</th><th>Afstand</th><th>Kaartblok kans</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Rossum, Zaltbommel, Kerkdriel</td><td>0 tot 5 km</td><td>Sterk. Moet domineren met goede optimalisatie</td></tr>
+          <tr><td>Waardenburg, Geldermalsen, Brakel</td><td>5 tot 15 km</td><td>Goede kans, zeker voor minder competitieve termen</td></tr>
+          <tr><td>Tiel, Buren</td><td>15 tot 20 km</td><td>Lastig maar mogelijk met sterke reviews + websiteautoriteit</td></tr>
+          <tr><td>Culemborg</td><td>ca. 30 km</td><td>Zeer moeilijk via kaartblok. Inzetten op organische SEO (stadspagina's)</td></tr>
+          <tr><td>Utrecht</td><td>ca. 60 km</td><td>Onmogelijk via kaartblok. Alleen via organische zoekresultaten</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Conclusie:</strong> Voor plaatsen voorbij 15 km is het Google Bedrijfsprofiel alleen niet genoeg. Stadspecifieke landingspagina's op de website zijn essentieel.</p>
+
+    <h3>1.7 Bedrijfsomschrijving</h3>
+    <p>Maximaal 750 tekens. Alleen de eerste 250 tekens zijn zichtbaar voor "Meer." Keywords in de omschrijving hebben <strong>geen invloed op ranking</strong> (bevestigd door meerdere Google medewerkers). Schrijf voor mensen, niet voor algoritmes.</p>
+    <blockquote>
+      <p>Hoveniersbedrijf Jonkers is uw ervaren hovenier in de Betuwe. Met ruim 30 jaar vakmanschap realiseert Arno Jonkers complete tuinprojecten in Rossum, Zaltbommel, Tiel en omgeving. Gespecialiseerd in tuinaanleg, tuinonderhoud en bestrating. Gecertificeerd Krinner schroeffunderingen installateur voor duurzame funderingsoplossingen zonder beton. Van tuinontwerp tot sierbestrating, van vijveraanleg tot seizoensonderhoud. Persoonlijke aanpak met oog voor detail. Vraag vrijblijvend een offerte aan.</p>
+    </blockquote>
+
+    <h3>1.8 Openingstijden</h3>
+    <p>Ook voor een servicegericht bedrijf: stel in wanneer je bereikbaar bent. "Bedrijf geopend op moment van zoeken" is de #5 rankingfactor.</p>
+    <p><strong>Hoe:</strong> Profiel bewerken &gt; Openingstijden</p>
+    <p>Voorbeeld: Ma t/m Vr 08:00 tot 17:00, Za 09:00 tot 13:00. Voeg "Speciale openingstijden" toe voor feestdagen.</p>
+
+    <h3>1.9 Attributen</h3>
+    <p>GBP attributen zijn afhankelijk van de primaire categorie. Na het wijzigen naar "Hovenier" kunnen nieuwe attributen beschikbaar komen. Kijk na de wijziging onder "Profiel bewerken" en scroll door alle secties (mogelijk onder "Meer" of "Aanvullende informatie").</p>
+    <p>Mogelijke attributen: service op locatie, betaalmethoden (contant, PIN, contactloos), taalondersteuning (Nederlands, Engels, Duits). Niet alle attributen zijn beschikbaar in Nederland.</p>
+
+    <h3>1.10 Foto's</h3>
+    <p>Bedrijven met foto's krijgen 42% meer routeverzoeken en 35% meer websiteklikken. Smartphonefoto's zijn prima. Wat telt is echt werk tonen.</p>
+    <p><strong>Wat te fotograferen:</strong></p>
+    <ul>
+      <li>Voor/na resultaten (zelfde hoek, vergelijkbare belichting)</li>
+      <li>Afgeronde projecten vanuit meerdere hoeken</li>
+      <li>Werkzaamheden in uitvoering [videos ook handig voor Instagram Reels]</li>
+      <li>Arno aan het werk</li>
+      <li>Seizoensvariatie (lente aanplant, zomer onderhoud, herfst opruimen)</li>
+      <li>Detailshots (steenpatronen, beplanting, Krinner schroeven)</li>
+    </ul>
+    <p>Maak er een gewoonte van: 5 tot 10 foto's maken voor je een klus verlaat. Upload maandelijks 4 tot 8 nieuwe foto's.</p>
+    <p><strong>Geotagging is niet nodig.</strong> Google verwijdert alle EXIF data bij upload. Dit is een ontkrachte mythe.</p>
+    <p>Gebruik beschrijvende bestandsnamen: <code>tuinaanleg-zaltbommel-2026.jpg</code></p>
+
+    <h3>1.11 Google Posts</h3>
+    <p>Vier types: Update (zichtbaar ca. 6 maanden), Aanbieding (met einddatum), Evenement (met datumbereik), Product (permanent).</p>
+    <p><strong>Minimaal wekelijks posten.</strong> Wekelijks posten geeft 30 tot 40% hogere zichtbaarheid dan maandelijks. Geen directe invloed op ranking, maar functioneert als gratis advertentieruimte. Gebruik "Bel nu" of "Aanbieding bekijken" als CTA (2,8x meer klikken dan "Meer informatie").</p>
+    <p>Houd het op 150 tot 300 tekens previewtekst. Altijd een echte projectfoto toevoegen.</p>
+
+    <p><strong>Vijf seizoenstemplates:</strong></p>
+
+    <h4>Voorjaar (maart/april):</h4>
+    <blockquote>
+      <p>&#x1F331; Het tuinseizoen is begonnen! Plan nu uw tuinaanleg voor dit voorjaar. Arno Jonkers heeft nog beperkte beschikbaarheid in april/mei voor complete tuinprojecten in de Betuwe. Van ontwerp tot oplevering, 30+ jaar ervaring in uw tuin.</p>
+    </blockquote>
+
+    <h4>Zomer (juni/juli):</h4>
+    <blockquote>
+      <p>&#x2600;&#xFE0F; Trots op dit project: complete tuinrenovatie in Zaltbommel. Nieuwe bestrating, plantenborders en een waterpartij, in 3 weken gerealiseerd. Bekijk het verschil! Uw droomtuin begint met een gratis adviesgesprek.</p>
+    </blockquote>
+
+    <h4>Herfst (oktober):</h4>
+    <blockquote>
+      <p>&#x1F342; Maak uw tuin winterklaar. November is het ideale moment voor snoeien, bladruimen en het beschermen van uw beplanting. Hoveniersbedrijf Jonkers verzorgt het complete winteronderhoud in Rossum, Zaltbommel, Tiel en omgeving.</p>
+    </blockquote>
+
+    <h4>Winter (januari):</h4>
+    <blockquote>
+      <p>&#x1F529; Winter = plannen voor het voorjaar. Wist u dat Krinner schroeffunderingen het hele jaar door geplaatst kunnen worden? Geen beton, geen droogtijd, direct belastbaar. Ideaal voor overkappingen, schuttingen en tuinhuizen. Gecertificeerd installateur.</p>
+    </blockquote>
+
+    <h4>Algemeen (review uitlichten):</h4>
+    <blockquote>
+      <p>&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50; "Arno heeft onze complete tuin aangelegd, van bestrating tot beplanting. Vakkundig, netjes en precies volgens plan. Een echte aanrader!" Bedankt voor het vertrouwen! Benieuwd wat wij voor uw tuin kunnen betekenen?</p>
+    </blockquote>
+
+    <h3>1.12 Vraag en antwoord (vervallen)</h3>
+    <p>Google heeft de Q&amp;A-functie op 3 november 2025 stopgezet, vervangen door Gemini "Ask Maps." FAQ-content kan het beste op de website staan met schema markup. Dit is een taak voor de websitebouwer.</p>
+
+    <h3>1.13 Bijhouden</h3>
+    <p><strong>GBP Insights (gratis, ingebouwd):</strong> Toont zoekimporessies, exacte zoekopdrachten, websiteklikken, telefoonoproepen, routeverzoeken.</p>
+    <p><strong>UTM tracking (optioneel):</strong> Pas de websitelink in GBP aan van <code>hoveniersbedrijfjonkers.nl</code> naar <code>hoveniersbedrijfjonkers.nl?utm_source=gbp&amp;utm_medium=organic</code>. Hiermee kun je in je analysetool (Google Analytics, Plausible, Umami) zien welk verkeer van GBP komt. Cloudflare Web Analytics toont referrers maar geen UTM-parameters.</p>
+    <p><strong>Rank tracking tools (optioneel, voor later):</strong> LocalRankBox (gratis plan), BrightLocal (ca. &euro;36/maand, 14 dagen proef), Wincher (vanaf ca. &euro;14/maand). Niet essentieel bij de start; GBP Insights geeft genoeg informatie.</p>
+
+    <h3>1.15 Doorlopend onderhoud</h3>
+    <p><strong>Wekelijks (15 tot 20 minuten):</strong></p>
+    <ul>
+      <li>1 tot 2 nieuwe projectfoto's uploaden</li>
+      <li>1 Google Post publiceren</li>
+      <li>Alle nieuwe reviews beantwoorden binnen 48 uur</li>
+      <li>Reviewverzoeken sturen naar afgeronde projecten</li>
+    </ul>
+
+    <p><strong>Maandelijks (1 tot 2 uur):</strong></p>
+    <ul>
+      <li>GBP Insights bekijken: zoekopdrachten, interacties, oproeptrends</li>
+      <li>Reviewaantal en beoordeling vergelijken met lokale concurrenten</li>
+      <li>Seizoensdiensten of aanbiedingen bijwerken</li>
+    </ul>
+
+    <p><strong>Per kwartaal:</strong></p>
+    <ul>
+      <li>GBP categorie&euml;n controleren (Google voegt regelmatig nieuwe toe)</li>
+      <li>Bedrijfsomschrijving bijwerken indien nodig</li>
+      <li>NAP-consistentie controleren over alle directories</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 2: GOOGLE REVIEWS -->
+  <section>
+    <h2 id="google-reviews">2. Google Reviews</h2>
+    <p>Reviews zijn de op een na belangrijkste rankingfactor voor het kaartblok (ca. 16 tot 17% van het totale gewicht). Het kaartblok (ook wel "kaartblok" of "map pack" genoemd) zijn de 3 bedrijfsvermeldingen met kaartje die bovenaan de Google zoekresultaten verschijnen bij lokale zoekopdrachten zoals "hovenier Zaltbommel."</p>
+
+    <h3>2.1 Waarom reviews er toe doen</h3>
+    <ul>
+      <li>Review recentheid is een top 5 rankingfactor. 80 reviews waarvan 10 in de afgelopen maand scoort beter dan 200 oude reviews uit 2023.</li>
+      <li>Bij 10 reviews is een merkbare rankingboost gemeten.</li>
+      <li>Minimale beoordeling: 4,0 sterren (Google filtert bedrijven onder 4,0 uit "beste [service]" zoekopdrachten).</li>
+      <li>Een 4,3 met 180 reviews verslaat een 5,0 met 8 reviews.</li>
+      <li>Als klanten "tuinaanleg" of "Zaltbommel" noemen in hun reviewtekst, maakt Google "justification snippets" in de kaartblok resultaten.</li>
+    </ul>
+
+    <h3>2.2 Constante regelmaat</h3>
+    <p>Google's AI-spamdetectie signaleert plotse pieken. Vraag het aan elke klant na afronding van een project. Consistentie is belangrijker dan volume.</p>
+
+    <h3>2.3 Review verzamelworkflow &#x1F916;</h3>
+
+    <p>Hieronder staan voorbeeldteksten. De exacte formulering past Arno aan naar zijn eigen stijl. De emoji's zijn suggesties, geen verplichting.</p>
+
+    <p><strong>Bij oplevering (persoonlijk):</strong></p>
+    <blockquote>
+      <p>"[Voornaam], fijn dat je er blij mee bent. Zou je het erg vinden om een Google review achter te laten? Dat helpt me echt om nieuwe klanten te vinden."</p>
+    </blockquote>
+
+    <p><strong>Zelfde dag (e-mail):</strong></p>
+    <blockquote>
+      <p><strong>Onderwerp:</strong> Bedankt voor het vertrouwen, [Voornaam]!</p>
+      <p>Hoi [Voornaam], nog even bedankt voor de fijne samenwerking. Ik hoop dat je nog lang van je [nieuwe tuin / bestrating / tuinonderhoud] mag genieten. Als zelfstandig hovenier zijn ervaringen van klanten heel waardevol. Zou je een paar minuten willen nemen om je ervaring te delen op Google? [LINK] Een paar zinnen is al genoeg. Bedankt! Groet, Arno</p>
+    </blockquote>
+
+    <p><strong>Dag 5 tot 7 (WhatsApp opvolging):</strong></p>
+    <blockquote>
+      <p>Hoi [naam], hopelijk bevalt de tuin goed. Ik had laatst gevraagd of je een review wilde achterlaten. Als je even tijd hebt: [LINK]</p>
+    </blockquote>
+
+    <p><strong>Dag 14 (laatste herinnering, alleen indien nodig):</strong></p>
+    <blockquote>
+      <p>Hoi [naam], even een herinnering over die Google review. Hier is de link nog een keer: [LINK] Helemaal goed als het niet uitkomt.</p>
+    </blockquote>
+
+    <p>Maximaal twee opvolgingen. 68% van de reviews komt na het eerste verzoek, 28% na het tweede.</p>
+    <p><strong>Beste timing voor WhatsApp:</strong> Woensdag of zaterdag, tussen 10:00 en 14:00 of 18:00 en 19:00.</p>
+
+    <p><strong>&#x1F916; Automatisering mogelijk:</strong> Deze volledige workflow kan geautomatiseerd worden. Na het invoeren van een afgerond project (bijv. via een eenvoudig formulier of een koppeling met een facturatiesysteem), wordt automatisch:</p>
+    <ol>
+      <li>Een bedankmail verstuurd op dag van oplevering</li>
+      <li>Een WhatsApp herinnering verstuurd op dag 7</li>
+      <li>Een laatste herinnering verstuurd op dag 14</li>
+      <li>Bijgehouden wie wel/niet een review heeft achtergelaten</li>
+    </ol>
+    <p>Dit vergt geen handmatige actie meer na de eerste invoer. Zie hoofdstuk 11 (Automatiseringsmogelijkheden) voor details.</p>
+
+    <h3>2.5 Review reacties &#x1F916;</h3>
+    <p>Beantwoord elke review. Verwerk natuurlijk een locatie en een service in de reactie. Gebruik nooit twee keer hetzelfde sjabloon. Negatieve reviews binnen 24 uur beantwoorden, positieve binnen 7 dagen.</p>
+    <p><strong>&#x1F916; Automatisering mogelijk:</strong> Conceptreacties kunnen automatisch worden gegenereerd met AI (met de juiste locatie en service verwerkt). Arno ontvangt het concept via WhatsApp, keurt het goed of past het aan, en de reactie wordt automatisch geplaatst. Zie hoofdstuk 11.</p>
+
+    <p><strong>Vijf voorbeeldreacties:</strong></p>
+
+    <blockquote>
+      <p><strong>1 (Tuinaanleg + Zaltbommel):</strong> Wat leuk om te lezen, [naam]! Bedankt voor je mooie woorden. Het was een fantastisch project om jullie tuinaanleg in Zaltbommel te mogen verzorgen. Die combinatie van het terras met de borders past echt perfect bij jullie huis. Geniet ervan! &#x1F33F;</p>
+    </blockquote>
+    <blockquote>
+      <p><strong>2 (Bestrating + Betuwe):</strong> Dankjewel [naam]! Fijn om te horen dat je zo blij bent met de nieuwe bestrating. De Betuwe is een prachtig gebied om in te werken, zeker met dit soort mooie projecten. Tot de volgende keer! &#x1F60A;</p>
+    </blockquote>
+    <blockquote>
+      <p><strong>3 (Tuinontwerp + Tiel):</strong> Heel erg bedankt voor je review, [naam]! Het tuinontwerp voor jullie achtertuin in Tiel was echt een leuk project. Jullie hadden hele duidelijke wensen en het eindresultaat is precies geworden wat jullie voor ogen hadden. Mocht je nog tips willen voor de beplanting dit voorjaar, geef gerust een seintje!</p>
+    </blockquote>
+    <blockquote>
+      <p><strong>4 (Onderhoud + Gelderland):</strong> Bedankt [naam], super dat je de moeite neemt om dit te schrijven! Het snoeiwerk bij jullie was ook weer fijn om te doen. Die oude fruitbomen verdienen de juiste verzorging. Als hovenier in Gelderland kom ik veel van dit soort prachtige boomgaardtuinen tegen. &#x1F333;</p>
+    </blockquote>
+    <blockquote>
+      <p><strong>5 (Groenonderhoud + regio Zaltbommel):</strong> Wat fijn, [naam]! Dank voor je positieve beoordeling. Het groenonderhoud bij jullie bedrijfspand in de regio Zaltbommel doen we altijd met plezier. Een verzorgde buitenruimte maakt zo'n verschil voor de uitstraling. We komen graag weer langs volgend seizoen. &#x1F331;</p>
+    </blockquote>
+
+    <p><strong>Bij negatieve reviews:</strong> Binnen 24 uur reageren, bedanken voor feedback, verontschuldigen, priv&eacute; verder: "Zou je me willen bellen op [nummer]?" Nooit publiekelijk in discussie gaan.</p>
+
+    <h3>2.6 Juridisch</h3>
+    <p><strong>Toegestaan:</strong> vragen om reviews, links sturen, NFC-kaarten, QR-codes, opvolgberichten (max 2), reageren op alle reviews.</p>
+    <p><strong>Niet toegestaan (Omnibus Richtlijn, NL sinds 28 mei 2022):</strong> nepreviews kopen, selectief alleen positieve reviews tonen, beloningen koppelen aan positieve reviews. Boetes tot &euro;900.000 per overtreding. Google's eigen beleid is strenger: zij verbieden elke beloning voor reviews.</p>
+
+    <h3>2.7 Aanvullende reviewplatformen (optioneel, voor later)</h3>
+    <p>Richt je eerst volledig op Google Reviews. Als dat op gang is, overweeg:</p>
+    <p><strong>KlantenVertellen</strong> (&euro;35/maand, &euro;420/jaar). De Nederlandse standaard voor geverifieerde reviews. Biedt herkenbare "9,6 uit 10" badge, rich snippet ondersteuning. KlantenVertellen is voor servicebedrijven; Kiyoh (zelfde bedrijf) is voor webshops.</p>
+    <p><strong>Hovenier.nl</strong> (betaal per lead, &euro;5 tot &euro;30/lead). Niche-directory voor hoveniers. &euro;50 gratis tegoed bij aanmelding. Maximaal 5 respondenten per lead. De "Interest Tonen" optie geeft tegoed terug als de klant niet reageert binnen 7 dagen.</p>
+    <p><strong>Google Reviews op de website:</strong> De websitebouwer kan Google Reviews automatisch ophalen via de Google Places API en als statische content op de website tonen. Dit is beter dan betaalde widgets (zoals Trustindex &euro;60/jaar of Elfsight) omdat het geen cookies plaatst, geen externe scripts laadt, en geen AVG-toestemming vereist. Dit is een taak voor de websitebouwer.</p>
+    <p><strong>Trustpilot</strong> (gratis). Gratis bedrijfsprofiel dat goed rankt voor "[bedrijfsnaam] reviews" zoekopdrachten.</p>
+    <p><strong>TuinKeur certificering</strong> (jaarlijks, bel 0528-331678). Kwaliteitskeurmerk met 120+ checkpunten. Ca. 300 gecertificeerde bedrijven. Sterk vertrouwenssignaal. Overwegen wanneer het bedrijf er klaar voor is.</p>
+    <p><strong>Werkspot:</strong> Alleen gebruiken bij lege agenda. Het model (&euro;3 tot &euro;96/lead, niet-exclusief, 10+ hoveniers per lead) is structureel nadelig voor kwaliteitsvakmensen.</p>
+  </section>
+
+  <!-- SECTION 3: DOMEINSTRATEGIE (OPTIONEEL) -->
+  <section>
+    <h2 id="domeinstrategie">3. Domeinstrategie (optioneel)</h2>
+
+    <p>Het registreren van keyword-domeinen (zoals hovenier-tiel.nl) en deze doorsturen naar de hoofdwebsite is een veelgebruikte strategie bij lokale bedrijven. Het directe SEO voordeel is beperkt, maar het voorkomt dat andere bedrijven deze domeinen claimen en er eigen pagina's op bouwen.</p>
+    <p><strong>Hoe het werkt:</strong> Een domein zoals hovenier-tiel.nl wordt geregistreerd en automatisch doorgestuurd naar hoveniersbedrijfjonkers.nl/hovenier-tiel/. Er wordt geen aparte website op gebouwd. Het is puur een doorverwijzing. De technische inrichting is een taak voor de websitebouwer.</p>
+    <p><strong>Kosten:</strong> &euro;5 tot &euro;15 per jaar per domein</p>
+
+    <h3>3.2 Te registreren domeinen</h3>
+    <p>Controleer beschikbaarheid bij een budgetregistrar (bijv. Mijn.host &euro;4,99/jaar). Registreer ook varianten zonder streepje waar beschikbaar.</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Domein</th><th>Prioriteit</th><th>Redirect naar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>hovenier-tiel.nl</td><td>Hoog</td><td>/hovenier-tiel/</td></tr>
+          <tr><td>hovenier-gorinchem.nl</td><td>Hoog</td><td>/hovenier-gorinchem/</td></tr>
+          <tr><td>hovenier-zaltbommel.nl</td><td>Hoog</td><td>/hovenier-zaltbommel/</td></tr>
+          <tr><td>hovenier-culemborg.nl</td><td>Hoog</td><td>/hovenier-culemborg/</td></tr>
+          <tr><td>hovenier-betuwe.nl</td><td>Hoog</td><td>/hovenier-betuwe/</td></tr>
+          <tr><td>hovenier-geldermalsen.nl</td><td>Medium</td><td>/hovenier-geldermalsen/</td></tr>
+          <tr><td>hovenier-bommelerwaard.nl</td><td>Medium</td><td>/hovenier-bommelerwaard/</td></tr>
+          <tr><td>hovenier-rivierenland.nl</td><td>Medium</td><td>/hovenier-rivierenland/</td></tr>
+          <tr><td>hovenier-rossum.nl</td><td>Laag</td><td>/ (homepage)</td></tr>
+          <tr><td>tuinaanleg-betuwe.nl</td><td>Laag</td><td>/tuinaanleg/</td></tr>
+          <tr><td>hovenier-utrecht.nl</td><td>Monitoren</td><td>DNS niet actief, mogelijk verlopen. In de gaten houden</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>schroeffunderingen.nl en de meeste varianten zijn bezet. Niet meer op inzetten.</p>
+    <p>Stel automatische verlenging in op alle domeinen.</p>
+
+    <h3>3.3 Redirect instellen</h3>
+    <p>Het instellen van 301 redirects is een taak voor de websitebouwer.</p>
+  </section>
+
+  <!-- SECTION 4: DIRECTORY'S EN CITATIES -->
+  <section>
+    <h2 id="directorys">4. Directory's en citaties</h2>
+    <p>Consistente NAP-gegevens (Naam, Adres, Telefoonnummer) over directory's zijn een lokaal SEO-signaal. In Nederland extra belangrijk door de EU Digital Markets Act, die meer zichtbaarheid geeft aan externe directories.</p>
+
+    <h3>4.1 Gratis directory's (aanmelden)</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Platform</th><th>Toelichting</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Telefoonboek.nl / Places.nl</strong></td><td>Registreer via Places.nl (gratis, 15 min). Inclusief Telefoonboek.nl en Openingstijden.com.</td></tr>
+          <tr><td><strong>Hovenier.nl</strong></td><td>Gratis profiel + &euro;50 leadtegoed</td></tr>
+          <tr><td><strong>HovenierNederland.nl</strong></td><td>Vermelding aanmaken/claimen</td></tr>
+          <tr><td><strong>Hovenier.website</strong></td><td>Vermelding aanmaken/claimen</td></tr>
+          <tr><td><strong>Trustpilot</strong></td><td>Gratis bedrijfsprofiel</td></tr>
+          <tr><td><strong>Cylex.nl</strong></td><td>Gratis vermelding, 15 minuten</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4.2 Lokale backlinks (langere termijn)</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Bron</th><th>Aanpak</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>WestBetuweTotaal.nl</td><td>Lokaal nieuws. PR-artikel of seizoenstips.</td></tr>
+          <tr><td>NieuwsbladGeldermalsen.nl</td><td>Lokale krant. Projectfeature.</td></tr>
+          <tr><td>Gemeente West Betuwe / Maasdriel</td><td>Lokaal evenement sponsoren.</td></tr>
+          <tr><td>Ondernemend Rivierenland</td><td>Lidmaatschap ondernemersvereniging.</td></tr>
+          <tr><td>Bloemenpark Appeltern</td><td>Tuinexpert accreditatie onderzoeken.</td></tr>
+          <tr><td>VHG.org</td><td>Branchevereniging. Overwegen wanneer passend.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CONCURRENTIE-INFORMATIE -->
+  <section>
+    <h2 id="concurrentie">5. Concurrentie-informatie</h2>
+
+    <h3>5.1 Concurrenten in de regio</h3>
+    <p><strong>Honkoop Hoveniers (Meteren):</strong> Ca. 10 stadspagina's (800 tot 1.200 woorden, maar 60% hergebruikte boilerplate). 12+ portfolio-pagina's. Minder dan 15 reviews. Claimt "De hovenier van de Betuwe."</p>
+    <p><strong>Hoveniersbedrijf de Betuwe (Beesd):</strong> Sterkste regionale branding ("BetuweBus"). 17 stadspagina's, maar ze serveren identieke homepage-content (duplicate content, slecht voor SEO). 9+ Google reviews, 9,0 Trustoo. Niche: sedumdak, beregening.</p>
+    <p><strong>De Bruin Tuinen (Enspijk):</strong> Best beoordeeld in de regio (9,6 Trustoo, 9,1 HovenierNederland). Team van 6 (vier broers). Wix-site, ca. 13 pagina's. TuinKeur certificering.</p>
+    <p><strong>C.K. van Mourik (Buurmalsen):</strong> 28 jaar actief. Verouderde website, geen reviews, geen stadspagina's.</p>
+
+    <h3>5.2 Regionale concurrenten</h3>
+    <p><strong>Gras &amp; Groen (Den Bosch):</strong> 900+ Google reviews, 4,7 tot 4,8/5. Bouwt actief stadspagina's richting Zaltbommel, Geldermalsen en Gorinchem.</p>
+    <p><strong>GesselGroen:</strong> 20+ jaar ervaring, 9,1 klantbeoordeling. Actief in Gorinchem, Leerdam, Zaltbommel, Tiel.</p>
+    <p><strong>J. Versteegh Hoveniersbedrijf:</strong> Breedste stadspaginastrategie in de regio (Gorinchem, Tiel, Culemborg, Leerdam, Geldermalsen, IJsselstein, Nieuwegein).</p>
+    <p><strong>Van Aken Schroeffunderingen (Nederhemert-Noord):</strong> Zelfde Bommelerwaard-regio. Domineert SEO voor schroeffunderingen met 20+ landingspagina's. Actief B2B-model (onderaanneming voor hoveniers en aannemers). Belangrijkste concurrent specifiek voor schroeffunderingen.</p>
+
+    <h3>5.3 Observaties</h3>
+    <ul>
+      <li>Uit het onderzoek is geen concurrent met een "hovenier Bommelerwaard" stadspagina gevonden</li>
+      <li>Geen van de onderzochte concurrenten publiceert een blog</li>
+      <li>Hoveniersbedrijf de Betuwe's 17 stadspagina's zijn duplicate content (slecht voor SEO)</li>
+      <li>Geen onderzochte concurrent publiceert prijsindicaties op de website</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 6: KENNISBANK / BLOGCONTENT -->
+  <section>
+    <h2 id="kennisbank">6. Kennisbank / blogcontent</h2>
+    <p>Blogcontent is een langetermijninvestering (3 tot 6 maanden voor ranking). De artikelen hieronder zijn gerangschikt op zoekvolume en commercieel belang.</p>
+
+    <h3>6.1 Prioriteit artikelen</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Artikel</th><th>Doelzoekwoorden</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Wat kost een hovenier? Prijzen en tarieven 2026</td><td>wat kost een hovenier per uur, hovenier kosten</td></tr>
+          <tr><td>Tuin laten aanleggen: wat kost het werkelijk in 2026?</td><td>tuin laten aanleggen kosten 2026</td></tr>
+          <tr><td>Onderhoudsvriendelijke tuin aanleggen: complete gids</td><td>onderhoudsvriendelijke tuin</td></tr>
+          <tr><td>Kleine tuin inrichten: 12 slimme idee&euml;n</td><td>kleine tuin inrichten</td></tr>
+          <tr><td>Wat kost bestrating per m2? Eerlijke prijsindicatie</td><td>wat kost bestrating per m2</td></tr>
+          <tr><td>Tuin winterklaar maken: complete checklist</td><td>tuin winterklaar maken</td></tr>
+          <tr><td>Wanneer is het beste moment om je tuin te laten aanleggen?</td><td>wanneer tuin aanleggen</td></tr>
+          <tr><td>Klimaatbestendige tuin: waterberging en biodiversiteit</td><td>klimaattuin, klimaatadaptatie tuin</td></tr>
+          <tr><td>Schroeffundering vs betonpoer: eerlijk vergeleken</td><td>schroeffundering vs betonpoer</td></tr>
+          <tr><td>Hovenier vs tuinman: wat is het verschil?</td><td>hovenier vs tuinman</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>6.2 Format per artikel</h3>
+    <p>Het ideale format per artikel (lengte, structuur, tone of voice, SEO-optimalisatie) vergt nog nader onderzoek. Als uitgangspunt:</p>
+    <ul>
+      <li>Praktisch, eerlijk, consumentgericht</li>
+      <li>Prijsindicaties waar mogelijk</li>
+      <li>FAQ-sectie gericht op "Mensen vragen ook" zoekopdrachten</li>
+      <li>Interne links naar relevante service- en stadspagina's</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 7: SCHROEFFUNDERINGEN -->
+  <section>
+    <h2 id="schroeffunderingen">7. Schroeffunderingen</h2>
+
+    <h3>7.1 Positionering</h3>
+    <p>Uit onderzoek blijkt: PNL B.V. is de Nederlandse distributeur van Krinner producten (leverancier, geen concurrent). Minimaal 5 andere bedrijven installeren ook Krinner-producten. De claim "een van twee" is genuanceerder dan gesuggereerd.</p>
+    <p><strong>Suggestie voor positionering:</strong></p>
+    <blockquote>
+      <p>"Gecertificeerd Krinner installateur met 30+ jaar hovenierservaring. De enige schroeffunderingen specialist die van fundering tot complete tuin alles uit een hand biedt."</p>
+    </blockquote>
+    <p>Dit onderscheidt Jonkers van pure funderingsspecialisten die geen tuinaanleg bieden.</p>
+
+    <h3>7.2 Contentidee&euml;n voor jonkersschroeffundering.nl (suggestie, nader onderzoek nodig)</h3>
+    <p><strong>Pillar page:</strong> "Alles over schroeffunderingen: de complete gids" (3.000+ woorden)</p>
+
+    <p><strong>Toepassingspagina's:</strong></p>
+    <ul>
+      <li>Schroeffundering voor tuinhuis</li>
+      <li>Schroeffundering voor overkapping / terrasoverkapping</li>
+      <li>Schroeffundering voor veranda</li>
+      <li>Schroeffundering voor terras / vlonder</li>
+      <li>Schroeffundering voor schutting</li>
+      <li>Schroeffundering voor zonnepanelen (B2B/commercieel)</li>
+      <li>Schroeffundering voor tiny house / modulaire woning</li>
+    </ul>
+
+    <p><strong>Vergelijkingspagina's:</strong></p>
+    <ul>
+      <li>Schroeffundering vs betonpoer: eerlijk vergeleken (meest waardevolle pagina om te maken, alle bestaande vergelijkingen zijn geschreven door verkopers)</li>
+      <li>Kosten schroeffundering: wat kost het werkelijk? (transparante prijzen met ranges per projecttype)</li>
+    </ul>
+
+    <p><strong>Bezwaar/objectiepagina's:</strong></p>
+    <ul>
+      <li>De nadelen van schroeffunderingen die niemand je vertelt</li>
+      <li>Schroeffundering in klei en veengrond: werkt het? (de meest onbeantwoorde consumentenvraag, zeer relevant voor Rivierenland)</li>
+      <li>Hoe lang gaat een schroeffundering mee?</li>
+      <li>Schroeffundering en de Omgevingswet: heb je een vergunning nodig?</li>
+    </ul>
+
+
+    <h3>7.4 Video-content</h3>
+    <p>Het installatieproces van schroeffunderingen is visueel aantrekkelijk: een grote stalen schroef draait in minder dan 5 minuten de grond in, schoon, geen modder, direct belastbaar.</p>
+    <p>Als Arno (of iemand op locatie) smartphone-video kan opnemen tijdens installaties:</p>
+    <ul>
+      <li>30 tot 60 seconden timelapse van een complete installatie (Reels)</li>
+      <li>Voor/na-transformaties</li>
+      <li>Close-up van de draaiende schroef</li>
+    </ul>
+
+    <h3>7.5 Van Aken als concurrent</h3>
+    <p>Van Aken Schroeffunderingen (Nederhemert-Noord) zit in dezelfde Bommelerwaard-regio. Sterkste SEO met 20+ landingspagina's, online prijstool, actief B2B-model. Belangrijkste concurrent specifiek voor schroeffunderingen.</p>
+
+    <h3>7.6 B2B-mogelijkheid</h3>
+    <p>Van Aken doet al onderaanneming voor andere hoveniers en aannemers. Jonkers kan een vergelijkbaar partnerprogramma formaliseren: "Wij leggen de fundering, jij bouwt erop." Doelgroep: installatiebedrijven voor zonnepanelen, verandabouwers, tiny house bouwers, hoveniers zonder funderingscapaciteit.</p>
+  </section>
+
+  <!-- SECTION 8: SOCIAL MEDIA -->
+  <section>
+    <h2 id="social-media">8. Social media en lokale aanwezigheid (suggesties)</h2>
+    <p>Dit zijn suggesties.</p>
+
+    <h3>8.1 Instagram</h3>
+    <p>De makkelijkste aanpak: post wat je toch al doet.</p>
+
+    <p><strong>Reels (korte video):</strong></p>
+    <ul>
+      <li>15 tot 30 seconden werkzaamheden in uitvoering (stenen leggen, planten, machines bedienen)</li>
+      <li>Voor/na-onthullingen (film "voor" bij start project, "na" bij oplevering)</li>
+      <li>Schroeffunderingen installatie (aantrekkelijk om te zien)</li>
+    </ul>
+
+    <p><strong>Foto's:</strong></p>
+    <ul>
+      <li>Voor/na-paren</li>
+      <li>Afgeronde projecten</li>
+    </ul>
+
+    <p>3 posts per week is ideaal, maar 1 per week is al beter dan niets. Gebruik locatietags voor Betuwe-plaatsen.</p>
+
+    <h3>8.2 Nextdoor bedrijfsprofiel</h3>
+    <p>Buren vragen actief om hovenier-aanbevelingen op Nextdoor. Laagdrempelig: profiel aanmaken, reageren als tuinvragen voorbijkomen. Niet verkopen, gewoon behulpzaam zijn.</p>
+
+    <h3>8.3 Lokale Facebookgroepen</h3>
+    <p>Zelfde aanpak als Nextdoor. Lid worden van Betuwe-groepen en Bommelerwaard-bewonersgroepen. Seizoenstips delen. Tuinvragen beantwoorden.</p>
+
+    <h3>8.4 Makelaar-partnerschappen (suggestie)</h3>
+    <p>2 tot 3 lokale makelaars benaderen in Zaltbommel, Tiel of Geldermalsen. Gratis tuinadviesgesprek aanbieden voor hun nieuwe kopers. Nieuwe huiseigenaren zijn de meest koopbereide hovenier-prospects.</p>
+  </section>
+
+  <!-- SECTION 9: HUIDIGE SITUATIE JONKERS GROEP -->
+  <section>
+    <h2 id="huidige-situatie">9. Huidige situatie Jonkers Groep</h2>
+
+    <h3>9.1 Websites</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Website</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>hoveniersbedrijfjonkers.nl</strong></td><td>Actief, maar verouderd (laatste blogpost 2015, verwijst naar Google+)</td></tr>
+          <tr><td><strong>jonkersschroeffundering.nl</strong></td><td>Actief, gecertificeerd Krinner partner</td></tr>
+          <tr><td><strong>jonkersgroep.nl</strong></td><td>Actief, maar verouderd (linkt nog naar Google+)</td></tr>
+          <tr><td><strong>jonkersinfra.nl</strong></td><td>Offline (database connection error)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>De websites linken naar elkaar via de Jonkers Groep structuur. Het Google Bedrijfsprofiel voor het hoveniersbedrijf verwijst naar hoveniersbedrijfjonkers.nl. De nieuwe website vervangt deze.</p>
+    <p>Elke website kan een eigen bestaan hebben, maar het is belangrijk dat het Google Bedrijfsprofiel verwijst naar de website die past bij de categorie. Het hoveniers-profiel linkt naar de hoveniers-site, niet naar de schroeffunderingen-site. Voor schroeffunderingen zou een apart Google Bedrijfsprofiel aangemaakt kunnen worden dat naar jonkersschroeffundering.nl verwijst.</p>
+
+    <h3>9.2 Wat Jonkers al heeft</h3>
+    <ul>
+      <li>Voertuigbelettering</li>
+      <li>jonkersschroeffundering.nl domein</li>
+      <li>30+ jaar ervaring en sterke testimonials</li>
+      <li>Eaton Industries als zakelijke klant sinds 2008</li>
+      <li>Big Brother tuin referentie (Talpa/John de Mol)</li>
+      <li>Krinner schroeffunderingen autorisatie</li>
+      <li>Jonkers Groep ecosysteem (Hoveniersbedrijf + Schroeffunderingen + Infra)</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 10: STRATEGISCHE KEUZES -->
+  <section>
+    <h2 id="strategische-keuzes">10. Strategische keuzes</h2>
+
+    <h3>"De hovenier van de Bommelerwaard"</h3>
+    <p>Hoveniersbedrijf de Betuwe claimt "de hovenier uit de Betuwe." Honkoop claimt "de hovenier van de Betuwe." Jonkers kan de specifiekere Bommelerwaard-identiteit claimen. Fysiek correct (Rossum ligt in de Bommelerwaard), minder betwist, authentieker.</p>
+
+    <h3>Eerlijke eenmanszaak-positionering</h3>
+    <p>Overweeg verwijzingen naar "ons team" en "onze tuinarchitecten" aan te passen waar het niet klopt. Het verhaal van de solo vakman kan juist een kracht zijn: "Bij mij geen doorlopende band. Ik ken elke tuin die ik aanleg." Persoonlijke aanpak bouwt vertrouwen.</p>
+
+    <h3>Gefocuste generalist</h3>
+    <p>Leid met 3 kerndiensten: tuinaanleg, tuinonderhoud, bestrating. Positioneer schroeffunderingen als onderscheidende specialisatie. Overige diensten (zwembad, buitenbioscoop, beveiliging, wellness, etc.) kunnen op de website blijven staan onder "Overige mogelijkheden," maar niet als hoofddiensten. Dit helpt Google om het bedrijf aan de juiste zoekopdrachten te koppelen.</p>
+
+    <h3>Prijstransparantie</h3>
+    <p>Publiceer minimaal "vanaf" prijsindicaties. Dit vangt zoekverkeer met hoge koopintentie op en verlaagt de drempel voor het eerste contact.</p>
+  </section>
+
+  <!-- SECTION 11: AUTOMATISERINGSMOGELIJKHEDEN -->
+  <section>
+    <h2 id="automatiseringsmogelijkheden">11. Automatiseringsmogelijkheden</h2>
+    <p>Onderstaande processen lenen zich goed voor automatisering. Dit hoeft niet direct, maar is een mooie optie om op termijn de hoeveelheid handmatig werk te verminderen. Alles hieronder is technisch mogelijk en kan op elk moment worden opgepakt.</p>
+
+    <h3>11.1 Reviewverzoeken na oplevering</h3>
+    <p>Na het invoeren van een afgerond project wordt automatisch een reeks berichten verstuurd om de klant te vragen een Google review achter te laten.</p>
+    <p><strong>Hoe het werkt:</strong></p>
+    <ul>
+      <li>Arno rondt een project af en voert het in (bijv. via een kort formulier, een WhatsApp bericht naar een bot, of een koppeling met een factuur)</li>
+      <li>Dag 0: automatisch bedank-e-mail met review link</li>
+      <li>Dag 7: automatisch WhatsApp herinnering (als nog geen review geplaatst)</li>
+      <li>Dag 14: automatisch laatste herinnering</li>
+      <li>Bijgehouden wordt wie wel/niet een review heeft achtergelaten</li>
+    </ul>
+    <p><strong>Wat Arno doet:</strong> Project invoeren. De rest gaat automatisch.</p>
+
+    <h3>11.2 Review reacties (concept)</h3>
+    <p>Wanneer een nieuwe Google review binnenkomt, wordt automatisch een conceptreactie opgesteld die past bij de specifieke review (met de juiste locatie en service verwerkt).</p>
+    <p><strong>Hoe het werkt:</strong></p>
+    <ul>
+      <li>Nieuwe review wordt gedetecteerd</li>
+      <li>AI stelt een gepersonaliseerde conceptreactie op</li>
+      <li>Arno ontvangt het concept via WhatsApp met "Goedkeuren" / "Aanpassen" knoppen</li>
+      <li>Na goedkeuring wordt de reactie automatisch geplaatst</li>
+    </ul>
+    <p><strong>Wat Arno doet:</strong> Concepten goedkeuren of aanpassen via WhatsApp.</p>
+
+    <h3>11.3 Google Posts (seizoensmatig)</h3>
+    <p>Seizoensgebonden Google Posts kunnen voorbereid en automatisch ingepland worden.</p>
+    <p><strong>Hoe het werkt:</strong></p>
+    <ul>
+      <li>Set van seizoenstemplates wordt klaargezet</li>
+      <li>Posts worden automatisch gepubliceerd op het juiste moment</li>
+      <li>Arno stuurt een foto van een afgerond project via WhatsApp, de post wordt automatisch opgemaakt en ingepland</li>
+    </ul>
+    <p><strong>Wat Arno doet:</strong> Af en toe een foto sturen.</p>
+
+    <h3>11.4 GBP Insights rapportage</h3>
+    <p>Maandelijks automatisch rapport met de belangrijkste cijfers uit Google Bedrijfsprofiel.</p>
+    <p><strong>Hoe het werkt:</strong></p>
+    <ul>
+      <li>Gegevens worden automatisch opgehaald via de GBP API</li>
+      <li>Rapport wordt verstuurd per e-mail of WhatsApp (zoekopdrachten, klikken, oproepen, nieuwe reviews)</li>
+    </ul>
+    <p><strong>Wat Arno doet:</strong> Rapport lezen.</p>
+
+    <h3>11.5 Directory monitoring</h3>
+    <p>Periodieke controle of de NAP gegevens (naam, adres, telefoon) nog kloppen op alle directory's.</p>
+    <p><strong>Hoe het werkt:</strong></p>
+    <ul>
+      <li>Automatische check op alle aangemelde platforms</li>
+      <li>Melding als er afwijkingen worden gevonden</li>
+    </ul>
+
+    <h3>Samenvatting automatisering</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Proces</th><th>Zonder automatisering</th><th>Met automatisering</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Reviewverzoeken</td><td>Handmatig per klant e-mailen/appen</td><td>Alleen project invoeren</td></tr>
+          <tr><td>Review reacties</td><td>Zelf bedenken en typen</td><td>Concept goedkeuren via WhatsApp</td></tr>
+          <tr><td>Google Posts</td><td>Zelf schrijven en publiceren</td><td>Foto sturen, rest gaat automatisch</td></tr>
+          <tr><td>Maandrapportage</td><td>Zelf inloggen en cijfers bekijken</td><td>Rapport komt naar je toe</td></tr>
+          <tr><td>Directory check</td><td>Zelf alle sites langsgaan</td><td>Melding bij afwijkingen</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- VERSION FOOTNOTE -->
+  <p class="version-footnote"><em>Document versie 9, 28 maart 2026</em></p>
+
+  <!-- FOOTER -->
+  <footer class="document-footer">
+    <div class="brand-footer">KNAP GEMAAKT.</div>
+    <p style="margin-top: 0.5rem;">Plan voor Online Zichtbaarheid &mdash; Jonkers Groep &mdash; 28 maart 2026</p>
+  </footer>
+
+</div>
+
+<!-- Back to top button -->
+<a href="#top" class="back-to-top" aria-label="Terug naar boven" title="Terug naar boven">&uarr;</a>
+
+</body>
+</html>

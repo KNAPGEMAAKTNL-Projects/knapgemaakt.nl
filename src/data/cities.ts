@@ -52,11 +52,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website bij jou?",
-				answer: "Hangt ervan af wat je wilt. Stuur me een berichtje en ik geef je een eerlijke inschatting. Kost je niks om te vragen."
+				answer: "Geen grote investering vooraf. Je betaalt EUR 49 per maand, inclusief ontwerp, bouw, hosting en onderhoud. Neem gerust contact op, dan leg ik het uit."
 			},
 			{
 				question: "Hoe lang duurt het om een website te maken?",
-				answer: "Reken op een paar weken. Soms gaat het sneller, hangt van het project af."
+				answer: "Een eenvoudige site kan al binnen een paar dagen klaar zijn. Grotere projecten duren een paar weken."
 			},
 			{
 				question: "Waarom geen bureau in Utrecht?",
@@ -85,11 +85,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website bij jou?",
-				answer: "Elke website is anders, dus er is geen standaardprijs. Vertel me wat je zoekt, dan geef ik je een eerlijk beeld."
+				answer: "EUR 49 per maand, alles inbegrepen. Ontwerp, bouw, hosting en onderhoud. Geen verborgen kosten, geen grote factuur vooraf."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Reken op een paar weken. Het hangt af van hoe groot het project is, maar ik hou je op de hoogte."
+				answer: "Dat hangt van het project af. Een simpele bedrijfssite staat er snel, complexere projecten duren wat langer."
 			},
 			{
 				question: "Waarom jou en niet een bureau?",
@@ -117,11 +117,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Dat verschilt per project. Mail of bel me even, dan kijk ik wat bij je past. Vrijblijvend."
+				answer: "Je betaalt een vast bedrag van EUR 49 per maand. Daar zit alles in: ontwerp, bouw, hosting en onderhoud. Vrijblijvend contact opnemen kost je niks."
 			},
 			{
 				question: "Hoe lang duurt het om een website te maken?",
-				answer: "Meestal een paar weken. Simpele sites soms sneller. Ik geef je vooraf een eerlijke planning."
+				answer: "Een eenvoudige site kan al binnen een paar dagen klaar zijn. Grotere projecten duren een paar weken."
 			}
 		],
 	},
@@ -145,11 +145,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Iedere website is maatwerk, dus een vaste prijs heb ik niet. Neem contact op en ik geef je een eerlijke inschatting. Gewoon vrijblijvend."
+				answer: "Geen grote investering vooraf. Je betaalt EUR 49 per maand, inclusief ontwerp, bouw, hosting en onderhoud. Neem gerust contact op, dan leg ik het uit."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Een paar weken is normaal. Bij een simpelere website kan het sneller. Dat bespreken we vooraf."
+				answer: "Dat hangt van het project af. Een simpele bedrijfssite staat er snel, complexere projecten duren wat langer."
 			}
 		],
 	},
@@ -173,11 +173,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website bij jou?",
-				answer: "Dat is voor elk project anders. Vertel me wat je zoekt en ik geef je een eerlijk beeld. Geen kleine lettertjes."
+				answer: "EUR 49 per maand, alles inbegrepen. Ontwerp, bouw, hosting en onderhoud. Geen verborgen kosten, geen grote factuur vooraf."
 			},
 			{
 				question: "Hoe lang duurt het om een website te maken?",
-				answer: "Reken op twee tot vier weken. Soms gaat het sneller, hangt af van het project."
+				answer: "Een eenvoudige site kan al binnen een paar dagen klaar zijn. Grotere projecten duren een paar weken."
 			},
 			{
 				question: "Waarom geen bureau?",
@@ -205,11 +205,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Hangt van je wensen af. Neem contact op, dan kijk ik wat je nodig hebt. Vrijblijvend, gewoon even praten."
+				answer: "Je betaalt een vast bedrag van EUR 49 per maand. Daar zit alles in: ontwerp, bouw, hosting en onderhoud. Vrijblijvend contact opnemen kost je niks."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Meestal een weekje of twee, drie. Vooraf bespreken we de planning zodat je weet waar je aan toe bent."
+				answer: "Dat hangt van het project af. Een simpele bedrijfssite staat er snel, complexere projecten duren wat langer."
 			}
 		],
 	},
@@ -241,11 +241,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Verschilt per project. Bel of mail me, dan bespreek ik graag wat er mogelijk is. Geen verplichtingen."
+				answer: "Geen grote investering vooraf. Je betaalt EUR 49 per maand, inclusief ontwerp, bouw, hosting en onderhoud. Neem gerust contact op, dan leg ik het uit."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Gemiddeld een paar weken. Ik geef je vooraf een realistische planning."
+				answer: "Een eenvoudige site kan al binnen een paar dagen klaar zijn. Grotere projecten duren een paar weken."
 			}
 		],
 	},
@@ -269,11 +269,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Dat verschilt per website. Stuur me een berichtje met wat je zoekt, dan geef ik je een eerlijke inschatting."
+				answer: "EUR 49 per maand, alles inbegrepen. Ontwerp, bouw, hosting en onderhoud. Geen verborgen kosten, geen grote factuur vooraf."
 			},
 			{
 				question: "Hoe lang duurt het om een website te maken?",
-				answer: "Dat hangt af van het project. Reken op een paar weken. Ik houd je op de hoogte van de voortgang."
+				answer: "Dat hangt van het project af. Een simpele bedrijfssite staat er snel, complexere projecten duren wat langer."
 			}
 		],
 	},
@@ -297,7 +297,7 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Iedere ondernemer heeft iets anders nodig, dus een vaste prijs heb ik niet. Neem contact op, dan denk ik met je mee. Kost niks om te vragen."
+				answer: "Je betaalt een vast bedrag van EUR 49 per maand. Daar zit alles in: ontwerp, bouw, hosting en onderhoud. Vrijblijvend contact opnemen kost je niks."
 			},
 			{
 				question: "Waarom geen bureau in de buurt?",
@@ -325,11 +325,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Hangt af van wat je wilt. Even bellen of mailen is de snelste manier om erachter te komen. Geen verplichtingen."
+				answer: "Geen grote investering vooraf. Je betaalt EUR 49 per maand, inclusief ontwerp, bouw, hosting en onderhoud. Neem gerust contact op, dan leg ik het uit."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "De meeste sites zijn binnen een paar weken klaar. Je krijgt vooraf een planning zodat je weet waar je aan toe bent."
+				answer: "Een eenvoudige site kan al binnen een paar dagen klaar zijn. Grotere projecten duren een paar weken."
 			}
 		],
 	},
@@ -353,11 +353,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Dat bespreek ik liever persoonlijk. Neem contact op en ik geef je een eerlijk beeld van wat het kost. Vrijblijvend."
+				answer: "EUR 49 per maand, alles inbegrepen. Ontwerp, bouw, hosting en onderhoud. Geen verborgen kosten, geen grote factuur vooraf."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Een paar weken, soms korter. Hangt van de omvang af. Ik geef je vooraf een realistische inschatting."
+				answer: "Dat hangt van het project af. Een simpele bedrijfssite staat er snel, complexere projecten duren wat langer."
 			}
 		],
 	},
@@ -381,11 +381,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Elk project is anders. Mail me wat je in gedachten hebt, dan geef ik je een inschatting. Gewoon vrijblijvend."
+				answer: "Je betaalt een vast bedrag van EUR 49 per maand. Daar zit alles in: ontwerp, bouw, hosting en onderhoud. Vrijblijvend contact opnemen kost je niks."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Meestal twee tot drie weken. Simpele sites soms sneller. Ik plan het vooraf met je door."
+				answer: "Een eenvoudige site kan al binnen een paar dagen klaar zijn. Grotere projecten duren een paar weken."
 			}
 		],
 	},
@@ -417,11 +417,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Verschilt per project. Laat me weten wat je zoekt en ik geef je een eerlijke inschatting. Geen verplichtingen."
+				answer: "Geen grote investering vooraf. Je betaalt EUR 49 per maand, inclusief ontwerp, bouw, hosting en onderhoud. Neem gerust contact op, dan leg ik het uit."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Reken op een paar weken. Kan soms sneller, hangt van het project af. Ik geef je vooraf een planning."
+				answer: "Dat hangt van het project af. Een simpele bedrijfssite staat er snel, complexere projecten duren wat langer."
 			}
 		],
 	},
@@ -445,11 +445,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Hangt van het project af. Stuur me een berichtje en ik denk met je mee. Kost je niks om te vragen."
+				answer: "EUR 49 per maand, alles inbegrepen. Ontwerp, bouw, hosting en onderhoud. Geen verborgen kosten, geen grote factuur vooraf."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "De meeste projecten zijn binnen een paar weken af. Je krijgt vooraf een duidelijke planning."
+				answer: "Een eenvoudige site kan al binnen een paar dagen klaar zijn. Grotere projecten duren een paar weken."
 			}
 		],
 	},
@@ -473,11 +473,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Dat verschilt. De beste manier om erachter te komen is even contact opnemen. Vrijblijvend, gewoon een gesprekje."
+				answer: "Je betaalt een vast bedrag van EUR 49 per maand. Daar zit alles in: ontwerp, bouw, hosting en onderhoud. Vrijblijvend contact opnemen kost je niks."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Reken op twee tot vier weken. Soms sneller. Ik spreek vooraf met je af wanneer je het kunt verwachten."
+				answer: "Dat hangt van het project af. Een simpele bedrijfssite staat er snel, complexere projecten duren wat langer."
 			}
 		],
 	},
@@ -509,11 +509,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Elk project is anders, dus een standaardprijs heb ik niet. Neem contact op en ik geef je een eerlijk beeld."
+				answer: "Geen grote investering vooraf. Je betaalt EUR 49 per maand, inclusief ontwerp, bouw, hosting en onderhoud. Neem gerust contact op, dan leg ik het uit."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Gemiddeld een paar weken. Sommige projecten gaan sneller. Vooraf bespreken we de planning."
+				answer: "Een eenvoudige site kan al binnen een paar dagen klaar zijn. Grotere projecten duren een paar weken."
 			}
 		],
 	},
@@ -541,11 +541,11 @@ export const cities: Record<string, CityData> = {
 			},
 			{
 				question: "Wat kost een website?",
-				answer: "Dat hangt van je wensen af. Bel of mail me, dan kijk ik wat bij je past. Geen verplichtingen."
+				answer: "EUR 49 per maand, alles inbegrepen. Ontwerp, bouw, hosting en onderhoud. Geen verborgen kosten, geen grote factuur vooraf."
 			},
 			{
 				question: "Hoe lang duurt het?",
-				answer: "Meestal ben ik er een paar weken mee bezig. Je weet vooraf wanneer je het kunt verwachten."
+				answer: "Dat hangt van het project af. Een simpele bedrijfssite staat er snel, complexere projecten duren wat langer."
 			}
 		],
 	},
