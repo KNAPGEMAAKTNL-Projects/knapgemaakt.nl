@@ -48,6 +48,7 @@ function normalizeUrl(url: string): string | null {
 interface EmailAttachment {
   filename: string;
   content: string; // base64
+  content_type?: string;
 }
 
 async function sendEmail(apiKey: string, to: string, subject: string, html: string, replyTo?: string, attachments?: EmailAttachment[]) {
@@ -242,10 +243,12 @@ export const POST: APIRoute = async ({ request, locals }) => {
         const icsAttachment = aanvraagData.start_time ? [{
           filename: 'invite.ics',
           content: btoa(buildICSContent(aanvraagData, false)),
+          content_type: 'text/calendar; method=REQUEST',
         }] : undefined;
         const icsAttachmentInternal = aanvraagData.start_time ? [{
           filename: 'invite.ics',
           content: btoa(buildICSContent(aanvraagData, true)),
+          content_type: 'text/calendar; method=REQUEST',
         }] : undefined;
         // Notification to Yannick
         const dateStr = aanvraagData.start_time
