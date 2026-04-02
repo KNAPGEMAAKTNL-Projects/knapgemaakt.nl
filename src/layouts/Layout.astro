@@ -181,8 +181,8 @@ const CLARITY_ID = 'v6kn03ub4s';
         })(window, document, "clarity", "script");
       `} />
     )}
-    <!-- Cloudflare Turnstile (invisible CAPTCHA) — only loads widget JS when needed -->
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <!-- Cloudflare Turnstile — explicit render mode for View Transitions compatibility -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
   </head>
   <body
     class="bg-canvas text-ink antialiased overflow-x-hidden selection:bg-accent/30 selection:text-ink"
@@ -194,12 +194,36 @@ const CLARITY_ID = 'v6kn03ub4s';
     <!-- Defer smooth scroll initialization until browser is idle (FCP optimization) -->
     <SmoothScroll client:idle />
 
-    <!-- Reset scroll position on ViewTransitions navigation (runs before Lenis initializes) -->
+    <!-- Reset scroll position + re-render Turnstile on ViewTransitions navigation -->
     <script>
       document.addEventListener('astro:after-swap', () => {
-        // Only scroll to top if navigating to a page without a hash
         if (!window.location.hash) {
           window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+        // Re-render Turnstile widgets after View Transition page swap
+        if (window.turnstile) {
+          document.querySelectorAll('.cf-turnstile').forEach((el) => {
+            el.innerHTML = '';
+            window.turnstile.render(el, {
+              sitekey: el.getAttribute('data-sitekey'),
+              theme: el.getAttribute('data-theme') || 'auto',
+              size: el.getAttribute('data-size') || 'normal',
+            });
+          });
+        }
+      });
+      // Also render on initial page load (explicit mode doesn't auto-render)
+      document.addEventListener('astro:page-load', () => {
+        if (window.turnstile) {
+          document.querySelectorAll('.cf-turnstile').forEach((el) => {
+            if (!el.querySelector('iframe')) {
+              window.turnstile.render(el, {
+                sitekey: el.getAttribute('data-sitekey'),
+                theme: el.getAttribute('data-theme') || 'auto',
+                size: el.getAttribute('data-size') || 'normal',
+              });
+            }
+          });
         }
       });
     </script>
