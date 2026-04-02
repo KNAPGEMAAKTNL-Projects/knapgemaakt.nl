@@ -51,9 +51,9 @@ interface EmailAttachment {
   content_type?: string;
 }
 
-async function sendEmail(apiKey: string, to: string, subject: string, html: string, replyTo?: string, attachments?: EmailAttachment[]) {
+async function sendEmail(apiKey: string, to: string, subject: string, html: string, replyTo?: string, attachments?: EmailAttachment[], from?: string) {
   const payload: Record<string, unknown> = {
-    from: 'KNAP GEMAAKT. <contact@knapgemaakt.nl>',
+    from: from || 'KNAP GEMAAKT. <contact@knapgemaakt.nl>',
     to: [to],
     subject,
     html,
@@ -243,24 +243,23 @@ export const POST: APIRoute = async ({ request, locals }) => {
         const icsAttachment = aanvraagData.start_time ? [{
           filename: 'invite.ics',
           content: btoa(buildICSContent(aanvraagData, false)),
-          content_type: 'text/calendar; method=REQUEST',
         }] : undefined;
         const icsAttachmentInternal = aanvraagData.start_time ? [{
           filename: 'invite.ics',
           content: btoa(buildICSContent(aanvraagData, true)),
-          content_type: 'text/calendar; method=REQUEST',
         }] : undefined;
         // Notification to Yannick
         const dateStr = aanvraagData.start_time
           ? new Date(aanvraagData.start_time).toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Amsterdam' })
           : '';
+        const bookingFrom = 'Yannick van KNAP GEMAAKT. <yannick@knapgemaakt.nl>';
         notifications.push(
-          sendEmail(apiKey, 'info@knapgemaakt.nl', `${aanvraagData.specification || 'Kennismaking'} - ${body.name}`, buildAanvraagNotification(aanvraagData), body.email, icsAttachmentInternal)
+          sendEmail(apiKey, 'info@knapgemaakt.nl', `${aanvraagData.specification || 'Kennismaking'} - ${body.name}`, buildAanvraagNotification(aanvraagData), body.email, icsAttachmentInternal, 'KNAP GEMAAKT. <bookings@knapgemaakt.nl>')
         );
         // Confirmation to customer
         const subjectDate = dateStr ? dateStr.charAt(0).toUpperCase() + dateStr.slice(1) : '';
         notifications.push(
-          sendEmail(apiKey, body.email, `Je afspraak staat! ${subjectDate}`, buildAanvraagConfirmation(aanvraagData), undefined, icsAttachment)
+          sendEmail(apiKey, body.email, `Je afspraak staat! ${subjectDate}`, buildAanvraagConfirmation(aanvraagData), undefined, icsAttachment, bookingFrom)
         );
       }
     } else if (body.type === 'offerte') {
