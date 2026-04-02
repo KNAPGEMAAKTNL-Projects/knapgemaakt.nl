@@ -17,12 +17,14 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = "Professionele websites en webshops voor lokale ondernemers. Persoonlijk, modern en resultaatgericht. KNAP GEMAAKT. uit Buren.",
-  image = "/favicon-192.png"
+  image = "/favicon-192.png",
+  noindex = false
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -41,6 +43,7 @@ const CLARITY_ID = 'v6kn03ub4s';
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="viewport" content="width=device-width" />
 
     <!-- =========================================================================
@@ -178,12 +181,16 @@ const CLARITY_ID = 'v6kn03ub4s';
         })(window, document, "clarity", "script");
       `} />
     )}
+    <!-- Cloudflare Turnstile (invisible CAPTCHA) — only loads widget JS when needed -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </head>
   <body
     class="bg-canvas text-ink antialiased overflow-x-hidden selection:bg-accent/30 selection:text-ink"
   >
     <Header />
+    <div id="main-content">
     <slot />
+    </div>
     <!-- Defer smooth scroll initialization until browser is idle (FCP optimization) -->
     <SmoothScroll client:idle />
 

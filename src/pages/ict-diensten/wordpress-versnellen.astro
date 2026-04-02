@@ -4,6 +4,14 @@ export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import FadeIn from "../../components/FadeIn.astro";
+import FAQSection from "../../components/FAQSection.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://knapgemaakt.nl/" },
+	{ name: "ICT Diensten", url: "https://knapgemaakt.nl/ict-diensten/" },
+	{ name: "WordPress Versnellen", url: "https://knapgemaakt.nl/ict-diensten/wordpress-versnellen/" }
+];
 ---
 
 <Layout
@@ -14,6 +22,9 @@ import FadeIn from "../../components/FadeIn.astro";
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
       <div class="max-w-5xl mx-auto">
+        <div class="mb-6">
+          <Breadcrumb items={breadcrumbs} />
+        </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
           WordPress versnellen
         </h1>
@@ -185,6 +196,27 @@ import FadeIn from "../../components/FadeIn.astro";
         </FadeIn>
       </div>
     </section>
+
+    <FadeIn>
+    <FAQSection faqs={[
+      {
+        question: "Hoeveel sneller wordt mijn WordPress site?",
+        answer: "De meeste sites gaan van 4-8 seconden laadtijd naar onder de 2 seconden. Het exacte resultaat hangt af van je huidige situatie, het thema en het aantal plugins. Ik doe altijd eerst een gratis check."
+      },
+      {
+        question: "Moet ik van hosting wisselen?",
+        answer: "Niet per se, maar het helpt vaak wel. Veel WordPress sites draaien op trage shared hosting. Ik kan je site verhuizen naar een snellere omgeving als onderdeel van de optimalisatie."
+      },
+      {
+        question: "Gaan mijn plugins nog werken?",
+        answer: "Ja. Ik verwijder alleen plugins die je site vertragen zonder meerwaarde te bieden. Essentiële plugins blijven gewoon staan. Je merkt er in de dagelijkse werkzaamheden niets van."
+      },
+      {
+        question: "Wat kost WordPress optimalisatie?",
+        answer: "Het onderhoudspakket kost EUR 10 per maand. Dat is inclusief maandelijkse updates, beveiligingsscans en snelheidsmonitoring. De eenmalige optimalisatie bespreek ik na de gratis check."
+      }
+    ]} />
+    </FadeIn>
 
     <!-- CTA -->
     <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">

@@ -1,0 +1,23 @@
+# KNAP GEMAAKT. - Webdesign & ICT uit Buren
+
+> Websites, webshops, hosting en e-mail voor ondernemers. Eén aanspreekpunt, alles geregeld.
+
+## Diensten
+- [Webdesign](https://knapgemaakt.nl/webdesign/): Websites op maat gebouwd met Astro. Snel, veilig, geen WordPress.
+- [Webshops](https://knapgemaakt.nl/webshops/): Shopify webshops op maat met iDEAL en volledige productconfiguratie.
+- [Website Hosting](https://knapgemaakt.nl/ict-diensten/website-hosting/): Snelle hosting op Cloudflare met SSL en monitoring.
+- [E-mail Hosting](https://knapgemaakt.nl/ict-diensten/email-hosting/): Zakelijke e-mail op je eigen domein, niet per persoon afgerekend.
+- [WordPress Versnellen](https://knapgemaakt.nl/ict-diensten/wordpress-versnellen/): Bestaande WordPress sites optimaliseren voor snelheid.
+- [Automatisering](https://knapgemaakt.nl/ict-diensten/automatisering/): Bedrijfsprocessen automatiseren met n8n en Cloudflare Workers.
+
+## Informatie
+- [Veelgestelde vragen](https://knapgemaakt.nl/veelgestelde-vragen/): Antwoorden over prijzen, tijdlijnen en werkwijze.
+- [Over](https://knapgemaakt.nl/over/): Achtergrond over Yannick Veldhuisen en KNAP GEMAAKT.
+- [Blog](https://knapgemaakt.nl/blog/): Artikelen over webdesign, betalingen en ondernemen.
+- [Contact](https://knapgemaakt.nl/contact/): Neem contact op voor een vrijblijvend gesprek.
+
+## Contact
+- Telefoon: +31 6 23571852
+- E-mail: info@knapgemaakt.nl
+- Adres: Françoise de Lanoistraat 9, 4116 ET Buren
+- KvK: 73652377

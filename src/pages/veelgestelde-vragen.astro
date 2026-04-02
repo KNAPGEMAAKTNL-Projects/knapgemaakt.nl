@@ -1,0 +1,128 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import FadeIn from "../components/FadeIn.astro";
+import TextRevealCSS from "../components/TextRevealCSS.astro";
+import FAQSchema from "../components/seo/FAQSchema.astro";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
+
+const faqs = [
+	{
+		question: "Wat kost een website laten maken?",
+		answer: "Dat hangt af van wat je nodig hebt. Een eenvoudige bedrijfssite begint vanaf EUR 1.500. Een uitgebreidere site met meerdere pagina's, formulieren en koppelingen zit tussen EUR 2.500 en EUR 5.000. Je krijgt altijd een vaste prijs vooraf."
+	},
+	{
+		question: "Hoe lang duurt het om een website te bouwen?",
+		answer: "De meeste websites zijn binnen 2 tot 4 weken klaar. Dat hangt af van de omvang en hoe snel je teksten en foto's aanlevert. Een eenvoudige site kan soms al in een week staan."
+	},
+	{
+		question: "Kan ik zelf dingen aanpassen op mijn website?",
+		answer: "Kleine aanpassingen regel ik voor je, meestal binnen 24 uur. Dat zit in het onderhoudspakket. Je hoeft zelf niets technisch te doen. Grotere wijzigingen plannen we samen in."
+	},
+	{
+		question: "Wat zit er in het onderhoudspakket?",
+		answer: "Hosting, SSL-certificaat, uptime monitoring, beveiligingsupdates, maandelijks rapport en kleine tekstaanpassingen. Vanaf EUR 49 per maand. Geen apart hostingcontract nodig."
+	},
+	{
+		question: "Waarom geen WordPress?",
+		answer: "WordPress is prima voor blogs, maar voor een snelle bedrijfssite zijn er betere opties. Ik bouw met Astro: dat laadt sneller, heeft geen plugins nodig en is veiliger. Het resultaat scoort beter in Google en kost minder onderhoud."
+	},
+	{
+		question: "Werk je alleen in de regio Buren?",
+		answer: "Nee, ik werk door heel Nederland. De meeste communicatie gaat via videobellen en e-mail. Voor klanten in de regio Rivierenland kan ik ook langskomen."
+	},
+	{
+		question: "Wat heb je van mij nodig om te beginnen?",
+		answer: "Eigenlijk vooral een goed gesprek. Ik wil begrijpen wat je bedrijf doet en wie je klanten zijn. Logo, foto's en een idee van welke pagina's je wilt zijn handig, maar niet verplicht om te starten."
+	},
+	{
+		question: "Hoe zit het met e-mail en hosting?",
+		answer: "Ik regel dat erbij. Zakelijke e-mail op je eigen domein vanaf EUR 5 per maand voor het hele bedrijf, niet per persoon. Hosting zit in het onderhoudspakket. Alles bij één aanspreekpunt."
+	},
+	{
+		question: "Kan ik ook een webshop laten maken?",
+		answer: "Ja, ik bouw webshops op Shopify. Dat is een betrouwbaar platform met iDEAL, voorraad- en verzendbeheer ingebouwd. Een Shopify webshop op maat begint vanaf EUR 2.500."
+	},
+	{
+		question: "Hoe neem ik contact op?",
+		answer: "Bel 06-23571852, mail naar info@knapgemaakt.nl, of plan direct een vrijblijvend gesprek in via de website. Ik reageer binnen 24 uur."
+	}
+];
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://knapgemaakt.nl/" },
+	{ name: "Veelgestelde vragen", url: "https://knapgemaakt.nl/veelgestelde-vragen/" }
+];
+---
+
+<Layout
+	title="Veelgestelde vragen | KNAP GEMAAKT."
+	description="Antwoorden op veelgestelde vragen over websites, webshops, hosting en e-mail. Wat kost het, hoe lang duurt het en wat heb je nodig? KNAP GEMAAKT. legt het uit."
+>
+	<FAQSchema faqs={faqs} />
+	<BreadcrumbSchema items={breadcrumbs} />
+	<main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 relative overflow-hidden">
+		<div class="max-w-3xl mx-auto">
+			<!-- Header -->
+			<FadeIn>
+			<div class="mb-16">
+				<TextRevealCSS
+					text="Veelgestelde vragen."
+					class="text-4xl md:text-7xl font-bold tracking-tight leading-snug mb-6"
+				/>
+				<p class="text-xl md:text-2xl text-ink/70 font-medium max-w-2xl leading-relaxed">
+					De vragen die ik het vaakst hoor, alvast beantwoord.
+				</p>
+			</div>
+			</FadeIn>
+
+			<!-- FAQ Items -->
+			<FadeIn delay={100}>
+			<div class="space-y-4">
+				{faqs.map((faq) => (
+					<details class="group border-2 border-warm rounded-xl overflow-hidden transition-colors hover:border-accent/30 open:border-accent/50">
+						<summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-bold tracking-tight text-ink select-none">
+							<span>{faq.question}</span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="square"
+								class="shrink-0 transition-transform duration-300 group-open:rotate-45"
+							>
+								<line x1="12" y1="5" x2="12" y2="19" />
+								<line x1="5" y1="12" x2="19" y2="12" />
+							</svg>
+						</summary>
+						<div class="px-6 pb-6 text-ink/70 leading-relaxed">
+							{faq.answer}
+						</div>
+					</details>
+				))}
+			</div>
+			</FadeIn>
+
+			<!-- CTA -->
+			<FadeIn delay={200}>
+			<div class="mt-20 text-center">
+				<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Vraag niet beantwoord?</h2>
+				<p class="text-ink/70 mb-8 max-w-lg mx-auto">Neem gerust contact op. Ik denk graag met je mee, vrijblijvend.</p>
+				<a
+					href="/aanvragen/"
+					class="inline-flex items-center gap-3 bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors group"
+				>
+					Plan een gesprek in
+					<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+				</a>
+			</div>
+			</FadeIn>
+		</div>
+	</main>
+	<Footer hideCTA={true} />
+</Layout>

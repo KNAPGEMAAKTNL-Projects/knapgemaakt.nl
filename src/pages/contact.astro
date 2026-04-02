@@ -9,7 +9,7 @@ import FadeIn from "../components/FadeIn.astro";
 
 <Layout
 	title="Contact | Stuur Me Een Bericht | KNAP GEMAAKT."
-	description="Vraag, idee of gewoon even sparren? Stuur een bericht. Reactie meestal binnen een dag."
+	description="Neem contact op met KNAP GEMAAKT. Bel, mail of stuur een bericht. Persoonlijke reactie binnen 24 uur. Gevestigd in Buren, werkend door heel Nederland."
 >
 	<main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 relative overflow-hidden">
 		<div class="max-w-5xl mx-auto">
@@ -166,13 +166,16 @@ import FadeIn from "../components/FadeIn.astro";
 							</label>
 						</div>
 
+						<!-- Turnstile (invisible CAPTCHA) -->
+						<div class="cf-turnstile" data-sitekey="0x4AAAAAACzkKUPSoLBK6a1f" data-theme="light" data-size="flexible"></div>
+
 						<!-- Submit -->
 						<button
 							type="submit"
 							id="submit-btn"
 							class="bg-ink text-canvas rounded-lg px-8 py-4 font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center gap-3 group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
 						>
-							<span id="btn-text">Verstuur bericht</span>
+							<span id="btn-text">Bericht verzenden</span>
 							<span id="btn-arrow" class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 							<span id="btn-loading" class="hidden">
 								<svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -253,7 +256,23 @@ import FadeIn from "../components/FadeIn.astro";
 			<FadeIn delay={200}>
 			<div class="border-t-2 border-warm pt-16 mb-16">
 				<h2 class="text-xs font-mono uppercase tracking-[0.2em] text-ink/50 mb-8">Direct contact</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<!-- Phone -->
+					<a
+						href="tel:+31623571852"
+						class="group flex items-center gap-4 p-6 border-2 border-warm rounded-xl hover:border-accent/50 transition-colors"
+					>
+						<div class="w-12 h-12 bg-accent flex items-center justify-center shrink-0 rounded-lg">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+								<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+							</svg>
+						</div>
+						<div>
+							<p class="font-bold tracking-tight group-hover:text-accent transition-colors">Bel gerust</p>
+							<p class="text-ink/50 font-mono text-sm">06-23571852</p>
+						</div>
+					</a>
+
 					<!-- Email -->
 					<a
 						href="mailto:info@knapgemaakt.nl"
@@ -329,6 +348,7 @@ import FadeIn from "../components/FadeIn.astro";
 
 			try {
 				const formData = new FormData(form);
+				const turnstileResponse = formData.get('cf-turnstile-response');
 				const data = {
 					type: 'contact',
 					specification: formData.get('subject'),
@@ -336,7 +356,8 @@ import FadeIn from "../components/FadeIn.astro";
 					name: formData.get('name'),
 					email: formData.get('email'),
 					phone: formData.get('phone'),
-					message: formData.get('message')
+					message: formData.get('message'),
+					'cf-turnstile-response': turnstileResponse
 				};
 
 				const res = await fetch('/api/submissions', {
