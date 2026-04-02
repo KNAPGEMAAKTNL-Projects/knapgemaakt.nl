@@ -227,7 +227,7 @@ export function buildICSContent(data: AanvraagData, isInternal: boolean): string
     'END:VCALENDAR',
   ];
 
-  return lines.join('\r\n') + '\r\n';
+  return lines.join('\r\n');
 }
 
 // ─── Contextual questions ────────────────────────────────
