@@ -144,7 +144,7 @@ export function buildContactNotification(data: ContactData): string {
       ['Onderwerp', data.specification || '-'],
     ])}
     ${data.message ? `<p style="margin:0 0 8px;font-size:13px;font-weight:600;color:#4A4A4A;">Bericht</p>${messageBlock(data.message)}` : ''}
-    ${ctaButton('Beantwoorden', `mailto:${data.email}?subject=Re: ${encodeURIComponent(data.specification || 'Je bericht')}`)}
+    ${ctaButton('Beantwoorden', `mailto:${data.email}?subject=Re: ${encodeURIComponent(data.specification || 'Je bericht')}&body=${encodeURIComponent(`\n\n---\nOrigineel bericht van ${data.name}:\n\n${data.message || ''}`)}`)}
   `);
 }
 
