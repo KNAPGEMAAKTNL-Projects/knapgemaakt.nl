@@ -10,184 +10,616 @@ export const prerender = true;
   <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, nosnippet">
   <meta name="googlebot" content="noindex, nofollow, noarchive, noimageindex, nosnippet">
   <meta name="bingbot" content="noindex, nofollow">
-  <title>Jonkers Groep: Plan voor Online Zichtbaarheid — KNAP GEMAAKT.</title>
+  <title>Jonkers — Online Zichtbaarheid & Leads — KNAP GEMAAKT.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --canvas: #FAFAF8;
-      --ink: #1A1A1A;
-      --ink-secondary: #4A4A4A;
+      --bg: #FAFAF8;
+      --bg-warm: #F0EDE7;
+      --bg-card: #FFFFFF;
+      --ink: #1A1A18;
+      --ink-2: #545450;
+      --ink-3: #9A9A90;
       --accent: #14B8A6;
-      --accent-light: #14b8a610;
-      --accent-glow: #14b8a618;
-      --warm: #E8E4DE;
-      --warm-light: #F3F1ED;
-      --font-body: 1.125rem;
-      --line-height: 1.7;
-      --font-family: 'Inter Tight', system-ui, sans-serif;
+      --accent-bg: rgba(20,184,166,0.07);
+      --accent-soft: rgba(20,184,166,0.12);
+      --accent-border: rgba(20,184,166,0.28);
+      --border: #E4E0D8;
+      --sidebar-w: 248px;
+      --font-serif: 'DM Serif Display', Georgia, serif;
+      --font-sans: 'Figtree', system-ui, sans-serif;
     }
 
-    html {
-      font-size: 100%;
-      scroll-behavior: smooth;
-      scroll-padding-top: 2rem;
-    }
+    html { font-size: 100%; scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
 
     body {
-      font-family: var(--font-family);
-      font-size: var(--font-body);
-      line-height: var(--line-height);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.72;
       color: var(--ink);
-      background-color: var(--canvas);
+      background: var(--bg);
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    .document {
-      max-width: 800px;
+    /* ===== LAYOUT ===== */
+    #layout {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      max-width: 1320px;
       margin: 0 auto;
-      padding: 3rem 2rem 4rem;
+      min-height: 100vh;
     }
 
-    /* ===== FADE-IN ANIMATION (matches main site) ===== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    /* ===== SIDEBAR ===== */
+    #sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: var(--bg-warm);
+      border-right: 1px solid var(--border);
+      padding: 1.75rem 1.25rem 3rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
     }
 
-    .fade-in.is-visible {
-      opacity: 1;
-      transform: translateY(0);
+    #sidebar::-webkit-scrollbar { width: 3px; }
+    #sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .sb-brand {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
     }
 
-    .fade-in.delay-1 { transition-delay: 100ms; }
-    .fade-in.delay-2 { transition-delay: 200ms; }
-    .fade-in.delay-3 { transition-delay: 300ms; }
-    .fade-in.delay-4 { transition-delay: 400ms; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-
-    /* ===== TITLE PAGE / HEADER ===== */
-    .title-page {
-      padding: 4rem 0 3rem;
-      margin-bottom: 3rem;
-      border-bottom: 3px solid var(--accent);
-      position: relative;
-    }
-
-    .title-page::before {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: var(--accent);
-      margin-bottom: 2rem;
-    }
-
-    .brand {
-      font-size: 0.8125rem;
+    .sb-client {
+      font-size: 0.875rem;
       font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc-group-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin: 1.25rem 0 0.4rem;
+      padding-left: 0.5rem;
+    }
+
+    .toc-link {
+      display: block;
+      font-size: 0.8125rem;
+      line-height: 1.4;
+      color: var(--ink-2);
+      text-decoration: none;
+      padding: 0.28rem 0.5rem;
+      border-radius: 5px;
+      border-left: 2px solid transparent;
+      transition: all 0.15s;
+      margin-bottom: 0.05rem;
+    }
+
+    .toc-link:hover { color: var(--ink); background: rgba(0,0,0,0.04); border-bottom: none; }
+    .toc-link.active { color: var(--accent); background: var(--accent-bg); border-left-color: var(--accent); font-weight: 600; }
+
+    /* ===== MAIN CONTENT ===== */
+    #content {
+      padding: 3rem 5rem 6rem 4rem;
+      min-width: 0;
+    }
+
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      padding-bottom: 3rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .hdr-brand {
+      font-size: 0.75rem;
+      font-weight: 700;
       letter-spacing: 0.15em;
       color: var(--accent);
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
-    .title-page h1 {
-      font-size: 2.5rem;
+    .hdr-title {
+      font-family: var(--font-serif);
+      font-size: 2.75rem;
       font-weight: 400;
       line-height: 1.15;
       color: var(--ink);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
     }
 
-    .title-page h1 strong {
-      font-weight: 700;
+    .hdr-sub {
+      font-size: 1.125rem;
+      color: var(--ink-2);
+      margin-bottom: 1.75rem;
+      line-height: 1.5;
+      max-width: 680px;
     }
 
-    .title-page .subtitle {
-      font-size: 1.375rem;
-      font-weight: 400;
-      color: var(--ink-secondary);
-      margin-bottom: 1.5rem;
-      line-height: 1.4;
+    .hdr-meta {
+      display: flex;
+      gap: 2.5rem;
+      font-size: 0.875rem;
+      color: var(--ink-2);
+      flex-wrap: wrap;
     }
 
-    .meta {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.25rem 1.25rem;
-      font-size: 0.9375rem;
-      color: var(--ink-secondary);
-      line-height: 1.6;
-    }
-
-    .meta dt {
+    .hdr-meta-item strong {
+      display: block;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-3);
+      margin-bottom: 0.1rem;
       font-weight: 600;
+    }
+
+    /* ===== SUMMARY BOX ===== */
+    .summary-box {
+      background: var(--ink);
+      color: rgba(250,250,248,0.85);
+      border-radius: 12px;
+      padding: 2rem 2.25rem 1.75rem;
+      margin: 2.25rem 0 0;
+    }
+
+    .summary-title {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .summary-steps { list-style: none; display: grid; gap: 0.75rem; }
+
+    .summary-steps li {
+      display: flex;
+      gap: 0.875rem;
+      align-items: flex-start;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: var(--ink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8125rem;
+      margin-top: 0.15rem;
+    }
+
+    .step-content strong { display: block; color: rgba(250,250,248,0.95); font-weight: 600; margin-bottom: 0.05rem; }
+
+    /* ===== PART DIVIDER ===== */
+    .part-divider {
+      margin: 5rem 0 3.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .part-divider::before {
+      content: '';
+      display: block;
+      height: 1px;
+      background: var(--border);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+    }
+
+    .part-divider-inner {
+      display: inline-block;
+      position: relative;
+      background: var(--bg);
+      padding: 1.25rem 2.75rem;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+    }
+
+    .part-num {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .part-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
       color: var(--ink);
     }
 
-    .meta dd {
-      margin: 0;
+    /* ===== SECTIONS ===== */
+    section { padding-top: 3.5rem; }
+
+    /* ===== HEADINGS ===== */
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
     }
 
-    /* ===== INTRO ===== */
-    .intro {
-      margin-top: 1.5rem;
-      color: var(--ink-secondary);
-      font-size: 1rem;
-      line-height: 1.7;
+    h3 {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
     }
 
-    /* ===== NAVIGATION GRID ===== */
-    .nav-grid {
-      margin-top: 2.5rem;
+    h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 1.25rem;
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .nav-grid-inner {
+    /* ===== PROSE ===== */
+    p { margin-bottom: 0.875rem; color: var(--ink-2); }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 600; color: var(--ink); }
+
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
+    a:hover { border-bottom-color: var(--accent); }
+
+    code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.875em;
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      padding: 0.1em 0.35em;
+      border-radius: 4px;
+    }
+
+    /* ===== LISTS ===== */
+    ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; color: var(--ink-2); }
+    li { margin-bottom: 0.35rem; padding-left: 0.2rem; }
+    li::marker { color: var(--accent); }
+    li strong { color: var(--ink); }
+
+    /* ===== TABLES ===== */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+
+    thead th {
+      background: var(--bg-warm);
+      font-weight: 700;
+      text-align: left;
+      padding: 0.65rem 1rem;
+      border-bottom: 2px solid var(--accent);
+      color: var(--ink);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink-2);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(0,0,0,0.015); }
+    tbody td strong { color: var(--ink); }
+
+    /* ===== BLOCKQUOTES / TEMPLATES ===== */
+    blockquote {
+      position: relative;
+      border-left: 3px solid var(--accent);
+      margin: 1.25rem 0;
+      padding: 1rem 1.25rem;
+      background: var(--accent-bg);
+      border-radius: 0 8px 8px 0;
+    }
+
+    blockquote p { margin-bottom: 0.5rem; font-size: 0.9375rem; color: var(--ink-2); }
+    blockquote p:last-child { margin-bottom: 0; }
+
+    blockquote blockquote {
+      border-left-color: var(--border);
+      background: rgba(255,255,255,0.5);
+      margin: 0.5rem 0;
+    }
+
+    /* ===== TIP ===== */
+    .tip {
+      border-left: 3px solid var(--accent);
+      margin: 1.25rem 0;
+      padding: 0.875rem 1.25rem;
+      background: var(--accent-bg);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .tip-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .tip p { margin-bottom: 0; font-size: 0.9375rem; }
+
+    /* ===== AUTO BADGE ===== */
+    .auto-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--accent-bg);
+      border: 1px solid var(--accent-border);
+      border-radius: 5px;
+      padding: 0.1rem 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      vertical-align: middle;
+      font-family: var(--font-sans);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .auto-badge svg { width: 11px; height: 11px; stroke: var(--accent); stroke-width: 2; fill: none; }
+
+    /* ===== STAT ROW ===== */
+    .stat-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
+      margin: 1.5rem 0;
     }
 
-    .nav-card {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--warm);
-      border-radius: 12px;
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
       padding: 1.25rem 1rem;
-      text-decoration: none;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label { font-size: 0.8125rem; color: var(--ink-2); line-height: 1.4; }
+
+    /* ===== ACCORDION ===== */
+    details {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 0.8rem 1rem;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      cursor: pointer;
+      background: var(--bg-warm);
       color: var(--ink);
-      transition: all 0.3s ease;
+      list-style: none;
       display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: background 0.15s;
     }
 
-    .nav-card:hover {
-      background: rgba(255, 255, 255, 0.85);
-      border-color: var(--accent);
-      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.10);
-      transform: translateY(-2px);
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      transition: transform 0.2s;
     }
 
-    .nav-card-icon {
+    details[open] summary::after { transform: rotate(45deg); }
+    details[open] summary { background: var(--accent-bg); }
+
+    .details-body {
+      padding: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===== FUNNEL DIAGRAM ===== */
+    .funnel { margin: 2rem 0; }
+
+    .funnel-sources {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .funnel-source {
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.3rem 0.875rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--ink-2);
+    }
+
+    .funnel-arrow { text-align: center; color: var(--accent); font-size: 1.5rem; line-height: 2; }
+
+    .funnel-hub {
+      background: var(--accent);
+      color: white;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 380px;
+    }
+
+    .funnel-hub-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; }
+    .funnel-hub-sub { font-size: 0.8125rem; opacity: 0.85; }
+
+    .funnel-split {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .funnel-tier {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.875rem 0.75rem;
+      text-align: center;
+    }
+
+    .funnel-tier-badge {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .funnel-tier-title { font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.25rem; }
+    .funnel-tier-desc { font-size: 0.8125rem; color: var(--ink-2); line-height: 1.4; }
+
+    /* ===== TABS ===== */
+    .tabs { margin: 1.5rem 0; }
+
+    .tab-nav {
+      display: flex;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .tab-btn {
+      padding: 0.55rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--ink-2);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.15s;
+    }
+
+    .tab-btn:hover { color: var(--ink); }
+    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .tab-pane { display: none; padding-top: 1.5rem; }
+    .tab-pane.active { display: block; }
+
+    /* ===== PRICING CARDS ===== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .price-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 1.25rem;
+      position: relative;
+    }
+
+    .price-card.featured { border-color: var(--accent); border-width: 2px; }
+
+    .price-badge {
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .price-name { font-weight: 700; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); margin-bottom: 0.4rem; }
+    .price-range { font-family: var(--font-serif); font-size: 1.375rem; color: var(--accent); margin-bottom: 0.75rem; }
+    .price-desc { font-size: 0.875rem; color: var(--ink-2); line-height: 1.5; }
+
+    /* ===== AUTOMATION CARDS ===== */
+    .auto-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .auto-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .auto-icon {
       width: 36px;
       height: 36px;
       background: var(--ink);
@@ -195,1199 +627,1288 @@ export const prerender = true;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0.35rem;
-      transition: background 0.3s ease;
-    }
-
-    .nav-card:hover .nav-card-icon {
-      background: var(--accent);
-    }
-
-    .nav-card-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--canvas);
-      stroke-width: 2;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .nav-card-title {
-      font-weight: 600;
-      font-size: 0.9375rem;
-      color: var(--ink);
-      line-height: 1.3;
-    }
-
-    .nav-card-desc {
-      font-size: 0.8125rem;
-      color: var(--ink-secondary);
-      line-height: 1.45;
-    }
-
-    /* ===== SECTIONS ===== */
-    section {
-      padding-top: 4rem;
-      margin-top: 2rem;
-      border-top: 2px solid var(--warm);
-    }
-
-    section:first-of-type {
-      padding-top: 0;
-      margin-top: 0;
-      border-top: none;
-    }
-
-    /* ===== HEADINGS ===== */
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--ink);
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      padding-top: 0;
-      border-top: none;
-    }
-
-    h3 {
-      font-size: 1.1875rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-top: 2.25rem;
       margin-bottom: 0.75rem;
     }
 
-    h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
+    .auto-icon svg { width: 17px; height: 17px; stroke: var(--accent); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .auto-card-title { font-weight: 700; font-size: 0.9375rem; color: var(--ink); margin-bottom: 0.875rem; }
 
-    /* ===== PARAGRAPHS & INLINE ===== */
-    p {
-      margin-bottom: 1rem;
-      color: var(--ink-secondary);
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    strong {
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    code {
-      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-      font-size: 0.875em;
-      background: var(--warm-light);
-      border: 1px solid var(--warm);
-      padding: 0.1em 0.4em;
-      border-radius: 4px;
-      color: var(--ink);
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    a:hover {
-      border-bottom-color: var(--accent);
-    }
-
-    hr {
-      border: none;
-      border-top: 2px solid var(--warm);
-      margin: 3rem 0;
-    }
-
-    /* ===== LISTS ===== */
-    ul, ol {
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      color: var(--ink-secondary);
-    }
-
-    li {
-      margin-bottom: 0.35rem;
-      padding-left: 0.25rem;
-    }
-
-    li strong {
-      color: var(--ink);
-    }
-
-    li::marker {
-      color: var(--accent);
-    }
-
-    /* ===== TABLES ===== */
-    .table-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid var(--warm);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9375rem;
-      line-height: 1.5;
-    }
-
-    thead th {
-      background: var(--warm-light);
-      font-weight: 600;
-      text-align: left;
-      padding: 0.75rem 1rem;
-      border-bottom: 2px solid var(--accent);
-      color: var(--ink);
-      white-space: nowrap;
-    }
-
-    tbody td {
-      padding: 0.625rem 1rem;
-      border-bottom: 1px solid var(--warm);
-      color: var(--ink-secondary);
-      vertical-align: top;
-    }
-
-    tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    tbody tr:hover {
-      background: #fafaf6;
-    }
-
-    /* ===== BLOCKQUOTES ===== */
-    blockquote {
-      border-left: 4px solid var(--accent);
-      margin: 1.25rem 0;
-      padding: 1rem 1.25rem;
-      background: var(--accent-light);
-      border-radius: 0 6px 6px 0;
-      color: var(--ink-secondary);
-      font-size: 0.9625rem;
-    }
-
-    blockquote p {
-      margin-bottom: 0.75rem;
-    }
-
-    blockquote p:last-child {
-      margin-bottom: 0;
-    }
-
-    blockquote strong {
-      color: var(--ink);
-    }
-
-    /* Nested blockquotes (for template blocks) */
-    blockquote blockquote {
-      border-left-color: var(--warm);
-      background: rgba(255,255,255,0.5);
-      margin: 0.75rem 0;
-    }
-
-    /* ===== EXECUTIVE SUMMARY ===== */
-    .summary-box {
-      background: var(--ink);
-      color: var(--canvas);
-      border-radius: 12px;
-      padding: 2rem 2rem 1.75rem;
-      margin: 2.5rem 0 1rem;
-    }
-
-    .summary-box h2 {
-      color: var(--accent);
-      font-size: 1rem;
-      margin-bottom: 1.25rem;
-      letter-spacing: 0.1em;
-    }
-
-    .summary-box p {
-      color: rgba(250, 250, 248, 0.8);
-      font-size: 1rem;
-      line-height: 1.65;
-      margin-bottom: 1rem;
-    }
-
-    .summary-box p:last-child {
-      margin-bottom: 0;
-    }
-
-    .summary-box strong {
-      color: var(--canvas);
-    }
-
-    .summary-steps {
-      list-style: none;
-      padding-left: 0;
-      margin: 1.25rem 0;
+    .auto-cols {
       display: grid;
-      gap: 0.75rem;
-    }
-
-    .summary-steps li {
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
-      padding: 0;
-      color: rgba(250, 250, 248, 0.8);
-      font-size: 0.9375rem;
-      line-height: 1.5;
-    }
-
-    .summary-steps li::marker {
-      content: none;
-    }
-
-    .step-num {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      background: var(--accent);
-      color: var(--ink);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.625rem;
       font-size: 0.8125rem;
     }
 
-    .step-content strong {
-      color: var(--canvas);
-      display: block;
-      margin-bottom: 0.1rem;
-    }
-
-    /* ===== TIP CALLOUTS ===== */
-    .tip {
-      border-left: 4px solid var(--accent);
-      margin: 1.25rem 0;
-      padding: 1rem 1.25rem;
-      background: var(--accent-glow);
-      border-radius: 0 8px 8px 0;
-    }
-
-    .tip-label {
-      font-size: 0.75rem;
+    .auto-col-head {
+      font-size: 0.6875rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.35rem;
+      color: var(--ink-3);
+      margin-bottom: 0.25rem;
     }
 
-    .tip p {
-      margin-bottom: 0;
-      font-size: 0.9375rem;
+    .auto-col-trigger { color: var(--ink-2); line-height: 1.45; }
+    .auto-col-result { color: var(--accent); line-height: 1.45; }
+
+    /* ===== CALLOUT BOX ===== */
+    .callout {
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      background: var(--accent-bg);
     }
 
-    /* ===== SECTION DIVIDERS ===== */
-    .section {
-      margin-bottom: 2rem;
-    }
+    .callout-title { font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; font-size: 0.9375rem; }
+    .callout p { margin-bottom: 0; font-size: 0.9375rem; }
 
     /* ===== INLINE IMAGE ===== */
-    .inline-image {
+    .inline-img {
       max-width: 100%;
       border-radius: 8px;
-      border: 1px solid var(--warm);
+      border: 1px solid var(--border);
       margin: 1.5rem 0;
       display: block;
     }
 
-    /* ===== FOOTER ===== */
-    .document-footer {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 2px solid var(--warm);
-      text-align: center;
-      color: var(--ink-secondary);
-      font-size: 0.8125rem;
-      letter-spacing: 0.1em;
-    }
-
-    .document-footer .brand-footer {
-      font-weight: 700;
-      color: var(--accent);
-      font-size: 0.875rem;
-      letter-spacing: 0.15em;
-    }
-
-    /* ===== VERSION FOOTNOTE ===== */
-    .version-footnote {
-      margin-top: 3rem;
-      font-size: 0.875rem;
-      font-style: italic;
-      color: var(--ink-secondary);
-    }
-
     /* ===== BACK TO TOP ===== */
-    .back-to-top {
+    .back-top {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      width: 3rem;
-      height: 3rem;
+      width: 2.75rem;
+      height: 2.75rem;
       background: var(--accent);
       color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem;
-      font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-      z-index: 100;
+      box-shadow: 0 2px 12px rgba(20,184,166,0.35);
+      transition: all 0.25s;
       opacity: 0;
       pointer-events: none;
       transform: translateY(8px);
+      z-index: 50;
     }
 
-    .back-to-top.is-visible {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
+    .back-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-top:hover { background: var(--ink); box-shadow: 0 4px 16px rgba(0,0,0,0.15); border-bottom: none; }
+    .back-top svg { width: 17px; height: 17px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ===== FOOTER ===== */
+    .doc-footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--ink-3);
     }
 
-    .back-to-top:hover {
-      background: var(--ink);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      border-bottom-color: transparent;
-    }
-
-    /* ===== AUTOMATION BADGE ===== */
-    .auto-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: var(--accent-light);
-      border: 1px solid rgba(20, 184, 166, 0.2);
-      border-radius: 6px;
-      padding: 0.15rem 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 600;
+    .doc-footer strong {
+      display: block;
       color: var(--accent);
-      letter-spacing: 0.03em;
-      vertical-align: middle;
+      font-size: 0.6875rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      font-weight: 700;
     }
 
-    .auto-badge svg {
-      width: 12px;
-      height: 12px;
-      stroke: var(--accent);
-      stroke-width: 2;
-      fill: none;
+    /* ===== MOBILE TOGGLE ===== */
+    #toc-toggle {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 101;
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    /* ===== PRINT STYLES ===== */
-    @media print {
-      @page {
-        size: A4;
-        margin: 2cm 2.5cm 3cm 2.5cm;
+    #toc-toggle svg { width: 20px; height: 20px; stroke: white; stroke-width: 2; fill: none; stroke-linecap: round; }
 
-        @bottom-center {
-          content: "KNAP GEMAAKT.";
-          font-family: 'Inter Tight', system-ui, sans-serif;
-          font-size: 8pt;
-          color: #14B8A6;
-          letter-spacing: 0.15em;
-          font-weight: 600;
-        }
-      }
-
-      body {
-        background: white;
-        font-size: 10pt;
-        line-height: 1.6;
-      }
-
-      .document {
-        max-width: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .back-to-top {
-        display: none;
-      }
-
-      .fade-in {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-
-      .title-page {
-        padding: 2rem 0 2rem;
-        page-break-after: always;
-      }
-
-      section {
-        page-break-before: always;
-        padding-top: 1rem;
-        margin-top: 0;
-        border-top: none;
-      }
-
-      section:first-of-type {
-        page-break-before: avoid;
-      }
-
-      h2 {
-        page-break-after: avoid;
-      }
-
-      h3 {
-        page-break-after: avoid;
-      }
-
-      table, blockquote, ul, ol {
-        page-break-inside: avoid;
-      }
-
-      .table-wrapper {
-        border: 1px solid #ccc;
-      }
-
-      thead th {
-        background: #f0ede8 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      tbody tr:hover {
-        background: none;
-      }
-
-      blockquote {
-        background: #f8f8f6 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      .nav-card {
-        border: 1px solid #ccc;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      .nav-card-icon {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      .inline-image {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      a {
-        color: var(--ink);
-        border-bottom: none;
-      }
-
-      .document-footer {
-        display: none;
-      }
+    .sb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 99;
     }
 
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 640px) {
-      .document {
-        padding: 2rem 1.25rem 3rem;
-      }
-
-      .title-page h1 {
-        font-size: 1.75rem;
-      }
-
-      h2 {
-        font-size: 1.25rem;
-      }
-
-      table {
-        font-size: 0.8125rem;
-      }
-
-      thead th, tbody td {
-        padding: 0.5rem 0.625rem;
-      }
-
-      .nav-grid-inner {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 1100px) {
+      :root { --sidebar-w: 210px; }
+      #content { padding: 2.5rem 2.5rem 5rem 2.25rem; }
     }
 
-    @media (min-width: 641px) and (max-width: 800px) {
-      .nav-grid-inner {
-        grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 860px) {
+      #layout { grid-template-columns: 1fr; }
+
+      #sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        z-index: 100;
+        width: 280px;
+        transition: left 0.3s ease;
+        box-shadow: 4px 0 20px rgba(0,0,0,0.1);
       }
+
+      #sidebar.open { left: 0; }
+      .sb-overlay.active { display: block; }
+      #toc-toggle { display: flex; }
+      #content { padding: 4.5rem 1.5rem 4rem; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .auto-grid { grid-template-columns: 1fr; }
+      .funnel-split { grid-template-columns: 1fr; }
+      .hdr-title { font-size: 2rem; }
+    }
+
+    @media (min-width: 861px) {
+      #toc-toggle { display: none !important; }
+      .sb-overlay { display: none !important; }
+    }
+
+    @media print {
+      #sidebar, #toc-toggle, .back-top { display: none; }
+      #layout { display: block; }
+      #content { padding: 0; }
+      section { page-break-inside: avoid; }
+      h2, h3 { page-break-after: avoid; }
     }
   </style>
 </head>
 <body>
 
-<div class="document">
+<div id="top"></div>
+<div class="sb-overlay" id="sb-overlay"></div>
 
-  <!-- TITLE PAGE -->
-  <div id="top"></div>
-  <header class="title-page fade-in">
-    <div class="brand">KNAP GEMAAKT.</div>
-    <h1>Jonkers Groep (<strong>Hoveniersbedrijf</strong> | Schroeffunderingen | Infra)</h1>
-    <p class="subtitle">Plan voor Online Zichtbaarheid</p>
-    <dl class="meta">
-      <dt>Datum</dt>
-      <dd>28 maart 2026</dd>
-      <dt>Door</dt>
-      <dd>KNAP GEMAAKT.</dd>
-      <dt>Voor</dt>
-      <dd>Jonkers Groep, Rossum (gemeente Maasdriel)</dd>
-      <dt>Focus</dt>
-      <dd>Hoveniersbedrijf Jonkers</dd>
-    </dl>
-    <p class="intro">Dit plan richt zich op de digitale basis: gevonden worden in Google, reviews verzamelen, en een sterke online aanwezigheid. Het meeste kan binnen enkele weken opgezet worden. Sommige dingen (zoals categorie en foto's aanpassen) zijn binnen dagen zichtbaar, terwijl het opbouwen van reviews en zoekposities enkele maanden kost.</p>
-    <p class="intro">KNAP GEMAAKT. helpt met de website, de technische kant, en het opzetten van slimme automatiseringen. Dit plan legt de strategie uit; de uitvoering pakken we samen op.</p>
+<button id="toc-toggle" aria-label="Inhoudsopgave openen">
+  <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
 
-    <!-- EXECUTIVE SUMMARY -->
-    <div class="summary-box fade-in delay-1">
-      <h2>DE BASIS</h2>
-      <ol class="summary-steps">
-        <li>
-          <span class="step-num">1</span>
-          <span class="step-content"><strong>Google categorie wijzigen naar "Hovenier"</strong>Mensen zoeken op "hovenier," niet op "landschapsarchitect." Eenmalige aanpassing.</span>
-        </li>
-        <li>
-          <span class="step-num">2</span>
-          <span class="step-content"><strong>Structureel reviews verzamelen</strong>Reviews zijn een enorm groot aandeel van organisch verkeer vanuit Google &amp; Maps. Vraag iedere klant na oplevering om een review.</span>
-        </li>
-        <li>
-          <span class="step-num">3</span>
-          <span class="step-content"><strong>Wekelijks een foto + post op Google</strong>Zonder advertentiekosten extra informatie over je bedrijf geven, en tegelijkertijd communiceren dat je ook online een actief bedrijf bent.</span>
-        </li>
-        <li>
-          <span class="step-num">4</span>
-          <span class="step-content"><strong>Website met stadspagina's</strong>Lokale pagina's zorgen ervoor dat je gevonden wordt in plaatsen buiten je directe omgeving, ook als het Google profiel daar niet meer genoeg is.</span>
-        </li>
-      </ol>
-      <p>Hieronder wordt elk onderwerp uitgebreid behandeld.</p>
-    </div>
+<div id="layout">
 
-    <!-- NAVIGATION GRID -->
-    <div class="nav-grid fade-in delay-2">
-      <div class="nav-grid-inner">
-        <a href="#google-bedrijfsprofiel" class="nav-card">
-          <span class="nav-card-icon">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </span>
-          <span class="nav-card-title">Google Bedrijfsprofiel</span>
-          <span class="nav-card-desc">Categorie, diensten, foto's en wekelijks posten</span>
-        </a>
-        <a href="#google-reviews" class="nav-card">
-          <span class="nav-card-icon">
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </span>
-          <span class="nav-card-title">Google Reviews</span>
-          <span class="nav-card-desc">Reviewstrategie en automatische opvolging</span>
-        </a>
-        <a href="#kennisbank" class="nav-card">
-          <span class="nav-card-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </span>
-          <span class="nav-card-title">Website</span>
-          <span class="nav-card-desc">Blogcontent, stadspagina's en positionering</span>
-        </a>
-        <a href="#schroeffunderingen" class="nav-card">
-          <span class="nav-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </span>
-          <span class="nav-card-title">Schroeffunderingen</span>
-          <span class="nav-card-desc">Aparte contentstrategie en positionering</span>
-        </a>
-        <a href="#automatiseringsmogelijkheden" class="nav-card">
-          <span class="nav-card-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          </span>
-          <span class="nav-card-title">Automatisering</span>
-          <span class="nav-card-desc">Reviews, posts en rapportages automatiseren</span>
-        </a>
+  <!-- ===== SIDEBAR ===== -->
+  <aside id="sidebar">
+    <div class="sb-brand">KNAP GEMAAKT.</div>
+    <div class="sb-client">Hoveniersbedrijf Jonkers</div>
+
+    <nav aria-label="Inhoudsopgave">
+      <div class="toc-group-label">Deel 1 — Online Basis</div>
+      <a href="#gbp" class="toc-link">1. Google Bedrijfsprofiel</a>
+      <a href="#reviews" class="toc-link">2. Google Reviews</a>
+      <a href="#vermeldingen" class="toc-link">3. Vermeldingen</a>
+      <a href="#website" class="toc-link">4. Website &amp; Content</a>
+      <a href="#schroef" class="toc-link">5. Schroeffunderingen</a>
+      <a href="#social" class="toc-link">6. Social Media</a>
+      <a href="#situatie" class="toc-link">7. Huidige situatie</a>
+      <a href="#strategie" class="toc-link">8. Strategie</a>
+
+      <div class="toc-group-label">Deel 2 — Leads &amp; Klantcontact</div>
+      <a href="#tuinprijscheck" class="toc-link">9. Tuinprijscheck</a>
+      <a href="#video" class="toc-link">10. Video-content</a>
+      <a href="#seo" class="toc-link">11. SEO &amp; Blog</a>
+      <a href="#buurt" class="toc-link">12. Buurtmarketing</a>
+      <a href="#doorverwijzing" class="toc-link">13. Doorverwijzingen</a>
+      <a href="#b2b" class="toc-link">14. B2B Schroeffunderingen</a>
+      <a href="#klantbehoud" class="toc-link">15. Klantbehoud</a>
+      <a href="#conversie" class="toc-link">16. Hulpmiddelen</a>
+
+      <div class="toc-group-label">Deel 3 — Automatisering</div>
+      <a href="#automatisering" class="toc-link">17. Automatisering</a>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="content">
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <div class="hdr-brand">KNAP GEMAAKT.</div>
+      <h1 class="hdr-title">Jonkers — Online Zichtbaarheid &amp; Leads</h1>
+      <p class="hdr-sub">Van Google-profiel tot meer klanten</p>
+      <div class="hdr-meta">
+        <div class="hdr-meta-item"><strong>Datum</strong>3 april 2026</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-title">De basis — begin hier</div>
+        <ol class="summary-steps">
+          <li>
+            <span class="step-num">1</span>
+            <div class="step-content"><strong>Google categorie naar "Hovenier"</strong>Mensen zoeken op "hovenier," niet op "landschapsarchitect." Eenmalige aanpassing, direct effect.</div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div class="step-content"><strong>Reviews verzamelen</strong>Reviews zijn belangrijk voor zichtbaarheid op Google Maps. Vraag iedere klant na oplevering.</div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div class="step-content"><strong>Wekelijks foto + Google Post</strong>Gratis zichtbaarheid. Laat zien dat je een actief bedrijf bent.</div>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <div class="step-content"><strong>Tuinprijscheck bouwen</strong>Het centrale punt waar alle andere acties naartoe leiden. Elke lead gaat hier doorheen.</div>
+          </li>
+        </ol>
+      </div>
+      <!-- WAYS TO GET CLIENTS -->
+      <div style="margin-top:2.5rem;">
+        <h3 style="color:var(--ink);font-size:1rem;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1.25rem;">Manieren om aan nieuwe klanten te komen</h3>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;">
+            <div style="font-weight:700;color:var(--accent);font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Video op social media</div>
+            <p style="font-size:0.875rem;color:var(--ink-2);margin:0;line-height:1.6;">Korte video's van afgeronde projecten op Instagram en TikTok. Mensen zien het resultaat, klikken door naar de Tuinprijscheck, en boeken een tuinscan.</p>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;">
+            <div style="font-weight:700;color:var(--accent);font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Buren van een project</div>
+            <p style="font-size:0.875rem;color:var(--ink-2);margin:0;line-height:1.6;">Een bord bij elke klus en handgeschreven briefjes aan de buren. Ze scannen de QR-code, komen op de Tuinprijscheck, en boeken een tuinscan.</p>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;">
+            <div style="font-weight:700;color:var(--accent);font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Doorverwijzingen</div>
+            <p style="font-size:0.875rem;color:var(--ink-2);margin:0;line-height:1.6;">Tevreden klanten krijgen kaartjes om door te geven. Nieuwe klant krijgt €100 korting, doorverwijzer krijgt een cadeaubon.</p>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;">
+            <div style="font-weight:700;color:var(--accent);font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">B2B schroeffunderingen</div>
+            <p style="font-size:0.875rem;color:var(--ink-2);margin:0;line-height:1.6;">Hoveniers en aannemers die zelf geen funderingen plaatsen. Jonkers legt de fundering, zij bouwen erop.</p>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;">
+            <div style="font-weight:700;color:var(--accent);font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Google zoekresultaten</div>
+            <p style="font-size:0.875rem;color:var(--ink-2);margin:0;line-height:1.6;">Blogartikelen en stadspagina's zorgen ervoor dat Jonkers gevonden wordt als mensen zoeken op "hovenier Zaltbommel" of "wat kost een hovenier."</p>
+          </div>
+
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;">
+            <div style="font-weight:700;color:var(--accent);font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Google Reviews</div>
+            <p style="font-size:0.875rem;color:var(--ink-2);margin:0;line-height:1.6;">Goede reviews zorgen voor een hogere positie in Google Maps. Na elke klus vraagt Arno om een review.</p>
+          </div>
+        </div>
+
+        <p style="font-size:0.875rem;color:var(--ink-3);margin-top:0.75rem;">Alle paden komen uit bij de Tuinprijscheck. Daar boekt de klant een tuinscan, en tijdens die tuinscan sluit Arno af met een voorstel in drie opties.</p>
+      </div>
+    </header>
+
+    <!-- ======================== -->
+    <!-- DEEL 1 -->
+    <!-- ======================== -->
+
+    <!-- 1. GOOGLE BEDRIJFSPROFIEL -->
+    <section id="gbp">
+      <h2>1. Google Bedrijfsprofiel</h2>
+
+      <h3>1.1 Hoofdcategorie aanpassen</h3>
+      <p>De huidige hoofdcategorie is "Landschapsarchitect." Maar mensen zoeken niet op dat woord. Ze zoeken op <strong>"hovenier Zaltbommel"</strong> of <strong>"hovenier in de buurt."</strong> Door de categorie te wijzigen naar <strong>"Hovenier"</strong> verschijnt het profiel bij de juiste zoekopdrachten.</p>
+      <img src="/klant/jonkers-google-trends.png" alt="Google Trends: hovenier vs landschapsarchitect" class="inline-img">
+      <p><strong>Hoe:</strong> Profiel bewerken, Bedrijfscategorie, Hoofdcategorie wijzigen naar "Hovenier"</p>
+
+      <h3>1.2 Extra categorieën toevoegen</h3>
+      <p>Het beste is 5 tot 6 categorieën in totaal. Voeg ze toe nadat de hoofdcategorie is gewijzigd.</p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Categorie</th><th>Waarvoor</th></tr></thead>
+          <tbody>
+            <tr><td>Landschapsontwerper</td><td>Mensen die zoeken op tuinontwerp</td></tr>
+            <tr><td>Gazononderhoudsbedrijf</td><td>Mensen die zoeken op tuinonderhoud</td></tr>
+            <tr><td>Bestratingsaannemer</td><td>Mensen die zoeken op bestrating/sierbestrating</td></tr>
+            <tr><td>Boomverzorgingsbedrijf</td><td>Mensen die zoeken op snoeiwerk/boomverzorging</td></tr>
+            <tr><td>Aannemer</td><td>Mensen die zoeken op schroeffunderingen/grondwerk</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>1.3 Diensten toevoegen</h3>
+      <p>Via "Profiel bewerken" en dan "Services." Voeg per dienst een korte beschrijving toe (50 tot 100 woorden).</p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Dienst</th><th>Omschrijving focus</th></tr></thead>
+          <tbody>
+            <tr><td>Tuinaanleg</td><td>Particuliere tuinen, kindvriendelijk, complete projecten</td></tr>
+            <tr><td>Tuinonderhoud</td><td>Onderhoudsbeurten, -contracten, vakantieservice</td></tr>
+            <tr><td>Bestrating en terrassen</td><td>Sierbestrating, terrasaanleg</td></tr>
+            <tr><td>Tuinontwerp en beplantingsplan</td><td>Tuinplannen, stijlen, beplantingsadvies</td></tr>
+            <tr><td>Boomverzorging en snoeien</td><td>Snoeiwerk, boomonderhoud</td></tr>
+            <tr><td>Vijvers en waterpartijen</td><td>Vijveraanleg, poelen, waterpartijen</td></tr>
+            <tr><td>Krinner schroeffunderingen</td><td>Gecertificeerde installatie voor tuinhuizen, overkappingen</td></tr>
+            <tr><td>Grondwerk</td><td>Grondverzet, terreinvoorbereiding</td></tr>
+            <tr><td>Daktuinen en groene gevels</td><td>Daktuinen, verticale tuinen, groene gevels</td></tr>
+            <tr><td>Bedrijfstuinen</td><td>Zakelijke tuinen, parkontwerp, horeca</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tip">
+        <div class="tip-label">Tip: houd het profiel gefocust</div>
+        <p>Diensten zoals zwembad en wellness staan op de website. Maar houd het profiel strak. Hoe meer diensten je toevoegt, hoe minder sterk het scoort op de belangrijkste diensten.</p>
+      </div>
+
+      <h3>1.4 Servicegebied instellen</h3>
+      <p>Je mag maximaal 20 gebieden instellen. Voeg toe: Rossum, Zaltbommel, Kerkdriel, Maasdriel, Ammerzoden, Hedel, Zuilichem, Waardenburg, Geldermalsen, Buren, Tiel, Culemborg, Gorinchem, Hurwenen, Brakel, Gameren</p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Afstand</th><th>Plaatsen</th><th>Verwachting</th></tr></thead>
+          <tbody>
+            <tr><td>0–5 km</td><td>Rossum, Zaltbommel, Kerkdriel</td><td><strong>Sterk.</strong> Hier moet je het beste scoren</td></tr>
+            <tr><td>5–15 km</td><td>Waardenburg, Geldermalsen, Brakel</td><td>Goede kans, zeker als er minder concurrentie is</td></tr>
+            <tr><td>15–20 km</td><td>Tiel, Buren</td><td>Lastig maar mogelijk met goede reviews</td></tr>
+            <tr><td>ca. 30 km</td><td>Culemborg</td><td>Heel moeilijk via Maps. Beter via een stadspagina op de website</td></tr>
+            <tr><td>60+ km</td><td>Utrecht e.a.</td><td>Niet via Maps. Alleen via de website</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>1.5 Adres verbergen (optioneel)</h3>
+      <p>Als klanten niet naar het bedrijfsadres komen, stel het in als "servicegericht bedrijf." Het adres wordt verborgen. Google gebruikt het intern nog wel voor afstandsberekening.</p>
+      <p><strong>Hoe:</strong> Profiel bewerken, Bedrijfslocatie, "Dit adres aan klanten tonen" uitschakelen</p>
+
+      <h3>1.6 Bedrijfsomschrijving</h3>
+      <p>Maximaal 750 tekens. De eerste 250 zijn direct zichtbaar. Schrijf voor mensen, niet voor Google.</p>
+      <blockquote>
+        <p>Hoveniersbedrijf Jonkers is uw ervaren hovenier in de Betuwe. Met ruim 30 jaar vakmanschap realiseert Arno Jonkers complete tuinprojecten in Rossum, Zaltbommel, Tiel en omgeving. Gespecialiseerd in tuinaanleg, tuinonderhoud en bestrating. Gecertificeerd Krinner schroeffunderingen installateur voor duurzame funderingsoplossingen zonder beton. Van tuinontwerp tot sierbestrating, van vijveraanleg tot seizoensonderhoud. Persoonlijke aanpak met oog voor detail. Vraag vrijblijvend een offerte aan.</p>
+      </blockquote>
+
+      <h3>1.7 Openingstijden</h3>
+      <p>"Geopend op moment van zoeken" is een factor voor je positie in Google. Stel in via Profiel bewerken en Openingstijden. Voorbeeld: ma–vr 08:00–17:00, za 09:00–13:00. Voeg speciale openingstijden toe voor feestdagen.</p>
+
+      <h3>1.8 Foto's</h3>
+      <p>Bedrijven met foto's krijgen <strong>42% meer routeverzoeken</strong> en <strong>35% meer websiteklikken.</strong></p>
+      <ul>
+        <li>Voor/na resultaten (zelfde hoek, vergelijkbare belichting)</li>
+        <li>Afgeronde projecten vanuit meerdere hoeken</li>
+        <li>Werkzaamheden in uitvoering en Arno aan het werk</li>
+        <li>Seizoensvariatie (lente aanplant, zomer onderhoud, herfst opruimen)</li>
+        <li>Detailshots (steenpatronen, beplanting, Krinner schroeven)</li>
+      </ul>
+      <p>Gewoonte: 5–10 foto's voor je een klus verlaat. Upload maandelijks 4–8 nieuwe foto's. Gebruik beschrijvende bestandsnamen: <code>tuinaanleg-zaltbommel-2026.jpg</code></p>
+
+      <h3>1.9 Google Posts</h3>
+      <p><strong>Minimaal wekelijks posten</strong> geeft 30–40% meer zichtbaarheid. Gebruik "Bel nu" of "Aanbieding bekijken" als knop. Dat levert bijna 3x meer klikken op dan "Meer informatie". Houd het kort (150–300 tekens) en gebruik altijd een echte foto.</p>
+
+      <details>
+        <summary>Vijf seizoenstemplates</summary>
+        <div class="details-body">
+          <h4>Voorjaar (maart/april)</h4>
+          <blockquote>
+            <p>Het tuinseizoen is begonnen! Plan nu uw tuinaanleg voor dit voorjaar. Arno Jonkers heeft nog beperkte beschikbaarheid in april/mei voor complete tuinprojecten in de Betuwe. Van ontwerp tot oplevering, 30+ jaar ervaring in uw tuin.</p>
+          </blockquote>
+          <h4>Zomer (juni/juli)</h4>
+          <blockquote>
+            <p>Trots op dit project: complete tuinrenovatie in Zaltbommel. Nieuwe bestrating, plantenborders en een waterpartij, in 3 weken gerealiseerd. Bekijk het verschil! Uw droomtuin begint met een gratis adviesgesprek.</p>
+          </blockquote>
+          <h4>Herfst (oktober)</h4>
+          <blockquote>
+            <p>Maak uw tuin winterklaar. November is het ideale moment voor snoeien, bladruimen en het beschermen van uw beplanting. Hoveniersbedrijf Jonkers verzorgt het complete winteronderhoud in Rossum, Zaltbommel, Tiel en omgeving.</p>
+          </blockquote>
+          <h4>Winter (januari)</h4>
+          <blockquote>
+            <p>Winter = plannen voor het voorjaar. Wist u dat Krinner schroeffunderingen het hele jaar door geplaatst kunnen worden? Geen beton, geen droogtijd, direct belastbaar. Ideaal voor overkappingen, schuttingen en tuinhuizen. Gecertificeerd installateur.</p>
+          </blockquote>
+          <h4>Algemeen — review uitlichten</h4>
+          <blockquote>
+            <p>"Arno heeft onze complete tuin aangelegd, van bestrating tot beplanting. Vakkundig, netjes en precies volgens plan. Een echte aanrader!" Bedankt voor het vertrouwen! Benieuwd wat wij voor uw tuin kunnen betekenen?</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <h3>1.10 Bijhouden</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Frequentie</th><th>Actie</th><th>Tijd</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Wekelijks</strong></td><td>1–2 nieuwe projectfoto's, 1 Google Post, alle reviews beantwoorden, reviewverzoeken sturen</td><td>15–20 min</td></tr>
+            <tr><td><strong>Maandelijks</strong></td><td>Statistieken bekijken (welke zoekopdrachten, klikken, bellers), reviewaantal checken, seizoensdiensten bijwerken</td><td>1–2 uur</td></tr>
+            <tr><td><strong>Per kwartaal</strong></td><td>Categorieën controleren, omschrijving bijwerken, NAP-consistentie checken</td><td>30 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2. GOOGLE REVIEWS -->
+    <section id="reviews">
+      <h2>2. Google Reviews</h2>
+      <p>Reviews zijn een van de belangrijkste dingen om hoger te komen in Google. De top 3 bedrijven op Maps bij "hovenier Zaltbommel"? Die staan daar voor een groot deel dankzij goede, recente reviews.</p>
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-num">80%</div>
+          <div class="stat-label">van reviews komt na het eerste verzoek</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4,0★</div>
+          <div class="stat-label">minimum. Onder die grens filtert Google je weg</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">10</div>
+          <div class="stat-label">reviews = al merkbare verbetering in zichtbaarheid</div>
+        </div>
+      </div>
+
+      <h3>2.1 Recent is belangrijker dan veel</h3>
+      <ul>
+        <li>80 reviews waarvan 10 in de afgelopen maand scoort beter dan 200 oude reviews uit 2023.</li>
+        <li>Een 4,3 met 180 reviews verslaat een 5,0 met 8 reviews.</li>
+        <li>Als klanten woorden zoals "tuinaanleg" of "Zaltbommel" gebruiken, toont Google dat als highlight in de zoekresultaten.</li>
+        <li>Google herkent het als er ineens veel reviews tegelijk komen. Vraag het aan elke klant na afronding, maar niet allemaal tegelijk.</li>
+      </ul>
+
+      <h3>2.2 Hoe reviews verzamelen <span class="auto-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-2.82 1.18V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Automatiseerbaar</span></h3>
+
+      <p><strong>Bij oplevering, persoonlijk:</strong></p>
+      <blockquote>
+        <p>[Voornaam], fijn dat je er blij mee bent. Zou je het erg vinden om een Google review achter te laten? Dat helpt me echt om nieuwe klanten te vinden.</p>
+      </blockquote>
+
+      <p><strong>Zelfde dag, e-mail:</strong></p>
+      <blockquote>
+        <p><strong>Onderwerp:</strong> Bedankt voor het vertrouwen, [Voornaam]!</p>
+        <p>Hoi [Voornaam], nog even bedankt voor de fijne samenwerking. Ik hoop dat je nog lang van je [nieuwe tuin / bestrating / tuinonderhoud] mag genieten. Als zelfstandig hovenier zijn ervaringen van klanten heel waardevol. Zou je een paar minuten willen nemen om je ervaring te delen op Google? [LINK] Een paar zinnen is al genoeg. Bedankt! Groet, Arno</p>
+      </blockquote>
+
+      <p><strong>Dag 5–7, WhatsApp:</strong></p>
+      <blockquote>
+        <p>Hoi [naam], hopelijk bevalt de tuin goed. Ik had eerder gevraagd om een review. Als je even tijd hebt: [LINK]</p>
+      </blockquote>
+
+      <p><strong>Dag 14, laatste herinnering:</strong></p>
+      <blockquote>
+        <p>Hoi [naam], even een herinnering over die Google review. Hier is de link nog een keer: [LINK] Helemaal goed als het niet uitkomt.</p>
+      </blockquote>
+
+      <div class="tip">
+        <div class="tip-label">Beste timing voor WhatsApp</div>
+        <p>Woensdag of zaterdag, tussen 10:00–14:00 of 18:00–19:00. Maximaal twee opvolgingen.</p>
+      </div>
+
+      <h3>2.3 Reageren op reviews <span class="auto-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-2.82 1.18V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Automatiseerbaar</span></h3>
+      <p>Beantwoord elke review. Verwerk daarin een plaatsnaam en een dienst. Gebruik nooit twee keer hetzelfde antwoord. Reageer op negatieve reviews binnen 24 uur, op positieve binnen 7 dagen.</p>
+
+      <details>
+        <summary>Drie voorbeeldreacties</summary>
+        <div class="details-body">
+          <h4>Tuinaanleg + Zaltbommel</h4>
+          <blockquote>
+            <p>Wat leuk om te lezen, [naam]! Bedankt voor je mooie woorden. Het was een fantastisch project om jullie tuinaanleg in Zaltbommel te mogen verzorgen. Die combinatie van het terras met de borders past echt perfect bij jullie huis. Geniet ervan!</p>
+          </blockquote>
+          <h4>Bestrating + Betuwe</h4>
+          <blockquote>
+            <p>Dankjewel [naam]! Fijn om te horen dat je zo blij bent met de nieuwe bestrating. De Betuwe is een prachtig gebied om in te werken, zeker met dit soort mooie projecten. Tot de volgende keer!</p>
+          </blockquote>
+          <h4>Tuinontwerp + Tiel</h4>
+          <blockquote>
+            <p>Heel erg bedankt voor je review, [naam]! Het tuinontwerp voor jullie achtertuin in Tiel was echt een leuk project. Mocht je nog tips willen voor de beplanting dit voorjaar, geef gerust een seintje!</p>
+          </blockquote>
+          <h4>Bij negatieve reviews</h4>
+          <p>Binnen 24 uur reageren, bedanken voor feedback, excuses aanbieden, en verdere bespreking telefonisch: "Zou je me willen bellen op [nummer]?" Nooit publiekelijk in discussie gaan.</p>
+        </div>
+      </details>
+
+      <h3>2.4 Spelregels</h3>
+      <p><strong>Mag wel:</strong> Vragen om reviews, links sturen, NFC-kaarten, QR-codes, max. 2 opvolgberichten.<br>
+      <strong>Mag niet:</strong> Nepreviews kopen, alleen positieve reviews tonen, beloningen koppelen aan reviews.</p>
+
+      <h3>2.5 Andere platforms (voor later)</h3>
+      <ul>
+        <li><strong>KlantenVertellen</strong> (€35/maand). Geverifieerde reviews, herkenbare "9,6/10" badge</li>
+        <li><strong>Hovenier.nl</strong> (betaal per aanvraag). Specifiek voor hoveniers, €50 tegoed bij aanmelding</li>
+        <li><strong>Trustpilot</strong> (gratis). Goed vindbaar bij "[bedrijfsnaam] reviews" zoekopdrachten</li>
+        <li><strong>TuinKeur certificering.</strong> Kwaliteitskeurmerk met 120+ checkpunten</li>
+      </ul>
+    </section>
+
+    <!-- 3. VERMELDINGEN -->
+    <section id="vermeldingen">
+      <h2>3. Vermeldingen op andere websites</h2>
+      <p>Als bedrijfsnaam, adres en telefoonnummer (NAP) overal hetzelfde staan, ziet Google dat als een vertrouwenssignaal.</p>
+
+      <h3>3.1 Gratis aanmelden</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Platform</th><th>Toelichting</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Telefoonboek.nl / Places.nl</strong></td><td>Gratis, 15 minuten. Automatisch ook op Openingstijden.com.</td></tr>
+            <tr><td><strong>Hovenier.nl</strong></td><td>Gratis profiel + €50 tegoed</td></tr>
+            <tr><td><strong>HovenierNederland.nl</strong></td><td>Vermelding aanmaken of claimen</td></tr>
+            <tr><td><strong>Trustpilot</strong></td><td>Gratis bedrijfsprofiel</td></tr>
+            <tr><td><strong>Cylex.nl</strong></td><td>Gratis vermelding, 15 minuten</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.2 Lokale samenwerkingen (langere termijn)</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Bron</th><th>Aanpak</th></tr></thead>
+          <tbody>
+            <tr><td>WestBetuweTotaal.nl</td><td>Lokaal nieuws. Artikel of seizoenstips aanbieden.</td></tr>
+            <tr><td>NieuwsbladGeldermalsen.nl</td><td>Lokale krant. Projectverhaal insturen.</td></tr>
+            <tr><td>Gemeente West Betuwe / Maasdriel</td><td>Lokaal evenement sponsoren.</td></tr>
+            <tr><td>Ondernemend Rivierenland</td><td>Lid worden van de ondernemersvereniging.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. WEBSITE & CONTENT -->
+    <section id="website">
+      <h2>4. Website &amp; Content</h2>
+      <p>Blogartikelen zijn een investering op langere termijn (3–6 maanden voordat ze goed gevonden worden). Elk stuk content is een deur naar de Tuinprijscheck.</p>
+
+      <div class="tip">
+        <div class="tip-label">Kans die nu open staat</div>
+        <p>Op dit moment publiceren weinig hoveniers in de regio een blog of prijsindicaties op hun website.</p>
+      </div>
+
+      <h3>4.1 Prioriteitsartikelen</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Artikel</th><th>Mensen zoeken op</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Wat kost een hovenier in de Betuwe? (Prijzen 2026)</strong></td><td>wat kost een hovenier per uur, hovenier kosten</td></tr>
+            <tr><td>Tuin laten aanleggen: wat kost het werkelijk?</td><td>tuin laten aanleggen kosten</td></tr>
+            <tr><td><strong>Schroeffundering vs. betonpoer: eerlijk vergeleken</strong></td><td>schroeffundering vs betonpoer</td></tr>
+            <tr><td>Onderhoudsvriendelijke tuin aanleggen op rivierklei: wat werkt echt</td><td>onderhoudsvriendelijke tuin, tuin rivierklei</td></tr>
+            <tr><td>Tuin laten aanleggen: van eerste idee tot oplevering</td><td>tuin laten aanleggen, hoe werkt een tuinscan</td></tr>
+            <tr><td>Kleine tuin inrichten: 12 slimme ideeën</td><td>kleine tuin inrichten</td></tr>
+            <tr><td>Wat kost bestrating per m²?</td><td>wat kost bestrating per m2</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>4.2 Aanpak per artikel</h3>
+      <ul>
+        <li>Praktisch, eerlijk, voor de consument geschreven. Arno's stem, geen marketingtaal</li>
+        <li>Prijsindicaties opnemen waar mogelijk. Daarmee trek je bezoekers die klaar zijn om te kopen</li>
+        <li>Veelgestelde vragen onderaan elk artikel</li>
+        <li>Links naar relevante dienst- en stadspagina's</li>
+        <li>Onderaan: link naar de Tuinprijscheck quiz</li>
+      </ul>
+
+      <h3>4.3 Seizoensartikelen</h3>
+      <p>Publiceer 4–6 weken voor het seizoen:</p>
+      <ul>
+        <li><strong>Februari:</strong> "Wanneer beginnen met tuinaanleg? Het eerlijke antwoord"</li>
+        <li><strong>September:</strong> "Waarom herfst het beste seizoen is voor een nieuwe tuin"</li>
+        <li><strong>Oktober:</strong> "Tuin winterklaar maken: checklist voor de Betuwe"</li>
+        <li><strong>Maart:</strong> "Snoeien in het voorjaar: wat mag, wat moet, wat mag absoluut niet"</li>
+      </ul>
+
+      <h3>4.4 Lead magnet: Tuinprijsgids Betuwe 2026</h3>
+      <p>Het prijsartikel werkt ook als downloadbare PDF. Bezoekers vullen hun e-mailadres in om de PDF te ontvangen. Dat e-mailadres start automatisch de opvolgmails (zie Deel 2, sectie 9.6).</p>
+
+      <h3>4.5 Stadspagina's</h3>
+      <p>Aparte pagina's per doelplaats. Minimaal 600 woorden unieke content per pagina. Gebruik lokale projectfoto's, een testimonial uit die regio, en een verwijzing naar de bodemsoort.</p>
+      <p><strong>Prioriteit:</strong> Rossum (homepage), Zaltbommel, Kerkdriel, Geldermalsen, Waardenburg, Tiel, Buren, Ammerzoden, Bommelerwaard (regionaal), Rivierenland (regionaal).</p>
+    </section>
+
+    <!-- 5. SCHROEFFUNDERINGEN -->
+    <section id="schroef">
+      <h2>5. Schroeffunderingen</h2>
+
+      <h3>5.1 Positionering</h3>
+      <p>Er zijn meerdere bedrijven die Krinner-producten installeren. Wat Jonkers anders maakt is de combinatie: fundering en tuinaanleg uit één hand.</p>
+      <blockquote>
+        <p>"Gecertificeerd Krinner installateur met 30+ jaar hovenierservaring. Van fundering tot complete tuin, alles uit een hand."</p>
+      </blockquote>
+      <div class="tip">
+        <div class="tip-label">Aandachtspunt</div>
+        <p>Controleer het exacte type Krinner-certificering (gecertificeerd installateur vs. geautoriseerd partner) voor het bouwen van marketingmateriaal. De tekst moet precies kloppen.</p>
+      </div>
+
+      <h3>5.2 Content voor jonkersschroeffundering.nl</h3>
+      <p><strong>Per toepassing een pagina:</strong> tuinhuis, overkapping/terrasoverkapping, veranda, schutting, zonnepanelen.</p>
+      <p><strong>Vragen die mensen stellen:</strong></p>
+      <ul>
+        <li>Schroeffundering vs. betonpoer: eerlijk vergeleken</li>
+        <li>Kosten schroeffundering: wat kost het werkelijk?</li>
+        <li>Schroeffundering in klei en veengrond: werkt het? (extra relevant voor Rivierenland)</li>
+        <li>Hoe lang gaat een schroeffundering mee?</li>
+      </ul>
+
+      <h3>5.3 Video-content</h3>
+      <p>Het installatieproces is visueel sterk: een stalen schroef draait in minder dan 5 minuten de grond in. Schoon, geen modder, direct belastbaar. Goed voor korte video's op Instagram en Google.</p>
+    </section>
+
+    <!-- 6. SOCIAL MEDIA -->
+    <section id="social">
+      <h2>6. Social Media</h2>
+
+      <h3>6.1 Instagram</h3>
+      <p>Post gewoon wat je toch al doet. 1 post per week is al goed.</p>
+      <ul>
+        <li><strong>Korte video's:</strong> 15–30 seconden werkzaamheden, voor/na, schroeffunderingen installatie</li>
+        <li><strong>Foto's:</strong> Voor/na-paren, afgeronde projecten vanuit meerdere hoeken</li>
+      </ul>
+      <p>Gebruik locatietags voor Betuwe-plaatsen.</p>
+      <div class="tip">
+        <div class="tip-label">Biolink: één link, direct doel</div>
+        <p>Geen Linktree. Geen homepage. De biolink gaat direct naar de Tuinprijscheck landingspagina. Op mobiel ook een WhatsApp-link met vooringevuld bericht als alternatief: <em>"Hoi Arno, ik zag jullie werk op Instagram en ben benieuwd wat zoiets voor mijn tuin zou kosten."</em></p>
+      </div>
+    </section>
+
+    <!-- 7. HUIDIGE SITUATIE -->
+    <section id="situatie">
+      <h2>7. Huidige situatie</h2>
+
+      <h3>7.1 Websites</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Website</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><strong>hoveniersbedrijfjonkers.nl</strong></td><td>Actief, maar verouderd (laatste blogpost 2015)</td></tr>
+            <tr><td><strong>jonkersschroeffundering.nl</strong></td><td>Actief, gecertificeerd Krinner partner</td></tr>
+            <tr><td><strong>jonkersgroep.nl</strong></td><td>Actief, maar verouderd</td></tr>
+            <tr><td><strong>jonkersinfra.nl</strong></td><td>Offline</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>De nieuwe website vervangt hoveniersbedrijfjonkers.nl. Het Google Bedrijfsprofiel verwijst naar de website die past bij de categorie: het hoveniers-profiel linkt naar de hoveniers-site.</p>
+    </section>
+
+    <!-- 8. STRATEGIE -->
+    <section id="strategie">
+      <h2>8. Strategie &amp; Positionering</h2>
+
+      <h3>"De hovenier van de Bommelerwaard"</h3>
+      <p>Concurrenten claimen "de Betuwe." Jonkers kan de Bommelerwaard claimen. Dat is fysiek correct (Rossum ligt in de Bommelerwaard), minder betwist, en eerlijker. Honkoop zegt "De hovenier van de Betuwe" maar heeft die claim niet hard gemaakt. De kans is er.</p>
+
+      <h3>Eerlijke eenmanszaak-positionering</h3>
+      <p>Verwijzingen naar "ons team" aanpassen waar het niet klopt. Het verhaal van de solo vakman is juist een sterk punt: <em>"Bij mij geen doorlopende band. Ik ken elke tuin die ik aanleg."</em></p>
+
+      <h3>Focus op drie kerndiensten</h3>
+      <p>Leid met tuinaanleg, tuinonderhoud en bestrating. Zet schroeffunderingen neer als iets waar Jonkers zich mee onderscheidt. Overige mogelijkheden op de website, maar niet als hoofddiensten in het profiel.</p>
+
+      <h3>Prijstransparantie</h3>
+      <p>Publiceer minimaal "vanaf"-prijsindicaties. Daarmee trek je bezoekers aan die klaar zijn om te kopen. Het verlaagt ook de drempel voor het eerste contact. Er zijn weinig concurrenten die dit doen. Dat maakt het een goede kans.</p>
+    </section>
+
+    <!-- ======================== -->
+    <!-- DEEL 2: LEADS & KLANTCONTACT -->
+    <!-- ======================== -->
+    <div class="part-divider">
+      <div class="part-divider-inner">
+        <div class="part-num">Deel 2</div>
+        <div class="part-title">Leads &amp; Klantcontact</div>
       </div>
     </div>
-  </header>
 
-  <!-- SECTION 1: GOOGLE BEDRIJFSPROFIEL -->
-  <section class="fade-in">
-    <h2 id="google-bedrijfsprofiel">1. Google Bedrijfsprofiel</h2>
+    <!-- 9. TUINPRIJSCHECK -->
+    <section id="tuinprijscheck">
+      <h2>9. De Tuinprijscheck</h2>
+      <p>Alles wat in Deel 1 staat dient één doel: mensen naar de Tuinprijscheck sturen. Elke aanvraag, of die nu via video, Google, buurt, doorverwijzing of B2B binnenkomt, komt hier uit.</p>
 
-    <h3>1.1 Hoofdcategorie aanpassen</h3>
-    <p>De huidige hoofdcategorie is "Landschapsarchitect." Dat klinkt chic, maar mensen zoeken niet op "landschapsarchitect." Ze zoeken op <strong>"hovenier Zaltbommel"</strong> of <strong>"hovenier in de buurt."</strong> Door de categorie te wijzigen naar <strong>"Hovenier"</strong> verschijnt het profiel bij de juiste zoekopdrachten.</p>
-    <img src="/klant/jonkers-google-trends.png" alt="Google Trends: hovenier vs landschapsarchitect" class="inline-image">
-    <p><strong>Hoe:</strong> Profiel bewerken &gt; Bedrijfscategorie &gt; Hoofdcategorie wijzigen naar "Hovenier"</p>
+      <div class="funnel">
+        <div class="funnel-sources">
+          <span class="funnel-source">Instagram/TikTok</span>
+          <span class="funnel-source">Google zoeken</span>
+          <span class="funnel-source">Buurtmarketing</span>
+          <span class="funnel-source">Doorverwijzing</span>
+          <span class="funnel-source">B2B</span>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-hub">
+          <div class="funnel-hub-title">Tuinprijscheck landingspagina</div>
+          <div class="funnel-hub-sub">4 vragen + contactgegevens, verdeeld op postcode</div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-split">
+          <div class="funnel-tier">
+            <div class="funnel-tier-badge">Tier 1</div>
+            <div class="funnel-tier-title">&lt;30 km</div>
+            <div class="funnel-tier-desc">Prijsvergelijking + direct tuinscan boeken</div>
+          </div>
+          <div class="funnel-tier">
+            <div class="funnel-tier-badge">Tier 2</div>
+            <div class="funnel-tier-title">30–50 km</div>
+            <div class="funnel-tier-desc">Prijsvergelijking + aanvraag voor grote projecten</div>
+          </div>
+          <div class="funnel-tier">
+            <div class="funnel-tier-badge">Tier 3</div>
+            <div class="funnel-tier-title">&gt;50 km</div>
+            <div class="funnel-tier-desc">Prijsvergelijking + B2B schroeffundering of doorverwijzing</div>
+          </div>
+        </div>
+      </div>
 
-    <h3>1.2 Extra categorie&euml;n toevoegen</h3>
-    <p>Voeg extra categorie&euml;n toe zodat het profiel ook verschijnt bij verwante zoekopdrachten. Optimaal: 5 tot 6 categorie&euml;n totaal.</p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Categorie</th><th>Waarvoor</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Landschapsontwerper</td><td>Mensen die zoeken op tuinontwerp</td></tr>
-          <tr><td>Gazononderhoudsbedrijf</td><td>Mensen die zoeken op tuinonderhoud</td></tr>
-          <tr><td>Bestratingsaannemer</td><td>Mensen die zoeken op bestrating/sierbestrating</td></tr>
-          <tr><td>Boomverzorgingsbedrijf</td><td>Mensen die zoeken op snoeiwerk/boomverzorging</td></tr>
-          <tr><td>Aannemer</td><td>Mensen die zoeken op schroeffunderingen/grondwerk</td></tr>
-        </tbody>
-      </table>
+      <h3>9.1 De landingspagina</h3>
+      <p>Eén pagina, één doel. Geen navigatiemenu, geen links weg.</p>
+      <ul>
+        <li><strong>Hero:</strong> "Wat kost jouw nieuwe tuin?" Bevestigt direct dat ze op de juiste plek zijn</li>
+        <li><strong>Drie voor/na projectfoto's.</strong> Laten de kwaliteit zien</li>
+        <li><strong>De quiz.</strong> Direct op de pagina ingebouwd, geen doorverwijzing</li>
+        <li><strong>Onder de vouw:</strong> één video testimonial, één garantieverklaring, Arno's foto met één zin introductie</li>
+      </ul>
+
+      <h3>9.2 De quiz</h3>
+      <p>Vier vragen, één tegelijk zichtbaar, voortgangsbalk zichtbaar. Pas na vraag 4 worden de contactgegevens gevraagd.</p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Vraag</th><th>Opties</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1 — Project type</strong></td><td>Tuinaanleg / Bestrating &amp; terras / Overkapping of tuinhuis / Vijveraanleg / Tuinonderhoud / Schroeffundering / Ik weet het nog niet</td></tr>
+            <tr><td><strong>2 — Oppervlakte</strong></td><td>Klein (onder 50m²) / Middelgroot (50–150m²) / Groot (150m²+) / Geen idee</td></tr>
+            <tr><td><strong>3 — Tijdlijn</strong></td><td>Zo snel mogelijk / Dit seizoen / Volgend jaar / Ik oriënteer me nog</td></tr>
+            <tr><td><strong>4 — Postcode</strong></td><td>Vrij tekstveld, wordt gecontroleerd op afstand tot Rossum</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Contactgegevens na vraag 4:</strong> Voornaam (verplicht), e-mailadres (verplicht), WhatsApp-nummer (optioneel).</p>
+      <p>Label bij het WhatsApp-veld: <em>"Vul je WhatsApp-nummer in voor een persoonlijke reactie binnen 1 uur"</em></p>
+      <p>Toestemmingsveld (standaard uitgevinkt): <em>"Ja, ik ontvang graag berichten via WhatsApp en/of e-mail van Hoveniersbedrijf Jonkers over mijn tuinproject. Ik kan mij op elk moment afmelden."</em></p>
+
+      <h3>9.3 De drie resultaatpagina's</h3>
+      <div class="tabs">
+        <div class="tab-nav">
+          <button class="tab-btn active" data-tab="t1">Tier 1 — &lt;30 km</button>
+          <button class="tab-btn" data-tab="t2">Tier 2 — 30–50 km</button>
+          <button class="tab-btn" data-tab="t3">Tier 3 — &gt;50 km</button>
+        </div>
+        <div class="tab-pane active" id="tab-t1">
+          <p>Dit is de pagina waar bezoekers klant worden. Arno ziet nooit een aanvraag die niet eerst langs deze pagina is gegaan.</p>
+          <ul>
+            <li><strong>Wat vergelijkbare projecten kosten.</strong> Gegenereerd op basis van de quizantwoorden. Geen offerte, maar een richtprijs zodat de bezoeker weet in welke orde van grootte hij moet denken</li>
+            <li><strong>Bijpassende voor/na foto's.</strong> Gefilterd op het projecttype uit vraag 1</li>
+            <li><strong>Eén klantvideo.</strong> Als het kan afgestemd op het projecttype</li>
+            <li><strong>Garantieverklaring.</strong> 1 jaar groei, 5 jaar constructie</li>
+            <li><strong>Boekingskalender.</strong> Beschikbare tuinscan-slots voor de komende twee weken, direct boekbaar</li>
+            <li><strong>Beschikbaarheid (echt, niet verzonnen).</strong> "Arno doet maximaal 6 gratis tuinscans per maand. Er zijn nog [X] plekken beschikbaar."</li>
+            <li><strong>Alternatief.</strong> "Nog niet klaar om te plannen? Je ontvangt de prijsvergelijking ook per e-mail." Dit start de automatische opvolgmails</li>
+          </ul>
+        </div>
+        <div class="tab-pane" id="tab-t2">
+          <p>Zelfde prijsvergelijking en voor/na foto's. Boekingskalender vervangen door:</p>
+          <blockquote>
+            <p>Jouw locatie ligt net buiten ons vaste werkgebied. Voor grotere projecten rijden we hier soms wel voor. Vertel ons kort wat je in gedachten hebt.</p>
+          </blockquote>
+          <p>Kort formulier: projectomschrijving (vrij tekstveld), geschat budget, gewenste timing. Arno bekijkt dit handmatig. Hij reageert alleen als het project de afstand waard is.</p>
+        </div>
+        <div class="tab-pane" id="tab-t3">
+          <p>De prijsvergelijking wordt wel getoond. Dat is nuttig en kost niets.</p>
+          <blockquote>
+            <p>We werken als hovenier in de Betuwe, maar voor Krinner schroeffunderingen werken we nationaal samen met hoveniers en aannemers. Is dit jouw project?</p>
+          </blockquote>
+          <p>Twee opties: (1) Schroeffundering B2B contactformulier, (2) Link naar Hovenier.nl "vind een hovenier". Een eerlijke doorverwijzing, geen doodlopend einde.</p>
+        </div>
+      </div>
+
+      <h3>9.4 Na het insturen — WhatsApp-opvolging</h3>
+      <p><strong>Automatisch eerste bericht (binnen 5 minuten na insturen):</strong></p>
+      <blockquote>
+        <p>Hoi [naam]! Arno hier van Hoveniersbedrijf Jonkers. Bedankt voor je aanvraag! Ik kijk er even goed naar en stuur je zo mijn inschatting. Heb je al een idee hoe je de tuin wil gaan gebruiken, of begin je nog met een blanco vel?</p>
+      </blockquote>
+      <p>Arno stuurt daarna handmatig een inschatting in gewone taal. Vervolgens: afspraakvraag met twee concrete tijdopties, geen open vraag.</p>
+
+      <h3>9.5 Opvolgschema — geen WhatsApp-reactie na eerste bericht</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Moment</th><th>Actie</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Dag 3</strong></td><td>Arno neemt een 20-seconden voicenote op. Verwijst naar het projecttype. Vraagt of ze vragen hebben over de prijsvergelijking.</td></tr>
+            <tr><td><strong>Dag 7</strong></td><td>Kort bericht: "Ben je nog op zoek naar een hovenier in [plaats]?"</td></tr>
+            <tr><td><strong>Dag 7+</strong></td><td>Naar maandelijkse opvolgmails. Actieve WhatsApp-opvolging stopt.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>9.6 Automatische opvolgmails</h3>
+      <p>Via Laposta (gratis tot 2.000 contacten, Nederlandse servers, AVG-proof). Start automatisch na het invullen van het formulier.</p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Moment</th><th>Inhoud</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Direct</strong></td><td>Samenvatting van de prijsvergelijking + 2–3 bijpassende projectfoto's + link naar boekingskalender</td></tr>
+            <tr><td><strong>Dag 3</strong></td><td>"Hoe werkt een tuinscan?" Legt uit wat Arno bekijkt en waarom dat leidt tot een betere offerte. Neemt de angst voor verplichtingen weg</td></tr>
+            <tr><td><strong>Dag 7</strong></td><td>Eén voor/na verhaal van een vergelijkbaar project, geschreven vanuit klantperspectief</td></tr>
+            <tr><td><strong>Dag 14</strong></td><td>Eén video testimonial</td></tr>
+            <tr><td><strong>Maandelijks</strong></td><td>Tuintip die past bij het seizoen, relevant voor de Betuwe, met een kleine verwijzing naar de boekingskalender</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>De mailserie stopt automatisch bij een boekingsafspraak. Na projectafronding begint hij opnieuw als onderdeel van klantbehoud.</p>
+
+      <h3>9.7 De tuinscan</h3>
+      <p>Arno komt met één doel: begrijpen wat de klant echt wil. Hij weet al het projecttype, de oppervlakte en het budget uit de quiz. Drie gespreksvragen (casual, niet als checklist):</p>
+      <ul>
+        <li>"Wat stoort je het meest aan je tuin nu?"</li>
+        <li>"Wat wil je in deze ruimte doen over twee jaar?"</li>
+        <li>"Heb je al een bedrag in gedachten, of begint dat te leven?"</li>
+      </ul>
+      <p>Het bezoek levert altijd drie concrete aanbevelingen op, ook als de klant geen project wordt. Die vrijgevigheid is wat werkt. Geen verkooppraatje.</p>
+
+      <h3>9.8 Afsluiten ter plekke</h3>
+      <p>Arno sluit af tijdens de tuinscan, niet erna. Aan het einde van het bezoek laat hij een eenvoudig document zien (geprint of op zijn telefoon) met drie opties:</p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-name">Basis</div>
+          <div class="price-range">1×</div>
+          <div class="price-desc">Kernomvang, standaardmaterialen. Voor klanten met een vast budget die toch professionele uitvoering willen.</div>
+        </div>
+        <div class="price-card featured">
+          <div class="price-name">Compleet</div>
+          <div class="price-range">1,4–1,6×</div>
+          <div class="price-desc">Alles in Basis + één zinvolle upgrade. Premiumbestrating, LED-verlichting, verlengde beplantingsgarantie. Hier kiest 65–75% van de klanten voor.</div>
+        </div>
+        <div class="price-card">
+          <div class="price-name">Premium</div>
+          <div class="price-range">2–2,5×</div>
+          <div class="price-desc">Volledig ontwerp, topmateriaal, alle extra's. Maakt Compleet de logische middenoptie.</div>
+        </div>
+      </div>
+
+      <p>De klant hoeft niet ja of nee te zeggen, hij kiest een niveau. Dat maakt het ook minder nodig om bij andere hoveniers te vergelijken. Eén bezoek, één voorstel, één beslissing.</p>
+    </section>
+
+    <!-- 10. LEADGEN A: VIDEO -->
+    <section id="video">
+      <h2>10. Klanten via video</h2>
+      <p><strong>Kanaal:</strong> Instagram Reels, TikTok, YouTube Shorts</p>
+      <p>Elk afgerond project levert minimaal één stuk content. Voordat Arno een klus verlaat: 10 foto's, één 60-seconden walk-through video, en als het kan een timelapse (telefoon op statief tijdens een sleutelfase).</p>
+
+      <h3>10.1 Vier herbruikbare formats</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Format</th><th>Wat</th><th>Wanneer</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Voor/na reveal</strong></td><td>Zelfde hoek, harde overgang. Nederlandse tekstoverlay met dienst + plaatsnaam. Caption: wat gedaan, hoe lang, waar.</td><td>Elk afgerond project</td></tr>
+            <tr><td><strong>Timelapse</strong></td><td>Bestrating, schroeffundering, vijver. Kort samengevat in 30–60 sec. Houdt aandacht tot het einde.</td><td>Bij grotere klussen</td></tr>
+            <tr><td><strong>Korte uitleg / educatie</strong></td><td>Arno direct to camera, één onderwerp. Bijv: "Waarom we bijna nooit meer betonpoeren gebruiken voor overkappingen."</td><td>1x per maand</td></tr>
+            <tr><td><strong>Seizoenstip</strong></td><td>Wat er nu relevant is. Verwijs naar Betuwe, rivierklei, de Waal. Nationale concurrenten kunnen dit niet zo geloofwaardig doen.</td><td>Per seizoen</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Cadans:</strong> minimaal 1 Reel/TikTok per week. Consistentie over maanden is belangrijker dan dagelijks posten.</p>
+
+      <div class="tip">
+        <div class="tip-label">Schroeffundering timelapse</div>
+        <p>Het installatieproces is visueel sterk: schroef in 5 minuten de grond in, schoon, geen modder. Dit soort video's zijn goed deelbaar en laten de snelheid van het proces zien. Een sterk format voor Jonkers.</p>
+      </div>
+
+      <h3>10.2 Flow</h3>
+      <p>Instagram/TikTok, biolink, Tuinprijscheck, quiz, postcode check, resultaatpagina, tuinscan</p>
+    </section>
+
+    <!-- 11. LEADGEN B: SEO -->
+    <section id="seo">
+      <h2>11. Klanten via Google (SEO &amp; blog)</h2>
+      <p><strong>Kanaal:</strong> Google organisch zoeken</p>
+      <p>De volledige contentstrategie staat in sectie 4. Hieronder de aanvulling vanuit dit systeem:</p>
+
+      <h3>11.1 De herfst-tegencampagne</h3>
+      <p>Alle concurrenten marketen in het voorjaar. Jonkers draait in september–oktober een eigen campagne:</p>
+      <blockquote>
+        <p>"Waarom herfst eigenlijk het beste moment is voor een nieuwe tuin"</p>
+      </blockquote>
+      <p>Inhoud: herfstbeplanting wortelt beter, tuinaanleg in herfst = klaar om van te genieten in het voorjaar, Arno heeft meer beschikbaarheid dan in het drukke voorjaarsseizoen. Eén blogartikel + bijpassende Reels. Altijd verwijzen naar de Tuinprijscheck.</p>
+      <p>Dit is bedoeld voor huiseigenaren die in de zomer begonnen na te denken maar niet in actie kwamen.</p>
+
+      <h3>11.2 Flow</h3>
+      <p>Google zoeken, blogartikel of stadspagina, verwijzing naar Tuinprijscheck of e-mail opgeven voor de PDF gids, opvolgmails, terug naar boekingskalender</p>
+    </section>
+
+    <!-- 12. LEADGEN C: BUURTMARKETING -->
+    <section id="buurt">
+      <h2>12. Klanten uit de buurt</h2>
+      <p><strong>Kanaal:</strong> Buren van afgeronde projectlocaties</p>
+
+      <h3>12.1 Bouwbord</h3>
+      <p>Een stevig bord bij elke klus, van start tot 1–2 weken na oplevering. Verwerk bord-toestemming als standaardclausule in elk projectcontract.</p>
+      <p><strong>Inhoud:</strong> Bedrijfsnaam, website-URL, QR-code naar de Tuinprijscheck. Leesbaar in 3 seconden op 25–50 meter afstand.</p>
+
+      <h3>12.2 Handgeschreven buurtbriefjes</h3>
+      <p>Binnen 3 dagen na oplevering: 15–20 handgeschreven briefjes aan de dichtstbijzijnde woningen. Niet een geprinte flyer, maar handgeschreven op een merkkaartje. Openingspercentage handgeschreven: 90–99% versus 42% voor geprint.</p>
+      <blockquote>
+        <p>Geachte buurman/buurvrouw, ik heb afgelopen week de tuin mogen aanleggen op nummer [X]. Mocht u ooit vragen hebben over uw eigen tuin, kijk dan gerust op de achterkant voor meer informatie. Geen verplichtingen, gewoon een kennismaking. Met vriendelijke groet, Arno Jonkers — Hoveniersbedrijf Jonkers</p>
+      </blockquote>
+      <p><strong>Achterkant:</strong> website URL + QR-code naar Tuinprijscheck + telefoonnummer. Respecteer NEE/NEE en NEE/JA stickers op brievenbussen.</p>
+
+      <h3>12.3 Flow</h3>
+      <p>Project opgeleverd, bord omhoog + 15–20 briefjes, QR scan, Tuinprijscheck, zelfde flow. Of: direct bellen, Arno stelt tuinscan voor.</p>
+    </section>
+
+    <!-- 13. LEADGEN D: DOORVERWIJZINGEN -->
+    <section id="doorverwijzing">
+      <h2>13. Klanten via doorverwijzingen</h2>
+      <p><strong>Kanaal:</strong> Tevreden klanten en hun netwerk</p>
+
+      <h3>13.1 Het moment van vragen</h3>
+      <p>Stel de vraag op het gelukkigste moment: de oplevering, terwijl de klant in zijn afgewerkte tuin staat. Niet via e-mail. Niet een week later. Dan.</p>
+      <blockquote>
+        <p>"We zijn heel blij met hoe dit is geworden. Zou u misschien iemand kennen in uw omgeving die ook aan hun tuin denkt? We vinden het altijd fijn om via tevreden klanten nieuwe opdrachten te krijgen."</p>
+      </blockquote>
+
+      <h3>13.2 De beloning</h3>
+      <p>Beide kanten worden beloond. Minimale projectwaarde: €2.000 (filtert kleine klussen).</p>
+      <ul>
+        <li><strong>Doorverwijzer ontvangt:</strong> €100 cadeaubon (bol.com of vergelijkbaar) wanneer het project van de nieuwe klant is afgerond</li>
+        <li><strong>Nieuwe klant ontvangt:</strong> €100 korting op het project, verwerkt bij de offerte</li>
+      </ul>
+
+      <h3>13.3 De doorverwijzingskaart</h3>
+      <p>Bij oplevering twee fysieke kaartjes meegeven. Kaartinhoud: contactgegevens, QR-code naar Tuinprijscheck, en de zin: <em>"Vermeld bij aanvraag de naam van [klantnaam] en ontvang €100 korting op uw project."</em></p>
+      <p>Handmatig bijhouden werkt prima op dit volume. Optioneel: unieke URL per klant die hun naam voorinvult in het formulier. Dan loopt de tracking automatisch.</p>
+
+      <h3>13.4 Flow</h3>
+      <p>Oplevering, vraag stellen, kaartjes meegeven, nieuwe lead belt of scant QR, Arno bevestigt €100 korting bij offerte, tuinscan, project, doorverwijzer ontvangt cadeaubon</p>
+    </section>
+
+    <!-- 14. LEADGEN E: B2B -->
+    <section id="b2b">
+      <h2>14. Zakelijke klanten (B2B schroeffunderingen)</h2>
+      <p><strong>Kanaal:</strong> Andere hoveniers, aannemers, timmerbedrijven, nationaal</p>
+
+      <h3>14.1 De positionering</h3>
+      <p>Jonkers legt de fundering, de partner bouwt erop. Vaste prijzen per schroeventype. Snel beschikbaar in de Betuwe. Geen wachten op betondroogtijden. Schone overdracht.</p>
+      <blockquote>
+        <p>"Wij leggen de fundering, jij bouwt erop."</p>
+      </blockquote>
+
+      <h3>14.2 De B2B-landingspagina</h3>
+      <p>Aparte pagina, los van de Tuinprijscheck. Spreekt de aannemer direct aan. Bevat: hoe de samenwerking werkt, vaste prijzen per schroeventype, installatietijd (onder 5 minuten per schroef), projectminimum, werkgebied. Contactformulier: bedrijfsnaam, contactnaam, projecttype, projectpostcode, verwachte frequentie (eenmalig / af en toe / structureel).</p>
+
+      <h3>14.3 De B2B ROI-calculator</h3>
+      <p>Een calculator op de B2B-pagina: schroeffundering vs. betonpoer voor een gegeven project. Invoer: aantal funderingspunten, projecttijdlijn, bodemtype. Uitvoer: kostenvergelijking, tijdvergelijking, CO2-vergelijking. Eerlijk: laat soms zien dat betonpoeren goedkoper zijn. Dat bouwt vertrouwen op bij professionele inkopers.</p>
+
+      <h3>14.4 LinkedIn en directe outreach</h3>
+      <p>Het belangrijkste kanaal voor dit publiek. Content: timelapse van commerciële projecten, vergelijkingsposten, case studies voor aannemers. Zoek 20–30 hoveniers en timmerbedrijven die overkappingen bouwen maar zelf geen funderingskennis hebben.</p>
+      <blockquote>
+        <p>Ik zag dat jullie overkappingen bouwen — ik bied gecertificeerde Krinner schroeffundering aan als subcontract, zodat jullie geen fundering hoeven uit te besteden. Wil ik je even een offertetemplaatje sturen?</p>
+      </blockquote>
+
+      <h3>14.5 Flow</h3>
+      <p>LinkedIn content of directe outreach, B2B landingspagina, ROI-calculator, B2B leadformulier, Arno belt binnen 24 uur, sitebezoek of telefonische offerte, partnerovereenkomst of projectcontract, fundering geplaatst, relatie voor herhaalwerk</p>
+    </section>
+
+    <!-- 15. KLANTBEHOUD -->
+    <section id="klantbehoud">
+      <h2>15. Klantbehoud &amp; terugkerende omzet</h2>
+
+      <h3>15.1 Vier contactmomenten per jaar</h3>
+      <p>Elk afgerond project gaat een vaste klantendatabase in (WhatsApp Business broadcast-lijsten, gesorteerd op projecttype en afrondingsdatum). Vier keer per jaar contact. Niet als marketing, maar als nuttige berichten die passen bij het seizoen.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Moment</th><th>Doel</th><th>Bericht</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Februari</strong></td>
+              <td>Agenda vullen voor het voorjaar</td>
+              <td>
+                <details>
+                  <summary style="font-size:0.8125rem;padding:0.3rem 0.5rem;background:none;border-radius:4px;">Template tonen</summary>
+                  <div class="details-body" style="padding:0.75rem 0 0;">
+                    <blockquote>
+                      <p>Goedemiddag [naam], het is alweer [X maanden/jaar] geleden dat we jullie tuin hebben aangelegd. Hoe bevalt het? Mocht er iets zijn waar u over nadenkt dit jaar — nieuw terras, snoeiwerk, of iets anders — ik kom graag even langs voor een kijkje. Groeten, Arno</p>
+                    </blockquote>
+                  </div>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Mei</strong></td>
+              <td>In beeld blijven als vaste tuinman</td>
+              <td>Korte seizoenstip relevant voor de Betuwe. Eén zin context, één praktisch advies, geen verkoopboodschap.</td>
+            </tr>
+            <tr>
+              <td><strong>September</strong></td>
+              <td>Onderhoud aanbieden</td>
+              <td>
+                <details>
+                  <summary style="font-size:0.8125rem;padding:0.3rem 0.5rem;background:none;border-radius:4px;">Template tonen</summary>
+                  <div class="details-body" style="padding:0.75rem 0 0;">
+                    <blockquote>
+                      <p>Het is alweer tijd om de tuin voor te bereiden op de winter. Wilt u het snoeiwerk en het bladruimen dit jaar aan mij overlaten? Ik heb nog wat ruimte in oktober.</p>
+                    </blockquote>
+                  </div>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>December</strong></td>
+              <td>Relatie onderhouden</td>
+              <td>Kort bedankbericht. Geen projectfoto, geen verkoopboodschap. Gewoon warm.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip">
+        <div class="tip-label">Waarom in februari?</div>
+        <p>Eerste contact wint. Klanten boeken de hovenier die het eerst van zich laat horen, niet die wacht tot hij gebeld wordt. Voor het voorjaarsseizoen berichten = agenda vullen voordat de concurrentie dat doet.</p>
+      </div>
+
+      <h3>15.2 6- en 12-maands fotobezoeken</h3>
+      <p>Elk afgerond project krijgt een kalenderherinnering voor een 6- en 12-maands terugbezoek.</p>
+      <blockquote>
+        <p>"Uw tuin ziet er vast prachtig uit nu alles is aangegroeid. Mag ik een keer langskomen om een paar foto's te maken voor mijn portfolio?"</p>
+      </blockquote>
+      <p>Het bezoek dient drie doelen: foto's voor het portfolio (tuin is nu volgroeid), een natuurlijk contactmoment, en een kans om iets extra's aan te bieden. Arno ziet wat gegroeid is, wat niet, waar de klant tegenaan loopt, en doet één of twee suggesties. Dat levert op een natuurlijke manier nieuwe projecten op.</p>
+
+      <h3>15.3 Onderhoudsabonnementen</h3>
+      <p>Bij elke oplevering noemen. Geen harde pitch, gewoon een vermelding:</p>
+      <blockquote>
+        <p>"We bieden ook een jaarlijks onderhoudsabonnement aan. Vaste prijsafspraak, vaste hovenier, geen gedoe. Wilt u daar de details van ontvangen?"</p>
+      </blockquote>
+      <p>Drie niveaus (zelfde structuur als de projectoffertes). Onderhoudklanten verwijzen vaker door dan eenmalige klanten en komen eerder terug voor uitbreidingsprojecten.</p>
+    </section>
+
+    <!-- 16. CONVERSIE-INSTRUMENTEN -->
+    <section id="conversie">
+      <h2>16. Hulpmiddelen die helpen verkopen</h2>
+
+      <h3>16.1 Garanties</h3>
+      <p>Zichtbaar op de landingspagina, stadspagina's en elke offerte. Kort en helder.</p>
+      <ul>
+        <li><strong>Groeigarantie:</strong> "1 jaar garantie op alle beplanting. Groeit een plant niet aan? We vervangen hem kosteloos."</li>
+        <li><strong>Constructiegarantie:</strong> "5 jaar garantie op bestrating, constructies en verharding. Zakt er iets? We herstellen het zonder discussie."</li>
+        <li><strong>Klanttevredenheidsbelofte:</strong> "Niet tevreden met het resultaat? We bespreken het en lossen het op. Altijd."</li>
+      </ul>
+      <div class="tip">
+        <div class="tip-label">Waarom garanties werken</div>
+        <p>Deze garanties kosten in de praktijk bijna niets. Kwaliteitsvakwerk faalt niet binnen 5 jaar. Maar zichtbaar geplaatst zorgen ze voor meer vertrouwen bij mogelijke klanten. Ze nemen een hoop twijfel weg voor het eerste contact.</p>
+      </div>
+
+      <h3>16.2 Video's van tevreden klanten</h3>
+      <p>Filmpjes van blije klanten werken heel goed op de website. Opnemen bij oplevering, op een smartphone, in de afgewerkte tuin. Drie vragen die je de klant van tevoren geeft:</p>
+      <ul>
+        <li>"Hoe zag uw tuin er eerder uit, en waarom hebt u besloten iets te veranderen?"</li>
+        <li>"Wat vindt u het mooiste aan het resultaat?"</li>
+        <li>"Zou u Arno aanbevelen aan vrienden of buren?"</li>
+      </ul>
+      <p>Houd het op 60–90 seconden. Informeel werkt beter dan professioneel gefilmd. Doel: één video per projecttype (tuinaanleg, bestrating, vijver, overkapping, schroeffundering). Vijf goede video's helpen meer dan bijna elke andere aanpassing aan de website.</p>
+
+      <h3>16.3 De herfst-tegencampagne</h3>
+      <p>Terwijl alle concurrenten in het voorjaar adverteren, draait Arno in september–oktober een gerichte campagne. De toon is vakadvies, geen verkoopdruk:</p>
+      <blockquote>
+        <p>"Waarom herfst eigenlijk het beste moment is voor een nieuwe tuin"</p>
+      </blockquote>
+      <p>Eén blogartikel + bijpassende Reels + Google Post. Bedoeld voor huiseigenaren die in de zomer begonnen na te denken maar niet handelden. Altijd verwijzen naar de Tuinprijscheck.</p>
+    </section>
+
+    <!-- ======================== -->
+    <!-- DEEL 3: AUTOMATISERING -->
+    <!-- ======================== -->
+    <div class="part-divider">
+      <div class="part-divider-inner">
+        <div class="part-num">Deel 3</div>
+        <div class="part-title">Automatisering</div>
+      </div>
     </div>
 
-    <h3>1.3 Diensten toevoegen</h3>
-    <p>Via "Profiel bewerken" &gt; "Services." Voeg per dienst een korte beschrijving toe (50 tot 100 woorden). Dit helpt Google om het profiel te tonen bij meer zoekopdrachten, ook als er geen passende categorie voor is.</p>
-    <p><strong>Kerndiensten (opnemen in het profiel):</strong></p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Dienst</th><th>Beschrijving</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Tuinaanleg</td><td>Particuliere tuinen, kindvriendelijke tuinen, complete tuinprojecten</td></tr>
-          <tr><td>Tuinonderhoud</td><td>Onderhoudsbeurten, onderhoudscontracten, vakantieservice</td></tr>
-          <tr><td>Bestrating en terrassen</td><td>Sierbestrating, terrasaanleg</td></tr>
-          <tr><td>Tuinontwerp en beplantingsplan</td><td>Tuinplannen, tuinstijlen, beplantingsadvies</td></tr>
-          <tr><td>Boomverzorging en snoeien</td><td>Snoeiwerk, boomonderhoud</td></tr>
-          <tr><td>Vijvers en waterpartijen</td><td>Vijveraanleg, poelen, waterpartijen</td></tr>
-          <tr><td>Krinner schroeffunderingen</td><td>Gecertificeerde installatie voor tuinhuizen, overkappingen, zonnepanelen</td></tr>
-          <tr><td>Grondwerk</td><td>Grondverzet, terreinvoorbereiding</td></tr>
-          <tr><td>Daktuinen en groene gevels</td><td>Daktuinen, verticale tuinen, groene gevels</td></tr>
-          <tr><td>Bedrijfstuinen</td><td>Zakelijke tuinen, parkontwerp, horeca, kinderdagverblijven</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tip">
-      <div class="tip-label">Waarom niet alles toevoegen?</div>
-      <p>Diensten zoals zwembad, buitenbioscoop en wellness zijn mogelijkheden die Jonkers kan bieden. Maar Google beloont focus: hoe meer diensten er staan, hoe minder sterk het profiel scoort op de kerndiensten. Zet deze op de website, maar houd het profiel strak.</p>
-    </div>
-
-    <h3>1.4 Servicegebied instellen</h3>
-    <p>Voeg de plaatsen toe waar Jonkers werkt, zodat klanten kunnen zien dat hun regio bediend wordt. Maximaal 20 gebieden.</p>
-    <p>Toe te voegen: Rossum, Zaltbommel, Kerkdriel, Maasdriel, Ammerzoden, Hedel, Zuilichem, Waardenburg, Geldermalsen, Buren, Tiel, Culemborg, Gorinchem, Hurwenen, Brakel, Gameren</p>
-
-    <h3>1.5 Adres verbergen (optioneel)</h3>
-    <p>Als klanten niet naar het bedrijfsadres komen, kan het profiel ingesteld worden als "servicegericht bedrijf." Het adres wordt dan verborgen, maar Google gebruikt het intern om te bepalen hoe dicht Jonkers bij de zoeker is.</p>
-    <p><strong>Hoe:</strong> Profiel bewerken &gt; Bedrijfslocatie &gt; "Dit adres aan klanten tonen" uitschakelen</p>
-    <p><strong>Uitzondering:</strong> Als klanten soms langskomen voor overleg, kan het adres zichtbaar blijven. Dat kan zelfs een klein voordeel geven in de zoekresultaten.</p>
-
-    <h3>1.6 Wat kun je verwachten per afstand?</h3>
-    <p>Afstand speelt een grote rol in Google. Hoe verder weg, hoe moeilijker het is om in de zoekresultaten te verschijnen.</p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Plaats</th><th>Afstand</th><th>Kans op zichtbaarheid</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Rossum, Zaltbommel, Kerkdriel</td><td>0 tot 5 km</td><td><strong>Sterk.</strong> Moet hier domineren</td></tr>
-          <tr><td>Waardenburg, Geldermalsen, Brakel</td><td>5 tot 15 km</td><td>Goede kans, zeker bij minder concurrentie</td></tr>
-          <tr><td>Tiel, Buren</td><td>15 tot 20 km</td><td>Lastig maar mogelijk met sterke reviews</td></tr>
-          <tr><td>Culemborg</td><td>ca. 30 km</td><td>Heel moeilijk via Google Maps. Inzetten op de website (stadspagina)</td></tr>
-          <tr><td>Utrecht</td><td>ca. 60 km</td><td>Niet haalbaar via Google Maps. Alleen via de website</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="tip">
-      <div class="tip-label">Conclusie</div>
-      <p>Voor plaatsen voorbij 15 km is het Google profiel alleen niet genoeg. Daar heb je stadspagina's op de website voor nodig (bijv. "Hovenier Tiel", "Hovenier Culemborg").</p>
-    </div>
-
-    <h3>1.7 Bedrijfsomschrijving</h3>
-    <p>Maximaal 750 tekens. Alleen de eerste 250 tekens zijn direct zichtbaar. Schrijf voor mensen, niet voor Google. Zoekwoorden in de omschrijving hebben geen invloed op de ranking.</p>
-    <blockquote>
-      <p>Hoveniersbedrijf Jonkers is uw ervaren hovenier in de Betuwe. Met ruim 30 jaar vakmanschap realiseert Arno Jonkers complete tuinprojecten in Rossum, Zaltbommel, Tiel en omgeving. Gespecialiseerd in tuinaanleg, tuinonderhoud en bestrating. Gecertificeerd Krinner schroeffunderingen installateur voor duurzame funderingsoplossingen zonder beton. Van tuinontwerp tot sierbestrating, van vijveraanleg tot seizoensonderhoud. Persoonlijke aanpak met oog voor detail. Vraag vrijblijvend een offerte aan.</p>
-    </blockquote>
-
-    <h3>1.8 Openingstijden</h3>
-    <p>"Bedrijf geopend op moment van zoeken" is een belangrijke factor. Stel bereikbaarheid in, ook als servicebedrijf.</p>
-    <p><strong>Hoe:</strong> Profiel bewerken &gt; Openingstijden</p>
-    <p>Voorbeeld: Ma t/m Vr 08:00 tot 17:00, Za 09:00 tot 13:00. Voeg "Speciale openingstijden" toe voor feestdagen.</p>
-
-    <h3>1.9 Kenmerken</h3>
-    <p>Na het wijzigen van de categorie naar "Hovenier" kunnen er nieuwe kenmerken beschikbaar komen (zoals betaalmethoden, taalondersteuning). Kijk na de wijziging onder "Profiel bewerken" en scroll door alle secties.</p>
-
-    <h3>1.10 Foto's</h3>
-    <p>Bedrijven met foto's krijgen 42% meer routeverzoeken en 35% meer websiteklikken. Smartphonefoto's zijn prima. Wat telt is echt werk tonen.</p>
-    <p><strong>Wat te fotograferen:</strong></p>
-    <ul>
-      <li>Voor/na resultaten (zelfde hoek, vergelijkbare belichting)</li>
-      <li>Afgeronde projecten vanuit meerdere hoeken</li>
-      <li>Werkzaamheden in uitvoering</li>
-      <li>Arno aan het werk</li>
-      <li>Seizoensvariatie (lente aanplant, zomer onderhoud, herfst opruimen)</li>
-      <li>Detailshots (steenpatronen, beplanting, Krinner schroeven)</li>
-    </ul>
-    <p>Maak er een gewoonte van: 5 tot 10 foto's maken voor je een klus verlaat. Upload maandelijks 4 tot 8 nieuwe foto's.</p>
-    <p>Gebruik beschrijvende bestandsnamen: <code>tuinaanleg-zaltbommel-2026.jpg</code></p>
-
-    <h3>1.11 Google Posts</h3>
-    <p><strong>Minimaal wekelijks posten.</strong> Dat geeft 30 tot 40% meer zichtbaarheid dan maandelijks. Gebruik "Bel nu" of "Aanbieding bekijken" als knop (levert bijna 3x meer klikken op dan "Meer informatie"). Houd het kort (150 tot 300 tekens) en voeg altijd een echte projectfoto toe.</p>
-
-    <p><strong>Vijf seizoenstemplates:</strong></p>
-
-    <h4>Voorjaar (maart/april):</h4>
-    <blockquote>
-      <p>Het tuinseizoen is begonnen! Plan nu uw tuinaanleg voor dit voorjaar. Arno Jonkers heeft nog beperkte beschikbaarheid in april/mei voor complete tuinprojecten in de Betuwe. Van ontwerp tot oplevering, 30+ jaar ervaring in uw tuin.</p>
-    </blockquote>
-
-    <h4>Zomer (juni/juli):</h4>
-    <blockquote>
-      <p>Trots op dit project: complete tuinrenovatie in Zaltbommel. Nieuwe bestrating, plantenborders en een waterpartij, in 3 weken gerealiseerd. Bekijk het verschil! Uw droomtuin begint met een gratis adviesgesprek.</p>
-    </blockquote>
-
-    <h4>Herfst (oktober):</h4>
-    <blockquote>
-      <p>Maak uw tuin winterklaar. November is het ideale moment voor snoeien, bladruimen en het beschermen van uw beplanting. Hoveniersbedrijf Jonkers verzorgt het complete winteronderhoud in Rossum, Zaltbommel, Tiel en omgeving.</p>
-    </blockquote>
-
-    <h4>Winter (januari):</h4>
-    <blockquote>
-      <p>Winter = plannen voor het voorjaar. Wist u dat Krinner schroeffunderingen het hele jaar door geplaatst kunnen worden? Geen beton, geen droogtijd, direct belastbaar. Ideaal voor overkappingen, schuttingen en tuinhuizen. Gecertificeerd installateur.</p>
-    </blockquote>
-
-    <h4>Algemeen (review uitlichten):</h4>
-    <blockquote>
-      <p>"Arno heeft onze complete tuin aangelegd, van bestrating tot beplanting. Vakkundig, netjes en precies volgens plan. Een echte aanrader!" Bedankt voor het vertrouwen! Benieuwd wat wij voor uw tuin kunnen betekenen?</p>
-    </blockquote>
-
-    <h3>1.12 Bijhouden</h3>
-    <p><strong>Wekelijks (15 tot 20 minuten):</strong></p>
-    <ul>
-      <li>1 tot 2 nieuwe projectfoto's uploaden</li>
-      <li>1 Google Post publiceren</li>
-      <li>Alle nieuwe reviews beantwoorden binnen 48 uur</li>
-      <li>Reviewverzoeken sturen naar afgeronde projecten</li>
-    </ul>
-
-    <p><strong>Maandelijks (1 tot 2 uur):</strong></p>
-    <ul>
-      <li>Statistieken bekijken: welke zoekopdrachten, hoeveel klikken, hoeveel bellers</li>
-      <li>Reviewaantal vergelijken met concurrenten</li>
-      <li>Seizoensdiensten of aanbiedingen bijwerken</li>
-    </ul>
-
-    <p><strong>Per kwartaal:</strong></p>
-    <ul>
-      <li>Categorie&euml;n controleren (Google voegt regelmatig nieuwe toe)</li>
-      <li>Bedrijfsomschrijving bijwerken indien nodig</li>
-      <li>Controleer of naam, adres en telefoonnummer overal hetzelfde zijn</li>
-    </ul>
-  </section>
-
-  <!-- SECTION 2: GOOGLE REVIEWS -->
-  <section class="fade-in">
-    <h2 id="google-reviews">2. Google Reviews</h2>
-    <p>Reviews zijn een van de belangrijkste factoren om hoger te komen in Google. De top 3 bedrijven die je ziet op Google Maps bij een zoekopdracht als "hovenier Zaltbommel"? Die staan daar grotendeels dankzij goede, recente reviews.</p>
-
-    <h3>2.1 Waarom reviews er toe doen</h3>
-    <ul>
-      <li><strong>Recentheid telt meer dan aantal.</strong> 80 reviews waarvan 10 in de afgelopen maand scoort beter dan 200 oude reviews uit 2023.</li>
-      <li>Bij 10 reviews is een merkbare verbetering in zichtbaarheid gemeten.</li>
-      <li>Minimale beoordeling: 4,0 sterren (Google filtert bedrijven onder 4,0 uit bij "beste hovenier" zoekopdrachten).</li>
-      <li>Een 4,3 met 180 reviews verslaat een 5,0 met 8 reviews.</li>
-      <li>Als klanten woorden als "tuinaanleg" of "Zaltbommel" gebruiken in hun review, toont Google die tekst als highlight in de zoekresultaten.</li>
-    </ul>
-
-    <h3>2.2 Constante regelmaat</h3>
-    <p>Google's spamdetectie signaleert plotselinge pieken. Vraag het aan elke klant na afronding, maar niet allemaal tegelijk. Consistentie is belangrijker dan aantallen.</p>
-
-    <h3>2.3 Hoe reviews verzamelen <span class="auto-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-2.82 1.18V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Automatiseerbaar</span></h3>
-
-    <p>De exacte formulering past Arno aan naar zijn eigen stijl.</p>
-
-    <p><strong>Bij oplevering (persoonlijk):</strong></p>
-    <blockquote>
-      <p>"[Voornaam], fijn dat je er blij mee bent. Zou je het erg vinden om een Google review achter te laten? Dat helpt me echt om nieuwe klanten te vinden."</p>
-    </blockquote>
-
-    <p><strong>Zelfde dag (e-mail):</strong></p>
-    <blockquote>
-      <p><strong>Onderwerp:</strong> Bedankt voor het vertrouwen, [Voornaam]!</p>
-      <p>Hoi [Voornaam], nog even bedankt voor de fijne samenwerking. Ik hoop dat je nog lang van je [nieuwe tuin / bestrating / tuinonderhoud] mag genieten. Als zelfstandig hovenier zijn ervaringen van klanten heel waardevol. Zou je een paar minuten willen nemen om je ervaring te delen op Google? [LINK] Een paar zinnen is al genoeg. Bedankt! Groet, Arno</p>
-    </blockquote>
-
-    <p><strong>Dag 5 tot 7 (WhatsApp opvolging):</strong></p>
-    <blockquote>
-      <p>Hoi [naam], hopelijk bevalt de tuin goed. Ik had laatst gevraagd of je een review wilde achterlaten. Als je even tijd hebt: [LINK]</p>
-    </blockquote>
-
-    <p><strong>Dag 14 (laatste herinnering, alleen indien nodig):</strong></p>
-    <blockquote>
-      <p>Hoi [naam], even een herinnering over die Google review. Hier is de link nog een keer: [LINK] Helemaal goed als het niet uitkomt.</p>
-    </blockquote>
-
-    <p>Maximaal twee opvolgingen. 68% van de reviews komt na het eerste verzoek, 28% na het tweede.</p>
-    <p><strong>Beste timing voor WhatsApp:</strong> Woensdag of zaterdag, tussen 10:00 en 14:00 of 18:00 en 19:00.</p>
-
-    <div class="tip">
-      <div class="tip-label">Automatisering mogelijk</div>
-      <p>Deze hele workflow (bedankmail, herinnering, bijhouden wie al een review heeft geschreven) kan volledig automatisch draaien. Arno hoeft dan alleen nog een afgerond project in te voeren. Zie hoofdstuk 11.</p>
-    </div>
-
-    <h3>2.4 Reageren op reviews <span class="auto-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-2.82 1.18V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Automatiseerbaar</span></h3>
-    <p>Beantwoord elke review. Verwerk daarin natuurlijk een plaatsnaam en een dienst. Gebruik nooit twee keer hetzelfde antwoord. Negatieve reviews binnen 24 uur beantwoorden, positieve binnen 7 dagen.</p>
-
-    <p><strong>Drie voorbeeldreacties:</strong></p>
-
-    <blockquote>
-      <p><strong>Tuinaanleg + Zaltbommel:</strong> Wat leuk om te lezen, [naam]! Bedankt voor je mooie woorden. Het was een fantastisch project om jullie tuinaanleg in Zaltbommel te mogen verzorgen. Die combinatie van het terras met de borders past echt perfect bij jullie huis. Geniet ervan!</p>
-    </blockquote>
-    <blockquote>
-      <p><strong>Bestrating + Betuwe:</strong> Dankjewel [naam]! Fijn om te horen dat je zo blij bent met de nieuwe bestrating. De Betuwe is een prachtig gebied om in te werken, zeker met dit soort mooie projecten. Tot de volgende keer!</p>
-    </blockquote>
-    <blockquote>
-      <p><strong>Tuinontwerp + Tiel:</strong> Heel erg bedankt voor je review, [naam]! Het tuinontwerp voor jullie achtertuin in Tiel was echt een leuk project. Mocht je nog tips willen voor de beplanting dit voorjaar, geef gerust een seintje!</p>
-    </blockquote>
-
-    <p><strong>Bij negatieve reviews:</strong> Binnen 24 uur reageren, bedanken voor feedback, excuses aanbieden, en verder praten via de telefoon: "Zou je me willen bellen op [nummer]?" Nooit publiekelijk in discussie gaan.</p>
-
-    <div class="tip">
-      <div class="tip-label">Automatisering mogelijk</div>
-      <p>Conceptreacties kunnen automatisch worden opgesteld met AI (met de juiste plaatsnaam en dienst erin verwerkt). Arno ontvangt het concept via WhatsApp, keurt het goed of past het aan, en het wordt automatisch geplaatst. Zie hoofdstuk 11.</p>
-    </div>
-
-    <h3>2.5 Spelregels</h3>
-    <p><strong>Mag wel:</strong> Vragen om reviews, links sturen, NFC-kaarten, QR-codes, maximaal 2 opvolgberichten.</p>
-    <p><strong>Mag niet:</strong> Nepreviews kopen, alleen positieve reviews tonen, beloningen koppelen aan reviews. Google verbiedt elke beloning voor reviews.</p>
-
-    <h3>2.6 Andere reviewplatformen (voor later)</h3>
-    <p>Richt je eerst volledig op Google Reviews. Als dat op gang is, zijn dit opties:</p>
-    <ul>
-      <li><strong>KlantenVertellen</strong> (&euro;35/maand). De Nederlandse standaard voor geverifieerde reviews met herkenbare "9,6 uit 10" badge.</li>
-      <li><strong>Hovenier.nl</strong> (betaal per aanvraag). Specifiek voor hoveniers. &euro;50 gratis tegoed bij aanmelding.</li>
-      <li><strong>Trustpilot</strong> (gratis). Gratis bedrijfsprofiel dat goed gevonden wordt bij "[bedrijfsnaam] reviews" zoekopdrachten.</li>
-      <li><strong>TuinKeur certificering.</strong> Kwaliteitskeurmerk met 120+ checkpunten. Sterk vertrouwenssignaal. Overwegen wanneer het moment daar is.</li>
-    </ul>
-  </section>
-
-  <!-- SECTION 3: DOMEINSTRATEGIE (OPTIONEEL) -->
-  <section class="fade-in">
-    <h2 id="domeinstrategie">3. Domeinstrategie (optioneel)</h2>
-
-    <p>Het registreren van adressen zoals <code>hovenier-tiel.nl</code> en deze automatisch doorsturen naar de hoofdwebsite voorkomt dat andere bedrijven deze adressen claimen. Het directe voordeel voor Google is beperkt, maar het is een prima verdediging.</p>
-    <p><strong>Kosten:</strong> &euro;5 per jaar per domein</p>
-
-    <h3>Te overwegen</h3>
-    <p>Beschikbaarheid moet nog gecontroleerd worden. Dit zijn suggesties op basis van zoekvolume.</p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Webadres</th><th>Prioriteit</th><th>Stuurt door naar</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>hovenier-tiel.nl</td><td>Hoog</td><td>/hovenier-tiel/</td></tr>
-          <tr><td>hovenier-gorinchem.nl</td><td>Hoog</td><td>/hovenier-gorinchem/</td></tr>
-          <tr><td>hovenier-zaltbommel.nl</td><td>Hoog</td><td>/hovenier-zaltbommel/</td></tr>
-          <tr><td>hovenier-culemborg.nl</td><td>Hoog</td><td>/hovenier-culemborg/</td></tr>
-          <tr><td>hovenier-betuwe.nl</td><td>Hoog</td><td>/hovenier-betuwe/</td></tr>
-          <tr><td>hovenier-geldermalsen.nl</td><td>Medium</td><td>/hovenier-geldermalsen/</td></tr>
-          <tr><td>hovenier-bommelerwaard.nl</td><td>Medium</td><td>/hovenier-bommelerwaard/</td></tr>
-          <tr><td>hovenier-rivierenland.nl</td><td>Medium</td><td>/hovenier-rivierenland/</td></tr>
-          <tr><td>hovenier-rossum.nl</td><td>Laag</td><td>/ (homepage)</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>schroeffunderingen.nl en varianten zijn bezet. Het instellen van de doorverwijzingen is een taak voor de websitebouwer.</p>
-  </section>
-
-  <!-- SECTION 4: DIRECTORY'S EN CITATIES -->
-  <section class="fade-in">
-    <h2 id="directorys">4. Vermeldingen op andere websites</h2>
-    <p>Als de bedrijfsnaam, het adres en telefoonnummer (NAP) op meerdere websites hetzelfde staan, ziet Google dat als een betrouwbaarheidssignaal.</p>
-
-    <h3>4.1 Gratis aanmelden</h3>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Platform</th><th>Toelichting</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Telefoonboek.nl / Places.nl</strong></td><td>Gratis, 15 minuten. Automatisch ook op Openingstijden.com.</td></tr>
-          <tr><td><strong>Hovenier.nl</strong></td><td>Gratis profiel + &euro;50 tegoed</td></tr>
-          <tr><td><strong>HovenierNederland.nl</strong></td><td>Vermelding aanmaken of claimen</td></tr>
-          <tr><td><strong>Trustpilot</strong></td><td>Gratis bedrijfsprofiel</td></tr>
-          <tr><td><strong>Cylex.nl</strong></td><td>Gratis vermelding, 15 minuten</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>4.2 Lokale samenwerkingen (langere termijn)</h3>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Bron</th><th>Aanpak</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>WestBetuweTotaal.nl</td><td>Lokaal nieuws. Artikel of seizoenstips aanbieden.</td></tr>
-          <tr><td>NieuwsbladGeldermalsen.nl</td><td>Lokale krant. Projectverhaal insturen.</td></tr>
-          <tr><td>Gemeente West Betuwe / Maasdriel</td><td>Lokaal evenement sponsoren.</td></tr>
-          <tr><td>Ondernemend Rivierenland</td><td>Lid worden van de ondernemersvereniging.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- SECTION 5: CONCURRENTIE-INFORMATIE -->
-  <section class="fade-in">
-    <h2 id="concurrentie">5. Wat doet de concurrentie?</h2>
-
-    <h3>5.1 Directe concurrenten</h3>
-    <p><strong>Honkoop Hoveniers (Meteren):</strong> Heeft stadspagina's voor meerdere plaatsen, maar veel hergebruikte tekst. Minder dan 15 reviews. Claimt "De hovenier van de Betuwe."</p>
-    <p><strong>Hoveniersbedrijf de Betuwe (Beesd):</strong> Sterkste branding in de regio ("BetuweBus"). 17 stadspagina's, maar allemaal dezelfde tekst (dat is slecht voor Google). Niche: sedumdak, beregening.</p>
-    <p><strong>De Bruin Tuinen (Enspijk):</strong> Best beoordeeld in de regio (9,6 bij Trustoo). Team van 6. TuinKeur gecertificeerd.</p>
-
-    <h3>5.2 Grotere spelers</h3>
-    <p><strong>Gras &amp; Groen (Den Bosch):</strong> 900+ Google reviews. Bouwt actief stadspagina's richting Zaltbommel en Geldermalsen.</p>
-    <p><strong>Van Aken Schroeffunderingen (Nederhemert-Noord):</strong> Zelfde Bommelerwaard-regio. Domineert online voor schroeffunderingen met 20+ pagina's. Belangrijkste concurrent specifiek voor schroeffunderingen.</p>
-
-    <h3>5.3 Kansen</h3>
-    <ul>
-      <li>Geen concurrent heeft een "hovenier Bommelerwaard" pagina</li>
-      <li>Geen van de concurrenten publiceert een blog</li>
-      <li>Geen concurrent publiceert prijsindicaties op de website</li>
-    </ul>
-  </section>
-
-  <!-- SECTION 6: KENNISBANK / BLOGCONTENT -->
-  <section class="fade-in">
-    <h2 id="kennisbank">6. Website &amp; blogcontent</h2>
-    <p>Blogartikelen zijn een investering op langere termijn (3 tot 6 maanden voordat ze goed gevonden worden). Hieronder de meest waardevolle onderwerpen, gerangschikt op wat mensen zoeken.</p>
-
-    <h3>6.1 Artikelen om te schrijven</h3>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Artikel</th><th>Mensen zoeken op</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Wat kost een hovenier? Prijzen en tarieven 2026</td><td>wat kost een hovenier per uur, hovenier kosten</td></tr>
-          <tr><td>Tuin laten aanleggen: wat kost het werkelijk?</td><td>tuin laten aanleggen kosten</td></tr>
-          <tr><td>Onderhoudsvriendelijke tuin: complete gids</td><td>onderhoudsvriendelijke tuin</td></tr>
-          <tr><td>Kleine tuin inrichten: 12 slimme idee&euml;n</td><td>kleine tuin inrichten</td></tr>
-          <tr><td>Wat kost bestrating per m2?</td><td>wat kost bestrating per m2</td></tr>
-          <tr><td>Schroeffundering vs betonpoer: eerlijk vergeleken</td><td>schroeffundering vs betonpoer</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>6.2 Aanpak per artikel</h3>
-    <ul>
-      <li>Praktisch, eerlijk, voor de consument geschreven</li>
-      <li>Prijsindicaties waar mogelijk</li>
-      <li>Veelgestelde vragen onderaan</li>
-      <li>Links naar relevante dienst- en stadspagina's</li>
-    </ul>
-  </section>
-
-  <!-- SECTION 7: SCHROEFFUNDERINGEN -->
-  <section class="fade-in">
-    <h2 id="schroeffunderingen">7. Schroeffunderingen</h2>
-
-    <h3>7.1 Positionering</h3>
-    <p>Er zijn meerdere bedrijven die Krinner-producten installeren. Het onderscheidende van Jonkers is de combinatie: fundering en tuinaanleg uit een hand.</p>
-    <blockquote>
-      <p>"Gecertificeerd Krinner installateur met 30+ jaar hovenierservaring. De enige schroeffunderingen specialist die van fundering tot complete tuin alles uit een hand biedt."</p>
-    </blockquote>
-
-    <h3>7.2 Contentidee&euml;n voor jonkersschroeffundering.nl</h3>
-    <p><strong>Hoofdpagina:</strong> "Alles over schroeffunderingen: de complete gids"</p>
-
-    <p><strong>Per toepassing een pagina:</strong></p>
-    <ul>
-      <li>Schroeffundering voor tuinhuis</li>
-      <li>Schroeffundering voor overkapping / terrasoverkapping</li>
-      <li>Schroeffundering voor veranda</li>
-      <li>Schroeffundering voor schutting</li>
-      <li>Schroeffundering voor zonnepanelen</li>
-    </ul>
-
-    <p><strong>Vragen die mensen hebben:</strong></p>
-    <ul>
-      <li>Schroeffundering vs betonpoer: eerlijk vergeleken</li>
-      <li>Kosten schroeffundering: wat kost het werkelijk?</li>
-      <li>Schroeffundering in klei en veengrond: werkt het? (zeer relevant voor Rivierenland)</li>
-      <li>Hoe lang gaat een schroeffundering mee?</li>
-    </ul>
-
-    <h3>7.3 Video-content</h3>
-    <p>Het installatieproces is visueel aantrekkelijk: een grote stalen schroef draait in minder dan 5 minuten de grond in. Schoon, geen modder, direct belastbaar. Perfect voor korte video's op Instagram en Google.</p>
-
-    <h3>7.4 Samenwerking met andere bedrijven</h3>
-    <p>Van Aken doet al onderaanneming voor andere hoveniers. Jonkers kan hetzelfde doen: "Wij leggen de fundering, jij bouwt erop." Doelgroep: installatiebedrijven voor zonnepanelen, verandabouwers, hoveniers zonder funderingskennis.</p>
-  </section>
-
-  <!-- SECTION 8: SOCIAL MEDIA -->
-  <section class="fade-in">
-    <h2 id="social-media">8. Social media (suggesties)</h2>
-
-    <h3>8.1 Instagram</h3>
-    <p>Post gewoon wat je toch al doet. 1 post per week is al goed.</p>
-    <ul>
-      <li><strong>Korte video's:</strong> 15 tot 30 seconden werkzaamheden, voor/na-onthullingen, schroeffunderingen installatie</li>
-      <li><strong>Foto's:</strong> Voor/na-paren, afgeronde projecten</li>
-    </ul>
-    <p>Gebruik locatietags voor Betuwe-plaatsen.</p>
-
-    <h3>8.2 Nextdoor &amp; Facebook</h3>
-    <p>Buren vragen actief om hovenier-aanbevelingen op Nextdoor en in lokale Facebookgroepen. Lid worden, tuinvragen beantwoorden, seizoenstips delen. Niet verkopen, gewoon behulpzaam zijn.</p>
-
-    <h3>8.3 Makelaars benaderen (suggestie)</h3>
-    <p>2 tot 3 lokale makelaars benaderen. Gratis tuinadviesgesprek aanbieden voor hun nieuwe kopers. Nieuwe huiseigenaren zijn de meest koopbereide hovenier-prospects.</p>
-  </section>
-
-  <!-- SECTION 9: HUIDIGE SITUATIE JONKERS GROEP -->
-  <section class="fade-in">
-    <h2 id="huidige-situatie">9. Huidige situatie</h2>
-
-    <h3>9.1 Websites</h3>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Website</th><th>Status</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>hoveniersbedrijfjonkers.nl</strong></td><td>Actief, maar verouderd (laatste blogpost 2015)</td></tr>
-          <tr><td><strong>jonkersschroeffundering.nl</strong></td><td>Actief, gecertificeerd Krinner partner</td></tr>
-          <tr><td><strong>jonkersgroep.nl</strong></td><td>Actief, maar verouderd</td></tr>
-          <tr><td><strong>jonkersinfra.nl</strong></td><td>Offline</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>De nieuwe website vervangt hoveniersbedrijfjonkers.nl. Het Google Bedrijfsprofiel moet verwijzen naar de website die past bij de categorie: het hoveniers-profiel linkt naar de hoveniers-site.</p>
-
-    <h3>9.2 Wat Jonkers al heeft</h3>
-    <ul>
-      <li>Voertuigbelettering</li>
-      <li>30+ jaar ervaring en sterke testimonials</li>
-      <li>Eaton Industries als zakelijke klant sinds 2008</li>
-      <li>Big Brother tuin referentie (Talpa/John de Mol)</li>
-      <li>Krinner schroeffunderingen certificering</li>
-      <li>Jonkers Groep ecosysteem (Hoveniersbedrijf + Schroeffunderingen + Infra)</li>
-    </ul>
-  </section>
-
-  <!-- SECTION 10: STRATEGISCHE KEUZES -->
-  <section class="fade-in">
-    <h2 id="strategische-keuzes">10. Strategische keuzes</h2>
-
-    <h3>"De hovenier van de Bommelerwaard"</h3>
-    <p>Concurrenten claimen "de Betuwe." Jonkers kan de Bommelerwaard claimen. Fysiek correct (Rossum ligt in de Bommelerwaard), minder betwist, authentieker.</p>
-
-    <h3>Eerlijke eenmanszaak-positionering</h3>
-    <p>Overweeg verwijzingen naar "ons team" aan te passen waar het niet klopt. Het verhaal van de solo vakman kan juist een kracht zijn: "Bij mij geen doorlopende band. Ik ken elke tuin die ik aanleg."</p>
-
-    <h3>Focus op drie kerndiensten</h3>
-    <p>Leid met tuinaanleg, tuinonderhoud en bestrating. Positioneer schroeffunderingen als onderscheidende specialisatie. Overige mogelijkheden op de website, maar niet als hoofddiensten.</p>
-
-    <h3>Prijstransparantie</h3>
-    <p>Publiceer minimaal "vanaf" prijsindicaties. Dat vangt zoekverkeer op van mensen die klaar zijn om te kopen, en verlaagt de drempel voor het eerste contact.</p>
-  </section>
-
-  <!-- SECTION 11: AUTOMATISERINGSMOGELIJKHEDEN -->
-  <section class="fade-in">
-    <h2 id="automatiseringsmogelijkheden">11. Automatiseringsmogelijkheden</h2>
-    <p>Onderstaande processen kunnen geautomatiseerd worden. Dit hoeft niet direct, maar het scheelt op termijn veel handmatig werk. Alles hieronder is technisch mogelijk.</p>
-
-    <h3>11.1 Reviewverzoeken na oplevering</h3>
-    <p>Na het invoeren van een afgerond project wordt automatisch een reeks berichten verstuurd.</p>
-    <ul>
-      <li>Dag 0: automatische bedankmail met reviewlink</li>
-      <li>Dag 7: automatische WhatsApp herinnering</li>
-      <li>Dag 14: automatische laatste herinnering</li>
-    </ul>
-    <p><strong>Wat Arno doet:</strong> Project invoeren. De rest gaat automatisch.</p>
-
-    <h3>11.2 Review reacties</h3>
-    <p>Bij een nieuwe Google review wordt automatisch een conceptreactie opgesteld. Arno ontvangt het concept via WhatsApp en keurt het goed of past het aan.</p>
-
-    <h3>11.3 Google Posts</h3>
-    <p>Seizoensgebonden posts kunnen automatisch ingepland worden. Arno stuurt een foto via WhatsApp, de post wordt automatisch opgemaakt en gepubliceerd.</p>
-
-    <h3>11.4 Maandrapportage</h3>
-    <p>Automatisch maandrapport met de belangrijkste cijfers: hoeveel mensen het profiel hebben gezien, hoeveel er gebeld hebben, nieuwe reviews.</p>
-
-    <h3>Samenvatting</h3>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Proces</th><th>Zonder automatisering</th><th>Met automatisering</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Reviewverzoeken</td><td>Handmatig per klant e-mailen/appen</td><td>Alleen project invoeren</td></tr>
-          <tr><td>Review reacties</td><td>Zelf bedenken en typen</td><td>Concept goedkeuren via WhatsApp</td></tr>
-          <tr><td>Google Posts</td><td>Zelf schrijven en publiceren</td><td>Foto sturen, rest gaat automatisch</td></tr>
-          <tr><td>Maandrapportage</td><td>Zelf inloggen en cijfers bekijken</td><td>Rapport komt naar je toe</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- VERSION FOOTNOTE -->
-  <p class="version-footnote fade-in"><em>Document versie 10, 2 april 2026</em></p>
-
-  <!-- FOOTER -->
-  <footer class="document-footer fade-in">
-    <div class="brand-footer">KNAP GEMAAKT.</div>
-    <p style="margin-top: 0.5rem;">Plan voor Online Zichtbaarheid | Jonkers Groep | 2 april 2026</p>
-  </footer>
-
+    <!-- 17. AUTOMATISERING -->
+    <section id="automatisering">
+      <h2>17. Automatisering</h2>
+      <p>Vier processen kunnen volledig automatisch draaien. Arno doet telkens één ding, de rest gaat vanzelf. KNAP GEMAAKT. zet dit op zodra de website live is.</p>
+
+      <div class="auto-grid">
+        <div class="auto-card">
+          <div class="auto-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="auto-card-title">Reviewverzoeken na oplevering</div>
+          <div class="auto-cols">
+            <div>
+              <div class="auto-col-head">Arno doet</div>
+              <div class="auto-col-trigger">Project invoeren in het systeem</div>
+            </div>
+            <div>
+              <div class="auto-col-head">Automatisch</div>
+              <div class="auto-col-result">Dag 0: bedankmail + reviewlink<br>Dag 7: WhatsApp herinnering<br>Dag 14: laatste herinnering</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auto-card">
+          <div class="auto-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="auto-card-title">Review reacties opstellen</div>
+          <div class="auto-cols">
+            <div>
+              <div class="auto-col-head">Arno doet</div>
+              <div class="auto-col-trigger">Concept ontvangen via WhatsApp, goedkeuren of aanpassen</div>
+            </div>
+            <div>
+              <div class="auto-col-head">Automatisch</div>
+              <div class="auto-col-result">Conceptreactie opgesteld bij elke nieuwe review (plaatsnaam + dienst erin verwerkt). Na goedkeuring: automatisch geplaatst.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auto-card">
+          <div class="auto-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <div class="auto-card-title">Google Posts publiceren</div>
+          <div class="auto-cols">
+            <div>
+              <div class="auto-col-head">Arno doet</div>
+              <div class="auto-col-trigger">Foto sturen via WhatsApp</div>
+            </div>
+            <div>
+              <div class="auto-col-head">Automatisch</div>
+              <div class="auto-col-result">Post wordt opgemaakt en gepubliceerd op Google Bedrijfsprofiel</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auto-card">
+          <div class="auto-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div class="auto-card-title">Maandrapportage</div>
+          <div class="auto-cols">
+            <div>
+              <div class="auto-col-head">Arno doet</div>
+              <div class="auto-col-trigger">Niets</div>
+            </div>
+            <div>
+              <div class="auto-col-head">Automatisch</div>
+              <div class="auto-col-result">Maandelijks rapport: profielweergaven, bellers, nieuwe reviews, websiteklikken. Komt direct naar je toe</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Voor/na overzicht</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Proces</th><th>Zonder automatisering</th><th>Met automatisering</th></tr></thead>
+          <tbody>
+            <tr><td>Reviewverzoeken</td><td>Handmatig per klant e-mailen/appen</td><td>Alleen project invoeren</td></tr>
+            <tr><td>Review reacties</td><td>Zelf bedenken en typen</td><td>Concept goedkeuren via WhatsApp</td></tr>
+            <tr><td>Google Posts</td><td>Zelf schrijven en publiceren</td><td>Foto sturen, rest gaat automatisch</td></tr>
+            <tr><td>Maandrapportage</td><td>Zelf inloggen en cijfers bekijken</td><td>Rapport komt naar je toe</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">KNAP GEMAAKT. zet dit op</div>
+        <p>Bovenstaande automatiseringen worden ingesteld zodra de website live is. Arno hoeft zelf niets technisch in te stellen.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="doc-footer">
+      <strong>KNAP GEMAAKT.</strong>
+      <p>Plan voor Online Zichtbaarheid &amp; Leads | Hoveniersbedrijf Jonkers | 3 april 2026</p>
+    </footer>
+
+  </main>
 </div>
 
-<!-- Back to top button -->
-<a href="#top" class="back-to-top" aria-label="Terug naar boven" title="Terug naar boven">&uarr;</a>
+<a href="#top" class="back-top" id="back-top" aria-label="Terug naar boven">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</a>
 
-<!-- Scroll animations & back-to-top visibility -->
 <script>
-  // Fade-in on scroll (matches main site's IntersectionObserver pattern)
-  const fadeObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          fadeObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0, rootMargin: '0px 0px -20px 0px' }
-  );
+  // ===== MOBILE TOC =====
+  const tocToggle = document.getElementById('toc-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sb-overlay');
 
-  document.querySelectorAll('.fade-in').forEach((el) => {
-    fadeObserver.observe(el);
+  if (tocToggle) {
+    tocToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    });
+  }
+
+  // ===== ACTIVE TOC =====
+  const sections = document.querySelectorAll('section[id]');
+  const tocLinks = document.querySelectorAll('.toc-link');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+        if (active) {
+          active.classList.add('active');
+          active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      }
+    });
+  }, { rootMargin: '-8% 0px -82% 0px', threshold: 0 });
+
+  sections.forEach(s => sectionObserver.observe(s));
+
+  // Close mobile sidebar on TOC link click
+  tocLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    });
   });
 
-  // Show/hide back-to-top button
-  const backToTop = document.querySelector('.back-to-top');
-  const scrollObserver = new IntersectionObserver(
-    ([entry]) => {
-      backToTop.classList.toggle('is-visible', !entry.isIntersecting);
-    },
-    { threshold: 0 }
-  );
-  scrollObserver.observe(document.getElementById('top'));
+  // ===== BACK TO TOP =====
+  const backTop = document.getElementById('back-top');
+  const topEl = document.getElementById('top');
+  if (topEl && backTop) {
+    new IntersectionObserver(([e]) => {
+      backTop.classList.toggle('visible', !e.isIntersecting);
+    }).observe(topEl);
+  }
+
+  // ===== TABS =====
+  document.querySelectorAll('.tab-nav').forEach(nav => {
+    nav.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.tab;
+        const container = btn.closest('.tabs');
+        container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        container.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const pane = document.getElementById('tab-' + id);
+        if (pane) pane.classList.add('active');
+      });
+    });
+  });
+
+  // ===== FADE IN =====
+  const fadeEls = document.querySelectorAll('section, .part-divider, .page-header, .stat-card, .auto-card, .price-card, .funnel-tier');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    fadeEls.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px)';
+      el.style.transition = 'opacity 0.45s ease-out, transform 0.45s ease-out';
+      fadeObserver.observe(el);
+    });
+  }
 </script>
 
 </body>
