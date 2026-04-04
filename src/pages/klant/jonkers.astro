@@ -775,7 +775,19 @@ export const prerender = true;
       .pricing-grid { grid-template-columns: 1fr; }
       .auto-grid { grid-template-columns: 1fr; }
       .funnel-split { grid-template-columns: 1fr; }
-      .hdr-title { font-size: 2rem; }
+      .ways-grid { grid-template-columns: 1fr !important; }
+      .hdr-title { font-size: 1.75rem; }
+      .hdr-meta { gap: 1rem; flex-direction: column; }
+      .tab-nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .tab-btn { white-space: nowrap; font-size: 0.8125rem; padding: 0.5rem 0.875rem; }
+      .part-divider-inner { padding: 1rem 1.5rem; }
+      .part-title { font-size: 1.25rem; }
+      .funnel-sources { gap: 0.35rem; }
+      .funnel-source { font-size: 0.75rem; padding: 0.25rem 0.625rem; }
+      .summary-box { padding: 1.5rem 1.25rem; }
+      h2 { font-size: 1.125rem; }
+      .stat-row { grid-template-columns: 1fr; }
+      .stat-num { font-size: 1.75rem; }
     }
 
     @media (min-width: 861px) {
@@ -871,7 +883,7 @@ export const prerender = true;
       <div style="margin-top:2.5rem;">
         <h3 style="color:var(--ink);font-size:1rem;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1.25rem;">Manieren om aan nieuwe klanten te komen</h3>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="ways-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
           <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;">
             <div style="font-weight:700;color:var(--accent);font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Video op social media</div>
             <p style="font-size:0.875rem;color:var(--ink-2);margin:0;line-height:1.6;">Korte video's van afgeronde projecten op Instagram en TikTok. Mensen zien het resultaat, klikken door naar de Tuinprijscheck, en boeken een tuinscan.</p>
