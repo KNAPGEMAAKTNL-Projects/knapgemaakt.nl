@@ -15,8 +15,8 @@
 # Blog post redirects (consolidated content)
 /blog/webdesign-utrecht /blog/website-laten-maken-kosten/ 301
 /blog/webdesign-utrecht/ /blog/website-laten-maken-kosten/ 301
-/blog/webshop-laten-maken /blog/website-laten-maken-kosten/ 301
-/blog/webshop-laten-maken/ /blog/website-laten-maken-kosten/ 301
+/blog/webshop-laten-maken /webshops/ 301
+/blog/webshop-laten-maken/ /webshops/ 301
 /blog/maatwerkwebsite-laten-maken /blog/website-laten-maken-kosten/ 301
 /blog/maatwerkwebsite-laten-maken/ /blog/website-laten-maken-kosten/ 301
 /blog/zelf-website-maken-of-laten-maken /blog/website-laten-maken-kosten/ 301
@@ -27,8 +27,8 @@
 /project/schildersbedrijf-visser/ /werk/ 301
 
 # Redesign redirects (old pages -> new pages)
-/website-laten-maken /ict-diensten/ 301
-/website-laten-maken/ /ict-diensten/ 301
+/website-laten-maken /webdesign/ 301
+/website-laten-maken/ /webdesign/ 301
 /automations /ict-diensten/ 301
 /automations/ /ict-diensten/ 301
 /portfolio /werk/ 301
