@@ -474,7 +474,7 @@ export function CookieConsent() {
               Cookies
             </h2>
             <p className="text-canvas/70 text-sm">
-              Deze site gebruikt cookies voor analyse en marketing.{' '}
+              We gebruiken cookies voor analyse en marketing.{' '}
               <a href="/privacy/#cookies" className="text-accent underline hover:text-accent/80">Meer info</a>
             </p>
           </div>
