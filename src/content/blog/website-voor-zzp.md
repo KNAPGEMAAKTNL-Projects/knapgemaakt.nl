@@ -34,7 +34,7 @@ De prijzen lopen uiteen. Best wel uiteen, eigenlijk.
 
 **WordPress laten bouwen:** €500 tot €3.000, afhankelijk van wat je nodig hebt. Daar komen maandelijkse kosten bij voor hosting (€5 tot €30) en onderhoud.
 
-**Maatwerk website bij KNAP GEMAAKT.:** vanaf €495, eenmalig. Inclusief design, teksten en hosting. [In mijn prijsgids](/blog/website-laten-maken-kosten/) leg ik uit waar die prijsverschillen vandaan komen.
+**Maatwerk website bij KNAP GEMAAKT.:** vanaf €49 per maand. Inclusief design, teksten, hosting en onderhoud. Geen grote investering vooraf. [In mijn prijsgids](/blog/website-laten-maken-kosten/) leg ik uit waar die prijsverschillen vandaan komen.
 
 Het verschil tussen €500 en €5.000 zit in hoe uniek het design is, of de teksten worden geschreven, en hoeveel functionaliteit erbij komt. [Dit artikel](/blog/website-500-of-5000-verschil/) legt dat in detail uit.
 

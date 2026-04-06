@@ -56,7 +56,7 @@ Dit is waar de meeste ZZP'ers en kleine ondernemers terechtkomen. Je krijgt een 
 
 **Geschikt voor:** Dienstverleners, coaches, consultants, kleine winkels, startende ondernemers.
 
-Bij KNAP GEMAAKT. bouw ik websites vanaf €495, opgeleverd binnen 7 dagen. Geen templates, geen WordPress, geen maandelijkse platformkosten. Elke site wordt specifiek voor jouw bedrijf gebouwd.
+Bij KNAP GEMAAKT. bouw ik websites vanaf €49 per maand, opgeleverd binnen 7 dagen. Inclusief ontwerp, bouw, hosting en onderhoud. Geen grote investering vooraf, geen templates, geen WordPress. Elke site wordt specifiek voor jouw bedrijf gebouwd.
 
 ### €1.500 tot €5.000: uitgebreide websites en webshops
 
@@ -145,7 +145,7 @@ Een website kan meer dan er mooi uitzien. Met de juiste opzet neemt het je werk 
 - Contactformulieren worden direct beantwoord
 - Betalingen lopen mee via iDEAL | Wero
 
-Dat soort [automations](/ict-diensten/automatisering/) vraagt een iets hogere investering (bij KNAP GEMAAKT. vanaf €995 voor website + systeem), maar het bespaart je uren per week aan administratie. Tijd die je liever aan je klanten besteedt. Of aan koffie.
+Dat soort [automations](/ict-diensten/automatisering/) bespaart je uren per week aan administratie. Tijd die je liever aan je klanten besteedt. Of aan koffie.
 
 ## Zo kies je de juiste partij
 
@@ -179,9 +179,8 @@ Goede vraag. Bij lagere prijzen krijg je vaak standaardtemplates, beperkte onder
 
 | Wat je nodig hebt | Marktgemiddelde | Bij KNAP GEMAAKT. |
 |---|---|---|
-| Professionele maatwerk website | €1.500 tot €3.000 | **€495** (7 dagen) |
-| Website + booking & automations | €3.000 tot €5.000 | **€995** (2 tot 3 weken) |
-| Uitgebreide webshop | €2.500 tot €6.000 | Op aanvraag |
+| Professionele maatwerk website | €1.500 tot €3.000 | **€49/maand** (7 dagen) |
+| Webshop op Shopify | €2.500 tot €6.000 | **€89/maand** |
 
 ---
 
