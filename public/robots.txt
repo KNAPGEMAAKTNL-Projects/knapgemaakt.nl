@@ -4,6 +4,7 @@
 # Google and general crawlers
 User-agent: *
 Allow: /
+Disallow: /plan/
 
 # Googlebot (main search crawler)
 User-agent: Googlebot

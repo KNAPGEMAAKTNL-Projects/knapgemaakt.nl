@@ -32,6 +32,7 @@ interface SubmissionRequest {
   website_url?: string;
   start_time?: string;
   end_time?: string;
+  meeting_type?: string;
 }
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
@@ -186,6 +187,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
               user_industry: body.industry,
               user_website: body.website_url,
               specification: body.specification,
+              meeting_type: body.meeting_type || null,
               start_time: bookingResult.start_time,
               end_time: bookingResult.end_time,
               created_at: new Date().toISOString()
