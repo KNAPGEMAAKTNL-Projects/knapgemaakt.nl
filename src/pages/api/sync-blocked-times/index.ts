@@ -67,7 +67,39 @@ export const POST: APIRoute = async ({ request, locals }) => {
         insertedCount++;
       } catch (err) {
         console.error('Error inserting blocked time:', err);
-        // Continue with other entries if one fails
+      }
+    }
+
+    // Reconcile bookings: cancel confirmed bookings whose calendar events
+    // no longer exist (time slot is completely free in Google Calendar)
+    const now = new Date();
+    const twoWeeksFromNow = new Date(now.getTime() + 14 * 24 * 60 * 60000);
+
+    const confirmedBookings = await db.prepare(
+      `SELECT id, start_time, end_time FROM bookings
+       WHERE status = 'confirmed'
+       AND datetime(start_time) >= datetime(?)
+       AND datetime(start_time) <= datetime(?)`
+    ).bind(now.toISOString(), twoWeeksFromNow.toISOString()).all();
+
+    let cancelledCount = 0;
+    for (const booking of confirmedBookings.results as any[]) {
+      const bookingStart = new Date(booking.start_time).getTime();
+      const bookingEnd = new Date(booking.end_time).getTime();
+
+      // Check if this booking's time overlaps with ANY busy block from calendar
+      const stillBusy = body.blocked_times.some((bt) => {
+        const btStart = new Date(bt.start_time).getTime();
+        const btEnd = new Date(bt.end_time).getTime();
+        return bookingStart < btEnd && bookingEnd > btStart;
+      });
+
+      if (!stillBusy) {
+        await db.prepare(
+          `UPDATE bookings SET status = 'cancelled', updated_at = CURRENT_TIMESTAMP WHERE id = ?`
+        ).bind(booking.id).run();
+        cancelledCount++;
+        console.log(`Cancelled stale booking ${booking.id} (${booking.start_time})`);
       }
     }
 
@@ -75,7 +107,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
       success: true,
       synced: insertedCount,
       total: body.blocked_times.length,
-      message: `Synced ${insertedCount} blocked times`
+      reconciled: cancelledCount,
+      message: `Synced ${insertedCount} blocked times, cancelled ${cancelledCount} stale bookings`
     }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
