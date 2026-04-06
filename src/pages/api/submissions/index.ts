@@ -239,7 +239,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
         );
       }
     } else if (body.type === 'aanvraag') {
-      if (apiKey) {
+      // When meeting_type is set (from /plan/ page), n8n handles emails
+      // (it has the meeting link). Skip API emails for those bookings.
+      if (apiKey && !body.meeting_type) {
         const aanvraagData = { ...body, booking_id: bookingId || undefined, start_time: bookingStartTime || body.start_time };
         // Build ICS calendar attachments
         const icsAttachment = aanvraagData.start_time ? [{
