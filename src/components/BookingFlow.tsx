@@ -398,10 +398,6 @@ export default function BookingFlow() {
 
   const handleSlotClick = (slot: TimeSlot) => {
     setSelectedSlot(slot);
-  };
-
-  const handleConfirm = () => {
-    if (!selectedSlot) return;
     setStep('form');
     setFormError(null);
   };
@@ -740,49 +736,22 @@ export default function BookingFlow() {
                   )}
 
                   {!slotsLoading && availableSlots.map((slot, i) => {
-                    const isSelected = selectedSlot?.start === slot.start;
+                    const selected = selectedSlot?.start === slot.start;
                     return (
-                      <div
+                      <button
+                        type="button"
                         key={i}
-                        onClick={() => !isSelected && handleSlotClick(slot)}
+                        onClick={() => handleSlotClick(slot)}
                         className={`
-                          w-full border text-sm font-bold rounded-lg flex items-center overflow-hidden
-                          ${isSelected
-                            ? 'bg-[#1a1a1a] border-[var(--color-accent)]'
-                            : 'bg-[#1a1a1a] border-white/5 text-zinc-200 hover:border-[var(--color-accent)]/50 hover:bg-[#222] cursor-pointer'
+                          w-full px-3 py-2 border text-sm font-bold transition-all flex items-center justify-center rounded-lg
+                          ${selected
+                            ? 'bg-[var(--color-accent)] border-[var(--color-accent)] text-black'
+                            : 'bg-[#1a1a1a] border-white/5 text-zinc-200 hover:border-[var(--color-accent)]/50 hover:bg-[#222]'
                           }
                         `}
                       >
-                        <span className={`px-3 py-2 ${isSelected ? 'text-white' : 'flex-1 text-center'}`}>
-                          {slot.display}
-                        </span>
-                        {isSelected && (
-                          <div
-                            className="shrink-0 overflow-hidden"
-                            ref={el => {
-                              if (!el) return;
-                              el.style.maxWidth = '0';
-                              el.style.opacity = '0';
-                              requestAnimationFrame(() => {
-                                el.style.transition = 'max-width 300ms ease-out, opacity 200ms ease-out 50ms';
-                                el.style.maxWidth = '100px';
-                                el.style.opacity = '1';
-                              });
-                            }}
-                          >
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleConfirm();
-                              }}
-                              className="px-3 py-2 bg-[var(--color-accent)] text-black text-sm font-bold whitespace-nowrap cursor-pointer rounded-r-[5px]"
-                            >
-                              Bevestig
-                            </button>
-                          </div>
-                        )}
-                      </div>
+                        {slot.display}
+                      </button>
                     );
                   })}
                 </div>
