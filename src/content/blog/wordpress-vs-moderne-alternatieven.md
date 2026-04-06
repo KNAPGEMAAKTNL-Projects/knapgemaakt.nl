@@ -140,12 +140,11 @@ Even concreet maken:
 - **Totaal: circa €900**
 
 **Statische website (KNAP GEMAAKT.):**
-- Bouw: €495 (eenmalig)
+- Vanaf €49/maand, alles inbegrepen
 - Hosting: €0 (Cloudflare)
-- Beheer: €28,30/maand × 36 = €1.019 (optioneel)
-- **Totaal: €495 tot €1.514**
+- Geen grote investering vooraf
 
-Elke optie heeft een ander kostenprofiel. WordPress kost meer in onderhoud, Wix/Squarespace kost je eigen tijd, een statische website heeft lagere lopende kosten maar je hebt een developer nodig voor aanpassingen.
+WordPress kost meer in onderhoud, Wix/Squarespace kost je eigen tijd, een statische website heeft lagere lopende kosten maar je hebt een developer nodig voor aanpassingen.
 
 [Meer over websitekosten](/blog/website-laten-maken-kosten/) lees je in mijn prijsgids.
 
