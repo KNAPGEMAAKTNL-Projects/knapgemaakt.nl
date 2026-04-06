@@ -226,7 +226,8 @@ export default function BookingFlow() {
         win.turnstile.render(turnstileRef.current, {
           sitekey: '0x4AAAAAACzkKUPSoLBK6a1f',
           theme: 'dark',
-          size: 'flexible',
+          size: 'invisible',
+          appearance: 'interaction-only',
         });
       }
     }, 100);
@@ -369,10 +370,8 @@ export default function BookingFlow() {
     setSelectedDate(formatDateString(date));
   };
 
-  const handleSlotClick = (slot: TimeSlot) => setSelectedSlot(slot);
-
-  const handleConfirmSlot = () => {
-    if (!selectedSlot) return;
+  const handleSlotClick = (slot: TimeSlot) => {
+    setSelectedSlot(slot);
     setStep('form');
     setFormError(null);
   };
@@ -728,31 +727,19 @@ export default function BookingFlow() {
                   })}
                 </div>
 
-                {/* Confirm Button */}
-                {selectedSlot && (
-                  <div className="py-3 border-t border-white/5">
-                    <button
-                      type="button"
-                      onClick={handleConfirmSlot}
-                      className="w-full py-2.5 bg-[var(--color-accent)] text-black font-bold text-sm rounded-lg hover:brightness-110 transition-all"
-                    >
-                      Volgende &rarr;
-                    </button>
-                  </div>
-                )}
               </div>
             )}
           </div>
         </>
       ) : (
         /* ── Form Step ── */
-        <div className="w-full lg:flex-1 p-4 md:p-6 lg:p-8 bg-black overflow-y-auto animate-in fade-in slide-in-from-right-4 duration-300">
+        <div className="w-full lg:flex-1 p-4 md:p-6 lg:p-8 bg-black overflow-y-auto scrollbar-hide animate-in fade-in slide-in-from-right-4 duration-300">
           <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
 
             {/* Meeting Type */}
             <div className="space-y-3">
               <label className="text-[10px] uppercase tracking-widest font-mono text-zinc-500">
-                Hoe wil je afspreken?
+                Via
               </label>
               <div className="grid grid-cols-3 gap-2">
                 {MEETING_TYPES.map(mt => (
@@ -776,7 +763,7 @@ export default function BookingFlow() {
             {/* Name */}
             <div className="space-y-2">
               <label className="text-[10px] uppercase tracking-widest font-mono text-zinc-500">
-                Naam *
+                Naam
               </label>
               <input
                 type="text"
@@ -790,7 +777,7 @@ export default function BookingFlow() {
             {/* Email */}
             <div className="space-y-2">
               <label className="text-[10px] uppercase tracking-widest font-mono text-zinc-500">
-                E-mailadres *
+                E-mail
               </label>
               <input
                 type="email"
@@ -805,7 +792,7 @@ export default function BookingFlow() {
             {meetingType === 'phone' && (
               <div className="space-y-2 animate-in fade-in slide-in-from-top-2 duration-300">
                 <label className="text-[10px] uppercase tracking-widest font-mono text-zinc-500">
-                  Telefoonnummer *
+                  Telefoon
                 </label>
                 <div className="flex gap-2">
                   <div className="relative shrink-0">

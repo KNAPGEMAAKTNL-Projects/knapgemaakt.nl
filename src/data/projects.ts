@@ -60,8 +60,8 @@ export const projects: Project[] = [
 		industry: "Sportschool",
 		location: "Culemborg",
 		image: "/assets/projects/fitcityculemborg.webp",
-		heroMockup: "/assets/projects/mockups/fitcityculemborg.webp",
-		overviewMockup: "/assets/projects/mockups/fitcityculemborg.webp",
+		heroMockup: "/assets/projects/mockups/fitcity-culemborg.webp",
+		overviewMockup: "/assets/projects/mockups/fitcity-culemborg.webp",
 		link: "https://fitcityculemborg.knapgemaakt.nl",
 		shortDescription: "De meest betaalbare sportschool van Culemborg.",
 		fullDescription: `Fitcity Culemborg positioneert zich als "de meest betaalbare sportschool van Culemborg" met de missie om iedereen toegang te geven tot fitness. Met maandprijzen vanaf €19,95 bieden ze kwalitatieve apparatuur (Nautilus, Technogym, SportsArt) zonder franje.
