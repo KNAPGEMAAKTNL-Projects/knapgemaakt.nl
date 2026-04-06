@@ -1,0 +1,10 @@
+---
+import BareLanding from "../layouts/BareLanding.astro";
+import BookingFlow from "../components/BookingFlow";
+---
+
+<BareLanding title="Plan een Gesprek | KNAP GEMAAKT.">
+  <main class="w-full max-w-[900px]">
+    <BookingFlow client:load />
+  </main>
+</BareLanding>
