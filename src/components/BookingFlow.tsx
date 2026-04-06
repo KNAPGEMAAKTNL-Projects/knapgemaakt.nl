@@ -431,8 +431,11 @@ export default function BookingFlow() {
 
     setSubmitting(true);
 
+    // Strip leading 0 (trunk prefix) when combining with country code
+    // e.g. NL: 0623571852 → +31 623571852
+    const localNumber = phone.trim().replace(/^0+/, '');
     const phoneNumber = meetingType === 'phone'
-      ? `${COUNTRIES[countryIdx].dial} ${phone.trim()}`
+      ? `${COUNTRIES[countryIdx].dial}${localNumber}`
       : undefined;
 
     try {
