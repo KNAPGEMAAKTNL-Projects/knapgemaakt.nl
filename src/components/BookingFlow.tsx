@@ -163,6 +163,7 @@ export default function BookingFlow() {
   const targetScrollRef = useRef(0);
   const isScrollingRef = useRef(false);
   const autoSelectDone = useRef(false);
+  const timeSlotsColumnRef = useRef<HTMLDivElement>(null);
 
   // ── Effects ────────────────────────────────────────────────────────────────
 
@@ -368,6 +369,31 @@ export default function BookingFlow() {
   const handleDateClick = (date: Date) => {
     if (isDateDisabled(date)) return;
     setSelectedDate(formatDateString(date));
+
+    // On mobile, gently scroll to reveal time slots below the calendar
+    if (window.innerWidth < 1024) {
+      setTimeout(() => {
+        const el = timeSlotsColumnRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        // Only nudge if time slots are mostly below the visible area
+        if (rect.top > window.innerHeight * 0.65) {
+          const start = window.scrollY;
+          const target = start + rect.top - window.innerHeight * 0.5;
+          const distance = target - start;
+          const duration = 800;
+          let t0: number | null = null;
+          const ease = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+          const step = (ts: number) => {
+            if (!t0) t0 = ts;
+            const progress = Math.min((ts - t0) / duration, 1);
+            window.scrollTo(0, start + distance * ease(progress));
+            if (progress < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        }
+      }, 500);
+    }
   };
 
   const handleSlotClick = (slot: TimeSlot) => {
@@ -666,7 +692,7 @@ export default function BookingFlow() {
           </div>
 
           {/* Time Slots Column */}
-          <div className={`w-full lg:w-[180px] shrink-0 p-4 pb-0 md:p-5 md:pb-0 border-t lg:border-t-0 lg:border-l border-white/10 bg-[#0a0a0a] transition-all duration-300 flex flex-col overflow-hidden ${
+          <div ref={timeSlotsColumnRef} className={`w-full lg:w-[180px] shrink-0 p-4 pb-0 md:p-5 md:pb-0 border-t lg:border-t-0 lg:border-l border-white/10 bg-[#0a0a0a] transition-all duration-300 flex flex-col overflow-hidden ${
             selectedDate ? 'opacity-100' : 'opacity-30 pointer-events-none'
           }`}>
             {!selectedDate ? (
