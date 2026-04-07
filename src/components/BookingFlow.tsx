@@ -398,6 +398,10 @@ export default function BookingFlow() {
 
   const handleSlotClick = (slot: TimeSlot) => {
     setSelectedSlot(slot);
+  };
+
+  const handleConfirm = () => {
+    if (!selectedSlot) return;
     setStep('form');
     setFormError(null);
   };
@@ -692,7 +696,7 @@ export default function BookingFlow() {
           </div>
 
           {/* Time Slots Column */}
-          <div ref={timeSlotsColumnRef} className={`w-full lg:w-[180px] shrink-0 p-4 pb-0 md:p-5 md:pb-0 border-t lg:border-t-0 lg:border-l border-white/10 bg-[#0a0a0a] transition-all duration-300 flex flex-col overflow-hidden ${
+          <div ref={timeSlotsColumnRef} className={`w-full lg:w-[260px] shrink-0 p-4 pb-0 md:p-5 md:pb-0 border-t lg:border-t-0 lg:border-l border-white/10 bg-[#0a0a0a] transition-all duration-300 flex flex-col overflow-hidden ${
             selectedDate ? 'opacity-100' : 'opacity-30 pointer-events-none'
           }`}>
             {!selectedDate ? (
@@ -736,22 +740,46 @@ export default function BookingFlow() {
                   )}
 
                   {!slotsLoading && availableSlots.map((slot, i) => {
-                    const selected = selectedSlot?.start === slot.start;
+                    const isSelected = selectedSlot?.start === slot.start;
                     return (
-                      <button
-                        type="button"
-                        key={i}
-                        onClick={() => handleSlotClick(slot)}
-                        className={`
-                          w-full px-3 py-2 border text-sm font-bold transition-all flex items-center justify-center rounded-lg
-                          ${selected
-                            ? 'bg-[var(--color-accent)] border-[var(--color-accent)] text-black'
-                            : 'bg-[#1a1a1a] border-white/5 text-zinc-200 hover:border-[var(--color-accent)]/50 hover:bg-[#222]'
-                          }
-                        `}
-                      >
-                        {slot.display}
-                      </button>
+                      <div key={i} className="flex gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => !isSelected && handleSlotClick(slot)}
+                          className={`
+                            flex-1 min-w-0 px-3 py-2 border text-sm font-bold rounded-lg transition-colors
+                            bg-[#1a1a1a] border-white/5 text-zinc-200
+                            ${!isSelected ? 'hover:border-[var(--color-accent)]/50 hover:bg-[#222] cursor-pointer' : ''}
+                          `}
+                        >
+                          {slot.display}
+                        </button>
+                        {isSelected && (
+                          <div
+                            className="shrink-0 overflow-hidden"
+                            ref={el => {
+                              if (!el) return;
+                              el.style.maxWidth = '0';
+                              el.style.opacity = '0';
+                              requestAnimationFrame(() => {
+                                requestAnimationFrame(() => {
+                                  el.style.transition = 'max-width 350ms cubic-bezier(0.16,1,0.3,1), opacity 250ms ease-out 80ms';
+                                  el.style.maxWidth = '120px';
+                                  el.style.opacity = '1';
+                                });
+                              });
+                            }}
+                          >
+                            <button
+                              type="button"
+                              onClick={handleConfirm}
+                              className="px-3 py-2 bg-[var(--color-accent)] text-black text-sm font-bold rounded-lg whitespace-nowrap cursor-pointer"
+                            >
+                              Bevestig
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     );
                   })}
                 </div>
