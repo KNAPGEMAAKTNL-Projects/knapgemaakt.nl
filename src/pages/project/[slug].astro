@@ -257,7 +257,11 @@ const otherProjects = getAllProjects().filter((p) => p.slug !== project.slug).sl
 									/>
 								</div>
 								<div class="p-6">
-									<span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-accent text-white px-2.5 py-1 rounded-full mb-3">LIVE</span>
+									{related.category === "Live" ? (
+										<span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-accent text-white px-2.5 py-1 rounded-full mb-3">LIVE</span>
+									) : (
+										<span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2.5 py-1 rounded-full mb-3">IN ONTWIKKELING</span>
+									)}
 									<h3 class="font-bold text-xl group-hover:text-accent transition-colors">{related.title}</h3>
 									<p class="text-ink/60 text-sm mt-1">{related.industry} · {related.location}</p>
 								</div>
