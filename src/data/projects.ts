@@ -114,8 +114,8 @@ Het ontwerp is mobile-first: 70% van potentiële leden zoekt vanaf hun telefoon.
 		location: "Tiel",
 		image: "/assets/projects/byshakir.webp",
 		mobileImage: "/assets/projects/byshakir-mobile.webp",
-		heroMockup: "/assets/projects/mockups/byshakir.webp",
-		overviewMockup: "/assets/projects/mockups/byshakir.webp",
+		heroMockup: "/assets/projects/mockups/by-shakir.webp",
+		overviewMockup: "/assets/projects/mockups/by-shakir.webp",
 		link: "https://byshakir.knapgemaakt.nl",
 		shortDescription: "Geen meubelwinkel. Een designautoriteit.",
 		fullDescription: `By Shakir | Metropolitan Luxury is geen meubelwinkel, het is een design autoriteit. Opgericht vanuit de missie om de Nederlandse markt iets anders te bieden dan standaard meubels. "Ik zag een gat in de markt. Overal meubelzaken die producten verkopen, maar niemand die visies verkocht," aldus oprichter Shakir.
