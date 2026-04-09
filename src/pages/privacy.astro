@@ -23,10 +23,10 @@ import Footer from "../components/Footer.astro";
                     class="flex flex-col md:flex-row md:items-center gap-4 text-sm font-mono uppercase tracking-widest text-ink/60 border-t border-ink/10 pt-6"
                 >
                     <span class="bg-accent px-2 py-1 text-black font-bold text-xs"
-                        >Versie 2.5</span
+                        >Versie 3.0</span
                     >
                     <span class="hidden md:inline">&mdash;</span>
-                    <span>Laatst bijgewerkt: 2 Februari 2026</span>
+                    <span>Laatst bijgewerkt: 9 April 2026</span>
                 </div>
             </header>
 
@@ -230,18 +230,12 @@ import Footer from "../components/Footer.astro";
                                 sluiten wij verwerkersovereenkomsten waar nodig.
                             </p>
                             <ul class="list-disc pl-5 space-y-2 mt-4">
-                                <li>Cloudflare (hosting en database D1)</li>
+                                <li>Cloudflare (hosting, database D1 en websitestatistieken)</li>
                                 <li>Mollie (betalingen via iDEAL en SEPA)</li>
                                 <li>
                                     Resend (verzenden van afspraakbevestigingen)
                                 </li>
                                 <li>Google Calendar (agenda-afspraken)</li>
-                                <li>
-                                    Google Analytics (websitestatistieken, na toestemming)
-                                </li>
-                                <li>
-                                    Microsoft Clarity (heatmaps, sessie-opnames &amp; formulier-analyse, na toestemming)
-                                </li>
                                 <li>
                                     KNAP Automation Platform (zelf gehoste automatiseringsserver, zie sectie 12)
                                 </li>
@@ -380,47 +374,38 @@ import Footer from "../components/Footer.astro";
                         <h2
                             class="text-3xl md:text-5xl font-bold uppercase tracking-tight"
                         >
-                            Cookies
+                            Cookies &amp; Analytics
                         </h2>
                         <div
                             class="prose prose-lg md:prose-xl prose-invert max-w-none text-ink/80 leading-relaxed"
                         >
                             <p>
-                                Wij gebruiken cookies en vergelijkbare technologie&euml;n.
-                                Bij je eerste bezoek vragen wij via een cookiebanner om toestemming.
+                                Onze website plaatst geen tracking cookies en laadt geen scripts van derden
+                                voor analyse of marketing. Er is daarom geen cookiebanner nodig.
                             </p>
 
-                            <p class="mt-4"><strong class="text-ink">Noodzakelijke cookies</strong> (altijd actief):</p>
-                            <p>Deze cookies zijn essentieel voor de werking van de website en kunnen niet worden uitgeschakeld.</p>
-                            <ul class="list-disc pl-5 space-y-1 mt-2">
-                                <li><code class="text-sm bg-ink/10 px-1 rounded">cookie_consent</code> &ndash; Onthoudt je cookiekeuze (1 jaar)</li>
-                                <li><code class="text-sm bg-ink/10 px-1 rounded">__cf_bm</code> &ndash; Cloudflare botbescherming (30 min)</li>
-                                <li>localStorage &ndash; Tijdelijk opslaan van formuliergegevens tijdens invullen (wordt gewist na verzenden)</li>
-                            </ul>
-
-                            <p class="mt-4"><strong class="text-ink">Analytische cookies</strong> (na toestemming):</p>
-                            <p>Helpen ons begrijpen hoe bezoekers de website gebruiken.</p>
-                            <ul class="list-disc pl-5 space-y-1 mt-2">
-                                <li><code class="text-sm bg-ink/10 px-1 rounded">_ga</code>, <code class="text-sm bg-ink/10 px-1 rounded">_ga_*</code> &ndash; Google Analytics (2 jaar)</li>
-                                <li><code class="text-sm bg-ink/10 px-1 rounded">_clck</code>, <code class="text-sm bg-ink/10 px-1 rounded">_clsk</code> &ndash; Microsoft Clarity heatmaps, sessie-opnames &amp; formulier-analyse (1 jaar / sessie)</li>
-                            </ul>
-
-                            <p class="mt-4"><strong class="text-ink">Marketingcookies</strong> (na toestemming):</p>
-                            <p>Worden gebruikt om advertenties relevanter te maken.</p>
-                            <ul class="list-disc pl-5 space-y-1 mt-2">
-                                <li><code class="text-sm bg-ink/10 px-1 rounded">_fbp</code> &ndash; Meta Pixel (3 maanden)</li>
-                            </ul>
-
-                            <p class="mt-4"><strong class="text-ink">Cloudflare</strong></p>
+                            <p class="mt-4"><strong class="text-ink">Websitestatistieken</strong></p>
                             <p>
-                                Onze website wordt gehost via Cloudflare Pages. Cloudflare plaatst
-                                beveiligingscookies voor DDoS-bescherming en botdetectie. Deze cookies
-                                zijn strikt noodzakelijk en vereisen geen toestemming.
+                                Wij gebruiken Cloudflare Web Analytics voor anonieme websitestatistieken.
+                                Deze dienst werkt volledig zonder cookies, zonder JavaScript en zonder
+                                persoonsgegevens. Er worden geen individuele bezoekers gevolgd.
+                                Wij zien alleen geaggregeerde gegevens zoals paginaweergaven, verwijzende
+                                websites en landen.
                             </p>
 
-                            <p class="mt-4">
-                                Je kunt je cookievoorkeuren altijd wijzigen via de link
-                                &ldquo;Cookie-instellingen&rdquo; in de footer van onze website.
+                            <p class="mt-4"><strong class="text-ink">Cloudflare beveiligingscookies</strong></p>
+                            <p>
+                                Onze website wordt gehost via Cloudflare Pages. Cloudflare kan
+                                beveiligingscookies plaatsen voor DDoS-bescherming en botdetectie
+                                (zoals <code class="text-sm bg-ink/10 px-1 rounded">__cf_bm</code>).
+                                Deze cookies zijn strikt noodzakelijk en vereisen geen toestemming.
+                            </p>
+
+                            <p class="mt-4"><strong class="text-ink">Lokale opslag</strong></p>
+                            <p>
+                                Bij het aanvraagformulier worden je gegevens tijdelijk opgeslagen
+                                in je browser (localStorage) zodat je het formulier later kunt afmaken.
+                                Deze gegevens worden automatisch gewist zodra je het formulier verzendt.
                             </p>
                         </div>
                     </div>
