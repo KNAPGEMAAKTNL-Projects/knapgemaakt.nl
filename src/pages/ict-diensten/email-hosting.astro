@@ -6,6 +6,7 @@ import Footer from "../../components/Footer.astro";
 import FadeIn from "../../components/FadeIn.astro";
 import FAQSection from "../../components/FAQSection.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import ServiceSchema from "../../components/seo/ServiceSchema.astro";
 
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
@@ -15,9 +16,16 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="E-mail Hosting | Zakelijke E-mail op Eigen Domein | KNAP GEMAAKT."
+  title="Zakelijke E-mail Hosting | Eigen Domein | KNAP GEMAAKT."
   description="Zakelijke e-mail hosting op je eigen domeinnaam. Geen prijs per gebruiker, maar per opslagruimte. Vanaf €5 per maand, inclusief spamfilter en migratie."
 >
+  <ServiceSchema
+    name="Zakelijke E-mail Hosting"
+    description="E-mail hosting op je eigen domeinnaam. Geen prijs per gebruiker, inclusief spamfilter en migratie."
+    serviceType="EmailHosting"
+    url="https://knapgemaakt.nl/ict-diensten/email-hosting/"
+    price="5"
+  />
   <main>
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">

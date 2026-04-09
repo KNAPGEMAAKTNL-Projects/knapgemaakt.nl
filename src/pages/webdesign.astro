@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import FadeIn from "../components/FadeIn.astro";
 import FAQSection from "../components/FAQSection.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import ServiceSchema from "../components/seo/ServiceSchema.astro";
 import { getAllProjects } from "../data/projects";
 
 const projects = getAllProjects();
@@ -20,6 +21,13 @@ const breadcrumbs = [
   title="Webdesign | Websites op maat gebouwd | KNAP GEMAAKT."
   description="Websites vanaf de grond opgebouwd. Geen templates, geen trage plugins. Snel, overzichtelijk en precies passend bij jouw bedrijf. KNAP GEMAAKT. uit Buren."
 >
+  <ServiceSchema
+    name="Webdesign op maat"
+    description="Websites vanaf de grond opgebouwd met Astro. Snel, veilig en passend bij jouw bedrijf."
+    serviceType="WebDesign"
+    url="https://knapgemaakt.nl/webdesign/"
+    price="595"
+  />
   <main>
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">

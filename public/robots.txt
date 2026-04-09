@@ -1,54 +1,131 @@
 # robots.txt for knapgemaakt.nl
-# Allow all crawlers including AI for maximum discoverability
+# Strategy: Allow search crawlers (cite content), block training crawlers (use without attribution)
+# Reference: Hub/business/sops/seo/ai-search-crawlers.md
+# Last updated: 2026-04-09
 
-# Google and general crawlers
+# === DEFAULT: Allow all standard crawlers ===
 User-agent: *
 Allow: /
 Disallow: /plan/
 
-# Googlebot (main search crawler)
+# === SEARCH CRAWLERS — Explicitly allowed (cite your content) ===
+
 User-agent: Googlebot
 Allow: /
 
-# Google AI/Gemini
-User-agent: Google-Extended
+User-agent: Bingbot
 Allow: /
 
-# OpenAI GPT crawlers
-User-agent: GPTBot
+# OpenAI Search (ChatGPT search results with citations)
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-# Anthropic Claude
-User-agent: ClaudeBot
-Allow: /
-User-agent: Claude-Web
-Allow: /
-
-# Perplexity AI
+# Perplexity (search with citations)
 User-agent: PerplexityBot
 Allow: /
 
-# Microsoft/Bing AI
-User-agent: Bingbot
+User-agent: Perplexity-User
 Allow: /
 
-# Meta AI
-User-agent: FacebookBot
+# Claude Search (search with citations)
+User-agent: Claude-SearchBot
 Allow: /
 
-# Apple
+User-agent: Claude-User
+Allow: /
+
+# Apple (Siri, Spotlight, Apple Maps)
 User-agent: Applebot
 Allow: /
 
-# Common crawlers
 User-agent: DuckDuckBot
 Allow: /
 
-User-agent: YandexBot
-Allow: /
+# === TRAINING/SCRAPING CRAWLERS — Blocked (use content without attribution) ===
 
-# Sitemap location
+# OpenAI training crawler
+User-agent: GPTBot
+Disallow: /
+
+# Anthropic training crawlers
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# Google AI training
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Google-CloudVertexBot
+Disallow: /
+
+# Apple AI training
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Apple-Extended
+Disallow: /
+
+# Common Crawl (training data source)
+User-agent: CCBot
+Disallow: /
+
+# ByteDance/TikTok
+User-agent: Bytespider
+Disallow: /
+
+User-agent: TikTokSpider
+Disallow: /
+
+# Meta training crawlers
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+# Amazon
+User-agent: Amazonbot
+Disallow: /
+
+# Other training/scraping bots
+User-agent: Diffbot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: img2dataset
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: ChatGLM-Spider
+Disallow: /
+
+User-agent: DeepSeekBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+# Sitemap
 Sitemap: https://knapgemaakt.nl/sitemap.xml
