@@ -56,7 +56,7 @@ export const projects: Project[] = [
 	{
 		slug: "maatwerk-website-voor-fitcity-culemborg",
 		title: "Fitcity Culemborg",
-		category: "Concept",
+		category: "Live",
 		industry: "Sportschool",
 		location: "Culemborg",
 		image: "/assets/projects/fitcityculemborg.webp",
