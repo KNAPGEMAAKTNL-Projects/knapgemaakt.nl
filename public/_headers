@@ -38,7 +38,6 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-# Prevent pages.dev from being indexed (if using custom domain)
-# Uncomment if you have a custom domain and want to block the .pages.dev URL
-# https://*.pages.dev/*
-#   X-Robots-Tag: noindex
+# Prevent pages.dev from being indexed (custom domain is active)
+https://*.pages.dev/*
+  X-Robots-Tag: noindex

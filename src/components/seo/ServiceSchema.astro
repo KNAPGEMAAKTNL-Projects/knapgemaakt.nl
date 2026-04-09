@@ -1,0 +1,55 @@
+---
+/**
+ * Service Schema Component
+ * Generates JSON-LD structured data for individual services
+ * Links to the LocalBusiness entity via @id
+ * https://schema.org/Service
+ */
+
+interface Props {
+    name: string;
+    description: string;
+    serviceType: string;
+    url: string;
+    price?: string;
+    priceCurrency?: string;
+    areaServed?: string[];
+}
+
+const {
+    name,
+    description,
+    serviceType,
+    url,
+    price,
+    priceCurrency = "EUR",
+    areaServed = ["Culemborg", "Utrecht", "Houten", "Nieuwegein", "Geldermalsen", "Tiel", "Vianen", "IJsselstein", "Beesd", "Buren"]
+} = Astro.props;
+
+const schema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    serviceType,
+    url,
+    provider: {
+        "@id": "https://knapgemaakt.nl/#organization"
+    },
+    areaServed: areaServed.map(city => ({
+        "@type": "City",
+        name: city
+    }))
+};
+
+if (price) {
+    schema.offers = {
+        "@type": "Offer",
+        priceCurrency,
+        price,
+        availability: "https://schema.org/InStock"
+    };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema, null, 2)} />

@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import FadeIn from "../components/FadeIn.astro";
 import FAQSection from "../components/FAQSection.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import ServiceSchema from "../components/seo/ServiceSchema.astro";
 
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
@@ -14,9 +15,15 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="Shopify Webshop Laten Bouwen | KNAP GEMAAKT."
-  description="Op maat gemaakte Shopify webshops voor ondernemers. Snel, professioneel en makkelijk zelf te beheren. KNAP GEMAAKT. uit Buren."
+  title="Shopify Webshop Laten Bouwen | Op Maat | KNAP GEMAAKT."
+  description="Shopify webshop op maat voor jouw merk. iDEAL, voorraad en verzending geregeld. Professioneel en makkelijk zelf te beheren. Ontdek wat KNAP GEMAAKT. kan bouwen."
 >
+  <ServiceSchema
+    name="Shopify Webshop op maat"
+    description="Op maat gemaakte Shopify webshops met iDEAL, voorraad en verzending geregeld."
+    serviceType="WebDevelopment"
+    url="https://knapgemaakt.nl/webshops/"
+  />
   <main>
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">

@@ -6,6 +6,7 @@ import Footer from "../../components/Footer.astro";
 import FadeIn from "../../components/FadeIn.astro";
 import FAQSection from "../../components/FAQSection.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import ServiceSchema from "../../components/seo/ServiceSchema.astro";
 
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
@@ -15,9 +16,16 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="Website Hosting | Snelle, veilige hosting voor je website | KNAP GEMAAKT."
-  description="Betrouwbare website hosting op Cloudflare's wereldwijde netwerk. Snel, veilig, inclusief SSL en onderhoud. Alles geregeld door KNAP GEMAAKT."
+  title="Website Hosting | Snel, Veilig & Beheerd | KNAP GEMAAKT."
+  description="Betrouwbare website hosting op Cloudflare's wereldwijde netwerk. Snel, veilig, inclusief SSL en onderhoud. Alles geregeld door KNAP GEMAAKT. Bekijk de opties."
 >
+  <ServiceSchema
+    name="Website Hosting"
+    description="Snelle, veilige website hosting op Cloudflare. Inclusief SSL, onderhoud en monitoring."
+    serviceType="WebHosting"
+    url="https://knapgemaakt.nl/ict-diensten/website-hosting/"
+    price="15"
+  />
   <main>
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">

@@ -6,6 +6,7 @@ import Footer from "../../components/Footer.astro";
 import FadeIn from "../../components/FadeIn.astro";
 import FAQSection from "../../components/FAQSection.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import ServiceSchema from "../../components/seo/ServiceSchema.astro";
 
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
@@ -16,8 +17,15 @@ const breadcrumbs = [
 
 <Layout
   title="WordPress Versnellen | Cloudflare APO | KNAP GEMAAKT."
-  description="WordPress website te traag? Met Cloudflare APO laadt je site tot 72% sneller. Je beheer blijft hetzelfde. €10 per maand, alles geregeld."
+  description="WordPress te traag? Met Cloudflare APO laadt je site tot 72% sneller. Je beheer blijft hetzelfde. Vanaf €10/maand, inclusief onderhoud. Bekijk de opties."
 >
+  <ServiceSchema
+    name="WordPress Versnellen"
+    description="WordPress website versnellen met Cloudflare APO. Tot 72% sneller, beheer blijft hetzelfde."
+    serviceType="ITService"
+    url="https://knapgemaakt.nl/ict-diensten/wordpress-versnellen/"
+    price="10"
+  />
   <main>
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">

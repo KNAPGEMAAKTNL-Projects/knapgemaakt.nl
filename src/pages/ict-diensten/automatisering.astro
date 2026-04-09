@@ -6,6 +6,7 @@ import Footer from "../../components/Footer.astro";
 import FadeIn from "../../components/FadeIn.astro";
 import FAQSection from "../../components/FAQSection.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import ServiceSchema from "../../components/seo/ServiceSchema.astro";
 
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
@@ -16,8 +17,14 @@ const breadcrumbs = [
 
 <Layout
   title="Automatisering & AI voor Ondernemers | KNAP GEMAAKT."
-  description="Automatiseer terugkerende taken met AI en slimme workflows. Offertebevestigingen, factuurherinneringen, reviews verzamelen, WhatsApp-opvolging. KNAP GEMAAKT. regelt het."
+  description="Automatiseer terugkerende taken met AI en slimme workflows. Offertes, facturen, reviews en opvolging. Bespaar tijd en fouten. Ontdek de mogelijkheden."
 >
+  <ServiceSchema
+    name="Automatisering & AI"
+    description="Bedrijfsprocessen automatiseren met AI en slimme workflows. Offertes, facturen, reviews en opvolging."
+    serviceType="ITService"
+    url="https://knapgemaakt.nl/ict-diensten/automatisering/"
+  />
   <main>
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">

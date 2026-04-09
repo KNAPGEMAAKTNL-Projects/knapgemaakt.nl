@@ -21,6 +21,10 @@ export default defineConfig({
 
   integrations: [react()],
 
+  build: {
+    inlineStylesheets: 'auto'
+  },
+
   experimental: {
     clientPrerender: true
   }
