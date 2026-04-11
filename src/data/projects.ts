@@ -50,6 +50,32 @@ export interface Project {
 	technicalHighlights?: string[];
 	/** Why businesses in this industry need a professional website */
 	industryContext?: string;
+
+	// --- Case study fields (from case-study-workflow.md) ---
+
+	/** Results-driven H1 headline (used instead of title on the page) */
+	resultHeadline?: string;
+	/** Custom SEO title tag (50-55 chars, keyword front-loaded) */
+	seoTitle?: string;
+	/** Custom SEO meta description (140-155 chars) */
+	seoDescription?: string;
+	/** Project timeline: "Van eerste gesprek tot livegang in X weken" */
+	timeline?: string;
+	/** The strategic insight or discovery that shaped the project direction */
+	ahaInsight?: string;
+	/** What comes next for the client */
+	nextSteps?: string;
+	/** Date the case study was last updated (YYYY-MM-DD) */
+	lastUpdated?: string;
+	/** Industry-specific CTA text */
+	industryCta?: string;
+	/** FAQ questions and answers for the project page */
+	faq?: { question: string; answer: string }[];
+	/** Snapshot metadata shown in the bar below the hero */
+	snapshot?: {
+		services: string;
+		keyResult: string;
+	};
 }
 
 export const projects: Project[] = [
@@ -63,33 +89,35 @@ export const projects: Project[] = [
 		heroMockup: "/assets/projects/mockups/fitcity-culemborg.webp",
 		overviewMockup: "/assets/projects/mockups/fitcity-culemborg.webp",
 		link: "https://fitcityculemborg.nl/",
-		shortDescription: "De meest betaalbare sportschool van Culemborg.",
-		fullDescription: `Fitcity Culemborg positioneert zich als "de meest betaalbare sportschool van Culemborg" met de missie om iedereen toegang te geven tot fitness. Met maandprijzen vanaf €19,95 bieden ze kwalitatieve apparatuur (Nautilus, Technogym, SportsArt) zonder franje.
+		shortDescription: "Een sportschool website met online ledenwerving.",
+		fullDescription: `Fitcity Culemborg is de meest betaalbare sportschool van Culemborg. Vanaf €20,50 per maand, zeven dagen per week open, een Ladies Only zone en bokszaktraining twee keer per week. Veel voor weinig geld, dus.
 
-Ze onderscheiden zich met een Ladies Only zone, kickboks lessen en persoonlijke begeleiding zonder extra kosten. Open 7 dagen per week met ruime openingstijden (ma-vr 08:30-22:00). Voor sportscholen is online vindbaarheid cruciaal: mensen zoeken "sportschool Culemborg" of "goedkoop sporten Rivierenland" en besluiten binnen seconden waar ze lid worden.`,
-		challenge: `Fitcity Culemborg richt zich bewust op betaalbaarheid en toegankelijkheid, niet op luxe faciliteiten of Instagram-waardige interieurs. De uitdaging was om een website te maken die deze no-nonsense aanpak ("geen poespas, wel resultaat") communiceert terwijl het toch professioneel en uitnodigend oogt.
+Hun oude website deed dat aanbod alleen niet echt recht. De site was nog niet af en miste de informatie die bezoekers nodig hebben: geen prijzen, geen abonnementsoverzicht, en geen manier om je online in te schrijven. Terwijl mensen de sportschool wél vonden via Google.`,
+		challenge: `Fitcity had al naamsbekendheid en een goede positie in Google. Maar de website zelf was nog niet ingericht om bezoekers verder te helpen. Iemand die "sportschool Culemborg" zocht, kwam wel op de site terecht, maar vond daar niet de informatie die je verwacht: prijzen, abonnementen, een manier om lid te worden.
 
-In de fitnessbranche domineren grote ketens met dure marketingbudgetten de zoekresultaten. Een lokale sportschool moet slim omgaan met SEO: focussen op lokale zoekopdrachten, transparante prijzen tonen, en zich onderscheiden op persoonlijke service en community. De website moet bezoekers binnen seconden overtuigen: betaalbaar, betrouwbaar, dichtbij.`,
-		solution: `We creëerden een frisse, energieke website met oranje accenten die de toegankelijkheid benadrukt. Het strakke, no-nonsense ontwerp past bij de filosofie van de sportschool. Prijzen staan prominent op de homepage (vanaf €19,95/maand + €17 inschrijfgeld), openingstijden zijn direct zichtbaar, en de "Word Lid" knop is altijd binnen handbereik.
+Tegelijkertijd hebben de grote ketens als Basic-Fit en Anytime Fitness sites waar je in een paar klikken kunt inschrijven. Die verwachting nemen bezoekers mee. De sportschool verdiende een site die meekon met wat ze eigenlijk al te bieden hadden.`,
+		solution: `De eerste keuze die ik maakte: prijzen op de homepage. Andere sportscholen verstoppen hun tarieven achter formulieren of laten je eerst bellen. Bij Fitcity is de prijs juist het sterkste verkoopargument, vanaf €20,50 per maand. Dat verstop je niet, dat zet je vooraan.
 
-Het ontwerp is mobile-first: 70% van potentiële leden zoekt vanaf hun telefoon. Click-to-call knoppen maken het makkelijk om direct te bellen. De USP's (Ladies Only, kickboks, gratis begeleiding) krijgen visueel de aandacht die ze verdienen. Geen eindeloos scrollen: bezoekers krijgen direct de informatie die ze zoeken.`,
+De tweede keuze was een compleet inschrijfsysteem. Geen contactformulier met "ik heb interesse", maar een systeem waar je als nieuw lid gewoon je gegevens invult en direct kunt starten. Bankgegevens worden veilig en versleuteld opgeslagen. De eigenaar beheert alles via een beveiligde omgeving die alleen voor hem toegankelijk is.
+
+Verder: op je telefoon kun je direct bellen met één tik, de "Word Nu Lid" knop staat op elke pagina, en alle info die je als bezoeker zoekt (prijzen, openingstijden, trainingsaanbod) staat binnen twee scrolls.`,
 		features: [
-			"Prominente prijsweergave vanaf €19,95/maand",
-			"Ladies Only zone highlight voor vrouwelijke doelgroep",
-			"Kickboks abonnementen duidelijk gepresenteerd",
-			"Openingstijden 7 dagen per week direct zichtbaar",
-			"Online aanmeldformulier en proefles aanvraag",
-			"Mobile-first ontwerp met click-to-call",
-			"Lokale SEO voor 'sportschool Culemborg'",
+			"Online inschrijven: nieuwe leden kunnen direct lid worden via de site",
+			"Beveiligd ledenbeheer voor de eigenaar",
+			"Alle prijzen en abonnementen direct zichtbaar op de homepage",
+			"Ladies Only zone en bokszaktraining apart uitgelicht",
+			"Online proeftraining aanvragen",
+			"Direct bellen met één tik op je telefoon",
+			"Geen cookiebanner nodig dankzij privacy-vriendelijke analytics",
 		],
 		results: [
-			"Duidelijke conversie-focus met transparante prijzen",
-			"Mobile-optimized voor onderweg oriënterende leden",
-			"Lokale vindbaarheid in Google Maps en zoekresultaten",
-			"Lage drempel tot aanmelden door simpel formulier",
+			"Nieuwe leden kunnen zich nu 24/7 online inschrijven",
+			"Alle prijzen en abonnementen duidelijk zichtbaar",
+			"Persoonsgegevens en bankgegevens veilig en versleuteld opgeslagen",
+			"Geen cookiebanner nodig, geen irritatie voor bezoekers",
 		],
 		featured: true,
-		targetAudience: "Budget-bewuste fitnessers in Culemborg en omgeving. Van jongeren die starten met fitness tot senioren die fit willen blijven. Vrouwen die een veilige trainingsomgeving zoeken (Ladies Only zone). Kickboks liefhebbers op zoek naar groepslessen.",
+		targetAudience: "Budget-bewuste fitnessers in Culemborg en omgeving. Van jongeren die starten met fitness tot senioren die fit willen blijven. Vrouwen die een veilige trainingsomgeving zoeken (Ladies Only zone). Bokszak-liefhebbers op zoek naar groepstraining.",
 		industryKeywords: [
 			"website sportschool",
 			"sportschool website laten maken",
@@ -99,12 +127,45 @@ Het ontwerp is mobile-first: 70% van potentiële leden zoekt vanaf hun telefoon.
 			"betaalbare sportschool website",
 		],
 		technicalHighlights: [
-			"Mobile-first design (70% mobiel verkeer)",
-			"Click-to-call conversie-optimalisatie",
-			"Lokale SEO voor 'sportschool Culemborg' top 3",
-			"Transparante prijsweergave verhoogt conversie",
+			"Eigen inschrijfsysteem gebouwd, geen duur abonnement op externe software",
+			"Bankgegevens van leden worden versleuteld opgeslagen",
+			"Voldoet aan de privacywet (AVG)",
+			"Geen cookies, geen cookiebanner",
+			"Ontworpen voor telefoons eerst, want daar zoeken de meeste mensen",
 		],
 		industryContext: "De fitnessbranche is competitief. Potentiële leden vergelijken sportscholen online voordat ze langskomen. Een professionele website met transparante prijzen en een simpel aanmeldproces verlaagt de drempel om lid te worden. Lokale SEO is essentieel: 76% van lokale zoekopdrachten leidt binnen 24 uur tot contact. Budget-sportscholen moeten vooral communiceren op prijs, toegankelijkheid en resultaat, niet op luxe.",
+
+		// Case study fields
+		resultHeadline: "Sportschool Culemborg: van informatiesite naar online ledenwerving",
+		seoTitle: "Website Sportschool Laten Maken | KNAP GEMAAKT.",
+		seoDescription:
+			"Bekijk hoe ik een sportschool website met online inschrijving maakte in Culemborg. Prijzen op de homepage en leden kunnen 24/7 lid worden.",
+		ahaInsight:
+			"Andere sportscholen verstoppen hun prijzen. Bij Fitcity is de prijs juist het sterkste verkoopargument, vanaf €20,50 per maand. Dat verstop je niet. Dat zet je op de homepage.",
+		lastUpdated: "2026-04-11",
+		industryCta: "Ook een website voor jouw sportschool?",
+		snapshot: {
+			services: "Website + ledenregistratiesysteem",
+			keyResult: "24/7 online inschrijving",
+		},
+		faq: [
+			{
+				question: "Wat zit er allemaal bij zo'n website?",
+				answer: "Bij Fitcity: de volledige site, online inschrijving, ledenbeheer, en een beveiligde omgeving voor de eigenaar. Elk project is anders. Neem gerust contact op, dan vertel ik je wat er bij jouw site zou zitten.",
+			},
+			{
+				question: "Kan ik de website zelf aanpassen als er iets verandert?",
+				answer: "Kleine wijzigingen zoals prijzen, openingstijden of teksten pas ik voor je aan. Stuur een appje of mail met wat er moet veranderen, dan regel ik het. Zo hoef je zelf niks technisch te doen.",
+			},
+			{
+				question: "Hoe lang duurt het om zo'n website te maken?",
+				answer: "Voor een sportschool website met inschrijfsysteem moet je rekenen op een paar weken. Dat hangt af van hoe snel we de teksten, foto's en gegevens rond hebben. Het bouwwerk zelf gaat snel, de voorbereiding kost de meeste tijd.",
+			},
+			{
+				question: "Worden de gegevens van mijn leden veilig opgeslagen?",
+				answer: "Ja. Bankgegevens en persoonsgegevens worden versleuteld opgeslagen en zijn alleen toegankelijk voor jou als eigenaar. De site voldoet aan de privacywet (AVG). De volledige privacyverklaring staat op de site.",
+			},
+		],
 	},
 	{
 		slug: "maatwerk-website-voor-by-shakir",
