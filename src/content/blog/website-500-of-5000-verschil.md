@@ -141,7 +141,7 @@ De prijscategorieën hierboven zijn hoe de meeste bureaus en freelancers werken.
 
 Ik bouw met Astro en Tailwind. Dat zijn moderne tools waarmee ik een volledig op maat gemaakte website kan bouwen in dezelfde tijd die een bureau kwijt is aan het aanpassen van een template. Geen kant-en-klare templates, geen WordPress, geen maandelijkse platformkosten.
 
-Het resultaat: een maatwerkwebsite vanaf €49 per maand, opgeleverd binnen 7 dagen. Inclusief design, teksten, hosting en onderhoud. Geen grote investering vooraf. In [mijn prijsgids](/blog/website-laten-maken-kosten/) staat precies wat er inbegrepen is.
+Het resultaat: een maatwerkwebsite vanaf €49 per maand (pakket Essentieel), opgeleverd binnen 7 dagen. Inclusief design, teksten, hosting en onderhoud. Voor wie actief wil groeien of alles uit handen wil geven, zijn er [pakketten Groei en Compleet](/pakketten/). Geen grote investering vooraf.
 
 Dat is niet de juiste keuze voor iedereen. Als je een webshop nodig hebt met honderden producten en koppelingen met je voorraadsysteem, dan zit je in een ander segment. Maar voor de meeste ZZP'ers en kleine bedrijven die een professionele website willen zonder wekenlange trajecten, werkt het goed.
 

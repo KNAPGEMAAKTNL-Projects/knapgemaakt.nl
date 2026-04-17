@@ -56,7 +56,7 @@ Dit is waar de meeste ZZP'ers en kleine ondernemers terechtkomen. Je krijgt een 
 
 **Geschikt voor:** Dienstverleners, coaches, consultants, kleine winkels, startende ondernemers.
 
-Bij KNAP GEMAAKT. bouw ik websites vanaf €49 per maand, opgeleverd binnen 7 dagen. Inclusief ontwerp, bouw, hosting en onderhoud. Geen grote investering vooraf, geen templates, geen WordPress. Elke site wordt specifiek voor jouw bedrijf gebouwd.
+Bij KNAP GEMAAKT. werk ik met een maandbedrag. Essentieel start bij €49 per maand. Voor bedrijven die actief willen groeien via Google is er Groei (€99), en voor wie alles uit handen wil geven is er Compleet (€149). In elk pakket zit ontwerp, bouw, hosting en onderhoud. Geen grote investering vooraf, geen templates, geen WordPress. Zie de [pakketten-pagina](/pakketten/) voor de volledige vergelijking.
 
 ### €1.500 tot €5.000: uitgebreide websites en webshops
 
@@ -109,6 +109,8 @@ Updates, beveiligingspatches, kleine aanpassingen. Je kunt dit zelf doen of uitb
 ### E-mailadressen: €0 tot €6 per gebruiker per maand
 
 Wil je info@jouwbedrijf.nl? Dat kost vaak extra, tenzij het bij je hostingpakket zit.
+
+Ter vergelijking: bij KNAP GEMAAKT. zitten hosting, domein, SSL, onderhoud en support in het [maandbedrag](/pakketten/). Bij Groei (€99) is zakelijke e-mail ook inbegrepen. Geen losse facturen voor al deze onderdelen.
 
 ## Template vs. maatwerk
 
@@ -179,8 +181,10 @@ Goede vraag. Bij lagere prijzen krijg je vaak standaardtemplates, beperkte onder
 
 | Wat je nodig hebt | Marktgemiddelde | Bij KNAP GEMAAKT. |
 |---|---|---|
-| Professionele maatwerk website | €1.500 tot €3.000 | **€49/maand** (7 dagen) |
+| Professionele maatwerk website | €1.500 tot €3.000 | **vanaf €49/maand** |
 | Webshop op Shopify | €2.500 tot €6.000 | **€89/maand** |
+
+Drie pakketten om uit te kiezen: Essentieel (€49), Groei (€99) en Compleet (€149). [Op de pakketten-pagina](/pakketten/) staat wat er precies in elk pakket zit.
 
 ---
 

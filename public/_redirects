@@ -35,8 +35,10 @@
 /portfolio/ /werk/ 301
 
 # ICT diensten URL renames
-/ict-diensten/wordpress-sneller /ict-diensten/wordpress-versnellen/ 301
-/ict-diensten/wordpress-sneller/ /ict-diensten/wordpress-versnellen/ 301
+/ict-diensten/wordpress-sneller /webdesign/ 301
+/ict-diensten/wordpress-sneller/ /webdesign/ 301
+/ict-diensten/wordpress-versnellen /webdesign/ 301
+/ict-diensten/wordpress-versnellen/ /webdesign/ 301
 /ict-diensten/slimmer-werken /ict-diensten/automatisering/ 301
 /ict-diensten/slimmer-werken/ /ict-diensten/automatisering/ 301
 

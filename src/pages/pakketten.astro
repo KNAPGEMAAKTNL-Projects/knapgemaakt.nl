@@ -1,0 +1,430 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import FadeIn from "../components/FadeIn.astro";
+import FAQSection from "../components/FAQSection.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import ServiceSchema from "../components/seo/ServiceSchema.astro";
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://knapgemaakt.nl/" },
+	{ name: "Pakketten", url: "https://knapgemaakt.nl/pakketten/" }
+];
+
+const tiers = [
+	{
+		name: "Essentieel",
+		subtitle: "Voor een professionele site die gewoon werkt",
+		price: "49",
+		sla: "binnen 48 uur",
+		features: [
+			"Ontwerp en bouw van je website",
+			"Hosting op Cloudflare (300+ locaties)",
+			"SSL en DDoS-bescherming",
+			"Domeinbeheer en DNS",
+			"Onbeperkt kleine aanpassingen (binnen 48 uur)",
+			"Uptime monitoring",
+			"E-mail support (binnen 24 uur)",
+		],
+		onderwerp: "pakket-essentieel",
+		populair: false,
+	},
+	{
+		name: "Groei",
+		subtitle: "Voor bedrijven die actief willen groeien via Google",
+		price: "99",
+		sla: "zelfde werkdag",
+		featuresIntro: "Alles uit Essentieel, plus:",
+		features: [
+			"Zakelijke e-mail op eigen domein (5 GB)",
+			"Google Bedrijfsprofiel opzetten en maandelijks bijwerken",
+			"Maandelijks prestatierapport (bezoekers, snelheid, zoekwoorden)",
+			"SEO-monitoring via Google Search Console",
+			"Kleine aanpassingen op dezelfde werkdag",
+			"Prioriteit support",
+		],
+		onderwerp: "pakket-groei",
+		populair: true,
+	},
+	{
+		name: "Compleet",
+		subtitle: "Voor wie alles uit handen wil geven",
+		price: "149",
+		sla: "zelfde werkdag",
+		featuresIntro: "Alles uit Groei, plus:",
+		features: [
+			"Lead-opvolging (directe melding en auto-antwoord)",
+			"Google Reviews automatisch verzamelen",
+			"Kwartaalgesprek van 15 minuten",
+			"1 grotere aanpassing per kwartaal",
+			"Concurrentie-check elk kwartaal",
+		],
+		onderwerp: "pakket-compleet",
+		populair: false,
+	},
+];
+
+const comparison = [
+	{
+		category: "Basis",
+		rows: [
+			{ feature: "Ontwerp en bouw", essentieel: true, groei: true, compleet: true },
+			{ feature: "Hosting op Cloudflare", essentieel: true, groei: true, compleet: true },
+			{ feature: "SSL en DDoS-bescherming", essentieel: true, groei: true, compleet: true },
+			{ feature: "Domeinbeheer en DNS", essentieel: true, groei: true, compleet: true },
+			{ feature: "Uptime monitoring", essentieel: true, groei: true, compleet: true },
+		],
+	},
+	{
+		category: "Onderhoud",
+		rows: [
+			{ feature: "Kleine aanpassingen", essentieel: "Onbeperkt", groei: "Onbeperkt", compleet: "Onbeperkt" },
+			{ feature: "Reactietijd aanpassingen", essentieel: "Binnen 48 uur", groei: "Zelfde werkdag", compleet: "Zelfde werkdag" },
+			{ feature: "Grotere aanpassing per kwartaal", essentieel: false, groei: false, compleet: true },
+			{ feature: "Support", essentieel: "E-mail (24 uur)", groei: "Prioriteit", compleet: "Prioriteit" },
+		],
+	},
+	{
+		category: "Marketing en SEO",
+		rows: [
+			{ feature: "Zakelijke e-mail op eigen domein", essentieel: false, groei: true, compleet: true },
+			{ feature: "Google Bedrijfsprofiel beheer", essentieel: false, groei: true, compleet: true },
+			{ feature: "Maandelijks prestatierapport", essentieel: false, groei: true, compleet: true },
+			{ feature: "SEO-monitoring", essentieel: false, groei: true, compleet: true },
+			{ feature: "Kwartaalgesprek strategie", essentieel: false, groei: false, compleet: true },
+			{ feature: "Concurrentie-check per kwartaal", essentieel: false, groei: false, compleet: true },
+		],
+	},
+	{
+		category: "Automatisering (inbegrepen)",
+		rows: [
+			{ feature: "Lead-opvolging", essentieel: false, groei: false, compleet: true },
+			{ feature: "Reviews automatisch verzamelen", essentieel: false, groei: false, compleet: true },
+		],
+	},
+];
+
+const faqs = [
+	{
+		question: "Waarom een maandbedrag in plaats van een bedrag vooraf?",
+		answer: "Een website is nooit helemaal klaar. Er komen nieuwe diensten bij, prijzen veranderen, je bedrijf groeit. Met een vast maandbedrag zit alles erin: ontwerp, bouw, hosting, onderhoud en support. Geen grote investering vooraf, geen verrassingen achteraf."
+	},
+	{
+		question: "Wat als ik wil opschalen of terugschalen?",
+		answer: "Dat kan op elk moment. Van Essentieel naar Groei, of van Compleet terug naar Groei. Je betaalt het nieuwe tarief vanaf de volgende maand. Geen boetes, geen vaste looptijden van een jaar."
+	},
+	{
+		question: "Zit het ontwerp en de bouw er echt bij in?",
+		answer: "Ja. Geen apart bedrag voor het ontwerp en de bouw van je site. Je betaalt vanaf de maand dat je site live staat. Dat houdt de drempel laag en zorgt dat ik ook op de lange termijn meedenk over je website."
+	},
+	{
+		question: "Wat kost het als ik wil stoppen?",
+		answer: "Niks. Je kunt op elk moment opzeggen via opzeggen@knapgemaakt.nl. De site blijft tot het einde van de maand online. Je domein en alle teksten en foto's krijg je mee, die blijven van jou."
+	},
+	{
+		question: "Ik wil extra, zoals AI content of WhatsApp-opvolging. Kan dat?",
+		answer: "Jazeker. Bij elk pakket kun je losse automatiseringen boeken. Kijk op de automatisering-pagina voor de hele lijst. Je betaalt alleen voor wat je afneemt, en ik zet iets pas op als duidelijk is dat je er iets aan hebt."
+	},
+	{
+		question: "Voor wie is welk pakket?",
+		answer: "Essentieel past bij ZZP'ers die vooral via mond-tot-mond werken. Groei is voor bedrijven die actief willen groeien via Google. Compleet is voor ondernemers die het online deel volledig uit handen willen geven en elk kwartaal willen sparren."
+	},
+];
+---
+
+<Layout
+	title="Pakketten | Alles in een Maandbedrag | KNAP GEMAAKT."
+	description="Drie pakketten voor je website: Essentieel (€49), Groei (€99) en Compleet (€149) per maand. Ontwerp, bouw, hosting en onderhoud in één vast bedrag. Geen opstartkosten."
+>
+	<ServiceSchema
+		name="Pakket Essentieel"
+		description="Ontwerp, bouw, hosting en onderhoud van je website voor een vast maandbedrag. Inclusief SSL, DDoS-bescherming, uptime monitoring en onbeperkt kleine aanpassingen binnen 48 uur."
+		serviceType="WebDesign"
+		url="https://knapgemaakt.nl/pakketten/"
+		price="49"
+	/>
+	<ServiceSchema
+		name="Pakket Groei"
+		description="Alles van Essentieel, plus zakelijke e-mail, Google Bedrijfsprofiel beheer, maandelijks prestatierapport en prioriteit support. Voor bedrijven die actief willen groeien via Google."
+		serviceType="WebDesign"
+		url="https://knapgemaakt.nl/pakketten/"
+		price="99"
+	/>
+	<ServiceSchema
+		name="Pakket Compleet"
+		description="Alles van Groei, plus lead-opvolging, automatische review-verzameling, kwartaalgesprekken en een grotere aanpassing per kwartaal. Voor wie alles uit handen wil geven."
+		serviceType="WebDesign"
+		url="https://knapgemaakt.nl/pakketten/"
+		price="149"
+	/>
+
+	<main>
+		<!-- Hero -->
+		<section class="pt-32 pb-12 md:pt-40 md:pb-16 px-6 md:px-12 lg:px-16">
+			<div class="max-w-5xl mx-auto">
+				<div class="mb-6">
+					<Breadcrumb items={breadcrumbs} />
+				</div>
+				<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
+					Alles in één maandbedrag
+				</h1>
+				<p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed">
+					Drie pakketten voor je website: Essentieel (€49 per maand), Groei (€99 per maand) en Compleet (€149 per maand). Alles erin: ontwerp, bouw, hosting, onderhoud en support. Geen aparte facturen, geen opstartkosten, geen verrassingen.
+				</p>
+			</div>
+		</section>
+
+		<!-- Why monthly instead of upfront -->
+		<section class="py-16 md:py-20 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+			<div class="max-w-5xl mx-auto">
+				<FadeIn>
+					<div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+						<div>
+							<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+								Waarom een maandbedrag?
+							</h2>
+							<p class="text-ink/70 leading-relaxed mb-4">
+								Bij de meeste bureaus betaal je eerst een grote investering voor het ontwerp en de bouw. Daarna krijg je voor elke wijziging een factuur, en regel je je hosting nog eens apart bij een andere partij.
+							</p>
+							<p class="text-ink/70 leading-relaxed mb-4">
+								Hier niet. Je betaalt één bedrag per maand. Daar zit alles in. Ontwerp, bouw, hosting, SSL, kleine aanpassingen, support. Je weet wat het is, je weet wat je krijgt.
+							</p>
+							<p class="text-ink/70 leading-relaxed">
+								En als je bedrijf verandert, dan verandert je website mee. Zonder dat je elke keer een offerte hoeft op te vragen.
+							</p>
+						</div>
+						<div class="bg-canvas rounded-xl p-6 md:p-8 border border-warm">
+							<h3 class="font-bold text-lg mb-4">Wat je niet betaalt</h3>
+							<ul class="space-y-3">
+								{[
+									"Geen opstartkosten",
+									"Geen aparte hostingfactuur",
+									"Geen aparte SSL-kosten",
+									"Geen aparte factuur voor elke wijziging",
+									"Geen vaste looptijd van een jaar",
+								].map((item) => (
+									<li class="flex items-start gap-3 text-ink/70">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+										<span>{item}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				</FadeIn>
+			</div>
+		</section>
+
+		<!-- Three tier cards -->
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
+			<div class="max-w-6xl mx-auto">
+				<FadeIn>
+					<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+						Drie pakketten
+					</h2>
+					<p class="text-ink/70 leading-relaxed mb-12 max-w-2xl">
+						Je kiest het pakket dat bij je bedrijf past. Opschalen of terugschalen kan op elk moment, vanaf de volgende maand.
+					</p>
+				</FadeIn>
+
+				<div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+					{tiers.map((tier, i) => (
+						<FadeIn delay={i * 100}>
+							<div class:list={[
+								"bg-canvas rounded-xl p-6 md:p-8 flex flex-col h-full relative",
+								tier.populair ? "border-2 border-accent shadow-lg" : "border border-warm"
+							]}>
+								{tier.populair && (
+									<div class="absolute -top-3 left-6 bg-accent text-canvas text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+										Populair
+									</div>
+								)}
+								<div class="mb-6">
+									<h3 class="font-bold text-xl mb-1">{tier.name}</h3>
+									<p class="text-ink/60 text-sm leading-relaxed">{tier.subtitle}</p>
+								</div>
+								<div class="mb-6">
+									<span class="text-5xl font-bold tracking-tight">&euro;{tier.price}</span>
+									<span class="text-ink/60"> / maand</span>
+								</div>
+								{tier.featuresIntro && (
+									<p class="text-ink/70 text-sm font-medium mb-4">{tier.featuresIntro}</p>
+								)}
+								<ul class="space-y-3 mb-8 flex-grow">
+									{tier.features.map((feature) => (
+										<li class="flex items-start gap-3 text-ink/70 text-sm">
+											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+											<span>{feature}</span>
+										</li>
+									))}
+								</ul>
+								<a
+									href={`/aanvragen/?onderwerp=${tier.onderwerp}`}
+									class:list={[
+										"px-6 py-3 rounded-lg font-bold text-sm transition-colors duration-300 inline-flex items-center justify-center gap-2 group w-full",
+										tier.populair
+											? "bg-accent text-canvas hover:bg-accent/90"
+											: "bg-ink text-canvas hover:bg-ink/80"
+									]}
+								>
+									Gesprek aanvragen
+									<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+								</a>
+							</div>
+						</FadeIn>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Feature comparison matrix -->
+		<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+			<div class="max-w-6xl mx-auto">
+				<FadeIn>
+					<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+						Wat zit er precies in?
+					</h2>
+					<p class="text-ink/70 leading-relaxed mb-10 max-w-2xl">
+						De volledige lijst per pakket. Zo zie je in één oogopslag waar de verschillen zitten.
+					</p>
+				</FadeIn>
+
+				<FadeIn>
+					<div class="bg-canvas rounded-xl border border-warm overflow-hidden">
+						<div class="overflow-x-auto">
+							<table class="w-full text-sm">
+								<thead>
+									<tr class="border-b border-warm bg-canvas-alt">
+										<th class="text-left p-4 md:p-5 font-bold text-xs uppercase tracking-wider w-[40%]">Onderdeel</th>
+										<th class="text-center p-4 md:p-5 font-bold text-xs uppercase tracking-wider">Essentieel</th>
+										<th class="text-center p-4 md:p-5 font-bold text-xs uppercase tracking-wider bg-accent/5">Groei</th>
+										<th class="text-center p-4 md:p-5 font-bold text-xs uppercase tracking-wider">Compleet</th>
+									</tr>
+								</thead>
+								<tbody>
+									{comparison.map((group) => (
+										<>
+											<tr class="bg-canvas-alt/60">
+												<td colspan="4" class="p-3 md:p-4 font-mono text-xs uppercase tracking-widest text-ink/60">
+													{group.category}
+												</td>
+											</tr>
+											{group.rows.map((row) => (
+												<tr class="border-b border-warm/40 last:border-b-0">
+													<td class="p-4 md:p-5 text-ink/80">{row.feature}</td>
+													<td class="p-4 md:p-5 text-center">
+														{typeof row.essentieel === "boolean" ? (
+															row.essentieel ? (
+																<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+															) : (
+																<span class="text-ink/30">—</span>
+															)
+														) : (
+															<span class="text-ink/70 text-xs">{row.essentieel}</span>
+														)}
+													</td>
+													<td class="p-4 md:p-5 text-center bg-accent/5">
+														{typeof row.groei === "boolean" ? (
+															row.groei ? (
+																<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+															) : (
+																<span class="text-ink/30">—</span>
+															)
+														) : (
+															<span class="text-ink/70 text-xs">{row.groei}</span>
+														)}
+													</td>
+													<td class="p-4 md:p-5 text-center">
+														{typeof row.compleet === "boolean" ? (
+															row.compleet ? (
+																<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+															) : (
+																<span class="text-ink/30">—</span>
+															)
+														) : (
+															<span class="text-ink/70 text-xs">{row.compleet}</span>
+														)}
+													</td>
+												</tr>
+											))}
+										</>
+									))}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</FadeIn>
+			</div>
+		</section>
+
+		<!-- Need more? Add-ons teaser -->
+		<section class="py-16 md:py-20 px-6 md:px-12 lg:px-16">
+			<div class="max-w-5xl mx-auto">
+				<FadeIn>
+					<div class="grid md:grid-cols-[3fr_2fr] gap-10 md:gap-16 items-start">
+						<div>
+							<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+								Meer nodig dan het pakket biedt?
+							</h2>
+							<p class="text-ink/70 leading-relaxed mb-4">
+								Naast de pakketten zijn er losse automatiseringen die je erbij kunt boeken. Denk aan automatische factuurherinneringen, AI die social media posts maakt op basis van je werk, of WhatsApp-opvolging na een klus.
+							</p>
+							<p class="text-ink/70 leading-relaxed mb-6">
+								Je kiest wat bij jouw werk past. Ik bouw, jij gebruikt.
+							</p>
+							<a
+								href="/ict-diensten/automatisering/"
+								class="inline-flex items-center gap-2 text-ink font-bold hover:text-accent transition-colors group"
+							>
+								Bekijk alle automatiseringen
+								<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+							</a>
+						</div>
+						<div class="bg-canvas-alt rounded-xl p-6 border border-warm">
+							<h3 class="font-bold text-lg mb-4">Bij Compleet al inbegrepen</h3>
+							<ul class="space-y-2.5 text-sm text-ink/70">
+								<li class="flex items-start gap-3">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+									<span>Lead-opvolging</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+									<span>Reviews automatisch verzamelen</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</FadeIn>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<FadeIn>
+		<FAQSection faqs={faqs} />
+		</FadeIn>
+
+		<!-- CTA -->
+		<section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+			<div class="max-w-3xl mx-auto text-center">
+				<FadeIn>
+					<h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+						Niet zeker welk pakket past?
+					</h2>
+					<p class="text-ink/70 text-lg leading-relaxed mb-8">
+						Vertel me over je bedrijf. In een gesprek van een kwartier weten we welk pakket bij je past en wat we aan extra's kunnen toevoegen.
+					</p>
+					<a
+						href="/aanvragen/?onderwerp=pakketten"
+						class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+					>
+						Plan een gesprek in
+						<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+					</a>
+				</FadeIn>
+			</div>
+		</section>
+	</main>
+	<Footer hideCTA={true} />
+</Layout>
