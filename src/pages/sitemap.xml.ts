@@ -17,13 +17,9 @@ function generateSitemap(): string {
 
     const staticPages: PageEntry[] = [
         { path: "/", lastmod: today, changefreq: "weekly", priority: "1.0" },
-        { path: "/ict-diensten/", lastmod: today, changefreq: "weekly", priority: "0.9" },
-        { path: "/ict-diensten/email-hosting/", lastmod: today, changefreq: "monthly", priority: "0.8" },
-        { path: "/ict-diensten/website-hosting/", lastmod: today, changefreq: "monthly", priority: "0.8" },
-        { path: "/ict-diensten/automatisering/", lastmod: today, changefreq: "monthly", priority: "0.8" },
-        { path: "/pakketten/", lastmod: today, changefreq: "weekly", priority: "0.9" },
         { path: "/webdesign/", lastmod: today, changefreq: "weekly", priority: "0.9" },
-        { path: "/webshops/", lastmod: today, changefreq: "weekly", priority: "0.9" },
+        { path: "/pakketten/", lastmod: today, changefreq: "weekly", priority: "0.9" },
+        { path: "/automatisering/", lastmod: today, changefreq: "monthly", priority: "0.8" },
         { path: "/werk/", lastmod: today, changefreq: "weekly", priority: "0.8" },
         { path: "/website-voor-hoveniers/", lastmod: today, changefreq: "monthly", priority: "0.8" },
         { path: "/blog/", lastmod: today, changefreq: "weekly", priority: "0.8" },

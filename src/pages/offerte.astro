@@ -1,0 +1,37 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Offerte aanvragen | KNAP GEMAAKT."
+  description="Doe de test en krijg binnen 2 minuten inzicht in wat bij je bedrijf past."
+  noindex={true}
+>
+  <main class="min-h-screen bg-canvas pt-32 pb-24 px-6 md:px-12 lg:px-16 flex items-center justify-center">
+    <div class="max-w-lg mx-auto text-center">
+      <p class="text-xs font-mono uppercase tracking-widest text-ink/40 mb-4">
+        [ Even geduld ]
+      </p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-snug mb-4">
+        We zetten je door
+      </h1>
+      <p class="text-ink/70 leading-relaxed mb-8">
+        De korte test staat binnenkort online. Voor nu sturen we je door naar het aanvraagformulier.
+      </p>
+      <a
+        href="/aanvragen/"
+        class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3"
+      >
+        Ga verder &rarr;
+      </a>
+    </div>
+  </main>
+
+  <script is:inline>
+    // Client-side redirect to /aanvragen/ while preserving query params
+    const params = window.location.search;
+    window.location.replace("/aanvragen/" + params);
+  </script>
+</Layout>
