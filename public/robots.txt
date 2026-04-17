@@ -37,6 +37,14 @@ Allow: /
 User-agent: Claude-User
 Allow: /
 
+# Google Gemini Deep Research (citation-aware search)
+User-agent: Gemini-Deep-Research
+Allow: /
+
+# Mistral Le Chat browsing agent
+User-agent: MistralAI-User
+Allow: /
+
 # Apple (Siri, Spotlight, Apple Maps)
 User-agent: Applebot
 Allow: /

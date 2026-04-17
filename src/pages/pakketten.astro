@@ -7,6 +7,7 @@ import FadeIn from "../components/FadeIn.astro";
 import FAQSection from "../components/FAQSection.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import ServiceSchema from "../components/seo/ServiceSchema.astro";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
 
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
@@ -24,7 +25,8 @@ const tiers = [
 			"Hosting op Cloudflare (300+ locaties)",
 			"SSL en DDoS-bescherming",
 			"Domeinbeheer en DNS",
-			"Onbeperkt kleine aanpassingen (binnen 48 uur)",
+			"Kleine aanpassingen binnen 48 uur",
+			"Lead-opvolging: directe WhatsApp bij elke aanvraag",
 			"Uptime monitoring",
 			"E-mail support (binnen 24 uur)",
 		],
@@ -38,11 +40,11 @@ const tiers = [
 		sla: "zelfde werkdag",
 		featuresIntro: "Alles uit Essentieel, plus:",
 		features: [
-			"Zakelijke e-mail op eigen domein (5 GB)",
 			"Google Bedrijfsprofiel opzetten en maandelijks bijwerken",
+			"Automatisch reviews verzamelen na elke klus",
 			"Maandelijks prestatierapport (bezoekers, snelheid, zoekwoorden)",
 			"SEO-monitoring via Google Search Console",
-			"Kleine aanpassingen op dezelfde werkdag",
+			"Aanpassingen op dezelfde werkdag",
 			"Prioriteit support",
 		],
 		onderwerp: "pakket-groei",
@@ -52,14 +54,13 @@ const tiers = [
 		name: "Compleet",
 		subtitle: "Voor wie alles uit handen wil geven",
 		price: "149",
-		sla: "zelfde werkdag",
+		sla: "binnen een uur op werkdagen",
 		featuresIntro: "Alles uit Groei, plus:",
 		features: [
-			"Lead-opvolging (directe melding en auto-antwoord)",
-			"Google Reviews automatisch verzamelen",
-			"Kwartaalgesprek van 15 minuten",
-			"1 grotere aanpassing per kwartaal",
-			"Concurrentie-check elk kwartaal",
+			"Online agenda op je website: klanten plannen zelf afspraken in",
+			"Kwartaalgesprek waarin we cijfers doorlopen en de volgende stap bepalen",
+			"Priority support: reactie binnen een uur op werkdagen",
+			"Maandelijks een SEO-blog die ik voor je schrijf",
 		],
 		onderwerp: "pakket-compleet",
 		populair: false,
@@ -80,28 +81,27 @@ const comparison = [
 	{
 		category: "Onderhoud",
 		rows: [
-			{ feature: "Kleine aanpassingen", essentieel: "Onbeperkt", groei: "Onbeperkt", compleet: "Onbeperkt" },
-			{ feature: "Reactietijd aanpassingen", essentieel: "Binnen 48 uur", groei: "Zelfde werkdag", compleet: "Zelfde werkdag" },
-			{ feature: "Grotere aanpassing per kwartaal", essentieel: false, groei: false, compleet: true },
-			{ feature: "Support", essentieel: "E-mail (24 uur)", groei: "Prioriteit", compleet: "Prioriteit" },
+			{ feature: "Kleine aanpassingen", essentieel: true, groei: true, compleet: true },
+			{ feature: "Reactietijd aanpassingen", essentieel: "Binnen 48 uur", groei: "Zelfde werkdag", compleet: "Binnen een uur" },
+			{ feature: "Support", essentieel: "E-mail (24 uur)", groei: "Prioriteit", compleet: "Priority (1 uur werkdagen)" },
 		],
 	},
 	{
 		category: "Marketing en SEO",
 		rows: [
-			{ feature: "Zakelijke e-mail op eigen domein", essentieel: false, groei: true, compleet: true },
 			{ feature: "Google Bedrijfsprofiel beheer", essentieel: false, groei: true, compleet: true },
 			{ feature: "Maandelijks prestatierapport", essentieel: false, groei: true, compleet: true },
 			{ feature: "SEO-monitoring", essentieel: false, groei: true, compleet: true },
 			{ feature: "Kwartaalgesprek strategie", essentieel: false, groei: false, compleet: true },
-			{ feature: "Concurrentie-check per kwartaal", essentieel: false, groei: false, compleet: true },
 		],
 	},
 	{
 		category: "Automatisering (inbegrepen)",
 		rows: [
-			{ feature: "Lead-opvolging", essentieel: false, groei: false, compleet: true },
-			{ feature: "Reviews automatisch verzamelen", essentieel: false, groei: false, compleet: true },
+			{ feature: "Lead-opvolging (WhatsApp bij aanvraag)", essentieel: true, groei: true, compleet: true },
+			{ feature: "Reviews automatisch verzamelen", essentieel: false, groei: true, compleet: true },
+			{ feature: "Online agenda (afspraken inplannen)", essentieel: false, groei: false, compleet: true },
+			{ feature: "Maandelijks een SEO-blog die ik voor je schrijf", essentieel: false, groei: false, compleet: true },
 		],
 	},
 ];
@@ -129,7 +129,7 @@ const faqs = [
 	},
 	{
 		question: "Voor wie is welk pakket?",
-		answer: "Essentieel past bij ZZP'ers die vooral via mond-tot-mond werken. Groei is voor bedrijven die actief willen groeien via Google. Compleet is voor ondernemers die het online deel volledig uit handen willen geven en elk kwartaal willen sparren."
+		answer: "Essentieel past bij ZZP'ers die vooral via mond-tot-mond werken en nieuwe aanvragen direct op de telefoon willen. Groei is voor bedrijven die actief willen groeien via Google en reviews automatisch willen verzamelen. Compleet is voor wie klanten zelf afspraken wil laten inplannen en elk kwartaal strategisch wil sparren."
 	},
 ];
 ---
@@ -138,23 +138,24 @@ const faqs = [
 	title="Pakketten | Alles in een Maandbedrag | KNAP GEMAAKT."
 	description="Drie pakketten voor je website: Essentieel (€49), Groei (€99) en Compleet (€149) per maand. Ontwerp, bouw, hosting en onderhoud in één vast bedrag. Geen opstartkosten."
 >
+	<BreadcrumbSchema items={breadcrumbs} />
 	<ServiceSchema
 		name="Pakket Essentieel"
-		description="Ontwerp, bouw, hosting en onderhoud van je website voor een vast maandbedrag. Inclusief SSL, DDoS-bescherming, uptime monitoring en onbeperkt kleine aanpassingen binnen 48 uur."
+		description="Ontwerp, bouw, hosting en onderhoud van je website voor een vast maandbedrag. Inclusief SSL, DDoS-bescherming, uptime monitoring en kleine aanpassingen binnen 48 uur."
 		serviceType="WebDesign"
 		url="https://knapgemaakt.nl/pakketten/"
 		price="49"
 	/>
 	<ServiceSchema
 		name="Pakket Groei"
-		description="Alles van Essentieel, plus zakelijke e-mail, Google Bedrijfsprofiel beheer, maandelijks prestatierapport en prioriteit support. Voor bedrijven die actief willen groeien via Google."
+		description="Alles van Essentieel, plus Google Bedrijfsprofiel beheer, automatische reviewverzameling, maandelijks prestatierapport en prioriteit support. Voor bedrijven die actief willen groeien via Google."
 		serviceType="WebDesign"
 		url="https://knapgemaakt.nl/pakketten/"
 		price="99"
 	/>
 	<ServiceSchema
 		name="Pakket Compleet"
-		description="Alles van Groei, plus lead-opvolging, automatische review-verzameling, kwartaalgesprekken en een grotere aanpassing per kwartaal. Voor wie alles uit handen wil geven."
+		description="Alles van Groei, plus een online agenda waarin klanten zelf afspraken inplannen, kwartaalgesprek voor strategie, priority support binnen een uur en maandelijks een SEO-blog die ik voor je schrijf."
 		serviceType="WebDesign"
 		url="https://knapgemaakt.nl/pakketten/"
 		price="149"
@@ -243,7 +244,7 @@ const faqs = [
 								)}
 								<div class="mb-6">
 									<h3 class="font-bold text-xl mb-1">{tier.name}</h3>
-									<p class="text-ink/60 text-sm leading-relaxed">{tier.subtitle}</p>
+									<p class="text-ink/60 text-sm leading-relaxed break-words">{tier.subtitle}</p>
 								</div>
 								<div class="mb-6">
 									<span class="text-5xl font-bold tracking-tight">&euro;{tier.price}</span>
@@ -254,9 +255,9 @@ const faqs = [
 								)}
 								<ul class="space-y-3 mb-8 flex-grow">
 									{tier.features.map((feature) => (
-										<li class="flex items-start gap-3 text-ink/70 text-sm">
+										<li class="flex items-start gap-3 text-ink/70 text-sm break-words">
 											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-											<span>{feature}</span>
+											<span class="break-words">{feature}</span>
 										</li>
 									))}
 								</ul>

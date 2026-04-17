@@ -1,0 +1,23 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import OfferteQuiz from "../components/OfferteQuiz";
+---
+
+<Layout
+  title="Advies op maat in 2 minuten | KNAP GEMAAKT."
+  description="Beantwoord vier korte vragen en krijg meteen advies over welk pakket of welke automatisering past bij je bedrijf. Daarna plan je direct een kennismaking in."
+>
+  <main class="bg-canvas-alt min-h-screen">
+    <section class="pt-24 md:pt-32 pb-16 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-16">
+      <div class="max-w-5xl mx-auto">
+        <div class="bg-canvas rounded-2xl border border-warm p-4 sm:p-6 md:p-10 shadow-sm">
+          <OfferteQuiz client:load />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer hideCTA={true} />
+</Layout>

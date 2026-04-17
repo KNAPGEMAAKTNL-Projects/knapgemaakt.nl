@@ -18,11 +18,18 @@ import { useEffect, useRef } from "react";
 interface DotMeshProps {
 	dotColor?: string;
 	maxOpacity?: number;
+	/**
+	 * When set, the reveal spot stays at a fixed position instead of following the cursor.
+	 * 'top-right': ~75% x, ~25% y on desktop; switches to 'right-middle' on mobile (<768px).
+	 * 'right-middle': ~80% x, ~50% y, mobile-first friendly.
+	 */
+	fixedSpot?: "top-right" | "right-middle";
 }
 
 export function DotMesh({
 	dotColor = "20, 184, 166",
 	maxOpacity = 0.5,
+	fixedSpot,
 }: DotMeshProps) {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -46,6 +53,8 @@ export function DotMesh({
 
 		const SPACING = 28;
 		const BASE_RADIUS = 1.2;
+		// Fixed-spot mode gets a much larger reveal area (cursor-follow stays tight)
+		const REVEAL_RADIUS = fixedSpot ? 500 : 250;
 
 		function resize() {
 			const dpr = Math.min(window.devicePixelRatio, 2);
@@ -59,10 +68,32 @@ export function DotMesh({
 
 		resize();
 
+		function resolveSpot() {
+			const isMobile = w < 768;
+			// Mobile: keep top-right (user request) but push further into the corner
+			if (isMobile) return { x: w * 0.88, y: h * 0.18 };
+			if (fixedSpot === "top-right") return { x: w * 0.82, y: h * 0.25 };
+			return { x: w * 0.82, y: h * 0.5 };
+		}
+		function computeFixedSpot() {
+			if (!fixedSpot) return;
+			const { x, y } = resolveSpot();
+			mouseX = x;
+			mouseY = y;
+		}
+		computeFixedSpot();
+
 		function draw() {
 			if (!visible && !reducedMotion) {
 				animId = requestAnimationFrame(draw);
 				return;
+			}
+
+			// Subtle breathing motion for fixed-spot mode so the reveal stays alive
+			if (fixedSpot) {
+				const { x: baseX, y: baseY } = resolveSpot();
+				mouseX = baseX + Math.sin(time * 0.008) * 30;
+				mouseY = baseY + Math.cos(time * 0.006) * 22;
 			}
 
 			ctx!.clearRect(0, 0, w, h);
@@ -91,7 +122,7 @@ export function DotMesh({
 						const dx = x - mouseX;
 						const dy = y - mouseY;
 						const dist = Math.sqrt(dx * dx + dy * dy);
-						const influence = Math.max(0, 1 - dist / 250);
+						const influence = Math.max(0, 1 - dist / REVEAL_RADIUS);
 						opacity = influence * maxOpacity;
 						radius += influence * 1.8;
 					}
@@ -131,8 +162,10 @@ export function DotMesh({
 			mouseY = -1;
 		}
 
-		document.addEventListener("mousemove", onMouse);
-		document.addEventListener("mouseleave", onMouseLeave);
+		if (!fixedSpot) {
+			document.addEventListener("mousemove", onMouse);
+			document.addEventListener("mouseleave", onMouseLeave);
+		}
 
 		const io = new IntersectionObserver(([entry]) => {
 			visible = entry.isIntersecting;
@@ -146,12 +179,14 @@ export function DotMesh({
 
 		return () => {
 			cancelAnimationFrame(animId);
-			document.removeEventListener("mousemove", onMouse);
-			document.removeEventListener("mouseleave", onMouseLeave);
+			if (!fixedSpot) {
+				document.removeEventListener("mousemove", onMouse);
+				document.removeEventListener("mouseleave", onMouseLeave);
+			}
 			io.disconnect();
 			ro.disconnect();
 		};
-	}, [dotColor, maxOpacity]);
+	}, [dotColor, maxOpacity, fixedSpot]);
 
 	return (
 		<canvas

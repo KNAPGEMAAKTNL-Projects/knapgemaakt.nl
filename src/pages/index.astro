@@ -21,7 +21,7 @@ const projects = getAllProjects();
   <main>
     <!-- HERO (sticky: next section slides up over it on scroll) -->
     <section class="hero-sticky min-h-screen flex flex-col justify-center relative px-6 md:px-12 lg:px-16 py-24 sticky top-0 z-0 overflow-clip">
-      <DotMesh client:load />
+      <DotMesh client:load fixedSpot="top-right" maxOpacity={0.55} />
 
       <div class="max-w-5xl mx-auto w-full relative z-10">
         <h1 class="mb-6 md:mb-8">
@@ -30,12 +30,12 @@ const projects = getAllProjects();
           </span>
           <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-snug block relative mt-2">
             {/* Server-rendered placeholder for SEO (hidden immediately, typing animates in) */}
-            <span id="typing-placeholder" class="text-accent invisible">met je meegroeit.</span>
+            <span id="typing-placeholder" class="text-accent invisible">gevonden wordt.</span>
             <span class="absolute left-0 top-0 text-accent">
               <TypingRotator
                 client:load
                 prefix=""
-                words={["gevonden wordt.", "in één oogopslag klopt.", "vertrouwen uitstraalt.", "klanten laat aanvragen.", "met je meegroeit."]}
+                words={["gevonden wordt.", "vertrouwen wekt.", "klanten oplevert.", "met je meegroeit."]}
                 typingSpeed={80}
                 deletingSpeed={40}
                 pauseDuration={2500}
@@ -45,16 +45,15 @@ const projects = getAllProjects();
         </h1>
 
         <p class="text-lg md:text-xl text-ink/70 max-w-2xl mb-10 md:mb-12 leading-relaxed">
-          Voor ondernemers die hun vak serieus nemen. Maatwerk, geen templates.<br class="hidden md:block" />Hosting, onderhoud en aanpassingen in één vast maandbedrag.
+          Voor ondernemers die hun vak serieus nemen. Maatwerk met hosting en onderhoud in één vast maandbedrag.
         </p>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <a
-            href="/aanvragen/"
-            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+            href="/offerte/"
+            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center"
           >
-            Plan een gesprek
-            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            Advies op maat in 2 min
           </a>
           <a
             href="/werk/"

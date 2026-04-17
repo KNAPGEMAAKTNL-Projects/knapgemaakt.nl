@@ -11,23 +11,39 @@ interface Props {
     description?: string;
     url?: string;
     email?: string;
+    telephone?: string;
     addressLocality?: string;
+    addressRegion?: string;
     addressCountry?: string;
+    postalCode?: string;
     areaServed?: string[];
     priceRange?: string;
+    foundingDate?: string;
 }
 
 const {
     type = "ProfessionalService",
     name = "KNAP GEMAAKT.",
-    description = "Webdesign bureau dat premium websites bouwt voor ondernemers. Jouw nieuwe website in 7 dagen voor €595. Snel, professioneel en zonder gedoe.",
+    description = "Websites op maat voor ondernemers in Nederland. Ontwerp, bouw, hosting en onderhoud in één vast maandbedrag vanaf €49. KNAP GEMAAKT. uit Buren, Gelderland.",
     url = "https://knapgemaakt.nl",
     email = "info@knapgemaakt.nl",
+    telephone = "+31623571852",
     addressLocality = "Buren",
+    addressRegion = "Gelderland",
     addressCountry = "NL",
+    postalCode,
     areaServed = ["Culemborg", "Utrecht", "Houten", "Nieuwegein", "Geldermalsen", "Tiel", "Vianen", "IJsselstein", "Beesd", "Buren"],
-    priceRange = "€€"
+    priceRange = "€€",
+    foundingDate = "2019"
 } = Astro.props;
+
+const address: Record<string, string> = {
+    "@type": "PostalAddress",
+    addressLocality,
+    addressRegion,
+    addressCountry
+};
+if (postalCode) address.postalCode = postalCode;
 
 const schema = {
     "@context": "https://schema.org",
@@ -37,16 +53,22 @@ const schema = {
     description,
     url,
     email,
-    address: {
-        "@type": "PostalAddress",
-        addressLocality,
-        addressCountry
-    },
+    telephone,
+    foundingDate,
+    address,
     areaServed: areaServed.map(city => ({
         "@type": "City",
         name: city
     })),
     priceRange,
+    openingHoursSpecification: [
+        {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "18:00"
+        }
+    ],
     // Dutch business identifiers (E-E-A-T signals)
     identifier: [
         {
@@ -66,20 +88,69 @@ const schema = {
         "Website ontwikkeling",
         "SEO",
         "Webhosting",
-        "Website onderhoud"
+        "Website onderhoud",
+        "Automatisering",
+        "Lead-opvolging"
     ],
     sameAs: [
+        "https://www.wikidata.org/wiki/Q139396226",
         "https://www.linkedin.com/in/yannick-veldhuisen-303047243/",
         "https://github.com/KNAPGEMAAKTNL-Projects"
     ],
-    // What we offer
-    makesOffer: {
-        "@type": "Offer",
-        name: "Premium Website",
-        description: "Professionele website in 7 dagen",
-        price: "595",
-        priceCurrency: "EUR",
-        availability: "https://schema.org/InStock"
+    // Structured pricing for AI Overview extraction (cost queries)
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Website-pakketten",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                name: "Pakket Essentieel",
+                description: "Ontwerp, bouw, hosting, onderhoud en lead-opvolging in één vast maandbedrag.",
+                price: "49",
+                priceCurrency: "EUR",
+                priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "49",
+                    priceCurrency: "EUR",
+                    unitCode: "MON",
+                    billingIncrement: 1
+                },
+                availability: "https://schema.org/InStock",
+                url: `${url}/pakketten/`
+            },
+            {
+                "@type": "Offer",
+                name: "Pakket Groei",
+                description: "Alles uit Essentieel, plus Google Bedrijfsprofiel-beheer, automatisch reviews verzamelen en maandelijks prestatierapport.",
+                price: "99",
+                priceCurrency: "EUR",
+                priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "99",
+                    priceCurrency: "EUR",
+                    unitCode: "MON",
+                    billingIncrement: 1
+                },
+                availability: "https://schema.org/InStock",
+                url: `${url}/pakketten/`
+            },
+            {
+                "@type": "Offer",
+                name: "Pakket Compleet",
+                description: "Alles uit Groei, plus online agenda voor klantafspraken, kwartaalgesprek, priority support en een maandelijkse SEO-blog.",
+                price: "149",
+                priceCurrency: "EUR",
+                priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "149",
+                    priceCurrency: "EUR",
+                    unitCode: "MON",
+                    billingIncrement: 1
+                },
+                availability: "https://schema.org/InStock",
+                url: `${url}/pakketten/`
+            }
+        ]
     }
 };
 ---

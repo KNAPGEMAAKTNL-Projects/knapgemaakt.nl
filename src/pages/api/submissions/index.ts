@@ -5,7 +5,6 @@ import {
   buildContactConfirmation,
   buildAanvraagNotification,
   buildAanvraagConfirmation,
-  buildAuditNotification,
   buildICSContent,
 } from '../../../lib/email-templates';
 
@@ -16,7 +15,7 @@ interface Env {
   TURNSTILE_SECRET_KEY?: string;
 }
 
-type SubmissionType = 'contact' | 'offerte' | 'aanvraag' | 'audit';
+type SubmissionType = 'contact' | 'offerte' | 'aanvraag';
 
 interface SubmissionRequest {
   type: SubmissionType;
@@ -27,12 +26,40 @@ interface SubmissionRequest {
   company?: string;
   message?: string;
   // aanvraag-only
-  industry?: string;
   has_website?: string;
   website_url?: string;
   start_time?: string;
   end_time?: string;
   meeting_type?: string;
+  // funnel tracking
+  bron?: string; // "aanvragen" | "offerte-quiz" | "contact" | "plan"
+  iets_anders_details?: string;
+  quiz_context?: unknown;
+}
+
+// Hard input length caps — reject payloads that exceed these.
+const MAX_LENGTHS: Record<string, number> = {
+  name: 200,
+  email: 320,
+  phone: 50,
+  company: 200,
+  specification: 120,
+  has_website: 10,
+  website_url: 500,
+  start_time: 40,
+  end_time: 40,
+  meeting_type: 40,
+  bron: 60,
+  message: 10000,
+  iets_anders_details: 5000,
+};
+
+function exceedsLength(body: Record<string, unknown>): string | null {
+  for (const [key, max] of Object.entries(MAX_LENGTHS)) {
+    const val = body[key];
+    if (typeof val === 'string' && val.length > max) return key;
+  }
+  return null;
 }
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
@@ -110,9 +137,17 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
 
     // Validate type
-    const validTypes: SubmissionType[] = ['contact', 'offerte', 'aanvraag', 'audit'];
+    const validTypes: SubmissionType[] = ['contact', 'offerte', 'aanvraag'];
     if (!validTypes.includes(body.type)) {
       return new Response(JSON.stringify({ error: 'Ongeldig formuliertype' }), {
+        status: 400, headers: JSON_HEADERS
+      });
+    }
+
+    // Reject oversized payloads (basic abuse protection)
+    const tooLong = exceedsLength(body as unknown as Record<string, unknown>);
+    if (tooLong) {
+      return new Response(JSON.stringify({ error: `Veld '${tooLong}' is te lang` }), {
         status: 400, headers: JSON_HEADERS
       });
     }
@@ -138,12 +173,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
       });
     }
 
-    if (body.type === 'audit' && !body.website_url) {
-      return new Response(JSON.stringify({ error: 'Vul je website URL in' }), {
-        status: 400, headers: JSON_HEADERS
-      });
-    }
-
     const db = env.knapgemaakt_bookings;
 
     let bookingId: string | null = null;
@@ -156,7 +185,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
         user_email: body.email,
         user_phone: body.phone || '',
         user_company: body.company,
-        user_industry: body.industry,
         user_website: body.website_url ? normalizeUrl(body.website_url) || undefined : undefined,
         start_time: body.start_time,
         end_time: body.end_time,
@@ -184,8 +212,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
               user_email: body.email,
               user_phone: body.phone,
               user_company: body.company,
-              user_industry: body.industry,
               user_website: body.website_url,
+              bron: body.bron,
+              quiz_context: body.quiz_context || null,
+              iets_anders_details: body.iets_anders_details || null,
               specification: body.specification,
               meeting_type: body.meeting_type || null,
               start_time: bookingResult.start_time,
@@ -199,13 +229,22 @@ export const POST: APIRoute = async ({ request, locals }) => {
       }
     }
 
+    // Fold iets_anders_details and quiz_context into the message column as JSON
+    // when present; bron now lives in its own column.
+    const extras: Record<string, unknown> = {};
+    if (body.iets_anders_details) extras.iets_anders_details = body.iets_anders_details;
+    if (body.quiz_context) extras.quiz_context = body.quiz_context;
+    const compositeMessage = Object.keys(extras).length > 0
+      ? JSON.stringify({ message: body.message || null, ...extras })
+      : (body.message || null);
+
     // Create submission record
     const submissionId = crypto.randomUUID();
 
     await db.prepare(`
       INSERT INTO submissions (
         id, type, specification, name, email, phone, company, message,
-        industry, has_website, website_url, booking_id, status, created_at, updated_at
+        has_website, website_url, booking_id, bron, status, created_at, updated_at
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'new', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
     `).bind(
       submissionId,
@@ -215,11 +254,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
       body.email,
       body.phone || null,
       body.company || null,
-      body.message || null,
-      body.industry || null,
+      compositeMessage,
       body.has_website || null,
       body.website_url ? normalizeUrl(body.website_url) : null,
-      bookingId
+      bookingId,
+      body.bron || null
     ).run();
 
     // ── Send notifications (fire-and-forget, don't block response) ──
@@ -259,8 +298,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
           ? new Date(aanvraagData.start_time).toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Amsterdam' })
           : '';
         const bookingFrom = 'Yannick van KNAP GEMAAKT. <yannick@knapgemaakt.nl>';
+        const bronTag = body.bron === 'offerte-quiz' ? ' [quiz]' : body.bron === 'plan' ? ' [plan]' : '';
         notifications.push(
-          sendEmail(apiKey, 'info@knapgemaakt.nl', `${aanvraagData.specification || 'Kennismaking'} - ${body.name}`, buildAanvraagNotification(aanvraagData), body.email, icsAttachmentInternal, 'KNAP GEMAAKT. <bookings@knapgemaakt.nl>')
+          sendEmail(apiKey, 'info@knapgemaakt.nl', `${aanvraagData.specification || 'Kennismaking'} - ${body.name}${bronTag}`, buildAanvraagNotification(aanvraagData), body.email, icsAttachmentInternal, 'KNAP GEMAAKT. <bookings@knapgemaakt.nl>')
         );
         // Confirmation to customer
         const subjectDate = dateStr ? dateStr.charAt(0).toUpperCase() + dateStr.slice(1) : '';
@@ -276,12 +316,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
         );
         notifications.push(
           sendEmail(apiKey, body.email, 'Je aanvraag is ontvangen bij KNAP GEMAAKT.', buildContactConfirmation(body))
-        );
-      }
-    } else if (body.type === 'audit') {
-      if (apiKey) {
-        notifications.push(
-          sendEmail(apiKey, 'info@knapgemaakt.nl', 'Nieuwe website-audit aanvraag', buildAuditNotification(body), body.email)
         );
       }
     }
