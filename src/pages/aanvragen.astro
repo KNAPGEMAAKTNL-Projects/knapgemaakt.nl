@@ -25,14 +25,13 @@ import Footer from "../components/Footer.astro";
                 <p
                     class="text-xl md:text-2xl text-ink/70 font-medium max-w-4xl leading-relaxed"
                 >
-                    Vul het formulier in en plan direct een vrijblijvend
-                    gesprek.<br />
-                    Je ontvangt zo snel mogelijk een bevestiging.
+                    Vul het formulier in en plan direct een vrijblijvend gesprek.
                 </p>
             </div>
 
             <!-- Form -->
             <form class="space-y-12 bg-canvas border border-warm rounded-xl p-8 md:p-10 relative z-10" id="aanvraag-form">
+                <input type="hidden" name="quiz_context" id="quiz-context-input" />
                 <!-- Personal Details -->
                 <div class="space-y-6">
                     <h2
@@ -125,52 +124,8 @@ import Footer from "../components/Footer.astro";
                     >
                         <span class="text-accent font-mono text-lg">[02]</span
                         >
-                        Over Je Bedrijf
+                        Extra informatie
                     </h2>
-
-                    <div class="space-y-2">
-                        <label
-                            for="branche"
-                            class="block font-mono text-xs uppercase tracking-widest opacity-60"
-                            >Wat voor bedrijf heb je?</label
-                        >
-                        <div class="relative">
-                            <select
-                                id="branche"
-                                name="branche"
-                                required
-                                oninvalid="this.setCustomValidity('Maak een keuze uit de lijst')"
-                                oninput="this.setCustomValidity('')"
-                                class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
-                            >
-                                <option value="" disabled selected>Maak een keuze...</option>
-                                <option value="Horeca & food">Horeca & food</option>
-                                <option value="Retail & mode">Retail & mode</option>
-                                <option value="E-commerce">E-commerce</option>
-                                <option value="Bouw & techniek">Bouw & techniek</option>
-                                <option value="Sport & gezondheid">Sport & gezondheid</option>
-                                <option value="Huis, tuin & onderhoud">Huis, tuin & onderhoud</option>
-                                <option value="Zakelijke dienstverlening">Zakelijke dienstverlening</option>
-                                <option value="Anders">Anders</option>
-                            </select>
-                            <div
-                                class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink/50"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="square"
-                                    stroke-linejoin="miter"
-                                    ><path d="m6 9 6 6 6-6"></path></svg
-                                >
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="space-y-4">
                         <label
@@ -262,10 +217,8 @@ import Footer from "../components/Footer.astro";
                             class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
                         >
                             <option value="" disabled selected>Maak een keuze...</option>
-                            <option value="Nieuwe website">Nieuwe website</option>
-                            <option value="Pakket Essentieel">Pakket Essentieel</option>
-                            <option value="Pakket Groei">Pakket Groei</option>
-                            <option value="Pakket Compleet">Pakket Compleet</option>
+                            <option value="Website">Website</option>
+                            <option value="Pakketkeuze">Pakketkeuze</option>
                             <option value="Automatisering">Automatisering</option>
                             <option value="Iets anders">Iets anders</option>
                         </select>
@@ -285,6 +238,24 @@ import Footer from "../components/Footer.astro";
                                 ><path d="m6 9 6 6 6-6"></path></svg
                             >
                         </div>
+                    </div>
+
+                    <div
+                        id="iets-anders-container"
+                        class="hidden space-y-2 animate-in fade-in slide-in-from-top-2 duration-300"
+                    >
+                        <label
+                            for="iets_anders_details"
+                            class="block font-mono text-xs uppercase tracking-widest opacity-60"
+                            >Vertel kort wat je bedoelt</label
+                        >
+                        <textarea
+                            id="iets_anders_details"
+                            name="iets_anders_details"
+                            rows="3"
+                            class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-base focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors placeholder:text-ink/20"
+                            placeholder="Bijvoorbeeld: ik heb een idee voor een tool die..."
+                        ></textarea>
                     </div>
                 </div>
 
@@ -454,9 +425,9 @@ import Footer from "../components/Footer.astro";
             "bedrijfsnaam",
             "telefoon",
             "email",
-            "branche",
             "specification",
             "website_url",
+            "iets_anders_details",
         ].forEach((name) => {
             const el = form.elements.namedItem(name) as
                 | HTMLInputElement
@@ -487,9 +458,9 @@ import Footer from "../components/Footer.astro";
                 "bedrijfsnaam",
                 "telefoon",
                 "email",
-                "branche",
                 "specification",
                 "website_url",
+                "iets_anders_details",
             ].forEach((name) => {
                 const el = form.elements.namedItem(name) as
                     | HTMLInputElement
@@ -533,14 +504,19 @@ import Footer from "../components/Footer.astro";
     if (onderwerp) {
         const specSelect = document.getElementById("specification") as HTMLSelectElement;
         const optionMap: Record<string, string> = {
-            "nieuwe-website": "Nieuwe website",
-            "webdesign": "Nieuwe website",
-            "websites-op-maat": "Nieuwe website",
+            "nieuwe-website": "Website",
+            "webdesign": "Website",
+            "websites-op-maat": "Website",
             "automatisering": "Automatisering",
-            "pakketten": "Pakket Essentieel",
-            "pakket-essentieel": "Pakket Essentieel",
-            "pakket-groei": "Pakket Groei",
-            "pakket-compleet": "Pakket Compleet",
+            "lead-opvolging": "Automatisering",
+            "ai-content": "Automatisering",
+            "factuurherinneringen": "Automatisering",
+            "whatsapp-opvolging": "Automatisering",
+            "weekoverzichten": "Automatisering",
+            "pakketten": "Pakketkeuze",
+            "pakket-essentieel": "Pakketkeuze",
+            "pakket-groei": "Pakketkeuze",
+            "pakket-compleet": "Pakketkeuze",
         };
         const value = optionMap[onderwerp];
         if (value && specSelect) {
@@ -548,6 +524,7 @@ import Footer from "../components/Footer.astro";
             specSelect.dispatchEvent(new Event("change", { bubbles: true }));
         }
     }
+
 
     // Dynamically mount the React calendar component
     async function mountCalendar() {
@@ -583,9 +560,6 @@ import Footer from "../components/Footer.astro";
         const telefoon = (
             document.getElementById("telefoon") as HTMLInputElement
         ).value;
-        const branche = (
-            document.getElementById("branche") as HTMLSelectElement
-        ).value;
         const specification = (
             document.getElementById("specification") as HTMLSelectElement
         ).value;
@@ -593,7 +567,7 @@ import Footer from "../components/Footer.astro";
             'input[name="has_website"]:checked',
         );
 
-        if (naam && email && telefoon && branche && specification && hasWebsite) {
+        if (naam && email && telefoon && specification && hasWebsite) {
             calPlaceholder.classList.add("hidden");
             calendarContainer.classList.remove("hidden");
             // Mount the calendar when form is complete
@@ -605,13 +579,24 @@ import Footer from "../components/Footer.astro";
     }
 
     // Add listeners to check form completion
-    ["naam", "email", "telefoon", "branche", "specification"].forEach((id) => {
+    ["naam", "email", "telefoon", "specification"].forEach((id) => {
         document
             .getElementById(id)
             ?.addEventListener("input", checkFormComplete);
     });
-    document.getElementById("specification")
-        ?.addEventListener("change", checkFormComplete);
+    const specEl = document.getElementById("specification") as HTMLSelectElement | null;
+    const ietsAndersContainer = document.getElementById("iets-anders-container");
+    function syncIetsAnders() {
+        if (!specEl || !ietsAndersContainer) return;
+        if (specEl.value === "Iets anders") {
+            ietsAndersContainer.classList.remove("hidden");
+        } else {
+            ietsAndersContainer.classList.add("hidden");
+        }
+    }
+    specEl?.addEventListener("change", checkFormComplete);
+    specEl?.addEventListener("change", syncIetsAnders);
+    syncIetsAnders();
     document.querySelectorAll('input[name="has_website"]').forEach((el) => {
         el.addEventListener("change", checkFormComplete);
     });
@@ -677,7 +662,8 @@ import Footer from "../components/Footer.astro";
             email: formData.get("email") as string,
             phone: formData.get("telefoon") as string,
             company: formData.get("bedrijfsnaam") as string,
-            industry: formData.get("branche") as string,
+            bron: "aanvragen",
+            iets_anders_details: formData.get("iets_anders_details") as string,
             has_website: formData.get("has_website") as string,
             website_url: websiteUrl,
             start_time: window.selectedBookingSlot.start,

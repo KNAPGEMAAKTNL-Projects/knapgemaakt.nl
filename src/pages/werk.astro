@@ -5,9 +5,15 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import FadeIn from "../components/FadeIn.astro";
 import { DraggableScroll } from "../components/DraggableScroll";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
 import { getAllProjects } from "../data/projects";
 
 const liveProjects = getAllProjects();
+
+const breadcrumbs = [
+  { name: "Home", url: "https://knapgemaakt.nl/" },
+  { name: "Werk", url: "https://knapgemaakt.nl/werk/" }
+];
 
 const demoSites = [
   {
@@ -26,15 +32,16 @@ const demoSites = [
 ---
 
 <Layout
-  title="Portfolio | Websites & Webshops op Maat | KNAP GEMAAKT."
-  description="Bekijk recent opgeleverd werk en demosites. Websites en webshops op maat voor ondernemers. Van concept tot live. Bekijk het portfolio van KNAP GEMAAKT."
+  title="Recente projecten | Portfolio KNAP GEMAAKT."
+  description="Bekijk recent opgeleverd werk en demosites. Websites op maat voor ondernemers. Van concept tot live. Portfolio van KNAP GEMAAKT. uit Buren."
 >
+  <BreadcrumbSchema items={breadcrumbs} />
   <main>
     <!-- Hero -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
       <div class="max-w-5xl mx-auto">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
-          Recent opgeleverd
+          Recente projecten
         </h1>
         <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed">
           Van sportscholen tot schoonmaakbedrijven. Elk project is anders, want elk bedrijf is anders. Scroll door het werk of bekijk de demosites.

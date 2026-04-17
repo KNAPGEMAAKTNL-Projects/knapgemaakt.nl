@@ -4,12 +4,19 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import FadeIn from "../components/FadeIn.astro";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://knapgemaakt.nl/" },
+	{ name: "Over", url: "https://knapgemaakt.nl/over/" }
+];
 ---
 
 <Layout
 	title="Over KNAP GEMAAKT. | Yannick Veldhuisen | Buren, Gelderland"
 	description="Websites op maat voor ondernemers, met hosting en onderhoud in een vast maandbedrag. Persoonlijk contact, eerlijke prijzen. KNAP GEMAAKT. vanuit Buren, door heel Nederland."
 >
+	<BreadcrumbSchema items={breadcrumbs} />
 	<main class="bg-canvas">
 		<!-- Hero -->
 		<section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">

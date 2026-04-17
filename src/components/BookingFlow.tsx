@@ -481,6 +481,7 @@ export default function BookingFlow() {
           start_time: selectedSlot!.start,
           end_time: selectedSlot!.end,
           meeting_type: meetingType,
+          bron: 'plan',
           'cf-turnstile-response': token,
         }),
       });

@@ -2,7 +2,7 @@
 /**
  * Header/Navigation Component
  * Sticky header with logo, focused nav, and mobile overlay
- * Nav: Webdesign | Pakketten | Werk | Over (dropdown)
+ * Nav: Webdesign | Pakketten | Automatisering | Werk | Over (dropdown)
  */
 
 interface Props {
@@ -27,6 +27,7 @@ const overLinks = [
 const standaloneLinks = [
     { href: "/webdesign/", label: "Webdesign" },
     { href: "/pakketten/", label: "Pakketten" },
+    { href: "/automatisering/", label: "Automatisering" },
     { href: "/werk/", label: "Werk" },
 ];
 ---
@@ -102,10 +103,10 @@ const standaloneLinks = [
 
                 <!-- CTA Button -->
                 <a
-                    href="/aanvragen/"
+                    href="/offerte/"
                     class="bg-ink text-canvas text-sm font-bold tracking-tight px-5 py-2.5 rounded-lg hover:bg-ink/80 transition-colors duration-200 ml-2"
                 >
-                    Plan een gesprek
+                    Advies op maat
                 </a>
             </nav>
 
@@ -191,10 +192,10 @@ const standaloneLinks = [
             <!-- Mobile CTA -->
             <div class="mobile-nav-link pt-6" style={`--index: ${standaloneLinks.length + 1}`}>
                 <a
-                    href="/aanvragen/"
+                    href="/offerte/"
                     class="inline-flex items-center justify-center bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-200"
                 >
-                    Plan een gesprek
+                    Advies op maat
                 </a>
             </div>
         </div>

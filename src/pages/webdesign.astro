@@ -7,6 +7,9 @@ import FadeIn from "../components/FadeIn.astro";
 import FAQSection from "../components/FAQSection.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import ServiceSchema from "../components/seo/ServiceSchema.astro";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
+import { DraggableScroll } from "../components/DraggableScroll";
+import { DotMesh } from "../components/DotMesh";
 import { getAllProjects } from "../data/projects";
 
 const projects = getAllProjects();
@@ -21,12 +24,13 @@ const breadcrumbs = [
   title="Webdesign | Websites op maat gebouwd | KNAP GEMAAKT."
   description="Een website op maat, vanaf EUR 49 per maand inclusief hosting en onderhoud. Geen templates, geen trage plugins. Snel en passend bij jouw bedrijf. KNAP GEMAAKT. uit Buren."
 >
+  <BreadcrumbSchema items={breadcrumbs} />
   <ServiceSchema
     name="Webdesign op maat"
-    description="Websites vanaf de grond opgebouwd met Astro. Snel, veilig en passend bij jouw bedrijf."
+    description="Websites vanaf de grond opgebouwd. Ontwerp, bouw, hosting en onderhoud in één vast maandbedrag vanaf EUR 49. Snel, veilig en passend bij jouw bedrijf."
     serviceType="WebDesign"
     url="https://knapgemaakt.nl/webdesign/"
-    price="595"
+    price="49"
   />
   <main>
     <!-- Hero -->
@@ -86,98 +90,104 @@ const breadcrumbs = [
       </div>
     </section>
 
-    <!-- Projects showcase -->
-    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
-      <div class="max-w-5xl mx-auto">
+    <!-- Projects showcase (matches homepage draggable-scroll pattern) -->
+    <section class="py-20 md:py-28 bg-canvas relative z-10 overflow-hidden">
+      <DotMesh client:visible />
+      <div class="max-w-5xl mx-auto px-6 md:px-12 lg:px-16 mb-12 md:mb-16 relative z-10">
         <FadeIn>
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-10">
-            Voorbeelden
+          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Werk</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+            Recente projecten
           </h2>
-          <div class="grid sm:grid-cols-2 gap-8">
-            {projects.map(project => (
-              <a
-                href={`/project/${project.slug}/`}
-                class="group block rounded-2xl overflow-hidden border border-warm hover:border-accent transition-colors duration-300"
-              >
-                <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
-                  {project.overviewMockup ? (
-                    <img
-                      src={project.overviewMockup}
-                      alt={project.title}
-                      width="1200"
-                      height="750"
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : (
-                    <span class="text-ink/40 text-sm flex items-center justify-center h-full">Preview</span>
-                  )}
-                </div>
-                <div class="p-5 bg-canvas">
-                  {project.category === "Live" ? (
-                    <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-accent text-white px-2 py-0.5 rounded-full mb-2">LIVE</span>
-                  ) : (
-                    <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">IN ONTWIKKELING</span>
-                  )}
-                  <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">{project.title}</h3>
-                  <p class="text-ink/70 text-sm">{project.industry} · {project.location}</p>
-                </div>
-              </a>
-            ))}
-
-            <!-- Demo Hovenier -->
-            <a
-              href="https://demo-hovenier.knapgemaakt.nl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group block rounded-2xl overflow-hidden border border-warm hover:border-accent transition-colors duration-300"
-            >
-              <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
-                <img
-                  src="/assets/projects/demo-hovenier.webp"
-                  alt="Demo website voor hoveniersbedrijf"
-                  width="2304"
-                  height="1536"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="p-5 bg-canvas">
-                <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
-                <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">Hovenier Demo</h3>
-                <p class="text-ink/70 text-sm">Demo website voor hoveniers</p>
-              </div>
-            </a>
-
-            <!-- Demo Elektricien -->
-            <a
-              href="https://demo-elektricien.knapgemaakt.nl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group block rounded-2xl overflow-hidden border border-warm hover:border-accent transition-colors duration-300"
-            >
-              <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
-                <img
-                  src="/assets/projects/demo-elektricien.webp"
-                  alt="Demo website voor elektricien"
-                  width="2304"
-                  height="1536"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="p-5 bg-canvas">
-                <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
-                <h3 class="font-bold text-lg mb-1 group-hover:text-accent transition-colors duration-300">Elektricien Demo</h3>
-                <p class="text-ink/70 text-sm">Demo website voor elektriciens</p>
-              </div>
-            </a>
-          </div>
         </FadeIn>
       </div>
+
+      <FadeIn delay={200}>
+        <DraggableScroll client:visible className="pb-4 pl-6 md:pl-12 lg:pl-[max(1rem,calc((100vw-64rem)/2+1rem))]">
+          {projects.map(project => (
+            <a
+              href={`/project/${project.slug}/`}
+              class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block"
+            >
+              <div class="aspect-[16/10] bg-gradient-to-br from-canvas-alt to-canvas flex items-center justify-center overflow-hidden">
+                {project.overviewMockup ? (
+                  <img
+                    src={project.overviewMockup}
+                    alt={project.title}
+                    width="1200"
+                    height="750"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
+                ) : (
+                  <span class="text-ink/40 text-sm">Preview</span>
+                )}
+              </div>
+              <div class="p-5">
+                {project.category === "Live" ? (
+                  <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-accent text-white px-2 py-0.5 rounded-full mb-2">LIVE</span>
+                ) : (
+                  <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">IN ONTWIKKELING</span>
+                )}
+                <h3 class="font-bold text-lg mb-1">{project.title}</h3>
+                <p class="text-sm text-ink/50">{project.industry} · {project.location}</p>
+              </div>
+            </a>
+          ))}
+
+          <a
+            href="https://demo-hovenier.knapgemaakt.nl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block"
+          >
+            <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
+              <img
+                src="/assets/projects/demo-hovenier.webp"
+                alt="Demo website voor hoveniersbedrijf"
+                width="2304"
+                height="1536"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </div>
+            <div class="p-5">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
+              <h3 class="font-bold text-lg mb-1">Hovenier Demo</h3>
+              <p class="text-sm text-ink/50">Demo website voor hoveniers</p>
+            </div>
+          </a>
+
+          <a
+            href="https://demo-elektricien.knapgemaakt.nl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block"
+          >
+            <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
+              <img
+                src="/assets/projects/demo-elektricien.webp"
+                alt="Demo website voor elektricien"
+                width="2304"
+                height="1536"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+            </div>
+            <div class="p-5">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
+              <h3 class="font-bold text-lg mb-1">Elektricien Demo</h3>
+              <p class="text-sm text-ink/50">Demo website voor elektriciens</p>
+            </div>
+          </a>
+        </DraggableScroll>
+      </FadeIn>
     </section>
 
     <!-- Process -->

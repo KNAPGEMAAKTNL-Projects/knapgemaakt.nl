@@ -29,6 +29,7 @@ function generateSitemap(): string {
         { path: "/website-voor-hoveniers/", lastmod: today, changefreq: "monthly", priority: "0.8" },
         { path: "/blog/", lastmod: today, changefreq: "weekly", priority: "0.8" },
         { path: "/contact/", lastmod: today, changefreq: "monthly", priority: "0.7" },
+        { path: "/offerte/", lastmod: today, changefreq: "monthly", priority: "0.8" },
         { path: "/aanvragen/", lastmod: today, changefreq: "monthly", priority: "0.7" },
         { path: "/over/", lastmod: today, changefreq: "monthly", priority: "0.6" },
         { path: "/algemene-voorwaarden/", lastmod: "2026-01-20", changefreq: "yearly", priority: "0.3" },

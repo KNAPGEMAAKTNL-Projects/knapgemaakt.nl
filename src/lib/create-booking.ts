@@ -5,7 +5,6 @@ export interface BookingData {
   user_email: string;
   user_phone: string;
   user_company?: string;
-  user_industry?: string;
   user_website?: string;
   start_time: string;
   end_time: string;
@@ -96,16 +95,15 @@ export async function createBooking(
 
   await db.prepare(`
     INSERT INTO bookings (
-      id, user_name, user_email, user_phone, user_company, user_industry, user_website,
+      id, user_name, user_email, user_phone, user_company, user_website,
       start_time, end_time, status, created_at, updated_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'confirmed', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'confirmed', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
   `).bind(
     bookingId,
     data.user_name,
     data.user_email,
     data.user_phone,
     data.user_company || null,
-    data.user_industry || null,
     data.user_website || null,
     startTime.toISOString(),
     endTime.toISOString()
