@@ -5,7 +5,6 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import FadeIn from "../components/FadeIn.astro";
 import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
-import TrustStrip from "../components/TrustStrip.astro";
 import { TypingRotator } from "../components/TypingRotator";
 import { DraggableScroll } from "../components/DraggableScroll";
 import { DotMesh } from "../components/DotMesh";
@@ -36,7 +35,7 @@ const projects = getAllProjects();
               <TypingRotator
                 client:load
                 prefix=""
-                words={["gevonden wordt.", "in één oogopslag klopt.", "vertrouwen uitstraalt.", "klanten laat aanvragen.", "rust in je agenda brengt."]}
+                words={["gevonden wordt.", "in één oogopslag klopt.", "vertrouwen uitstraalt.", "klanten laat aanvragen.", "niet verouderd raakt."]}
                 typingSpeed={80}
                 deletingSpeed={40}
                 pauseDuration={2500}
@@ -46,16 +45,16 @@ const projects = getAllProjects();
         </h1>
 
         <p class="text-lg md:text-xl text-ink/70 max-w-2xl mb-10 md:mb-12 leading-relaxed">
-          Voor ondernemers die hun vak serieus nemen. Maatwerk, geen templates.<br class="hidden md:block" />Hosting, onderhoud en aanpassingen in één vast maandbedrag. Geen gedoe.
+          Ik bouw maatwerk websites voor ondernemers in de regio.<br class="hidden md:block" />Hosting, onderhoud en kleine aanpassingen zitten in een vast maandbedrag. Jij doet je vak, ik regel de rest.
         </p>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <a
-            href="/offerte/"
+            href="/aanvragen/"
             class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
           >
-            Doe de test
-            <span class="text-canvas/60 text-xs font-mono">2 min</span>
+            Plan een gesprek
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
           </a>
           <a
             href="/werk/"
@@ -74,10 +73,10 @@ const projects = getAllProjects();
         <FadeIn>
           <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Hoe het werkt</span>
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Eerst een website, daarna geregeld
+            Eerst een website, daarna blijft alles draaien
           </h2>
           <p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12 md:mb-16">
-            Je krijgt een maatwerk website die past bij je bedrijf. Daarna draait alles door in een vast maandbedrag — hosting, aanpassingen en support inbegrepen.
+            Je krijgt een maatwerk website die past bij je bedrijf. Daarna houd je 'm in de lucht met een vast maandbedrag waar hosting, onderhoud en kleine aanpassingen in zitten.
           </p>
         </FadeIn>
 
@@ -90,7 +89,7 @@ const projects = getAllProjects();
               <span class="text-xs font-mono uppercase tracking-widest text-ink/40 mb-2">Stap 1</span>
               <h3 class="text-2xl font-bold mb-3">Je nieuwe website</h3>
               <p class="text-ink/70 leading-relaxed mb-6">
-                Op maat gebouwd met Astro en Tailwind. Laadt in minder dan een seconde, geoptimaliseerd voor mobiel en Google. Meestal binnen 7 dagen online.
+                Op maat gebouwd. Laadt in minder dan een seconde, werkt goed op mobiel en komt boven in Google. Meestal binnen 7 dagen online.
               </p>
               <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
                 Meer over webdesign <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
@@ -106,7 +105,7 @@ const projects = getAllProjects();
               <span class="text-xs font-mono uppercase tracking-widest text-ink/40 mb-2">Stap 2</span>
               <h3 class="text-2xl font-bold mb-3">Een pakket vanaf €49</h3>
               <p class="text-ink/70 leading-relaxed mb-6">
-                Hosting, onderhoud, aanpassingen en support zitten erin. Drie pakketten: Essentieel, Groei of Compleet. Geen verrassingen achteraf.
+                Hosting, onderhoud en aanpassingen zitten erin. Drie pakketten om uit te kiezen: Essentieel, Groei of Compleet. Je betaalt vanaf de maand dat je site live staat.
               </p>
               <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
                 Bekijk de pakketten <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
@@ -238,11 +237,6 @@ const projects = getAllProjects();
       </div>
     </section> -->
 
-    <!-- TRUST STRIP -->
-    <div class="relative z-10">
-      <TrustStrip heading="Integreert met" />
-    </div>
-
     <!-- BOTTOM CTA -->
     <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-ink text-canvas relative z-10 overflow-hidden">
       <DotMesh client:visible dotColor="20, 184, 166" maxOpacity={0.4} />
@@ -255,11 +249,11 @@ const projects = getAllProjects();
             Vertel over je bedrijf en we kijken samen naar de mogelijkheden.
           </p>
           <a
-            href="/offerte/"
+            href="/aanvragen/"
             class="bg-accent text-white px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-accent/90 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
           >
-            Doe de test
-            <span class="text-white/70 text-xs font-mono">2 min</span>
+            Plan een gesprek in
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
           </a>
         </FadeIn>
       </div>
