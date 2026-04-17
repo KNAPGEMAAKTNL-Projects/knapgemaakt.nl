@@ -1,17 +1,16 @@
 ---
 export const prerender = true;
 
-import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/Footer.astro";
-import FadeIn from "../../components/FadeIn.astro";
-import FAQSection from "../../components/FAQSection.astro";
-import Breadcrumb from "../../components/Breadcrumb.astro";
-import ServiceSchema from "../../components/seo/ServiceSchema.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import FadeIn from "../components/FadeIn.astro";
+import FAQSection from "../components/FAQSection.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import ServiceSchema from "../components/seo/ServiceSchema.astro";
 
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
-	{ name: "ICT Diensten", url: "https://knapgemaakt.nl/ict-diensten/" },
-	{ name: "Automatisering", url: "https://knapgemaakt.nl/ict-diensten/automatisering/" }
+	{ name: "Automatisering", url: "https://knapgemaakt.nl/automatisering/" }
 ];
 ---
 
@@ -23,7 +22,7 @@ const breadcrumbs = [
     name="Automatisering & AI"
     description="Bedrijfsprocessen automatiseren met AI en slimme workflows. Offertes, facturen, reviews en opvolging."
     serviceType="ITService"
-    url="https://knapgemaakt.nl/ict-diensten/automatisering/"
+    url="https://knapgemaakt.nl/automatisering/"
   />
   <main>
     <!-- Hero -->

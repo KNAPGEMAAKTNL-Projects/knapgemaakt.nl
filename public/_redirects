@@ -15,8 +15,8 @@
 # Blog post redirects (consolidated content)
 /blog/webdesign-utrecht /blog/website-laten-maken-kosten/ 301
 /blog/webdesign-utrecht/ /blog/website-laten-maken-kosten/ 301
-/blog/webshop-laten-maken /webshops/ 301
-/blog/webshop-laten-maken/ /webshops/ 301
+/blog/webshop-laten-maken /webdesign/ 301
+/blog/webshop-laten-maken/ /webdesign/ 301
 /blog/maatwerkwebsite-laten-maken /blog/website-laten-maken-kosten/ 301
 /blog/maatwerkwebsite-laten-maken/ /blog/website-laten-maken-kosten/ 301
 /blog/zelf-website-maken-of-laten-maken /blog/website-laten-maken-kosten/ 301
@@ -29,21 +29,35 @@
 # Redesign redirects (old pages -> new pages)
 /website-laten-maken /webdesign/ 301
 /website-laten-maken/ /webdesign/ 301
-/automations /ict-diensten/ 301
-/automations/ /ict-diensten/ 301
 /portfolio /werk/ 301
 /portfolio/ /werk/ 301
 
-# ICT diensten URL renames
+# ICT diensten URL renames (legacy, pre-Apr 2026)
 /ict-diensten/wordpress-sneller /webdesign/ 301
 /ict-diensten/wordpress-sneller/ /webdesign/ 301
 /ict-diensten/wordpress-versnellen /webdesign/ 301
 /ict-diensten/wordpress-versnellen/ /webdesign/ 301
-/ict-diensten/slimmer-werken /ict-diensten/automatisering/ 301
-/ict-diensten/slimmer-werken/ /ict-diensten/automatisering/ 301
+/ict-diensten/slimmer-werken /automatisering/ 301
+/ict-diensten/slimmer-werken/ /automatisering/ 301
 
-# Website restructure redirects
-/wat-ik-doe /ict-diensten/ 301
-/wat-ik-doe/ /ict-diensten/ 301
+# Website restructure redirects (legacy)
+/wat-ik-doe /pakketten/ 301
+/wat-ik-doe/ /pakketten/ 301
 /over-mij /over/ 301
 /over-mij/ /over/ 301
+
+# 2026-04-17 IA simplification: kill /ict-diensten/ hub + webshops
+/webshops /webdesign/ 301
+/webshops/ /webdesign/ 301
+/ict-diensten /pakketten/ 301
+/ict-diensten/ /pakketten/ 301
+/ict-diensten/website-hosting /pakketten/ 301
+/ict-diensten/website-hosting/ /pakketten/ 301
+/ict-diensten/email-hosting /pakketten/ 301
+/ict-diensten/email-hosting/ /pakketten/ 301
+/ict-diensten/automatisering /automatisering/ 301
+/ict-diensten/automatisering/ /automatisering/ 301
+
+# Legacy aliases (from before WordPress removal) pointing at dead targets
+/automations /automatisering/ 301
+/automations/ /automatisering/ 301

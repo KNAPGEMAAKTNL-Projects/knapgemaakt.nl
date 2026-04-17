@@ -14,8 +14,8 @@ const projects = getAllProjects();
 ---
 
 <Layout
-  title="Websites & ICT voor Ondernemers Buren | KNAP GEMAAKT."
-  description="Websites, webshops, hosting en e-mail voor lokale ondernemers. Persoonlijk contact, eerlijke prijzen. Ontdek wat KNAP GEMAAKT. uit Buren voor je kan doen."
+  title="Websites voor Ondernemers Buren | KNAP GEMAAKT."
+  description="Maatwerk websites voor ondernemers. Snel geladen, goed gevonden in Google, vanaf €49 per maand. Geen templates, geen WordPress. Klaar in 7 dagen."
 >
   <LocalBusinessSchema />
   <main>
@@ -26,16 +26,16 @@ const projects = getAllProjects();
       <div class="max-w-5xl mx-auto w-full relative z-10">
         <h1 class="mb-6 md:mb-8">
           <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-snug block">
-            Je digitale zaken
+            Een website die
           </span>
           <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-snug block relative mt-2">
             {/* Server-rendered placeholder for SEO (hidden immediately, typing animates in) */}
-            <span id="typing-placeholder" class="text-accent invisible">knap geregeld.</span>
+            <span id="typing-placeholder" class="text-accent invisible">klanten laat aanvragen.</span>
             <span class="absolute left-0 top-0 text-accent">
               <TypingRotator
                 client:load
                 prefix=""
-                words={["knap geregeld.", "professioneel online.", "op één plek.", "goed gehost.", "veilig gemaild."]}
+                words={["gevonden wordt.", "in één oogopslag klopt.", "vertrouwen uitstraalt.", "klanten laat aanvragen.", "niet verouderd raakt."]}
                 typingSpeed={80}
                 deletingSpeed={40}
                 pauseDuration={2500}
@@ -45,16 +45,25 @@ const projects = getAllProjects();
         </h1>
 
         <p class="text-lg md:text-xl text-ink/70 max-w-2xl mb-10 md:mb-12 leading-relaxed">
-          Websites, hosting en e-mail voor ondernemers in de regio.<br class="hidden md:block" />Eén aanspreekpunt, alles geregeld.
+          Ik bouw maatwerk websites voor ondernemers in de regio.<br class="hidden md:block" />Hosting, onderhoud en kleine aanpassingen zitten in een vast maandbedrag. Jij doet je vak, ik regel de rest.
         </p>
 
-        <a
-          href="/aanvragen/"
-          class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
-        >
-          Plan een gesprek in
-          <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-        </a>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <a
+            href="/aanvragen/"
+            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+          >
+            Plan een gesprek
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+          <a
+            href="/werk/"
+            class="text-ink font-bold tracking-tight hover:text-accent transition-colors duration-300 inline-flex items-center gap-2 group px-4 py-4"
+          >
+            Bekijk werk
+            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -62,61 +71,44 @@ const projects = getAllProjects();
     <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt relative z-10 rounded-t-3xl shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.08)]">
       <div class="max-w-5xl mx-auto">
         <FadeIn>
-          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Diensten</span>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12 md:mb-16">
-            Alles voor je online aanwezigheid
+          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Hoe het werkt</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            Eerst een website, daarna blijft alles draaien
           </h2>
+          <p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12 md:mb-16">
+            Je krijgt een maatwerk website die past bij je bedrijf. Daarna houd je 'm in de lucht met een vast maandbedrag waar hosting, onderhoud en kleine aanpassingen in zitten.
+          </p>
         </FadeIn>
 
-        <div class="grid sm:grid-cols-2 gap-6">
+        <div class="grid md:grid-cols-[7fr_5fr] gap-6">
           <FadeIn delay={100}>
-            <a href="/webdesign/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
+            <a href="/webdesign/" class="glass-card p-8 md:p-10 flex flex-col cursor-pointer group block h-full">
               <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-5">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
               </div>
-              <h3 class="text-xl font-bold mb-2">Webdesign</h3>
-              <p class="text-ink/70 leading-relaxed mb-4">Geen templates, geen WordPress. Snelle websites, geoptimaliseerd voor mobiel, gebouwd voor jouw bedrijf.</p>
+              <span class="text-xs font-mono uppercase tracking-widest text-ink/40 mb-2">Stap 1</span>
+              <h3 class="text-2xl font-bold mb-3">Je nieuwe website</h3>
+              <p class="text-ink/70 leading-relaxed mb-6">
+                Op maat gebouwd. Laadt in minder dan een seconde, werkt goed op mobiel en komt boven in Google. Meestal binnen 7 dagen online.
+              </p>
               <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
-                Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                Meer over webdesign <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
               </span>
             </a>
           </FadeIn>
 
           <FadeIn delay={200}>
-            <a href="/webshops/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
-              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </div>
-              <h3 class="text-xl font-bold mb-2">Webshops</h3>
-              <p class="text-ink/70 leading-relaxed mb-4">Shopify webshops met een eigen ontwerp. Betalingen, voorraad en verzending in één plek.</p>
-              <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
-                Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-              </span>
-            </a>
-          </FadeIn>
-
-          <FadeIn delay={300}>
-            <a href="/ict-diensten/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
-              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
-              </div>
-              <h3 class="text-xl font-bold mb-2">ICT Diensten</h3>
-              <p class="text-ink/70 leading-relaxed mb-4">Hosting, e-mail en automatisering. De digitale basis onder je bedrijf, volledig beheerd.</p>
-              <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
-                Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-              </span>
-            </a>
-          </FadeIn>
-
-          <FadeIn delay={400}>
-            <a href="/pakketten/" class="glass-card p-8 flex flex-col cursor-pointer group block h-full">
-              <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center mb-5">
+            <a href="/pakketten/" class="glass-card p-8 md:p-10 flex flex-col cursor-pointer group block h-full">
+              <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center mb-5">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
               </div>
-              <h3 class="text-xl font-bold mb-2">Pakketten</h3>
-              <p class="text-ink/70 leading-relaxed mb-4">Vanaf €49 per maand. Alles voor je website in één vast bedrag. Drie pakketten om uit te kiezen.</p>
+              <span class="text-xs font-mono uppercase tracking-widest text-ink/40 mb-2">Stap 2</span>
+              <h3 class="text-2xl font-bold mb-3">Een pakket vanaf €49</h3>
+              <p class="text-ink/70 leading-relaxed mb-6">
+                Hosting, onderhoud en aanpassingen zitten erin. Drie pakketten om uit te kiezen: Essentieel, Groei of Compleet. Je betaalt vanaf de maand dat je site live staat.
+              </p>
               <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
-                Bekijk meer <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                Bekijk de pakketten <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
               </span>
             </a>
           </FadeIn>
