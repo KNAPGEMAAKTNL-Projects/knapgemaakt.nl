@@ -235,7 +235,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
         );
         // Confirmation to customer
         notifications.push(
-          sendEmail(apiKey, body.email, 'Je bericht is ontvangen — KNAP GEMAAKT.', buildContactConfirmation(body))
+          sendEmail(apiKey, body.email, 'Je bericht is ontvangen bij KNAP GEMAAKT.', buildContactConfirmation(body))
         );
       }
     } else if (body.type === 'aanvraag') {
@@ -275,7 +275,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
           sendEmail(apiKey, 'info@knapgemaakt.nl', 'Offerte aanvraag: automations', buildContactNotification(body), body.email)
         );
         notifications.push(
-          sendEmail(apiKey, body.email, 'Je aanvraag is ontvangen — KNAP GEMAAKT.', buildContactConfirmation(body))
+          sendEmail(apiKey, body.email, 'Je aanvraag is ontvangen bij KNAP GEMAAKT.', buildContactConfirmation(body))
         );
       }
     } else if (body.type === 'audit') {
