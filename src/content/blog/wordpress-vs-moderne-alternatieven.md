@@ -140,8 +140,8 @@ Even concreet maken:
 - **Totaal: circa €900**
 
 **Statische website (KNAP GEMAAKT.):**
-- Vanaf €49/maand, alles inbegrepen
-- Hosting: €0 (Cloudflare)
+- Drie [pakketten](/pakketten/): Essentieel (€49), Groei (€99) of Compleet (€149) per maand
+- Alles inbegrepen — hosting via Cloudflare kost je niets extra
 - Geen grote investering vooraf
 
 WordPress kost meer in onderhoud, Wix/Squarespace kost je eigen tijd, een statische website heeft lagere lopende kosten maar je hebt een developer nodig voor aanpassingen.
