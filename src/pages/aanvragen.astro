@@ -31,7 +31,6 @@ import Footer from "../components/Footer.astro";
 
             <!-- Form -->
             <form class="space-y-12 bg-canvas border border-warm rounded-xl p-8 md:p-10 relative z-10" id="aanvraag-form">
-                <input type="hidden" name="quiz_context" id="quiz-context-input" />
                 <!-- Personal Details -->
                 <div class="space-y-6">
                     <h2
@@ -217,9 +216,8 @@ import Footer from "../components/Footer.astro";
                             class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
                         >
                             <option value="" disabled selected>Maak een keuze...</option>
-                            <option value="Website">Website</option>
-                            <option value="Pakketkeuze">Pakketkeuze</option>
-                            <option value="Automatisering">Automatisering</option>
+                            <option value="April-actie">Ik wil meedoen aan de april-actie (gratis plek)</option>
+                            <option value="Nieuwe website">Ik wil een nieuwe website</option>
                             <option value="Iets anders">Iets anders</option>
                         </select>
                         <div
@@ -504,19 +502,11 @@ import Footer from "../components/Footer.astro";
     if (onderwerp) {
         const specSelect = document.getElementById("specification") as HTMLSelectElement;
         const optionMap: Record<string, string> = {
-            "nieuwe-website": "Website",
-            "webdesign": "Website",
-            "websites-op-maat": "Website",
-            "automatisering": "Automatisering",
-            "lead-opvolging": "Automatisering",
-            "ai-content": "Automatisering",
-            "factuurherinneringen": "Automatisering",
-            "whatsapp-opvolging": "Automatisering",
-            "weekoverzichten": "Automatisering",
-            "pakketten": "Pakketkeuze",
-            "pakket-essentieel": "Pakketkeuze",
-            "pakket-groei": "Pakketkeuze",
-            "pakket-compleet": "Pakketkeuze",
+            "april":          "April-actie",
+            "gratis":         "April-actie",
+            "webdesign":      "Nieuwe website",
+            "nieuwe-website": "Nieuwe website",
+            "anders":         "Iets anders",
         };
         const value = optionMap[onderwerp];
         if (value && specSelect) {
