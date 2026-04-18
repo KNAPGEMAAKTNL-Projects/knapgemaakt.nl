@@ -78,11 +78,11 @@ Als je dit al bijhoudt (en de kans is groot dat je dat doet), zit je goed. Ander
 
 ## De korte versie
 
-1. **Payment provider** — regelen zij de checkout automatisch?
-2. **Logo's op je site** — footer, e-mails, informatiepagina's
-3. **Plugins** — nieuwste versies laden de juiste assets
-4. **Overzichtje** — wat automatisch, wat zelf?
-5. **Administratie** — track & trace en ordergegevens bewaren
+1. **Payment provider**: regelen zij de checkout automatisch?
+2. **Logo's op je site**: footer, e-mails, informatiepagina's
+3. **Plugins**: nieuwste versies laden de juiste assets
+4. **Overzichtje**: wat automatisch, wat zelf?
+5. **Administratie**: track & trace en ordergegevens bewaren
 
 Een uurtje werk, misschien twee. En dan kun je het van je to-do lijst strepen. Altijd fijn.
 

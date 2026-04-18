@@ -369,7 +369,7 @@ export default function OfferteQuiz() {
         </div>
       )}
 
-      {/* Step 2 — nieuwe-website */}
+      {/* Step 2:nieuwe-website */}
       {state.step === 2 && state.branch === 'nieuwe-website' && (
         <div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight break-words mb-4">Wat wil je bereiken met de website?</h2>
@@ -385,7 +385,7 @@ export default function OfferteQuiz() {
         </div>
       )}
 
-      {/* Step 2 — bestaande-website */}
+      {/* Step 2:bestaande-website */}
       {state.step === 2 && state.branch === 'bestaande-website' && (
         <div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight break-words mb-8">Drie korte vragen over wat je nu hebt</h2>
@@ -431,7 +431,7 @@ export default function OfferteQuiz() {
         </div>
       )}
 
-      {/* Step 2 — automatisering */}
+      {/* Step 2:automatisering */}
       {state.step === 2 && state.branch === 'automatisering' && (
         <div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight break-words mb-4">Welke automatisering interesseert je?</h2>
@@ -447,7 +447,7 @@ export default function OfferteQuiz() {
         </div>
       )}
 
-      {/* Step 2 — iets anders */}
+      {/* Step 2:iets anders */}
       {state.step === 2 && state.branch === 'iets-anders' && (
         <div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight break-words mb-4">Vertel in je eigen woorden</h2>
@@ -462,7 +462,7 @@ export default function OfferteQuiz() {
         </div>
       )}
 
-      {/* Step 3 — urgency */}
+      {/* Step 3: urgency */}
       {state.step === 3 && (
         <div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight break-words mb-8">Wanneer moet het af zijn?</h2>
@@ -481,7 +481,7 @@ export default function OfferteQuiz() {
         </div>
       )}
 
-      {/* Step 4 — results + inline form */}
+      {/* Step 4: results + inline form */}
       {state.step === 4 && (
         <div>
           <span className="text-xs font-bold uppercase tracking-widest text-accent mb-4 block">
