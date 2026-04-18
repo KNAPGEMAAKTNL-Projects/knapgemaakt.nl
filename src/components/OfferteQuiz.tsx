@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 
 type Branch = 'nieuwe-website' | 'bestaande-website' | 'automatisering' | 'iets-anders';
-type Urgency = 'binnen-week' | 'binnen-maand' | 'later-dit-jaar';
+type Urgency = 'zo-snel-mogelijk' | 'geen-haast' | 'weet-niet';
 type Pakket = 'essentieel' | 'groei' | 'compleet' | null;
 type OpenToRebuild = 'ja' | 'nee' | null;
 
@@ -332,7 +332,7 @@ export default function OfferteQuiz() {
   const labelClass = 'flex items-center gap-4 bg-canvas border border-warm rounded-xl p-4 md:p-5 cursor-pointer hover:border-accent transition-colors';
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div>
       {/* Progress */}
       <div className="mb-10">
         <div className="flex justify-between text-xs font-mono uppercase tracking-widest text-ink/40 mb-2">
@@ -468,9 +468,9 @@ export default function OfferteQuiz() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight break-words mb-8">Wanneer moet het af zijn?</h2>
           <div className="grid gap-3">
             {[
-              { id: 'binnen-week', label: 'Binnen een week', sub: 'Er staat een vlam op, ik mis omzet zonder' },
-              { id: 'binnen-maand', label: 'Binnen een maand', sub: 'Ik wil de volgende stap zetten' },
-              { id: 'later-dit-jaar', label: 'Later dit jaar', sub: 'Verkennend, we zien wel wanneer' },
+              { id: 'zo-snel-mogelijk', label: 'Zo snel mogelijk', sub: 'Ik wil graag direct aan de slag.' },
+              { id: 'geen-haast', label: 'Het heeft geen haast', sub: 'Er zit geen urgentie achter.' },
+              { id: 'weet-niet', label: 'Ik weet het niet', sub: 'Geen tijdlijn op dit moment.' },
             ].map(opt => (
               <button key={opt.id} onClick={() => handleUrgencySelect(opt.id as Urgency)} className={choiceClass}>
                 <div className="font-bold group-hover:text-accent transition-colors">{opt.label}</div>
@@ -506,7 +506,7 @@ export default function OfferteQuiz() {
             ))}
           </ul>
 
-          <div className="bg-canvas-alt rounded-2xl p-4 sm:p-6 md:p-8 mt-10 -mx-2 sm:mx-0">
+          <div className="bg-canvas-alt rounded-2xl p-4 sm:p-6 md:p-8 mt-10 overflow-hidden -mx-4 w-[calc(100%+2rem)] sm:-mx-6 sm:w-[calc(100%+3rem)] md:-mx-10 md:w-[calc(100%+5rem)]">
             <h3 className="text-2xl font-bold tracking-tight mb-2 break-words">Plan een kennismaking</h3>
             <p className="text-ink/60 mb-6 break-words">Vul je gegevens in, dan verschijnt de agenda.</p>
 
@@ -537,9 +537,11 @@ export default function OfferteQuiz() {
               <div className="mt-8">
                 <h4 className="font-bold text-lg mb-3">Kies een moment</h4>
                 {Calendar ? (
-                  <Suspense fallback={<p className="text-ink/60 text-sm">Agenda wordt geladen...</p>}>
-                    <Calendar onSlotSelect={(s: { start: string; end: string }) => setSlot(s)} selectedSlot={slot} />
-                  </Suspense>
+                  <div className="-mx-4 w-[calc(100%+2rem)] sm:-mx-6 sm:w-[calc(100%+3rem)] md:-mx-8 md:w-[calc(100%+4rem)] rounded-2xl overflow-hidden">
+                    <Suspense fallback={<p className="text-ink/60 text-sm">Agenda wordt geladen...</p>}>
+                      <Calendar onSlotSelect={(s: { start: string; end: string }) => setSlot(s)} selectedSlot={slot} />
+                    </Suspense>
+                  </div>
                 ) : (
                   <p className="text-ink/60 text-sm">Agenda wordt geladen...</p>
                 )}

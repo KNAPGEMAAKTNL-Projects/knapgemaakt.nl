@@ -131,12 +131,16 @@ const breadcrumbs = [
 
           <FadeIn delay={100}>
             <div class="bg-canvas/5 rounded-xl p-6 md:p-8 border border-canvas/10">
-              <h3 class="font-bold text-lg text-canvas mb-4">Waarom WhatsApp en geen sms of mail</h3>
-              <ul class="space-y-3 text-canvas/70 text-sm">
-                <li class="flex gap-3"><span class="text-accent font-bold shrink-0">→</span><span>WhatsApp wordt in Nederland door vrijwel iedereen gebruikt</span></li>
-                <li class="flex gap-3"><span class="text-accent font-bold shrink-0">→</span><span>Berichten worden bijna altijd binnen een uur gelezen</span></li>
-                <li class="flex gap-3"><span class="text-accent font-bold shrink-0">→</span><span>Heb je zakelijke klanten die liever mailen? Dan zetten we mail als extra kanaal ernaast</span></li>
-              </ul>
+              <div class="flex items-start gap-3 mb-4">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+                <h3 class="font-bold text-lg text-canvas">Gratis in Pakket Groei</h3>
+              </div>
+              <p class="text-canvas/70 text-sm leading-relaxed mb-4">
+                Heb je Pakket Groei (€99 per maand) of Pakket Compleet? Dan zit reviews automatisch verzamelen via WhatsApp erbij. Ook Google Bedrijfsprofiel beheer en een maandelijks prestatierapport zitten in dat pakket.
+              </p>
+              <a href="/pakketten/" class="text-accent font-bold text-sm hover:underline inline-flex items-center gap-1">
+                Bekijk de pakketten <span>&rarr;</span>
+              </a>
             </div>
           </FadeIn>
         </div>
