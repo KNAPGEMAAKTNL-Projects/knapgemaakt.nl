@@ -37,27 +37,43 @@
 /ict-diensten/wordpress-sneller/ /webdesign/ 301
 /ict-diensten/wordpress-versnellen /webdesign/ 301
 /ict-diensten/wordpress-versnellen/ /webdesign/ 301
-/ict-diensten/slimmer-werken /automatisering/ 301
-/ict-diensten/slimmer-werken/ /automatisering/ 301
+/ict-diensten/slimmer-werken /webdesign/ 301
+/ict-diensten/slimmer-werken/ /webdesign/ 301
 
 # Website restructure redirects (legacy)
-/wat-ik-doe /pakketten/ 301
-/wat-ik-doe/ /pakketten/ 301
+/wat-ik-doe /webdesign/ 301
+/wat-ik-doe/ /webdesign/ 301
 /over-mij /over/ 301
 /over-mij/ /over/ 301
 
 # 2026-04-17 IA simplification: kill /ict-diensten/ hub + webshops
 /webshops /webdesign/ 301
 /webshops/ /webdesign/ 301
-/ict-diensten /pakketten/ 301
-/ict-diensten/ /pakketten/ 301
-/ict-diensten/website-hosting /pakketten/ 301
-/ict-diensten/website-hosting/ /pakketten/ 301
-/ict-diensten/email-hosting /pakketten/ 301
-/ict-diensten/email-hosting/ /pakketten/ 301
-/ict-diensten/automatisering /automatisering/ 301
-/ict-diensten/automatisering/ /automatisering/ 301
+/ict-diensten /webdesign/ 301
+/ict-diensten/ /webdesign/ 301
+/ict-diensten/website-hosting /webdesign/ 301
+/ict-diensten/website-hosting/ /webdesign/ 301
+/ict-diensten/email-hosting /webdesign/ 301
+/ict-diensten/email-hosting/ /webdesign/ 301
+/ict-diensten/automatisering /webdesign/ 301
+/ict-diensten/automatisering/ /webdesign/ 301
 
 # Legacy aliases (from before WordPress removal) pointing at dead targets
-/automations /automatisering/ 301
-/automations/ /automatisering/ 301
+/automations /webdesign/ 301
+/automations/ /webdesign/ 301
+
+# 2026-04-18 Stage 0 restructure, consolidated offer page
+/pakketten                             /webdesign/  301
+/pakketten/                            /webdesign/  301
+/automatisering                        /webdesign/  301
+/automatisering/                       /webdesign/  301
+/automatisering/lead-opvolging         /webdesign/  301
+/automatisering/lead-opvolging/        /webdesign/  301
+/automatisering/whatsapp-opvolging     /webdesign/  301
+/automatisering/whatsapp-opvolging/    /webdesign/  301
+/automatisering/factuurherinneringen   /webdesign/  301
+/automatisering/factuurherinneringen/  /webdesign/  301
+/automatisering/ai-content             /webdesign/  301
+/automatisering/ai-content/            /webdesign/  301
+/automatisering/weekoverzichten        /webdesign/  301
+/automatisering/weekoverzichten/       /webdesign/  301
