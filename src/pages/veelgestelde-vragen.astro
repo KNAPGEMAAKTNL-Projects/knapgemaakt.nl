@@ -11,23 +11,23 @@ import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
 const faqs = [
 	{
 		question: "Wat kost een website laten maken?",
-		answer: "Je betaalt een vast maandbedrag vanaf EUR 49. Daar zit ontwerp, bouw, hosting en onderhoud bij in. Er zijn drie pakketten: Essentieel, Groei en Compleet. Op de pakketten-pagina staat wat er precies in elk pakket zit."
+		answer: "In april nog niks. Ik bouw momenteel gratis voor 2 Nederlandse bedrijven in ruil voor een case study. Vanaf mei start ik met betaald werk: 497 euro eenmalig plus 47 euro per maand, met alles erin (site, hosting, Google-vindbaarheid, lead-opvolging, reviews, kleine aanpassingen)."
 	},
 	{
 		question: "Hoe lang duurt het om een website te bouwen?",
-		answer: "Een eenvoudige bedrijfssite kan binnen een paar dagen klaar zijn. Grotere projecten met extra functionaliteit duren een paar weken. Projecten met automatisering of koppelingen kunnen iets langer duren."
+		answer: "De bouw zelf ongeveer twee weken. Van eerste kennismaking tot livegang zit er gemiddeld 3 tot 5 weken tussen, afhankelijk van hoe snel we teksten en foto's rond hebben. Grotere projecten met extra koppelingen duren iets langer."
 	},
 	{
 		question: "Kan ik zelf dingen aanpassen op mijn website?",
-		answer: "Kleine aanpassingen regel ik voor je, meestal binnen 24 uur. Dat zit in het onderhoudspakket. Je hoeft zelf niets technisch te doen. Grotere wijzigingen plannen we samen in."
+		answer: "Kleine aanpassingen regel ik voor je, meestal dezelfde werkdag of binnen 48 werkuur. Dat zit in het pakket. Je hoeft zelf niets technisch te doen en er is geen CMS waar je in moet werken."
 	},
 	{
-		question: "Wat zit er in het maandbedrag?",
-		answer: "In Essentieel (EUR 49) zit ontwerp, bouw, hosting, SSL, uptime monitoring en onbeperkt kleine aanpassingen binnen 48 uur. Groei (EUR 99) voegt e-mail, Google Bedrijfsprofiel en rapportage toe. Compleet (EUR 149) voegt lead-opvolging en reviews toe. Zie de pakketten-pagina voor de volledige vergelijking."
+		question: "Wat zit er in het pakket?",
+		answer: "Maatwerk site, Google Bedrijfsprofiel, lead-opvolging via WhatsApp, reviews-motor, lokale SEO-basis, hosting en domein, zakelijk e-mail, kleine aanpassingen binnen 48 werkuur, en een maandelijks 1-pager rapport. Acht onderdelen, een vast maandbedrag."
 	},
 	{
 		question: "Waarom geen WordPress?",
-		answer: "WordPress is prima voor blogs, maar voor een snelle bedrijfssite zijn er betere opties. Ik bouw met moderne techniek die sneller laadt, geen plugins nodig heeft en veiliger is. Resultaat: beter scoren in Google en minder onderhoud achteraf."
+		answer: "WordPress is een CMS voor mensen die zelf hun site beheren. De meeste ondernemers willen dat helemaal niet, ze willen dat het werkt. Zonder WordPress is de site sneller, veiliger, en heeft minder onderhoud nodig. Resultaat: beter scoren in Google en minder gedoe achteraf."
 	},
 	{
 		question: "Werk je alleen in de regio Buren?",
@@ -35,15 +35,23 @@ const faqs = [
 	},
 	{
 		question: "Wat heb je van mij nodig om te beginnen?",
-		answer: "Eigenlijk vooral een goed gesprek. Ik wil begrijpen wat je bedrijf doet en wie je klanten zijn. Logo, foto's en een idee van welke pagina's je wilt zijn handig, maar niet verplicht om te starten."
+		answer: "Vooral een goed gesprek. Ik wil begrijpen wat je bedrijf doet en wie je klanten zijn. Logo, foto's en een idee van welke pagina's je wilt zijn handig, maar niet verplicht om te starten."
 	},
 	{
 		question: "Hoe zit het met e-mail en hosting?",
-		answer: "Hosting zit in elk pakket, ook in Essentieel. Zakelijke e-mail op je eigen domein zit vanaf het Groei-pakket erin. Alles bij één aanspreekpunt, dus geen losse rekening voor server, SSL of e-mail."
+		answer: "Hosting, SSL, domeinbeheer en zakelijk e-mail op je eigen domein zitten allemaal in het pakket. Alles bij een aanspreekpunt, dus geen losse rekening voor server, SSL of e-mail."
 	},
 	{
 		question: "Hoe neem ik contact op?",
-		answer: "Bel 06-23571852, mail naar info@knapgemaakt.nl, of plan direct een vrijblijvend gesprek in via de website. Ik reageer binnen 24 uur."
+		answer: "Bel 06-23571852, mail naar info@knapgemaakt.nl, of plan direct een kennismaking in via de website. Ik reageer binnen 24 uur."
+	},
+	{
+		question: "Wat is de april-actie? Wie komt daarvoor in aanmerking?",
+		answer: "Ik bouw tot eind april 2 websites gratis voor Nederlandse ondernemers, in ruil voor een case study en testimonial na 90 dagen. Voorkeur gaat uit naar hoveniers en lokale dienstverleners, maar als je bedrijf past kijken we samen. Plan een kennismaking om te zien of we matchen."
+	},
+	{
+		question: "Wat gebeurt er na april?",
+		answer: "Vanaf mei start ik met betaald werk: 497 euro eenmalig plus 47 euro per maand, 12 maanden minimum. Dezelfde pakketinhoud als in april, met een 90-dagen niet-goed-geld-terug garantie op de setup-fee."
 	}
 ];
 
@@ -54,8 +62,8 @@ const breadcrumbs = [
 ---
 
 <Layout
-	title="Veelgestelde Vragen | Webdesign & Hosting | KNAP GEMAAKT."
-	description="Antwoorden op veelgestelde vragen over websites, pakketten en automatisering. Wat kost het, hoe lang duurt het en wat heb je nodig? KNAP GEMAAKT. legt het uit."
+	title="Veelgestelde vragen | Webdesign in Buren | KNAP GEMAAKT."
+	description="Antwoorden op veelgestelde vragen over maatwerk websites, de april-actie (gratis bouw in ruil voor een case study) en wat er na april gebeurt. KNAP GEMAAKT. uit Buren."
 >
 	<FAQSchema faqs={faqs} />
 	<BreadcrumbSchema items={breadcrumbs} />
@@ -113,7 +121,7 @@ const breadcrumbs = [
 					href="/aanvragen/"
 					class="inline-flex items-center gap-3 bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors group"
 				>
-					Plan een gesprek in
+					Plan een kennismaking
 					<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 				</a>
 			</div>

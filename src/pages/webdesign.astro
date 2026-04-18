@@ -8,9 +8,10 @@ import FAQSection from "../components/FAQSection.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import ServiceSchema from "../components/seo/ServiceSchema.astro";
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
+import FAQSchema from "../components/seo/FAQSchema.astro";
 import { DraggableScroll } from "../components/DraggableScroll";
-import { DotMesh } from "../components/DotMesh";
 import { getAllProjects } from "../data/projects";
+import { stage0Offer, spotsLabel, bedrijvenLabel } from "../config/stage-0-offer";
 
 const projects = getAllProjects();
 
@@ -18,44 +19,214 @@ const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
 	{ name: "Webdesign", url: "https://knapgemaakt.nl/webdesign/" }
 ];
+
+const faqs = [
+	{
+		question: "Waarom is dit nu gratis?",
+		answer: "Ik ben bezig met een Grand Slam Offer opbouwen en heb concrete case studies nodig om mijn waarde te kunnen aantonen. Gratis werk in ruil voor een case study is sneller dan tegen een slecht argument verkopen. In april nog 2 plekken, daarna start ik met betaald tegen 497 euro setup plus 47 euro per maand."
+	},
+	{
+		question: "Wat gebeurt er na 90 dagen?",
+		answer: "Nulmeting opnieuw, case study afgerond, testimonial als je dat wilt. Daarna kun je blijven of niet. Geen contract bindt je aan mij."
+	},
+	{
+		question: "Wat als ik niet tevreden ben?",
+		answer: "Dan gaat de site eraf, je krijgt niks gevraagd, we gaan allebei door. Ik verkies eerlijkheid boven een betaalde klant die intern klaagt."
+	},
+	{
+		question: "Krijg ik de broncode?",
+		answer: "Ja. De site staat op Cloudflare onder jouw account, de code in een Git-repo die van jou is. Als je na 90 dagen met iemand anders verder wilt, kan dat zonder gedoe."
+	},
+	{
+		question: "Waarom geen WordPress?",
+		answer: "WordPress is een CMS voor mensen die zelf hun site beheren. De meeste ondernemers willen dat helemaal niet, ze willen dat het werkt. Zonder WordPress is de site sneller, veiliger, en heeft minder onderhoud nodig."
+	},
+	{
+		question: "Hoe lang duurt het voor Google me vindt?",
+		answer: "Voor je bedrijfsnaam meestal 1 tot 2 weken. Voor 'hovenier [stad]'-achtige zoekopdrachten 2 tot 6 maanden. Sneller als je al een Google Bedrijfsprofiel hebt met reviews, langzamer als je vanaf nul begint."
+	},
+	{
+		question: "Kan ik zelf teksten aanleveren?",
+		answer: "Liever wel, want jij weet het best wat je doet. Schrijven is niet jouw vak, dus ik werk je tekst na. Foto's van jouzelf en je werk zijn belangrijker dan perfect gepolijste copy."
+	}
+];
 ---
 
 <Layout
-  title="Webdesign | Websites op maat gebouwd | KNAP GEMAAKT."
-  description="Een website op maat, vanaf EUR 49 per maand inclusief hosting en onderhoud. Geen templates, geen trage plugins. Snel en passend bij jouw bedrijf. KNAP GEMAAKT. uit Buren."
+  title="Webdesign op maat in Buren | KNAP GEMAAKT."
+  description="Maatwerk websites voor ondernemers. Snel, goed vindbaar in Google, en alles in een vast maandbedrag. In april nog 2 plekken gratis in ruil voor een case study."
 >
   <BreadcrumbSchema items={breadcrumbs} />
   <ServiceSchema
     name="Webdesign op maat"
-    description="Websites vanaf de grond opgebouwd. Ontwerp, bouw, hosting en onderhoud in één vast maandbedrag vanaf EUR 49. Snel, veilig en passend bij jouw bedrijf."
+    description="Websites vanaf de grond opgebouwd. Ontwerp, bouw, hosting, Google-vindbaarheid en onderhoud in een aanpak. In april nog 2 plekken gratis in ruil voor een case study."
     serviceType="WebDesign"
     url="https://knapgemaakt.nl/webdesign/"
-    price="49"
+    price="0"
   />
+  <FAQSchema faqs={faqs} />
   <main>
-    <!-- Hero -->
-    <section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16">
+    <!-- HERO -->
+    <section class="pt-32 pb-12 md:pt-40 md:pb-16 px-6 md:px-12 lg:px-16">
       <div class="max-w-5xl mx-auto">
         <div class="mb-6">
           <Breadcrumb items={breadcrumbs} />
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-snug mb-6">
-          Een website op maat gebouwd
+          Webdesign op maat, in Buren
         </h1>
-        <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed mb-4">
-          Ik bouw websites vanaf de grond op voor ondernemers die hun vak serieus nemen. Geen WordPress-template, geen plugins die alles traag maken, geen beheersysteem waar je een cursus voor nodig hebt. Snel, overzichtelijk en gemaakt voor jouw bedrijf.
+        <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed mb-10">
+          Ik bouw websites vanaf de grond op, zonder WordPress en zonder template. Sneller dan wat je gewend bent, goed vindbaar in Google, en beheerd in een vast maandbedrag. Voor ondernemers met een bedrijf, 0 tot 5 medewerkers en geen zin om zelf een CMS te leren.
         </p>
-        <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed">
-          Na oplevering blijft het doordraaien in een vast maandbedrag: hosting, onderhoud en aanpassingen zonder losse rekeningen.
+
+        {stage0Offer.enabled && (
+          <div class="mb-10 border-l-4 border-accent bg-canvas-alt/50 px-6 py-5 rounded-r-lg max-w-2xl">
+            <p class="font-bold tracking-tight text-lg mb-2">
+              Nu in {stage0Offer.month}: {spotsLabel()} gratis
+            </p>
+            <p class="text-ink/70 leading-relaxed mb-3">
+              Ik bouw op dit moment gratis voor {bedrijvenLabel()} in Nederland. Jij krijgt het volledige pakket, ik krijg een case study over 90 dagen en een korte testimonial als je tevreden bent. Voorkeur voor hoveniers en lokale dienstverleners, maar als je bedrijf past kijken we samen.
+            </p>
+            <a href={stage0Offer.ctaUrl} class="text-sm font-bold text-ink hover:text-accent transition-colors inline-flex items-center gap-1 group">
+              Past dit bij jou?
+              <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            </a>
+          </div>
+        )}
+
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+          <a href="/aanvragen/" class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center">
+            Plan een kennismaking
+          </a>
+          <a href="#wat-zit-erin" class="text-ink font-bold tracking-tight hover:text-accent transition-colors duration-300 inline-flex items-center gap-2 group px-4 py-4">
+            Zie wat erin zit
+            <span class="transition-transform duration-300 group-hover:translate-y-1">&darr;</span>
+          </a>
+        </div>
+        <p class="text-xs text-ink/50 font-mono">
+          Meestal antwoord binnen een werkdag. Geen verkooppraatje vooraf.
         </p>
       </div>
     </section>
 
-    <!-- What makes it different -->
-    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+    <!-- WAT ZIT ERIN -->
+    <section id="wat-zit-erin" class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
       <div class="max-w-5xl mx-auto">
         <FadeIn>
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Wat je krijgt</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            Wat zit erin
+          </h2>
+          <p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12">
+            Het pakket heeft acht onderdelen. Een website, maar ook alles eromheen dat een site pas echt nuttig maakt: vindbaarheid, klantcontact, meting, onderhoud. Op maat waar dat waarde toevoegt, standaard waar dat prima is.
+          </p>
+        </FadeIn>
+
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+          <FadeIn delay={100}>
+            <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
+              <span class="text-xs font-mono text-ink/40 mb-2 block">01</span>
+              <h3 class="text-xl font-bold mb-3">Maatwerk website</h3>
+              <p class="text-ink/70 leading-relaxed">Gebouwd met Astro op Cloudflare. Laadt onder de seconde, werkt even goed op een oude telefoon als op een nieuwe laptop. Geen WordPress, geen plugins, geen beheersysteem.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={150}>
+            <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
+              <span class="text-xs font-mono text-ink/40 mb-2 block">02</span>
+              <h3 class="text-xl font-bold mb-3">Google Bedrijfsprofiel</h3>
+              <p class="text-ink/70 leading-relaxed">Opgezet, categorieen goed ingevuld, foto's, Q&amp;A, posts. Voor lokale zoekopdrachten is dit meestal belangrijker dan je website zelf.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
+              <span class="text-xs font-mono text-ink/40 mb-2 block">03</span>
+              <h3 class="text-xl font-bold mb-3">Lead-opvolging naar je telefoon</h3>
+              <p class="text-ink/70 leading-relaxed">Elke aanvraag komt als WhatsApp of SMS op je toestel. Binnen 5 minuten terugbellen converteert tot 10&times; beter dan een dag later. Dus maak ik dat 5-minuten-venster zo makkelijk mogelijk voor je.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={250}>
+            <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
+              <span class="text-xs font-mono text-ink/40 mb-2 block">04</span>
+              <h3 class="text-xl font-bold mb-3">Reviews-motor</h3>
+              <p class="text-ink/70 leading-relaxed">Na een afgeronde klus gaat er automatisch een vriendelijk review-verzoek uit. Op Google, niet op een of ander platform waar niemand kijkt.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={300}>
+            <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
+              <span class="text-xs font-mono text-ink/40 mb-2 block">05</span>
+              <h3 class="text-xl font-bold mb-3">Lokale SEO-basis</h3>
+              <p class="text-ink/70 leading-relaxed">Schema-markup, citations in 20 Nederlandse directories, Google Search Console ingericht, basis-indexering. Niets geks, gewoon goed geregeld vanaf dag een.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={350}>
+            <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
+              <span class="text-xs font-mono text-ink/40 mb-2 block">06</span>
+              <h3 class="text-xl font-bold mb-3">Hosting, domein, SSL, zakelijk e-mail</h3>
+              <p class="text-ink/70 leading-relaxed">Allemaal in het pakket. Geen losse facturen van 4 verschillende partijen.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={400}>
+            <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
+              <span class="text-xs font-mono text-ink/40 mb-2 block">07</span>
+              <h3 class="text-xl font-bold mb-3">Kleine aanpassingen binnen 48 werkuur</h3>
+              <p class="text-ink/70 leading-relaxed">Adres veranderd, prijzen bijgewerkt, foto verruild. Mail me, meestal staat het dezelfde werkdag erop.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={450}>
+            <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
+              <span class="text-xs font-mono text-ink/40 mb-2 block">08</span>
+              <h3 class="text-xl font-bold mb-3">Maandelijks 1-pager prestatierapport</h3>
+              <p class="text-ink/70 leading-relaxed">Bezoekers, aanvragen, Google-plek voor je belangrijkste zoekwoorden. Op een A4. Zodat je ziet waar je geld heen gaat.</p>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAT VRAAG IK TERUG -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">De afspraak</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            Wat ik ervoor terug vraag
+          </h2>
+          <p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12">
+            Gratis heeft voorwaarden. Geen kleine lettertjes, wel drie dingen.
+          </p>
+        </FadeIn>
+
+        <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+          <FadeIn delay={100}>
+            <div>
+              <span class="text-5xl font-bold text-accent block mb-4">1</span>
+              <h3 class="text-xl font-bold mb-3">Een nulmeting vooraf</h3>
+              <p class="text-ink/70 leading-relaxed">Voor we beginnen zetten we op een A4 waar je nu staat. Bezoekers per maand, Google-plek voor je belangrijkste zoekwoord, aantal reviews, aanvragen per week. Ruwe schattingen zijn prima. Boekhouding hoef ik niet te zien. De publieke data zoek ik zelf op.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div>
+              <span class="text-5xl font-bold text-accent block mb-4">2</span>
+              <h3 class="text-xl font-bold mb-3">Een meting na 90 dagen</h3>
+              <p class="text-ink/70 leading-relaxed">We vullen dezelfde A4 opnieuw in. Het verschil schrijf ik op als case study. Jouw naam eronder of niet, jij bepaalt.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={300}>
+            <div>
+              <span class="text-5xl font-bold text-accent block mb-4">3</span>
+              <h3 class="text-xl font-bold mb-3">Een korte review en een intro</h3>
+              <p class="text-ink/70 leading-relaxed">Als je tevreden bent: een review in tekst of op video, wat jij makkelijker vindt. En als je iemand kent die hier ook wat aan zou hebben, een introductie. Geen verplichting.</p>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAAROM GEEN TEMPLATE -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">
             Waarom geen template?
           </h2>
           <div class="grid md:grid-cols-2 gap-10 md:gap-16">
@@ -90,9 +261,91 @@ const breadcrumbs = [
       </div>
     </section>
 
-    <!-- Projects showcase (matches homepage draggable-scroll pattern) -->
-    <section class="py-20 md:py-28 bg-canvas relative z-10 overflow-hidden">
-      <DotMesh client:visible />
+    <!-- HOE HET LOOPT -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas">
+      <div class="max-w-5xl mx-auto">
+        <FadeIn>
+          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Van eerste contact tot dag 90</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            Hoe het loopt
+          </h2>
+          <p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12">
+            Van eerste contact tot dag-90-meting duurt gemiddeld 12 weken. De bouw zelf ongeveer twee weken.
+          </p>
+        </FadeIn>
+
+        <ol class="space-y-8">
+          <FadeIn delay={100}>
+            <li class="grid md:grid-cols-[auto_1fr] gap-6 md:gap-10 items-start">
+              <span class="text-4xl font-bold text-accent shrink-0 md:w-24">1.</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Kennismaking (30 min, video)</h3>
+                <p class="text-ink/70 leading-relaxed">Jij vertelt wat je doet en wat knelt. Ik vertel wat ik zou bouwen. Past het niet, dan zeggen we dat. Geen offerte, geen follow-up mail, geen gedoe.</p>
+              </div>
+            </li>
+          </FadeIn>
+          <FadeIn delay={150}>
+            <li class="grid md:grid-cols-[auto_1fr] gap-6 md:gap-10 items-start">
+              <span class="text-4xl font-bold text-accent shrink-0 md:w-24">2.</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Nulmeting (30 min, video of schriftelijk)</h3>
+                <p class="text-ink/70 leading-relaxed">Publieke data heb ik al verzameld. Ik leg ze je voor, we vullen samen de rest in. Een A4.</p>
+              </div>
+            </li>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <li class="grid md:grid-cols-[auto_1fr] gap-6 md:gap-10 items-start">
+              <span class="text-4xl font-bold text-accent shrink-0 md:w-24">3.</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Ontwerp en bouw (1 tot 2 weken)</h3>
+                <p class="text-ink/70 leading-relaxed">Geen fase-plannen of PDF-presentaties. Halverwege stuur ik je een link naar een preview-url, dan zie je waar ik sta.</p>
+              </div>
+            </li>
+          </FadeIn>
+          <FadeIn delay={250}>
+            <li class="grid md:grid-cols-[auto_1fr] gap-6 md:gap-10 items-start">
+              <span class="text-4xl font-bold text-accent shrink-0 md:w-24">4.</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Livegang</h3>
+                <p class="text-ink/70 leading-relaxed">We zetten de site live, Google-profiel gaat mee, lead-opvolging wordt getest. Ik stuur je binnen een dag een proefbericht via WhatsApp om te checken of het aankomt.</p>
+              </div>
+            </li>
+          </FadeIn>
+          <FadeIn delay={300}>
+            <li class="grid md:grid-cols-[auto_1fr] gap-6 md:gap-10 items-start">
+              <span class="text-4xl font-bold text-accent shrink-0 md:w-24">5.</span>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Meting na 90 dagen</h3>
+                <p class="text-ink/70 leading-relaxed">Halfuurtje video. Zelfde A4 opnieuw, we kijken wat is verschoven. Hier komt je case study uit en eventueel je testimonial.</p>
+              </div>
+            </li>
+          </FadeIn>
+        </ol>
+      </div>
+    </section>
+
+    <!-- VOOR WIE -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16">
+          <FadeIn>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Voor wie is dit</h2>
+            <p class="text-ink/70 text-lg leading-relaxed">
+              Ondernemers met een bedrijf, 0 tot 5 medewerkers, en een dienst die lokaal geleverd wordt. Hoveniers en dienstverleners zoals schoonmaakbedrijven, schilders, elektriciens, installateurs, kappers, coaches. Je bent vakman of vakvrouw eerst, marketeer later.
+            </p>
+          </FadeIn>
+          <FadeIn delay={150}>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-ink/60">Voor wie dit niet is</h2>
+            <p class="text-ink/70 text-lg leading-relaxed">
+              Webshops met meer dan 10 producten, want dat is een ander vak en andere tools. Mensen die zelf in een CMS willen werken, want mijn aanpak heeft geen CMS en dat is ook precies waarom het sneller en veiliger is. Snelle klussen van "zet dit even op een pagina voor 100 euro", want dat ben ik niet en doe ik ook niet.
+            </p>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+
+    <!-- WERK SHOWCASE -->
+    <section class="py-20 md:py-28 bg-canvas relative overflow-hidden">
       <div class="max-w-5xl mx-auto px-6 md:px-12 lg:px-16 mb-12 md:mb-16 relative z-10">
         <FadeIn>
           <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Werk</span>
@@ -122,7 +375,7 @@ const breadcrumbs = [
                     draggable="false"
                   />
                 ) : (
-                  <span class="text-ink/40 text-sm">Preview</span>
+                  <span class="text-ink/50/40 text-sm">Preview</span>
                 )}
               </div>
               <div class="p-5">
@@ -132,183 +385,53 @@ const breadcrumbs = [
                   <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">IN ONTWIKKELING</span>
                 )}
                 <h3 class="font-bold text-lg mb-1">{project.title}</h3>
-                <p class="text-sm text-ink/50">{project.industry} · {project.location}</p>
+                <p class="text-sm text-ink/50">{project.industry} &middot; {project.location}</p>
               </div>
             </a>
           ))}
-
           <a
-            href="https://demo-hovenier.knapgemaakt.nl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block"
+            href="/werk/"
+            class="flex-shrink-0 w-[200px] md:w-[250px] mr-6 rounded-2xl border border-warm bg-canvas-alt flex flex-col items-center justify-center hover:border-accent transition-colors duration-300 group"
           >
-            <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
-              <img
-                src="/assets/projects/demo-hovenier.webp"
-                alt="Demo website voor hoveniersbedrijf"
-                width="2304"
-                height="1536"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                decoding="async"
-                draggable="false"
-              />
-            </div>
-            <div class="p-5">
-              <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
-              <h3 class="font-bold text-lg mb-1">Hovenier Demo</h3>
-              <p class="text-sm text-ink/50">Demo website voor hoveniers</p>
-            </div>
-          </a>
-
-          <a
-            href="https://demo-elektricien.knapgemaakt.nl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex-shrink-0 w-[380px] md:w-[480px] lg:w-[560px] rounded-2xl border border-warm bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block"
-          >
-            <div class="aspect-[16/10] overflow-hidden bg-canvas-alt">
-              <img
-                src="/assets/projects/demo-elektricien.webp"
-                alt="Demo website voor elektricien"
-                width="2304"
-                height="1536"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                decoding="async"
-                draggable="false"
-              />
-            </div>
-            <div class="p-5">
-              <span class="inline-block text-[10px] font-bold uppercase tracking-widest bg-ink/10 text-ink px-2 py-0.5 rounded-full mb-2">DEMO</span>
-              <h3 class="font-bold text-lg mb-1">Elektricien Demo</h3>
-              <p class="text-sm text-ink/50">Demo website voor elektriciens</p>
-            </div>
+            <span class="text-ink/50 group-hover:text-ink transition-colors font-bold mb-1">Bekijk alles</span>
+            <span class="text-accent text-sm">Naar portfolio &rarr;</span>
           </a>
         </DraggableScroll>
       </FadeIn>
     </section>
 
-    <!-- Process -->
-    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
-      <div class="max-w-5xl mx-auto">
-        <FadeIn>
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
-            Mijn werkwijze
-          </h2>
-          <div class="grid md:grid-cols-3 gap-8 md:gap-12">
-            <div>
-              <div class="w-10 h-10 rounded-full bg-ink text-canvas flex items-center justify-center font-bold text-sm mb-4">1</div>
-              <h3 class="font-bold text-lg mb-2">Kennismaken</h3>
-              <p class="text-ink/70 leading-relaxed">
-                Een gesprek over je bedrijf, je klanten en wat je wilt uitstralen. Daarna krijg je een voorstel met een duidelijk plan en een vaste prijs, geen verrassingen achteraf.
-              </p>
-            </div>
-            <div>
-              <div class="w-10 h-10 rounded-full bg-ink text-canvas flex items-center justify-center font-bold text-sm mb-4">2</div>
-              <h3 class="font-bold text-lg mb-2">Ontwerp en bouw</h3>
-              <p class="text-ink/70 leading-relaxed">
-                Ik werk aan het ontwerp en de teksten en laat tussendoor zien hoe het ervoor staat. Jouw feedback verwerk ik direct, zodat de website meegroeit met je idee.
-              </p>
-            </div>
-            <div>
-              <div class="w-10 h-10 rounded-full bg-ink text-canvas flex items-center justify-center font-bold text-sm mb-4">3</div>
-              <h3 class="font-bold text-lg mb-2">Online</h3>
-              <p class="text-ink/70 leading-relaxed">
-                Als alles goed staat, gaat de website live. Hosting, domeinnaam en eventueel zakelijke e-mail regel ik erbij. Vanaf dat moment staat je bedrijf er professioneel op.
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-
-    <!-- Na oplevering: Pakketten -->
-    <section class="py-16 md:py-20 px-6 md:px-12 lg:px-16 bg-canvas-alt">
-      <div class="max-w-5xl mx-auto">
-        <FadeIn>
-          <div class="grid md:grid-cols-[3fr_2fr] gap-10 md:gap-16 items-center">
-            <div>
-              <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">
-                Na oplevering draait alles door
-              </h2>
-              <p class="text-ink/70 leading-relaxed mb-4">
-                Een website is nooit helemaal klaar. Er komen nieuwe diensten, andere openingstijden, nieuwe foto's. Dat regel ik voor je, binnen een vast maandbedrag.
-              </p>
-              <p class="text-ink/70 leading-relaxed mb-6">
-                Drie pakketten om uit te kiezen. Essentieel voor wie het rustig aan doet. Groei voor wie actief wil groeien via Google. Compleet voor wie alles uit handen wil geven.
-              </p>
-              <a
-                href="/pakketten/"
-                class="inline-flex items-center gap-2 text-ink font-bold hover:text-accent transition-colors group"
-              >
-                Bekijk de pakketten
-                <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-              </a>
-            </div>
-            <div class="bg-canvas rounded-xl p-6 border border-warm">
-              <div class="space-y-4 text-sm">
-                <div class="flex items-baseline justify-between pb-3 border-b border-warm">
-                  <span class="font-bold">Essentieel</span>
-                  <span class="font-mono text-ink/60">&euro;49 / mo</span>
-                </div>
-                <div class="flex items-baseline justify-between pb-3 border-b border-warm">
-                  <span class="font-bold">Groei</span>
-                  <span class="font-mono text-ink/60">&euro;99 / mo</span>
-                </div>
-                <div class="flex items-baseline justify-between">
-                  <span class="font-bold">Compleet</span>
-                  <span class="font-mono text-ink/60">&euro;149 / mo</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-
     <!-- FAQ -->
-    <FadeIn>
-    <FAQSection faqs={[
-    	{
-    		question: "Wat kost een website laten maken?",
-    		answer: "Een website laten maken kost vanaf EUR 49 per maand. Dat is het Essentieel-pakket: ontwerp, bouw, hosting en kleine aanpassingen zitten erin. Meer nodig? Groei voor bedrijven die actief via Google willen groeien, Compleet voor wie alles uit handen wil geven. Zie de pakketten-pagina voor het volledige overzicht."
-    	},
-    	{
-    		question: "Hoe lang duurt het om een website te bouwen?",
-    		answer: "Een eenvoudige bedrijfssite is meestal binnen een paar dagen klaar. Grotere projecten met extra pagina's of koppelingen duren een paar weken. Tijdens het kennismakingsgesprek geef ik je een concrete opleverdatum mee."
-    	},
-    	{
-    		question: "Waarom geen WordPress?",
-    		answer: "WordPress is prima voor blogs, maar voor een snelle bedrijfssite zijn er betere opties. Ik bouw met moderne techniek die sneller laadt, geen plugins nodig heeft en veiliger is. Resultaat: beter scoren in Google en minder onderhoud achteraf."
-    	},
-    	{
-    		question: "Kan ik zelf teksten aanpassen?",
-    		answer: "Kleine aanpassingen regel ik meestal binnen een werkdag, zodat jij je vak kunt doen. Grotere wijzigingen plannen we samen in. Je hoeft zelf niets technisch te leren en ook niet in te loggen."
-    	},
-    	{
-    		question: "Wat heb je van mij nodig om te beginnen?",
-    		answer: "Vooral een goed gesprek. Ik wil begrijpen wat je bedrijf doet en wie je klanten zijn. Logo, foto's en een idee van welke pagina's je wilt zijn handig, maar niet nodig om te starten. Heb je niks? Dan regel ik het mee."
-    	}
-    ]} />
-    </FadeIn>
-
-    <!-- CTA -->
-    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16">
-      <div class="max-w-3xl mx-auto text-center">
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+      <div class="max-w-3xl mx-auto">
         <FadeIn>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Website op je to-do lijst?
+          <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Veelgestelde vragen</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12">
+            Dingen die anderen ook vroegen
           </h2>
-          <p class="text-ink/70 text-lg leading-relaxed mb-8">
-            Vertel me over je bedrijf. Ik denk mee over wat je nodig hebt en kom met een voorstel.
+        </FadeIn>
+        <FadeIn delay={100}>
+          <FAQSection faqs={faqs} />
+        </FadeIn>
+      </div>
+    </section>
+
+    <!-- SLOT CTA -->
+    <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-ink text-canvas relative overflow-hidden">
+      <div class="max-w-5xl mx-auto text-center relative z-10">
+        <FadeIn>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+            {stage0Offer.enabled
+              ? `${spotsLabel()} in ${stage0Offer.month}. Past jouw bedrijf?`
+              : "Klaar voor een website die wel werkt?"}
+          </h2>
+          <p class="text-canvas/60 text-lg mb-10 max-w-xl mx-auto">
+            30 minuten videocall. Jij vertelt wat je doet, ik vertel wat ik zou bouwen en waarom. Past het niet bij mij? Dan zeg ik dat ook. Scheelt ons allebei tijd.
           </p>
           <a
-            href="/aanvragen/?onderwerp=webdesign"
-            class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+            href="/aanvragen/"
+            class="bg-accent text-white px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-accent/90 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
           >
-            Plan een gesprek in
+            Plan een kennismaking
             <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
           </a>
         </FadeIn>

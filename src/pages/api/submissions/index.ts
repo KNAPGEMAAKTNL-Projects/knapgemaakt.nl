@@ -37,7 +37,7 @@ interface SubmissionRequest {
   quiz_context?: unknown;
 }
 
-// Hard input length caps — reject payloads that exceed these.
+// Hard input length caps. Reject payloads that exceed these.
 const MAX_LENGTHS: Record<string, number> = {
   name: 200,
   email: 320,

@@ -18,13 +18,6 @@ function generateSitemap(): string {
     const staticPages: PageEntry[] = [
         { path: "/", lastmod: today, changefreq: "weekly", priority: "1.0" },
         { path: "/webdesign/", lastmod: today, changefreq: "weekly", priority: "0.9" },
-        { path: "/pakketten/", lastmod: today, changefreq: "weekly", priority: "0.9" },
-        { path: "/automatisering/", lastmod: today, changefreq: "monthly", priority: "0.8" },
-        { path: "/automatisering/lead-opvolging/", lastmod: today, changefreq: "monthly", priority: "0.7" },
-        { path: "/automatisering/ai-content/", lastmod: today, changefreq: "monthly", priority: "0.7" },
-        { path: "/automatisering/factuurherinneringen/", lastmod: today, changefreq: "monthly", priority: "0.7" },
-        { path: "/automatisering/whatsapp-opvolging/", lastmod: today, changefreq: "monthly", priority: "0.7" },
-        { path: "/automatisering/weekoverzichten/", lastmod: today, changefreq: "monthly", priority: "0.7" },
         { path: "/werk/", lastmod: today, changefreq: "weekly", priority: "0.8" },
         { path: "/website-voor-hoveniers/", lastmod: today, changefreq: "monthly", priority: "0.8" },
         { path: "/blog/", lastmod: today, changefreq: "weekly", priority: "0.8" },

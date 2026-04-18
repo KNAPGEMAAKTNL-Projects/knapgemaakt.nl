@@ -432,7 +432,7 @@ export default function BookingFlow() {
     e.preventDefault();
     setFormError(null);
 
-    // Honeypot — silently reject
+    // Honeypot, silently reject
     if (honeypot) {
       setStep('confirmed');
       return;

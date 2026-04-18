@@ -25,7 +25,7 @@ const BLOG_REDIRECTS: Record<string, string> = {
 
 // Page redirects (website restructure)
 const PAGE_REDIRECTS: Record<string, string> = {
-  "/wat-ik-doe": "/pakketten/",
+  "/wat-ik-doe": "/webdesign/",
   "/over-mij": "/over/",
 };
 

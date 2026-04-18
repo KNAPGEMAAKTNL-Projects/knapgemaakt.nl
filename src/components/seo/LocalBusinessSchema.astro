@@ -24,7 +24,7 @@ interface Props {
 const {
     type = "ProfessionalService",
     name = "KNAP GEMAAKT.",
-    description = "Websites op maat voor ondernemers in Nederland. Ontwerp, bouw, hosting en onderhoud in één vast maandbedrag vanaf €49. KNAP GEMAAKT. uit Buren, Gelderland.",
+    description = "Websites op maat voor ondernemers in Nederland. Ontwerp, bouw, hosting en onderhoud in een vast maandbedrag. KNAP GEMAAKT. uit Buren, Gelderland.",
     url = "https://knapgemaakt.nl",
     email = "info@knapgemaakt.nl",
     telephone = "+31623571852",
@@ -97,58 +97,17 @@ const schema = {
         "https://www.linkedin.com/in/yannick-veldhuisen-303047243/",
         "https://github.com/KNAPGEMAAKTNL-Projects"
     ],
-    // Structured pricing for AI Overview extraction (cost queries)
+    // Single offer structure for Stage 0 (april 2026 gratis case study)
     hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Website-pakketten",
+        name: "Webdesign op maat",
         itemListElement: [
             {
                 "@type": "Offer",
-                name: "Pakket Essentieel",
-                description: "Ontwerp, bouw, hosting, onderhoud en lead-opvolging in één vast maandbedrag.",
-                price: "49",
-                priceCurrency: "EUR",
-                priceSpecification: {
-                    "@type": "UnitPriceSpecification",
-                    price: "49",
-                    priceCurrency: "EUR",
-                    unitCode: "MON",
-                    billingIncrement: 1
-                },
-                availability: "https://schema.org/InStock",
-                url: `${url}/pakketten/`
-            },
-            {
-                "@type": "Offer",
-                name: "Pakket Groei",
-                description: "Alles uit Essentieel, plus Google Bedrijfsprofiel-beheer, automatisch reviews verzamelen en maandelijks prestatierapport.",
-                price: "99",
-                priceCurrency: "EUR",
-                priceSpecification: {
-                    "@type": "UnitPriceSpecification",
-                    price: "99",
-                    priceCurrency: "EUR",
-                    unitCode: "MON",
-                    billingIncrement: 1
-                },
-                availability: "https://schema.org/InStock",
-                url: `${url}/pakketten/`
-            },
-            {
-                "@type": "Offer",
-                name: "Pakket Compleet",
-                description: "Alles uit Groei, plus online agenda voor klantafspraken, kwartaalgesprek, priority support en een maandelijkse SEO-blog.",
-                price: "149",
-                priceCurrency: "EUR",
-                priceSpecification: {
-                    "@type": "UnitPriceSpecification",
-                    price: "149",
-                    priceCurrency: "EUR",
-                    unitCode: "MON",
-                    billingIncrement: 1
-                },
-                availability: "https://schema.org/InStock",
-                url: `${url}/pakketten/`
+                name: "Maatwerk website plus Google-vindbaarheid en onderhoud",
+                description: "Acht onderdelen in een aanpak: maatwerk website, Google Bedrijfsprofiel, lead-opvolging via WhatsApp, reviews-motor, lokale SEO-basis, hosting en domein, kleine aanpassingen binnen 48 werkuur en maandelijks prestatierapport. In april 2026 gratis voor 2 Nederlandse bedrijven in ruil voor een case study.",
+                availability: "https://schema.org/LimitedAvailability",
+                url: `${url}/webdesign/`
             }
         ]
     }
