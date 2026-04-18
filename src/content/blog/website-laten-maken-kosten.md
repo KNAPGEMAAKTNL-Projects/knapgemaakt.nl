@@ -56,7 +56,7 @@ Dit is waar de meeste ZZP'ers en kleine ondernemers terechtkomen. Je krijgt een 
 
 **Geschikt voor:** Dienstverleners, coaches, consultants, kleine winkels, startende ondernemers.
 
-Bij KNAP GEMAAKT. werk ik met een maandbedrag. Essentieel start bij €49 per maand. Voor bedrijven die actief willen groeien via Google is er Groei (€99), en voor wie alles uit handen wil geven is er Compleet (€149). In elk pakket zit ontwerp, bouw, hosting en onderhoud. Geen grote investering vooraf, geen templates, geen WordPress. Zie de [pakketten-pagina](/pakketten/) voor de volledige vergelijking.
+Bij KNAP GEMAAKT. werk ik met een vast maandbedrag. Alles in een pakket: ontwerp, bouw, Google-vindbaarheid, lead-opvolging, reviews, hosting en onderhoud. Geen grote investering vooraf, geen templates, geen WordPress. Zie het [volledige aanbod](/webdesign/) voor wat er precies in zit.
 
 ### €1.500 tot €5.000: uitgebreide websites en webshops
 
@@ -110,7 +110,7 @@ Updates, beveiligingspatches, kleine aanpassingen. Je kunt dit zelf doen of uitb
 
 Wil je info@jouwbedrijf.nl? Dat kost vaak extra, tenzij het bij je hostingpakket zit.
 
-Ter vergelijking: bij KNAP GEMAAKT. zitten hosting, domein, SSL, onderhoud en support in het [maandbedrag](/pakketten/). Bij Groei (€99) is zakelijke e-mail ook inbegrepen. Geen losse facturen voor al deze onderdelen.
+Ter vergelijking: bij KNAP GEMAAKT. zitten hosting, domein, SSL, onderhoud, zakelijk e-mail en support in het [vaste maandbedrag](/webdesign/). Geen losse facturen voor al deze onderdelen.
 
 ## Template vs. maatwerk
 
@@ -147,7 +147,7 @@ Een website kan meer dan er mooi uitzien. Met de juiste opzet neemt het je werk 
 - Contactformulieren worden direct beantwoord
 - Betalingen lopen mee via iDEAL | Wero
 
-Dat soort [automations](/automatisering/) bespaart je uren per week aan administratie. Tijd die je liever aan je klanten besteedt. Of aan koffie.
+Dat soort [automatiseringen](/webdesign/) bespaart je uren per week aan administratie. Tijd die je liever aan je klanten besteedt. Of aan koffie.
 
 ## Zo kies je de juiste partij
 
@@ -184,7 +184,7 @@ Goede vraag. Bij lagere prijzen krijg je vaak standaardtemplates, beperkte onder
 | Professionele maatwerk website | €1.500 tot €3.000 | **vanaf €49/maand** |
 | Webshop op Shopify | €2.500 tot €6.000 | **€89/maand** |
 
-Drie pakketten om uit te kiezen: Essentieel (€49), Groei (€99) en Compleet (€149). [Op de pakketten-pagina](/pakketten/) staat wat er precies in elk pakket zit.
+Een volledig pakket vanaf €49 per maand met alles erin. [Op de aanbod-pagina](/webdesign/) staat wat er precies in zit.
 
 ---
 
