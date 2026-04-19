@@ -107,5 +107,3 @@ En voor iedereen geldt: de definitieve tarieven zijn er nog niet. Zodra die er z
 ---
 
 Meer over de Wero-overgang? Lees [mijn uitleg over iDEAL en Wero](/blog/ideal-wordt-wero/) of bekijk [de checklist met 5 dingen die je voor 31 maart kunt regelen](/blog/wero-webshops-checklist-maart/).
-
-Heb je vragen over wat dit voor jouw webshop betekent? [Plan gerust een gesprek](/contact/) en ik denk met je mee.

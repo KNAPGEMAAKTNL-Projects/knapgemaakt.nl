@@ -93,5 +93,3 @@ Voor de meeste webshops komt het neer op: logo bijwerken en verder gaat het mees
 ---
 
 Meer over de Wero-overgang? Lees [hoe de overgang precies werkt](/blog/ideal-wordt-wero/), bekijk [wat Wero gaat kosten](/blog/wero-kosten-transactiekosten/), of check [de checklist voor 31 maart](/blog/wero-webshops-checklist-maart/).
-
-Heb je vragen over wat dit voor jouw situatie betekent? [Plan gerust een gesprek](/contact/) en ik denk met je mee.

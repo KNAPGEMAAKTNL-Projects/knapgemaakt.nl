@@ -185,7 +185,3 @@ Goede vraag. Bij lagere prijzen krijg je vaak standaardtemplates, beperkte onder
 | Webshop op Shopify | €2.500 tot €6.000 | **€89/maand** |
 
 Een volledig pakket vanaf €49 per maand met alles erin. [Op de aanbod-pagina](/webdesign/) staat wat er precies in zit.
-
----
-
-Wil je weten wat bij jouw situatie past? [Plan gerust een gesprek](/contact/) en ik denk met je mee.

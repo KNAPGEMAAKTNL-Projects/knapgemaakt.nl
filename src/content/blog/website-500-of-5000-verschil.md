@@ -159,4 +159,4 @@ Weet wat je nodig hebt, vraag wat er inbegrepen is, en vergelijk appels met appe
 
 ---
 
-Meer over websiteprijzen? Lees [mijn complete prijsgids voor 2026](/blog/website-laten-maken-kosten/). Of [plan gerust een gesprek](/contact/) als je wilt sparren over wat bij jouw situatie past.
+Meer over websiteprijzen? Lees [mijn complete prijsgids voor 2026](/blog/website-laten-maken-kosten/).

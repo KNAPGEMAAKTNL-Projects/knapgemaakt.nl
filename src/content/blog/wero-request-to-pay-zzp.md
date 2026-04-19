@@ -90,5 +90,3 @@ Houd de updates van je boekhoudsoftware en je bank in de gaten. Zodra het beschi
 ---
 
 Meer over Wero? Lees [hoe de overgang van iDEAL naar Wero werkt](/blog/ideal-wordt-wero/), bekijk [de 7 verschillen tussen iDEAL en Wero](/blog/wero-vs-ideal-verschillen/), of lees [wat Wero gaat kosten](/blog/wero-kosten-transactiekosten/).
-
-Heb je vragen? [Plan gerust een gesprek](/contact/) en ik denk met je mee.
