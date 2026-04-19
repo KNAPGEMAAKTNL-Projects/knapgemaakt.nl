@@ -157,7 +157,3 @@ De reden is simpel: de meeste van mijn klanten hebben geen behoefte aan een dash
 Willen ze iets aanpassen? Dan sturen ze me een berichtje. Sneller dan inloggen en uitzoeken waar die ene knop ook alweer zat.
 
 Is dat voor iedereen de juiste aanpak? Nee. Als je dagelijks content publiceert of een webshop met 500 producten runt, dan is WordPress of Shopify logischer. Maar voor een website die je bedrijf representeert en klanten binnenhaalt, zonder dat je er een tweede baan aan hebt? Dan is simpeler vaak fijner.
-
----
-
-Benieuwd wat voor jouw situatie het beste past? [Plan gerust een gesprek](/contact/) en ik denk met je mee.

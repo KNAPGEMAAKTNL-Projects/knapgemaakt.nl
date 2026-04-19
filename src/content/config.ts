@@ -21,6 +21,7 @@ const blogCollection = defineCollection({
 
 		// Categorization
 		tags: z.array(z.string()).default([]),
+		cluster: z.string().optional(), // matches docs/blog/research/<cluster>.md
 
 		// Content hints
 		readingTime: z.number().optional(), // Will be calculated
@@ -29,6 +30,16 @@ const blogCollection = defineCollection({
 		// Featured image for social sharing
 		image: z.string().optional(),
 		imageAlt: z.string().optional(),
+
+		// FAQPage schema (rendered by blog layout when present)
+		faqs: z
+			.array(
+				z.object({
+					question: z.string(),
+					answer: z.string(),
+				}),
+			)
+			.optional(),
 	}),
 });
 

@@ -117,7 +117,3 @@ Als je besluit dat een website zinvol is, hoeft het niet ingewikkeld te zijn.
 Bedenk wat je wilt bereiken. Meer klanten via Google? Professioneler overkomen? Een centrale plek voor je portfolio?
 
 Verzamel je materiaal: logo, foto's van je werk, een lijst van je diensten. Heb je nog niet alles? Begin met wat er is. Het hoeft niet in één keer perfect. Eigenlijk is het beter als het dat niet is, want dan kun je het later aanpassen op basis van wat je leert.
-
----
-
-Wil je sparren over wat voor jouw situatie werkt? [Plan gerust een gesprek](/contact/) en ik denk met je mee.

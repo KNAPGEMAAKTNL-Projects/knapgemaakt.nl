@@ -96,7 +96,3 @@ Een [praktische checklist met 5 concrete stappen](/blog/wero-webshops-checklist-
 Nederlandse webshops krijgen straks met één integratie toegang tot klanten in vijf landen. Duitsers, Belgen, Fransen en Luxemburgers betalen alsof ze Nederlandse klanten zijn. Vooral als je producten of diensten aanbiedt die ook over de grens interessant zijn, opent Wero deuren die voorheen wat lastiger te openen waren.
 
 En Request-to-Pay is voor dienstverleners en ZZP'ers eigenlijk gewoon een cadeautje. Factuur sturen via de bankapp, automatisch matchen met je boekhouding, herinneringen die zichzelf versturen. Dat scheelt een hoop gedoe.
-
----
-
-Heb je vragen over hoe dit voor jouw situatie werkt? [Plan gerust een gesprek](/contact/) en ik denk met je mee.
