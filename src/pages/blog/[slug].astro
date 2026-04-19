@@ -4,6 +4,8 @@ import Footer from "../../components/Footer.astro";
 import BlogPostSchema from "../../components/seo/BlogPostSchema.astro";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
 import BlogCardImage from "../../components/blog/BlogCardImage.astro";
+import FAQSchema from "../../components/seo/FAQSchema.astro";
+import Stage0CTABlock from "../../components/cta/Stage0CTABlock.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export const prerender = true;
@@ -71,6 +73,9 @@ const breadcrumbs = [
 		image={post.data.image}
 	/>
 	<BreadcrumbSchema items={breadcrumbs} />
+	{post.data.faqs && post.data.faqs.length > 0 && (
+		<FAQSchema faqs={post.data.faqs} />
+	)}
 
 	<!-- Reading progress bar -->
 	<div id="reading-progress" class="fixed top-0 left-0 h-[3px] bg-accent z-50 transition-none" style="width: 0%"></div>
@@ -196,6 +201,8 @@ const breadcrumbs = [
 					</div>
 				</div>
 			</section>
+
+			<Stage0CTABlock />
 
 			<!-- Verder lezen -->
 			{otherPosts.length > 0 && (
