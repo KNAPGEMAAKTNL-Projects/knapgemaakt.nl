@@ -28,3 +28,14 @@ src/pages/preview.astro
 
 # Claude Code local session settings
 .claude/settings.local.json
+
+# Voice Bible and interview artifacts — NEVER commit.
+# Contains personal voice data (idiolect, phrasing, stated opinions on industry /
+# clients / competitors). GDPR-sensitive for any subject that is not the repo
+# owner, and safest to gitignore universally. Applies to this subject
+# (KNAP GEMAAKT.) and to any future client work performed in this repo.
+VOICE-BIBLE.md
+voice-interview-transcript.md
+voice-interview-*.m4a
+voice-interview-*.mp3
+voice-interview-*.wav
