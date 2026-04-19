@@ -1,0 +1,47 @@
+---
+import { stage0Offer, bedrijvenLabel } from "../../config/stage-0-offer";
+
+const enabled = stage0Offer.enabled;
+const url = stage0Offer.ctaUrl;
+---
+
+{enabled ? (
+	<section class="px-6 md:px-12 lg:px-16 py-14 md:py-20 bg-ink text-canvas">
+		<div class="max-w-2xl mx-auto">
+			<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-5">
+				Bouw ik nu een website voor jou, tijdelijk gratis?
+			</h2>
+			<p class="text-lg text-canvas/80 leading-relaxed mb-4">
+				Ik bouw momenteel {bedrijvenLabel()} websites gratis voor Nederlandse ondernemers, in ruil voor een case study en een testimonial na 90 dagen. Voorkeur gaat uit naar hoveniers en lokale dienstverleners, maar als je bedrijf past kunnen we het altijd bespreken.
+			</p>
+			<p class="text-lg text-canvas/80 leading-relaxed mb-8">
+				Dit is geen "proeftuin", het is een volledig pakket: maatwerk site, Google-vindbaarheid, lead-motor, reviews, hosting. De enige reden dat het gratis is, is dat ik case studies bouw voordat ik met een duidelijk betaald aanbod start.
+			</p>
+			<a
+				href={url}
+				class="inline-flex items-center gap-3 bg-accent text-ink px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-accent/90 transition-colors group"
+			>
+				Past dit bij jouw bedrijf? Plan een gesprek
+				<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+			</a>
+		</div>
+	</section>
+) : (
+	<section class="px-6 md:px-12 lg:px-16 py-14 md:py-20 bg-ink text-canvas">
+		<div class="max-w-2xl mx-auto">
+			<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-5">
+				Klaar voor een website die werkt?
+			</h2>
+			<p class="text-lg text-canvas/80 leading-relaxed mb-8">
+				497 euro setup en 47 euro per maand, alles erin. 90 dagen niet-goed-geld-terug garantie op de setup-fee.
+			</p>
+			<a
+				href={url}
+				class="inline-flex items-center gap-3 bg-accent text-ink px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-accent/90 transition-colors group"
+			>
+				Plan een kennismaking
+				<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+			</a>
+		</div>
+	</section>
+)}
