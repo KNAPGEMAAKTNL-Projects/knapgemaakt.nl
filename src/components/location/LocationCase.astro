@@ -1,0 +1,43 @@
+---
+import FadeIn from "../FadeIn.astro";
+import { getProjectBySlug } from "../../data/projects";
+
+interface Props {
+	caseSlug?: string;
+	regionCommonTraits: string;
+	cityName: string;
+}
+
+const { caseSlug, regionCommonTraits } = Astro.props;
+const project = caseSlug ? getProjectBySlug(caseSlug) : null;
+---
+
+<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas">
+	<div class="max-w-3xl mx-auto">
+		{project ? (
+			<FadeIn>
+				<span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Eerder werk</span>
+				<h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+					{project.title}
+				</h2>
+				<p class="text-lg text-ink-secondary leading-relaxed mb-8">
+					{project.shortDescription}
+				</p>
+				<a
+					href={`/werk/${project.slug}/`}
+					class="inline-flex items-center gap-3 text-ink font-bold tracking-tight hover:text-accent transition-colors group"
+				>
+					Bekijk de case
+					<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+				</a>
+			</FadeIn>
+		) : (
+			<FadeIn>
+				<span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Voor wie ik werk in deze regio</span>
+				<p class="text-lg text-ink-secondary leading-relaxed">
+					{regionCommonTraits}
+				</p>
+			</FadeIn>
+		)}
+	</div>
+</section>

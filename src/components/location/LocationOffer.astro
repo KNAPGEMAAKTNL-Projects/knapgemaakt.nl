@@ -1,0 +1,48 @@
+---
+import FadeIn from "../FadeIn.astro";
+
+interface Props {
+	cityName: string;
+}
+
+const { cityName } = Astro.props;
+
+const features = [
+	"Maatwerk site, geen template",
+	"Gevonden worden in Google",
+	"Lead-opvolging via WhatsApp",
+	"Automatische review-verzoeken",
+	"Hosting, domein en zakelijk e-mail",
+];
+---
+
+<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+	<div class="max-w-5xl mx-auto">
+		<FadeIn>
+			<span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Wat ik voor je maak</span>
+			<h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+				Een website die bij je bedrijf past
+			</h2>
+			<p class="text-lg text-ink-secondary leading-relaxed mb-8 max-w-2xl">
+				Ik ontwerp de site, schrijf de teksten en regel de hosting. Je krijgt één pakket waar alles in zit wat je nodig hebt om online klanten binnen te halen.
+			</p>
+		</FadeIn>
+
+		<FadeIn delay={100}>
+			<ul class="space-y-3 mb-12 max-w-lg">
+				{features.map((feature) => (
+					<li class="flex items-center gap-3 text-ink-secondary">
+						<div class="w-2 h-2 rounded-full bg-accent shrink-0"></div>
+						{feature}
+					</li>
+				))}
+			</ul>
+		</FadeIn>
+
+		<FadeIn delay={200}>
+			<p class="text-lg text-ink-secondary max-w-2xl">
+				Hetzelfde pakket voor ondernemers in {cityName}.
+			</p>
+		</FadeIn>
+	</div>
+</section>

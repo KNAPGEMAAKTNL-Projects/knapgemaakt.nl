@@ -1,0 +1,67 @@
+---
+import type { LocationData } from "../../data/locations";
+
+interface Props {
+	location: LocationData;
+	subheadline: string;
+	mapImage: string;
+}
+
+const { location, subheadline, mapImage } = Astro.props;
+---
+
+<section class="flex items-start bg-canvas relative overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
+	<div class="max-w-6xl xl:max-w-7xl mx-auto px-6 md:px-12 lg:px-16 w-full">
+		<div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+			<div class="space-y-6">
+				<div class="text-xs font-mono uppercase tracking-[0.2em] text-ink-secondary">
+					[ Webdesign in {location.region} ]
+				</div>
+				<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-snug">
+					Webdesign <span class="text-accent">{location.name}.</span>
+				</h1>
+				<p class="text-lg md:text-xl text-ink-secondary">
+					{subheadline}
+				</p>
+
+				<div class="flex flex-wrap items-center gap-4 text-sm text-ink-secondary">
+					<span>Persoonlijk contact</span>
+					<span>•</span>
+					<span>Vanuit Buren, {location.travelMinutes} min</span>
+				</div>
+
+				<a
+					href="/aanvragen/"
+					class="w-full sm:w-auto bg-ink text-canvas rounded-lg px-8 py-5 font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
+				>
+					Plan een kennismaking
+					<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+				</a>
+			</div>
+
+			<div class="relative">
+				<div class="aspect-square md:aspect-[4/3] relative overflow-hidden group rounded-xl">
+					<img
+						src={mapImage}
+						alt={`Webdesign in ${location.name}, vanuit Buren`}
+						width={1024}
+						height={768}
+						loading="eager"
+						fetchpriority="high"
+						decoding="async"
+						class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+					/>
+					<div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent"></div>
+					<div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-center">
+						<div class="font-mono uppercase tracking-[0.2em] text-accent text-xs mb-1">
+							Actief in
+						</div>
+						<div class="font-bold uppercase tracking-tight text-canvas" style="font-size: clamp(1.25rem, 5vw, 2.5rem);">
+							{location.name}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
