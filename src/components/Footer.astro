@@ -1,5 +1,5 @@
 ---
-import { getAllCities } from "../data/cities";
+import { getAllLocations } from "../data/locations";
 import { getAllBlogPosts } from "../data/blog";
 
 interface Props {
@@ -14,7 +14,7 @@ const {
 	ctaSubtext = "Laten we 'm eraf halen.",
 } = Astro.props;
 
-const cities = getAllCities();
+const cities = getAllLocations();
 const blogPosts = getAllBlogPosts();
 
 // Group cities by region for organized display
@@ -28,7 +28,7 @@ const cityGroups = cities.reduce((groups, city) => {
 }, {} as Record<string, typeof cities>);
 
 // Define region order
-const regionOrder = ["Rivierenland", "Regio Utrecht", "Noord-Brabant", "Gelderland", "Zuid-Holland"];
+const regionOrder = ["Rivierenland", "Utrecht", "Noord-Brabant", "Gelderland", "Zuid-Holland"];
 ---
 
 {!hideCTA && (
