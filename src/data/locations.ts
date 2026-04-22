@@ -91,6 +91,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 25,
 		lat: 52.0296,
 		lng: 5.1699,
+		hasCustomProse: true,
 	},
 	{
 		slug: 'nieuwegein',
@@ -99,6 +100,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 25,
 		lat: 52.0293,
 		lng: 5.0810,
+		hasCustomProse: true,
 	},
 	{
 		slug: 'vianen',
@@ -107,6 +109,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 20,
 		lat: 51.9926,
 		lng: 5.0918,
+		hasCustomProse: true,
 	},
 	{
 		slug: 'ijsselstein',
@@ -115,6 +118,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 30,
 		lat: 52.0182,
 		lng: 5.0426,
+		hasCustomProse: true,
 	},
 	{
 		slug: 'wijk-bij-duurstede',
@@ -123,6 +127,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 20,
 		lat: 51.9727,
 		lng: 5.3426,
+		hasCustomProse: true,
 	},
 
 	// Noord-Brabant
