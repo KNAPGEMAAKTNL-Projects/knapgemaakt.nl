@@ -43,6 +43,23 @@ const blogCollection = defineCollection({
 	}),
 });
 
+const locationsCollection = defineCollection({
+	type: "content",
+	schema: z.object({
+		heroSubheadline: z.string().optional(),
+		localProof: z.string().optional(),
+		customFAQs: z
+			.array(
+				z.object({
+					question: z.string(),
+					answer: z.string(),
+				}),
+			)
+			.optional(),
+	}),
+});
+
 export const collections = {
 	blog: blogCollection,
+	locations: locationsCollection,
 };
