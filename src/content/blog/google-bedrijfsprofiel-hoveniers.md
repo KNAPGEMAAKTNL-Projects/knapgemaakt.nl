@@ -11,7 +11,7 @@ faqs:
   - question: "Hoe lang duurt het voordat ik resultaat zie van mijn Google Bedrijfsprofiel?"
     answer: "Meestal binnen 8 tot 12 weken. Eerste zichtbaarheidswinst vaak al na 4 weken als je de 7 velden compleet invult en de week erna 2 tot 3 posts plaatst. Sneller gaat niet eerlijk."
   - question: "Mag ik meerdere categorieën kiezen voor mijn hoveniersbedrijf?"
-    answer: "Ja. Je kiest één primaire en tot 9 secundaire. Voor hoveniers werkt meestal: Landscaper (primair), Gardener, Tree service en Paving contractor als je bestraat. Kies alleen wat je écht doet."
+    answer: "Ja. Je kiest één primaire en tot 9 secundaire. Voor hoveniers werkt meestal: Hovenier als primaire, aangevuld met Boomverzorger, Bestratingsbedrijf en Tuinontwerper als je die diensten levert. Kies alleen wat je écht doet."
   - question: "Is een Google Bedrijfsprofiel verplicht voor hoveniers?"
     answer: "Nee, maar zonder profiel mis je de Google Maps top-3 en de local pack. Voor lokale diensten als hovenier is dat meestal het belangrijkste online kanaal, vooral in de eerste zes maanden na start."
   - question: "Wat doe ik met een negatieve review?"
@@ -39,7 +39,7 @@ Veel hoveniers die vakmatig prima zijn maar laag ranken hebben hetzelfde problee
 Kort overzicht. Niet de voor de hand liggende velden (adres, openingstijden), die staan bij bijna iedereen wel ingevuld. De zeven velden hieronder staan veel vaker leeg of half, en ze maken het verschil tussen ranken en niet-ranken in de local pack.
 
 1. **Servicegebied per plaats**. Niet één stad, maar elke plaats waar je werkt.
-2. **Secundaire categorieën**. Naast "Landscaper" ook "Gardener", "Tree service" en "Paving contractor" als dat klopt.
+2. **Secundaire categorieën**. Naast "Hovenier" ook "Boomverzorger", "Bestratingsbedrijf" en "Tuinontwerper" als dat klopt.
 3. **Producten en diensten**. Tuinaanleg, tuinonderhoud, tuinontwerp en bestrating als vier losse producten, elk met prijsindicatie.
 4. **Q&A proactief ingevuld**. Niet wachten op vragen. Zelf de 10 meest gestelde erin zetten.
 5. **Foto's met geotag**. Projectfoto's gemaakt op locatie, zodat Google de geo-context oppakt.
@@ -60,16 +60,15 @@ Werk je ook op wijk-niveau in een grote stad? Dan gebruik je secundaire posts me
 
 ### 2. Secundaire categorieën
 
-Eén primaire (meestal Landscaper), daarna tot 9 secundaire. Voor de gemiddelde hovenier die én aanlegt én onderhoudt én soms bestraat:
+Eén primaire (meestal Hovenier, die dekt zowel aanleg als onderhoud), daarna tot 9 secundaire. Voor de gemiddelde hovenier die ook boomverzorging, bestrating of ontwerp doet:
 
 | Slot | Categorie | Wanneer kiezen |
 |---|---|---|
-| Primair | Landscaper | Altijd voor tuinaanleg-bedrijven |
-| Secundair 1 | Gardener | Als je ook onderhoud doet |
-| Secundair 2 | Tree service | Als je kettingzagen inzet |
-| Secundair 3 | Paving contractor | Als je bestrating legt |
-| Secundair 4 | Lawn care service | Als gazonaanleg een aparte dienst is |
-| Secundair 5 | Garden designer | Als je zelf ontwerpen tekent |
+| Primair | Hovenier | Voor vrijwel elk hoveniersbedrijf |
+| Secundair 1 | Boomverzorger | Als je kettingzagen inzet |
+| Secundair 2 | Bestratingsbedrijf | Als je bestrating legt |
+| Secundair 3 | Gazonservice | Als gazonaanleg of onderhoud een aparte dienst is |
+| Secundair 4 | Tuinontwerper | Als je zelf ontwerpen tekent |
 
 Kies alleen wat je écht doet, anders krijg je leads die niet passen en die irriteren.
 
@@ -146,7 +145,7 @@ Meestal binnen 8 tot 12 weken. Eerste zichtbaarheidswinst vaak al na 4 weken als
 
 ### Mag ik meerdere categorieën kiezen voor mijn hoveniersbedrijf?
 
-Ja. Je kiest één primaire en tot 9 secundaire. Voor hoveniers werkt meestal: Landscaper (primair), Gardener, Tree service en Paving contractor als je bestraat. Kies alleen wat je écht doet.
+Ja. Je kiest één primaire en tot 9 secundaire. Voor hoveniers werkt meestal: Hovenier als primaire, aangevuld met Boomverzorger, Bestratingsbedrijf en Tuinontwerper als je die diensten levert. Kies alleen wat je écht doet.
 
 ### Is een Google Bedrijfsprofiel verplicht voor hoveniers?
 
