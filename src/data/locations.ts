@@ -23,6 +23,7 @@ export const locations: LocationData[] = [
 		lat: 51.9539,
 		lng: 5.2254,
 		caseSlug: 'maatwerk-website-voor-fitcity-culemborg',
+		hasCustomProse: true,
 		showcase: true,
 	},
 	{
