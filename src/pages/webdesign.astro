@@ -23,15 +23,15 @@ const breadcrumbs = [
 const faqs = [
 	{
 		question: "Waarom is dit nu gratis?",
-		answer: "Ik ben bezig met een Grand Slam Offer opbouwen en heb concrete case studies nodig om mijn waarde te kunnen aantonen. Gratis werk in ruil voor een case study is sneller dan tegen een slecht argument verkopen. In april nog 2 plekken, daarna start ik met betaald tegen 497 euro setup plus 47 euro per maand."
+		answer: "Ik verzamel op dit moment case studies om de waarde van wat ik lever concreet te kunnen laten zien. Twee sites gratis bouwen levert sneller bruikbare voorbeelden op dan zonder portfolio proberen te verkopen. Tot eind mei zijn er nog plekken, daarna start ik met betaald werk: €497 setup plus €47 per maand."
 	},
 	{
 		question: "Wat gebeurt er na 90 dagen?",
-		answer: "Nulmeting opnieuw, case study afgerond, testimonial als je dat wilt. Daarna kun je blijven of niet. Geen contract bindt je aan mij."
+		answer: "Een nieuwe nulmeting, case study afgerond en als je dat wilt een review. Daarna loopt de samenwerking door zolang je er voordeel van hebt."
 	},
 	{
-		question: "Wat als ik niet tevreden ben?",
-		answer: "Dan gaat de site eraf, je krijgt niks gevraagd, we gaan allebei door. Ik verkies eerlijkheid boven een betaalde klant die intern klaagt."
+		question: "Wat garandeer je?",
+		answer: "Voor de betaalde pakketten vanaf juni: breng je in 90 dagen na livegang minder dan 3 extra klanten via de website binnen, dan werk ik gratis door tot dat aantal wel is gehaald. Enige voorwaarde: je reageert binnen 24 uur op aanvragen die binnenkomen en houdt je Google Bedrijfsprofiel actueel. Anders is de meting niet eerlijk."
 	},
 	{
 		question: "Krijg ik de broncode?",
@@ -39,7 +39,7 @@ const faqs = [
 	},
 	{
 		question: "Waarom geen WordPress?",
-		answer: "WordPress is een CMS voor mensen die zelf hun site beheren. De meeste ondernemers willen dat helemaal niet, ze willen dat het werkt. Zonder WordPress is de site sneller, veiliger, en heeft minder onderhoud nodig."
+		answer: "WordPress is een CMS voor mensen die zelf hun site beheren. De meeste ondernemers willen dat helemaal niet, ze willen dat het werkt. Zonder WordPress is de site sneller, veiliger en heeft minder onderhoud nodig."
 	},
 	{
 		question: "Hoe lang duurt het voor Google me vindt?",
@@ -54,12 +54,12 @@ const faqs = [
 
 <Layout
   title="Webdesign op maat in Buren | KNAP GEMAAKT."
-  description="Maatwerk websites voor ondernemers. Snel, goed vindbaar in Google, en alles in een vast maandbedrag. In april nog 2 plekken gratis in ruil voor een case study."
+  description="Maatwerk websites voor ondernemers. Snel, goed vindbaar in Google en alles in een vast maandbedrag. In mei nog 2 plekken gratis in ruil voor een case study."
 >
   <BreadcrumbSchema items={breadcrumbs} />
   <ServiceSchema
     name="Webdesign op maat"
-    description="Websites vanaf de grond opgebouwd. Ontwerp, bouw, hosting, Google-vindbaarheid en onderhoud in een aanpak. In april nog 2 plekken gratis in ruil voor een case study."
+    description="Websites vanaf de grond opgebouwd. Ontwerp, bouw, hosting, Google-vindbaarheid en onderhoud in één aanpak. In mei nog 2 plekken gratis in ruil voor een case study."
     serviceType="WebDesign"
     url="https://knapgemaakt.nl/webdesign/"
     price="0"
@@ -76,7 +76,7 @@ const faqs = [
           Webdesign op maat, in Buren
         </h1>
         <p class="text-lg md:text-xl text-ink/70 max-w-2xl leading-relaxed mb-10">
-          Ik bouw websites vanaf de grond op, zonder WordPress en zonder template. Sneller dan wat je gewend bent, goed vindbaar in Google, en beheerd in een vast maandbedrag. Voor ondernemers met een bedrijf, 0 tot 5 medewerkers en geen zin om zelf een CMS te leren.
+          Ik bouw websites vanaf de grond op, zonder WordPress en zonder template. Sneller dan wat je gewend bent, goed vindbaar in Google en beheerd onder één vast maandbedrag. Voor ondernemers met een bedrijf, 0 tot 5 medewerkers en geen zin om zelf een CMS te leren.
         </p>
 
         {stage0Offer.enabled && (
@@ -85,7 +85,7 @@ const faqs = [
               Nu in {stage0Offer.month}: {spotsLabel()} gratis
             </p>
             <p class="text-ink/70 leading-relaxed mb-3">
-              Ik bouw op dit moment gratis voor {bedrijvenLabel()} in Nederland. Jij krijgt het volledige pakket, ik krijg een case study over 90 dagen en een korte testimonial als je tevreden bent. Voorkeur voor hoveniers en lokale dienstverleners, maar als je bedrijf past kijken we samen.
+              Ik maak op dit moment gratis een volledige website voor {bedrijvenLabel()}. Jij krijgt het complete pakket, ik krijg na 90 dagen een case study en als je tevreden bent een korte review. Voorkeur voor lokale dienstverleners, maar als je bedrijf past kijken we er samen naar.
             </p>
             <a href={stage0Offer.ctaUrl} class="text-sm font-bold text-ink hover:text-accent transition-colors inline-flex items-center gap-1 group">
               Past dit bij jou?
@@ -99,7 +99,7 @@ const faqs = [
             Plan een kennismaking
           </a>
           <a href="#wat-zit-erin" class="text-ink font-bold tracking-tight hover:text-accent transition-colors duration-300 inline-flex items-center gap-2 group px-4 py-4">
-            Zie wat erin zit
+            Bekijk het pakket
             <span class="transition-transform duration-300 group-hover:translate-y-1">&darr;</span>
           </a>
         </div>
@@ -115,7 +115,7 @@ const faqs = [
         <FadeIn>
           <span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Wat je krijgt</span>
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Wat zit erin
+            Wat je krijgt
           </h2>
           <p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12">
             Het pakket heeft acht onderdelen. Een website, maar ook alles eromheen dat een site pas echt nuttig maakt: vindbaarheid, klantcontact, meting, onderhoud. Op maat waar dat waarde toevoegt, standaard waar dat prima is.
@@ -127,14 +127,14 @@ const faqs = [
             <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
               <span class="text-xs font-mono text-ink/40 mb-2 block">01</span>
               <h3 class="text-xl font-bold mb-3">Maatwerk website</h3>
-              <p class="text-ink/70 leading-relaxed">Gebouwd met Astro op Cloudflare. Laadt onder de seconde, werkt even goed op een oude telefoon als op een nieuwe laptop. Geen WordPress, geen plugins, geen beheersysteem.</p>
+              <p class="text-ink/70 leading-relaxed">Helemaal op maat gebouwd, geen WordPress of template. Laadt onder de seconde, werkt even goed op een oude telefoon als op een nieuwe laptop. Geen plugins, geen beheersysteem waar je een cursus voor nodig hebt.</p>
             </div>
           </FadeIn>
           <FadeIn delay={150}>
             <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
               <span class="text-xs font-mono text-ink/40 mb-2 block">02</span>
               <h3 class="text-xl font-bold mb-3">Google Bedrijfsprofiel</h3>
-              <p class="text-ink/70 leading-relaxed">Opgezet, categorieen goed ingevuld, foto's, Q&amp;A, posts. Voor lokale zoekopdrachten is dit meestal belangrijker dan je website zelf.</p>
+              <p class="text-ink/70 leading-relaxed">Opgezet en onderhouden, met de juiste categorieën, foto's, Q&amp;A en posts. Voor lokale zoekopdrachten is dit meestal belangrijker dan je website zelf.</p>
             </div>
           </FadeIn>
           <FadeIn delay={200}>
@@ -147,7 +147,7 @@ const faqs = [
           <FadeIn delay={250}>
             <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
               <span class="text-xs font-mono text-ink/40 mb-2 block">04</span>
-              <h3 class="text-xl font-bold mb-3">Reviews-motor</h3>
+              <h3 class="text-xl font-bold mb-3">Automatische review-verzoeken</h3>
               <p class="text-ink/70 leading-relaxed">Na een afgeronde klus gaat er automatisch een vriendelijk review-verzoek uit. Op Google, niet op een of ander platform waar niemand kijkt.</p>
             </div>
           </FadeIn>
@@ -155,20 +155,20 @@ const faqs = [
             <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
               <span class="text-xs font-mono text-ink/40 mb-2 block">05</span>
               <h3 class="text-xl font-bold mb-3">Lokale SEO-basis</h3>
-              <p class="text-ink/70 leading-relaxed">Schema-markup, citations in 20 Nederlandse directories, Google Search Console ingericht, basis-indexering. Niets geks, gewoon goed geregeld vanaf dag een.</p>
+              <p class="text-ink/70 leading-relaxed">Schema-markup, Google Search Console ingericht en basis-indexering geregeld. Niets geks, gewoon goed ingericht vanaf dag één.</p>
             </div>
           </FadeIn>
           <FadeIn delay={350}>
             <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
               <span class="text-xs font-mono text-ink/40 mb-2 block">06</span>
-              <h3 class="text-xl font-bold mb-3">Hosting, domein, SSL, zakelijk e-mail</h3>
-              <p class="text-ink/70 leading-relaxed">Allemaal in het pakket. Geen losse facturen van 4 verschillende partijen.</p>
+              <h3 class="text-xl font-bold mb-3">Hosting, domein en zakelijk e-mail</h3>
+              <p class="text-ink/70 leading-relaxed">Alles via één pakket geregeld, geen losse facturen bij vier verschillende partijen.</p>
             </div>
           </FadeIn>
           <FadeIn delay={400}>
             <div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
               <span class="text-xs font-mono text-ink/40 mb-2 block">07</span>
-              <h3 class="text-xl font-bold mb-3">Kleine aanpassingen binnen 48 werkuur</h3>
+              <h3 class="text-xl font-bold mb-3">Kleine aanpassingen binnen 48 uur</h3>
               <p class="text-ink/70 leading-relaxed">Adres veranderd, prijzen bijgewerkt, foto verruild. Mail me, meestal staat het dezelfde werkdag erop.</p>
             </div>
           </FadeIn>
@@ -192,7 +192,7 @@ const faqs = [
             Wat ik ervoor terug vraag
           </h2>
           <p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12">
-            Gratis heeft voorwaarden. Geen kleine lettertjes, wel drie dingen.
+            Gratis heeft voorwaarden. Drie dingen, allemaal vooraf helder afgesproken.
           </p>
         </FadeIn>
 
@@ -232,7 +232,7 @@ const faqs = [
           <div class="grid md:grid-cols-2 gap-10 md:gap-16">
             <div>
               <p class="text-ink/70 leading-relaxed mb-6">
-                De meeste websites voor kleine bedrijven draaien op WordPress met een kant-en-klaar thema. Dat werkt, maar het is traag. Tientallen plugins die bij elke pagina meeladen, updates die dingen stukmaken, en laadtijden waar je bezoekers niet op wachten.
+                De meeste websites voor kleine bedrijven draaien op WordPress met een kant-en-klaar thema. Dat werkt, maar het is traag. Tientallen plugins die bij elke pagina meeladen, updates die dingen stukmaken en laadtijden waar je bezoekers niet op wachten.
               </p>
               <p class="text-ink/70 leading-relaxed">
                 Ik bouw elke website op maat. Geen overbodige plugins, geen trage laadtijden, geen ingewikkeld beheersysteem. Wat jouw bedrijf nodig heeft, meer niet.
@@ -270,7 +270,7 @@ const faqs = [
             Hoe het loopt
           </h2>
           <p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12">
-            Van eerste contact tot dag-90-meting duurt gemiddeld 12 weken. De bouw zelf ongeveer twee weken.
+            Van eerste contact tot dag-90-meting duurt gemiddeld 12 weken. Het bouwen zelf ongeveer twee weken.
           </p>
         </FadeIn>
 
@@ -307,7 +307,7 @@ const faqs = [
               <span class="text-4xl font-bold text-accent shrink-0 md:w-24">4.</span>
               <div>
                 <h3 class="text-xl font-bold mb-2">Livegang</h3>
-                <p class="text-ink/70 leading-relaxed">We zetten de site live, Google-profiel gaat mee, lead-opvolging wordt getest. Ik stuur je binnen een dag een proefbericht via WhatsApp om te checken of het aankomt.</p>
+                <p class="text-ink/70 leading-relaxed">We zetten de site live, Google-profiel gaat mee, lead-opvolging testen we meteen. Ik stuur je binnen een dag een proefbericht via WhatsApp om te checken of het aankomt.</p>
               </div>
             </li>
           </FadeIn>
@@ -316,7 +316,7 @@ const faqs = [
               <span class="text-4xl font-bold text-accent shrink-0 md:w-24">5.</span>
               <div>
                 <h3 class="text-xl font-bold mb-2">Meting na 90 dagen</h3>
-                <p class="text-ink/70 leading-relaxed">Halfuurtje video. Zelfde A4 opnieuw, we kijken wat is verschoven. Hier komt je case study uit en eventueel je testimonial.</p>
+                <p class="text-ink/70 leading-relaxed">Halfuurtje video. Zelfde A4 opnieuw, we kijken wat is verschoven. Hier komt je case study uit en eventueel je review.</p>
               </div>
             </li>
           </FadeIn>
@@ -331,7 +331,7 @@ const faqs = [
           <FadeIn>
             <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Voor wie is dit</h2>
             <p class="text-ink/70 text-lg leading-relaxed">
-              Ondernemers met een bedrijf, 0 tot 5 medewerkers, en een dienst die lokaal geleverd wordt. Hoveniers en dienstverleners zoals schoonmaakbedrijven, schilders, elektriciens, installateurs, kappers, coaches. Je bent vakman of vakvrouw eerst, marketeer later.
+              Ondernemers met een bedrijf, 0 tot 5 medewerkers en een dienst die lokaal geleverd wordt. Dienstverleners zoals schoonmaakbedrijven, schilders, elektriciens, installateurs, kappers en coaches. Je bent vakman of vakvrouw eerst, marketeer later.
             </p>
           </FadeIn>
           <FadeIn delay={150}>

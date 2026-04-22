@@ -92,15 +92,15 @@ export const projects: Project[] = [
 		shortDescription: "Een sportschool website met online ledenwerving.",
 		fullDescription: `Fitcity Culemborg is de meest betaalbare sportschool van Culemborg. Vanaf €20,50 per maand, zeven dagen per week open, een Ladies Only zone en bokszaktraining twee keer per week. Veel voor weinig geld, dus.
 
-Hun oude website deed dat aanbod alleen niet echt recht. De site was nog niet af en miste de informatie die bezoekers nodig hebben: geen prijzen, geen abonnementsoverzicht, en geen manier om je online in te schrijven. Terwijl mensen de sportschool wél vonden via Google.`,
+Hun oude website deed dat aanbod alleen niet echt recht. De informatie die bezoekers nodig hebben stond er niet op: geen prijzen, geen abonnementsoverzicht en geen manier om je online in te schrijven. Terwijl mensen de sportschool wél vonden via Google.`,
 		challenge: `Fitcity had al naamsbekendheid en een goede positie in Google. Maar de website zelf was nog niet ingericht om bezoekers verder te helpen. Iemand die "sportschool Culemborg" zocht, kwam wel op de site terecht, maar vond daar niet de informatie die je verwacht: prijzen, abonnementen, een manier om lid te worden.
 
 Tegelijkertijd hebben de grote ketens als Basic-Fit en Anytime Fitness sites waar je in een paar klikken kunt inschrijven. Die verwachting nemen bezoekers mee. De sportschool verdiende een site die meekon met wat ze eigenlijk al te bieden hadden.`,
-		solution: `De eerste keuze die ik maakte: prijzen op de homepage. Andere sportscholen verstoppen hun tarieven achter formulieren of laten je eerst bellen. Bij Fitcity is de prijs juist het sterkste verkoopargument, vanaf €20,50 per maand. Dat verstop je niet, dat zet je vooraan.
+		solution: `De eerste keuze die ik maakte: prijzen op de homepage. Andere sportscholen verstoppen hun tarieven achter een contactformulier of laten je eerst bellen. Bij Fitcity is de prijs juist het sterkste verkoopargument, vanaf €20,50 per maand. Daar is geen reden om omheen te lopen.
 
-De tweede keuze was een compleet inschrijfsysteem. Geen contactformulier met "ik heb interesse", maar een systeem waar je als nieuw lid gewoon je gegevens invult en direct kunt starten. Bankgegevens worden veilig en versleuteld opgeslagen. De eigenaar beheert alles via een beveiligde omgeving die alleen voor hem toegankelijk is.
+De tweede keuze was een compleet inschrijfsysteem. Waar je bij de meeste sportscholen alleen je interesse kan kenbaar maken, kun je je hier direct als lid aanmelden. Bankgegevens zijn versleuteld opgeslagen, en alleen de eigenaar heeft toegang tot de ledenadministratie.
 
-Verder: op je telefoon kun je direct bellen met één tik, de "Word Nu Lid" knop staat op elke pagina, en alle info die je als bezoeker zoekt (prijzen, openingstijden, trainingsaanbod) staat binnen twee scrolls.`,
+Verder: op je telefoon kun je direct bellen met één tik, de aanmeldknop staat op elke pagina, en alle info die je als bezoeker zoekt (prijzen, openingstijden, trainingsaanbod) is binnen twee scrolls te vinden.`,
 		features: [
 			"Online inschrijven: nieuwe leden kunnen direct lid worden via de site",
 			"Beveiligd ledenbeheer voor de eigenaar",
@@ -151,7 +151,7 @@ Verder: op je telefoon kun je direct bellen met één tik, de "Word Nu Lid" knop
 		faq: [
 			{
 				question: "Wat zit er allemaal bij zo'n website?",
-				answer: "Bij Fitcity: de volledige site, online inschrijving, ledenbeheer, en een beveiligde omgeving voor de eigenaar. Elk project is anders. Neem gerust contact op, dan vertel ik je wat er bij jouw site zou zitten.",
+				answer: "Bij Fitcity: de volledige site, online inschrijving, ledenbeheer en een beveiligde omgeving voor de eigenaar. Elk project is anders. Neem gerust contact op, dan vertel ik je wat er bij jouw site zou zitten.",
 			},
 			{
 				question: "Kan ik de website zelf aanpassen als er iets verandert?",
@@ -159,7 +159,7 @@ Verder: op je telefoon kun je direct bellen met één tik, de "Word Nu Lid" knop
 			},
 			{
 				question: "Hoe lang duurt het om zo'n website te maken?",
-				answer: "Voor een sportschool website met inschrijfsysteem moet je rekenen op een paar weken. Dat hangt af van hoe snel we de teksten, foto's en gegevens rond hebben. Het bouwwerk zelf gaat snel, de voorbereiding kost de meeste tijd.",
+				answer: "Voor een sportschool website met inschrijfsysteem moet je rekenen op een paar weken. Dat hangt af van hoe snel we de teksten, foto's en gegevens rond hebben. Het bouwen zelf gaat snel, de voorbereiding kost de meeste tijd.",
 			},
 			{
 				question: "Worden de gegevens van mijn leden veilig opgeslagen?",
@@ -178,64 +178,18 @@ Verder: op je telefoon kun je direct bellen met één tik, de "Word Nu Lid" knop
 		heroMockup: "/assets/projects/mockups/by-shakir.webp",
 		overviewMockup: "/assets/projects/mockups/by-shakir.webp",
 		link: "https://byshakir.knapgemaakt.nl",
-		shortDescription: "Geen meubelwinkel. Een designautoriteit.",
-		fullDescription: `By Shakir | Metropolitan Luxury is geen meubelwinkel, het is een design autoriteit. Opgericht vanuit de missie om de Nederlandse markt iets anders te bieden dan standaard meubels. "Ik zag een gat in de markt. Overal meubelzaken die producten verkopen, maar niemand die visies verkocht," aldus oprichter Shakir.
-
-Met meer dan 15 jaar ervaring creëert By Shakir complete interieurconcepten die brutalistisch architectonische elegantie combineren met de warmte van high-end hospitality. Van fotorealistische 3D-visualisatie tot volledige turnkey projectmanagement. Hun klanten zijn niet op zoek naar een bank. Ze zoeken een ervaring, een verhaal, een ruimte die emotioneel resoneert.`,
-		challenge: `By Shakir wilde zich nadrukkelijk onderscheiden van de massa meubelretailers. De challenge: een website die "design authority" communiceert, niet "meubelwinkel". De internationale klantenkring (Nederland, België, Marokko) vraagt om een online presentatie die het niveau van hun fysieke showroom in Tiel evenaart.
-
-In het premium interieur segment is de website vaak het eerste contactmoment. Klanten die investeren in maatwerk interieurs verwachten geen standaard WordPress template. De uitdaging was een digitale ervaring te creëren die de merkpositie "Metropolitan Luxury" onderstreept, waarbij elk detail (van typografie tot animaties) de premiumpositionering communiceert.`,
-		solution: `We ontwierpen een website met een donker, luxueus kleurenpalet (zwart, bruin, goud) dat past bij hun "brutalistisch met warmte" filosofie. Grote, cinematografische beelden van hun projecten staan centraal. De headline "Refining Living Spaces" zet direct de toon.
-
-Belangrijkste ontwerpbeslissingen:
-
-Storytelling over producten: De site communiceert visie en proces, niet alleen eindproducten.
-
-Fotorealistische 3D-visualisatie: Laat zien hoe klanten hun ruimte zien vóórdat er gebouwd wordt.
-
-Internationale autoriteit: Showroom in Tiel communiceert professionaliteit.
-
-Subtiele luxe: Geen opzichtige call-to-actions. Premium klanten hoeven niet "overtuigd" te worden.
-
-Elke pagina ademt ruimte en exclusiviteit. Geen drukke layouts, geen kortingspopups. De navigatie is intuïtief, de content vertelt verhalen. Het resultaat is een website die net zo premium aanvoelt als de 'International Hotel Vibe' interieurs die zij creëren.`,
+		shortDescription: "Project in ontwikkeling.",
+		fullDescription: `Dit project is nog in ontwikkeling. Zodra we de oplevering in zicht hebben, delen we hier de volledige uitwerking: het doel van de opdracht, de aanpak en het eindresultaat.`,
+		challenge: "Nog in ontwikkeling.",
+		solution: "Nog in ontwikkeling.",
 		features: [
-			"3D-visualisatie showcase: zie je ruimte voor het gebouwd is",
-			"Portfolio met international luxury projecten",
-			"Brutalistisch-warm design systeem (zwart/bruin/goud)",
-			"Turnkey proces uitleg van concept tot oplevering",
-			"Showroom locatie in Tiel",
-			"Design philosophy: 'Not products, but visions'",
-			"Premium contact flow voor adviesgesprekken",
-			"Geoptimaliseerde laadtijd ondanks grote afbeeldingen",
+			"Projectpagina wordt bijgewerkt na oplevering",
 		],
-		results: [
-			"Merkpositionering als design authority (niet meubelwinkel)",
-			"Premium brand experience passend bij prijssegment",
-			"Internationale uitstraling voor NL/BE/Marokko markt",
-			"Visueel storytelling verhoogt emotionele connectie",
-		],
-		testimonial: {
-			quote: "De meeste zaken verkopen meubels. Wij verkopen visies. Die marktpositie moest terugkomen in onze online presentatie, en dat is perfect gelukt.",
-			author: "Shakir",
-			role: "Oprichter & Creative Director",
-		},
-		featured: true,
-		targetAudience: "Vermogende particulieren en bedrijven in Nederland, België en internationaal die zoeken naar exclusieve, op maat ontworpen interieurs. High-net-worth individuals die investeren in premium woningen. Architecten en developers die samenwerken met luxury design partners.",
-		industryKeywords: [
-			"website interieurzaak",
-			"luxe meubels website",
-			"interieurdesign webdesign",
-			"premium interieur website",
-			"design authority branding",
-			"luxury interior website voorbeeld",
-		],
-		technicalHighlights: [
-			"WebP afbeeldingen voor snelle laadtijd bij luxe visuals",
-			"Donker kleurenschema (zwart/bruin/goud)",
-			"Cinematografische portfolio presentatie",
-			"SEO voor 'luxury interior designer Netherlands'",
-		],
-		industryContext: "In de luxe interieurbranche bepaalt de website de geloofwaardigheid. Klanten die investeren in interieurontwerp verwachten een online ervaring die het prijssegment rechtvaardigt. Een goedkope website wekt twijfel over de kwaliteit. Premium design bureaus moeten zich online positioneren als autoriteiten, niet als retailers. Storytelling, visuele excellentie en subtiele luxe zijn essentieel.",
+		featured: false,
+		targetAudience: "",
+		industryKeywords: [],
+		technicalHighlights: [],
+		industryContext: "",
 	},
 ];
 

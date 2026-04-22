@@ -1,6 +1,6 @@
 export const stage0Offer = {
   enabled: true,
-  month: "april",
+  month: "mei",
   year: 2026,
   spotsRemaining: 2,
   ctaUrl: "/aanvragen/",
