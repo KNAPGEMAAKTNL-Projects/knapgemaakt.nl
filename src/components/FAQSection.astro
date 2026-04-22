@@ -1,12 +1,8 @@
 ---
 /**
- * FAQSection, visual FAQ accordion + JSON-LD schema
- *
- * Uses native <details>/<summary> for zero-JS accordion behavior.
- * Automatically includes FAQSchema for structured data.
+ * FAQSection, visual FAQ accordion (zero-JS, <details>/<summary>).
+ * Does NOT emit JSON-LD — render <FAQSchema> explicitly in the page frontmatter.
  */
-
-import FAQSchema from "./seo/FAQSchema.astro";
 
 interface FAQItem {
 	question: string;
@@ -20,8 +16,6 @@ interface Props {
 
 const { faqs, heading = "Veelgestelde vragen" } = Astro.props;
 ---
-
-<FAQSchema faqs={faqs} />
 
 <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16">
 	<div class="max-w-3xl mx-auto">
