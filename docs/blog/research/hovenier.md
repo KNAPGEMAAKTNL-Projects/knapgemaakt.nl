@@ -113,7 +113,7 @@ Top-3 analyse per keyword, gebaseerd op live Google.nl-observatie april 2026. Do
 
 ### 5. "Google Bedrijfsprofiel hovenier"
 **Top 3:** thin SERP, voornamelijk generieke GBP-uitlegartikelen (marcobouman.com, diverse agencies), geen hovenier-specifiek.
-**Gap/knapgemaakt-hoek:** open veld. Je kunt scoren met een post **"7 velden die hoveniers vaak missen"**: servicegebied per postcode, categorieën ("Landscaper" + "Gardener" + "Tree service"), producten (tuinontwerp, aanleg, onderhoud), FAQ-sectie, Q&A proactief invullen, foto's met geotag, reviewrespons binnen 2–3 dagen.
+**Gap/knapgemaakt-hoek:** open veld. Je kunt scoren met een post **"7 velden die hoveniers vaak missen"**: servicegebied per postcode, secundaire categorieën ("Hovenier" primair + "Boomverzorger" + "Bestratingsbedrijf" + "Tuinontwerper"), producten (tuinontwerp, aanleg, onderhoud), FAQ-sectie, Q&A proactief invullen, foto's met geotag, reviewrespons binnen 2–3 dagen. NB: Nederlandse GBP-interface toont Dutch categorie-namen, niet de English backend labels.
 
 ---
 
@@ -180,7 +180,7 @@ Lokale SEO voor een hovenier begint bij drie fundamenten: een volledig Google Be
 Marketing voor hoveniers is meestal niet wat je denkt. Geen fancy campagnes. Wel: een site die maart–mei niet omvalt, een Google Bedrijfsprofiel dat elke week 1 update krijgt, en reviews die je direct na oplevering vraagt via de telefoon. Voor veel ondernemers is dit samen goed voor 60–70% van hun aanvragen.
 
 **7. "Google Bedrijfsprofiel hovenier"**
-Je Google Bedrijfsprofiel is als hovenier vaak je belangrijkste online kanaal. Zeven velden die de meesten missen: servicegebied per postcode, secundaire categorieën (boomverzorger, bestrater), producten, Q&A proactief, foto's met geotag, reviewrespons binnen 2 dagen, en openingstijden per feestdag. Duurt 90 minuten. Levert meestal binnen 4 weken extra aanvragen.
+Je Google Bedrijfsprofiel is als hovenier vaak je belangrijkste online kanaal. Zeven velden die de meesten missen: servicegebied per postcode, secundaire categorieën (Boomverzorger, Bestratingsbedrijf), producten, Q&A proactief, foto's met geotag, reviewrespons binnen 2 dagen en openingstijden per feestdag. Duurt 90 minuten. Levert meestal binnen 4 weken extra aanvragen.
 
 **8. "hovenier online vindbaar"**
 Online vindbaar worden als hovenier is geen raket. Drie stappen: Google Bedrijfsprofiel vullen (alle 30 velden), drie maanden lang elke klant om een review vragen, en op je site één pagina per plaats maken waar je werkt. Voor veel ondernemers levert dit binnen 90 dagen zichtbaar meer aanvragen.
