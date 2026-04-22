@@ -43,6 +43,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 10,
 		lat: 51.8830,
 		lng: 5.2904,
+		hasCustomProse: true,
 	},
 	{
 		slug: 'beesd',
@@ -51,6 +52,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 10,
 		lat: 51.8876,
 		lng: 5.1859,
+		hasCustomProse: true,
 	},
 	{
 		slug: 'buren',
@@ -59,6 +61,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 0,
 		lat: 51.9246,
 		lng: 5.3419,
+		hasCustomProse: true,
 	},
 	{
 		slug: 'leerdam',
@@ -67,6 +70,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 25,
 		lat: 51.8942,
 		lng: 5.0932,
+		hasCustomProse: true,
 	},
 
 	// Utrecht
