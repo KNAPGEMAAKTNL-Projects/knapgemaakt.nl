@@ -72,6 +72,15 @@ export const locations: LocationData[] = [
 		lng: 5.0932,
 		hasCustomProse: true,
 	},
+	{
+		slug: 'zaltbommel',
+		name: 'Zaltbommel',
+		region: 'Rivierenland',
+		travelMinutes: 15,
+		lat: 51.8115,
+		lng: 5.2426,
+		hasCustomProse: true,
+	},
 
 	// Utrecht
 	{
@@ -129,6 +138,33 @@ export const locations: LocationData[] = [
 		lng: 5.3426,
 		hasCustomProse: true,
 	},
+	{
+		slug: 'veenendaal',
+		name: 'Veenendaal',
+		region: 'Utrecht',
+		travelMinutes: 35,
+		lat: 52.0265,
+		lng: 5.5569,
+		hasCustomProse: true,
+	},
+	{
+		slug: 'zeist',
+		name: 'Zeist',
+		region: 'Utrecht',
+		travelMinutes: 35,
+		lat: 52.0885,
+		lng: 5.2325,
+		hasCustomProse: true,
+	},
+	{
+		slug: 'amersfoort',
+		name: 'Amersfoort',
+		region: 'Utrecht',
+		travelMinutes: 45,
+		lat: 52.1561,
+		lng: 5.3878,
+		hasCustomProse: true,
+	},
 
 	// Noord-Brabant
 	{
@@ -170,6 +206,24 @@ export const locations: LocationData[] = [
 		lng: 5.8372,
 		hasCustomProse: true,
 		showcase: true,
+	},
+	{
+		slug: 'ede',
+		name: 'Ede',
+		region: 'Gelderland',
+		travelMinutes: 40,
+		lat: 52.0355,
+		lng: 5.6649,
+		hasCustomProse: true,
+	},
+	{
+		slug: 'arnhem',
+		name: 'Arnhem',
+		region: 'Gelderland',
+		travelMinutes: 50,
+		lat: 51.9851,
+		lng: 5.8987,
+		hasCustomProse: true,
 	},
 
 	// Zuid-Holland
