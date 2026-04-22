@@ -1,0 +1,70 @@
+---
+import FadeIn from "../FadeIn.astro";
+
+interface Props {
+	cityName: string;
+}
+
+const { cityName } = Astro.props;
+
+const features = [
+	{
+		title: "Maatwerk website",
+		body: "Helemaal op maat gebouwd, geen WordPress of template. Laadt onder de seconde, werkt even goed op een oude telefoon als op een nieuwe laptop. Geen plugins, geen beheersysteem waar je een cursus voor nodig hebt.",
+	},
+	{
+		title: "Google Bedrijfsprofiel",
+		body: "Opgezet en onderhouden, met de juiste categorieën, foto's, Q&A en posts. Voor lokale zoekopdrachten is dit meestal belangrijker dan je website zelf.",
+	},
+	{
+		title: "Lead-opvolging naar je telefoon",
+		body: "Elke aanvraag komt als WhatsApp of SMS op je toestel. Binnen 5 minuten terugbellen converteert tot 10× beter dan een dag later. Dus maak ik dat 5-minuten-venster zo makkelijk mogelijk voor je.",
+	},
+	{
+		title: "Automatische review-verzoeken",
+		body: "Na een afgeronde klus gaat er automatisch een vriendelijk review-verzoek uit. Op Google, niet op een of ander platform waar niemand kijkt.",
+	},
+	{
+		title: "Lokale SEO-basis",
+		body: "Schema-markup, Google Search Console ingericht en basis-indexering geregeld. Niets geks, gewoon goed ingericht vanaf dag één.",
+	},
+	{
+		title: "Hosting, domein en zakelijk e-mail",
+		body: "Alles via één pakket geregeld, geen losse facturen bij vier verschillende partijen.",
+	},
+	{
+		title: "Kleine aanpassingen binnen 48 uur",
+		body: "Adres veranderd, prijzen bijgewerkt, foto verruild. Mail me, meestal staat het dezelfde werkdag erop.",
+	},
+	{
+		title: "Maandelijks 1-pager prestatierapport",
+		body: "Bezoekers, aanvragen, Google-plek voor je belangrijkste zoekwoorden. Op een A4. Zodat je ziet waar je geld heen gaat.",
+	},
+];
+---
+
+<section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+	<div class="max-w-5xl mx-auto">
+		<FadeIn>
+			<span class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-4 block">Wat je krijgt</span>
+			<h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+				Het pakket voor ondernemers in {cityName}
+			</h2>
+			<p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12">
+				Het pakket heeft acht onderdelen. Een website, maar ook alles eromheen dat een site pas echt nuttig maakt: vindbaarheid, klantcontact, meting en onderhoud. Op maat waar dat waarde toevoegt, standaard waar dat prima is.
+			</p>
+		</FadeIn>
+
+		<div class="grid md:grid-cols-2 gap-6 md:gap-8">
+			{features.map((feature, i) => (
+				<FadeIn delay={100 + i * 50}>
+					<div class="p-6 md:p-8 bg-canvas border border-warm rounded-xl h-full">
+						<span class="text-xs font-mono text-ink/40 mb-2 block">{String(i + 1).padStart(2, "0")}</span>
+						<h3 class="text-xl font-bold mb-3">{feature.title}</h3>
+						<p class="text-ink/70 leading-relaxed">{feature.body}</p>
+					</div>
+				</FadeIn>
+			))}
+		</div>
+	</div>
+</section>

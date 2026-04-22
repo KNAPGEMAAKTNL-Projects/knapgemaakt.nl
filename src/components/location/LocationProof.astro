@@ -1,0 +1,19 @@
+---
+import FadeIn from "../FadeIn.astro";
+
+interface Props {
+	proof: string;
+}
+
+const { proof } = Astro.props;
+---
+
+<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas">
+	<div class="max-w-3xl mx-auto">
+		<FadeIn>
+			<p class="text-lg md:text-xl text-ink leading-relaxed">
+				{proof}
+			</p>
+		</FadeIn>
+	</div>
+</section>

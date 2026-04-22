@@ -1,0 +1,37 @@
+---
+import FadeIn from "../FadeIn.astro";
+import type { LocationData } from "../../data/locations";
+
+interface Props {
+	nearby: LocationData[];
+	cityName: string;
+}
+
+const { nearby, cityName } = Astro.props;
+---
+
+<section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-canvas-alt">
+	<div class="max-w-3xl mx-auto">
+		<FadeIn>
+			<span class="text-xs font-bold uppercase tracking-widest text-ink-secondary/60 mb-4 block">Werkgebied</span>
+			<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+				Ook actief rond {cityName}
+			</h2>
+			<p class="text-lg text-ink-secondary leading-relaxed mb-6">
+				Vanuit Buren werk ik voor ondernemers in de hele regio. Als je buiten {cityName} zit, of iemand anders in de buurt ook met een website rondloopt, dit zijn de plekken waar ik ook geregeld aan de slag ga. Het verschil met een bureau uit de Randstad: ik zit letterlijk om de hoek en werk alleen, zonder tussenpersonen.
+			</p>
+			<ul class="flex flex-wrap gap-3">
+				{nearby.map((loc) => (
+					<li>
+						<a
+							href={`/webdesign-${loc.slug}/`}
+							class="inline-block border-2 border-warm px-4 py-2 rounded-lg font-bold tracking-tight text-ink hover:border-accent transition-colors"
+						>
+							{loc.name}
+						</a>
+					</li>
+				))}
+			</ul>
+		</FadeIn>
+	</div>
+</section>

@@ -216,7 +216,7 @@ import Footer from "../components/Footer.astro";
                             class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
                         >
                             <option value="" disabled selected>Maak een keuze...</option>
-                            <option value="April-actie">Ik wil meedoen aan de april-actie (gratis plek)</option>
+                            <option value="Mei-actie">Ik wil meedoen aan de mei-actie (gratis plek)</option>
                             <option value="Nieuwe website">Ik wil een nieuwe website</option>
                             <option value="Iets anders">Iets anders</option>
                         </select>
@@ -502,8 +502,8 @@ import Footer from "../components/Footer.astro";
     if (onderwerp) {
         const specSelect = document.getElementById("specification") as HTMLSelectElement;
         const optionMap: Record<string, string> = {
-            "april":          "April-actie",
-            "gratis":         "April-actie",
+            "mei":            "Mei-actie",
+            "gratis":         "Mei-actie",
             "webdesign":      "Nieuwe website",
             "nieuwe-website": "Nieuwe website",
             "anders":         "Iets anders",

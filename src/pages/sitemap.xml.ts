@@ -1,5 +1,5 @@
 import { getAllProjects } from "../data/projects";
-import { getAllCities } from "../data/cities";
+import { getAllLocations } from "../data/locations";
 import { getAllBlogPosts } from "../data/blog";
 
 const site = import.meta.env.SITE ?? "https://knapgemaakt.nl";
@@ -18,6 +18,7 @@ function generateSitemap(): string {
     const staticPages: PageEntry[] = [
         { path: "/", lastmod: today, changefreq: "weekly", priority: "1.0" },
         { path: "/webdesign/", lastmod: today, changefreq: "weekly", priority: "0.9" },
+        { path: "/locaties/", lastmod: today, changefreq: "weekly", priority: "0.8" },
         { path: "/werk/", lastmod: today, changefreq: "weekly", priority: "0.8" },
         { path: "/website-voor-hoveniers/", lastmod: today, changefreq: "monthly", priority: "0.8" },
         { path: "/blog/", lastmod: today, changefreq: "weekly", priority: "0.8" },
@@ -38,8 +39,8 @@ function generateSitemap(): string {
     }));
 
     // Dynamically generate city pages from data
-    const cityPages: PageEntry[] = getAllCities().map((city) => ({
-        path: `/webdesign-${city.slug}/`,
+    const cityPages: PageEntry[] = getAllLocations().map((location) => ({
+        path: `/webdesign-${location.slug}/`,
         lastmod: today,
         changefreq: "weekly" as const,
         priority: "0.8",

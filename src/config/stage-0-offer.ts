@@ -2,7 +2,7 @@ export const stage0Offer = {
   enabled: true,
   month: "mei",
   year: 2026,
-  spotsRemaining: 2,
+  spotsRemaining: 4,
   ctaUrl: "/aanvragen/",
   detailsUrl: "/webdesign/",
 } as const;
