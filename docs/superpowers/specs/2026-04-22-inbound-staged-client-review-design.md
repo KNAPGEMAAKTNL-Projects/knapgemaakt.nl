@@ -416,11 +416,11 @@ you want to walk through anything live, WhatsApp me for a quick
 - This is the **final included** revision round
 - Deliver revisions within 2 business days
 - After Round 2 revisions → send T5 sign-off sheet
-- If client wants Round 3:
-  - Option A: paid additional round at €150 flat / €95 hourly *(pricing defaults — confirm with Yannick before adding to SOW)*
-  - Option B: sign off now + **residual to-do list** — minor fixes Yannick commits to handling in the first week post-launch, documented on the sign-off sheet. Distinct from warranty work: residual list is courtesy close-out, warranty covers reproducible bugs. Clarify this in the email if it comes up.
+- **No paid Round 3** — KNAP GEMAAKT. does not charge for additional revisions. The 2-round cap exists as *structural discipline* (client expectation, sign-off timing, close-out clarity), not as a billing gate.
+- If client surfaces more items after Round 2: default path is **residual to-do list** on the sign-off sheet — minor non-bug fixes Yannick commits to handling in the first week post-launch. Courtesy close-out, distinct from warranty work (warranty = reproducible bugs only).
+- For substantial change requests after Round 2 (new sections, fundamentally different direction, new pages): still treated as scope change, written change order required. This is unchanged from the research default — scope changes remain gated even though in-direction revisions are free.
 - Countdown script (with Round 2 delivery):
-  > "These fixes are in. Per your package this is the last included revision round. If there's more to do, we have two options: (1) add a paid round to polish further before launch, or (2) sign off now and I handle any minor non-bug items in the first week after launch as a residual list. Most clients pick option 2. Your call."
+  > "These fixes are in. Per your package this is the last formal revision round. If there's still polish you want, I'll put it on a residual list and handle it in the first week after launch. That way we don't delay your go-live. Anything bigger that would change scope — let's talk separately."
 
 ---
 
@@ -481,7 +481,7 @@ If anything on the sheet looks wrong, reply first and I'll fix.
 All touchpoint mechanics collapse without these in the signed proposal. The playbook file includes them as ready-to-paste text.
 
 **Clause 1 — Revisions included**
-> *Included: 2 consolidated revision rounds during the design-and-build phase. A "revision round" is a single consolidated set of written feedback submitted via the agreed feedback channel (Pastel). Piecemeal feedback across multiple messages counts as one round. Additional revision rounds: €150 flat per round, or €95 per hour.*
+> *Included: 2 consolidated revision rounds during the design-and-build phase. A "revision round" is a single consolidated set of written feedback submitted via the agreed feedback channel (Pastel). Piecemeal feedback across multiple messages counts as one round. Minor polish items raised after Round 2 are collected on a residual to-do list and handled in the first week post-launch at no additional cost. Substantial changes that alter scope (new sections, new pages, fundamentally different direction) require a written change order before work continues — see Clause 3.*
 
 **Clause 2 — Approval gates (not counted as revisions)**
 > *Included in addition to the two revision rounds: one design direction approval and one copy approval. Each approval allows one direction-swap cycle at no additional cost. Fundamentally different direction or rewrite constitutes a scope change.*
@@ -577,7 +577,7 @@ Plus thin hook prompts inserted into existing sessions:
 
 ## Open questions deferred
 
-- **Pricing numbers** (€150 flat per additional round, €95/hour, €150 residual list, 7-day payment term) — these are sensible defaults I invented based on research (€100–€500 per round range, Kim Hobson's €200/hr argument tempered for Dutch SMB market). **Yannick to confirm before these go into any SOW template.**
+- **Payment term** (7 days post-sign-off) — default; confirm matches what you put on invoices today
 - **PandaDoc automation** (template auto-fill via API) — future spec once manual volume justifies it
 - **Dutch translations** of all English templates — Yannick owns this, not Claude
 - **Outbound cold-pitch workflow** — separate follow-up spec, will reuse T1 artifact pattern
