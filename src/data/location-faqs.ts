@@ -1,4 +1,5 @@
 import type { Region } from './location-regions';
+import { stage0Offer } from '../config/stage-0-offer';
 
 export type GlobalFAQId = 'pricing' | 'duration' | 'distance' | 'guarantee';
 
@@ -13,7 +14,7 @@ export const globalFAQs: TemplatedFAQ[] = [
 		id: 'pricing',
 		question: 'Wat kost een website bij jou?',
 		answer:
-			'Tot eind mei nog niks. Ik maak momenteel 2 websites gratis voor ondernemers, in ruil voor een case study na 90 dagen. Vanaf juni start ik met betaald werk: €497 eenmalig plus €47 per maand. Daar zit alles in: ontwerp, bouw, hosting, Google-vindbaarheid en lead-opvolging.',
+			`Tot eind ${stage0Offer.month} nog niks. Ik maak momenteel ${stage0Offer.spotsRemaining} websites gratis voor ondernemers, in ruil voor een case study na 90 dagen. Vanaf juni start ik met betaald werk: €497 eenmalig plus €47 per maand. Daar zit alles in: ontwerp, bouw, hosting, Google-vindbaarheid en lead-opvolging.`,
 	},
 	{
 		id: 'duration',

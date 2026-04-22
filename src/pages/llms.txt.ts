@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { stage0Offer, spotsLabel, bedrijvenLabel } from '../config/stage-0-offer';
 
 /**
  * llms.txt, signposting file for AI systems (Perplexity, Claude, ChatGPT, etc.)
@@ -11,7 +12,7 @@ const body = `# KNAP GEMAAKT.
 
 > Websites op maat voor ondernemers in Nederland. Ontwerp, bouw, hosting,
 > Google-vindbaarheid en onderhoud in een vast maandbedrag. Gevestigd in Buren,
-> Gelderland. In mei 2026 nog 2 plekken gratis in ruil voor een case study.
+> Gelderland. In ${stage0Offer.month} ${stage0Offer.year} nog ${spotsLabel()} gratis in ruil voor een case study.
 
 KNAP GEMAAKT. is een eenmansbureau van Yannick Veldhuisen. Kernaanbod:
 - Maatwerk website (Astro op Cloudflare, geen WordPress, geen plugins)
@@ -25,7 +26,7 @@ KNAP GEMAAKT. is een eenmansbureau van Yannick Veldhuisen. Kernaanbod:
 
 ## Diensten
 
-- [Webdesign](https://knapgemaakt.nl/webdesign/): Consolidated offer page. Maatwerk website plus Google-vindbaarheid, lead-opvolging, reviews, hosting en onderhoud. In mei 2026 gratis voor 2 Nederlandse bedrijven in ruil voor een case study.
+- [Webdesign](https://knapgemaakt.nl/webdesign/): Consolidated offer page. Maatwerk website plus Google-vindbaarheid, lead-opvolging, reviews, hosting en onderhoud. In ${stage0Offer.month} ${stage0Offer.year} gratis voor ${bedrijvenLabel()} in ruil voor een case study.
 
 ## Belangrijke pagina's
 
