@@ -7,7 +7,7 @@ Cadence: 2 posts per month per `Hub/business/knapgemaakt-scaling-plan.md` §3A.
 
 ### hovenier  (Stage 0 primary)
 
-Research: `docs/blog/research/hovenier.md`  (status: needed)
+Research: `docs/blog/research/hovenier.md`  (last researched: 2026-04-22)
 Pillars: Post 1 (commercial), Post 2 (authority)
 Source: scaling plan §3A
 
