@@ -5,5 +5,5 @@ customFAQs:
   - question: "Heb je ervaring met ondernemers in Culemborg?"
     answer: "Ja, ik bouwde de website voor FitCity Culemborg. Sindsdien melden nieuwe leden zich rechtstreeks via de site aan, waar ze daarvoor nog moesten bellen of langskomen. Voor andere ondernemers in de stad geldt hetzelfde aanbod: maatwerk, persoonlijk contact en een site die is gebouwd rond waar jouw klanten in de praktijk op vastlopen."
   - question: "Kun je langskomen voor een kennismaking?"
-    answer: "Zeker. Vanuit Buren rijd ik in een kwartier naar Culemborg. We kunnen afspreken bij jou op kantoor, in een café in de stad of bij mij. Dat ligt helemaal aan wat jij handig vindt en wat past bij wat je wilt bespreken. Voor een eerste kennismaking kies ik zelf meestal voor bij jou op locatie, omdat ik dan ook meteen zie hoe je bedrijf werkt."
+    answer: "Zeker. Vanuit Buren rijd ik in een kwartier naar Culemborg. We kunnen afspreken bij jou op kantoor of in een café in de stad, wat jij handig vindt en past bij wat je wilt bespreken. Voor een eerste kennismaking kies ik zelf meestal voor bij jou op locatie, omdat ik dan ook meteen zie hoe je bedrijf werkt."
 ---
