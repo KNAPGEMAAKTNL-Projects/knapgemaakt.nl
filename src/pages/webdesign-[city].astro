@@ -1,130 +1,119 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import OfferLocalSEOSection from "../components/OfferLocalSEOSection.astro";
 import Footer from "../components/Footer.astro";
-import FadeIn from "../components/FadeIn.astro";
-import { getCityBySlug, getAllCities } from "../data/cities";
 import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
+import ServiceSchema from "../components/seo/ServiceSchema.astro";
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema.astro";
 import FAQSchema from "../components/seo/FAQSchema.astro";
+import LocationHero from "../components/location/LocationHero.astro";
+import LocationProof from "../components/location/LocationProof.astro";
+import LocationOffer from "../components/location/LocationOffer.astro";
+import LocationCase from "../components/location/LocationCase.astro";
+import LocationNearby from "../components/location/LocationNearby.astro";
+import LocationFAQ from "../components/location/LocationFAQ.astro";
+import Stage0CTABlock from "../components/cta/Stage0CTABlock.astro";
+
+import { getAllLocations, getNearbyLocations, type LocationData } from "../data/locations";
+import { getRegion } from "../data/location-regions";
+import { globalFAQs, renderFAQ } from "../data/location-faqs";
+import { getEntry } from "astro:content";
 
 export const prerender = true;
 
-export function getStaticPaths() {
-    // Get available city images at build time
-    const cityImages = import.meta.glob("/public/cities/*.webp");
-    const availableCityImages = new Set(
-        Object.keys(cityImages).map((path) =>
-            path.replace("/public/cities/", "").replace(".webp", ""),
-        ),
-    );
+export async function getStaticPaths() {
+	const cityImages = import.meta.glob("/public/cities/*.webp");
+	const availableCityImages = new Set(
+		Object.keys(cityImages).map((path) =>
+			path.replace("/public/cities/", "").replace(".webp", ""),
+		),
+	);
 
-    // Get all cities from our data file
-    const allCities = getAllCities();
+	const locations = getAllLocations();
 
-    return allCities.map((cityData) => ({
-        params: { city: cityData.slug },
-        props: {
-            cityData,
-            hasCityImage: availableCityImages.has(cityData.slug),
-        },
-    }));
+	return locations.map((location) => ({
+		params: { city: location.slug },
+		props: {
+			location,
+			hasCityImage: availableCityImages.has(location.slug),
+		},
+	}));
 }
 
-const { cityData, hasCityImage } = Astro.props;
-const city = cityData.name;
+interface Props {
+	location: LocationData;
+	hasCityImage: boolean;
+}
 
-const cityImageFilename = `${cityData.slug}.webp`;
-const mapImage = hasCityImage
-    ? `/cities/${cityImageFilename}`
-    : "/city_map.webp";
+const { location, hasCityImage } = Astro.props;
+const regionData = getRegion(location.region);
 
-// SEO-optimized meta description - offer-focused with local anchor
-const metaDescription = `Website laten maken in ${city}? Ik bouw websites voor ondernemers. Persoonlijk contact, eerlijke prijzen. KNAP GEMAAKT. uit Buren, ${cityData.region}.`;
+let customProse: {
+	heroSubheadline?: string;
+	localProof?: string;
+	customFAQs?: Array<{ question: string; answer: string }>;
+} = {};
 
-// SEO-optimized title - keyword-first for "website laten maken [city]"
-const pageTitle = `Website Laten Maken ${city} | KNAP GEMAAKT.`;
+if (location.hasCustomProse) {
+	const entry = await getEntry("locations", location.slug);
+	if (entry) {
+		customProse = entry.data;
+	}
+}
 
-// Breadcrumb data for this page
+const subheadline =
+	customProse.heroSubheadline ??
+	`Ik bouw websites voor ondernemers in ${location.name} en ${location.region}. Vanuit Buren, ${location.travelMinutes} minuten rijden.`;
+
+const proof =
+	customProse.localProof ??
+	`${regionData.introLine} Vanuit Buren ben ik in ${location.travelMinutes} minuten bij je.`;
+
+const mapImage = hasCityImage ? `/cities/${location.slug}.webp` : "/city_map.webp";
+
+const tokens = {
+	city: location.name,
+	travelMinutes: location.travelMinutes,
+	region: location.region,
+};
+const baseFAQs = globalFAQs.map((faq) => renderFAQ(faq, tokens));
+const faqs = [...baseFAQs, ...(customProse.customFAQs ?? [])];
+
+const nearby = getNearbyLocations(location.slug, 5);
+
+const metaDescription = `Website laten maken in ${location.name}? Ik bouw websites voor ondernemers in de regio. Vanuit Buren, ${location.travelMinutes} minuten rijden. KNAP GEMAAKT.`;
+const pageTitle = `Webdesign ${location.name} | KNAP GEMAAKT.`;
+
+const pageUrl = `https://knapgemaakt.nl/webdesign-${location.slug}/`;
 const breadcrumbs = [
 	{ name: "Home", url: "https://knapgemaakt.nl/" },
-	{ name: `Website Laten Maken ${city}`, url: `https://knapgemaakt.nl/webdesign-${cityData.slug}/` }
+	{ name: "Locaties", url: "https://knapgemaakt.nl/locaties/" },
+	{ name: `Webdesign ${location.name}`, url: pageUrl },
 ];
 ---
 
-<Layout
-	title={pageTitle}
-	description={metaDescription}
->
-	<LocalBusinessSchema />
+<Layout title={pageTitle} description={metaDescription}>
+	<LocalBusinessSchema areaServed={[location.name]} />
+	<ServiceSchema
+		name={`Webdesign voor ondernemers in ${location.name}`}
+		description={`Maatwerk websites voor ondernemers in ${location.name} en omgeving. Vanuit Buren, ${location.travelMinutes} minuten rijden.`}
+		serviceType="WebDesign"
+		url={pageUrl}
+		areaServed={[location.name]}
+	/>
 	<BreadcrumbSchema items={breadcrumbs} />
-	{cityData.faqs && <FAQSchema faqs={cityData.faqs} />}
+	<FAQSchema faqs={faqs} />
 	<main>
-        <!-- Hero Section - Offer-focused with local anchor -->
-        <section class="flex items-start bg-canvas relative overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
-            <div class="max-w-6xl xl:max-w-7xl mx-auto px-6 md:px-12 lg:px-16 w-full">
-                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                    <!-- Text Content -->
-                    <div class="space-y-6">
-                        <div class="text-xs font-mono uppercase tracking-[0.2em] text-ink-secondary">
-                            [ Webdesign in {cityData.region} ]
-                        </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-snug">
-                            Website Laten<br />
-                            Maken in <span class="text-accent">{city}.</span>
-                        </h1>
-                        <p class="text-lg md:text-xl text-ink-secondary">
-                            {cityData.heroSubheadline}
-                        </p>
-
-                        <!-- Trust elements -->
-                        <div class="flex flex-wrap items-center gap-4 text-sm text-ink-secondary">
-                            <span>Persoonlijk contact</span>
-                            <span>•</span>
-                            <span>Vanuit Buren, {cityData.region}</span>
-                        </div>
-
-                        <a
-                            href="/contact/"
-                            class="w-full sm:w-auto bg-ink text-canvas rounded-lg px-8 py-5 font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
-                        >
-                            Neem contact op
-                            <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-                        </a>
-                    </div>
-
-                    <!-- Map Image -->
-                    <div class="relative">
-                        <div class="aspect-square md:aspect-[4/3] relative overflow-hidden group rounded-xl">
-                            <img
-                                src={mapImage}
-                                alt={`Website laten maken in ${city} - KNAP GEMAAKT. actief in ${cityData.region}`}
-                                width={1024}
-                                height={768}
-                                loading="eager"
-                                fetchpriority="high"
-                                decoding="async"
-                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-center">
-                                <div class="font-mono uppercase tracking-[0.2em] text-accent text-xs mb-1">
-                                    Actief in
-                                </div>
-                                <div class="font-bold uppercase tracking-tight text-canvas" style="font-size: clamp(1.25rem, 5vw, 2.5rem);">
-                                    {city}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Offer-focused Local SEO Content Section -->
-        <OfferLocalSEOSection city={cityData} />
-
-        <!-- Footer -->
-        <Footer />
-    </main>
+		<LocationHero location={location} subheadline={subheadline} mapImage={mapImage} />
+		<LocationProof proof={proof} />
+		<LocationOffer cityName={location.name} />
+		<LocationCase
+			caseSlug={location.caseSlug}
+			regionCommonTraits={regionData.commonTraits}
+			cityName={location.name}
+		/>
+		<LocationNearby nearby={nearby} cityName={location.name} />
+		<LocationFAQ faqs={faqs} />
+		<Stage0CTABlock />
+		<Footer hideCTA={true} />
+	</main>
 </Layout>
