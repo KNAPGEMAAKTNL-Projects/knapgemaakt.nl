@@ -16,7 +16,7 @@ Source: scaling plan §3A
 | 1 | Wat kost een hovenier-website in 2026? | hovenier-website-kosten-2026 | pillar | queued | - | commercial | - | Month 1 Post 1 |
 | 2 | Hoveniers die boven in Google staan: wat doen ze anders? | hoveniers-google-top | pillar | queued | - | authority | - | Month 1 Post 2 |
 | 3 | Hovenier-website met of zonder WordPress? | hovenier-website-wordpress | cluster | queued | - | comparison | - | Month 2 Post 1 |
-| 4 | Google Bedrijfsprofiel voor hoveniers: 7 meest gemiste velden | google-bedrijfsprofiel-hoveniers | cluster | queued | - | tactical | - | Month 2 Post 2 |
+| 4 | Google Bedrijfsprofiel voor hoveniers: 7 meest gemiste velden | google-bedrijfsprofiel-hoveniers | cluster | published | 2026-04-22 | tactical | - | Month 2 Post 2 |
 | 5 | Website voor hovenier: 500 of 5000, het eerlijke verschil | hovenier-website-500-of-5000 | cluster | queued | - | comparison | - | Month 3 Post 1 |
 | 6 | Lokale SEO voor hoveniers | lokale-seo-hoveniers | cluster | queued | - | tactical | - | Month 3 Post 2 |
 | 7 | AVG-proof contactformulier voor hoveniers | avg-contactformulier-hoveniers | cluster | queued | - | tactical | - | Month 4 Post 1 |
