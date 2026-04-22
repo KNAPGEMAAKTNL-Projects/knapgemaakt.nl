@@ -33,6 +33,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 15,
 		lat: 51.8844,
 		lng: 5.4295,
+		hasCustomProse: true,
 		showcase: true,
 	},
 	{
@@ -76,6 +77,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 30,
 		lat: 52.0907,
 		lng: 5.1214,
+		hasCustomProse: true,
 		showcase: true,
 	},
 	{
@@ -127,6 +129,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 35,
 		lat: 51.6978,
 		lng: 5.3037,
+		hasCustomProse: true,
 		showcase: true,
 	},
 	{
@@ -154,6 +157,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 45,
 		lat: 51.8126,
 		lng: 5.8372,
+		hasCustomProse: true,
 		showcase: true,
 	},
 
@@ -165,6 +169,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 30,
 		lat: 51.8357,
 		lng: 4.9717,
+		hasCustomProse: true,
 		showcase: true,
 	},
 ];
