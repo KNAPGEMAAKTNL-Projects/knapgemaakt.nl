@@ -148,6 +148,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 40,
 		lat: 51.7155,
 		lng: 5.3614,
+		hasCustomProse: true,
 	},
 	{
 		slug: 'oss',
@@ -156,6 +157,7 @@ export const locations: LocationData[] = [
 		travelMinutes: 30,
 		lat: 51.7650,
 		lng: 5.5188,
+		hasCustomProse: true,
 	},
 
 	// Gelderland (non-Rivierenland)
