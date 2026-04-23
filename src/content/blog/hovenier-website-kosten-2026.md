@@ -35,8 +35,6 @@ Goede vraag. Minder goed antwoord: het hangt ervan af. Een eerlijke range voor 2
 | Standaard | €2.500 tot €4.000 | 6 tot 10 pagina's, portfolio-module, AVG-formulier, lokale SEO |
 | Uitgebreid | €4.000 tot €6.000 | 10 of meer pagina's, locatiepagina's per stad, offerte-systeem, nazorg |
 
-Tot eind mei 2026 zijn er nog 4 plekken voor wie een volledige website wil zonder bouwkosten, in ruil voor een case study na 90 dagen. Dat zit in de uitgebreide range, inclusief lokale SEO en portfolio-module. Informatie en aanmelden via [/webdesign/](/webdesign/).
-
 De meeste ZZP-hoveniers landen in de standaard-variant. Dat is geen verrassing: voor €2.500 tot €4.000 staat er gewoon iets dat aanvragen trekt in je eigen regio. Een portfolio met 8 projecten, een formulier dat ook op mobiel prettig werkt en een basis-SEO-structuur die Google begrijpt.
 
 De eenpager (€500 tot €900) is eigenlijk alleen iets voor wie nog niet zeker weet of de onderneming doorzet. Weinig ruimte, weinig inhoud, weinig zoekverkeer. Beter dan niets als tijdelijk vertrekpunt, maar als je over zes maanden toch wilt groeien, bouw je hem dan toch opnieuw.
@@ -114,6 +112,8 @@ Werkt gewoon.
 Twee kanttekeningen: ten eerste duurt het 3 tot 6 maanden voordat een nieuwe site zijn maximale organische zichtbaarheid bereikt. In die periode doet je Google Bedrijfsprofiel toch het meeste werk — dat levert direct. Ten tweede hangt alles af van hoe goed de lokale SEO is opgezet. Een site zonder plaatsnamen in de teksten, zonder reviews en zonder een compleet profiel haalt die aantallen niet. Met die drie dingen erbij is het verhaal heel anders.
 
 Een gemiddelde ZZP-hovenier maakt 14 projecten per jaar (Knab 2026). Als je na elk project één review vraagt via WhatsApp, heb je binnen een jaar een stevige basis staan zonder extra marketingbudget.
+
+Tot eind mei zijn er nog 4 plekken voor een complete website zonder bouwkosten, in ruil voor een case study na 90 dagen. [Plan een kennismaking](/aanvragen/).
 
 In de opbouwperiode is het zinvol om twee dingen parallel te doen: je Google Bedrijfsprofiel op orde brengen en foto's verzamelen voor het portfolio. Begin met fotograferen voor je site zelfs al live is, zodat je bij lancering direct 10 projecten klaar hebt.
 
