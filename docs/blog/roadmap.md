@@ -13,7 +13,7 @@ Source: scaling plan §3A
 
 | # | Title | Slug | Tier | Status | Published | Type | Research | Notes |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Wat kost een hovenier-website in 2026? | hovenier-website-kosten-2026 | pillar | queued | - | commercial | - | Month 1 Post 1 |
+| 1 | Wat kost een hovenier-website in 2026? | hovenier-website-kosten-2026 | pillar | published | 2026-04-23 | commercial | - | Month 1 Post 1 |
 | 2 | Hoveniers die boven in Google staan: wat doen ze anders? | hoveniers-google-top | pillar | queued | - | authority | - | Month 1 Post 2 |
 | 3 | Hovenier-website met of zonder WordPress? | hovenier-website-wordpress | cluster | queued | - | comparison | - | Month 2 Post 1 |
 | 4 | Google Bedrijfsprofiel voor hoveniers: 7 meest gemiste velden | google-bedrijfsprofiel-hoveniers | cluster | published | 2026-04-22 | tactical | - | Month 2 Post 2 |
