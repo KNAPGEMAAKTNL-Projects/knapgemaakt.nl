@@ -1,6 +1,6 @@
 ---
 title: "Wat kost een hovenier-website in 2026?"
-description: "Eerlijke prijzen voor een hovenier-website in 2026: van €500 tot €6.000. Concrete scope per range, verborgen kosten en het juiste lanceermoment."
+description: "Wat kost een hovenier-website in 2026? Van €500 tot €6.000. Concrete scope per range, verborgen kosten en het juiste lanceermoment."
 publishDate: 2026-04-23
 author: "Yannick Veldhuisen"
 tags: ["Hovenier", "Website kosten", "Webdesign"]
@@ -34,6 +34,8 @@ Goede vraag. Minder goed antwoord: het hangt ervan af. Een eerlijke range voor 2
 | Compact | €1.500 tot €2.500 | 4 tot 5 pagina's, basisgalerij, contactformulier |
 | Standaard | €2.500 tot €4.000 | 6 tot 10 pagina's, portfolio-module, AVG-formulier, lokale SEO |
 | Uitgebreid | €4.000 tot €6.000 | 10 of meer pagina's, locatiepagina's per stad, offerte-systeem, nazorg |
+
+Tot eind mei 2026 zijn er nog 4 plekken voor wie een volledige website wil zonder bouwkosten, in ruil voor een case study na 90 dagen. Dat zit in de uitgebreide range, inclusief lokale SEO en portfolio-module. Informatie en aanmelden via [/webdesign/](/webdesign/).
 
 De meeste ZZP-hoveniers landen in de standaard-variant. Dat is geen verrassing: voor €2.500 tot €4.000 staat er gewoon iets dat aanvragen trekt in je eigen regio. Een portfolio met 8 projecten, een formulier dat ook op mobiel prettig werkt en een basis-SEO-structuur die Google begrijpt.
 

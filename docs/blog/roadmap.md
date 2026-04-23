@@ -1,7 +1,13 @@
 # Blog Roadmap + Ledger
 
-Last updated: 2026-04-19
+Last updated: 2026-04-23
 Cadence: 2 posts per month per `Hub/business/knapgemaakt-scaling-plan.md` §3A.
+
+## Research staleness rule
+
+Before writing any queued post: check if the cluster research file is older than 30 days.
+If yes → run `/blog-research` for that cluster first, or paste primary keyword into Claude.ai and collect top-3 AI answers before drafting.
+Mark stale clusters with ⚠️ below. The ChatGPT/Claude.ai output IS the GEO/AIO training signal — analyse which sources it cites and what gaps exist vs. those pages.
 
 ## Active clusters
 
@@ -28,7 +34,7 @@ Source: scaling plan §3A
 
 ### wero  (existing)
 
-Research: `docs/blog/research/wero.md`  (status: backfill needed)
+Research: `docs/blog/research/wero.md`  (status: backfill needed) ⚠️ research date unknown — run fresh SERP check before next wero post
 Pillar: `ideal-wordt-wero`
 
 | # | Title | Slug | Tier | Status | Published | Type | Research | Notes |
@@ -43,7 +49,7 @@ Pillar: `ideal-wordt-wero`
 
 ### kosten  (existing)
 
-Research: `docs/blog/research/kosten.md`  (status: backfill needed)
+Research: `docs/blog/research/kosten.md`  (status: backfill needed) ⚠️ research date unknown — run fresh SERP check before next kosten post
 Pillar: `website-laten-maken-kosten`
 
 | # | Title | Slug | Tier | Status | Published | Type | Research | Notes |
@@ -53,7 +59,7 @@ Pillar: `website-laten-maken-kosten`
 
 ### zzp  (existing)
 
-Research: `docs/blog/research/zzp.md`  (status: backfill needed)
+Research: `docs/blog/research/zzp.md`  (status: backfill needed) ⚠️ research date unknown — run fresh SERP check before next zzp post
 Pillar: `website-voor-zzp`
 
 | # | Title | Slug | Tier | Status | Published | Type | Research | Notes |
@@ -62,7 +68,7 @@ Pillar: `website-voor-zzp`
 
 ### wordpress-vs  (existing)
 
-Research: `docs/blog/research/wordpress-vs.md`  (status: backfill needed)
+Research: `docs/blog/research/wordpress-vs.md`  (status: backfill needed) ⚠️ research date unknown — run fresh SERP check before next wordpress-vs post
 
 | # | Title | Slug | Tier | Status | Published | Type | Research | Notes |
 |---|---|---|---|---|---|---|---|---|
