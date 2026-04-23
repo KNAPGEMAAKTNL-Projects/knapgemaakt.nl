@@ -24,24 +24,24 @@ faqs:
     answer: "Voor de meeste ZZP-hoveniers niet. Google Ads kost in de tuinsector al snel €1 tot €3 per klik, en een werkende campagne vraagt minimaal €200 tot €400 per maand. Een goede site kost je eenmalig en genereert daarna jarenlang aanvragen. Organisch gaat voor de meeste eenpitters eerder renderen dan betaald."
 ---
 
-Goede vraag. Minder goed antwoord: het hangt ervan af. Een eerlijke range voor 2026: €500 voor een eenpager, €1.500 tot €3.000 voor een gewone bedrijfssite, €3.000 tot €6.000 voor een site met offerte-systeem en meerdere servicegebieden. Denk IKEA-kast: dezelfde functie, heel andere prijskaartjes.
+Goede vraag. Minder goed antwoord: het hangt ervan af. Een globale range voor 2026: €500 voor een site met één pagina, €1.500 tot €3.000 voor een gewone bedrijfssite, €3.000 tot €6.000 voor een site met offerte-systeem en meerdere servicegebieden. Denk IKEA-kast: dezelfde functie, heel andere prijskaartjes.
 
 ## Wat kost een hovenier-website in 2026?
 
 | Type | Prijs | Wat je krijgt |
 |---|---|---|
-| Eenpager | €500 tot €900 | Één pagina: diensten, regio en contactknop |
-| Compact | €1.500 tot €2.500 | 4 tot 5 pagina's, basisgalerij, contactformulier |
-| Standaard | €2.500 tot €4.000 | 6 tot 10 pagina's, portfolio-module, AVG-formulier, lokale SEO |
+| Enkelpagina-site | €500 tot €900 | Één pagina: diensten, regio en contactknop |
+| Compact | €1.500 tot €2.500 | 4 tot 5 pagina's, fotogalerij, contactformulier |
+| Standaard | €2.500 tot €4.000 | 6 tot 10 pagina's, projectpagina's, AVG-formulier, lokale SEO |
 | Uitgebreid | €4.000 tot €6.000 | 10 of meer pagina's, locatiepagina's per stad, offerte-systeem, nazorg |
 
 De meeste ZZP-hoveniers landen in de standaard-variant. Dat is geen verrassing: voor €2.500 tot €4.000 staat er gewoon iets dat aanvragen trekt in je eigen regio. Een portfolio met 8 projecten, een formulier dat ook op mobiel prettig werkt en een basis-SEO-structuur die Google begrijpt.
 
-De eenpager (€500 tot €900) is eigenlijk alleen iets voor wie nog niet zeker weet of de onderneming doorzet. Weinig ruimte, weinig inhoud, weinig zoekverkeer. Beter dan niets als tijdelijk vertrekpunt, maar als je over zes maanden toch wilt groeien, bouw je hem dan toch opnieuw.
+Een site met één pagina (€500 tot €900) is eigenlijk alleen iets voor wie nog niet zeker weet of de onderneming doorzet. Weinig ruimte, weinig inhoud, weinig zoekverkeer. Beter dan niets als tijdelijk vertrekpunt, maar als je over zes maanden toch wilt groeien, bouw je hem dan toch opnieuw.
 
 De uitgebreide variant (€4.000 tot €6.000) loont als je in meerdere regio's wilt ranken, of apart wilt scoren op boomverzorging of bestrating naast tuinaanleg. Een hovenier die alleen in Ede en omgeving werkt en dat zo wil houden, heeft er weinig aan.
 
-ZZP'er of klein team maakt ook verschil. Een eenpitter heeft geen planning-koppeling nodig. Een hovenier met twee of drie vaste medewerkers profiteert van een offerte-systeem dat doorstaat naar Moneybird of SnelStart — dat is een aparte uitbreiding, eenmalig €500 tot €1.500 bovenop de site. Meer over het ZZP-perspectief staat in [Website voor ZZP'ers](/blog/website-voor-zzp/).
+ZZP'er of klein team maakt ook verschil. Een eenpitter heeft geen planning-koppeling nodig. Een hovenier met twee of drie vaste medewerkers profiteert van een offerte-systeem dat koppelt aan Moneybird of SnelStart. Dat is een aparte uitbreiding, eenmalig €500 tot €1.500 bovenop de site. Meer over het ZZP-perspectief staat in [Website voor ZZP'ers](/blog/website-voor-zzp/).
 
 Ter vergelijking met wat een website in het algemeen kost: [Wat kost een website laten maken in 2026?](/blog/website-laten-maken-kosten/) heeft een uitgebreide uurtarieventabel per type bouwer.
 
@@ -49,12 +49,12 @@ Ter vergelijking met wat een website in het algemeen kost: [Wat kost een website
 |---|---|---|
 | Freelancer | €50 tot €85 per uur | Compact en standaard |
 | Klein bureau | €75 tot €125 per uur | Standaard en uitgebreid |
-| Websitebouwer zelf | €0 plus abonnement | Eenpager en compact |
+| Websitebouwer zelf | €0 plus abonnement | Enkelpagina-site en compact |
 | Groot bureau | €100 tot €175 of meer per uur | Overkill voor de meeste ZZP-hoveniers |
 
 ## Wat zit er écht in die prijs?
 
-De prijsranges zeggen weinig als je niet weet wat er in zit. Een bureau dat €3.500 vraagt en daarvoor 4 pagina's levert is duurder dan een bureau dat voor hetzelfde bedrag 10 pagina's, een portfolio-module en 90 dagen nazorg levert.
+De prijsranges zeggen weinig als je niet weet wat er in zit. Een bureau dat €3.500 vraagt en daarvoor 4 pagina's levert is duurder dan een bureau dat voor hetzelfde bedrag 10 pagina's, projectpagina's en 90 dagen nazorg levert.
 
 | | Compact | Standaard | Uitgebreid |
 |---|---|---|---|
@@ -65,11 +65,11 @@ De prijsranges zeggen weinig als je niet weet wat er in zit. Een bureau dat €3
 | Hosting | Niet inbegrepen | Niet inbegrepen | Soms inbegrepen |
 | Nazorg | Meestal niet | 30 tot 90 dagen | Maandbasis of urenpakket |
 
-Een portfolio-module is meer dan een rij foto's. Het is een verzameling projectpagina's, elk met gemeente, een korte beschrijving en een voor-na-combinatie. Die structuur doet twee dingen: klanten zien concreet wat je maakt, en Google leert dat jij werkt in Zwolle, Deventer en Apeldoorn. Dat is de kern van lokale SEO voor hoveniers.
+Eigen projectpagina's zijn meer dan een rij foto's. Het zijn aparte pagina's per klus, elk met gemeente, een korte beschrijving en een voor-na-combinatie. Die structuur doet twee dingen: klanten zien concreet wat je maakt, en Google leert dat jij werkt in Zwolle, Deventer en Apeldoorn. Dat is de kern van lokale SEO voor hoveniers.
 
 Drie vragen die je bij elke offerte sowieso stelt: wie beheert de hosting na oplevering, ontvang je de inloggegevens voor zowel de backend als het hostingaccount, en is er een overdrachtsgarantie als je later naar een andere bouwer wilt. Een bouwer die hierop aarzelt is een signaal. Je wilt na oplevering volledig eigenaar zijn van je eigen site.
 
-Wat er bij KNAP GEMAAKT. in het pakket zit staat op [/webdesign/](/webdesign/).
+Wat precies in het pakket zit staat op de [webdesign-pagina](/webdesign/).
 
 ## Welke kosten vergeet je er meestal bij?
 
@@ -78,16 +78,16 @@ Een website van €3.000 is geen eenmalige kostenpost. Er zijn doorlopende koste
 | Kostenpost | Eenmalig | Per jaar | Opmerking |
 |---|---|---|---|
 | Domeinnaam (.nl) | €10 tot €20 | €10 tot €20 | Via Antagonist, TransIP of Mijn Domein |
-| Hosting | — | €60 tot €300 | €5 tot €25 per maand; gedeeld is genoeg voor de meeste hoveniers |
-| SSL-certificaat | — | Gratis | Bij goede hosting inbegrepen |
-| Professionele foto's | €0 tot €500 | — | Eigen telefoon op bewolkte dag werkt prima |
-| WordPress-plugins | — | €0 tot €150 | Afhankelijk van gekozen plugins |
-| Onderhoud | — | €180 tot €900 | Als je dat uitbesteedt: €15 tot €75 per maand |
-| Zakelijk e-mailadres | — | €60 tot €145 | Google Workspace: €5 tot €12 per maand |
+| Hosting | - | €60 tot €300 | €5 tot €25 per maand; gedeeld is genoeg voor de meeste hoveniers |
+| SSL-certificaat | - | Gratis | Bij goede hosting inbegrepen |
+| Professionele foto's | €0 tot €500 | - | Eigen telefoon op bewolkte dag werkt prima |
+| WordPress-plugins | - | €0 tot €150 | Afhankelijk van gekozen plugins |
+| Onderhoud | - | €180 tot €900 | Als je dat uitbesteedt: €15 tot €75 per maand |
+| Zakelijk e-mailadres | - | €97 | Google Workspace: €8,10 per maand per e-mailadres |
 
 Realistisch totaal voor het eerste jaar: €150 tot €600 bovenop de bouwprijs. Voor de meeste ZZP-hoveniers zit dat gewoon onder de €300 als je zelf je hosting regelt.
 
-Voor hosting is een Nederlandse provider als Antagonist of TransIP een prima keuze: €5 tot €12 per maand, support in het Nederlands en gratis SSL inbegrepen. Gedeeld hosting is voor de meeste hoveniers ruim voldoende. Pas als je site in het voorjaarsseizoen heel veel tegelijk binnenkrijgt, merk je er iets van — en zelfs dan is een upgrade naar een iets duurder pakket genoeg.
+Voor hosting is een Nederlandse provider als Antagonist of TransIP een prima keuze: €5 tot €12 per maand, support in het Nederlands en gratis SSL inbegrepen. Gedeeld hosting is voor de meeste hoveniers ruim voldoende. Pas als je site in het voorjaarsseizoen heel veel tegelijk binnenkrijgt, merk je er iets van. Een upgrade naar een iets duurder pakket is dan voldoende.
 
 De grootste verrassing voor veel ondernemers: fotografie. Geen bureau, geen professionele fotograaf nodig voor de meeste klussen. Projectfoto's op een bewolkte dag met je telefoon, in landscape-modus, iets verder weg dan je denkt. Dat is gewoon voldoende voor een portfolio dat klanten overtuigt. Voor een exclusief terras of een bijzondere tuin kan een fotograaf voor een halve dag (€200 tot €400) een groot verschil maken, maar voor de meeste klussen is het niet nodig.
 
@@ -109,7 +109,7 @@ Een doorgerekend voorbeeld op basis van de Knab Zzp-cijfers 2026 (onderzoek onde
 
 Werkt gewoon.
 
-Twee kanttekeningen: ten eerste duurt het 3 tot 6 maanden voordat een nieuwe site zijn maximale organische zichtbaarheid bereikt. In die periode doet je Google Bedrijfsprofiel toch het meeste werk — dat levert direct. Ten tweede hangt alles af van hoe goed de lokale SEO is opgezet. Een site zonder plaatsnamen in de teksten, zonder reviews en zonder een compleet profiel haalt die aantallen niet. Met die drie dingen erbij is het verhaal heel anders.
+Twee kanttekeningen: ten eerste duurt het 3 tot 6 maanden voordat een nieuwe site zijn maximale organische zichtbaarheid bereikt. In die periode doet je Google Bedrijfsprofiel toch het meeste werk. Dat levert direct. Ten tweede hangt alles af van hoe goed de lokale SEO is opgezet. Een site zonder plaatsnamen in de teksten, zonder reviews en zonder een compleet profiel haalt die aantallen niet. Met die drie dingen erbij is het verhaal heel anders.
 
 Een gemiddelde ZZP-hovenier maakt 14 projecten per jaar (Knab 2026). Als je na elk project één review vraagt via WhatsApp, heb je binnen een jaar een stevige basis staan zonder extra marketingbudget.
 
@@ -133,7 +133,7 @@ Voor de meeste ZZP-hoveniers is WordPress de pragmatische keuze. Niet omdat het 
 
 Webador is een serieuze optie als je snel iets wilt en het eerste jaar zelf wilt beheren. Je levert lokale SEO-controle in, maar voor een starter die zijn eerste 10 reviews verzamelt, is dat toch niet de bottleneck.
 
-Maatwerk zonder CMS — gebouwd in een statisch framework — is het snelste en goedkoopste in onderhoud op de lange termijn, maar vereist een developer als je iets wilt aanpassen. Goed voor wie niets zelf wil sleutelen en vertrouwen heeft in zijn bouwer. Minder geschikt als je wekelijks een foto wilt toevoegen zonder iemand te bellen.
+Maatwerk zonder CMS, gebouwd in een statisch framework, is het snelste en goedkoopste in onderhoud op de lange termijn, maar vereist een developer als je iets wilt aanpassen. Goed voor wie niets zelf wil sleutelen en vertrouwen heeft in zijn bouwer. Minder geschikt als je wekelijks een foto wilt toevoegen zonder iemand te bellen.
 
 De uitgebreide afweging tussen WordPress en modernere alternatieven staat in [WordPress of een modern alternatief](/blog/wordpress-vs-moderne-alternatieven/).
 
@@ -141,7 +141,7 @@ De uitgebreide afweging tussen WordPress en modernere alternatieven staat in [Wo
 
 Dit is een vraag die bijna niemand stelt, terwijl hij eigenlijk het meeste verschil maakt.
 
-Het tuinseizoen heeft een duidelijk patroon. Tuincentra realiseren bijna 37% van hun jaaromzet in de maanden maart tot mei (Structuurrapport Tuincentra 2024). Hoveniers zien een vergelijkbaar beeld: aanvragen verdubbelen tot verdrievoudigen tussen februari en mei. 46% van alle Google-zoekopdrachten is lokaal gericht (Google, 2024) — voor een hovenier zijn dat bijna allemaal kansen die in die maanden pieken.
+Het tuinseizoen heeft een duidelijk patroon. Tuincentra realiseren bijna 37% van hun jaaromzet in de maanden maart tot mei (Structuurrapport Tuincentra 2024). Hoveniers zien een vergelijkbaar beeld: aanvragen verdubbelen tot verdrievoudigen tussen februari en mei. 46% van alle Google-zoekopdrachten is lokaal gericht (Google, 2024). Voor een hovenier zijn dat bijna allemaal kansen die in die maanden pieken.
 
 Google heeft tijd nodig om een nieuwe site te indexeren en autoriteit te geven: gemiddeld 3 tot 6 maanden. Wie lanceert in half januari, staat in april en mei op stoom. Wie in april lanceert, is pas in de herfst klaar en heeft het voorjaar al gemist.
 
@@ -149,7 +149,7 @@ Een lancering tussen half januari en eind februari is gewoon haalbaar. De bouw v
 
 Sommige hoveniers plannen dit perfect en hebben in mei een volle agenda. Anderen beginnen in april, missen een goed seizoen op een half-geïndexeerde site en halen hun volgende piek pas een jaar later in. Geen ramp, maar zonde.
 
-Voor wie twijfelt of het budget haalbaar is: [het verschil tussen €500 en €5.000](/blog/website-500-of-5000-verschil/) legt per scenario uit wanneer de ene investering meer oplevert dan de andere. En wat er concreet in een pakket zit staat op [/webdesign/](/webdesign/).
+Voor wie twijfelt of het budget haalbaar is: [het verschil tussen €500 en €5.000](/blog/website-500-of-5000-verschil/) legt per scenario uit wanneer de ene investering meer oplevert dan de andere. En wat er concreet in een pakket zit staat op de [webdesign-pagina](/webdesign/).
 
 ## Veelgestelde vragen
 
