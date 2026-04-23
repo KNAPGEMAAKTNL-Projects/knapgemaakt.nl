@@ -9,7 +9,7 @@ image: "/assets/blog/google-bedrijfsprofiel-hoveniers.webp"
 imageAlt: "Hovenier bewerkt Google Bedrijfsprofiel op tablet tussen planten"
 faqs:
   - question: "Hoe lang duurt het voordat ik resultaat zie van mijn Google Bedrijfsprofiel?"
-    answer: "Meestal binnen 8 tot 12 weken. Eerste zichtbaarheidswinst vaak al na 4 weken als je de 7 velden compleet invult en de week erna 2 tot 3 posts plaatst. Sneller gaat niet eerlijk."
+    answer: "Meestal binnen 8 tot 12 weken. Eerste zichtbaarheidswinst vaak al na 4 weken als je de 7 velden compleet invult en de week erna 2 tot 3 posts plaatst. Sneller kunnen we je eerlijk gezegd niet beloven."
   - question: "Mag ik meerdere categorieën kiezen voor mijn hoveniersbedrijf?"
     answer: "Ja. Je kiest één primaire en tot 9 secundaire. Voor hoveniers werkt meestal: Hovenier als primaire, aangevuld met Boomverzorger, Bestratingsbedrijf en Tuinontwerper als je die diensten levert. Kies alleen wat je écht doet."
   - question: "Is een Google Bedrijfsprofiel verplicht voor hoveniers?"
@@ -24,21 +24,21 @@ faqs:
     answer: "Geen verschil inhoudelijk. Google hernoemde Google Mijn Bedrijf in 2021 naar Google Bedrijfsprofiel. Functionaliteit is dezelfde. Als je oude artikelen leest die over Google Mijn Bedrijf gaan, geldt de informatie nog steeds."
 ---
 
-Je Google Bedrijfsprofiel is als hovenier vaak je belangrijkste online kanaal. Zeven velden die de meesten missen: servicegebied per plaats, secundaire categorieën, producten, proactieve Q&A, foto's met geotag, reageren op reviews binnen 2 dagen en openingstijden per feestdag. Duurt 90 minuten. Levert meestal binnen 4 weken extra aanvragen op.
+Je Google Bedrijfsprofiel is als hovenier vaak je belangrijkste online kanaal. Zeven velden die de meesten missen: servicegebied per plaats, secundaire categorieën, producten, proactieve Q&A, foto's met geotag, reageren op reviews binnen 2 dagen en openingstijden per feestdag. Invullen kost 90 minuten en levert binnen 4 weken meetbaar meer aanvragen op.
 
 ## Waarom is je Google Bedrijfsprofiel belangrijker dan je website?
 
-In het eerste half jaar van je bedrijf meestal wel. Het profiel zet je direct in de Google Maps top-3 en de local pack, waar de meeste lokale zoekopdrachten stranden. Je site bouwt autoriteit op over drie tot zes maanden. Beide zijn nodig, maar het profiel levert eerst op. Voor context specifiek voor solo-hoveniers: zie ook [Website voor ZZP'ers](/blog/website-voor-zzp/).
+In het eerste half jaar van je bedrijf: ja, wel. Het profiel zet je direct in de Google Maps top-3 en de local pack, waar de meeste lokale zoekopdrachten terechtkomen. Je site bouwt autoriteit op over drie tot zes maanden. Beide zijn nodig, maar het profiel levert eerst op. Specifiek voor ZZP-hoveniers: zie ook [Website voor ZZP'ers](/blog/website-voor-zzp/).
 
-Kijk even naar de zoekintentie: 46% van alle Google-zoekopdrachten heeft een lokale bedoeling. Combineer dat met Google's 91,94% marktaandeel in Nederland (StatCounter, maart 2024) en je ziet hoe groot het kanaal is. "Hovenier Utrecht" levert niet tien blauwe links, maar een kaart met drie bedrijven die je direct kunt bellen. Staat jouw bedrijf daar niet tussen, dan besta je voor veel zoekers niet.
+Kijk even naar de zoekintentie: 46% van alle Google-zoekopdrachten is lokaal gericht. Combineer dat met Google's 91,94% marktaandeel in Nederland (StatCounter, maart 2024) en je ziet hoe groot het kanaal is. "Hovenier Utrecht" levert niet tien blauwe links, maar een kaart met drie bedrijven die je direct kunt bellen. Staat jouw bedrijf daar niet tussen, dan besta je voor veel zoekers niet.
 
-Veel hoveniers die vakmatig prima zijn maar laag ranken hebben hetzelfde probleem: een half ingevuld profiel. De velden die ertoe doen staan leeg, de categorieën kloppen half, en de laatste post is van een jaar geleden. Dat is fixbaar.
+Veel hoveniers die vakmatig prima zijn maar laag ranken hebben hetzelfde probleem: een half ingevuld profiel. De velden die ertoe doen staan gewoon leeg, de categorieën kloppen maar half, en de laatste post is van een jaar geleden. Dat is op te lossen.
 
 ## Welke 7 velden missen de meeste hoveniers?
 
 Kort overzicht. Niet de voor de hand liggende velden (adres, openingstijden), die staan bij bijna iedereen wel ingevuld. De zeven velden hieronder staan veel vaker leeg of half, en ze maken het verschil tussen ranken en niet-ranken in de local pack.
 
-1. **Servicegebied per plaats**. Niet één stad, maar elke plaats waar je werkt.
+1. **Servicegebied per plaats**. Elke plaats waar je werkt, niet alleen je eigen gemeente.
 2. **Secundaire categorieën**. Naast "Hovenier" ook "Boomverzorger", "Bestratingsbedrijf" en "Tuinontwerper" als dat klopt.
 3. **Producten en diensten**. Tuinaanleg, tuinonderhoud, tuinontwerp en bestrating als vier losse producten, elk met prijsindicatie.
 4. **Q&A proactief ingevuld**. Niet wachten op vragen. Zelf de 10 meest gestelde erin zetten.
@@ -54,7 +54,7 @@ Per veld de tactiek. Specifiek voor hoveniers, met voorbeelden uit de regio.
 
 ### 1. Servicegebied per plaats
 
-Google biedt twee opties: een radius (bijv. "binnen 20 km van ons adres") of een lijst met specifieke plaatsen. Kies de lijst. Zet de 10 tot 20 plaatsen erin waar je daadwerkelijk werkt. Geen algemene "Utrecht en omstreken". Wel: "Utrecht, Houten, Nieuwegein, Zeist, IJsselstein, Vianen, Culemborg, Leerdam, Maarssen en De Meern."
+Google biedt twee opties: een radius (bijv. "binnen 20 km van ons adres") of een lijst met specifieke plaatsen. Kies de lijst. Zet de 10 tot 20 plaatsen erin waar je daadwerkelijk werkt. Dus niet "Utrecht en omstreken". Concreet: "Utrecht, Houten, Nieuwegein, Zeist, IJsselstein, Vianen, Culemborg, Leerdam, Maarssen en De Meern."
 
 Werk je ook op wijk-niveau in een grote stad? Dan gebruik je secundaire posts met de wijk in de titel. Google pikt dat op.
 
@@ -74,7 +74,7 @@ Kies alleen wat je écht doet, anders krijg je leads die niet passen en die irri
 
 ### 3. Producten en diensten
 
-Niet "tuinaanleg" als losse term. Wel: "Tuinaanleg nieuwbouwtuin vanaf €6.000", "Tuinonderhoud tweewekelijks vanaf €55 per bezoek", "Tuinontwerp met 3D-visualisatie €750 vast bedrag". Met een prijsindicatie filter je leads vóór ze contact opnemen. Dat scheelt rondjes.
+Geen kale term "tuinaanleg". Schrijf: "Tuinaanleg nieuwbouwtuin vanaf €6.000", "Tuinonderhoud tweewekelijks vanaf €55 per bezoek", "Tuinontwerp met 3D-visualisatie €750 vast bedrag". Met een prijsindicatie filter je leads voordat ze contact opnemen. Dan hoef je minder gesprekken te voeren die toch op niets uitlopen.
 
 ### 4. Q&A proactief ingevuld
 
@@ -82,15 +82,15 @@ Klanten stellen ongeveer 10 vragen aan hoveniers, keer op keer. Zet ze zelf in h
 
 ### 5. Foto's met geotag
 
-Maak foto's op locatie met je telefoon. iPhone en Android slaan automatisch GPS-coördinaten op in de EXIF-data. Upload die foto's direct, zonder tussenstap in een fotobewerker die de metadata strippen. Google leest de geotag en ziet dat je echt werkt op de plekken die je claimt. Minstens 20 foto's uit minstens 10 verschillende plaatsen.
+Maak foto's op locatie met je telefoon. iPhone en Android slaan automatisch GPS-coördinaten op in de EXIF-data. Upload die foto's gewoon direct, zonder tussenstap in een fotobewerker die de metadata stript. Google leest de geotag en ziet dat je echt werkt op de plekken die je claimt. Minstens 20 foto's uit minstens 10 verschillende plaatsen.
 
 ### 6. Reageren op reviews binnen 2 werkdagen
 
-Elke review krijgt een antwoord. Bij een 5-sterren: "Dankjewel Martijn, leuk dat de heg goed is gelukt." Bij een 3-sterren: "Vervelend dat dit niet goed ging. Mag ik je even bellen om te kijken wat we kunnen doen?" Andere lezers nemen je antwoord meestal serieuzer dan de review zelf. Hoe sneller je reageert, hoe beter.
+Elke review krijgt een antwoord. Bij een 5-sterren: "Dankjewel Martijn, fijn dat je blij bent met de heg." Bij een 3-sterren: "Vervelend dat dit niet goed ging. Mag ik je even bellen om te kijken wat we kunnen doen?" Andere lezers nemen je antwoord meestal serieuzer dan de review zelf. Hoe sneller je reageert, hoe beter. Het kost je toch maar een minuut.
 
 ### 7. Openingstijden per feestdag
 
-De standaard "gesloten op feestdagen" staat vaak fout. Stel in: gesloten op Nieuwjaarsdag, Goede Vrijdag, Pasen, Koningsdag, Bevrijdingsdag (5 mei), Hemelvaart, Pinksteren, Kerst en Tweede Kerstdag. Koningsdag valt midden in het tuinseizoen, dus klanten zoeken soms. Staat je profiel standaard open en je bent toch dicht, dan krijg je een 1-sterren voor "stond open, maar niemand nam op".
+De standaardinstelling "gesloten op feestdagen" klopt vaak niet. Stel gewoon in: gesloten op Nieuwjaarsdag, Goede Vrijdag, Pasen, Koningsdag, Bevrijdingsdag (5 mei), Hemelvaart, Pinksteren, Kerst en Tweede Kerstdag. Koningsdag valt midden in het tuinseizoen, dus klanten zoeken soms. Staat je profiel standaard open en je bent toch dicht, dan lever je een 1-sterreview op voor "stond open maar niemand nam op".
 
 ### Wat de meesten doen, en wat de top-3 doet
 
@@ -102,7 +102,7 @@ De standaard "gesloten op feestdagen" staat vaak fout. Stel in: gesloten op Nieu
 | Foto's | Zonder geotag | Mét geotag uit eigen werkgebied |
 | Reviewreactie | Alleen bij negatieve | Op elke review binnen 2 dagen |
 
-Zeven op zeven scoren kost 90 minuten. De meesten doen twee op zeven en wachten maanden op resultaat dat niet komt.
+Zeven op zeven scoren kost 90 minuten. De meesten doen er gewoon twee op zeven en wachten maanden op resultaat dat niet komt.
 
 ## Hoeveel tijd kost het om dit compleet te krijgen?
 
@@ -119,11 +119,11 @@ Tijdverdeling eerste keer:
 | Openingstijden per feestdag zetten | 10 min |
 | Reacties op bestaande reviews | 5 min |
 
-90 minuten waarin je zelf in je profiel zit. Geen briefings, geen bureaus, geen maandbedrag. Sommige hoveniers pakken dit op een regenachtige woensdag op, anderen schuiven het maanden vooruit en vragen zich af waarom concurrenten in de local pack staan.
+90 minuten waarin je zelf in je profiel zit. Geen briefings nodig, geen bureau, geen maandbedrag. Sommige hoveniers pakken dit op een regenachtige woensdag op, anderen schuiven het maanden vooruit en vragen zich af waarom concurrenten in de local pack staan.
 
 ## Wat levert het op?
 
-Voor veel hoveniers: binnen 4 weken de eerste meetbare groei. Niet in rankings, dat duurt 8 tot 12 weken. Wel in profielbezoeken en klikken vanuit de local pack naar je telefoonnummer.
+Voor veel hoveniers: binnen 4 weken de eerste meetbare groei. Rankings schuiven pas later op, dat duurt 8 tot 12 weken. Maar profielbezoeken en directe klikken vanuit de local pack naar je telefoonnummer zie je eerder bewegen.
 
 Cijfers uit Google's eigen profielstatistieken die ik bij meerdere hovenier-klanten zie:
 
@@ -131,11 +131,11 @@ Cijfers uit Google's eigen profielstatistieken die ik bij meerdere hovenier-klan
 - Telefoontjes direct vanuit Maps +30% tot +80% binnen 8 weken
 - Aanvragen via de site (indirecte attributie) +15% tot +40% binnen 12 weken
 
-Dat vertaalt meestal naar 2 tot 4 extra aanvragen per maand. Bij een gemiddelde projectwaarde van €1.000 tot €2.000 (Knab Uurtarievenboekje 2026) en een conversiepercentage van 30% praat je over €600 tot €2.400 extra omzet per maand. De investering (90 minuten) verdient zich binnen één aanvraag terug. Werkt gewoon.
+Dat komt neer op 2 tot 4 extra aanvragen per maand. Bij een gemiddelde projectwaarde van €1.000 tot €2.000 (Knab Uurtarievenboekje 2026) en een conversiepercentage van 30% praat je over €600 tot €2.400 extra omzet per maand. De investering (90 minuten) verdient zich binnen één aanvraag terug. Werkt gewoon.
 
-En de seizoenskoppeling: wie deze 7 velden nu in april invult, staat in mei en juni op tijd klaar voor de najaarsonderhoud-piek die in augustus begint. Wachten tot augustus zelf is meestal te laat.
+En de seizoenskoppeling: wie deze 7 velden nu in april invult, staat in mei en juni op tijd klaar voor de onderhoudspiek die in augustus begint. Wachten tot augustus zelf is meestal te laat.
 
-Als je ook je site-kant in orde wilt brengen naast je profiel, staat op [/webdesign/](/webdesign/) wat er in een pakket zit. Voor budgetcontext: [Wat kost een website laten maken in 2026?](/blog/website-laten-maken-kosten/) en [Website laten maken: €500 of €5000?](/blog/website-500-of-5000-verschil/).
+Als je ook je site-kant in orde wilt brengen naast je profiel, staat op [/webdesign/](/webdesign/) wat er in een pakket zit. Voor budgetcontext specifiek voor hoveniers: [Wat kost een hovenier-website in 2026?](/blog/hovenier-website-kosten-2026/) en voor de algemene vergelijking [Wat kost een website laten maken?](/blog/website-laten-maken-kosten/).
 
 ## Veelgestelde vragen
 

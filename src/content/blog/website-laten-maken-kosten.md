@@ -184,4 +184,4 @@ Goede vraag. Bij lagere prijzen krijg je vaak standaardtemplates, beperkte onder
 | Professionele maatwerk website | €1.500 tot €3.000 | **vanaf €49/maand** |
 | Webshop op Shopify | €2.500 tot €6.000 | **€89/maand** |
 
-Een volledig pakket vanaf €49 per maand met alles erin. [Op de aanbod-pagina](/webdesign/) staat wat er precies in zit.
+Een volledig pakket vanaf €49 per maand met alles erin. [Op de aanbod-pagina](/webdesign/) staat wat er precies in zit. Hovenier? Er is ook een sector-specifieke prijsgids: [Wat kost een hovenier-website in 2026?](/blog/hovenier-website-kosten-2026/).

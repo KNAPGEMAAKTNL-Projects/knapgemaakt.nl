@@ -36,7 +36,7 @@ De prijzen lopen uiteen. Best wel uiteen, eigenlijk.
 
 **Maatwerk website bij KNAP GEMAAKT.:** vanaf €49 per maand, met alles erin. Design, teksten, hosting, onderhoud, Google-vindbaarheid en lead-opvolging. Geen grote investering vooraf. Zie het [volledige aanbod](/webdesign/).
 
-Het verschil tussen €500 en €5.000 zit in hoe uniek het design is, of de teksten worden geschreven, en hoeveel functionaliteit erbij komt. [Dit artikel](/blog/website-500-of-5000-verschil/) legt dat in detail uit.
+Het verschil tussen €500 en €5.000 zit in hoe uniek het design is, of de teksten worden geschreven, en hoeveel functionaliteit erbij komt. [Dit artikel](/blog/website-500-of-5000-verschil/) legt dat in detail uit. Als je hovenier bent, staat er een uitgebreide sector-specifieke versie: [Wat kost een hovenier-website in 2026?](/blog/hovenier-website-kosten-2026/).
 
 ## Zelf maken of laten maken?
 
