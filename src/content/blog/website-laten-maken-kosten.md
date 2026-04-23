@@ -2,6 +2,7 @@
 title: "Wat kost een website laten maken in 2026? €500 tot €15.000 uitgelegd"
 description: "Websites kosten €500 tot €15.000. Wat je krijgt per budget, waar prijsverschillen vandaan komen, en welke situatie bij welk bedrag hoort."
 publishDate: 2026-01-31
+updatedDate: 2026-04-23
 author: "Yannick Veldhuisen"
 tags: ["Websites", "Ondernemen"]
 cluster: "kosten"
