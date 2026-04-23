@@ -54,7 +54,7 @@ Pillar: `website-laten-maken-kosten`
 
 | # | Title | Slug | Tier | Status | Published | Type | Research | Notes |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Wat kost een website laten maken in 2026? Complete prijsgids | website-laten-maken-kosten | pillar | published | 2026-01-31 | commercial | - | Kosten pillar, pending retrofit |
+| 1 | Wat kost een website laten maken in 2026? €500 tot €15.000 uitgelegd | website-laten-maken-kosten | pillar | published | 2026-01-31 | commercial | - | Kosten pillar. Refreshed 2026-04-23 (depth, AI H2, TCO table, FAQ, situation H2, voice fixes) |
 | 2 | Website laten maken: 500 of 5000? Het verschil uitgelegd | website-500-of-5000-verschil | cluster | published | 2026-02-03 | comparison | - | |
 
 ### zzp  (existing)
@@ -81,3 +81,19 @@ Horeca, beauty, zorg, fitness, makelaardij, creatieve beroepen, integraties, ver
 ## Archive
 
 Deprecated or deleted posts listed here with reason and date.
+
+## Performance snapshots
+
+Append-only log of per-cycle GSC + Bing numbers for posts under refresh review. Format per `/blog-refresh` Phase 5. Only the top-5 candidates per cycle are recorded — not the full ledger. Bing was enabled 2026-04-13, so the Bing window grows each month.
+
+### 2026-04-23 (Google 28d / Bing 10d)
+
+| Slug | G imp | G pos | G CTR | B imp | B pos | B CTR | Action |
+|------|-------|-------|-------|-------|-------|-------|--------|
+| wero-webshops-checklist-maart | 4 | 25 | 0% | — | — | — | deprecate (date-locked) |
+| ideal-wordt-wero | 1 | 6 | 0% | — | — | — | leave (news cycle faded) |
+| website-laten-maken-kosten | 4 | 66 | 0% | 171 | 1.9 | 1.75% | refreshed 2026-04-23 |
+| website-voor-zzp | 47 | 90 | 0% | — | — | — | refresh (pillar retrofit) |
+| wordpress-vs-moderne-alternatieven | 92 | 80 | 0% | — | — | — | queue next cycle |
+
+Notes: Zero blog clicks from Google in 28 days. Bing is the only channel producing blog traffic so far (10 clicks over 8 days, `website-laten-maken-kosten` the main earner). The Google/Bing divergence on `website-laten-maken-kosten` (pos 66 Google vs pos 2 Bing) is the strongest signal in this cycle.

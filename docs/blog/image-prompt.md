@@ -1,15 +1,24 @@
 # Standing Image Prompt
 
-Used by `/blog` Phase 5. Injects the post title into the `[TITLE]` slot, outputs the completed prompt as a copy-paste block, and instructs Yanni to generate and save the image.
+Used by `/blog` Phase 5 and `/blog-refresh` Phase 4 (image-refresh case). Injects the post title into the `[TITLE]` slot and outputs a copy-paste prompt for Yanni.
 
-## Reference images (attach in generation tool)
+## Generation flow
 
-- `~/Downloads/Gemini_Generated_Image_remedoremedoreme.png`
-- `~/Downloads/myprofilepicture.jpeg`
+1. Claude outputs the filled-in prompt below.
+2. Yanni pastes it into his image tool (ChatGPT image generation). No reference images attached — ChatGPT already has the KNAP GEMAAKT. character style in its context from prior sessions.
+3. The image tool cannot write to disk, so Yanni saves the output manually (usually to `~/Downloads/...`) and pastes the path back into the session.
+4. Claude converts + resizes to WebP 2048×1024 using ffmpeg, writes to `public/assets/blog/[slug].webp`, and confirms size is under 200KB.
 
-## Output target
+## ffmpeg conversion command (Claude runs this)
 
-`src/assets/blog/[slug].webp` at 2048x1024 pixels.
+```bash
+ffmpeg -y -i "<source-path>" \
+  -vf "scale=2048:1024:force_original_aspect_ratio=decrease,pad=2048:1024:(ow-iw)/2:(oh-ih)/2:color=black" \
+  -q:v 80 \
+  "C:/Code/clients/knapgemaakt.nl/public/assets/blog/[slug].webp"
+```
+
+Confirm output with `ls -l` — target is <200 KiB. If oversized, re-run with `-q:v 70` or lower.
 
 ## Prompt template
 
