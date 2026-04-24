@@ -1,5 +1,70 @@
 # Changelog
 
+## [1.10.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.9.0...v1.10.0) (2026-04-24)
+
+
+### Features
+
+* /offerte/ qualification quiz + SEO + D1 schema migration ([#275](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/275)) ✨ ([8c46072](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/8c460725ad12792371c439c68cd76005c02e55c2))
+* 5 automation sub-pages + hub retrofit + hero copy lock ([#274](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/274)) ✨ ([d4379f5](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/d4379f588e82421b43386b5e3ce71fd63155160d))
+* add Cal.com-style confirm button on time slot selection ([#262](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/262)) ✨ ([81da51e](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/81da51eeb4a97b84067430403c03f7b654e0c462))
+* add werk portfolio page with site-wide redesign ([#227](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/227)) ([2a6669e](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/2a6669e659cb7da6950e8dd287ed5c38b66b378c))
+* blog machine infrastructure + Stage 0 CTA drop-in ([#277](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/277)) ✨ ([8eb8b96](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/8eb8b96f5c1c1ca115d5d471b4c432b3518f588f))
+* **blog:** Google Bedrijfsprofiel voor hoveniers — 7 meest gemiste velden ([69da116](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/69da116d0aac956d61da50d972bf908a73d3809c))
+* **blog:** Wat kost een hovenier-website in 2026? — pillar post ([fd86b76](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/fd86b762dc66ad9accb8270b1ec4402881e71435))
+* case study template and Fitcity copy rewrite ([#271](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/271)) ✨ ([b851037](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/b851037b7aa71f76285c1463a2663108c7fc7cb4))
+* FAQ sections, breadcrumbs, Turnstile & SEO improvements ([#231](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/231)) ✨ ([092554f](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/092554fee13936534e36277160bd88c7c13d997c))
+* IA simplification and homepage refocus on websites ([#273](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/273)) ([659502f](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/659502f549dc8f182a8ebac328950ee8cc2d0f7e))
+* location pages overhaul — 23 cities, hub, voice pass ([#278](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/278)) ✨ ([d00ed77](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/d00ed7729111d25c08f98c6e50f1b924b75e283a))
+* mark Fitcity Culemborg as Live ([c8eaa9b](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/c8eaa9b77ee25b90bc7b75388d0770ccd490c9d6))
+* plan page confirm button slides in next to time slot ([#265](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/265)) ✨ ([d44a234](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/d44a23423fc455eb4c415472e1bfa3b9a33db56e))
+* pricing tiers page and WordPress service removal ([#272](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/272)) ([0c0f2ad](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/0c0f2ad45282167c7b0cd4fa604f5416e5f87796))
+* proofread and adjust all page copy to match brand voice ([#228](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/228)) ✨ ([377ff81](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/377ff8169c3c47945be48a1705c86754d24b591b))
+* redesign Jonkers client page with growth plan and plain Dutch copy ([#246](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/246)) ([1ec331c](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/1ec331c12d6e7b19dc539aaccc01f5ad35080726))
+* replace By Shakir mockup with new image ([#267](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/267)) ([7d80eb3](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/7d80eb32c540e035fb8d9734044815597fb72030))
+* restyle Jonkers client page with brand effects and simplified copy ([#241](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/241)) ✨ ([72e8604](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/72e86040d32579022c969447b2a2a9c4d07fca4f))
+* scroll to time slots on mobile when date is selected ([#260](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/260)) ✨ ([c0fbf19](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/c0fbf1985963851260334d2c4d57dbf9f0eda895))
+* SEO SOP compliance and cookie-free architecture ([#270](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/270)) ✨ ([0fb15c4](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/0fb15c4e60bcff8f8e775df45b1ca4386ff278c5))
+* Stage 0 website restructure, consolidate offer at /webdesign/ ([#276](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/276)) ✨ ([983dca0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/983dca04769368ce7104a3305fb0f035887bacb8))
+* standalone booking landing page at /plan/ ([#253](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/253)) ([638b11a](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/638b11a2d7fa8370dad0e7956409f9d89d758ee6))
+* update favicon, contact widget CTA & aanvragen form ([#226](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/226)) ([8009f85](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/8009f850039d192a72edc415d473e59ba09adc5a))
+* warm professional redesign with city pages rewrite ([#224](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/224)) ([fa9a436](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/fa9a436e3b21a9d4d3ae25e3648c4b4f94995f5a))
+
+
+### Bug Fixes
+
+* align booking hours with GBP business hours ([#249](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/249)) ([43957de](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/43957decb70ffec8f3597baad556eebe812b81f0))
+* allow AI crawlers to index Jonkers client page ([#244](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/244)) ([a8a24a7](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/a8a24a7ef027cd754f665a5448c57a62141945f0))
+* **blog:** add offer plug to hovenier kosten pillar; roadmap research staleness tracking ([1cae846](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/1cae84696a86f848c0144249cbd6f94d109c89ed))
+* **blog:** Dutch GBP category names (Hovenier, Boomverzorger, etc.) ([5ba97c1](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/5ba97c133cf6212cbd98cef5613d33ac8fc6c979))
+* **blog:** eenpager, em-dashes, portfolio-module, Google Workspace prijs, link teksten ([7af0ca8](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/7af0ca8f05bf469928097c3aa27a35dcbfb19d0a))
+* **blog:** herschrijf offer plug, verwijder jargon en filler ([026c7f7](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/026c7f76054c97c4f6bd20712436dd550bd9662a))
+* correct Dutch copy and link destinations on Jonkers page ([#248](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/248)) ([e7c2ec5](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/e7c2ec57c9e41f60c7366a6ba3c24f59b2739e9c))
+* email dark mode on iOS ([#240](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/240)) 🐛 ([ac5b36e](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/ac5b36ebc9b6266589ec32710ba0c29eb2416063))
+* Gmail ICS event loading ([#238](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/238)) 🐛 ([1970897](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/1970897a3e3f8d56a377e5a55f69cebd433cf91d))
+* ICS calendar not loading in Gmail ([#237](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/237)) 🐛 ([369bb79](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/369bb79accb2cbbeeb8c6e626077369caa7a38eb))
+* ICS Gmail event loading v2 ([#239](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/239)) 🐛 ([ca28cce](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/ca28cce8547ce4814ae9d7c21ed31b380b7d04c0))
+* improve Jonkers page mobile responsiveness ([#247](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/247)) ([00dff5f](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/00dff5fdde436ce2a33f9d8249e626f07638efe7))
+* improve mobile scroll animation trigger on Jonkers page ([#243](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/243)) ([3c334aa](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/3c334aa8cc15a417ab91521fb616b9e513bdae27))
+* **nav:** show FAQ in desktop Over dropdown ([#233](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/233)) 🐛 ([b9e5754](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/b9e5754ebab7a63195d0a5f17bfa2c5e31e4fe42))
+* normalize phone numbers with country code ([#257](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/257)) ([c2d39bf](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/c2d39bf8e5cbb7aa329db7cb33838f2b46866100))
+* prevent Turnstile double render ([#236](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/236)) 🐛 ([e839111](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/e8391112ad151f7681b378688cce8e64ccfa0856))
+* re-decode CF email obfuscation after View Transitions ([#280](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/280)) 🐛 ([a2e6cd7](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/a2e6cd711b9ccc1f736ca182e8ff7d1081531771))
+* reconcile stale bookings during calendar sync ([#258](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/258)) ([14242cf](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/14242cf01bd82952e08fad9df0ebdfec4e94d75c))
+* remove duplicate FAQPage JSON-LD on /webdesign/ ([#279](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/279)) ([0699cb9](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/0699cb903e0f053346c233aaf249b2e29cea3b16))
+* rename fitcity mockup to bust CDN cache ([#255](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/255)) ([ad12b94](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/ad12b943f351bf5ba31a069ec3675457d31e8a02))
+* restore noindex on Jonkers page for all crawlers ([#245](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/245)) ([b9acc11](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/b9acc117e4061385f6407e08ea75ede2ab0e5532))
+* revert Cal.com-style confirm button ([#262](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/262)) 🐛 ([ebf8bb4](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/ebf8bb4adde2ba289322008612cfc59ef4cfd5ce))
+* route plan page emails through n8n ([#256](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/256)) ([90fdfd5](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/90fdfd54fbd16213d9be95bc64d6943e98196db3))
+* shorten cookie banner text on mobile ([e353f6e](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/e353f6e15e889d48ba291e16ba361603e03d3bd0))
+* show IN ONTWIKKELING badge for concept projects ([17f6193](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/17f61932e9404648be99a37318c65f8cb812d399))
+* Turnstile widget rendering after View Transitions ([#235](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/235)) 🐛 ([3bb9e3b](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/3bb9e3b410be2a2abc0dbe12c8ad5115d5680a49))
+* update Fitcity Culemborg project link to live domain ([994111a](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/994111a4e967eb46d2e331f5ccd32ea2057abf4b))
+* update fitcity image and blog pricing to monthly model ([#254](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/254)) ([3d071c5](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/3d071c506f996d4e69e25a5273a45d2f70035157))
+* update pricing to monthly model + add klant pages ([#232](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/232)) 🐛 ([c40cf78](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/c40cf7821578f0c31a64fd3a6a2f022a1f04a185))
+* update redirect destinations for old page URLs ([#251](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/251)) ([37dd97b](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/37dd97b3d9b69c7f5f1337a4f5d0be2c9a663cb5))
+* widget icon, nav CTA & branded emails with ICS calendar ([#234](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/issues/234)) 🐛 ([0082151](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/commit/0082151dd70d2c638026d3c9e289838632f73c68))
+
 ## [1.9.0](https://github.com/KNAPGEMAAKTNL-Projects/knapgemaakt.nl/compare/v1.8.0...v1.9.0) (2026-02-15)
 
 
