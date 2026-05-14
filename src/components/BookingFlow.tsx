@@ -227,7 +227,6 @@ export default function BookingFlow() {
         win.turnstile.render(turnstileRef.current, {
           sitekey: '0x4AAAAAACzkKUPSoLBK6a1f',
           theme: 'dark',
-          size: 'invisible',
           appearance: 'interaction-only',
         });
       }
