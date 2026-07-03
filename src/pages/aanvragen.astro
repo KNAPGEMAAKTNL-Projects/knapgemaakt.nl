@@ -1,11 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
+import CurrentMonth from "../components/CurrentMonth.astro";
+import { availability } from "../config/availability";
+
+const description = availability.fullyBooked
+	? "De agenda van KNAP GEMAAKT. zit op dit moment vol. Vragen stellen kan gewoon: stuur een bericht via de contactpagina."
+	: "Plan een vrijblijvend kennismakingsgesprek met KNAP GEMAAKT. Vertel over je bedrijf en ontdek samen wat je online nodig hebt. Geen verplichtingen.";
 ---
 
 <Layout
 	title="Laten We Kennismaken | Vrijblijvend Gesprek | KNAP GEMAAKT."
-	description="Plan een vrijblijvend kennismakingsgesprek met KNAP GEMAAKT. Vertel over je bedrijf en ontdek samen wat je online nodig hebt. Geen verplichtingen."
+	description={description}
 >
     <main class="min-h-screen bg-canvas pt-32 pb-24 px-4 md:px-8 relative overflow-hidden">
         <div class="max-w-4xl mx-auto">
@@ -25,11 +31,33 @@ import Footer from "../components/Footer.astro";
                 <p
                     class="text-xl md:text-2xl text-ink/70 font-medium max-w-4xl leading-relaxed"
                 >
-                    Vul het formulier in en plan direct een vrijblijvend gesprek.
+                    {availability.fullyBooked
+                        ? "Op dit moment is er geen ruimte voor nieuwe projecten."
+                        : "Vul het formulier in en plan direct een vrijblijvend gesprek."}
                 </p>
             </div>
 
+            <!-- Volgeboekt-melding -->
+            {availability.fullyBooked && (
+                <div class="bg-canvas border border-warm rounded-xl p-8 md:p-10 relative z-10">
+                    <h2 class="text-2xl font-bold tracking-tight leading-snug mb-4">
+                        <CurrentMonth cap /> zit vol
+                    </h2>
+                    <p class="text-lg text-ink/70 leading-relaxed mb-8 max-w-2xl">
+                        Ik neem op dit moment geen nieuwe projecten aan. Wil je toch iets vragen of alvast je situatie voorleggen? Stuur gerust een bericht, dan kom ik erop terug zodra er weer ruimte is.
+                    </p>
+                    <a
+                        href={availability.ctaUrl}
+                        class="inline-flex items-center gap-3 bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 group"
+                    >
+                        Naar de contactpagina
+                        <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                    </a>
+                </div>
+            )}
+
             <!-- Form -->
+            {!availability.fullyBooked && (
             <form class="space-y-12 bg-canvas border border-warm rounded-xl p-8 md:p-10 relative z-10" id="aanvraag-form">
                 <!-- Personal Details -->
                 <div class="space-y-6">
@@ -216,7 +244,6 @@ import Footer from "../components/Footer.astro";
                             class="w-full bg-canvas border border-warm rounded-lg py-3 px-4 text-lg font-medium focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors appearance-none cursor-pointer"
                         >
                             <option value="" disabled selected>Maak een keuze...</option>
-                            <option value="Mei-actie">Ik wil meedoen aan de mei-actie (gratis plek)</option>
                             <option value="Nieuwe website">Ik wil een nieuwe website</option>
                             <option value="Iets anders">Iets anders</option>
                         </select>
@@ -355,6 +382,7 @@ import Footer from "../components/Footer.astro";
                     </p>
                 </div>
             </form>
+            )}
 
         </div>
     </main>
@@ -502,8 +530,6 @@ import Footer from "../components/Footer.astro";
     if (onderwerp) {
         const specSelect = document.getElementById("specification") as HTMLSelectElement;
         const optionMap: Record<string, string> = {
-            "mei":            "Mei-actie",
-            "gratis":         "Mei-actie",
             "webdesign":      "Nieuwe website",
             "nieuwe-website": "Nieuwe website",
             "anders":         "Iets anders",

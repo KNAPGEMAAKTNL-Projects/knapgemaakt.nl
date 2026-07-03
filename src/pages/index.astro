@@ -8,7 +8,8 @@ import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 import { TypingRotator } from "../components/TypingRotator";
 import { DraggableScroll } from "../components/DraggableScroll";
 import { getAllProjects } from "../data/projects";
-import { stage0Offer, spotsLabel, bedrijvenLabel } from "../config/stage-0-offer";
+import { availability } from "../config/availability";
+import CurrentMonth from "../components/CurrentMonth.astro";
 
 const projects = getAllProjects();
 ---
@@ -48,7 +49,7 @@ const projects = getAllProjects();
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <a
-            href="/aanvragen/"
+            href="/contact/"
             class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center"
           >
             Plan een kennismaking
@@ -62,13 +63,13 @@ const projects = getAllProjects();
           </a>
         </div>
 
-        {stage0Offer.enabled && (
+        {availability.fullyBooked && (
           <div class="mt-8 flex items-start gap-3 max-w-xl">
             <span class="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
             <p class="text-sm text-ink/70 leading-relaxed">
-              <strong class="text-ink">Nu in {stage0Offer.month}: {spotsLabel()} gratis.</strong>
-              {' '}Ik maak voor {bedrijvenLabel()} een volledige website, in ruil voor een case study na 90 dagen.
-              {' '}<a href={stage0Offer.detailsUrl} class="underline hover:text-accent transition-colors">Zo werkt het &rarr;</a>
+              <strong class="text-ink"><CurrentMonth cap /> zit vol.</strong>
+              {' '}Ik neem op dit moment geen nieuwe projecten aan. Vragen stellen kan gewoon.
+              {' '}<a href={availability.ctaUrl} class="underline hover:text-accent transition-colors">Neem contact op &rarr;</a>
             </p>
           </div>
         )}
@@ -113,33 +114,18 @@ const projects = getAllProjects();
           </FadeIn>
 
           <FadeIn delay={200}>
-            <a href={stage0Offer.enabled ? stage0Offer.ctaUrl : "/webdesign/"} class="glass-card p-8 md:p-10 flex flex-col cursor-pointer group block h-full">
+            <a href="/webdesign/" class="glass-card p-8 md:p-10 flex flex-col cursor-pointer group block h-full">
               <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center mb-5">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-canvas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/></svg>
               </div>
-              {stage0Offer.enabled ? (
-                <>
-                  <span class="text-xs font-mono uppercase tracking-widest text-ink/40 mb-2">Nu in {stage0Offer.month}</span>
-                  <h3 class="text-2xl font-bold mb-3">Gratis website voor {bedrijvenLabel()}</h3>
-                  <p class="text-ink/70 leading-relaxed mb-6">
-                    Er zijn nog {spotsLabel()} over voor een volledige website die ik kosteloos maak. In ruil schrijven we na 90 dagen samen een case study waarin we de cijfers van voor en na naast elkaar zetten.
-                  </p>
-                  <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
-                    Past dit bij jou? <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-                  </span>
-                </>
-              ) : (
-                <>
-                  <span class="text-xs font-mono uppercase tracking-widest text-ink/40 mb-2">Wat kost het</span>
-                  <h3 class="text-2xl font-bold mb-3">Een vast maandbedrag</h3>
-                  <p class="text-ink/70 leading-relaxed mb-6">
-                    Eenmalig €497 setup, daarna €47 per maand. Daarvoor krijg je hosting, onderhoud, het Google Bedrijfsprofiel, lead-opvolging, review-verzoeken en kleine aanpassingen. Minimaal 12 maanden, daarna maand voor maand opzegbaar.
-                  </p>
-                  <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
-                    Bekijk de voorwaarden <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-                  </span>
-                </>
-              )}
+              <span class="text-xs font-mono uppercase tracking-widest text-ink/40 mb-2">Wat kost het</span>
+              <h3 class="text-2xl font-bold mb-3">Een vast maandbedrag</h3>
+              <p class="text-ink/70 leading-relaxed mb-6">
+                Eenmalig €497 setup, daarna €47 per maand. Daarvoor krijg je hosting, onderhoud, het Google Bedrijfsprofiel, lead-opvolging, review-verzoeken en kleine aanpassingen. Minimaal 12 maanden, daarna maand voor maand opzegbaar.
+              </p>
+              <span class="mt-auto text-sm font-bold text-ink group-hover:text-accent transition-colors inline-flex items-center gap-1">
+                Bekijk de voorwaarden <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </span>
             </a>
           </FadeIn>
         </div>
@@ -277,7 +263,7 @@ const projects = getAllProjects();
             Plan een kennismaking. Vertel wat je bedrijf doet, ik kom met een concreet voorstel. Past het niet, dan zeg ik dat ook.
           </p>
           <a
-            href="/aanvragen/"
+            href="/contact/"
             class="bg-accent text-white px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-accent/90 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
           >
             Plan een kennismaking

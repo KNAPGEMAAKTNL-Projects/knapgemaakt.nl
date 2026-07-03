@@ -1,27 +1,25 @@
 ---
-import { stage0Offer, bedrijvenLabel } from "../../config/stage-0-offer";
+import { availability } from "../../config/availability";
+import CurrentMonth from "../CurrentMonth.astro";
 
-const enabled = stage0Offer.enabled;
-const url = stage0Offer.ctaUrl;
+const fullyBooked = availability.fullyBooked;
+const url = availability.ctaUrl;
 ---
 
-{enabled ? (
+{fullyBooked ? (
 	<section class="px-6 md:px-12 lg:px-16 py-14 md:py-20 bg-ink text-canvas">
 		<div class="max-w-2xl mx-auto">
 			<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-5">
-				Bouw ik nu een website voor jou, tijdelijk gratis?
+				<CurrentMonth cap /> zit vol
 			</h2>
-			<p class="text-lg text-canvas/80 leading-relaxed mb-4">
-				Ik maak op dit moment {bedrijvenLabel()} websites gratis voor ondernemers, in ruil voor een case study na 90 dagen en een review als je tevreden bent. Voorkeur voor lokale dienstverleners, maar als je bedrijf past kunnen we het altijd bespreken.
-			</p>
 			<p class="text-lg text-canvas/80 leading-relaxed mb-8">
-				Wat je krijgt is het complete pakket: maatwerk site, Google-vindbaarheid, lead-opvolging, automatische review-verzoeken en hosting. De reden dat het gratis is: ik verzamel case studies voordat ik met een betaald aanbod start.
+				Ik neem op dit moment geen nieuwe projecten aan. Wil je toch iets vragen of alvast je situatie voorleggen? Stuur gerust een bericht, dan kom ik erop terug zodra er weer ruimte is.
 			</p>
 			<a
 				href={url}
 				class="inline-flex items-center gap-3 bg-accent text-ink px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-accent/90 transition-colors group"
 			>
-				Past dit bij jouw bedrijf? Plan een gesprek
+				Neem contact op
 				<span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
 			</a>
 		</div>

@@ -2,7 +2,7 @@
 title: "Wat kost een website laten maken in 2026? €500 tot €15.000 uitgelegd"
 description: "Websites kosten €500 tot €15.000. Wat je krijgt per budget, waar prijsverschillen vandaan komen, en welke situatie bij welk bedrag hoort."
 publishDate: 2026-01-31
-updatedDate: 2026-04-23
+updatedDate: 2026-07-03
 author: "Yannick Veldhuisen"
 tags: ["Websites", "Ondernemen"]
 cluster: "kosten"
@@ -182,7 +182,7 @@ De bouwprijs is het zichtbare deel. De doorlopende kosten zijn minstens zo belan
 
 De DIY-route lijkt op papier het goedkoopst, maar de 20 tot 40 uur die je er zelf in stopt staan er niet in. Reken je die op €50 per uur, dan komt die route uit op €1.720 aan de onderkant en €3.440 aan de bovenkant (€2.000 aan eigen tijd plus €1.440 aan hosting over drie jaar).
 
-Tot eind mei zijn er nog 4 plekken voor een volledige website zonder bouwkosten, in ruil voor een case study na 90 dagen. [Plan een kennismaking](/aanvragen/).
+Mijn eigen agenda zit op dit moment vol, dus nieuwe projecten neem ik even niet aan. Vragen kun je altijd stellen: [stuur gerust een bericht](/contact/).
 
 ## Template vs. maatwerk
 

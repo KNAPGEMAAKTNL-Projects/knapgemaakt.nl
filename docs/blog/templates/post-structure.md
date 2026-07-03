@@ -38,7 +38,7 @@ faqs:
 The layout automatically appends:
 - `<FAQSchema faqs={frontmatter.faqs} />` (JSON-LD only, no visible content).
 - Existing Author Bio section (already in layout).
-- `<Stage0CTABlock />`.
+- `<AvailabilityCTA />`.
 
 ## Pillar additions (2000-3500 words, commercial)
 
@@ -73,7 +73,7 @@ Constraints:
 - Answer capsule present under H1, 40 to 60 words.
 - `faqs` array present with 5 to 7 pairs, each answer 30 to 50 words.
 - Author already enforced by layout; no bespoke author bio inside post body.
-- No manual bottom CTA paragraph; the layout's `<Stage0CTABlock />` handles it.
+- No manual bottom CTA paragraph; the layout's `<AvailabilityCTA />` handles it.
 
 ## Reference implementations
 

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { availability } from '../config/availability';
 
 export function ContactWidget() {
   const [visible, setVisible] = useState(false);
@@ -114,21 +115,23 @@ export function ContactWidget() {
 
         {/* Options */}
         <div className="px-4 pb-3 space-y-2">
-          {/* Plan een kennismaking */}
-          <a
-            href="/aanvragen/"
-            className="group flex items-center gap-3 p-3 border border-canvas/10 rounded-lg hover:border-accent hover:bg-accent/5 transition-all duration-200"
-          >
-            <span className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shrink-0">
-              <svg className="w-[18px] h-[18px] text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </span>
-            <span className="text-sm font-bold uppercase tracking-tight text-canvas/80 group-hover:text-accent transition-colors">
-              Plan een kennismaking
-            </span>
-            <span className="ml-auto text-canvas/30 group-hover:text-accent group-hover:translate-x-1 transition-all duration-200">&rarr;</span>
-          </a>
+          {/* Plan een kennismaking (verborgen zolang de agenda vol zit) */}
+          {!availability.fullyBooked && (
+            <a
+              href="/contact/"
+              className="group flex items-center gap-3 p-3 border border-canvas/10 rounded-lg hover:border-accent hover:bg-accent/5 transition-all duration-200"
+            >
+              <span className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shrink-0">
+                <svg className="w-[18px] h-[18px] text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </span>
+              <span className="text-sm font-bold uppercase tracking-tight text-canvas/80 group-hover:text-accent transition-colors">
+                Plan een kennismaking
+              </span>
+              <span className="ml-auto text-canvas/30 group-hover:text-accent group-hover:translate-x-1 transition-all duration-200">&rarr;</span>
+            </a>
+          )}
 
           {/* Een vraag stellen */}
           <a

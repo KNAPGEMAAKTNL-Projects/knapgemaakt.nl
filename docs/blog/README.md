@@ -23,4 +23,4 @@ Commands live in `~/.claude/commands/` on the operator's machine, not in this re
 
 - Roadmap is git-tracked; its history acts as the publication ledger.
 - Cluster research files are long-term context (revisit yearly); per-post SERP analysis is ephemeral and not saved.
-- The Stage 0 CTA at the bottom of every blog post is driven by `src/config/stage-0-offer.ts` via the shared `Stage0CTABlock` component in the blog layout.
+- The CTA at the bottom of every blog post is driven by `src/config/availability.ts` via the shared `AvailabilityCTA` component in the blog layout (fully-booked notice when `fullyBooked: true`, paid-offer CTA otherwise).

@@ -10,7 +10,7 @@ Used by `/blog-research` to generate a tailored prompt for Claude.ai. The comman
 | `[CLUSTER_AUDIENCE]` | Derived from cluster name and roadmap notes (e.g., "hoveniers in Nederland"). |
 | `[TOPIC_LIST]` | All queued + published topics for this cluster from `docs/blog/roadmap.md`. |
 | `[ADJACENT_CLUSTERS]` | Other active clusters with their published-post slugs for internal linking. |
-| `[STAGE_0_CONFIG]` | Current value of `src/config/stage-0-offer.ts` stringified. |
+| `[STAGE_0_CONFIG]` | Current value of `src/config/availability.ts` stringified. |
 | `[EXISTING_POSTS]` | List of published posts within this cluster (slug + title). |
 
 ## Prompt body

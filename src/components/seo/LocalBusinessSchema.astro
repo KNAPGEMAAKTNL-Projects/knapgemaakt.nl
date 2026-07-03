@@ -5,7 +5,7 @@
  * https://schema.org/LocalBusiness
  */
 
-import { stage0Offer, bedrijvenLabel } from "../../config/stage-0-offer";
+import { availability } from "../../config/availability";
 
 interface Props {
     type?: string; // LocalBusiness subtype (e.g., "ProfessionalService")
@@ -99,7 +99,6 @@ const schema = {
         "https://www.linkedin.com/in/yannick-veldhuisen-303047243/",
         "https://github.com/KNAPGEMAAKTNL-Projects"
     ],
-    // Single offer structure for Stage 0 (mei 2026 gratis case study)
     hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Webdesign op maat",
@@ -107,8 +106,10 @@ const schema = {
             {
                 "@type": "Offer",
                 name: "Maatwerk website plus Google-vindbaarheid en onderhoud",
-                description: `Acht onderdelen in een aanpak: maatwerk website, Google Bedrijfsprofiel, lead-opvolging via WhatsApp, reviews-motor, lokale SEO-basis, hosting en domein, kleine aanpassingen binnen 48 werkuur en maandelijks prestatierapport. In ${stage0Offer.month} ${stage0Offer.year} gratis voor ${bedrijvenLabel()} in ruil voor een case study.`,
-                availability: "https://schema.org/LimitedAvailability",
+                description: `Acht onderdelen in een aanpak: maatwerk website, Google Bedrijfsprofiel, lead-opvolging via WhatsApp, automatische review-verzoeken, lokale SEO-basis, hosting en domein, kleine aanpassingen binnen 48 uur en maandelijks prestatierapport.${availability.fullyBooked ? " Op dit moment volgeboekt." : ""}`,
+                availability: availability.fullyBooked
+                    ? "https://schema.org/SoldOut"
+                    : "https://schema.org/LimitedAvailability",
                 url: `${url}/webdesign/`
             }
         ]

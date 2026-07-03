@@ -2,7 +2,7 @@
 title: "Wat kost een hovenier-website in 2026?"
 description: "Wat kost een hovenier-website in 2026? Van €500 tot €6.000. Concrete scope per range, verborgen kosten en het juiste lanceermoment."
 publishDate: 2026-04-23
-updatedDate: 2026-04-24
+updatedDate: 2026-07-03
 author: "Yannick Veldhuisen"
 tags: ["Hovenier", "Website kosten", "Webdesign"]
 cluster: "hovenier"
@@ -110,9 +110,9 @@ Even doorrekenen op basis van de Knab Zzp-cijfers 2026 (onderzoek onder ruim 20.
 
 Twee dingen om bij stil te staan. Een nieuwe site heeft grofweg 3 tot 6 maanden nodig om zijn plek in Google te vinden. In die tussentijd doet je Google Bedrijfsprofiel het meeste werk, en die aanvragen komen meteen binnen. Daarnaast staat of valt het hele verhaal met hoe goed de lokale SEO erachter zit. Een site met plaatsnamen in de teksten, actieve reviews en een compleet Bedrijfsprofiel haalt die aantallen wel. Zonder die drie is het een lastige opgave.
 
-Een gemiddelde ZZP-hovenier maakt 14 projecten per jaar (Knab 2026). Vraag na elke klus één review via WhatsApp en je hebt binnen een jaar een stevige basis staan, zonder extra marketingbudget.
+Een gemiddelde ZZP-hovenier maakt 14 projecten per jaar (Knab 2026). Vraag na elke klus om één review en je hebt binnen een jaar een stevige basis staan, zonder extra marketingbudget.
 
-Tot eind mei zijn er nog 4 plekken voor een complete website zonder bouwkosten, in ruil voor een case study na 90 dagen. [Plan een kennismaking](/aanvragen/?onderwerp=mei).
+Mijn eigen agenda zit op dit moment vol, dus nieuwe projecten neem ik even niet aan. Vragen kun je altijd stellen: [stuur gerust een bericht](/contact/).
 
 In de opbouwperiode loop je het beste twee sporen naast elkaar: je Google Bedrijfsprofiel op orde brengen en foto's verzamelen voor het portfolio. Begin alvast met fotograferen voordat de site live staat, dan heb je alvast wat projecten klaar om te laten zien.
 
