@@ -1,0 +1,28 @@
+---
+import { currentMonth, currentMonthCapitalized } from "../config/availability";
+
+interface Props {
+	cap?: boolean;
+}
+
+const { cap = false } = Astro.props;
+---
+
+<span data-current-month={cap ? "cap" : "lower"}>{cap ? currentMonthCapitalized() : currentMonth()}</span>
+
+<script>
+	// Prerendered pagina's bakken de maand van het buildmoment in; corrigeer client-side.
+	function syncCurrentMonth() {
+		const els = document.querySelectorAll<HTMLElement>("[data-current-month]");
+		if (!els.length) return;
+		const maand = new Intl.DateTimeFormat("nl-NL", { month: "long" }).format(new Date());
+		els.forEach((el) => {
+			el.textContent =
+				el.dataset.currentMonth === "cap"
+					? maand.charAt(0).toUpperCase() + maand.slice(1)
+					: maand;
+		});
+	}
+	syncCurrentMonth();
+	document.addEventListener("astro:page-load", syncCurrentMonth);
+</script>

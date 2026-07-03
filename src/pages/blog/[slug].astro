@@ -5,7 +5,7 @@ import BlogPostSchema from "../../components/seo/BlogPostSchema.astro";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
 import BlogCardImage from "../../components/blog/BlogCardImage.astro";
 import FAQSchema from "../../components/seo/FAQSchema.astro";
-import Stage0CTABlock from "../../components/cta/Stage0CTABlock.astro";
+import AvailabilityCTA from "../../components/cta/AvailabilityCTA.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export const prerender = true;
@@ -202,7 +202,7 @@ const breadcrumbs = [
 				</div>
 			</section>
 
-			<Stage0CTABlock />
+			<AvailabilityCTA />
 
 			<!-- Verder lezen -->
 			{otherPosts.length > 0 && (

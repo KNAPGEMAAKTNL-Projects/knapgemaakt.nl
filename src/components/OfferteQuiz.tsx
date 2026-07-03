@@ -362,8 +362,8 @@ export default function OfferteQuiz() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <a href="/aanvragen/" className="text-ink/60 hover:text-accent text-sm underline">
-              Liever direct een gesprek inplannen?
+            <a href="/contact/" className="text-ink/60 hover:text-accent text-sm underline">
+              Liever direct contact opnemen?
             </a>
           </div>
         </div>

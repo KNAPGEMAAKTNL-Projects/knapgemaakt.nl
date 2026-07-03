@@ -11,7 +11,7 @@ import LocationOffer from "../components/location/LocationOffer.astro";
 import LocationCase from "../components/location/LocationCase.astro";
 import LocationNearby from "../components/location/LocationNearby.astro";
 import LocationFAQ from "../components/location/LocationFAQ.astro";
-import Stage0CTABlock from "../components/cta/Stage0CTABlock.astro";
+import AvailabilityCTA from "../components/cta/AvailabilityCTA.astro";
 
 import { getAllLocations, getNearbyLocations, type LocationData } from "../data/locations";
 import { getRegion } from "../data/location-regions";
@@ -113,7 +113,7 @@ const breadcrumbs = [
 		/>
 		<LocationNearby nearby={nearby} cityName={location.name} />
 		<LocationFAQ faqs={faqs} />
-		<Stage0CTABlock />
+		<AvailabilityCTA />
 		<Footer hideCTA={true} />
 	</main>
 </Layout>

@@ -12,7 +12,8 @@ import FAQSchema from "../components/seo/FAQSchema.astro";
 import { DraggableScroll } from "../components/DraggableScroll";
 import { getAllProjects } from "../data/projects";
 import { getShowcaseLocations } from "../data/locations";
-import { stage0Offer, spotsLabel, bedrijvenLabel } from "../config/stage-0-offer";
+import { availability } from "../config/availability";
+import CurrentMonth from "../components/CurrentMonth.astro";
 
 const projects = getAllProjects();
 const showcaseLocations = getShowcaseLocations();
@@ -24,16 +25,16 @@ const breadcrumbs = [
 
 const faqs = [
 	{
-		question: "Waarom is dit nu gratis?",
-		answer: "Ik verzamel op dit moment case studies om de waarde van wat ik lever concreet te kunnen laten zien. Tot eind mei zijn er nog plekken, daarna start ik met betaald werk: €497 setup plus €47 per maand."
+		question: "Kan ik nu een website bij je laten maken?",
+		answer: "Op dit moment niet: de agenda zit vol en ik neem geen nieuwe projecten aan. Een bericht sturen met je vraag of situatie kan gewoon, dan laat ik het weten zodra er weer ruimte is."
 	},
 	{
-		question: "Wat gebeurt er na 90 dagen?",
-		answer: "Een nieuwe nulmeting, case study afgerond en als je dat wilt een review. Daarna loopt de samenwerking door zolang je er voordeel van hebt."
+		question: "Wat kost een website bij jou?",
+		answer: "Eenmalig €497 setup plus €47 per maand. Daarvoor krijg je de site, hosting, Google-vindbaarheid, lead-opvolging, review-verzoeken en kleine aanpassingen."
 	},
 	{
 		question: "Wat garandeer je?",
-		answer: "Voor de betaalde pakketten vanaf juni: breng je in 90 dagen na livegang minder dan 3 extra klanten via de website binnen, dan werk ik gratis door tot dat aantal wel is gehaald. Enige voorwaarde: je reageert binnen 24 uur op aanvragen die binnenkomen en houdt je Google Bedrijfsprofiel actueel."
+		answer: "Voor de betaalde pakketten: breng je in 90 dagen na livegang minder dan 3 extra klanten via de website binnen, dan werk ik gratis door tot dat aantal wel is gehaald. Enige voorwaarde: je reageert binnen 24 uur op aanvragen die binnenkomen en houdt je Google Bedrijfsprofiel actueel."
 	},
 	{
 		question: "Krijg ik de broncode?",
@@ -56,15 +57,14 @@ const faqs = [
 
 <Layout
   title="Webdesign op maat in Buren | KNAP GEMAAKT."
-  description={`Maatwerk websites voor ondernemers. Snel, goed vindbaar in Google en alles in een vast maandbedrag. In ${stage0Offer.month} nog ${spotsLabel()} gratis in ruil voor een case study.`}
+  description="Maatwerk websites voor ondernemers. Snel, goed vindbaar in Google en alles in een vast maandbedrag. Op dit moment volgeboekt, vragen stellen kan gewoon."
 >
   <BreadcrumbSchema items={breadcrumbs} />
   <ServiceSchema
     name="Webdesign op maat"
-    description={`Websites vanaf de grond opgebouwd. Ontwerp, bouw, hosting, Google-vindbaarheid en onderhoud in één aanpak. In ${stage0Offer.month} nog ${spotsLabel()} gratis in ruil voor een case study.`}
+    description="Websites vanaf de grond opgebouwd. Ontwerp, bouw, hosting, Google-vindbaarheid en onderhoud in één aanpak. Op dit moment volgeboekt."
     serviceType="WebDesign"
     url="https://knapgemaakt.nl/webdesign/"
-    price="0"
   />
   <FAQSchema faqs={faqs} />
   <main>
@@ -81,23 +81,23 @@ const faqs = [
           Ik bouw websites vanaf de grond op, zonder WordPress en zonder template. Sneller dan wat je gewend bent, goed vindbaar in Google en beheerd onder één vast maandbedrag. Voor ondernemers met een bedrijf, 0 tot 5 medewerkers en geen zin om zelf een CMS te leren.
         </p>
 
-        {stage0Offer.enabled && (
+        {availability.fullyBooked && (
           <div class="mb-10 border-l-4 border-accent bg-canvas-alt/50 px-6 py-5 rounded-r-lg max-w-2xl">
             <p class="font-bold tracking-tight text-lg mb-2">
-              Nu in {stage0Offer.month}: {spotsLabel()} gratis
+              <CurrentMonth cap /> zit vol
             </p>
             <p class="text-ink/70 leading-relaxed mb-3">
-              Ik maak op dit moment gratis een volledige website voor {bedrijvenLabel()}. Jij krijgt het complete pakket, ik krijg na 90 dagen een case study en als je tevreden bent een korte review. Voorkeur voor lokale dienstverleners, maar als je bedrijf past kijken we er samen naar.
+              Ik neem op dit moment geen nieuwe projecten aan. Wil je toch iets vragen of alvast je situatie voorleggen? Stuur gerust een bericht, dan kom ik erop terug zodra er weer ruimte is.
             </p>
-            <a href={stage0Offer.ctaUrl} class="text-sm font-bold text-ink hover:text-accent transition-colors inline-flex items-center gap-1 group">
-              Past dit bij jou?
+            <a href={availability.ctaUrl} class="text-sm font-bold text-ink hover:text-accent transition-colors inline-flex items-center gap-1 group">
+              Neem contact op
               <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
             </a>
           </div>
         )}
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
-          <a href="/aanvragen/" class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center">
+          <a href="/contact/" class="bg-ink text-canvas px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-ink/80 transition-colors duration-300 inline-flex items-center justify-center">
             Plan een kennismaking
           </a>
           <a href="#wat-zit-erin" class="text-ink font-bold tracking-tight hover:text-accent transition-colors duration-300 inline-flex items-center gap-2 group px-4 py-4">
@@ -464,19 +464,25 @@ const faqs = [
     <section class="py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-ink text-canvas relative overflow-hidden">
       <div class="max-w-5xl mx-auto text-center relative z-10">
         <FadeIn>
-          <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
-            {stage0Offer.enabled
-              ? `${spotsLabel()} in ${stage0Offer.month}. Past jouw bedrijf?`
-              : "Klaar voor een website die wel werkt?"}
-          </h2>
+          {availability.fullyBooked ? (
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+              <CurrentMonth cap /> zit vol. Vragen staat vrij.
+            </h2>
+          ) : (
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+              Klaar voor een website die wel werkt?
+            </h2>
+          )}
           <p class="text-canvas/60 text-lg mb-10 max-w-xl mx-auto">
-            30 minuten belletje. Jij vertelt wat je doet, ik vertel wat ik zou bouwen en waarom. Past het niet bij mij? Dan zeg ik dat ook. Scheelt ons allebei tijd.
+            {availability.fullyBooked
+              ? "Ik neem op dit moment geen nieuwe projecten aan. Wil je toch iets voorleggen of weten wanneer er weer plek is? Stuur gerust een bericht."
+              : "30 minuten belletje. Jij vertelt wat je doet, ik vertel wat ik zou bouwen en waarom. Past het niet bij mij? Dan zeg ik dat ook. Scheelt ons allebei tijd."}
           </p>
           <a
-            href="/aanvragen/"
+            href={availability.ctaUrl}
             class="bg-accent text-white px-8 py-4 rounded-lg font-bold tracking-tight hover:bg-accent/90 transition-colors duration-300 inline-flex items-center justify-center gap-3 group"
           >
-            Plan een kennismaking
+            {availability.fullyBooked ? "Stuur een bericht" : "Plan een kennismaking"}
             <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
           </a>
         </FadeIn>
